@@ -138,8 +138,8 @@
           
           <!--Checkout Form-->
           <div class="row">
-          	<form id="checkout-form" method="post">
-            	
+          	<form action="{{url('/ecommerce/checkout')}}" id="checkout-form" method="post">
+            	{{ csrf_field()}}
               <!--Left Column-->
               <div class="col-lg-8 col-md-8 col-sm-8">
                 <h3>Billing Details</h3>
@@ -149,23 +149,23 @@
                 	<div class="form-group col-lg-6 col-md-6 col-sm-6">
                     
                     <label for="co-first-name" >First Name *</label>
-                    <input type="text" class="form-control" id="co-first-name" name="f-name" placeholder="First name" value = "" required>
+                    <input type="text" class="form-control" id="co-first-name" name="b_f_name" placeholder="First name" required>
 
                   </div>
                  
                 	<div class="form-group col-lg-6 col-md-6 col-sm-6">
                     <label for="co-last-name">Last Name *</label>
-                    <input type="text" class="form-control" id="co-last-name" name="l-name" placeholder="Last name" value = "" required>
+                    <input type="text" class="form-control" id="co-last-name" name="b_l_name" placeholder="Last name"  required>
                   </div>
                 </div>
                 <div class="row">
                   <div class="form-group col-lg-6 col-md-6 col-sm-6">
                     <label for="co-email">Email *</label>
-                    <input type="email" class="form-control" id="co-email" name="email" placeholder="Email adress" required>
+                    <input type="email" class="form-control" id="co-email" name="b_email" placeholder="Email adress" required>
                   </div>
                   <div class="form-group col-lg-6 col-md-6 col-sm-6">
                     <label for="co_phone">Phone *</label>
-                    <input type="text" class="form-control" id="co_phone" name="phone" placeholder="Phone number" required>
+                    <input type="text" class="form-control" id="co_phone" name="b_phone" placeholder="Phone number" required>
                   </div>
                 </div>
                 <!-- <div class="form-group">
@@ -177,7 +177,7 @@
                   <label for="co-country">Country *</label>
                   <div class="select-style">
                    
-                    <select name="country" id="co-country" >
+                    <select name="b_country" id="co-country" >
                        @foreach($countries as $country)
                       <option value="{{$country->id}}">{{$country->country_name}}</option>
                       <!-- <option>Belgium</option>
@@ -195,7 +195,7 @@
                   <label for="co-country">State *</label>
                   <div class="select-style">
                    
-                    <select name="region" id="co-country">
+                    <select name="b_region" id="co-country">
                        @foreach($regions as $region)
                       <option value="{{$region->id}}">{{$region->region_name}}</option>
                       <!-- <option>Belgium</option>
@@ -214,7 +214,7 @@
                     <label for="co-city">Town/ city *</label>
                     <div class="select-style">
                    
-                    <select name="city" id="co-country">
+                    <select name="b_city" id="co-country">
                        @foreach($cities as $city)
                       <option value="{{$city->id}}">{{$city->city_name}}</option>
                       <!-- <option>Belgium</option>
@@ -241,7 +241,7 @@
                 
                 <div class="form-group">
                   <label for="co-str-adress">Shipping Address *</label>
-                  <textarea  class="form-control" id="co-str-adress" name="address" placeholder="Street adress" value = "" required></textarea>
+                  <textarea  class="form-control" id="co-str-adress" name="b_address" placeholder="Street adress" value = "" required></textarea>
                 </div>
                 <!-- <div class="form-group">
                   <label class="sr-only" for="co-appartment">Appartment</label>
@@ -275,23 +275,23 @@
                   <div class="form-group col-lg-6 col-md-6 col-sm-6">
                     
                     <label for="co-first-name" >First Name *</label>
-                    <input type="text" class="form-control" id="co-first-name" name="f-name" placeholder="First name" value = "" required>
+                    <input type="text" class="form-control" id="co-first-name" name="s_f_name" placeholder="First name" required>
 
                   </div>
                  
                   <div class="form-group col-lg-6 col-md-6 col-sm-6">
                     <label for="co-last-name">Last Name *</label>
-                    <input type="text" class="form-control" id="co-last-name" name="l-name" placeholder="Last name" value = "" required>
+                    <input type="text" class="form-control" id="co-last-name" name="s_l_name" placeholder="Last name" value = "" required>
                   </div>
                 </div>
                 <div class="row">
                   <div class="form-group col-lg-6 col-md-6 col-sm-6">
                     <label for="co-email">Email *</label>
-                    <input type="email" class="form-control" id="co-email" name="email" placeholder="Email adress" required>
+                    <input type="email" class="form-control" id="co-email" name="s_email" placeholder="Email adress" required>
                   </div>
                   <div class="form-group col-lg-6 col-md-6 col-sm-6">
                     <label for="co_phone">Phone *</label>
-                    <input type="text" class="form-control" id="co_phone" name="phone" placeholder="Phone number" required>
+                    <input type="text" class="form-control" id="co_phone" name="s_phone" placeholder="Phone number" required>
                   </div>
                 </div>
                 <!-- <div class="form-group">
@@ -303,7 +303,7 @@
                   <label for="co-country">Country *</label>
                   <div class="select-style">
                    
-                    <select name="country" id="co-country" >
+                    <select name="s_country" id="co-country" >
                        @foreach($countries as $country)
                       <option value="{{$country->id}}">{{$country->country_name}}</option>
                       <!-- <option>Belgium</option>
@@ -321,7 +321,7 @@
                   <label for="co-country">State *</label>
                   <div class="select-style">
                    
-                    <select name="region" id="co-country">
+                    <select name="s_region" id="co-country">
                        @foreach($regions as $region)
                       <option value="{{$region->id}}">{{$region->region_name}}</option>
                       <!-- <option>Belgium</option>
@@ -341,7 +341,7 @@
                     <label for="co-city">Town/ city *</label>
                     <div class="select-style">
                    
-                    <select name="city" id="co-country">
+                    <select name="s_city" id="co-country">
                        @foreach($cities as $city)
                       <option value="{{$city->id}}">{{$city->city_name}}</option>
                       <!-- <option>Belgium</option>
@@ -368,18 +368,18 @@
                 
                 <div class="form-group">
                   <label for="co-str-adress">Shipping Address *</label>
-                  <textarea  class="form-control" id="co-str-adress" name="address" placeholder="Street adress" value = "" required></textarea>
+                  <textarea  class="form-control" id="co-str-adress" name="s_address" placeholder="Street adress" value = "" required></textarea>
                 </div>
                 <!-- <div class="form-group">
                   <label class="sr-only" for="co-appartment">Appartment</label>
                   <input type="text" class="form-control" id="co-appartment" name="co-appartment" placeholder="Appartment" required>
                 </div>
                  -->
-                 <h3>Order notes</h3>
+                 <!-- <h3>Order notes</h3>
                 <div class="form-group">
                   <label class="sr-only" for="order-notes">Order notes</label>
                   <textarea class="form-control" name="order-notes" id="order-notes" rows="4" placeholder="Order notes"></textarea>
-                </div>
+                </div> -->
                 <!-- <div class="checkbox form-group">
                   <label><input type="checkbox" name="create-account"> Create an account?</label>
                 </div>
@@ -415,7 +415,7 @@
                </span></a>
             
             <?php
-            $cart_items = CartProvider::instance('shopping')->getCartItems();
+            $cart_items = Cart::instance('shopping')->content();
             ?>
 
               	<h3>Your order</h3>
@@ -443,7 +443,7 @@
                   </tr>
                   @endforeach
                 </table>
-                <div class="payment-method">
+                <!-- <div class="payment-method">
                 	<div class="radio light">
                   	<label><input type="radio" name="payment" id="payment01" checked> Direct Bank Transfer</label>
                   </div>
@@ -454,7 +454,7 @@
                 	<div class="radio light">
                   	<label><input type="radio" name="payment" id="payment03"> PayPal <span class="pp-label"></span></label>
                   </div>
-                </div>
+                </div> -->
                 <input class="btn btn-success btn-block" type="submit" name="place-order" value="Place order">
               </div>
             </form>

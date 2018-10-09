@@ -12,6 +12,8 @@ use App\User;
 use App\Order;
 use App\Product;
 use App\Region;
+use App\Billing;
+use App\Shipping;
 
 
 class CheckoutController extends Controller
@@ -58,15 +60,25 @@ class CheckoutController extends Controller
     {
         //
         $billings = new Billing();
-        $billings->biller_first_name = $request->f_name;
-        $billings->biller_last_name = $request->l_name;
-        $billings->biller_email = $request->email;
-        $billings->biller_phone_number = $request->phone;
-        $billings->country_id = $request->country;
-        $billings->region_id = $request->region;
-        $billings->city_id = $request->city;
-        $billings->biller_address = $request->address;
+        $billings->biller_first_name = $request->b_f_name;
+        $billings->biller_last_name = $request->b_l_name;
+        $billings->biller_email = $request->b_email;
+        $billings->biller_phone_number = $request->b_phone;
+        $billings->country_id = $request->b_country;
+        $billings->region_id = $request->b_region;
+        $billings->city_id = $request->b_city;
+        $billings->biller_address = $request->b_address;
         $billings->save();
+        $shippings = new Shipping();
+        $shippings->shipper_first_name = $request->s_f_name;
+        $shippings->shipper_last_name = $request->s_l_name;
+        $shippings->shipper_email = $request->s_email;
+        $shippings->shipper_phone_number = $request->s_phone;
+        $shippings->country_id = $request->s_country;
+        $shippings->region_id = $request->s_region;
+        $shippings->city_id = $request->s_city;
+        $shippings->biller_address = $request->s_address;
+        $shippings->save();
         return Redirect()->back()->with('status', 'billing successfully!');
 
 

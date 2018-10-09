@@ -145,7 +145,7 @@
                                                         <td>{{$city->created_at}}</td>
                                                         <td>{{$city->updated_at}}</td> 
                                                         <td>
-                                                            <a href="{{url('/ecommerce/admin/cities')}}/{{\Crypt::decrypt($city->id)}}/edit" style="float: left;">
+                                                            <a href="{{url('/ecommerce/admin/cities')}}/{{\Crypt::encrypt($city->id)}}/edit" style="float: left;">
                                                                 <i class="fa fa-pencil"></i>
                                                             </a>
                                                             <form id="delete-form{{$city->id}}" 
