@@ -88,12 +88,12 @@
                   <th>Total</th>
                 </tr>
                 <?php
-                  $cart_items = CartProvider::instance('shopping')->getCartItems();
+                  $cart_items = Cart::instance('shopping')->content();
                   ?>
                 @foreach($cart_items as $cart_item)
                 <!--Item-->
                 <tr class="item">
-                	<td class="thumb"><a href="{{URL::to('public/frontend/ecommerce/assets')}}/shop-single-item-v1.html"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/catalog/shopping-cart-thumb-1.jpg" alt="Nikon D4S"/></a></td>
+                	<td class="thumb"><a href="{{url('ecommerce/single-product')}}/{{$cart_item->options['product_slug']}}"><img src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$cart_item->options['image']->product_file_name}}" alt="Nikon D4S"/></a></td>
                   <td class="name"><a href="{{URL::to('public/frontend/ecommerce/assets')}}/shop-single-item-v1.html">{{$cart_item->name}}</a></td>
                   <td class="price">Rs. {{$cart_item->price}}</td>
                   <td class="qnt-count">
@@ -102,7 +102,7 @@
                     <a class="incr-btn" href="{{URL::to('public/frontend/ecommerce/assets')}}/#">+</a>
                   </td>
                   <td class="total">Rs. {{$cart_item->subtotal}}</td>
-                  <td class="delete"><i class="icon-delete"></i></td>
+                  <td class="delete"><a href="{{url('/ecommerce/removeFromCart')}}/{{$cart_item->rowId}}"><i class="icon-delete"></i></a></td>
                 </tr>
                 @endforeach
                 <!--Item-->

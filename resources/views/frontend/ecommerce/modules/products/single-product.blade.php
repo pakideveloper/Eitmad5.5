@@ -76,7 +76,7 @@
       <section class="cart-message visible">
       	<i class="fa fa-check-square"></i>
         <p class="p-style3">"{{ session('status') }}" </p>
-        <a class="btn-outlined-invert btn-success btn-sm" href="shopping-cart.html">View cart</a>
+        <a class="btn-outlined-invert btn-success btn-sm" href="{{url ('/ecommerce/cart')}}">View cart</a>
       </section><!--Shopping Cart Message Close-->
       @endif
       <!--Catalog Single Item-->
