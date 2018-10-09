@@ -88,7 +88,7 @@
                   <th>Total</th>
                 </tr>
                 <?php
-                  $cart_items = CartProvider::instance('shopping')->getCartItems();
+                  $cart_items = Cart::instance('shopping')->content();
                   ?>
                 @foreach($cart_items as $cart_item)
                 <!--Item-->
