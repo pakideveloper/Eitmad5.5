@@ -112,7 +112,7 @@
                   
                 	<ul class="sub-submenu">
                     @foreach($category->sub_categories as $subcategory)
-                    <li><a href="#">{{$subcategory->sub_category_name}}</a></li>
+                    <li><a href="{{url('/ecommerce/category')}}/{{$subcategory->sub_category_name}}">{{$subcategory->sub_category_name}}</a></li>
                      @endforeach
                     <!-- <li><a href="#">iPhone 4s</a></li>
                     <li><a href="#">iPhone 5c</a></li>
