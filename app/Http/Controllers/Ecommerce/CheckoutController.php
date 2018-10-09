@@ -4,12 +4,14 @@ namespace App\Http\Controllers\Ecommerce;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\country;
+use App\City;
 use App\Order_Product;
 use DB;
 use Auth;
 use App\User;
 use App\Order;
 use App\Product;
+use App\Region;
 
 
 class CheckoutController extends Controller
@@ -22,7 +24,10 @@ class CheckoutController extends Controller
     public function index()
     {
         $countries = country::all();
-        $users  = User::find(Auth::user()->id);
+        $cities = City::all();
+        $regions = Region::all();
+        // $users  = User::find(Auth::user()->id);
+
         // ::where('users.id','=',Auth::user()->id)->select('first_name');
 
         // $orderproducts = DB::table('order_products')
@@ -30,7 +35,7 @@ class CheckoutController extends Controller
         //                             ->join('orders', 'orders.id', '=', 'order_products.order_id')
         //                             ->where('orders.user_id','=',Auth::user()->id);
         $orderproducts = Order_Product::all();
-        return view('frontend/ecommerce/modules/CheckOut/checkout',compact('countries','orderproducts','users'));
+        return view('frontend/ecommerce/modules/CheckOut/checkout',compact('countries','orderproducts','users','cities','regions'));
     }
 
     /**
@@ -52,6 +57,21 @@ class CheckoutController extends Controller
     public function store(Request $request)
     {
         //
+        $billings = new Billing();
+        $billings->biller_first_name = $request->f_name;
+        $billings->biller_last_name = $request->l_name;
+        $billings->biller_email = $request->email;
+        $billings->biller_phone_number = $request->phone;
+        $billings->country_id = $request->country;
+        $billings->region_id = $request->region;
+        $billings->city_id = $request->city;
+        $billings->biller_address = $request->address;
+        $billings->save();
+        return Redirect()->back()->with('status', 'billing successfully!');
+
+
+
+
     }
 
     /**
