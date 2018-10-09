@@ -15,9 +15,8 @@ class SliderController extends Controller
      */
     public function index()
     {
-       // $mainslider = Slider::latest()->get();
-       // return view('/admin/ecommerce/modules/mainslider/index',compact('mainslider')); 
-        echo "string";
+       $mainslider = Slider::latest()->get();
+       return view('/admin/ecommerce/modules/mainslider/index',compact('mainslider'));
     }
 
 

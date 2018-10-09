@@ -50,7 +50,7 @@ Route::get('/single-product/{slug}', function ($slug) {
     return view('frontend/ecommerce/modules/products/single-product',compact('product'));
 });
 
-Route::get('/shoppingcart', function () {
+Route::get('/cart', function () {
     return view('frontend/ecommerce/modules/shopping-cart/cart');
 });
 Route::get('/wishlist', function () {

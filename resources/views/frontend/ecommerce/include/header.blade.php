@@ -67,7 +67,7 @@
               	<li><a href="shop-no-filters-3cols.html">Shop - No Filters 3 Cols</a></li>
                 <li><a href="shop-single-item-v1.html">Shop - Single Item Vers 1</a></li>
                 <li><a href="shop-single-item-v2.html">Shop - Single Item Vers 2</a></li>
-                <li><a href="{{url('/ecommerce/shoppingcart')}}">Shopping Cart</a></li>
+                <li><a href="{{url('/ecommerce/cart')}}">Shopping Cart</a></li>
                 <li><a href="checkout.html">Checkout Page</a></li>
                 <li><a href="{{url('/ecommerce/wishlist')}}">Wishlist</a></li>
               </ul>
@@ -147,7 +147,7 @@
             <a class="login-btn btn-outlined-invert" href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-profile"></i> <span>Login</span></a>
           </div>
           <div class="cart-btn">
-          	<a class="btn btn-outlined-invert" href="{{url('/ecommerce/shoppingcart')}}"><i class="icon-shopping-cart-content"></i><span id="head_total_quantity">{{Cart::instance('shopping')->count()}}</span></a>
+          	<a class="btn btn-outlined-invert" href="{{url('/ecommerce/cart')}}"><i class="icon-shopping-cart-content"></i><span id="head_total_quantity">{{Cart::instance('shopping')->count()}}</span></a>
             
             <?php
             $cart_items = Cart::instance('shopping')->content();
