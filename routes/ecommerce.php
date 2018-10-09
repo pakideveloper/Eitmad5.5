@@ -12,7 +12,7 @@
 */
 //usama
 Route::get('/', function () {
-	$mainslider = App\Main_Slider::latest()->get();
+	$mainslider = App\Slider::latest()->get();
     return view('frontend/ecommerce/modules/index',compact('mainslider'));
 });
 
