@@ -4,9 +4,9 @@ namespace App\Http\Controllers\admin\ecommerce;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
-use App\Main_Slider;
+use App\Slider;
 use File;
-class MainSliderController extends Controller
+class SliderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +15,7 @@ class MainSliderController extends Controller
      */
     public function index()
     {
-       // $mainslider = Main_Slider::latest()->get();
+       // $mainslider = Slider::latest()->get();
        // return view('/admin/ecommerce/modules/mainslider/index',compact('mainslider')); 
         echo "string";
     }
@@ -40,7 +40,7 @@ class MainSliderController extends Controller
     public function store(Request $request)
     {
         $this->storeValidate($request);
-        $mainslider = new Main_Slider();
+        $mainslider = new Slider();
         $mainslider->title = $request->title;
         $mainslider->description = $request->description;
         if ($request->file)
@@ -82,7 +82,7 @@ class MainSliderController extends Controller
      */
     public function edit($id)
     {
-        $mainslider = Main_Slider::find($id);
+        $mainslider = Slider::find($id);
         return view('admin/ecommerce/modules/mainslider/edit', compact('mainslider'));
 
     }
@@ -97,7 +97,7 @@ class MainSliderController extends Controller
     public function update(Request $request, $id)
     {
       
-        $mainslider = Main_Slider::find($id);
+        $mainslider = Slider::find($id);
         $mainslider->title = $request->title;
         $mainslider->description = $request->description;
 
@@ -128,7 +128,7 @@ class MainSliderController extends Controller
      */
     public function destroy($id)
     {
-      $mainslider = Main_Slider::find($id);
+      $mainslider = Slider::find($id);
       $mainslider->delete();
       return redirect()->back()->with('status', 'successfully deleted!');
     }
