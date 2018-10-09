@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Main_Slider extends Model
+class Slider extends Model
 {
     protected $table = 'main_sliders';
 }
