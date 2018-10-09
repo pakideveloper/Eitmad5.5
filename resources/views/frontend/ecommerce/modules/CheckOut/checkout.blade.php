@@ -28,6 +28,7 @@
     <!--[if lt IE 9]>
       <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/respond.js"></script>
     <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  
   </head>
 
@@ -81,7 +82,8 @@
             <div class="col-lg-12">
             	<h2>Checkout</h2>
               <!--Hidden Panels-->
-              <a class="panel-toggle" href="{{URL::to('public/frontend/ecommerce/assets')}}/#login"><i></i>Returning customer? Click here to login</a>
+              @if(Auth::guest())
+              <a class="panel-toggle" href="{{url('/login')}}"><i></i>Returning customer? Click here to login</a>@endif
               <div class="row">
               	<div class="hidden-panel" id="login">
                 	<div class="col-lg-12">
@@ -114,9 +116,10 @@
                       </div>
                     </div>
                   </div>
+
                 </div>
               </div>
-              <a class="panel-toggle" href="{{URL::to('public/frontend/ecommerce/assets')}}/#coupon"><i></i>Have a coupon? Click here to enter your code</a>
+              <a class="panel-toggle" href="#coupon"><i></i>Have a coupon? Click here to enter your code</a>
               <div class="row">
               	<div class="col-lg-5">
                   <div class="hidden-panel" id="coupon">
@@ -139,14 +142,44 @@
             	
               <!--Left Column-->
               <div class="col-lg-8 col-md-8 col-sm-8">
-                <h3>Billing adress</h3>
-                <div class="form-group">
+                <h3>Billing Details</h3>
+                
+                <div class="row">
+                 
+                	<div class="form-group col-lg-6 col-md-6 col-sm-6">
+                    
+                    <label for="co-first-name" >First Name *</label>
+                    <input type="text" class="form-control" id="co-first-name" name="f-name" placeholder="First name" value = "" required>
+
+                  </div>
+                 
+                	<div class="form-group col-lg-6 col-md-6 col-sm-6">
+                    <label for="co-last-name">Last Name *</label>
+                    <input type="text" class="form-control" id="co-last-name" name="l-name" placeholder="Last name" value = "" required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                    <label for="co-email">Email *</label>
+                    <input type="email" class="form-control" id="co-email" name="email" placeholder="Email adress" required>
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                    <label for="co_phone">Phone *</label>
+                    <input type="text" class="form-control" id="co_phone" name="phone" placeholder="Phone number" required>
+                  </div>
+                </div>
+                <!-- <div class="form-group">
+                  <label for="co-company-name">Company name</label>
+                  <input type="text" class="form-control" id="co-company-name" name="co-company-name" placeholder="Company name">
+                </div> -->
+                <div class="row">
+                  <div class="form-group col-lg-4 col-md-4 col-sm-4">
                   <label for="co-country">Country *</label>
                   <div class="select-style">
                    
-                    <select name="co-country" id="co-country">
+                    <select name="country" id="co-country" >
                        @foreach($countries as $country)
-                      <option>{{$country->country_name}}</option>
+                      <option value="{{$country->id}}">{{$country->country_name}}</option>
                       <!-- <option>Belgium</option>
                       <option>Germany</option>
                       <option>United Kingdom</option>
@@ -157,68 +190,225 @@
                    
                   </div>
                 </div>
-                <div class="row">
-                 
-                	<div class="form-group col-lg-6 col-md-6 col-sm-6">
-                    
-                    <label for="co-first-name">First Name *</label>
-                    <input type="text" class="form-control" id="co-first-name" name="co-first-name" placeholder="First name" value = "{{$users->first_name}}" required>
 
+                <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                  <label for="co-country">State *</label>
+                  <div class="select-style">
+                   
+                    <select name="region" id="co-country">
+                       @foreach($regions as $region)
+                      <option value="{{$region->id}}">{{$region->region_name}}</option>
+                      <!-- <option>Belgium</option>
+                      <option>Germany</option>
+                      <option>United Kingdom</option>
+                      <option>Switzerland</option>
+                      <option>USA</option> -->
+                       @endforeach
+                    </select>
+                   
                   </div>
-                 
-                	<div class="form-group col-lg-6 col-md-6 col-sm-6">
-                    <label for="co-last-name">Last Name *</label>
-                    <input type="text" class="form-control" id="co-last-name" name="co-last-name" placeholder="Last name" value = "{{$users->last_name}}" required>
+                </div>
+
+
+                  <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                    <label for="co-city">Town/ city *</label>
+                    <div class="select-style">
+                   
+                    <select name="city" id="co-country">
+                       @foreach($cities as $city)
+                      <option value="{{$city->id}}">{{$city->city_name}}</option>
+                      <!-- <option>Belgium</option>
+                      <option>Germany</option>
+                      <option>United Kingdom</option>
+                      <option>Switzerland</option>
+                      <option>USA</option> -->
+                       @endforeach
+                    </select>
+                   
+                  </div>
+                  <!-- <input type="text" class="form-control" id="co-city" name="co-city" placeholder="Town/ city" required> -->
                   </div>
                 </div>
+                <!-- <div class="form-group">
+                  <label for="co_postcode">Postcode *</label>
+                    <input type="text" class="form-control" id="co_postcode" name="co_postcode" placeholder="Postcode/ ZIP" required>
+
+
+
+                  
+                </div> -->
+                
+                
                 <div class="form-group">
-                  <label for="co-company-name">Company name</label>
-                  <input type="text" class="form-control" id="co-company-name" name="co-company-name" placeholder="Company name">
+                  <label for="co-str-adress">Shipping Address *</label>
+                  <textarea  class="form-control" id="co-str-adress" name="address" placeholder="Street adress" value = "" required></textarea>
                 </div>
-                <div class="form-group">
-                  <label for="co-str-adress">Address *</label>
-                  <input type="text" class="form-control" id="co-str-adress" name="co-str-adress" placeholder="Street adress" value = "{{$users->address}}" required>
-                </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label class="sr-only" for="co-appartment">Appartment</label>
                   <input type="text" class="form-control" id="co-appartment" name="co-appartment" placeholder="Appartment" required>
                 </div>
+                 -->
+                 <h3>Order notes</h3>
                 <div class="form-group">
-                  <label for="co-city">Town/ city *</label>
-                  <input type="text" class="form-control" id="co-city" name="co-city" placeholder="Town/ city" required>
-                </div>
-                <div class="row">
-                	<div class="form-group col-lg-6 col-md-6 col-sm-6">
-                    <label for="co-state">County/ state</label>
-                    <input type="text" class="form-control" id="co-state" name="co-state" placeholder="County/ state">
-                  </div>
-                	<div class="form-group col-lg-6 col-md-6 col-sm-6">
-                    <label for="co_postcode">Postcode *</label>
-                    <input type="text" class="form-control" id="co_postcode" name="co_postcode" placeholder="Postcode/ ZIP" required>
-                  </div>
-                </div>
-                <div class="row">
-                	<div class="form-group col-lg-6 col-md-6 col-sm-6">
-                    <label for="co-email">Email *</label>
-                    <input type="email" class="form-control" id="co-email" name="co-email" placeholder="Email adress" required>
-                  </div>
-                	<div class="form-group col-lg-6 col-md-6 col-sm-6">
-                    <label for="co_phone">Phone *</label>
-                    <input type="text" class="form-control" id="co_phone" name="co_phone" placeholder="Phone number" required>
-                  </div>
-                </div>
-                <div class="checkbox form-group">
-                  <label><input type="checkbox" name="create-account"> Create an account?</label>
-                </div>
-                <div class="checkbox form-group">
-                  <label><span class="text-primary">Ship to a different adress?</span> <input type="checkbox" name="ship-to-dif-adress"></label>
-                </div>
-                <h3>Order notes</h3>
-                <div class="form-group">
-                	<label class="sr-only" for="order-notes">Order notes</label>
+                  <label class="sr-only" for="order-notes">Order notes</label>
                   <textarea class="form-control" name="order-notes" id="order-notes" rows="4" placeholder="Order notes"></textarea>
                 </div>
+               <!--  <div class="checkbox form-group">
+                  <label><input type="checkbox" name="create-account"> Create an account?</label>
+                </div> -->
+                
+                <!-- <div class="checkbox form-group" >
+                  <label><span class="text-primary">Ship to a different address?</span> <input type="checkbox" name="ship-to-diff-address" ></label>
+                </div> -->
+                <div class="checkbox form-group">
+      <label><span class="text-primary">Ship to a different address?</span><input type="checkbox"  id="ship-to-diff-address" style="margin-left: 5px;"></label>
+    </div>
+                
               </div>
+
+
+                      <div id="shippingdetails" class="col-lg-8 col-md-8 col-sm-8"  style="display: none;">
+                <h3>Shipping Details</h3>
+                
+                <div class="row">
+                 
+                  <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                    
+                    <label for="co-first-name" >First Name *</label>
+                    <input type="text" class="form-control" id="co-first-name" name="f-name" placeholder="First name" value = "" required>
+
+                  </div>
+                 
+                  <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                    <label for="co-last-name">Last Name *</label>
+                    <input type="text" class="form-control" id="co-last-name" name="l-name" placeholder="Last name" value = "" required>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                    <label for="co-email">Email *</label>
+                    <input type="email" class="form-control" id="co-email" name="email" placeholder="Email adress" required>
+                  </div>
+                  <div class="form-group col-lg-6 col-md-6 col-sm-6">
+                    <label for="co_phone">Phone *</label>
+                    <input type="text" class="form-control" id="co_phone" name="phone" placeholder="Phone number" required>
+                  </div>
+                </div>
+                <!-- <div class="form-group">
+                  <label for="co-company-name">Company name</label>
+                  <input type="text" class="form-control" id="co-company-name" name="co-company-name" placeholder="Company name">
+                </div> -->
+                <div class="row">
+                  <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                  <label for="co-country">Country *</label>
+                  <div class="select-style">
+                   
+                    <select name="country" id="co-country" >
+                       @foreach($countries as $country)
+                      <option value="{{$country->id}}">{{$country->country_name}}</option>
+                      <!-- <option>Belgium</option>
+                      <option>Germany</option>
+                      <option>United Kingdom</option>
+                      <option>Switzerland</option>
+                      <option>USA</option> -->
+                       @endforeach
+                    </select>
+                   
+                  </div>
+                </div>
+
+                <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                  <label for="co-country">State *</label>
+                  <div class="select-style">
+                   
+                    <select name="region" id="co-country">
+                       @foreach($regions as $region)
+                      <option value="{{$region->id}}">{{$region->region_name}}</option>
+                      <!-- <option>Belgium</option>
+                      <option>Germany</option>
+                      <option>United Kingdom</option>
+                      <option>Switzerland</option>
+                      <option>USA</option> -->
+                       @endforeach
+                    </select>
+                   
+                  </div>
+                </div>
+
+
+
+                  <div class="form-group col-lg-4 col-md-4 col-sm-4">
+                    <label for="co-city">Town/ city *</label>
+                    <div class="select-style">
+                   
+                    <select name="city" id="co-country">
+                       @foreach($cities as $city)
+                      <option value="{{$city->id}}">{{$city->city_name}}</option>
+                      <!-- <option>Belgium</option>
+                      <option>Germany</option>
+                      <option>United Kingdom</option>
+                      <option>Switzerland</option>
+                      <option>USA</option> -->
+                       @endforeach
+                    </select>
+                   
+                  </div>
+                  <!-- <input type="text" class="form-control" id="co-city" name="co-city" placeholder="Town/ city" required> -->
+                  </div>
+                </div>
+                <!-- <div class="form-group">
+                  <label for="co_postcode">Postcode *</label>
+                    <input type="text" class="form-control" id="co_postcode" name="co_postcode" placeholder="Postcode/ ZIP" required>
+
+
+
+                  
+                </div> -->
+                
+                
+                <div class="form-group">
+                  <label for="co-str-adress">Shipping Address *</label>
+                  <textarea  class="form-control" id="co-str-adress" name="address" placeholder="Street adress" value = "" required></textarea>
+                </div>
+                <!-- <div class="form-group">
+                  <label class="sr-only" for="co-appartment">Appartment</label>
+                  <input type="text" class="form-control" id="co-appartment" name="co-appartment" placeholder="Appartment" required>
+                </div>
+                 -->
+                 <h3>Order notes</h3>
+                <div class="form-group">
+                  <label class="sr-only" for="order-notes">Order notes</label>
+                  <textarea class="form-control" name="order-notes" id="order-notes" rows="4" placeholder="Order notes"></textarea>
+                </div>
+                <!-- <div class="checkbox form-group">
+                  <label><input type="checkbox" name="create-account"> Create an account?</label>
+                </div>
+                
+                <div class="checkbox form-group">
+                  <label><span class="text-primary">Ship to a different adress?</span> <input type="checkbox" name="ship-to-dif-adress"></label>
+                </div> -->
+                
+              </div>
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
               
               <!--Right Column-->
               <div class="col-lg-3 col-lg-offset-1 col-md-4 col-sm-4">
@@ -473,7 +663,8 @@
 		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/bootstrap.min.js"></script>
 		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/smoothscroll.js"></script>
 		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/jquery.validate.min.js"></script>
-		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/icheck.min.js"></script>
+		<!-- <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/icheck.min.js"></script>
+ -->
 		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/jquery.placeholder.js"></script>
 		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/jquery.stellar.min.js"></script>
 		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/jquery.touchSwipe.min.js"></script>
@@ -485,6 +676,30 @@
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/mailer/mailer.js"></script>
 		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/scripts.js"></script>
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/color-switcher.js"></script>
+
+
+<script type="text/javascript">
+  
+
+    $('#ship-to-diff-address').change(function () {
+             $('#shippingdetails').toggle();
+                
+            
+        });
+
+
+    $panelToggle.click(function(e){
+    $(this).toggleClass('active');
+    var $target = $(this).attr('href');
+    $($target).toggleClass('expanded');
+    e.preventDefault();
+  });
+  
+</script>
+  
+
+
+
 
     
   </body><!--Body Close-->
