@@ -37,6 +37,14 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapApiRoutes();
 
+        $this->mapEcommerceAdminWebRoutes();
+
+        $this->mapEcommerceWebRoutes();
+        
+        $this->mapJobAdminWebRoutes();
+
+        $this->mapJobWebRoutes();
+
         $this->mapWebRoutes();
 
         //
@@ -55,6 +63,34 @@ class RouteServiceProvider extends ServiceProvider
              ->namespace($this->namespace)
              ->group(base_path('routes/web.php'));
     }
+    protected function mapEcommerceAdminWebRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->prefix('ecommerce/admin')
+            ->group(base_path('routes/e-admin.php'));
+    }
+    protected function mapEcommerceWebRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->prefix('ecommerce')
+            ->group(base_path('routes/ecommerce.php'));
+    }
+    protected function mapJobAdminWebRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->prefix('jobs/admin')
+            ->group(base_path('routes/j-admin.php'));
+    }
+    protected function mapJobWebRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->prefix('jobs')
+            ->group(base_path('routes/job.php'));
+    }   
 
     /**
      * Define the "api" routes for the application.
