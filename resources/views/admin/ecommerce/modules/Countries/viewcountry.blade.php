@@ -139,7 +139,7 @@
                                                         <td>{{$country->created_at}}</td>
                                                         <td>{{$country->updated_at}}</td> 
                                                         <td>
-                                                            <a href="{{url('/ecommerce/admin/countries')}}/{{\Crypt::decrypt($country->id)}}/edit" style="float: left;">
+                                                            <a href="{{url('/ecommerce/admin/countries')}}/{{\Crypt::encrypt($country->id)}}/edit" style="float: left;">
                                                                 <i class="fa fa-pencil"></i>
                                                             </a>
                                                             <form id="delete-form{{$country->id}}" 
