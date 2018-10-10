@@ -24,7 +24,7 @@ class ProductSubCategoryController extends Controller
     {
         
         $subcategories = Product_Sub_Category::all();
-        return view('admin/ecommerce/modules/categories/viewSubCategories',compact('subcategories')); 
+        return view('admin/ecommerce/modules/sub_categories/viewSubCategories',compact('subcategories')); 
     }
 
     /**
@@ -35,7 +35,7 @@ class ProductSubCategoryController extends Controller
     public function create()
     {
         $categories = Product_Category::all();
-        return view('admin/ecommerce/modules/categories/create-sub',compact('categories'));
+        return view('admin/ecommerce/modules/sub_categories/create-sub',compact('categories'));
     }
 
     /**
@@ -86,7 +86,7 @@ class ProductSubCategoryController extends Controller
          $categories = Product_Category::all();
          // print_r($subcategories);
          // die();
-        return view('admin/ecommerce/modules/categories/editsubcategory', compact('subcategories','categories'));
+        return view('admin/ecommerce/modules/sub_categories/editsubcategory', compact('subcategories','categories'));
     }
 
     /**

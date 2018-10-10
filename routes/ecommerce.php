@@ -50,7 +50,13 @@ Route::get('/single-product/{slug}', function ($slug) {
     return view('frontend/ecommerce/modules/products/single-product',compact('product'));
 });
 
-Route::get('/shoppingcart', function () {
+Route::get('/category/{slug}', function ($slug) {
+    $sub_category_id = App\Product_Sub_Category::where('sub_category_name',$slug)->first()->id;
+    $products = App\Product::where('sub_category_id', $sub_category_id)->get();
+    return view('frontend/ecommerce/modules/products/products',compact('products'));
+});
+
+Route::get('/cart', function () {
     return view('frontend/ecommerce/modules/shopping-cart/cart');
 });
 Route::get('/wishlist', function () {
@@ -67,6 +73,8 @@ Route::get('/singleblog', function () {
 });
 
 Route::get('/product/addToCart/{id}', 'Ecommerce\Cart\CartController@addToCart');
+Route::get('/removeFromCart/{rowId}', 'Ecommerce\Cart\CartController@romoveOne');
 Route::Resource('/checkout', 'Ecommerce\CheckoutController');
+Route::get('/callback', 'Ecommerce\PaymentCheckoutController@callback');
 
 

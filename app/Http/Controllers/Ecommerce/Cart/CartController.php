@@ -32,7 +32,7 @@ class CartController extends Controller
 		    		$product->product_name,
 		    		1, 
 		    		$product->product_discounted_price, 
-		    		['orignal_price' => $product->product_price,'image' => $product->title_image]
+		    		['product_slug' => $product->slug,'orignal_price' => $product->product_price,'image' => $product->title_image]
 		    	);
 
                 // $message = 
@@ -76,12 +76,17 @@ class CartController extends Controller
 
     }
 
+    public function romoveOne($rowId){
+        Cart::instance('shopping')->remove($rowId);
+        return redirect()->back();
+    }
+
     public function test(Request $request){
         Cart::instance('shopping')->destroy();
         $cart_items = Cart::instance('shopping')->content();
         // // print_r($cart_items);
         foreach ($cart_items as $key => $value) {
-            print_r($value);
+            print_r($value->options);
         }
         //     die;
         // CartProvider::instance('shopping')->add(new Item(

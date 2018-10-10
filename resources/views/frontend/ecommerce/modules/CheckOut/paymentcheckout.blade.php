@@ -137,329 +137,25 @@
           </div>
           
           <!--Checkout Form-->
-          <div class="row">
-          	<form action="{{url('/ecommerce/checkout')}}" id="checkout-form" method="post">
-            	{{ csrf_field()}}
-              <!--Left Column-->
-              <div class="col-lg-8 col-md-8 col-sm-8">
-                <h3>Billing Details</h3>
-                
-                <div class="row">
-                 
-                	<div class="form-group col-lg-6 col-md-6 col-sm-6">
-                    
-                    <label for="co-first-name" >First Name *</label>
-                    <input type="text" class="form-control" id="co-first-name" name="b_f_name" placeholder="First name" required>
+          <form action='https://sandbox.2checkout.com/checkout/purchase' method='post'>
+<input type='hidden' name='sid' value='901394952' />
+<input type='hidden' name='mode' value='2CO' />
+<input type='hidden' name='li_0_type' value='product' />
+<input type='hidden' name='li_0_name' value='invoice123' />
+<input type='hidden' name='li_0_price' value='25.99' />
+<input type='hidden' name='card_holder_name' value='Checkout Shopper' />
+<input type='hidden' name='street_address' value='123 Test Address' />
+<input type='hidden' name='street_address2' value='Suite 200' />
+<input type='hidden' name='city' value='Columbus' />
+<input type='hidden' name='state' value='OH' />
+<input type='hidden' name='zip' value='43228' />
+<input type='hidden' name='country' value='USA' />
+<input type='hidden' name='email' value='example@2co.com' />
+<input type='hidden' name='phone' value='614-921-2450' />
 
-                  </div>
-                 
-                	<div class="form-group col-lg-6 col-md-6 col-sm-6">
-                    <label for="co-last-name">Last Name *</label>
-                    <input type="text" class="form-control" id="co-last-name" name="b_l_name" placeholder="Last name"  required>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                    <label for="co-email">Email *</label>
-                    <input type="email" class="form-control" id="co-email" name="b_email" placeholder="Email adress" required>
-                  </div>
-                  <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                    <label for="co_phone">Phone *</label>
-                    <input type="text" class="form-control" id="co_phone" name="b_phone" placeholder="Phone number" required>
-                  </div>
-                </div>
-                <!-- <div class="form-group">
-                  <label for="co-company-name">Company name</label>
-                  <input type="text" class="form-control" id="co-company-name" name="co-company-name" placeholder="Company name">
-                </div> -->
-                <div class="row">
-                  <div class="form-group col-lg-4 col-md-4 col-sm-4">
-                  <label for="co-country">Country *</label>
-                  <div class="select-style">
-                   
-                    <select name="b_country" id="co-country" >
-                       @foreach($countries as $country)
-                      <option value="{{$country->id}}">{{$country->country_name}}</option>
-                      <!-- <option>Belgium</option>
-                      <option>Germany</option>
-                      <option>United Kingdom</option>
-                      <option>Switzerland</option>
-                      <option>USA</option> -->
-                       @endforeach
-                    </select>
-                   
-                  </div>
-                </div>
-
-                <div class="form-group col-lg-4 col-md-4 col-sm-4">
-                  <label for="co-country">State *</label>
-                  <div class="select-style">
-                   
-                    <select name="b_region" id="co-country">
-                       @foreach($regions as $region)
-                      <option value="{{$region->id}}">{{$region->region_name}}</option>
-                      <!-- <option>Belgium</option>
-                      <option>Germany</option>
-                      <option>United Kingdom</option>
-                      <option>Switzerland</option>
-                      <option>USA</option> -->
-                       @endforeach
-                    </select>
-                   
-                  </div>
-                </div>
-
-
-                  <div class="form-group col-lg-4 col-md-4 col-sm-4">
-                    <label for="co-city">Town/ city *</label>
-                    <div class="select-style">
-                   
-                    <select name="b_city" id="co-country">
-                       @foreach($cities as $city)
-                      <option value="{{$city->id}}">{{$city->city_name}}</option>
-                      <!-- <option>Belgium</option>
-                      <option>Germany</option>
-                      <option>United Kingdom</option>
-                      <option>Switzerland</option>
-                      <option>USA</option> -->
-                       @endforeach
-                    </select>
-                   
-                  </div>
-                  <!-- <input type="text" class="form-control" id="co-city" name="co-city" placeholder="Town/ city" required> -->
-                  </div>
-                </div>
-                <!-- <div class="form-group">
-                  <label for="co_postcode">Postcode *</label>
-                    <input type="text" class="form-control" id="co_postcode" name="co_postcode" placeholder="Postcode/ ZIP" required>
-
-
-
-                  
-                </div> -->
-                
-                
-                <div class="form-group">
-                  <label for="co-str-adress">Shipping Address *</label>
-                  <textarea  class="form-control" id="co-str-adress" name="b_address" placeholder="Street adress" value = "" required></textarea>
-                </div>
-                <!-- <div class="form-group">
-                  <label class="sr-only" for="co-appartment">Appartment</label>
-                  <input type="text" class="form-control" id="co-appartment" name="co-appartment" placeholder="Appartment" required>
-                </div>
-                 -->
-                 <h3>Order notes</h3>
-                <div class="form-group">
-                  <label class="sr-only" for="order-notes">Order notes</label>
-                  <textarea class="form-control" name="order-notes" id="order-notes" rows="4" placeholder="Order notes"></textarea>
-                </div>
-               <!--  <div class="checkbox form-group">
-                  <label><input type="checkbox" name="create-account"> Create an account?</label>
-                </div> -->
-                
-                <!-- <div class="checkbox form-group" >
-                  <label><span class="text-primary">Ship to a different address?</span> <input type="checkbox" name="ship-to-diff-address" ></label>
-                </div> -->
-                <div class="checkbox form-group">
-      <label><span class="text-primary">Ship to a different address?</span><input type="checkbox" name="s_check"  id="ship-to-diff-address" style="margin-left: 5px;"></label>
-    </div>
-                
-              </div>
-
-
-                      <div id="shippingdetails" class="col-lg-8 col-md-8 col-sm-8"  style="display: none;">
-                <h3>Shipping Details</h3>
-                
-                <div class="row">
-                 
-                  <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                    
-                    <label for="co-first-name" >First Name *</label>
-                    <input type="text" class="form-control" id="co-first-name" name="s_f_name" placeholder="First name" required>
-
-                  </div>
-                 
-                  <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                    <label for="co-last-name">Last Name *</label>
-                    <input type="text" class="form-control" id="co-last-name" name="s_l_name" placeholder="Last name" value = "" required>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                    <label for="co-email">Email *</label>
-                    <input type="email" class="form-control" id="co-email" name="s_email" placeholder="Email adress" required>
-                  </div>
-                  <div class="form-group col-lg-6 col-md-6 col-sm-6">
-                    <label for="co_phone">Phone *</label>
-                    <input type="text" class="form-control" id="co_phone" name="s_phone" placeholder="Phone number" required>
-                  </div>
-                </div>
-                <!-- <div class="form-group">
-                  <label for="co-company-name">Company name</label>
-                  <input type="text" class="form-control" id="co-company-name" name="co-company-name" placeholder="Company name">
-                </div> -->
-                <div class="row">
-                  <div class="form-group col-lg-4 col-md-4 col-sm-4">
-                  <label for="co-country">Country *</label>
-                  <div class="select-style">
-                   
-                    <select name="s_country" id="co-country" >
-                       @foreach($countries as $country)
-                      <option value="{{$country->id}}">{{$country->country_name}}</option>
-                      <!-- <option>Belgium</option>
-                      <option>Germany</option>
-                      <option>United Kingdom</option>
-                      <option>Switzerland</option>
-                      <option>USA</option> -->
-                       @endforeach
-                    </select>
-                   
-                  </div>
-                </div>
-
-                <div class="form-group col-lg-4 col-md-4 col-sm-4">
-                  <label for="co-country">State *</label>
-                  <div class="select-style">
-                   
-                    <select name="s_region" id="co-country">
-                       @foreach($regions as $region)
-                      <option value="{{$region->id}}">{{$region->region_name}}</option>
-                      <!-- <option>Belgium</option>
-                      <option>Germany</option>
-                      <option>United Kingdom</option>
-                      <option>Switzerland</option>
-                      <option>USA</option> -->
-                       @endforeach
-                    </select>
-                   
-                  </div>
-                </div>
-
-
-
-                  <div class="form-group col-lg-4 col-md-4 col-sm-4">
-                    <label for="co-city">Town/ city *</label>
-                    <div class="select-style">
-                   
-                    <select name="s_city" id="co-country">
-                       @foreach($cities as $city)
-                      <option value="{{$city->id}}">{{$city->city_name}}</option>
-                      <!-- <option>Belgium</option>
-                      <option>Germany</option>
-                      <option>United Kingdom</option>
-                      <option>Switzerland</option>
-                      <option>USA</option> -->
-                       @endforeach
-                    </select>
-                   
-                  </div>
-                  <!-- <input type="text" class="form-control" id="co-city" name="co-city" placeholder="Town/ city" required> -->
-                  </div>
-                </div>
-                <!-- <div class="form-group">
-                  <label for="co_postcode">Postcode *</label>
-                    <input type="text" class="form-control" id="co_postcode" name="co_postcode" placeholder="Postcode/ ZIP" required>
-
-
-
-                  
-                </div> -->
-                
-                
-                <div class="form-group">
-                  <label for="co-str-adress">Shipping Address *</label>
-                  <textarea  class="form-control" id="co-str-adress" name="s_address" placeholder="Street adress"  required></textarea>
-                </div>
-                <!-- <div class="form-group">
-                  <label class="sr-only" for="co-appartment">Appartment</label>
-                  <input type="text" class="form-control" id="co-appartment" name="co-appartment" placeholder="Appartment" required>
-                </div>
-                 -->
-                 <!-- <h3>Order notes</h3>
-                <div class="form-group">
-                  <label class="sr-only" for="order-notes">Order notes</label>
-                  <textarea class="form-control" name="order-notes" id="order-notes" rows="4" placeholder="Order notes"></textarea>
-                </div> -->
-                <!-- <div class="checkbox form-group">
-                  <label><input type="checkbox" name="create-account"> Create an account?</label>
-                </div>
-                
-                <div class="checkbox form-group">
-                  <label><span class="text-primary">Ship to a different adress?</span> <input type="checkbox" name="ship-to-dif-adress"></label>
-                </div> -->
-                
-              </div>
-              
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-              
-              <!--Right Column-->
-              <div class="col-lg-3 col-lg-offset-1 col-md-4 col-sm-4">
-               </span></a>
-            
-            <?php
-            $cart_items = Cart::instance('shopping')->content();
-            ?>
-
-              	<h3>Your order</h3>
-                <table>
-                   @foreach($cart_items as $cart_item)
-                	<tr><th>Product</th></tr>
-                  <tr>
-                   
-                  	<td class="name border">{{$cart_item->name}}<span>x{{$cart_item->quantity}}</span></td>
-                    <td class="price border">Rs. {{$cart_item->price}}</td>
-                   
-                  </tr>
-                  <tr>
-                  	<td class="th">Cart subtotal</td>
-                    <td class="price">{{$cart_item->subtotal}}</td>
-                  </tr>
-                   
-                  <tr>
-                  	<td class="th border">Shipping</td>
-                    <td class="align-r border">Free shipping</td>
-                  </tr>
-                  <tr>
-                  	<td class="th">Order total</td>
-                    <td class="price">Rs. {{$cart_item->total}}</td>
-                  </tr>
-                  @endforeach
-                </table>
-                <!-- <div class="payment-method">
-                	<div class="radio light">
-                  	<label><input type="radio" name="payment" id="payment01" checked> Direct Bank Transfer</label>
-                  </div>
-                  <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
-                	<div class="radio light">
-                  	<label><input type="radio" name="payment" id="payment02"> Cheque Payment</label>
-                  </div>
-                	<div class="radio light">
-                  	<label><input type="radio" name="payment" id="payment03"> PayPal <span class="pp-label"></span></label>
-                  </div>
-                </div> -->
-                <input class="btn btn-success btn-block" type="submit" name="place-order" value="Place order">
-              </div>
-            </form>
-          </div>
-        </div>
+<input name='submit' type='submit' value='Checkout' />
+</form>
+          
       </section><!--Checkout Close-->
       
       <!--Tabs Widget-->
@@ -676,7 +372,7 @@
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/mailer/mailer.js"></script>
 		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/scripts.js"></script>
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/color-switcher.js"></script>
-
+<script src="https://sandbox.2checkout.com/static/checkout/javascript/direct.min.js"></script>
 
 <script type="text/javascript">
   
@@ -694,6 +390,17 @@
     $($target).toggleClass('expanded');
     e.preventDefault();
   });
+
+    var myCallback = function(data) {
+        console.log(JSON.stringify(data));
+        // Example callback data
+        // {"event_type":"checkout_loaded"}
+        // {"event_type":"checkout_closed"}
+    };
+     (function() {
+         inline_2Checkout.subscribe('checkout_loaded', myCallback);
+         inline_2Checkout.subscribe('checkout_closed', myCallback);
+     }());
   
 </script>
   

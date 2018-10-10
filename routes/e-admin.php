@@ -27,7 +27,11 @@ Route::resource('/subcategories','admin\ecommerce\ProductSubCategoryController')
 Route::resource('/countries','admin\ecommerce\CountryController');
 Route::resource('/cities','admin\ecommerce\CityController');
 Route::Resource('/roles','admin\ecommerce\RoleController');
+<<<<<<< HEAD
 Route::resource('/sliders','admin\ecommerce\SliderController');
+=======
+Route::resource('/mainsliders','admin\ecommerce\SliderController');
+>>>>>>> 47671b5834bd9cbe11336712aaf96c3d429b7cd0
 
 //Route::Resource('/roles','admin\ecommerce\SysController');
 
