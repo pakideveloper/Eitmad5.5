@@ -6,6 +6,8 @@ namespace App\Http\Controllers\admin\ecommerce;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Order;
+use App\User;
+use App\Discount;
 use App\Permission;
 use Redirect; 
 use DB;
@@ -21,8 +23,19 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $brand = Order::all();
-        return view('admin/ecommerce/modules/orders/index',compact('brand'));
+        
+       $orders = Order::all();
+       // print_r($orders);
+       // die();
+
+      /* foreach ($orders as $key => $value) {
+           //print_r($value->user);
+               echo $value->user->first_name ;
+                 echo $value->user->first_name ;  
+          }            
+die();*/
+       
+        return view('admin/ecommerce/modules/orders/index',compact('orders'));
     }
 
     /**

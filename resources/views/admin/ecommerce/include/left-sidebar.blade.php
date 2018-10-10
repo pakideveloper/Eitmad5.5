@@ -34,6 +34,16 @@
                                     <li><a href="dashboard_2.html">Dashboard 2</a></li>
                                 </ul>
                             </li>
+                            
+                             <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span>Orders</span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    
+                                   <!--  <li><a href="{{url('/ecommerce/admin/discount')}}/create">Add Discount</a></li> -->
+                                  
+                                    <li><a href="{{url('/ecommerce/admin/orders')}}">View All</a></li>
+                                </ul>
+                            </li>
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-invert-colors"></i> <span>Brand </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
