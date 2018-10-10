@@ -15,13 +15,11 @@ class SliderController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
          $slider = Slider::latest()->get();
          return view('/admin/ecommerce/modules/slider/index',compact('slider')); 
-=======
+
        $mainslider = Slider::latest()->get();
        return view('/admin/ecommerce/modules/mainslider/index',compact('mainslider'));
->>>>>>> 47671b5834bd9cbe11336712aaf96c3d429b7cd0
     }
 
 
