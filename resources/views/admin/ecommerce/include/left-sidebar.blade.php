@@ -54,11 +54,24 @@
                                 <ul class="list-unstyled">
                                     
                                     <li><a href="{{url('/ecommerce/admin/categories')}}/create">add parent category</a></li>
-                                    <li><a href="{{url('/ecommerce/admin/subcategories')}}/create">add sub category</a></li>
+                                    <!-- <li><a href="{{url('/ecommerce/admin/subcategories')}}/create">add sub category</a></li> -->
                                     <li><a href="{{url('/ecommerce/admin/categories')}}">View All Categories</a></li>
+                                    <!-- <li><a href="{{url('/ecommerce/admin/subcategories')}}">View All SubCategories</a></li> -->
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span>Sub-Categories</span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    
+                                    <li><a href="{{url('/ecommerce/admin/subcategories')}}/create">add sub category</a></li>
+                                    
                                     <li><a href="{{url('/ecommerce/admin/subcategories')}}">View All SubCategories</a></li>
                                 </ul>
                             </li>
+
+
+
                                 <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-invert-colors"></i> <span> Roles </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
