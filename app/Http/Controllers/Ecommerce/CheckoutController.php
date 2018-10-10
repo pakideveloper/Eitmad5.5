@@ -68,8 +68,23 @@ class CheckoutController extends Controller
         $billings->region_id = $request->b_region;
         $billings->city_id = $request->b_city;
         $billings->biller_address = $request->b_address;
+        if($request->s_check=='on')
+        {
+        $billings->address_check = 1;
+        }
+        else
+        {
+         $billings->address_check = 0;
+        }
+
         $billings->save();
-        $shippings = new Shipping();
+        
+
+
+        if ($billings->address_check == 1) {
+
+            # code...
+            $shippings = new Shipping();
         $shippings->shipper_first_name = $request->s_f_name;
         $shippings->shipper_last_name = $request->s_l_name;
         $shippings->shipper_email = $request->s_email;
@@ -77,9 +92,24 @@ class CheckoutController extends Controller
         $shippings->country_id = $request->s_country;
         $shippings->region_id = $request->s_region;
         $shippings->city_id = $request->s_city;
-        $shippings->biller_address = $request->s_address;
+        $shippings->shipper_address = $request->s_address;
         $shippings->save();
+        }
+        else
+        {
+            $shippings = new Shipping();
+        $shippings->shipper_first_name = $request->b_f_name;
+        $shippings->shipper_last_name = $request->b_l_name;
+        $shippings->shipper_email = $request->b_email;
+        $shippings->shipper_phone_number = $request->b_phone;
+        $shippings->country_id = $request->b_country;
+        $shippings->region_id = $request->b_region;
+        $shippings->city_id = $request->b_city;
+        $shippings->shipper_address = $request->b_address;
+        $shippings->save();
+        
         return Redirect()->back()->with('status', 'billing successfully!');
+    }
 
 
 
