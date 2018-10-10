@@ -94,7 +94,7 @@
                 <!--Item-->
                 <tr class="item">
                 	<td class="thumb"><a href="{{url('ecommerce/single-product')}}/{{$cart_item->options['product_slug']}}"><img src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$cart_item->options['image']->product_file_name}}" alt="Nikon D4S"/></a></td>
-                  <td class="name"><a href="{{URL::to('public/frontend/ecommerce/assets')}}/shop-single-item-v1.html">{{$cart_item->name}}</a></td>
+                  <td class="name"><a href="{{url('ecommerce/single-product')}}/{{$cart_item->options['product_slug']}}">{{$cart_item->name}}</a></td>
                   <td class="price">Rs. {{$cart_item->price}}</td>
                   <td class="qnt-count">
                     <a class="incr-btn" href="{{URL::to('public/frontend/ecommerce/assets')}}/#">-</a>
@@ -117,7 +117,7 @@
                 	<table>
                   	<tr>
                     	<td>Cart subtotal</td>
-                      <td class="total align-r">2715,00 $</td>
+                      <td class="total align-r">{{Cart::instance('shopping')->subTotal}}</td>
                     </tr>
                   	<tr class="devider">
                     	<td>Shipping</td>
@@ -170,20 +170,23 @@
           </div>
         </div>
       </section><!--Shopping Cart Close-->
-      
+      <?php
+        $products = App\Product::latest()->limit(4)->get();
+      ?>
       <!--Catalog Grid-->
       <section class="catalog-grid">
       	<div class="container">
         	<h2 class="primary-color">Newcomers</h2>
           <div class="row">
+            @foreach($products as $product)
           	<!--Tile-->
           	<div class="col-lg-3 col-md-4 col-sm-6">
             	<div class="tile">
-              	<div class="price-label">715,00 $</div>
-              	<a href="{{URL::to('public/frontend/ecommerce/assets')}}/#"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/catalog/tiles/1.jpg" alt="1"/></a>
+              	<div class="price-label">Rs. {{$product->product_discounted_price}}</div>
+              	<a href="{{url('ecommerce/single-product')}}/{{$cart_item->options['product_slug']}}"><img src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}" alt="1"/></a>
                 <div class="footer">
-                	<a href="{{URL::to('public/frontend/ecommerce/assets')}}/#">Nikon D5300</a>
-                  <span>by Pirate3d</span>
+                	<a href="{{URL::to('public/frontend/ecommerce/assets')}}/#">{{$product->product_name}}</a>
+                  <span>by {{$product->brand->brand_name}}</span>
                   <div class="tools">
                   	<div class="rate">
                     	<span class="active"></span>
@@ -193,7 +196,7 @@
                       <span></span>
                     </div>
                     <!--Add To Cart Button-->
-                    <a class="add-cart-btn" href="{{URL::to('public/frontend/ecommerce/assets')}}/#"><span>To cart</span><i class="icon-shopping-cart"></i></a>
+                    <a class="add-cart-btn" href="{{url('ecommerce/product/addToCart')}}/{{\Crypt::encrypt($product->id)}}"><span>To cart</span><i class="icon-shopping-cart"></i></a>
                     <!--Share Button-->
                     <div class="share-btn">
                     	<div class="hover-state">
@@ -213,195 +216,21 @@
               </div>
             </div>
             <!--Tile-->
-          	<div class="col-lg-3 col-md-4 col-sm-6">
-            	<div class="tile">
-              	<div class="price-label">715,00 $</div>
-              	<a href="{{URL::to('public/frontend/ecommerce/assets')}}/#"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/catalog/tiles/2.jpg" alt="2"/></a>
-                <div class="footer">
-                	<a href="{{URL::to('public/frontend/ecommerce/assets')}}/#">Nikon Coolpix</a>
-                  <span>by Pirate3d</span>
-                  <div class="tools">
-                  	<div class="rate">
-                    	<span class="active"></span>
-                      <span class="active"></span>
-                      <span class="active"></span>
-                      <span></span>
-                      <span></span>
-                    </div>
-                    <!--Add To Cart Button-->
-                    <a class="add-cart-btn" href="{{URL::to('public/frontend/ecommerce/assets')}}/#"><span>To cart</span><i class="icon-shopping-cart"></i></a>
-                    <!--Share Button-->
-                    <div class="share-btn">
-                    	<div class="hover-state">
-                      	<a class="fa fa-facebook-square" href="{{URL::to('public/frontend/ecommerce/assets')}}/#"></a>
-                        <a class="fa fa-twitter-square" href="{{URL::to('public/frontend/ecommerce/assets')}}/#"></a>
-                        <a class="fa fa-google-plus-square" href="{{URL::to('public/frontend/ecommerce/assets')}}/#"></a>
-                      </div>
-                      <i class="fa fa-share"></i>
-                    </div>
-                    <!--Add To Wishlist Button-->
-                    <a class="wishlist-btn" href="{{URL::to('public/frontend/ecommerce/assets')}}/#">
-                    	<div class="hover-state">Wishlist</div>
-                    	<i class="fa fa-plus"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!--Tile-->
-          	<div class="col-lg-3 col-md-4 col-sm-6">
-            	<div class="tile">
-              	<div class="price-label">715,00 $</div>
-              	<a href="{{URL::to('public/frontend/ecommerce/assets')}}/#"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/catalog/tiles/3.jpg" alt="3"/></a>
-                <div class="footer">
-                	<a href="{{URL::to('public/frontend/ecommerce/assets')}}/#">Nikon WP-N3</a>
-                  <span>by Pirate3d</span>
-                  <div class="tools">
-                  	<div class="rate">
-                    	<span class="active"></span>
-                      <span class="active"></span>
-                      <span class="active"></span>
-                      <span></span>
-                      <span></span>
-                    </div>
-                    <!--Add To Cart Button-->
-                    <a class="add-cart-btn" href="{{URL::to('public/frontend/ecommerce/assets')}}/#"><span>To cart</span><i class="icon-shopping-cart"></i></a>
-                    <!--Share Button-->
-                    <div class="share-btn">
-                    	<div class="hover-state">
-                      	<a class="fa fa-facebook-square" href="{{URL::to('public/frontend/ecommerce/assets')}}/#"></a>
-                        <a class="fa fa-twitter-square" href="{{URL::to('public/frontend/ecommerce/assets')}}/#"></a>
-                        <a class="fa fa-google-plus-square" href="{{URL::to('public/frontend/ecommerce/assets')}}/#"></a>
-                      </div>
-                      <i class="fa fa-share"></i>
-                    </div>
-                    <!--Add To Wishlist Button-->
-                    <a class="wishlist-btn" href="{{URL::to('public/frontend/ecommerce/assets')}}/#">
-                    	<div class="hover-state">Wishlist</div>
-                    	<i class="fa fa-plus"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!--Tile-->
-          	<div class="col-lg-3 col-md-4 col-sm-6">
-            	<div class="tile">
-              	<div class="price-label">715,00 $</div>
-              	<a href="{{URL::to('public/frontend/ecommerce/assets')}}/#"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/catalog/tiles/4.jpg" alt="4"/></a>
-                <div class="footer">
-                	<a href="{{URL::to('public/frontend/ecommerce/assets')}}/#">Nikkor 10-30 VR</a>
-                  <span>by Pirate3d</span>
-                  <div class="tools">
-                  	<div class="rate">
-                    	<span class="active"></span>
-                      <span class="active"></span>
-                      <span class="active"></span>
-                      <span></span>
-                      <span></span>
-                    </div>
-                    <!--Add To Cart Button-->
-                    <a class="add-cart-btn" href="{{URL::to('public/frontend/ecommerce/assets')}}/#"><span>To cart</span><i class="icon-shopping-cart"></i></a>
-                    <!--Share Button-->
-                    <div class="share-btn">
-                    	<div class="hover-state">
-                      	<a class="fa fa-facebook-square" href="{{URL::to('public/frontend/ecommerce/assets')}}/#"></a>
-                        <a class="fa fa-twitter-square" href="{{URL::to('public/frontend/ecommerce/assets')}}/#"></a>
-                        <a class="fa fa-google-plus-square" href="{{URL::to('public/frontend/ecommerce/assets')}}/#"></a>
-                      </div>
-                      <i class="fa fa-share"></i>
-                    </div>
-                    <!--Add To Wishlist Button-->
-                    <a class="wishlist-btn" href="{{URL::to('public/frontend/ecommerce/assets')}}/#">
-                    	<div class="hover-state">Wishlist</div>
-                    	<i class="fa fa-plus"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+          	@endforeach
           </div>
         </div>
       </section><!--Catalog Grid Close-->
       
       <!--Brands Carousel Widget-->
-      <section class="brand-carousel">
-      	<div class="container">
-        	<h2>Brands in our shop</h2>
-          <div class="inner">
-          	<a class="item" href="{{URL::to('public/frontend/ecommerce/assets')}}/#"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/brands/jquery.png" alt="jQuery"/></a>
-            <a class="item" href="{{URL::to('public/frontend/ecommerce/assets')}}/#"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/brands/wp.png" alt="WordPress"/></a>
-            <a class="item" href="{{URL::to('public/frontend/ecommerce/assets')}}/#"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/brands/woo.png" alt="WooCommerce"/></a>
-            <a class="item" href="{{URL::to('public/frontend/ecommerce/assets')}}/#"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/brands/android.png" alt="Android"/></a>
-            <a class="item" href="{{URL::to('public/frontend/ecommerce/assets')}}/#"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/brands/macgasm.png" alt="Macgasm"/></a>
-            <a class="item" href="{{URL::to('public/frontend/ecommerce/assets')}}/#"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/brands/dropbox.png" alt="Dropbox"/></a>
-          </div>
-        </div>
-      </section><!--Brands Carousel Close-->
+      @include('frontend/ecommerce/include/brand-crusal')
+     <!--Brands Carousel Close-->
       
     </div><!--Page Content Close-->
     
-    <!--Sticky Buttons-->
-    <div class="sticky-btns">
-    	<form class="quick-contact ajax-form" method="post" name="quick-contact">
-      	<h3>Contact us</h3>
-        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
-        <div class="form-group">
-        	<label for="qc-name">Full name</label>
-          <input class="form-control input-sm" type="text" name="name" id="qc-name" placeholder="Enter full name">
-        </div>
-        <div class="form-group">
-        	<label for="qc-email">Email</label>
-          <input class="form-control input-sm" type="email" name="email" id="qc-email" placeholder="Enter email">
-        </div>
-        <div class="form-group">
-        	<label for="qc-message">Your message</label>
-          <textarea class="form-control input-sm" name="message" id="qc-message" placeholder="Enter your message"></textarea>
-        </div>
-        <!-- Validation Response -->
-        <div class="response-holder"></div>
-        <!-- Response End -->
-        <input class="btn btn-success btn-sm btn-block" type="submit" value="Send">
-      </form>
-    	<span id="qcf-btn"><i class="fa fa-envelope"></i></span>
-      <span id="scrollTop-btn"><i class="fa fa-chevron-up"></i></span>
-    </div><!--Sticky Buttons Close-->
     
-    <!--Subscription Widget-->
-    <section class="subscr-widget">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-7 col-md-8 col-sm-8">
-            <h2 class="light-color">Subscribe to our news</h2>
-            
-            <!--Mail Chimp Subscription Form-->
-            <form class="subscr-form" role="form" action="http://8guild.us3.list-manage.com/subscribe/post?u=168a366a98d3248fbc35c0b67&amp;id=d704057a31" target="_blank" method="post" autocomplete="off">
-              <div class="form-group">
-                <label class="sr-only" for="subscr-name">Enter name</label>
-                <input type="text" class="form-control" name="FNAME" id="subscr-name" placeholder="Enter name" required>
-                <button class="subscr-next"><i class="icon-arrow-right"></i></button>
-              </div>
-              <div class="form-group fff" style="display: none">
-                <label class="sr-only" for="subscr-email">Enter email</label>
-                <input type="email" class="form-control" name="EMAIL" id="subscr-email" placeholder="Enter email" required>
-                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                <div style="position: absolute; left: -5000px;"><input type="text" name="b_168a366a98d3248fbc35c0b67_d704057a31" tabindex="-1" value=""></div>
-                <button type="submit" id="subscr-submit"><i class="icon-check"></i></button>
-              </div>
-            </form>
-            <!--Mail Chimp Subscription Form Close-->
-            <p class="p-style2">Please fill the field before continuing</p>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-lg-offset-1">
-            <p class="p-style3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-          </div>
-        </div>
-      </div>
-    </section><!--Subscription Widget Close-->
-      
-  	<!--Footer-->
+    
+    
      @include('frontend/ecommerce/include/footer')
-     <!--Footer Close-->
     
     <!--Javascript (jQuery) Libraries and Plugins-->
 		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/libs/jquery-1.11.1.min.js"></script>

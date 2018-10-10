@@ -261,7 +261,7 @@
                   <label><span class="text-primary">Ship to a different address?</span> <input type="checkbox" name="ship-to-diff-address" ></label>
                 </div> -->
                 <div class="checkbox form-group">
-      <label><span class="text-primary">Ship to a different address?</span><input type="checkbox"  id="ship-to-diff-address" style="margin-left: 5px;"></label>
+      <label><span class="text-primary">Ship to a different address?</span><input type="checkbox" name="s_check"  id="ship-to-diff-address" style="margin-left: 5px;"></label>
     </div>
                 
               </div>
@@ -368,7 +368,7 @@
                 
                 <div class="form-group">
                   <label for="co-str-adress">Shipping Address *</label>
-                  <textarea  class="form-control" id="co-str-adress" name="s_address" placeholder="Street adress" value = "" required></textarea>
+                  <textarea  class="form-control" id="co-str-adress" name="s_address" placeholder="Street adress"  required></textarea>
                 </div>
                 <!-- <div class="form-group">
                   <label class="sr-only" for="co-appartment">Appartment</label>

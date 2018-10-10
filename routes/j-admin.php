@@ -12,5 +12,7 @@
 */
 //usama
 Route::get('/', function () {
-    return view('admin/job/modules/index');
+    return view('admin/job/modules/dashboard');
 });
+Route::resource('/degree_levels','admin\job\DegreeLevelController');
+Route::resource('/degree_types','admin\job\DegreeTypeController');

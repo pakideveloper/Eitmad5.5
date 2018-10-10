@@ -34,6 +34,16 @@
                                     <li><a href="dashboard_2.html">Dashboard 2</a></li>
                                 </ul>
                             </li>
+                            
+                             <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span>Orders</span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    
+                                   <!--  <li><a href="{{url('/ecommerce/admin/discount')}}/create">Add Discount</a></li> -->
+                                  
+                                    <li><a href="{{url('/ecommerce/admin/orders')}}">View All</a></li>
+                                </ul>
+                            </li>
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-invert-colors"></i> <span>Brand </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
@@ -53,12 +63,25 @@
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span>Categories</span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     
-                                    <li><a href="{{url('/ecommerce/admin/categories')}}/create">add parent category</a></li>
-                                    <li><a href="{{url('/ecommerce/admin/subcategories')}}/create">add sub category</a></li>
-                                    <li><a href="{{url('/ecommerce/admin/categories')}}">View All Categories</a></li>
-                                    <li><a href="{{url('/ecommerce/admin/subcategories')}}">View All SubCategories</a></li>
+                                    <li><a href="{{url('/ecommerce/admin/categories')}}/create">Create</a></li>
+                                    <!-- <li><a href="{{url('/ecommerce/admin/subcategories')}}/create">add sub category</a></li> -->
+                                    <li><a href="{{url('/ecommerce/admin/categories')}}">View All</a></li>
+                                    <!-- <li><a href="{{url('/ecommerce/admin/subcategories')}}">View All SubCategories</a></li> -->
                                 </ul>
                             </li>
+
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span>Sub-Categories</span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    
+                                    <li><a href="{{url('/ecommerce/admin/subcategories')}}/create">Create</a></li>
+                                    
+                                    <li><a href="{{url('/ecommerce/admin/subcategories')}}">View All</a></li>
+                                </ul>
+                            </li>
+
+
+
                                 <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-invert-colors"></i> <span> Roles </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
@@ -122,12 +145,12 @@
                                 </ul>
                             </li>
                              <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span>Main Slider</span> <span class="menu-arrow"></span></a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span> Slider</span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     
-                                    <li><a href="{{url('/ecommerce/admin/mainsliders')}}/create">Add Main Slider</a></li>
+                                    <li><a href="{{url('/ecommerce/admin/sliders')}}/create">Add Slider</a></li>
                                    
-                                    <li><a href="{{url('/ecommerce/admin/mainsliders')}}">View All Main Slider</a></li>
+                                    <li><a href="{{url('/ecommerce/admin/sliders')}}">View All Slider</a></li>
                                 </ul>
                             </li>
                             <li class="has_sub">

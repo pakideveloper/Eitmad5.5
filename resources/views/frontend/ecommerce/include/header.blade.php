@@ -1,5 +1,10 @@
   <!--Header-->
   <meta name="csrf-token" content="{{ csrf_token() }}">
+  <style type="text/css">
+    .logo:hover{
+      text-decoration: none;
+    }
+  </style>
     <header data-offset-top="500" data-stuck="600"><!--data-offset-top is when header converts to small variant and data-stuck when it becomes visible. Values in px represent position of scroll from top. Make sure there is at least 100px between those two values for smooth animation-->
     
       <!--Search Form-->
@@ -19,7 +24,16 @@
     	<div class="right-bg"></div>
       
     	<div class="container">
-      	<a class="logo" href="{{url('home')}}"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/logo.png" alt="Bushido"/></a>
+      	<a class="logo" href="http://localhost/Eitmad5.5/home" style="font-size: 47px; top: 8px;
+    left: 18px;"><!-- <img src="http://localhost/Eitmad5.5/public/frontend/ecommerce/assets/img/logo.png" alt="Bushido"/> --><span style="
+    color: #4dfb4d;
+">E</span><span style="
+    color: #a772ff;
+">i</span><span>t</span><span style="
+    color: red;
+">m</span><span style="
+    color: yellow;
+">a</span><span>d</span></a>
         
         <!--Language / Currency Switchers-->
         <ul class="switchers">
@@ -144,7 +158,11 @@
           <button class="search-btn btn-outlined-invert"><i class="icon-magnifier"></i></button>
           <div class="middle-btns">
             <a class="btn-outlined-invert" href="{{url('/ecommerce/wishlist')}}"><i class="icon-heart"></i> <span>Wishlist</span></a>
+            @if (Auth::guest())
             <a class="login-btn btn-outlined-invert" href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-profile"></i> <span>Login</span></a>
+            @else
+            <a class="login-btn btn-outlined-invert" href="#" ><i class="icon-profile"></i> <span>{{ Auth::user()->first_name }}</span></a>
+            @endif
           </div>
           <div class="cart-btn">
           	<a class="btn btn-outlined-invert" href="{{url('/ecommerce/cart')}}"><i class="icon-shopping-cart-content"></i><span id="head_total_quantity">{{Cart::instance('shopping')->count()}}</span></a>
@@ -165,7 +183,7 @@
                   </tr>
                   @foreach($cart_items as $cart_item)
                   <tr class="item">
-                    <td><div class="delete"></div><a href="#">{{$cart_item->name}}</a></td>
+                    <td><a href="{{url('/ecommerce/removeFromCart')}}/{{$cart_item->rowId}}"><div class="delete"></div></a><a href="{{url('ecommerce/single-product')}}/{{$cart_item->options['product_slug']}}"">{{$cart_item->name}}</a></td>
                     <td><input type="text" id="head_quantity{{\Crypt::decrypt($cart_item->id)}}" value="{{$cart_item->qty}}"></td>
                     <td class="price">Rs. {{$cart_item->price}}</td>
                   </tr>

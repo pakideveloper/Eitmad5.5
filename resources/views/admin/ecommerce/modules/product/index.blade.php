@@ -135,9 +135,9 @@
                                                         <td>{{$product->product_price}}</td>
                                                         <td>{{$product->product_quantity}}</td>
                                                         <td>{{$product->product_discounted_price}}</td>
-                                                        <td>{{$product->sub_category_id}}</td>
+                                                        <td>{{$product->category->sub_category_name}}</td>
                                                         <td>{{$product->brand->brand_name}}</td>
-                                                        <td>{{$product->discount->discount_name}}</td>
+                                                        <td>{{$product->discount->discount_name}}&nbsp;{{$product->discount->discount_percent}}%</td>
 														<td><button class="btn btn-primary waves-effect waves-light" data-toggle="modal" data-target="#full-width-modal{{$product->id}}">Click here</button></td>
                                                         <td><a href="{{url('/ecommerce/admin/products')}}/{{$product->id}}/edit">Edit</a><form id="delete-form{{$product->id}}" 
                                                                 action="{{url('ecommerce/admin/products')}}/{{$product->id}}" method="post">
