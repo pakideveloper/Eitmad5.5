@@ -19,7 +19,16 @@
     	<div class="right-bg"></div>
       
     	<div class="container">
-      	<a class="logo" href="{{url('home')}}"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/logo.png" alt="Bushido"/></a>
+      	<a class="logo" href="http://localhost/Eitmad5.5/home" style="font-size: 47px; top: 8px;
+    left: 18px;"><!-- <img src="http://localhost/Eitmad5.5/public/frontend/ecommerce/assets/img/logo.png" alt="Bushido"/> --><span style="
+    color: #4dfb4d;
+">E</span><span style="
+    color: #a772ff;
+">i</span><span>t</span><span style="
+    color: red;
+">m</span><span style="
+    color: yellow;
+">a</span><span>d</span></a>
         
         <!--Language / Currency Switchers-->
         <ul class="switchers">
@@ -165,7 +174,7 @@
                   </tr>
                   @foreach($cart_items as $cart_item)
                   <tr class="item">
-                    <td><div class="delete"></div><a href="#">{{$cart_item->name}}</a></td>
+                    <td><a href="{{url('/ecommerce/removeFromCart')}}/{{$cart_item->rowId}}"><div class="delete"></div></a><a href="{{url('ecommerce/single-product')}}/{{$cart_item->options['product_slug']}}"">{{$cart_item->name}}</a></td>
                     <td><input type="text" id="head_quantity{{\Crypt::decrypt($cart_item->id)}}" value="{{$cart_item->qty}}"></td>
                     <td class="price">Rs. {{$cart_item->price}}</td>
                   </tr>

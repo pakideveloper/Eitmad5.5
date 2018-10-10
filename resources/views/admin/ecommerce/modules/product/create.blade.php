@@ -135,7 +135,7 @@
                                                     <div class="form-group {{$errors->has('product_description') ? 'has-error' : ''}}" >
                                                         <label for="product-name">Product Description<span class="text-danger">*</span></label>
                                                         <input type="text" name="product_description" parsley-trigger="change" 
-                                                               placeholder="Enter product name" class="form-control" id="userName" value="{{ old('product_description') }}">
+                                                               placeholder="Enter product description" class="form-control" id="userName" value="{{ old('product_description') }}">
                                                         @if ($errors->has('product_description'))
                                                             <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('product_description') }}.</li></ul>
                                                         @endif
@@ -151,7 +151,7 @@
                                                     <div class="form-group {{$errors->has('product_colour') ? 'has-error' : ''}}">
                                                         <label for="product_colour">Product Color<span class="text-danger">*</span></label>
                                                         <input type="text" name="product_colour" parsley-trigger="change"
-                                                               placeholder="Enter product size" class="form-control" id="product_colour" value="{{ old('product_colour') }}">
+                                                               placeholder="Enter product color" class="form-control" id="product_colour" value="{{ old('product_colour') }}">
                                                         @if ($errors->has('product_colour'))
                                                             <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('product_colour') }}.</li></ul>
                                                         @endif
@@ -159,7 +159,7 @@
                                                     <div class="form-group {{$errors->has('product_price') ? 'has-error' : ''}}">
                                                         <label for="product_price">Product Price<span class="text-danger">*</span></label>
                                                         <input type="text" name="product_price" parsley-trigger="change"
-                                                               placeholder="Enter product size" class="form-control" id="product_price" value="{{ old('product_price') }}">
+                                                               placeholder="Enter product price" class="form-control" id="product_price" value="{{ old('product_price') }}">
                                                         @if ($errors->has('product_price'))
                                                             <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('product_price') }}.</li></ul>
                                                         @endif
@@ -167,7 +167,7 @@
                                                     <div class="form-group {{$errors->has('product_quantity') ? 'has-error' : ''}}">
                                                         <label for="product_quantity">Product Quantity<span class="text-danger">*</span></label>
                                                         <input type="text" name="product_quantity" parsley-trigger="change"
-                                                               placeholder="Enter product size" class="form-control" id="product_quantity" value="{{ old('product_quantity') }}">
+                                                               placeholder="Enter product quantity" class="form-control" id="product_quantity" value="{{ old('product_quantity') }}">
                                                         @if ($errors->has('product_quantity'))
                                                             <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('product_quantity') }}.</li></ul>
                                                         @endif
@@ -432,7 +432,7 @@
                      
                         $.each(features, function(index, feature) { 
                         feature_s = feature.replace(/\s+/g, '');                             
-                            content = '<div class="form-group ">                                                    <label for="product_'+feature_s+'">Product '+feature+'<span class="text-danger">*</span></label>                                                        <input type="text" name="product_'+feature_s+'" parsley-trigger="change"                                                               placeholder="Enter product size" class="form-control" id="product_'+feature_s+'"  }}">                                                   </div>'                        
+                            content = '<div class="form-group ">                                                    <label for="product_'+feature_s+'">Product '+feature+'<span class="text-danger">*</span></label>                                                        <input type="text" name="product_'+feature_s+'" parsley-trigger="change"                                                               placeholder="Enter product '+feature+'" class="form-control" id="product_'+feature_s+'"  }}">                                                   </div>'                        
                             $("#features_div").append(content);
                                                     
                         });
