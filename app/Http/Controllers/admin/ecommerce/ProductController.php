@@ -209,10 +209,11 @@ class ProductController extends Controller
             $product_file->product_file_extension = $file_type;
             $product_file -> save();
             $this->updateFileDelete($product->title_img_id);
+            $product = Product::find($product->id);
+            $product->title_img_id = $product_file->id;
+            $product->update();
         }
-        $product = Product::find($product->id);
-        $product->title_img_id = $product_file->id;
-        $product->update();
+        
 
         if ($request->images) {
             $images = $request->images;

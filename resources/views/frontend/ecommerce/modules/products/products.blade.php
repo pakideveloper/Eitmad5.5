@@ -212,6 +212,9 @@
           	<div class="col-lg-9 col-md-9 col-sm-8">
             	<div class="row">
                 <!--Tile-->
+                @if($products == '')
+                <p>No products found</p>
+                @endif
                 @foreach($products as $product)
                 <div class="col-lg-4 col-md-6 col-sm-12">
                   <div class="tile">
