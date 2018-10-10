@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Job;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use DB;
 use App\Company;
 use File;
@@ -42,7 +43,7 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        
+        $this->registartion_validation($request);
     }
 
     /**

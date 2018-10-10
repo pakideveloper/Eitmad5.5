@@ -36,4 +36,4 @@ Route::get('/addcompany', function () {
 
 
 /////////// Company Registration /////
-Route::resource('company_registration', 'CompanyController');
+Route::resource('company_registration', 'Job\CompanyController');
