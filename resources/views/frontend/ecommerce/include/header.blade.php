@@ -1,5 +1,10 @@
   <!--Header-->
   <meta name="csrf-token" content="{{ csrf_token() }}">
+  <style type="text/css">
+    .logo:hover{
+      text-decoration: none;
+    }
+  </style>
     <header data-offset-top="500" data-stuck="600"><!--data-offset-top is when header converts to small variant and data-stuck when it becomes visible. Values in px represent position of scroll from top. Make sure there is at least 100px between those two values for smooth animation-->
     
       <!--Search Form-->
