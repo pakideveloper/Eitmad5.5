@@ -12,8 +12,8 @@
 */
 //usama
 Route::get('/', function () {
-	$mainslider = App\Slider::latest()->get();
-    return view('frontend/ecommerce/modules/index',compact('mainslider'));
+	$slider = App\Slider::latest()->get();
+    return view('frontend/ecommerce/modules/index',compact('slider'));
 });
 
 Route::get('/items', function () {

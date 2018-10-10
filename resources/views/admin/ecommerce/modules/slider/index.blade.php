@@ -84,16 +84,16 @@
                            <div class="row">
                             <div class="col-xs-12">
                                 <div class="page-title-box">
-                                    <h4 class="page-title">Brands </h4>
+                                    <h4 class="page-title">Sliders </h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
                                             <a href="#">Admin</a>
                                         </li>
                                         <li>
-                                            <a href="#">Brands </a>
+                                            <a href="#">Sliders </a>
                                         </li>
                                         <li class="active">
-                                            Brands List
+                                            Sliders List
                                         </li>
                                     </ol>
                                     <div class="clearfix"></div>
@@ -107,46 +107,48 @@
                                 <div class="card-box">
 
                                     <div class="table-rep-plugin">
-                                        <h4 class="m-t-0 header-title"><b>All Brands</b></h4>
+                                        <h4 class="m-t-0 header-title"><b>All Sliders</b></h4>
                                         <div class="table-responsive" data-pattern="priority-columns">
                                             <table id="tech-companies-1" class="table  table-striped">
                                                 <thead>
                                                     <tr>
                                                         <th>Id</th>
                                                         <th data-priority="1">Title</th>
-                                                        <th data-priority="1">Descrition</th>
+                                                        <th data-priority="1">Description</th>
+                                                        <th data-priority="1">Slider Type</th>
                                                         <th data-priority="3">Created at</th>
                                                         <th data-priority="1">Updated at</th>
                                                         <th data-priority="3">Actions</th>                           
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                   @foreach($mainslider as $Vmainslider)
+                                                   @foreach($slider as $Vslider)
                                                     <tr>
                                                         
-                                                        <td>{{$Vmainslider->id}}</td>
-                                                        <th>{{$Vmainslider->title}}</th>
-                                                        <th>{{$Vmainslider->description}}</th>
-                                                        <td><?php $monthNum  = Carbon\Carbon::parse($Vmainslider->created_at)->format('m');
+                                                        <td>{{$Vslider->id}}</td>
+                                                        <th>{{$Vslider->title}}</th>
+                                                        <th>{{$Vslider->description}}</th>
+                                                        <th>{{$Vslider->slider_type}}</th>
+                                                        <td><?php $monthNum  = Carbon\Carbon::parse($Vslider->created_at)->format('m');
                                                 $dateObj   = DateTime::createFromFormat('!m', $monthNum);
                                                 $monthName = $dateObj->format('F'); 
                                                 echo $monthName; // March?>
-                                                {{ Carbon\Carbon::parse($Vmainslider->created_at)->format('d,Y') }}</td>
-                                                        <td><?php $monthNum  = Carbon\Carbon::parse($Vmainslider->created_at)->format('m');
+                                                {{ Carbon\Carbon::parse($Vslider->created_at)->format('d,Y') }}</td>
+                                                        <td><?php $monthNum  = Carbon\Carbon::parse($Vslider->created_at)->format('m');
                                                 $dateObj   = DateTime::createFromFormat('!m', $monthNum);
                                                 $monthName = $dateObj->format('F'); 
                                                 echo $monthName; // March?>
-                                                {{ Carbon\Carbon::parse($Vmainslider->updated_at)->format('d,Y') }}</td> 
+                                                {{ Carbon\Carbon::parse($Vslider->updated_at)->format('d,Y') }}</td> 
                                                         <td>
-                                                             <a href="{{url('/ecommerce/admin/mainsliders')}}/{{$Vmainslider->id}}/edit" style="float: left;">
+                                                             <a href="{{url('/ecommerce/admin/sliders')}}/{{$Vslider->id}}/edit" style="float: left;">
                                                                 <i class="fa fa-pencil"></i>
                                                             </a>
-                                                            <form id="delete-form{{$Vmainslider->id}}" 
-                                                                action="{{url('/ecommerce/admin/mainsliders')}}/{{$Vmainslider->id}}" method="post">
+                                                            <form id="delete-form{{$Vslider->id}}" 
+                                                                action="{{url('/ecommerce/admin/sliders')}}/{{$Vslider->id}}" method="post">
                                                                 {{csrf_field() }}
                                                                 {{ method_field('DELETE') }}
                                                                  
-                                                                <i  onclick="return deleteCategory({{$Vmainslider->id}});" class="fa fa-trash-o" style="cursor: pointer;     margin-left: 10px;     color: red;"></i>
+                                                                <i  onclick="return deleteCategory({{$Vslider->id}});" class="fa fa-trash-o" style="cursor: pointer;     margin-left: 10px;     color: red;"></i>
                                                             </form>
                                                         </td>                     
                                                     </tr>
@@ -204,7 +206,7 @@
         <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.app.js"></script>
 
         <!-- page specific js -->
-        <script src="{{URL::to('public/admin/ecommerce')}}/customAssets/js/jquery.fileuploads.mainslider.init.js"></script>
+        <script src="{{URL::to('public/admin/ecommerce')}}/customAssets/js/jquery.fileuploads.sliders.init.js"></script>
           <script type="text/javascript">
         var deleteCategory = function(id){
         if (confirm('Are you sure you want to delete this?')) {

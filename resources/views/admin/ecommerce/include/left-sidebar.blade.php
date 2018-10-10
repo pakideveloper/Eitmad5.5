@@ -122,12 +122,12 @@
                                 </ul>
                             </li>
                              <li class="has_sub">
-                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span>Main Slider</span> <span class="menu-arrow"></span></a>
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span> Slider</span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     
-                                    <li><a href="{{url('/ecommerce/admin/mainsliders')}}/create">Add Main Slider</a></li>
+                                    <li><a href="{{url('/ecommerce/admin/sliders')}}/create">Add Slider</a></li>
                                    
-                                    <li><a href="{{url('/ecommerce/admin/mainsliders')}}">View All Main Slider</a></li>
+                                    <li><a href="{{url('/ecommerce/admin/sliders')}}">View All Slider</a></li>
                                 </ul>
                             </li>
                             <li class="has_sub">
