@@ -88,11 +88,18 @@
             <div class="col-lg-6 col-md-6">
             	<div class="prod-gal master-slider" id="prod-gal">
               	<!--Slide1-->
+                
+                <div class="ms-slide">
+                  <img src="{{URL::to('public/frontend/ecommerce/assets')}}/masterslider/blank.gif" data-src="{{URL::to('public/admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}" alt="Lorem ipsum"/>
+                  <img class="ms-thumb" src="{{URL::to('public/admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}" alt="thumb" />
+                </div>                
                 @foreach($product->files as $file)
+                @if($file->id != $product->title_img_id)
                 <div class="ms-slide">
                 	<img src="{{URL::to('public/frontend/ecommerce/assets')}}/masterslider/blank.gif" data-src="{{URL::to('public/admin/ecommerce/upload/products')}}/{{$file->product_file_name}}" alt="Lorem ipsum"/>
                   <img class="ms-thumb" src="{{URL::to('public/admin/ecommerce/upload/products')}}/{{$file->product_file_name}}" alt="thumb" />
                 </div>
+                @endif
                 @endforeach
               	
               	
