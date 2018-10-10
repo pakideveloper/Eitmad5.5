@@ -211,7 +211,7 @@
       </div>
     </section><!--Subscription Widget Close-->
       
-    @include('frontend/ecommerce/include/footer')
+    @include('frontend/general/include/footer')
     <!--Javascript (jQuery) Libraries and Plugins-->
     <script src="{{url::to('public/frontend/ecommerce/assets')}}/js/libs/jquery-1.11.1.min.js"></script>
     <script src="{{url::to('public/frontend/ecommerce/assets')}}/js/libs/jquery-ui-1.10.4.custom.min.js"></script>

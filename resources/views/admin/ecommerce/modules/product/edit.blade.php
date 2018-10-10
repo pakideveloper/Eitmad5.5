@@ -153,9 +153,11 @@
 
                                                     <div class="form-group m-b-20">
                                                         <div class="row">
+                                                            <h4>Title image</h4>
                                                         
                                                         @foreach($product->files as $file)
                                                         @if (strtolower($file->product_file_extension) == 'jpg' || strtolower($file->product_file_extension) == 'png' || strtolower($file->product_file_extension) == 'jpeg')
+                                                        @if($product->title_img_id == $file->id)
                                                         <div class="col-xs-6">
                                                            
                                                             <!-- copy -->
@@ -164,6 +166,26 @@
                                                             <center><span id="{{$file->id}}" class=" close-image faClose{{$file->id}}" style="cursor: pointer; color: red">Delete</span></center>
                                                         </div>
                                                         
+                                                        @endif
+                                                        @endif
+                                                        @endforeach
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group m-b-20">
+                                                        <div class="row">
+                                                            <h4>Slider images</h4>
+                                                        @foreach($product->files as $file)
+                                                        @if (strtolower($file->product_file_extension) == 'jpg' || strtolower($file->product_file_extension) == 'png' || strtolower($file->product_file_extension) == 'jpeg')
+                                                        @if($product->title_img_id != $file->id)
+                                                        <div class="col-xs-6">
+                                                           
+                                                            <!-- copy -->
+                                                            <center><img class="image{{$file->id}}" src="{{URL::to('public/admin')}}/ecommerce/upload/products/{{$file->product_file_name}}" style="width: 162px; height: 150px; padding-bottom: 19px;">
+                                                                </center>
+                                                            <center><span id="{{$file->id}}" class=" close-image faClose{{$file->id}}" style="cursor: pointer; color: red">Delete</span></center>
+                                                        </div>
+                                                        
+                                                        @endif
                                                         @endif
                                                         @endforeach                        
                                                     </div>
@@ -235,8 +257,17 @@
                                                         @endforeach
                                                     </select>
                                                 </div>
+                                                <div class="form-group m-b-20 {{$errors->has('images') ? 'has-error' : ''}}">
+                                                    <label for="">Title Image</label>
+                                                    <div class="col-sm-12 padding-left-0 padding-right-0">
+                                                            <input type="file" name="title_image" id="filer_input3">
+                                                            @if ($errors->has('title_image'))
+                                                                <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('title_image') }}.</li></ul>
+                                                            @endif
+                                                    </div>
+                                                </div>
                                                 <div class="form-group m-b-20"">
-                                                    <label for="">Upload Images</label>
+                                                    <label for="">Slider Images</label>
                                                     <div class="col-sm-12 padding-left-0 padding-right-0">
                                                             <input type="file" name="images[]" id="filer_input2"
                                                                multiple="multiple">
@@ -365,6 +396,7 @@
 
         <!-- page specific js -->
         <script src="{{URL::to('public/admin/ecommerce')}}/assets/pages/jquery.fileuploads.init.js"></script>
+        <script src="{{URL::to('public/admin/ecommerce')}}/customAssets/js/jquery.fileuploads.product.init.js"></script>
 
         <script type="text/javascript">
             $.ajaxSetup({

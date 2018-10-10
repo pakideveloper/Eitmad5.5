@@ -191,6 +191,30 @@ class ProductController extends Controller
         $product->other_features = json_encode($features_array);
         $product->update();
 
+
+        $title_image = $request->title_image[0];
+        if ($request->title_image) {
+            $product_file = new Product_File();
+            $product_file->product_id = $product->id;                
+            $file_name = $title_image -> getClientOriginalName();
+            $file_name = uniqid().$file_name;
+            $file_name = preg_replace('/\s+/', '', $file_name);
+            $file_type = $title_image->getClientOriginalExtension();
+            $title_image -> move(public_path().'/admin/ecommerce/upload/products', $file_name);
+            $file_size = $title_image->getClientSize();
+            $file_size = $file_size/1000;
+            $file_size = $file_size.' '.'kb';
+            $product_file->product_file_name = $file_name;
+            $product_file->product_file_size = $file_size;
+            $product_file->product_file_extension = $file_type;
+            $product_file -> save();
+            $this->updateFileDelete($product->title_img_id);
+            $product = Product::find($product->id);
+            $product->title_img_id = $product_file->id;
+            $product->update();
+        }
+        
+
         if ($request->images) {
             $images = $request->images;
             foreach ($images as $key => $image) {
@@ -256,6 +280,19 @@ class ProductController extends Controller
       
         return response()->json(['code'=>200,'success' => $request->id],200);
     }
+    public function updateFileDelete($id)
+    {
+        $file = Product_File::find($id);
+        $file_name=$file->product_file_name;
+        $dir = public_path()."/admin/ecommerce/upload/products/";        
+        $dirHandle = opendir($dir);
+        while ($fil = readdir($dirHandle)) {
+            if($fil==$file_name) {
+                    unlink($dir.'/'.$fil);
+            }
+        }
+        $file->delete();
+    }
     public function getFeatures($id){
         $sub_category = Product_Sub_Category::find($id);
         $features = json_decode($sub_category->feature_names);
@@ -272,6 +309,7 @@ class ProductController extends Controller
             'sub_category_id.required' => 'please select product category',
             'discount_id.required' => 'please select iscount type',
             'brand_id.required' => 'please select brand ',
+            'title_image.required' => 'please select title image',
             'images.required' => 'please select at least one image',
             
         ];
@@ -285,12 +323,13 @@ class ProductController extends Controller
             'sub_category_id' => 'required',
             'discount_id' => 'required', 
             'brand_id' => 'required',            
+            'title_image' => 'required',            
             'images' => 'required',            
         ],$messages);
     }
 
     public function storeValidation_second(Request $request, $id){
-        // echo $request->product_operatingsystem ;
+        // echo "ss" ;
         // die();
         $messages = [
             'product_name.required' => 'please enter product name',
@@ -302,6 +341,7 @@ class ProductController extends Controller
             'sub_category_id.required' => 'please select product category',
             'discount_id.required' => 'please select iscount type',
             'brand_id.required' => 'please select brand ',
+            'title_image.required' => 'please select title image',
             'images.required' => 'please select at least one image',
             
         ];
@@ -315,6 +355,7 @@ class ProductController extends Controller
             'sub_category_id' => 'required',
             'discount_id' => 'required', 
             'brand_id' => 'required',            
+            'title_image' => 'required',            
             'images' => 'required',            
         ];
 

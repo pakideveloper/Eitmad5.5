@@ -269,7 +269,7 @@
                                                         <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('discount_id') }}.</li></ul>
                                                     @endif
                                                 </div>
-                                                <div class="form-group m-b-20 {{$errors->has('images') ? 'has-error' : ''}}">
+                                                <div class="form-group m-b-20 {{$errors->has('title_image') ? 'has-error' : ''}}">
                                                     <label for="">Title Image</label>
                                                     <div class="col-sm-12 padding-left-0 padding-right-0">
                                                             <input type="file" name="title_image" id="filer_input3">
@@ -279,7 +279,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group m-b-20 {{$errors->has('images') ? 'has-error' : ''}}">
-                                                    <label for="">Upload Images</label>
+                                                    <label for="">Slider Images</label>
                                                     <div class="col-sm-12 padding-left-0 padding-right-0">
                                                             <input type="file" name="images[]" id="filer_input2"
                                                                multiple="multiple">
