@@ -28,8 +28,8 @@ Route::resource('/countries','admin\ecommerce\CountryController');
 Route::resource('/cities','admin\ecommerce\CityController');
 Route::Resource('/roles','admin\ecommerce\RoleController');
 Route::resource('/mainsliders','admin\ecommerce\SliderController');
+Route::Resource('/orders','admin\ecommerce\OrderController');
 
-//Route::Resource('/roles','admin\ecommerce\SysController');
 
 
 /*Route::get('abc', function(){
