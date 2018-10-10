@@ -160,7 +160,7 @@ class BrandController extends Controller
     {
       $brand = Brand::find($id);
       $brand->delete();
-      return redirect('/admin/brands');
+      return redirect('/ecommerce/admin/brands');
     }
     public function storeValidate(Request $request){
        
