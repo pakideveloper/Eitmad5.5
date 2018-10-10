@@ -82,7 +82,7 @@ class CartController extends Controller
     }
 
     public function test(Request $request){
-        // Cart::instance('shopping')->destroy();
+        Cart::instance('shopping')->destroy();
         $cart_items = Cart::instance('shopping')->content();
         // // print_r($cart_items);
         foreach ($cart_items as $key => $value) {
