@@ -94,7 +94,7 @@
                 <!--Item-->
                 <tr class="item">
                 	<td class="thumb"><a href="{{url('ecommerce/single-product')}}/{{$cart_item->options['product_slug']}}"><img src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$cart_item->options['image']->product_file_name}}" alt="Nikon D4S"/></a></td>
-                  <td class="name"><a href="{{URL::to('public/frontend/ecommerce/assets')}}/shop-single-item-v1.html">{{$cart_item->name}}</a></td>
+                  <td class="name"><a href="{{url('ecommerce/single-product')}}/{{$cart_item->options['product_slug']}}">{{$cart_item->name}}</a></td>
                   <td class="price">Rs. {{$cart_item->price}}</td>
                   <td class="qnt-count">
                     <a class="incr-btn" href="{{URL::to('public/frontend/ecommerce/assets')}}/#">-</a>
@@ -117,7 +117,7 @@
                 	<table>
                   	<tr>
                     	<td>Cart subtotal</td>
-                      <td class="total align-r">2715,00 $</td>
+                      <td class="total align-r">{{Cart::instance('shopping')->subTotal}}</td>
                     </tr>
                   	<tr class="devider">
                     	<td>Shipping</td>

@@ -118,7 +118,7 @@
                   <a class="incr-btn" href="#">+</a>
                 </div>
                 <a class="btn btn-primary btn-sm"  href="{{url('ecommerce/product/addToCart')}}/{{\Crypt::encrypt($product->id)}}"><i class="icon-shopping-cart"></i>Add to cart</a>
-                <input type="hidden" id="product_id" value="{{\Crypt::encrypt($product->id)}}" name="product_id">
+                <!-- <input type="hidden" id="product_id" value="{{\Crypt::encrypt($product->id)}}" name="product_id"> -->
                 <a class="btn btn-success btn-sm" href="#"><i class="icon-heart"></i>Add to wishlist</a>
               </div>
               <p class="p-style2">{{$product->product_description}}</p>
