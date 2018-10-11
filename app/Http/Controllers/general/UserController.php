@@ -1,20 +1,10 @@
 <?php
 
+namespace App\Http\Controllers;
 
-namespace App\Http\Controllers\admin\ecommerce;
-//use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Order;
-use App\User;
-use App\Discount;
-use App\Permission;
-use Redirect; 
-use DB;
-use Alert;
 
-
-class OrderController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,19 +13,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        
-       $orders = Order::all();
-       // print_r($orders);
-       // die();
-
-      /* foreach ($orders as $key => $value) {
-           //print_r($value->user);
-               echo $value->user->first_name ;
-                 echo $value->user->first_name ;  
-          }            
-die();*/
-       
-        return view('admin/ecommerce/modules/orders/index',compact('orders'));
+        //
     }
 
     /**

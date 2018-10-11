@@ -30,3 +30,10 @@ Route::get('/contactus', function () {
 Route::get('/addjob', function () {
     return view('frontend/JobPortal/pages/AddJob');
 });
+Route::get('/addcompany', function () {
+    return view('frontend/JobPortal/pages/company/addcompany');
+});
+
+
+/////////// Company Registration /////
+Route::resource('company_registration', 'Job\CompanyController');

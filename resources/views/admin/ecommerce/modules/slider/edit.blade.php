@@ -86,16 +86,16 @@
                             <div class="col-xs-12">
                                 <div class="page-title-box">
 
-                                    <h4 class="page-title">Brands </h4>
+                                    <h4 class="page-title">Sliders </h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
                                             <a href="#">Admin</a>
                                         </li>
                                         <li>
-                                            <a href="#">Brands </a>
+                                            <a href="#">Sliders </a>
                                         </li>
                                         <li class="active">
-                                            Create New Brand
+                                            Create New Sliders
                                         </li>
                                     </ol>
                                     <div class="clearfix"></div>
@@ -114,15 +114,16 @@
                                     <div class="row">
                                         
 
-                                            <h4 class="header-title m-t-0">Create New Brand</h4>
+                                        <h4 class="header-title m-t-0">Create New Sliders</h4>
                                             
-                                                <form action="{{url('/ecommerce/admin/mainsliders')}}" method="post" enctype="multipart/form-data" >
+                                                <form action="{{url('/ecommerce/admin/sliders')}}/{{$slider->id}}" method="post" enctype="multipart/form-data" >
                                                     {{csrf_field()}}
+                                                    {{ method_field('PUT')}}
                                                     <div class="p-20">
                                                     <div class="form-group col-sm-6 col-md-6 {{$errors->has('title') ? 'has-error' : ''}}">
                                                         <label for="Title">Title<span class="text-danger">*</span></label>
                                                         <input type="text" name="title" parsley-trigger="change"
-                                                               placeholder="Enter Title" class="form-control" value="{{ old('title') }}">
+                                                               placeholder="Enter Title" class="form-control" value="{{$slider->title}}">
                                                         @if ($errors->has('title'))
                                                             <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('title') }}.</li></ul>
                                                         @endif
@@ -130,12 +131,19 @@
                                                      <div class="form-group col-sm-6 col-md-6 {{$errors->has('description') ? 'has-error' : ''}}">
                                                         <label for="Description">Description<span class="text-danger">*</span></label>
                                                         <input type="text" name="description" parsley-trigger="change"
-                                                               placeholder="Enter Description" class="form-control" value="{{ old('description') }}">
+                                                               placeholder="Enter Description" class="form-control" value="{{$slider->description}}">
                                                         @if ($errors->has('description'))
                                                             <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('description') }}.</li></ul>
                                                         @endif
                                                     </div>
-                                                </div>
+                                                     <div class="form-group col-sm-6 col-md-6 {{$errors->has('slider_type') ? 'has-error' : ''}}">
+                                                        <label for="Slider Type">Slider Type<span class="text-danger">*</span></label>
+                                                        <input type="text" name="slider_type" parsley-trigger="change"
+                                                        placeholder="Enter Slider Type" class="form-control" value="{{$slider->slider_type}}">
+                                                        @if ($errors->has('slider_type'))
+                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('slider_type') }}.</li></ul>
+                                                        @endif
+                                                    </div>
                                                     
                                               
                                            
@@ -151,6 +159,15 @@
                                                             @endif
                                                     </div>
                                                 </div>
+                                                <div class="images">
+                                                        <div></div>
+                                                        <div class="col-md-6">
+                                                            <!-- copy -->
+                                                            <img class="image{{$slider->id}}" src="{{URL::to('public/admin')}}/upload/sliders/{{$slider->image_name}}" style="width: 162px; padding-bottom: 30px;">
+                                                        </div>                       
+                                                    </div>      
+                                                </div>
+                                                
                                          </div>
                                     </div>
                              </div>
@@ -221,7 +238,7 @@
         <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.app.js"></script>
 
         <!-- page specific js -->
-        <script src="{{URL::to('public/admin/ecommerce')}}/customAssets/js/jquery.fileuploads.mainsliders.init.js"></script>
+        <script src="{{URL::to('public/admin/ecommerce')}}/customAssets/js/jquery.fileuploads.sliders.init.js"></script>
         
     </body>
 

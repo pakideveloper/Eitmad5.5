@@ -15,6 +15,9 @@ class SliderController extends Controller
      */
     public function index()
     {
+         $slider = Slider::latest()->get();
+         return view('/admin/ecommerce/modules/slider/index',compact('slider')); 
+
        $mainslider = Slider::latest()->get();
        return view('/admin/ecommerce/modules/mainslider/index',compact('mainslider'));
     }
@@ -27,7 +30,7 @@ class SliderController extends Controller
      */
     public function create()
     {
-       return view('/admin/ecommerce/modules/mainslider/create');   
+       return view('/admin/ecommerce/modules/slider/create');   
     }
 
     /**
@@ -39,27 +42,28 @@ class SliderController extends Controller
     public function store(Request $request)
     {
         $this->storeValidate($request);
-        $mainslider = new Slider();
-        $mainslider->title = $request->title;
-        $mainslider->description = $request->description;
+        $slider = new Slider();
+        $slider->title = $request->title;
+        $slider->description = $request->description;
+        $slider->slider_type = $request->slider_type;
         if ($request->file)
         {
         $file_name = $request->file-> getClientOriginalName();
         $file_name = uniqid().$file_name;
         $file_name = preg_replace('/\s+/', '', $file_name);
         $file_type = $request->file->getClientOriginalExtension();
-        $request->file-> move(public_path().'/admin/upload/mainsliders',$file_name);
+        $request->file-> move(public_path().'/admin/upload/sliders',$file_name);
         $file_size = $request->file->getClientSize();
         $file_size = $file_size/1000;
         $file_size = $file_size.' '.'kb';
-        $new_path = url('/').'/public/admin/upload/mainsliders'.$file_name;
-        $mainslider->image_name = $file_name;
-        $mainslider->image_size = $file_size;
-        $mainslider->image_extension = $file_type;
-        $mainslider->image_url = $new_path;
+        $new_path = url('/').'/public/admin/upload/sliders'.$file_name;
+        $slider->image_name = $file_name;
+        $slider->image_size = $file_size;
+        $slider->image_extension = $file_type;
+        $slider->image_url = $new_path;
     }
-        $mainslider->save();
-        return Redirect()->back()->with('status', 'Main Slider added successfully!');
+        $slider->save();
+        return Redirect()->back()->with('status', 'Slider added successfully!');
     }
 
     /**
@@ -81,8 +85,8 @@ class SliderController extends Controller
      */
     public function edit($id)
     {
-        $mainslider = Slider::find($id);
-        return view('admin/ecommerce/modules/mainslider/edit', compact('mainslider'));
+        $slider = Slider::find($id);
+        return view('admin/ecommerce/modules/slider/edit', compact('slider'));
 
     }
 
@@ -96,28 +100,28 @@ class SliderController extends Controller
     public function update(Request $request, $id)
     {
       
-        $mainslider = Slider::find($id);
-        $mainslider->title = $request->title;
-        $mainslider->description = $request->description;
-
+        $slider = Slider::find($id);
+        $slider->title = $request->title;
+        $slider->description = $request->description;
+        $slider->slider_type = $request->slider_type;
         if ($request->file)
         {
         $file_name = $request->file -> getClientOriginalName();
         $file_name = uniqid().$file_name;
         $file_name = preg_replace('/\s+/', '', $file_name);
         $file_type = $request->file->getClientOriginalExtension();
-        $request->file-> move(public_path().'/admin/upload/mainsliders',$file_name);
+        $request->file-> move(public_path().'/admin/upload/sliders',$file_name);
         $file_size = $request->file->getClientSize();
         $file_size = $file_size/1000;
         $file_size = $file_size.' '.'kb';
-        $new_path = url('/').'/public/admin/upload/mainsliders'.$file_name;
-        $mainslider->image_name = $file_name;
-        $mainslider->image_size = $file_size;
-        $mainslider->image_extension = $file_type;
-        $mainslider->image_url = $new_path; 
+        $new_path = url('/').'/public/admin/upload/sliders'.$file_name;
+        $slider->image_name = $file_name;
+        $slider->image_size = $file_size;
+        $slider->image_extension = $file_type;
+        $slider->image_url = $new_path; 
         }
-        $mainslider->update();
-        return Redirect()->back()->with('status', 'Main Slider updated successfully!');
+        $slider->update();
+        return Redirect()->back()->with('status', 'Slider updated successfully!');
        }
     /**
      * Remove the specified resource from storage.
@@ -125,11 +129,23 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+     public function destroy($id)
     {
-      $mainslider = Slider::find($id);
-      $mainslider->delete();
-      return redirect()->back()->with('status', 'successfully deleted!');
+        $slider = Slider::find($id);
+         
+         //Storage::delete(public_path().'/backendAssets/assets/images/services/'.$s->image);
+         //Storage::disk('C')->delete(public_path().'/backendAssets/assets/images/services/'.$s->image);
+    $data=$slider->image_name;
+    $dir = public_path().'/admin/upload/sliders/';
+    $dirHandle = opendir($dir);
+    while ($file = readdir($dirHandle)) {
+                                         if($file==$data) {
+                                                    unlink($dir.'/'.$file);
+                                         }
+    }
+    //Storage::disk('s3')->delete('$dir' . $data);
+        $slider->delete();
+        return Redirect('/ecommerce/admin/sliders');
     }
     public function storeValidate(Request $request){
        
