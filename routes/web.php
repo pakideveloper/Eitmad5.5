@@ -19,3 +19,4 @@ Auth::routes();
 Route::get('/home', function () {
     return view('frontend/general/index');
 });
+

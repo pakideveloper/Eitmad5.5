@@ -152,7 +152,7 @@
 <input type='hidden' name='country' value='USA' />
 <input type='hidden' name='email' value='example@2co.com' />
 <input type='hidden' name='phone' value='614-921-2450' />
-
+<input type="hidden" name="_token" value='{{ csrf_token() }}' />
 <input name='submit' type='submit' value='Checkout' />
 </form>
           

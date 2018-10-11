@@ -138,7 +138,8 @@
           
           <!--Checkout Form-->
           <div class="row">
-          	<form action="{{url('/ecommerce/checkout')}}" id="checkout-form" method="post">
+          	<!-- <form action="{{url('/ecommerce/checkout')}}" id="checkout-form" method="post"> -->
+              <form action="https://sandbox.2checkout.com/checkout/purchase" id="checkout-form" method="post">
             	{{ csrf_field()}}
               <!--Left Column-->
               <div class="col-lg-8 col-md-8 col-sm-8">
@@ -260,11 +261,14 @@
                 <!-- <div class="checkbox form-group" >
                   <label><span class="text-primary">Ship to a different address?</span> <input type="checkbox" name="ship-to-diff-address" ></label>
                 </div> -->
+
+
+
                 <div class="checkbox form-group">
-      <label><span class="text-primary">Ship to a different address?</span><input type="checkbox" name="s_check"  id="ship-to-diff-address" style="margin-left: 5px;"></label>
-    </div>
+                <label><span class="text-primary">Ship to a different address?</span><input type="checkbox" name="s_check"  id="ship-to-diff-address" style="margin-left: 5px;"></label>
+                </div>
                 
-              </div>
+                </div>
 
 
                       <div id="shippingdetails" class="col-lg-8 col-md-8 col-sm-8"  style="display: none;">
@@ -443,19 +447,40 @@
                   </tr>
                   @endforeach
                 </table>
-                <!-- <div class="payment-method">
+                <div class="payment-method">
                 	<div class="radio light">
                   	<label><input type="radio" name="payment" id="payment01" checked> Direct Bank Transfer</label>
                   </div>
                   <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
                 	<div class="radio light">
-                  	<label><input type="radio" name="payment" id="payment02"> Cheque Payment</label>
+                  	<label><input type="radio" name="payment" id="payment02"> Online Payment </label>
                   </div>
                 	<div class="radio light">
-                  	<label><input type="radio" name="payment" id="payment03"> PayPal <span class="pp-label"></span></label>
+                  	<label><input type="radio" name="payment" id="payment03"> Cash On Delivery 
+                      <!-- <span class="pp-label"></span> -->
+                    </label>
                   </div>
-                </div> -->
-                <input class="btn btn-success btn-block" type="submit" name="place-order" value="Place order">
+                </div>
+                
+                <input type='hidden' name='sid' value='901394952' />
+                  <input type='hidden' name='mode' value='2CO' />
+                  <input type='hidden' name='li_0_type' value='product' />
+                  <input type='hidden' name='li_0_name' value='invoice123' />
+                  <input type='hidden' name='li_0_price' value='25.99' />
+                  <input type='hidden' name='card_holder_name' value='Checkout Shopper' />
+                  <input type='hidden' name='street_address' value='123 Test Address' />
+                  <input type='hidden' name='street_address2' value='Suite 200' />
+                  <input type='hidden' name='city' value='Columbus' />
+                  <input type='hidden' name='state' value='OH' />
+                  <input type='hidden' name='zip' value='43228' />
+                  <input type='hidden' name='country' value='USA' />
+                  <input type='hidden' name='email' value='example@2co.com' />
+                  <input type='hidden' name='phone' value='614-921-2450' />
+
+
+
+
+                <input class="btn btn-success btn-block" type="submit" name="place-order" value="Place Order">
               </div>
             </form>
           </div>
@@ -676,6 +701,7 @@
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/mailer/mailer.js"></script>
 		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/scripts.js"></script>
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/color-switcher.js"></script>
+    <script src="https://sandbox.2checkout.com/static/checkout/javascript/direct.min.js"></script>
 
 
 <script type="text/javascript">
