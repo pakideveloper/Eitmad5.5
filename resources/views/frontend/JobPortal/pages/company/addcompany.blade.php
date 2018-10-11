@@ -99,6 +99,7 @@
 										<label>Ownership Type</label>
 										<!-- <input class="form-control" placeholder="Enter your name" id="input-name" value="" name="jobname" required="" type="text"> -->
 										<select class="form-control" name="ownership_type">
+											<option value="">--Select one--</option>
 											<option value="1">Public</option>
 											<option value="2">Private</option>
 										</select>
@@ -112,6 +113,7 @@
 										<label>Industry</label>
 										<!-- <input class="form-control" id="input-email" placeholder="you@yourdomain.com" value="" name="email" required="" type="text"> -->
 										<select class="form-control" name="industry_id">
+											<option value="">--Select one--</option>
 											<option value="1">Technology</option>
 											<option value="2">Electronics</option>
 										</select>
@@ -138,6 +140,7 @@
 										<label>Country</label>
 										<!-- <input class="form-control" placeholder="Enter your name" id="input-name" value="" name="jobname" required="" type="text"> -->
 										<select class="form-control" name="country">
+											<option value="">--Select one--</option>
 											<option value="pakistan">Pakistan</option>
 											<option value="India">India</option>
 										</select>
@@ -150,6 +153,7 @@
 									<div class="col-sm-6 {{ $errors->has('city_id') ? ' has-error' : '' }}">
 										<label>City</label>
 										<select class="form-control" name="city_id">
+											<option value="">--Select one--</option>
 											<option value="1">Lahore</option>
 											<option value="2">Karachi</option>
 										</select>
@@ -164,7 +168,7 @@
 								<div class="form-group">
 									<div class="col-sm-6">
 										<label>Company URL</label>
-										<input class="form-control" placeholder="Enter your name" id="input-name" name="jobname" type="text">
+										<input class="form-control" placeholder="Enter your name" id="input-name" name="company_url" type="text">
 									</div>
 									<div class="col-sm-6 {{ $errors->has('company_phone') ? ' has-error' : '' }}">
 										<label>Company Phone</label>
@@ -188,17 +192,17 @@
 									</div>
 									<div class="col-sm-6">
 										<label>Conatact Person</label>
-										<input class="form-control" id="input-email" placeholder="you@yourdomain.com" name="email" type="text">
+										<input class="form-control" id="input-email" placeholder="Enter person name" name="contact_person" type="text">
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-6">
 										<label>No of Employees</label>
-										<input class="form-control" placeholder="Enter your name" id="input-name" name="jobname" type="text">
+										<input class="form-control" placeholder="Enter number of employees" id="input-name" name="no_of_employees" type="text">
 									</div>
 									<div class="col-sm-6">
 										<label>Operating Since</label>
-										<input class="form-control" id="input-email" placeholder="you@yourdomain.com" name="email" type="text">
+										<input class="form-control" id="input-email" placeholder="" name="operating_since" type="text">
 									</div>
 								</div>
 								<div class="form-group">
@@ -213,14 +217,14 @@
 									</div>
 									<div class="col-sm-6">
 										<label>SECP Company ID</label>
-										<input class="form-control" id="input-email" placeholder="you@yourdomain.com" name="email" type="text">
+										<input class="form-control" id="input-email" placeholder="" name="secp_id" type="text">
 									</div>
 								</div>
 
 								<div class="form-group">
 									<div class="col-sm-12">
 										<label>Company Logo</label>
-										<input class="form-control" id="input-subject" placeholder="" name="email" type="file">
+										<input class="form-control" id="input-subject" placeholder="" name="company_logo" type="file">
 									</div>
 								</div>
 								
@@ -239,13 +243,17 @@
 									</div>
 									<div class="col-sm-6">
 										<label>Contact No.</label>
-										<input class="form-control" id="input-email" placeholder="you@yourdomain.com" name="email" type="text">
+										<input class="form-control" id="input-email" placeholder="you@yourdomain.com" name="ceo_contact" type="text">
 									</div>
 								</div>
 								<div class="form-group">
-									<div class="col-sm-12">
+									<div class="col-sm-6">
 										<label>CEO Email</label>
-										<input class="form-control" id="input-subject" placeholder="" name="email" type="text">
+										<input class="form-control" id="input-subject" placeholder="" name="ceo_email" type="text">
+									</div>
+									<div class="col-sm-6">
+										<label>CEO CNIC</label>
+										<input class="form-control" id="input-email" placeholder="" name="ceo_cnic" type="text">
 									</div>
 								</div>
 
