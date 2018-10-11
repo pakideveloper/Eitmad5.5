@@ -37,12 +37,9 @@ Route::Resource('/orders','admin\ecommerce\OrderController');
 	return view('admin/ecommerce/modules/roles/index');
 
 }); */
-
-
 // Discount
 Route::resource('/discount','admin\ecommerce\DiscountController');
 //Discount end
-
 // Region
 Route::resource('/region','admin\ecommerce\RegionController');
 //Region end
@@ -50,5 +47,9 @@ Route::resource('/region','admin\ecommerce\RegionController');
 // Area
 Route::resource('/area','admin\ecommerce\AreaController');
 //Area end
+//User
+Route::resource('/users','admin\ecommerce\UserController');
+//User end
+Route::post('RoleUpdate','admin\ecommerce\UserController@update2');
 // fetching cities on selecting country
 Route::get('/area/cities/{id}/cities.json','admin\ecommerce\CityController@cities');
