@@ -160,7 +160,9 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <div class="col-sm-6">
-                                                        Name:&nbsp;<b>{{$user -> first_name}}</b>
+                                                Name:&nbsp;<b>{{$user -> first_name}}&nbsp;
+                                                {{$user -> last_name}}
+                                                </b>
                                                     </div>
                                                     <div class="col-sm-6">
                                                         Select Roles
