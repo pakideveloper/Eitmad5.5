@@ -138,7 +138,7 @@
           
           <!--Checkout Form-->
           <div class="row">
-          	<form action="{{url('/ecommerce/checkout')}}" id="checkout-form" method="post">
+          	<form action="{{url('/ecommerce/ship_bill_details')}}" id="checkout-form" method="post">
               <!-- <form action="https://sandbox.2checkout.com/checkout/purchase" id="checkout-form" method="post"> -->
             	{{ csrf_field()}}
               <!--Left Column-->

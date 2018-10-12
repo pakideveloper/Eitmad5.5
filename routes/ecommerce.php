@@ -76,5 +76,6 @@ Route::get('/product/addToCart/{id}', 'Ecommerce\Cart\CartController@addToCart')
 Route::get('/removeFromCart/{rowId}', 'Ecommerce\Cart\CartController@romoveOne');
 Route::Resource('/checkout', 'Ecommerce\CheckoutController');
 Route::get('/callback', 'Ecommerce\PaymentCheckoutController@callback');
+Route::post('/ship_bill_details', 'Ecommerce\PaymentCheckoutController@create');
 
 
