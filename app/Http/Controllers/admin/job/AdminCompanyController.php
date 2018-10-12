@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Job;
+namespace App\Http\Controllers\admin\Job;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
 use Redirect;
 
-class CompanyController extends Controller
+class AdminCompanyController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +23,10 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        //
+        $companies = Company::paginate(3);
+
+        return view('admin/job/modules/Company/allcompanies', compact('companies'));
+
     }
 
     /**
@@ -134,7 +137,13 @@ class CompanyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $company = Company::find($id);
+        $ceo_id = $company->company_ceo_id;
+
+        $company->delete();
+        $ceo = CEO_Info::find($ceo_id);
+        $ceo->delete();
+         return Redirect()->back()->with('status', 'Company record has been deleted successfully!');
     }
 
      public function registartion_validation(Request $request)
@@ -168,4 +177,15 @@ class CompanyController extends Controller
         ],$messages);
 
     }
+
+    public function UpdateStatus(Request $request)
+    {
+        $id = $request->company_id;
+        $company = Company::find($id);
+        $company->status = $request->company_status;
+        $company->update();
+      
+        return response()->json(['code'=>200,'success' => $request->id],200);
+    }
+
 }

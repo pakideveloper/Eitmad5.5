@@ -30,10 +30,18 @@ Route::get('/contactus', function () {
 Route::get('/addjob', function () {
     return view('frontend/JobPortal/pages/AddJob');
 });
-Route::get('/addcompany', function () {
-    return view('frontend/JobPortal/pages/company/addcompany');
-});
 
 
 /////////// Company Registration /////
+Route::get('/addcompany', function () {
+	$industries = App\Industry::all();
+	$countries = App\country::all();
+    return view('frontend/JobPortal/pages/company/addcompany', compact('industries', 'countries'));
+});
+
 Route::resource('company_registration', 'Job\CompanyController');
+
+	// fetching cities off country on add company page
+Route::get('/addcompany/cities/{country}/cities.json', function($country){
+    return App\City::where('country_id',$country)->get();
+});

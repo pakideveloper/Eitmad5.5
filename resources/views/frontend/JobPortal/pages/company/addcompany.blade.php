@@ -23,6 +23,8 @@
 <link href="{{URL::to('public/JobPortal_Frontend/assets')}}/js/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css" />
 <!--bootstrap select-->
 <link href="{{URL::to('public/JobPortal_Frontend/assets')}}/js/dist/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+<!--bootstrap datepicker-->
+<link href="{{URL::to('public/JobPortal_Frontend/assets')}}/css/datepicker.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <!-- header start -->
@@ -99,8 +101,12 @@
 										<label>Ownership Type</label>
 										<!-- <input class="form-control" placeholder="Enter your name" id="input-name" value="" name="jobname" required="" type="text"> -->
 										<select class="form-control" name="ownership_type">
-											<option value="1">Public</option>
-											<option value="2">Private</option>
+											<option value="">--Select one--</option>
+											<option value="Public">Public</option>
+											<option value="Private">Private</option>
+											<option value="Sole Proprietorship">Sole Proprietorship</option>
+											<option value="Government">Government</option>
+											<option value="NGO">NGO</option>
 										</select>
 										@if ($errors->has('ownership_type'))
                                                         <span class="help-block">
@@ -112,8 +118,10 @@
 										<label>Industry</label>
 										<!-- <input class="form-control" id="input-email" placeholder="you@yourdomain.com" value="" name="email" required="" type="text"> -->
 										<select class="form-control" name="industry_id">
-											<option value="1">Technology</option>
-											<option value="2">Electronics</option>
+											<option value="">--Select one--</option>
+											@foreach($industries as $industry)
+											<option value="{{$industry->id}}">{{$industry->industry_name}}</option>
+											@endforeach
 										</select>
 										@if ($errors->has('industry_id'))
                                                         <span class="help-block">
@@ -137,9 +145,11 @@
 									<div class="col-sm-6 {{ $errors->has('country') ? ' has-error' : '' }}">
 										<label>Country</label>
 										<!-- <input class="form-control" placeholder="Enter your name" id="input-name" value="" name="jobname" required="" type="text"> -->
-										<select class="form-control" name="country">
-											<option value="pakistan">Pakistan</option>
-											<option value="India">India</option>
+										<select class="form-control" name="country" id="country">
+											<option value="">--Select one--</option>
+											@foreach($countries as $country)
+											<option value="{{$country->id}}">{{$country->country_name}}</option>
+											@endforeach
 										</select>
 										@if ($errors->has('country'))
                                                         <span class="help-block">
@@ -149,9 +159,9 @@
 									</div>
 									<div class="col-sm-6 {{ $errors->has('city_id') ? ' has-error' : '' }}">
 										<label>City</label>
-										<select class="form-control" name="city_id">
-											<option value="1">Lahore</option>
-											<option value="2">Karachi</option>
+										<select class="form-control" id="city_id" name="city_id">
+											<option value="">-Select country first-</option>
+											
 										</select>
 										<!-- <input  id="input-email" placeholder="you@yourdomain.com" value="{{ old('company_address') }}"  required="" type="text"> -->
 										@if ($errors->has('city_id'))
@@ -164,7 +174,7 @@
 								<div class="form-group">
 									<div class="col-sm-6">
 										<label>Company URL</label>
-										<input class="form-control" placeholder="Enter your name" id="input-name" name="jobname" type="text">
+										<input class="form-control" placeholder="Enter your name" id="input-name" name="company_url" type="text">
 									</div>
 									<div class="col-sm-6 {{ $errors->has('company_phone') ? ' has-error' : '' }}">
 										<label>Company Phone</label>
@@ -188,17 +198,21 @@
 									</div>
 									<div class="col-sm-6">
 										<label>Conatact Person</label>
-										<input class="form-control" id="input-email" placeholder="you@yourdomain.com" name="email" type="text">
+										<input class="form-control" id="input-email" placeholder="Enter person name" name="contact_person" type="text">
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-6">
 										<label>No of Employees</label>
-										<input class="form-control" placeholder="Enter your name" id="input-name" name="jobname" type="text">
+										<input class="form-control" placeholder="Enter number of employees" id="input-name" name="no_of_employees" type="text">
 									</div>
 									<div class="col-sm-6">
 										<label>Operating Since</label>
-										<input class="form-control" id="input-email" placeholder="you@yourdomain.com" name="email" type="text">
+										<!-- <input class="form-control" id="operating_since" placeholder="" name="operating_since" type="text"> -->
+										<div class="input-append date" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+  <input class="form-control span2" size="16" type="text" placeholder="dd-mm-yyyy">
+  <span class="add-on"><i class="icon-th"></i></span>
+</div>
 									</div>
 								</div>
 								<div class="form-group">
@@ -213,14 +227,14 @@
 									</div>
 									<div class="col-sm-6">
 										<label>SECP Company ID</label>
-										<input class="form-control" id="input-email" placeholder="you@yourdomain.com" name="email" type="text">
+										<input class="form-control" id="input-email" placeholder="" name="secp_id" type="text">
 									</div>
 								</div>
 
 								<div class="form-group">
 									<div class="col-sm-12">
 										<label>Company Logo</label>
-										<input class="form-control" id="input-subject" placeholder="" name="email" type="file">
+										<input class="form-control" id="input-subject" placeholder="" name="company_logo" type="file">
 									</div>
 								</div>
 								
@@ -239,13 +253,17 @@
 									</div>
 									<div class="col-sm-6">
 										<label>Contact No.</label>
-										<input class="form-control" id="input-email" placeholder="you@yourdomain.com" name="email" type="text">
+										<input class="form-control" id="input-email" placeholder="you@yourdomain.com" name="ceo_contact" type="text">
 									</div>
 								</div>
 								<div class="form-group">
-									<div class="col-sm-12">
+									<div class="col-sm-6">
 										<label>CEO Email</label>
-										<input class="form-control" id="input-subject" placeholder="" name="email" type="text">
+										<input class="form-control" id="input-subject" placeholder="" name="ceo_email" type="text">
+									</div>
+									<div class="col-sm-6">
+										<label>CEO CNIC</label>
+										<input class="form-control" id="input-email" placeholder="" name="ceo_cnic" type="text">
 									</div>
 								</div>
 
@@ -282,6 +300,45 @@
 <script src="{{URL::to('public/JobPortal_Frontend/assets')}}/js/internal.js" type="text/javascript"></script>
 <!-- color switcher-->
 <script src="{{URL::to('public/JobPortal_Frontend/assets')}}/js/switcher.js" type="text/javascript"></script>
+<!-- Date picker-->
+<script src="{{URL::to('public/JobPortal_Frontend/assets')}}/js/bootstrap-datepicker.js" type="text/javascript"></script>
+
+  <script>
+  $( function() {
+    $( "#dp3" ).datepicker();
+  } );
+  </script>
+
+	<!-- fetch cities off country -->
+	 <script type="text/javascript">
+        $(document).ready(function(){
+           // demo.initChartist();
+            
+           $('#country').change(function(){
+                // alert('test');
+                $.get('addcompany/cities/' + this.value + '/cities.json', function(cities)
+                {
+                    console.log(cities);
+                    var $city_id = $('#city_id');
+
+                    $city_id.find('option').remove().end();
+                    if (cities!='') {
+                       $.each(cities, function(index, city) {
+                        $city_id.append('<option value="' + city.id + '">' + city.city_name + '</option>');
+                    }); 
+                    }
+                    else{
+                         $city_id.append('<option>No city found</option>');
+                    }
+                    
+                });
+            });
+
+           
+        });
+
+        
+    </script>
 </body>
 
 <!-- Mirrored from ocsolutions.co.in/html/jobportal/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 31 Aug 2018 10:24:23 GMT -->
