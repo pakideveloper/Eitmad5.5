@@ -138,8 +138,8 @@
           
           <!--Checkout Form-->
           <div class="row">
-          	<!-- <form action="{{url('/ecommerce/checkout')}}" id="checkout-form" method="post"> -->
-              <form action="https://sandbox.2checkout.com/checkout/purchase" id="checkout-form" method="post">
+          	<form action="{{url('/ecommerce/checkout')}}" id="checkout-form" method="post">
+              <!-- <form action="https://sandbox.2checkout.com/checkout/purchase" id="checkout-form" method="post"> -->
             	{{ csrf_field()}}
               <!--Left Column-->
               <div class="col-lg-8 col-md-8 col-sm-8">
@@ -447,9 +447,9 @@
                   </tr>
                   @endforeach
                 </table>
-                <div class="payment-method">
+                <!-- <div class="payment-method">
                 	<div class="radio light">
-                  	<label><input type="radio" name="payment" id="payment01" checked> Direct Bank Transfer</label>
+                  	<label><input type="radio" name="payment" id="payment01" value="bt" checked> Direct Bank Transfer</label>
                   </div>
                   <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
                 	<div class="radio light">
@@ -457,16 +457,21 @@
                   </div>
                 	<div class="radio light">
                   	<label><input type="radio" name="payment" id="payment03"> Cash On Delivery 
-                      <!-- <span class="pp-label"></span> -->
+                      <span class="pp-label"></span>
                     </label>
                   </div>
                 </div>
-                
+ -->
+                <!-- <?php
+            $cart_items = Cart::instance('shopping')->content();
+            ?>
+            @foreach($cart_items as $cart_item)
+                {{csrf_field()}}
                 <input type='hidden' name='sid' value='901394952' />
                   <input type='hidden' name='mode' value='2CO' />
                   <input type='hidden' name='li_0_type' value='product' />
-                  <input type='hidden' name='li_0_name' value='invoice123' />
-                  <input type='hidden' name='li_0_price' value='25.99' />
+                  <input type='hidden' name='li_0_name' value='{{$cart_item->name}} ' />
+                  <input type='hidden' name='li_0_price' value='{{$cart_item->price}}' />
                   <input type='hidden' name='card_holder_name' value='Checkout Shopper' />
                   <input type='hidden' name='street_address' value='123 Test Address' />
                   <input type='hidden' name='street_address2' value='Suite 200' />
@@ -475,14 +480,20 @@
                   <input type='hidden' name='zip' value='43228' />
                   <input type='hidden' name='country' value='USA' />
                   <input type='hidden' name='email' value='example@2co.com' />
+
                   <input type='hidden' name='phone' value='614-921-2450' />
+                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                  @endforeach -->
+                            
 
 
-
-
+                
                 <input class="btn btn-success btn-block" type="submit" name="place-order" value="Place Order">
+               
               </div>
+             
             </form>
+            
           </div>
         </div>
       </section><!--Checkout Close-->
@@ -710,6 +721,13 @@
     $('#ship-to-diff-address').change(function () {
              $('#shippingdetails').toggle();
                 
+            
+        });
+
+    $('#payment01').change(function () {
+      if (this.checked) {
+            document.myform.action = '/edit';
+                }
             
         });
 

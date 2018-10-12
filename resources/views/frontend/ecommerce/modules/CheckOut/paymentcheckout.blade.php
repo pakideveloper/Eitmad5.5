@@ -135,6 +135,22 @@
               </div>
             </div>
           </div>
+          <div class="payment-method">
+                  <div class="radio light">
+                    <label><input type="radio" name="payment" id="payment01" value="bt" checked> Direct Bank Transfer</label>
+                  </div>
+                  <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
+                  <div class="radio light">
+                    <label><input type="radio" name="payment" id="payment02"> Online Payment </label>
+                  </div>
+                  <div class="radio light">
+                    <label><input type="radio" name="payment" id="payment03"> Cash On Delivery 
+                      <!-- <span class="pp-label"></span> -->
+                    </label>
+                  </div>
+                </div>
+
+
           
           <!--Checkout Form-->
           <form action='https://sandbox.2checkout.com/checkout/purchase' method='post'>
@@ -153,7 +169,7 @@
 <input type='hidden' name='email' value='example@2co.com' />
 <input type='hidden' name='phone' value='614-921-2450' />
 <input type="hidden" name="_token" value='{{ csrf_token() }}' />
-<input name='submit' type='submit' value='Checkout' />
+<input class="btn btn-success btn-block" name='submit' type='submit' value='Finalize Your Order' />
 </form>
           
       </section><!--Checkout Close-->
