@@ -1,9 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
-
+namespace App\Http\Controllers\admin\ecommerce;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
-
+use App\User;
+use App\Role;
+use DB;
 class UserController extends Controller
 {
     /**
@@ -13,7 +16,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::latest()->paginate(15);
+        $roles = Role::all();
+        return view('/admin/ecommerce/modules/users/index',compact('users','roles'));
     }
 
     /**
@@ -70,7 +75,22 @@ class UserController extends Controller
     {
         //
     }
+     public function update2(Request $request)
+    {
+        
+    $this->validate($request, [
+    'role' => 'required',
 
+    ]);
+         $id = $request->input('user_id');
+        $user = User::find($id);
+        $role =$request->role;
+        
+        DB::table('role_user')->where('user_id',$id)->delete();
+        
+            $user ->attachRole($role);
+        return Redirect()->back();
+    }
     /**
      * Remove the specified resource from storage.
      *
