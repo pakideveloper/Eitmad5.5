@@ -23,6 +23,8 @@
 <link href="{{URL::to('public/JobPortal_Frontend/assets')}}/js/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css" />
 <!--bootstrap select-->
 <link href="{{URL::to('public/JobPortal_Frontend/assets')}}/js/dist/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+<!--bootstrap datepicker-->
+<link href="{{URL::to('public/JobPortal_Frontend/assets')}}/css/datepicker.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <!-- header start -->
@@ -100,8 +102,11 @@
 										<!-- <input class="form-control" placeholder="Enter your name" id="input-name" value="" name="jobname" required="" type="text"> -->
 										<select class="form-control" name="ownership_type">
 											<option value="">--Select one--</option>
-											<option value="1">Public</option>
-											<option value="2">Private</option>
+											<option value="Public">Public</option>
+											<option value="Private">Private</option>
+											<option value="Sole Proprietorship">Sole Proprietorship</option>
+											<option value="Government">Government</option>
+											<option value="NGO">NGO</option>
 										</select>
 										@if ($errors->has('ownership_type'))
                                                         <span class="help-block">
@@ -114,8 +119,9 @@
 										<!-- <input class="form-control" id="input-email" placeholder="you@yourdomain.com" value="" name="email" required="" type="text"> -->
 										<select class="form-control" name="industry_id">
 											<option value="">--Select one--</option>
-											<option value="1">Technology</option>
-											<option value="2">Electronics</option>
+											@foreach($industries as $industry)
+											<option value="{{$industry->id}}">{{$industry->industry_name}}</option>
+											@endforeach
 										</select>
 										@if ($errors->has('industry_id'))
                                                         <span class="help-block">
@@ -139,10 +145,11 @@
 									<div class="col-sm-6 {{ $errors->has('country') ? ' has-error' : '' }}">
 										<label>Country</label>
 										<!-- <input class="form-control" placeholder="Enter your name" id="input-name" value="" name="jobname" required="" type="text"> -->
-										<select class="form-control" name="country">
+										<select class="form-control" name="country" id="country">
 											<option value="">--Select one--</option>
-											<option value="pakistan">Pakistan</option>
-											<option value="India">India</option>
+											@foreach($countries as $country)
+											<option value="{{$country->id}}">{{$country->country_name}}</option>
+											@endforeach
 										</select>
 										@if ($errors->has('country'))
                                                         <span class="help-block">
@@ -152,10 +159,9 @@
 									</div>
 									<div class="col-sm-6 {{ $errors->has('city_id') ? ' has-error' : '' }}">
 										<label>City</label>
-										<select class="form-control" name="city_id">
-											<option value="">--Select one--</option>
-											<option value="1">Lahore</option>
-											<option value="2">Karachi</option>
+										<select class="form-control" id="city_id" name="city_id">
+											<option value="">-Select country first-</option>
+											
 										</select>
 										<!-- <input  id="input-email" placeholder="you@yourdomain.com" value="{{ old('company_address') }}"  required="" type="text"> -->
 										@if ($errors->has('city_id'))
@@ -202,7 +208,11 @@
 									</div>
 									<div class="col-sm-6">
 										<label>Operating Since</label>
-										<input class="form-control" id="input-email" placeholder="" name="operating_since" type="text">
+										<!-- <input class="form-control" id="operating_since" placeholder="" name="operating_since" type="text"> -->
+										<div class="input-append date" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+  <input class="form-control span2" size="16" type="text" placeholder="dd-mm-yyyy">
+  <span class="add-on"><i class="icon-th"></i></span>
+</div>
 									</div>
 								</div>
 								<div class="form-group">
@@ -290,6 +300,45 @@
 <script src="{{URL::to('public/JobPortal_Frontend/assets')}}/js/internal.js" type="text/javascript"></script>
 <!-- color switcher-->
 <script src="{{URL::to('public/JobPortal_Frontend/assets')}}/js/switcher.js" type="text/javascript"></script>
+<!-- Date picker-->
+<script src="{{URL::to('public/JobPortal_Frontend/assets')}}/js/bootstrap-datepicker.js" type="text/javascript"></script>
+
+  <script>
+  $( function() {
+    $( "#dp3" ).datepicker();
+  } );
+  </script>
+
+	<!-- fetch cities off country -->
+	 <script type="text/javascript">
+        $(document).ready(function(){
+           // demo.initChartist();
+            
+           $('#country').change(function(){
+                // alert('test');
+                $.get('addcompany/cities/' + this.value + '/cities.json', function(cities)
+                {
+                    console.log(cities);
+                    var $city_id = $('#city_id');
+
+                    $city_id.find('option').remove().end();
+                    if (cities!='') {
+                       $.each(cities, function(index, city) {
+                        $city_id.append('<option value="' + city.id + '">' + city.city_name + '</option>');
+                    }); 
+                    }
+                    else{
+                         $city_id.append('<option>No city found</option>');
+                    }
+                    
+                });
+            });
+
+           
+        });
+
+        
+    </script>
 </body>
 
 <!-- Mirrored from ocsolutions.co.in/html/jobportal/contact.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 31 Aug 2018 10:24:23 GMT -->

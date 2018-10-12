@@ -16,3 +16,7 @@ Route::get('/', function () {
 });
 Route::resource('/degree_levels','admin\job\DegreeLevelController');
 Route::resource('/degree_types','admin\job\DegreeTypeController');
+
+///////////COMPANIES///////////
+Route::resource('companies','admin\job\AdminCompanyController');
+Route::post('companies/updateStatus','admin\job\AdminCompanyController@UpdateStatus');
