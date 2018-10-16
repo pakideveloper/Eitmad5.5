@@ -217,8 +217,8 @@
 									<div class="col-sm-6">
 										<label>Operating Since</label>
 										<!-- <input class="form-control" id="operating_since" placeholder="" name="operating_since" type="text"> -->
-										<div class="input-append date" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
-  <input class="form-control span2" size="16" type="text" placeholder="dd-mm-yyyy">
+										<div class="input-append date" id="dp3" data-date="" data-date-format="dd-mm-yyyy">
+  <input class="form-control span2" size="16" type="text" placeholder="dd-mm-yyyy" name="operating_since" id="operating_since">
   <span class="add-on"><i class="icon-th"></i></span>
 </div>
 									</div>
@@ -261,7 +261,7 @@
 									</div>
 									<div class="col-sm-6">
 										<label>Contact No.</label>
-										<input class="form-control" id="ceo_contact" placeholder="you@yourdomain.com" name="ceo_contact">
+										<input class="form-control" id="ceo_contact" placeholder="" name="ceo_contact">
 									</div>
 								</div>
 								<div class="form-group">
@@ -271,7 +271,7 @@
 									</div>
 									<div class="col-sm-6">
 										<label>CEO CNIC</label>
-										<input class="form-control" id="ceo_cnic" placeholder="" name="ceo_cnic" type="text">
+										<input class="form-control" id="ceo_cnic" placeholder="xxxxx-xxxxxxx-x" name="ceo_cnic" type="text">
 									</div>
 								</div>
 
@@ -353,7 +353,7 @@
     <script type="text/javascript">
     	$.validator.setDefaults({
 		submitHandler: function() {
-			alert("submitted!");
+			$("#addcompanyform").submit();
 		}
 	});
     	$().ready(function() {
@@ -430,28 +430,28 @@
 			}
     		});
 
-    		$('#company_phone').blur(function(e) {
-        if (validatePhone('company_phone')) {
-            $('#spnPhoneStatus').html('Valid');
-            $('#spnPhoneStatus').css('color', 'green');
-        }
-        else {
-            $('#spnPhoneStatus').html('Invalid');
-            $('#spnPhoneStatus').css('color', 'red');
-        }
-    });
+    // 		$('#company_phone').blur(function(e) {
+    //     if (validatePhone('company_phone')) {
+    //         $('#spnPhoneStatus').html('Valid');
+    //         $('#spnPhoneStatus').css('color', 'green');
+    //     }
+    //     else {
+    //         $('#spnPhoneStatus').html('Invalid');
+    //         $('#spnPhoneStatus').css('color', 'red');
+    //     }
+    // });
     	});
 
-    	function validatePhone(company_phone) {
-    var a = document.getElementById(company_phone).value;
-    var filter = /^[0-9-+]+$/;
-    if (filter.test(a) && a.length==12) {
-        return true;
-    }
-    else {
-        return false;
-    }
-};
+//     	function validatePhone(company_phone) {
+//     var a = document.getElementById(company_phone).value;
+//     var filter = /^[0-9-+]+$/;
+//     if (filter.test(a) && a.length==12) {
+//         return true;
+//     }
+//     else {
+//         return false;
+//     }
+// };
 
     	$('#ceo_cnic').keydown(function(){
 
@@ -469,6 +469,39 @@
    $(this).val($(this).val()+'-');
   if (length==15) {
   	$("#ceo_cnic").attr('maxlength','15');
+  };
+
+ });
+    	$('#company_phone').keydown(function(){
+
+  //allow  backspace, tab, ctrl+A, escape, carriage return
+  if (event.keyCode == 8 || event.keyCode == 9 
+                    || event.keyCode == 27 || event.keyCode == 13 
+                    || (event.keyCode == 65 && event.ctrlKey === true) )
+                        return;
+  if((event.keyCode < 48 || event.keyCode > 57))
+   event.preventDefault();
+
+  var length = $(this).val().length; 
+              
+  if (length==12) {
+  	$("#company_phone").attr('maxlength','12');
+  };
+
+ });
+    	$('#ceo_contact').keydown(function(){
+
+  //allow  backspace, tab, ctrl+A, escape, carriage return
+  if (event.keyCode == 8 || event.keyCode == 9 
+                    || event.keyCode == 27 || event.keyCode == 13 
+                    || (event.keyCode == 65 && event.ctrlKey === true) )
+                        return;
+  if((event.keyCode < 48 || event.keyCode > 57))
+   event.preventDefault();
+
+  var length = $(this).val().length; 
+  if (length==12) {
+  	$("#ceo_contact").attr('maxlength','12');
   };
 
  });
