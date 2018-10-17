@@ -26,6 +26,13 @@
 <!--bootstrap datepicker-->
 <link href="{{URL::to('public/JobPortal_Frontend/assets')}}/css/datepicker.css" rel="stylesheet" type="text/css" />
 </head>
+
+   <!-- styling for form validation -->
+   <style type="text/css">
+   	#contact-form .form .form-group label.error{
+   		color: red;
+   	}
+   </style>
 <body>
 <!-- header start -->
 @include('frontend/JobPortal/include/jobheader')
@@ -71,13 +78,13 @@
 					<div class="form">
 						<div class="border"></div>
 						<div class="border1"></div>
-						<form class="form-horizontal" id="form" action="{{url('jobs/company_registration')}}" method="post" enctype="multipart/form-data">
+						<form class="form-horizontal" id="addcompanyform" action="{{url('jobs/company_registration')}}" method="post" enctype="multipart/form-data">
                                             {{csrf_field()}}
 							<fieldset>
 								<div class="form-group {{ $errors->has('company_name') ? ' has-error' : '' }}">
 									<div class="col-sm-12">
 										<label>Company Name</label>
-										<input class="form-control" placeholder="Enter company name" id="input-name" name="company_name" type="text" value="{{ old('company_name') }}">
+										<input class="form-control" placeholder="Enter company name" id="company_name" name="company_name" type="text" value="{{ old('company_name') }}">
 										 @if ($errors->has('company_name'))
                                                         <span class="help-block">
                                                              <strong class="error">{{ $errors->first('company_name') }}</strong>
@@ -88,7 +95,7 @@
 								<div class="form-group {{ $errors->has('company_description') ? ' has-error' : '' }}">
 									<div class="col-sm-12">
 										<label>Company Description</label>
-										<textarea class="form-control" id="input-enquiry" rows="10" name="company_description" placeholder="Enter Company Description">{{ old('company_description') }}</textarea>
+										<textarea class="form-control" id="company_description" rows="10" name="company_description" placeholder="Enter Company Description">{{ old('company_description') }}</textarea>
 										 @if ($errors->has('company_description'))
                                                         <span class="help-block">
                                                              <strong class="error">{{ $errors->first('company_description') }}</strong>
@@ -133,7 +140,7 @@
 								<div class="form-group">
 									<div class="col-sm-12 {{ $errors->has('company_address') ? ' has-error' : '' }}">
 										<label>Company Address</label>
-										<input class="form-control" id="input-subject" placeholder="" value="{{ old('company_address') }}" name="company_address" type="text">
+										<input class="form-control" id="company_address" placeholder="" value="{{ old('company_address') }}" name="company_address" type="text">
 										 @if ($errors->has('company_address'))
                                                         <span class="help-block">
                                                              <strong class="error">{{ $errors->first('company_address') }}</strong>
@@ -174,22 +181,23 @@
 								<div class="form-group">
 									<div class="col-sm-6">
 										<label>Company URL</label>
-										<input class="form-control" placeholder="Enter your name" id="input-name" name="company_url" type="text">
+										<input class="form-control" placeholder="Enter your name" id="company_url" name="company_url">
 									</div>
 									<div class="col-sm-6 {{ $errors->has('company_phone') ? ' has-error' : '' }}">
 										<label>Company Phone</label>
-										<input class="form-control" id="input-email" placeholder="Enter company contact number." value="{{ old('company_phone') }}" name="company_phone" type="text">
+										<input class="form-control" id="company_phone" placeholder="Enter company contact number." value="{{ old('company_phone') }}" name="company_phone" type="text">
 										@if ($errors->has('company_phone'))
                                                         <span class="help-block">
                                                              <strong class="error">{{ $errors->first('company_phone') }}</strong>
                                                          </span>
                                                      @endif
+                                                     <span id="spnPhoneStatus"></span>
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-6 {{ $errors->has('contact_email') ? ' has-error' : '' }}">
 										<label>Contact Email</label>
-										<input class="form-control" placeholder="Enter company email" id="input-name" value="{{ old('contact_email') }}" name="contact_email" type="text">
+										<input class="form-control" placeholder="Enter company email" id="contact_email" value="{{ old('contact_email') }}" name="contact_email">
 										@if ($errors->has('contact_email'))
                                                         <span class="help-block">
                                                              <strong class="error">{{ $errors->first('contact_email') }}</strong>
@@ -198,19 +206,19 @@
 									</div>
 									<div class="col-sm-6">
 										<label>Conatact Person</label>
-										<input class="form-control" id="input-email" placeholder="Enter person name" name="contact_person" type="text">
+										<input class="form-control" id="contact_person" placeholder="Enter person name" name="contact_person" type="text">
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-6">
 										<label>No of Employees</label>
-										<input class="form-control" placeholder="Enter number of employees" id="input-name" name="no_of_employees" type="text">
+										<input class="form-control" placeholder="Enter number of employees" id="no_of_employees" name="no_of_employees">
 									</div>
 									<div class="col-sm-6">
 										<label>Operating Since</label>
 										<!-- <input class="form-control" id="operating_since" placeholder="" name="operating_since" type="text"> -->
-										<div class="input-append date" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
-  <input class="form-control span2" size="16" type="text" placeholder="dd-mm-yyyy">
+										<div class="input-append date" id="dp3" data-date="" data-date-format="dd-mm-yyyy">
+  <input class="form-control span2" size="16" type="text" placeholder="dd-mm-yyyy" name="operating_since" id="operating_since">
   <span class="add-on"><i class="icon-th"></i></span>
 </div>
 									</div>
@@ -218,7 +226,7 @@
 								<div class="form-group">
 									<div class="col-sm-6 {{ $errors->has('cr_designation') ? ' has-error' : '' }}">
 										<label>Your Designation</label>
-										<input class="form-control" placeholder="Enter your designation" id="input-name" value="{{ old('cr_designation') }}" name="cr_designation" type="text">
+										<input class="form-control" placeholder="Enter your designation" id="cr_designation" value="{{ old('cr_designation') }}" name="cr_designation" type="text">
 										@if ($errors->has('cr_designation'))
                                                         <span class="help-block">
                                                              <strong class="error">{{ $errors->first('cr_designation') }}</strong>
@@ -227,14 +235,14 @@
 									</div>
 									<div class="col-sm-6">
 										<label>SECP Company ID</label>
-										<input class="form-control" id="input-email" placeholder="" name="secp_id" type="text">
+										<input class="form-control" id="secp_id" placeholder="" name="secp_id" type="text">
 									</div>
 								</div>
 
 								<div class="form-group">
 									<div class="col-sm-12">
 										<label>Company Logo</label>
-										<input class="form-control" id="input-subject" placeholder="" name="company_logo" type="file">
+										<input class="form-control" id="company_logo" placeholder="" name="company_logo" type="file">
 									</div>
 								</div>
 								
@@ -244,7 +252,7 @@
 								<div class="form-group">
 									<div class="col-sm-6 {{ $errors->has('ceo_name') ? ' has-error' : '' }}">
 										<label>CEO Name</label>
-										<input class="form-control" placeholder="Enter CEO name" id="input-name" value="{{ old('ceo_name') }}" name="ceo_name" type="text">
+										<input class="form-control" placeholder="Enter CEO name" id="ceo_name" value="{{ old('ceo_name') }}" name="ceo_name" type="text">
 										@if ($errors->has('ceo_name'))
                                                         <span class="help-block">
                                                              <strong class="error">{{ $errors->first('ceo_name') }}</strong>
@@ -253,17 +261,17 @@
 									</div>
 									<div class="col-sm-6">
 										<label>Contact No.</label>
-										<input class="form-control" id="input-email" placeholder="you@yourdomain.com" name="ceo_contact" type="text">
+										<input class="form-control" id="ceo_contact" placeholder="" name="ceo_contact">
 									</div>
 								</div>
 								<div class="form-group">
 									<div class="col-sm-6">
 										<label>CEO Email</label>
-										<input class="form-control" id="input-subject" placeholder="" name="ceo_email" type="text">
+										<input class="form-control" id="ceo_email" placeholder="you@yourdomain.com" name="ceo_email">
 									</div>
 									<div class="col-sm-6">
 										<label>CEO CNIC</label>
-										<input class="form-control" id="input-email" placeholder="" name="ceo_cnic" type="text">
+										<input class="form-control" id="ceo_cnic" placeholder="xxxxx-xxxxxxx-x" name="ceo_cnic" type="text">
 									</div>
 								</div>
 
@@ -338,6 +346,165 @@
         });
 
         
+    </script>
+
+    <!-- form validation -->
+    <script src="{{URL::to('public/JobPortal_Frontend/assets')}}/jquery-validation/dist/jquery.validate.js"></script>
+    <script type="text/javascript">
+    	$.validator.setDefaults({
+		submitHandler: function() {
+			$("#addcompanyform").submit();
+		}
+	});
+    	$().ready(function() {
+    		$("#addcompanyform").validate({
+    			rules: {
+				ownership_type: "required",
+				industry_id: "required",
+				country: "required",
+				city_id: "required",
+				company_name: {
+					required: true,
+					minlength: 2
+				},
+				company_description: {
+					required: true,
+					minlength: 2
+				},
+				
+				company_address: {
+					required: true,
+					minlength: 2
+				},
+				
+				company_url: {
+					url: true
+				},
+				contact_email: {
+					required: true,
+					email: true
+				},
+				contact_person: {
+					minlength: 2
+				},
+				no_of_employees: {
+					number: true,
+					min: 1
+				},
+				cr_designation: {
+					required: true,
+					minlength: 2
+				},
+				ceo_name: {
+					required: true,
+					minlength: 2
+				},
+				ceo_email: {
+					email: true
+				}
+			},
+			messages: {
+				company_name: {
+					required: "Please enter company name."
+				},
+				company_description: {
+					required: "Please enter company description."
+				},
+				company_address: {
+					required: "Please enter company address."
+				},
+				cr_designation: {
+					required: "Please enter your designation."
+				},
+				
+				contact_email: {
+					required: "Please enter company`s contact email.",
+					email: "Please enter a valid email address."
+				},
+				ceo_name: {
+					required: "Please enter company CEO name."
+				},
+				ceo_email: {
+					required: "Please enter a valid email address."
+				}
+			}
+    		});
+
+    // 		$('#company_phone').blur(function(e) {
+    //     if (validatePhone('company_phone')) {
+    //         $('#spnPhoneStatus').html('Valid');
+    //         $('#spnPhoneStatus').css('color', 'green');
+    //     }
+    //     else {
+    //         $('#spnPhoneStatus').html('Invalid');
+    //         $('#spnPhoneStatus').css('color', 'red');
+    //     }
+    // });
+    	});
+
+//     	function validatePhone(company_phone) {
+//     var a = document.getElementById(company_phone).value;
+//     var filter = /^[0-9-+]+$/;
+//     if (filter.test(a) && a.length==12) {
+//         return true;
+//     }
+//     else {
+//         return false;
+//     }
+// };
+
+    	$('#ceo_cnic').keydown(function(){
+
+  //allow  backspace, tab, ctrl+A, escape, carriage return
+  if (event.keyCode == 8 || event.keyCode == 9 
+                    || event.keyCode == 27 || event.keyCode == 13 
+                    || (event.keyCode == 65 && event.ctrlKey === true) )
+                        return;
+  if((event.keyCode < 48 || event.keyCode > 57))
+   event.preventDefault();
+
+  var length = $(this).val().length; 
+              
+  if(length == 5 || length == 13)
+   $(this).val($(this).val()+'-');
+  if (length==15) {
+  	$("#ceo_cnic").attr('maxlength','15');
+  };
+
+ });
+    	$('#company_phone').keydown(function(){
+
+  //allow  backspace, tab, ctrl+A, escape, carriage return
+  if (event.keyCode == 8 || event.keyCode == 9 
+                    || event.keyCode == 27 || event.keyCode == 13 
+                    || (event.keyCode == 65 && event.ctrlKey === true) )
+                        return;
+  if((event.keyCode < 48 || event.keyCode > 57))
+   event.preventDefault();
+
+  var length = $(this).val().length; 
+              
+  if (length==12) {
+  	$("#company_phone").attr('maxlength','12');
+  };
+
+ });
+    	$('#ceo_contact').keydown(function(){
+
+  //allow  backspace, tab, ctrl+A, escape, carriage return
+  if (event.keyCode == 8 || event.keyCode == 9 
+                    || event.keyCode == 27 || event.keyCode == 13 
+                    || (event.keyCode == 65 && event.ctrlKey === true) )
+                        return;
+  if((event.keyCode < 48 || event.keyCode > 57))
+   event.preventDefault();
+
+  var length = $(this).val().length; 
+  if (length==12) {
+  	$("#ceo_contact").attr('maxlength','12');
+  };
+
+ });
     </script>
 </body>
 
