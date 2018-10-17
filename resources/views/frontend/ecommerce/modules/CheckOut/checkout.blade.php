@@ -150,23 +150,23 @@
                 	<div class="form-group col-lg-6 col-md-6 col-sm-6">
                     
                     <label for="co-first-name" >First Name *</label>
-                    <input type="text" class="form-control" id="co-first-name" name="b_f_name" placeholder="First name" required>
+                    <input type="text" class="form-control" id="co-first-name" name="b_f_name" placeholder="First name" value="{{$users->first_name}}" required>
 
                   </div>
                  
                 	<div class="form-group col-lg-6 col-md-6 col-sm-6">
                     <label for="co-last-name">Last Name *</label>
-                    <input type="text" class="form-control" id="co-last-name" name="b_l_name" placeholder="Last name"  required>
+                    <input type="text" class="form-control" id="co-last-name" name="b_l_name" placeholder="Last name" value="{{$users->last_name}}"  required>
                   </div>
                 </div>
                 <div class="row">
                   <div class="form-group col-lg-6 col-md-6 col-sm-6">
                     <label for="co-email">Email *</label>
-                    <input type="email" class="form-control" id="co-email" name="b_email" placeholder="Email adress" required>
+                    <input type="email" class="form-control" id="co-email" name="b_email" placeholder="Email adress" value="{{$users->email}}" required>
                   </div>
                   <div class="form-group col-lg-6 col-md-6 col-sm-6">
                     <label for="co_phone">Phone *</label>
-                    <input type="text" class="form-control" id="co_phone" name="b_phone" placeholder="Phone number" required>
+                    <input type="text" class="form-control" id="co_phone" name="b_phone" placeholder="Phone number" value="{{$users->contact_number}}" required>
                   </div>
                 </div>
                 <!-- <div class="form-group">
@@ -241,8 +241,8 @@
                 
                 
                 <div class="form-group">
-                  <label for="co-str-adress">Shipping Address *</label>
-                  <textarea  class="form-control" id="co-str-adress" name="b_address" placeholder="Street adress" value = "" required></textarea>
+                  <label for="co-str-adress">Address *</label>
+                  <textarea  class="form-control" id="co-str-adress" name="b_address" placeholder="Street adress" value = "{{$users->address}}" required></textarea>
                 </div>
                 <!-- <div class="form-group">
                   <label class="sr-only" for="co-appartment">Appartment</label>
