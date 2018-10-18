@@ -189,7 +189,7 @@
           	<div class="col-lg-3 col-md-4 col-sm-6">
             	<div class="tile">
               	<div class="price-label">Rs. {{$product->product_discounted_price}}</div>
-              	<a href="{{url('ecommerce/single-product')}}/{{$cart_item->options['product_slug']}}"><img src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}" alt="1"/></a>
+              	<a href="{{url('ecommerce/single-product')}}/{{$product->slug}}"><img src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}" alt="1"/></a>
                 <div class="footer">
                 	<a href="{{URL::to('public/frontend/ecommerce/assets')}}/#">{{$product->product_name}}</a>
                   <span>by {{$product->brand->brand_name}}</span>
