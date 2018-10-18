@@ -129,9 +129,15 @@
                     </tr>
                   </table>
                   <input type="submit" class="btn btn-primary btn-sm btn-block" name="update-cart" value="Update shopping cart">
+                  @if(!Auth::guest())
                   <a href="{{url('/ecommerce/checkout')}}" style="text-decoration: none !important;">
                   <button type="button" class="btn btn-success btn-block" name="to-checkout" value="" onclick="">Proceed to checkout</button>
                 </a>
+                @else
+                <a href="{{url('/login')}}" style="text-decoration: none !important;">
+                  <button type="button" class="btn btn-success btn-block" name="to-checkout" value="" onclick="">Proceed to checkout</button>
+                </a>
+                @endif
                 </div>
                 <h3>Have a coupon?</h3>
                 <div class="coupon">
