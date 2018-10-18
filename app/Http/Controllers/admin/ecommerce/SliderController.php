@@ -114,7 +114,7 @@ class SliderController extends Controller
         $file_size = $request->file->getClientSize();
         $file_size = $file_size/1000;
         $file_size = $file_size.' '.'kb';
-        $new_path = url('/').'/public/admin/upload/sliders'.$file_name;
+        $new_path = url('/').'/public/admin/ecommerce/upload/sliders'.$file_name;
         $slider->image_name = $file_name;
         $slider->image_size = $file_size;
         $slider->image_extension = $file_type;
@@ -131,19 +131,15 @@ class SliderController extends Controller
      */
      public function destroy($id)
     {
-        $slider = Slider::find($id);
-         
-         //Storage::delete(public_path().'/backendAssets/assets/images/services/'.$s->image);
-         //Storage::disk('C')->delete(public_path().'/backendAssets/assets/images/services/'.$s->image);
+    $slider = Slider::find($id);
     $data=$slider->image_name;
-    $dir = public_path().'/admin/upload/sliders/';
+    $dir = public_path().'/admin/ecommerce/upload/sliders/';
     $dirHandle = opendir($dir);
     while ($file = readdir($dirHandle)) {
                                          if($file==$data) {
                                                     unlink($dir.'/'.$file);
                                          }
     }
-    //Storage::disk('s3')->delete('$dir' . $data);
         $slider->delete();
         return Redirect('/ecommerce/admin/sliders');
     }

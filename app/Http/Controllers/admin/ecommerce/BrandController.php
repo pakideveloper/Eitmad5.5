@@ -129,7 +129,7 @@ class BrandController extends Controller
             $file_name = uniqid().$file_name;
             $file_name = preg_replace('/\s+/', '', $file_name);
             $file_type = $request->file['0']->getClientOriginalExtension();
-            $request->file['0'] -> move(public_path().'/admin/upload/brands', $file_name);
+            $request->file['0'] -> move(public_path().'/admin/ecommerce/upload/brands', $file_name);
             $file_size = $request->file['0']->getClientSize();
             $file_size = $file_size/1000;
             $file_size = $file_size.' '.'kb';
@@ -156,12 +156,21 @@ class BrandController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+     public function destroy($id)
     {
-      $brand = Brand::find($id);
-      $brand->delete();
-      return redirect('/ecommerce/admin/brands');
+    $brand = Brand::find($id);
+    $data=$brand->brand_logo;
+    $dir = public_path().'/admin/ecommerce/upload/brands/';
+    $dirHandle = opendir($dir);
+    while ($file = readdir($dirHandle)) {
+                                         if($file==$data) {
+                                                    unlink($dir.'/'.$file);
+                                         }
     }
+        $brand->delete();
+        return Redirect('/ecommerce/admin/brands');
+    }
+    
     public function storeValidate(Request $request){
        
         $messages = [

@@ -154,6 +154,12 @@
                                 </ul>
                             </li>
                             <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span>User</span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="{{url('/ecommerce/admin/users')}}">View All User</a></li>
+                                </ul>
+                            </li>
+                            <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-diamond"></i><span class="badge badge-danger pull-right">New</span> <span> Forms </span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="form-elements.html">Form Elements</a></li>
