@@ -11,8 +11,10 @@ use Session;
 
 class CartController extends Controller
 {
-    public function addToCart($id)
+    public function addToCart(Request $request)
     {
+        $id = $request->product_id;
+        $quantity_n = $request->quantity;
     	$cas = 'new';
     	$cart_items = Cart::instance('shopping')->content();
     	foreach ($cart_items as $key => $value) {
@@ -30,7 +32,7 @@ class CartController extends Controller
 		    	Cart::instance('shopping')->add(
 		    		$id, 
 		    		$product->product_name,
-		    		1, 
+		    		$quantity_n, 
 		    		$product->product_discounted_price, 
 		    		['product_slug' => $product->slug,'orignal_price' => $product->product_price,'image' => $product->title_image]
 		    	);

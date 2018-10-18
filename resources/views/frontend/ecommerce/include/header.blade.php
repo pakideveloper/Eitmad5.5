@@ -146,8 +146,8 @@
                 </li>
               </ul>
             </li>
-          	<li><a href="shop-filters-left-3cols.html">Cameras</a></li>
-          	<li><a href="shop-filters-left-3cols.html">Personal computers</a></li>
+          	<li><a href="shop-filters-left-3cols.html">Dashboard</a></li>
+          	<li><a href="shop-filters-left-3cols.html">Personal</a></li>
           	<li><a href="shop-filters-left-3cols.html">Gaming consoles</a></li>
           	<li><a href="shop-filters-left-3cols.html">TV sets</a></li>
           </ul>

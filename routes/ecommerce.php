@@ -72,9 +72,15 @@ Route::get('/singleblog', function () {
     return view('frontend/ecommerce/modules/blog/single_blog');
 });
 
-Route::get('/product/addToCart/{id}', 'Ecommerce\Cart\CartController@addToCart');
+Route::post('/product/addToCart', 'Ecommerce\Cart\CartController@addToCart');
 Route::get('/removeFromCart/{rowId}', 'Ecommerce\Cart\CartController@romoveOne');
 Route::Resource('/checkout', 'Ecommerce\CheckoutController');
 Route::get('/callback', 'Ecommerce\PaymentCheckoutController@callback');
+
+//vendor
+    //dasboard
+    Route::get('vendor/dashboard','Ecommerce\Vendor\VendorController@dashboard');
+    //dasboard
+//vendor
 
 
