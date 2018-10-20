@@ -700,7 +700,7 @@
       </section><!--Gallery Widget Close-->
       
       <!--Brands Carousel Widget-->
-      @include('frontend/ecommerce/include/brand-crusal')<!--Brands Carousel Close-->
+      @include('frontend/general/include/brand-crusal')<!--Brands Carousel Close-->
       
     </div><!--Page Content Close-->
     
