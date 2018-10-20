@@ -1118,6 +1118,7 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+
 }
 .img-rounded {
   border-radius: 6px;
@@ -1137,6 +1138,11 @@ img {
 }
 .img-circle {
   border-radius: 50%;
+}
+.thumb-sm
+{
+  height: 64px;
+  width: 64px;
 }
 hr {
   margin-top: 1em;
@@ -9480,6 +9486,13 @@ html {
   content: "";
   clear: both;
   height: 0;
+}
+b_img
+{
+display: block;
+max-width: 100px;
+height: 100px;
+border-radius: 50%;
 }
 img {
   display: block;

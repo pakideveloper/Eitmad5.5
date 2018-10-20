@@ -51,6 +51,8 @@
                                     <li><a href="{{url('/ecommerce/admin/brands')}}">View All</a></li>
                                 </ul>
                             </li>
+                          
+                            </li>
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-invert-colors"></i> <span>Product </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">

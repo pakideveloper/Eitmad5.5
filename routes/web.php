@@ -11,7 +11,8 @@
 |
 */
 Route::get('/', function () {
-    return view('frontend/general/index');
+	$slider = App\Slider::latest()->get();
+    return view('frontend/general/index',compact('slider'));
 });
 
 Auth::routes();
