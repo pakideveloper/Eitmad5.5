@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\admin\ecommerce;
+namespace App\Http\Controllers\admin\job;
 
 
 use App\Http\Controllers\Controller;
@@ -18,7 +18,7 @@ class IndustryController extends Controller
     public function index()
     {
         $industry = Industry::latest()->get();
-        return view('admin/ecommerce/modules/Industries/index',compact('industry'));
+        return view('admin/job/modules/Industries/index',compact('industry'));
     }
 
     /**
@@ -28,7 +28,7 @@ class IndustryController extends Controller
      */
     public function create()
     {
-       return view('admin/ecommerce/modules/Industries/create');
+       return view('admin/job/modules/Industries/create');
     }
 
     /**
@@ -66,7 +66,7 @@ class IndustryController extends Controller
     public function edit($id)
     {
        $industry = Industry::find($id);
-       return view('admin/ecommerce/modules/industries/edit',compact('industry'));
+       return view('admin/job/modules/industries/edit',compact('industry'));
     }
 
     /**

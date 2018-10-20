@@ -16,4 +16,4 @@ Route::get('/', function () {
 });
 Route::resource('/degree_levels','admin\job\DegreeLevelController');
 Route::resource('/degree_types','admin\job\DegreeTypeController');
-Route::resource('/industries','admin\ecommerce\IndustryController');
+Route::resource('/industries','admin\job\IndustryController');

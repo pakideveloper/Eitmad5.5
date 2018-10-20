@@ -9,22 +9,22 @@
         <meta name="author" content="Coderthemes">
 
         <!-- App favicon -->
-        <link rel="shortcut icon" href="{{URL::to('public/admin/ecommerce')}}/assets/images/favicon.ico">
+        <link rel="shortcut icon" href="{{URL::to('public/admin/job')}}/assets/images/favicon.ico">
         <!-- App title -->
         <title>Eitmad</title>
         <!-- Jquery filer css -->
-        <link href="{{URL::to('public/admin/ecommerce')}}/plugins/jquery.filer/css/jquery.filer.css" rel="stylesheet" />
-        <link href="{{URL::to('public/admin/ecommerce')}}/plugins/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css" rel="stylesheet" />
+        <link href="{{URL::to('public/admin/job')}}/plugins/jquery.filer/css/jquery.filer.css" rel="stylesheet" />
+        <link href="{{URL::to('public/admin/job')}}/plugins/jquery.filer/css/themes/jquery.filer-dragdropbox-theme.css" rel="stylesheet" />
 
         <!-- App css -->
-        <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-        <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/core.css" rel="stylesheet" type="text/css" />
-        <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/components.css" rel="stylesheet" type="text/css" />
-        <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/icons.css" rel="stylesheet" type="text/css" />
-        <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/pages.css" rel="stylesheet" type="text/css" />
-        <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/menu.css" rel="stylesheet" type="text/css" />
-        <link href="{{URL::to('public/admin/ecommerce')}}/assets/css/responsive.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="{{URL::to('public/admin/ecommerce')}}/plugins/switchery/switchery.min.css">
+        <link href="{{URL::to('public/admin/job')}}/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="{{URL::to('public/admin/job')}}/assets/css/core.css" rel="stylesheet" type="text/css" />
+        <link href="{{URL::to('public/admin/job')}}/assets/css/components.css" rel="stylesheet" type="text/css" />
+        <link href="{{URL::to('public/admin/job')}}/assets/css/icons.css" rel="stylesheet" type="text/css" />
+        <link href="{{URL::to('public/admin/job')}}/assets/css/pages.css" rel="stylesheet" type="text/css" />
+        <link href="{{URL::to('public/admin/job')}}/assets/css/menu.css" rel="stylesheet" type="text/css" />
+        <link href="{{URL::to('public/admin/job')}}/assets/css/responsive.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="{{URL::to('public/admin/job')}}/plugins/switchery/switchery.min.css">
 
         <!-- HTML5 Shiv and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,7 +33,7 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
 
-        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/modernizr.min.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/assets/js/modernizr.min.js"></script>
 
     </head>
 
@@ -58,12 +58,12 @@
         <div id="wrapper">
 
             <!-- Top Bar Start -->
-             @include('admin.ecommerce.include.navbar')
+             @include('admin.job.include.navbar')
             <!-- Top Bar End -->
 
 
             <!-- ========== Left Sidebar Start ========== -->
-             @include('admin.ecommerce.include.left-sidebar')
+             @include('admin.job.include.left-sidebar')
             <!-- Left Sidebar End -->
 
 
@@ -136,11 +136,11 @@
                                                 echo $monthName; // March?>
                                                 {{ Carbon\Carbon::parse($Vindustry->updated_at)->format('d,Y') }}</td> 
                                                         <td>
-                                                             <a href="{{url('/ecommerce/admin/industries')}}/{{$Vindustry->id}}/edit" style="float: left;">
+                                                             <a href="{{url('/jobs/admin/industries')}}/{{$Vindustry->id}}/edit" style="float: left;">
                                                                 <i class="fa fa-pencil"></i>
                                                             </a>
                                                             <form id="delete-form{{$Vindustry->id}}" 
-                                                                action="{{url('/ecommerce/admin/industries')}}/{{$Vindustry->id}}" method="post">
+                                                                action="{{url('/jobs/admin/industries')}}/{{$Vindustry->id}}" method="post">
                                                                 {{csrf_field() }}
                                                                 {{ method_field('DELETE') }}
                                                                  
@@ -164,7 +164,7 @@
                 </div> <!-- content -->
 
 
-                @include('admin.ecommerce.include.footer')
+                @include('admin.job.include.footer')
             </div>
 
 
@@ -174,7 +174,7 @@
 
 
             <!-- Right Sidebar -->
-             @include('admin.ecommerce.include.right-sidebar')
+             @include('admin.job.include.right-sidebar')
             <!-- /Right-bar -->
 
         </div>
@@ -184,25 +184,25 @@
         </script>
 
         <!-- jQuery  -->
-        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.min.js"></script>
-        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/bootstrap.min.js"></script>
-        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/detect.js"></script>
-        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/fastclick.js"></script>
-        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.blockUI.js"></script>
-        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/waves.js"></script>
-        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.slimscroll.js"></script>
-        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.scrollTo.min.js"></script>
-        <script src="{{URL::to('public/admin/ecommerce')}}/plugins/switchery/switchery.min.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/assets/js/jquery.min.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/assets/js/bootstrap.min.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/assets/js/detect.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/assets/js/fastclick.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/assets/js/jquery.blockUI.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/assets/js/waves.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/assets/js/jquery.slimscroll.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/assets/js/jquery.scrollTo.min.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/plugins/switchery/switchery.min.js"></script>
 
         <!-- Jquery filer js -->
-        <script src="{{URL::to('public/admin/ecommerce')}}/plugins/jquery.filer/js/jquery.filer.min.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/plugins/jquery.filer/js/jquery.filer.min.js"></script>
 
         <!-- App js -->
-        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.core.js"></script>
-        <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/jquery.app.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/assets/js/jquery.core.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/assets/js/jquery.app.js"></script>
 
         <!-- page specific js -->
-        <script src="{{URL::to('public/admin/ecommerce')}}/customAssets/js/jquery.fileuploads.brands.init.js"></script>
+        <script src="{{URL::to('public/admin/job')}}/customAssets/js/jquery.fileuploads.brands.init.js"></script>
           <script type="text/javascript">
         var deleteCategory = function(id){
         if (confirm('Are you sure you want to delete this?')) {
