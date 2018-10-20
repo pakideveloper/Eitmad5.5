@@ -206,7 +206,7 @@
     border-radius: 4px;">
                           <div class="row">
                             <div class="col-lg-4 col-md-4 col-sm-3"><span>{{$name}}</span></div>
-                            <div class="col-lg-8 col-md-8 col-sm-9"><p class="p-style2"><?php $kee = preg_replace('/\s+/', '', $name)?> {{$values->$kee}}</p></div>
+                            <div class="col-lg-8 col-md-8 col-sm-9"><p class="p-style2"> <?php $kee = preg_replace('/\s+/', '', $name)?> {{$values->$kee}}</p></div> 
                           </div>
                         </div>
                         @endif

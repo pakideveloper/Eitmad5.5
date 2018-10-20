@@ -80,81 +80,14 @@
           <!--Expandable Panels-->
         	<div class="row">
             <div class="col-lg-12">
-            	<h2>Checkout</h2>
+            	<h2>Use order ID as Your Reference
+              Please Transfer this Amount to our Bank Account No: </h2>
+              <p style="font-size: 24px;">4000000000000002</p>
+
+
               <!--Hidden Panels-->
-              @if(Auth::guest())
-              <a class="panel-toggle" href="{{url('/login')}}"><i></i>Returning customer? Click here to login</a>@endif
-              <div class="row">
-              	<div class="hidden-panel" id="login">
-                	<div class="col-lg-12">
-                  	<div class="row">
-                    	<div class="col-lg-7 col-md-7 col-sm-7">
-                        <form class="login-form" method="post">
-                          <div class="form-group group">
-                            <label for="log-email2">Email</label>
-                            <input type="email" class="form-control" name="log-email2" id="log-email2" placeholder="Enter your email" required>
-                            <a class="help-link" href="{{URL::to('public/frontend/ecommerce/assets')}}/#">Forgot email?</a>
-                          </div>
-                          <div class="form-group group">
-                            <label for="log-password2">Password</label>
-                            <input type="text" class="form-control" name="log-password2" id="log-password2" placeholder="Enter your password" required>
-                            <a class="help-link" href="{{URL::to('public/frontend/ecommerce/assets')}}/#">Forgot password?</a>
-                          </div>
-                          <div class="checkbox">
-                            <label><input type="checkbox" name="remember"> Remember me</label>
-                          </div>
-                          <input class="btn btn-success" type="submit" value="Login">
-                        </form>
-                      </div>
-                      <div class="col-lg-5 col-md-5 col-sm-5">
-                      	<label>Use social accounts</label>
-                        <div class="social-login">
-                          <a class="facebook" href="{{URL::to('public/frontend/ecommerce/assets')}}/#"><i class="fa fa-facebook-square"></i></a>
-                          <a class="google" href="{{URL::to('public/frontend/ecommerce/assets')}}/#"><i class="fa fa-google-plus-square"></i></a>
-                          <a class="twitter" href="{{URL::to('public/frontend/ecommerce/assets')}}/#"><i class="fa fa-twitter-square"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+              
 
-                </div>
-              </div>
-              <a class="panel-toggle" href="#coupon"><i></i>Have a coupon? Click here to enter your code</a>
-              <div class="row">
-              	<div class="col-lg-5">
-                  <div class="hidden-panel" id="coupon">
-                    <form name="coupon-code" method="post">
-                      <div class="form-group">
-                        <label class="sr-only" for="coupon-code">Enter coupon code</label>
-                        <input type="text" class="form-control" id="coupon-code" name="coupon-code" placeholder="Enter coupon code">
-                      </div>
-                      <input type="submit" class="btn btn-primary btn-sm btn-block" name="apply-coupon" value="Apply coupon">
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <!--Checkout Form-->
-          <form action='https://sandbox.2checkout.com/checkout/purchase' method='post'>
-<input type='hidden' name='sid' value='901394952' />
-<input type='hidden' name='mode' value='2CO' />
-<input type='hidden' name='li_0_type' value='product' />
-<input type='hidden' name='li_0_name' value='invoice123' />
-<input type='hidden' name='li_0_price' value='25.99' />
-<input type='hidden' name='card_holder_name' value='Checkout Shopper' />
-<input type='hidden' name='street_address' value='123 Test Address' />
-<input type='hidden' name='street_address2' value='Suite 200' />
-<input type='hidden' name='city' value='Columbus' />
-<input type='hidden' name='state' value='OH' />
-<input type='hidden' name='zip' value='43228' />
-<input type='hidden' name='country' value='USA' />
-<input type='hidden' name='email' value='example@2co.com' />
-<input type='hidden' name='phone' value='614-921-2450' />
-
-<input name='submit' type='submit' value='Checkout' />
-</form>
           
       </section><!--Checkout Close-->
       
@@ -404,7 +337,11 @@
   
 </script>
   
-
+<script>
+function newDoc() {
+    window.location.assign("https://www.w3schools.com")
+}
+</script>
 
 
 

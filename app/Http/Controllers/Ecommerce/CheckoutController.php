@@ -28,7 +28,7 @@ class CheckoutController extends Controller
         $countries = country::all();
         $cities = City::all();
         $regions = Region::all();
-        // $users  = User::find(Auth::user()->id);
+        $users  = User::find(Auth::user()->id);
 
         // ::where('users.id','=',Auth::user()->id)->select('first_name');
 
@@ -108,7 +108,7 @@ class CheckoutController extends Controller
         $shippings->shipper_address = $request->b_address;
         $shippings->save();
         
-        return view('frontend/ecommerce/modules/CheckOut/paymentcheckout');
+        // return view('frontend/ecommerce/modules/CheckOut/paymentcheckout');
     }
 
 

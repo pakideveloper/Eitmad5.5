@@ -137,19 +137,7 @@
       </section><!--Login / Register Close-->
       
       <!--Brands Carousel Widget-->
-      <section class="brand-carousel">
-        <div class="container">
-          <h2>Brands in our shop</h2>
-          <div class="inner">
-            <a class="item" href="#"><img src="{{url::to('public/frontend/ecommerce/assets')}}/img/brands/jquery.png" alt="jQuery"/></a>
-            <a class="item" href="#"><img src="{{url::to('public/frontend/ecommerce/assets')}}/img/brands/wp.png" alt="WordPress"/></a>
-            <a class="item" href="#"><img src="{{url::to('public/frontend/ecommerce/assets')}}/img/brands/woo.png" alt="WooCommerce"/></a>
-            <a class="item" href="#"><img src="{{url::to('public/frontend/ecommerce/assets')}}/img/brands/android.png" alt="Android"/></a>
-            <a class="item" href="#"><img src="{{url::to('public/frontend/ecommerce/assets')}}/img/brands/macgasm.png" alt="Macgasm"/></a>
-            <a class="item" href="#"><img src="{{url::to('public/frontend/ecommerce/assets')}}/img/brands/dropbox.png" alt="Dropbox"/></a>
-          </div>
-        </div>
-      </section><!--Brands Carousel Close-->
+      @include('frontend/general/include/brand-crusal')<!--Brands Carousel Close-->
       
     </div><!--Page Content Close-->
     

@@ -11,7 +11,7 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="http://www.starmarketingonline.com/wp-content/uploads/2016/06/favicon.png">
         <!-- App title -->
-        <title>ROLES-ADMIN PANEL - EITMAD</title>
+        <title>USERS-ADMIN PANEL - EITMAD</title>
 
         <!-- Plugin Css-->
         <link rel="stylesheet" href="{{URL::to('public/admin/ecommerce')}}/plugins/magnific-popup/css/magnific-popup.css" />

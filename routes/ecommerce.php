@@ -76,7 +76,10 @@ Route::post('/product/addToCart', 'Ecommerce\Cart\CartController@addToCart');
 Route::get('/removeFromCart/{rowId}', 'Ecommerce\Cart\CartController@romoveOne');
 Route::Resource('/checkout', 'Ecommerce\CheckoutController');
 Route::get('/callback', 'Ecommerce\PaymentCheckoutController@callback');
-
+Route::post('/ship_bill_details', 'Ecommerce\PaymentCheckoutController@create');
+Route::post('/banktransfer', function () {
+    return view('frontend/ecommerce/modules/CheckOut/paymentcheckout');
+    });
 //vendor
     //dasboard
     Route::get('vendor/dashboard','Ecommerce\Vendor\VendorController@dashboard');

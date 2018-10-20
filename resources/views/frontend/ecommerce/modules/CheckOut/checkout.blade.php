@@ -138,7 +138,8 @@
           
           <!--Checkout Form-->
           <div class="row">
-          	<form action="{{url('/ecommerce/checkout')}}" id="checkout-form" method="post">
+          	<!-- <form action="{{url('/ecommerce/ship_bill_details')}}" id="checkout-form" method="post"> -->
+              <form action="https://sandbox.2checkout.com/checkout/purchase" id="checkout-form" method="post" name="myform">
             	{{ csrf_field()}}
               <!--Left Column-->
               <div class="col-lg-8 col-md-8 col-sm-8">
@@ -149,23 +150,23 @@
                 	<div class="form-group col-lg-6 col-md-6 col-sm-6">
                     
                     <label for="co-first-name" >First Name *</label>
-                    <input type="text" class="form-control" id="co-first-name" name="b_f_name" placeholder="First name" required>
+                    <input type="text" class="form-control" id="co-first-name" name="b_f_name" placeholder="First name" value="{{$users->first_name}}" required>
 
                   </div>
                  
                 	<div class="form-group col-lg-6 col-md-6 col-sm-6">
                     <label for="co-last-name">Last Name *</label>
-                    <input type="text" class="form-control" id="co-last-name" name="b_l_name" placeholder="Last name"  required>
+                    <input type="text" class="form-control" id="co-last-name" name="b_l_name" placeholder="Last name" value="{{$users->last_name}}"  required>
                   </div>
                 </div>
                 <div class="row">
                   <div class="form-group col-lg-6 col-md-6 col-sm-6">
                     <label for="co-email">Email *</label>
-                    <input type="email" class="form-control" id="co-email" name="b_email" placeholder="Email adress" required>
+                    <input type="email" class="form-control" id="co-email" name="b_email" placeholder="Email adress" value="{{$users->email}}" required>
                   </div>
                   <div class="form-group col-lg-6 col-md-6 col-sm-6">
                     <label for="co_phone">Phone *</label>
-                    <input type="text" class="form-control" id="co_phone" name="b_phone" placeholder="Phone number" required>
+                    <input type="text" class="form-control" id="co_phone" name="b_phone" placeholder="Phone number" value="{{$users->contact_number}}" required>
                   </div>
                 </div>
                 <!-- <div class="form-group">
@@ -240,8 +241,9 @@
                 
                 
                 <div class="form-group">
-                  <label for="co-str-adress">Shipping Address *</label>
-                  <textarea  class="form-control" id="co-str-adress" name="b_address" placeholder="Street adress" value = "" required></textarea>
+                  <label for="co-str-adress">Address *</label>
+                  <textarea  class="form-control" id="co-str-adress" name="b_address" placeholder="Street adress" value = "" required>{{$users->address}}
+                  </textarea>
                 </div>
                 <!-- <div class="form-group">
                   <label class="sr-only" for="co-appartment">Appartment</label>
@@ -260,11 +262,14 @@
                 <!-- <div class="checkbox form-group" >
                   <label><span class="text-primary">Ship to a different address?</span> <input type="checkbox" name="ship-to-diff-address" ></label>
                 </div> -->
+
+
+
                 <div class="checkbox form-group">
-      <label><span class="text-primary">Ship to a different address?</span><input type="checkbox" name="s_check"  id="ship-to-diff-address" style="margin-left: 5px;"></label>
-    </div>
+                <label><span class="text-primary">Ship to a different address?</span><input type="checkbox" name="s_check"  id="ship-to-diff-address" style="margin-left: 5px;"></label>
+                </div>
                 
-              </div>
+                </div>
 
 
                       <div id="shippingdetails" class="col-lg-8 col-md-8 col-sm-8"  style="display: none;">
@@ -443,21 +448,58 @@
                   </tr>
                   @endforeach
                 </table>
-                <!-- <div class="payment-method">
-                	<div class="radio light">
-                  	<label><input type="radio" name="payment" id="payment01" checked> Direct Bank Transfer</label>
+                <div class="payment-method">
+                  <div class="radio light">
+                    <label><input type="radio" name="payment" id="payment01" value="bank_transfer" > Direct Bank Transfer</label>
                   </div>
                   <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order will not be shipped until the funds have cleared in our account.</p>
-                	<div class="radio light">
-                  	<label><input type="radio" name="payment" id="payment02"> Cheque Payment</label>
+                  <div class="radio light">
+                    <label><input type="radio" name="payment" id="payment02" value="online_pay"> Online Payment </label>
                   </div>
-                	<div class="radio light">
-                  	<label><input type="radio" name="payment" id="payment03"> PayPal <span class="pp-label"></span></label>
+                  <div class="radio light">
+                    <label><input type="radio" name="payment" id="payment03" value="cash_delivery"> Cash On Delivery 
+                      <!-- <span class="pp-label"></span> -->
+                    </label>
                   </div>
-                </div> -->
-                <input class="btn btn-success btn-block" type="submit" name="place-order" value="Place order">
+                </div>
+
+ <?php
+            $cart_items = Cart::instance('shopping')->content();
+            ?>
+          
+          <!--Checkout Form-->
+          @foreach($cart_items as $cart_item)
+         
+<input type='hidden' name='sid' value='901394952' />
+<input type='hidden' name='mode' value='2CO' />
+<input type='hidden' name='li_0_type' value='product' />
+<input type='hidden' name='li_0_name' value='{{$cart_item->name}}' />
+<input type='hidden' name='li_0_price' value='{{$cart_item->total}}' />
+<input type='hidden' name='li_0_quantity' value='{{$cart_item->quantity}}' />
+<input type='hidden' name='card_holder_name' value='Checkout Shopper' />
+<input type='hidden' name='street_address' value='123 Test Address' />
+<input type='hidden' name='street_address2' value='Suite 200' />
+<input type='hidden' name='city' value='Columbus' />
+<input type='hidden' name='state' value='OH' />
+<input type='hidden' name='zip' value='43228' />
+<input type='hidden' name='country' value='USA' />
+<input type='hidden' name='s_check' value='' />
+<input type='hidden' name='email' value='example@2co.com' />
+<input type='hidden' name='phone' value='614-921-2450' />
+<input type="hidden" name="_token" value='{{ csrf_token() }}' />
+<input type="hidden" name="payment" value='' />
+
+                  @endforeach
+                            
+
+
+                
+<input class="btn btn-success btn-block" name='submit' type='submit' value='Place Order' />
+               
               </div>
+             
             </form>
+            
           </div>
         </div>
       </section><!--Checkout Close-->
@@ -676,6 +718,7 @@
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/mailer/mailer.js"></script>
 		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/scripts.js"></script>
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/color-switcher.js"></script>
+    <script src="https://sandbox.2checkout.com/static/checkout/javascript/direct.min.js"></script>
 
 
 <script type="text/javascript">
@@ -687,14 +730,26 @@
             
         });
 
+    // $('#payment01').change(function () {
+    //   if (this.checked) {
+    //         document.myform.action = '/edit';
+    //             }
+            
+    //     });
+    $("input:radio[name=payment]").click(function() {
+    var value = $(this).val();
+    if (value == 'bank_transfer') {
+      document.myform.action = "{{url('/ecommerce/banktransfer')}}";
+      myform.submit();
+    }
+    if (value == 'online_pay') {
+      document.myform.action = "https://sandbox.2checkout.com/checkout/purchase";
+      myform.submit();
+    }
+    });
 
-    $panelToggle.click(function(e){
-    $(this).toggleClass('active');
-    var $target = $(this).attr('href');
-    $($target).toggleClass('expanded');
-    e.preventDefault();
-  });
-  
+
+    
 </script>
   
 

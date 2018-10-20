@@ -55,6 +55,12 @@
                                     <li><a href="{{url('/jobs/admin/degree_types')}}">View All</a></li>
                                 </ul>
                             </li>
+                              <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-invert-colors"></i> <span>Industry</span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    <li><a href="{{url('/jobs/admin/industries')}}/create">Create</a></li>
+                                    <li><a href="{{url('/jobs/admin/industries')}}">View All</a></li>
+                                </ul>
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span>Categories</span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">

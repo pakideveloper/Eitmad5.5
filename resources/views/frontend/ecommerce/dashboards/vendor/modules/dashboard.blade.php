@@ -9,8 +9,16 @@
 
     <title>Dashboard Template for Bootstrap</title>
 
+<<<<<<< HEAD
     <!-- Bootstrap core CSS -->
     <link href="{{URL::to('public/bootstrap-4.1')}}/css/bootstrap.min.css" rel="stylesheet">
+=======
+<body class="">   
+  <div class="wrapper ">     
+    <div class="sidebar" data-color="purple" data-background-color="white" data-image="{{URL::to('public/frontend/ecommerce/vendor')}}/assets/img/sidebar-1.jpg">       <!--         Tip
+1: You can change the color of the sidebar using: data-color="purple | azure |
+green | orange | danger"
+>>>>>>> 048b9e1bbb1fbc8b019dd226b42c2326b7cedc89
 
     <!-- Custom styles for this template -->
     <link href="{{URL::to('public/bootstrap-4.1')}}/css/dashboard.css" rel="stylesheet">
