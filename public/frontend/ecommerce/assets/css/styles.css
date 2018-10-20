@@ -1136,14 +1136,7 @@ img {
   max-width: 100%;
   height: auto;
 }
-.img-circle {
-  border-radius: 50%;
-}
-.thumb-sm
-{
-  height: 64px;
-  width: 64px;
-}
+
 hr {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -9487,7 +9480,7 @@ html {
   clear: both;
   height: 0;
 }
-b_img
+.b_img
 {
 display: block;
 max-width: 100px;
