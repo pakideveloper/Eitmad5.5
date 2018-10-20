@@ -119,12 +119,16 @@
               <div class="old-price">Rs. {{$product->product_price}}</div>
               <div class="price">Rs. {{$product->product_discounted_price}}</div>
               <div class="buttons group">
-                <div class="qnt-count">
-                  <a class="incr-btn" href="#">-</a>
-                  <input id="quantity" class="form-control" type="text" value="2">
-                  <a class="incr-btn" href="#">+</a>
-                </div>
-                <a class="btn btn-primary btn-sm"  href="{{url('ecommerce/product/addToCart')}}/{{\Crypt::encrypt($product->id)}}"><i class="icon-shopping-cart"></i>Add to cart</a>
+                <form method="post" action="{{url('ecommerce/product/addToCart')}}" style="float: left;">
+                  {{csrf_field()}}
+                  <div class="qnt-count">
+                    <a class="incr-btn" href="#">-</a>
+                    <input id="quantity" name="quantity" class="form-control" type="text" value="2">
+                    <a class="incr-btn" href="#">+</a>
+                  </div>
+                  <input type="hidden" name="product_id" value="{{\Crypt::encrypt($product->id)}}">
+                  <button class="btn btn-primary btn-sm" ><i class="icon-shopping-cart"></i>Add to cart</button>
+                </form>
                 <!-- <input type="hidden" id="product_id" value="{{\Crypt::encrypt($product->id)}}" name="product_id"> -->
                 <a class="btn btn-success btn-sm" href="#"><i class="icon-heart"></i>Add to wishlist</a>
               </div>

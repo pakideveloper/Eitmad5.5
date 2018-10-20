@@ -71,6 +71,16 @@
                                     <li><a href="{{url('/job/admin/subcategories')}}">View All SubCategories</a></li>
                                 </ul>
                             </li>
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span>Companies</span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    
+                                   <!--  <li><a href="{{url('/job/admin/categories')}}/create">add parent category</a></li>
+                                    <li><a href="{{url('/job/admin/subcategories')}}/create">add sub category</a></li> -->
+                                    <li><a href="{{url('/jobs/admin/companies')}}">All Companies</a></li>
+                                   <!--  <li><a href="{{url('/job/admin/subcategories')}}">View All SubCategories</a></li> -->
+                                </ul>
+                            </li>
 
                              <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span>Discounts</span> <span class="menu-arrow"></span></a>
