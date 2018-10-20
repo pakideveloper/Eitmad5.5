@@ -19,9 +19,9 @@
   <!-- <link href="{{URL::to('public/frontend/ecommerce/vendor')}}/assets/demo/demo.css" rel="stylesheet" /> -->
 </head>
 
-<body class="">   <div class="wrapper ">     <div class="sidebar" data-
-color="purple" data-background-color="white" data-image="{{URL::to('public/fro
-ntend/ecommerce/vendor')}}/assets/img/sidebar-1.jpg">       <!--         Tip
+<body class="">   
+  <div class="wrapper ">     
+    <div class="sidebar" data-color="purple" data-background-color="white" data-image="{{URL::to('public/frontend/ecommerce/vendor')}}/assets/img/sidebar-1.jpg">       <!--         Tip
 1: You can change the color of the sidebar using: data-color="purple | azure |
 green | orange | danger"
 

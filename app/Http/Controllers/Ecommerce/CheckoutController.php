@@ -108,7 +108,7 @@ class CheckoutController extends Controller
         $shippings->shipper_address = $request->b_address;
         $shippings->save();
         
-        return view('frontend/ecommerce/modules/CheckOut/paymentcheckout');
+        // return view('frontend/ecommerce/modules/CheckOut/paymentcheckout');
     }
 
 
