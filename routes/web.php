@@ -21,3 +21,7 @@ Route::get('/home', function () {
     return view('frontend/general/index');
 });
 
+//vendor
+Route::view('/register/vendor','frontend.ecommerce.modules.registration.vendor-registration');
+//vendor
+
