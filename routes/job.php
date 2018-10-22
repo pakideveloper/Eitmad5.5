@@ -45,3 +45,6 @@ Route::resource('company_registration', 'Job\CompanyController');
 Route::get('/addcompany/cities/{country}/cities.json', function($country){
     return App\City::where('country_id',$country)->get();
 });
+
+Route::get('company/dashboard','Job\dashboard\company\CompanyController@dashboard');
+Route::get('candidate/dashboard','Job\dashboard\candidate\CandidateController@dashboard');

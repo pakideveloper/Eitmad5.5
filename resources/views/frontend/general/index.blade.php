@@ -63,80 +63,15 @@
     <div class="about page-content">
     	<!--About Info-->
       <section class="space-top space-bottom container" id="aboutus">
-      	<h2>About us</h2>
+      	<center><h1>About us</h1></center>
         <div class="row">
-        	<div class="col-lg-5 col-md-6 col-sm-6">
+        	<div class="col-lg-12 col-md-12 col-sm-12"  style="text-align: center;">
           	<h3>Why we are cool</h3>
-            <p class="p-style3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          </div>
-        	<div class="col-lg-6 col-lg-offset-1 col-md-6 col-sm-6">
-            <p class="p-style3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse eiusmod tempor incididunt ut labore.</p>
+            <p class="p-style3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse eiusmod tempor incididunt ut labore.</p>
           </div>
         </div>
       </section><!--About Info Close-->
-      
-      <!--Team-->
-      <section class="team container">
-      	<h3>Meet our team</h3>
-      	<div class="row">
-        	<!--Member-->
-        	<div class="col-lg-3 col-md-3 col-sm-6">
-          	<div class="member">
-            	<div class="mask"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/about/team/davis.jpg" alt="Susanna Davis"/></div>
-              <h4>Susanna Davis</h4>
-              <h5>CEO, Founder</h5>
-              <div class="social">
-              	<a href="#"><i class="fa fa-twitter"></i></a>
-              	<a href="#"><i class="fa fa-facebook-square"></i></a>
-              	<a href="#"><i class="fa fa-pinterest-square"></i></a>
-              	<a href="mailto:mail@mail.com"><i class="fa fa-envelope"></i></a>
-              </div>
-            </div>
-          </div>
-        	<!--Member-->
-        	<div class="col-lg-3 col-md-3 col-sm-6">
-          	<div class="member">
-            	<div class="mask"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/about/team/roe.jpg" alt="Alexander Roe"/></div>
-              <h4>Alexander Roe</h4>
-              <h5>CEO, Founder</h5>
-              <div class="social">
-              	<a href="#"><i class="fa fa-twitter"></i></a>
-              	<a href="#"><i class="fa fa-facebook-square"></i></a>
-              	<a href="#"><i class="fa fa-pinterest-square"></i></a>
-              	<a href="mailto:mail@mail.com"><i class="fa fa-envelope"></i></a>
-              </div>
-            </div>
-          </div>
-        	<!--Member-->
-        	<div class="col-lg-3 col-md-3 col-sm-6">
-          	<div class="member">
-            	<div class="mask"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/about/team/doe.jpg" alt="Jonathan Doe"/></div>
-              <h4>Jonathan Doe</h4>
-              <h5>CEO, Founder</h5>
-              <div class="social">
-              	<a href="#"><i class="fa fa-twitter"></i></a>
-              	<a href="#"><i class="fa fa-facebook-square"></i></a>
-              	<a href="#"><i class="fa fa-pinterest-square"></i></a>
-              	<a href="mailto:mail@mail.com"><i class="fa fa-envelope"></i></a>
-              </div>
-            </div>
-          </div>
-        	<!--Member-->
-        	<div class="col-lg-3 col-md-3 col-sm-6">
-          	<div class="member">
-            	<div class="mask"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/about/team/dirk.jpg" alt="Dexter Dirk"/></div>
-              <h4>Dexter Dirk</h4>
-              <h5>CEO, Founder</h5>
-              <div class="social">
-              	<a href="#"><i class="fa fa-twitter"></i></a>
-              	<a href="#"><i class="fa fa-facebook-square"></i></a>
-              	<a href="#"><i class="fa fa-pinterest-square"></i></a>
-              	<a href="mailto:mail@mail.com"><i class="fa fa-envelope"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section><!--Team Close-->
     </div>
      
        <!--Technical Specifications-->
@@ -256,42 +191,25 @@
       </section><!--Testimonials Widget Close-->
 
      
-     <div class="container" id="contactus"><h2>Contacts</h2></div>
-      
+     <div class="container" id="contactus"><h2>Contact US</h2></div>
+      <div class="row">
       <!--Google Map-->
-      <section class="map container">
+      <section class="map container col-lg-6 col-md-6 col-sm-6 ">
       	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11365119.183662498!2d26.671722792891288!3d45.93754926598604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1403521777633" width="800" height="400" style="border:0"></iframe>
-      </section><!--Google Map Close-->
-      
-      <!--Contacts-->
-      <section class="container">
-      	<div class="row">
-          <!--Contact Info-->
-        	<div class="col-lg-5 col-lg-offset-1 col-md-5 col-sm-5">
-            <h3>Contact info</h3>
-            <div class="cont-info-widget">
-            <ul>
-              <li><i class="fa fa-building"></i>4120 Lenox Avenue, New York,<br/>10035 76 Saint Nicholas Avenue</li>
-              <li><a href="#"><i class="fa fa-envelope"></i>mail@bushido.com</a></li>
-              <li><a href="#"><i class="fa fa-support"></i>support@bushido.com</a></li>
-              <li><i class="fa fa-phone"></i>+48 543765234</li>
-              <li><i class="fa fa-mobile"></i>+48 555 234 54 34</li>
-            </ul>
-            </div>
-          </div>
-        	<div class="col-lg-5 col-md-7 col-sm-7">
-          	<h3>Drop us a line</h3>
-          	<form class="contact-form ajax-form" method="post">
-            	<div class="form-group">
-              	<label class="sr-only" for="cf-name">Name</label>
-              	<input type="text" class="form-control" name="name" id="cf-name" placeholder="Enter your name">
+      </section>
+      <section>
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <form class="contact-form ajax-form" method="post">
+              <div class="form-group">
+                <label class="sr-only" for="cf-name">Name</label>
+                <input type="text" class="form-control" name="name" id="cf-name" placeholder="Enter your name">
               </div>
-            	<div class="form-group">
-              	<label class="sr-only" for="cf-email">Email</label>
-              	<input type="email" class="form-control" name="email" id="cf-email" placeholder="Enter email">
+              <div class="form-group">
+                <label class="sr-only" for="cf-email">Email</label>
+                <input type="email" class="form-control" name="email" id="cf-email" placeholder="Enter email">
               </div>
-            	<div class="form-group">
-              	<label class="sr-only" for="cf-message">Message</label>
+              <div class="form-group">
+                <label class="sr-only" for="cf-message">Message</label>
                 <textarea class="form-control" name="message" id="cf-message" rows="5" placeholder="Your message"></textarea>
               </div>
               <!-- Validation Response -->
@@ -301,7 +219,11 @@
             </form>
           </div>
         </div>
-      </section><!--Contacts Close-->
+      </section><!--Google Map Close-->
+      
+      <!--Contacts-->
+
+        	
     
       <!--Support-->
       <section class="support" id="support">
