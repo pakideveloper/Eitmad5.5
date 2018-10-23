@@ -136,6 +136,16 @@
                             </li>
 
                             <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span>Newspaper Post</span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    
+                                    <li><a href="{{url('/jobs/admin/post')}}/create">Add</a></li>
+                                   
+                                    <li><a href="{{url('/jobs/admin/post')}}">View</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-diamond"></i><span class="badge badge-danger pull-right">New</span> <span> Forms </span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="form-elements.html">Form Elements</a></li>
