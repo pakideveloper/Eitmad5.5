@@ -81,9 +81,14 @@ Route::post('/banktransfer', function () {
     return view('frontend/ecommerce/modules/CheckOut/paymentcheckout');
     });
 //vendor
-    //dasboard
+    /*dasboard*/
     Route::get('vendor/dashboard','Ecommerce\Vendor\VendorController@dashboard');
-    //dasboard
+
+    //add product
+    Route::get('vendor/add-product','Ecommerce\Vendor\VendorController@addProduct')->name('add-product');
+    //add product
+    /*dasboard*/
+
 //vendor
 
 
