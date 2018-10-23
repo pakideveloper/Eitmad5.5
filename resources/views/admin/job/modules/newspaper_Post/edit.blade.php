@@ -4,6 +4,7 @@
 <!-- Mirrored from coderthemes.com/zircos/material-design/form-validation.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Jun 2018 19:45:51 GMT -->
 <head>
         <meta charset="utf-8">
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="A fully featured admin theme which can be used to build CRM, CMS, etc.">
         <meta name="author" content="Coderthemes">
@@ -424,7 +425,7 @@
                 $.ajax(
                 {
 
-                    url: '{{ url('/jobs/admin/post/deleteFile')}}',
+                    url: '{{ url('/jobs/admin/post/logodeleteFile')}}',
                     type: 'post',              
                     data: {
                         "file_id": file_id,

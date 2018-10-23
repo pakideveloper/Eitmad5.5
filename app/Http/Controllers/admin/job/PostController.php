@@ -164,8 +164,10 @@ class PostController extends Controller
         return Redirect()->back()->with('status', 'Post deleted successfully!');
 
     }
-    public function deleteFile(Request $request)
+    public function logodeleteFile(Request $request)
     {
+        // echo "string";
+        // die();
         $posts = Post::find($request->file_id);
         $file_name=$posts->paper_logo;
          $dir = public_path()."/admin/job/upload/Logo/";        
@@ -175,7 +177,7 @@ class PostController extends Controller
                   unlink($dir.'/'.$fil);
            }
          }
-        $posts->delete();
+        $file_name->delete();
       
         return response()->json(['code'=>200,'success' => $request->file_id],200);
     }
