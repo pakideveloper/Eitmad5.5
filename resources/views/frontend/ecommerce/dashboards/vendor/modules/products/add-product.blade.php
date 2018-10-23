@@ -23,13 +23,50 @@
             <form>
               <div class="row">
                 <div class="form-group col-md-6 col-sm-6">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                  <label for="product_name">Product Name</label>
+                  <input type="text" class="form-control" id="product_name" aria-describedby="emailHelp" placeholder="Enter email">
                   <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group col-md-6 col-sm-6">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                  <label for="product_description">Product Description</label>
+                  <input type="text" class="form-control" id="product_description" placeholder="text">
+                </div>
+                <div class="form-group col-md-6 col-sm-6">
+                  <label for="product_size">Product Size</label>
+                  <input type="text" class="form-control" id="product_size" placeholder="text">
+                </div>
+                <div class="form-group col-md-6 col-sm-6">
+                  <label for="product_color">Product Color</label>
+                  <input type="text" class="form-control" id="product_color" placeholder="text">
+                </div>
+                <div class="form-group col-md-6 col-sm-6">
+                  <label for="product_price">Product Price</label>
+                  <input type="text" class="form-control" id="product_price" placeholder="text">
+                </div>
+                <div class="form-group col-md-6 col-sm-6">
+                  <label for="product_quantity">Product Quantity</label>
+                  <input type="text" class="form-control" id="product_quantity" placeholder="Password">
+                </div>
+                <div class="form-group col-md-6 col-sm-6">
+                  <label for="product_category">Select Category</label>
+                  <select class="form-control">
+                    <option>Category 1</option>
+                    <option>Category 2</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-6 col-sm-6">
+                  <label for="product_category">Select Brand</label>
+                  <select class="form-control">
+                    <option>Brand 1</option>
+                    <option>Brand 2</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-6 col-sm-6">
+                  <label for="product_category">Select Discount</label>
+                  <select class="form-control">
+                    <option>discount 1</option>
+                    <option>discount 2</option>
+                  </select>
                 </div>
                 <div class="form-group form-check">
                   <input type="checkbox" class="form-check-input" id="exampleCheck1">

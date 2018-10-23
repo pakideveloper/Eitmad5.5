@@ -2,10 +2,7 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="#">
-                  <span data-feather="home"></span>
-                  Dashboard <span class="sr-only">(current)</span>
-                </a>
+                <router-link  to="dashboard">dashboard</router-link>
               </li>
               <li class="nav-item has-sub">
                 <a class="nav-link" href="JavaScript:void(0)">
@@ -20,9 +17,8 @@
                     </a>
                   </li>
                   <li>
-                    <a class="nav-link" href="{{ route('add-product') }}">
-                      Add Product
-                    </a>
+                      <router-link  to="add-product">Add Product</router-link>
+                    
                   </li>
                 </ul>
               </li>
