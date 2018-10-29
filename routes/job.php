@@ -30,7 +30,10 @@ Route::get('/contactus', function () {
 Route::get('/addjob', function () {
     return view('frontend/JobPortal/pages/AddJob');
 });
-
+Route::get('/paperjobs', function()
+{
+  return view('frontend/JobPortal/pages/paperjob/paperjob');
+});
 
 /////////// Company Registration /////
 Route::get('/addcompany', function () {

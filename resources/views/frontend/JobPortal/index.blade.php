@@ -23,10 +23,30 @@
 <link href="{{URL::to('public/JobPortal_Frontend/assets')}}/js/owl-carousel/owl.carousel.css" rel="stylesheet" type="text/css" />
 <!--bootstrap select-->
 <link href="{{URL::to('public/JobPortal_Frontend/assets')}}/js/dist/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+<!-- Header link -->
+<meta name="description" content="Responsive HTML5 E-Commerce Template" />
+		<meta name="keywords" content="responsive html5 template, e-commerce, shop, bootstrap 3.0, css, jquery, flat, modern" />
+		<meta name="author" content="8Guild" />
+    <!--Mobile Specific Meta Tag-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!--Favicon-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!--Master Slider Styles-->
+    <link href="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/masterslider/style/masterslider.css" rel="stylesheet" media="screen">
+    <!--Styles-->
+    <link href="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/css/styles.css" rel="stylesheet" media="screen">
+    <!--Color Scheme-->
+    <link class="color-scheme" href="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/css/colors/color-default.css" rel="stylesheet" media="screen">
+    <!--Color Switcher-->
+    <link href="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/color-switcher/color-switcher.css" rel="stylesheet" media="screen">
+    <!--Modernizr-->
+		<script src="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/js/libs/modernizr.custom.js"></script>
+<!-- end header link -->
 </head>
 <body>
 	<!-- header start -->
-@include('frontend/JobPortal/include/jobheader')
+@include('frontend/JobPortal/include/jobheader1')
 	<!-- header end -->
 
 <!-- slider start here -->
@@ -342,7 +362,262 @@
 		</div>
 	</div>
 <!-- featured end here -->
-
+<!-- new featured job layout -->
+<section class="catalog-grid">
+      	<div class="container">
+          <div class="row">
+          	<!--Tile-->
+          	<div class="col-lg-3 col-md-4 col-sm-6">
+            	<div class="tile">
+              	<div class="badges">
+                	<span class="sale"></span>
+                </div>
+              	<div class="price-label">Expire Date: 10 Oct</div>
+              	<div class="image">
+              	<a href="#"><img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="1"/></a>
+              	<div class="buttons">
+									<div class="open-down">
+										<button type="button" class="rotate1">
+											<i class="fa fa-link" aria-hidden="true"></i>
+										</button>
+										<button type="button" class="rotate1">
+											<i class="fa fa-search" aria-hidden="true"></i>
+										</button>
+									</div>
+							</div>	
+				</div>
+                
+                 <div class="matter">
+							<h4>  IT Department Manager</h4>
+							<ul class="list-inline">
+								<li>
+									<a href="#"><i class="fa fa-bookmark" aria-hidden="true"></i>   Full Time</a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>  Chandigarh</a>
+								</li>
+							</ul>
+							<p>There are many variations of passages of lorem Ipsum available [...]</p>
+						</div>
+						<div class="footer">
+                  <div class="tools">
+                  	<div class="rate">
+                    	<span class="active"></span>
+                      <span class="active"></span>
+                      <span class="active"></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <!--Add To Cart Button-->
+                    <a class="add-cart-btn" href="#"><span>Apply now</span><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a>
+                    <!--Share Button-->
+                    <div class="share-btn">
+                    	<div class="hover-state">
+                      	<a class="fa fa-facebook-square" href="#"></a>
+                        <a class="fa fa-twitter-square" href="#"></a>
+                        <a class="fa fa-google-plus-square" href="#"></a>
+                      </div>
+                      <i class="fa fa-share"></i>
+                    </div>
+                    <!--Add To Wishlist Button-->
+                    <a class="wishlist-btn" href="#">
+                    	<div class="hover-state">View More</div>
+                    	<i class="fa fa-plus"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+           <!--Tile-->
+          	<div class="col-lg-3 col-md-4 col-sm-6">
+            	<div class="tile">
+              	<div class="badges">
+                	<span class="sale"></span>
+                </div>
+              	<div class="price-label">Expire Date: 10 Oct</div>
+              	<div class="image">
+              	<a href="#"><img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="1"/></a>
+              	<div class="buttons">
+									<div class="open-down">
+										<button type="button" class="rotate1">
+											<i class="fa fa-link" aria-hidden="true"></i>
+										</button>
+										<button type="button" class="rotate1">
+											<i class="fa fa-search" aria-hidden="true"></i>
+										</button>
+									</div>
+							</div>	
+				</div>
+                
+                 <div class="matter">
+							<h4>  IT Department Manager</h4>
+							<ul class="list-inline">
+								<li>
+									<a href="#"><i class="fa fa-bookmark" aria-hidden="true"></i>   Full Time</a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>  Chandigarh</a>
+								</li>
+							</ul>
+							<p>There are many variations of passages of lorem Ipsum available [...]</p>
+						</div>
+						<div class="footer">
+                  <div class="tools">
+                  	<div class="rate">
+                    	<span class="active"></span>
+                      <span class="active"></span>
+                      <span class="active"></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <!--Add To Cart Button-->
+                    <a class="add-cart-btn" href="#"><span>Apply now</span><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a>
+                    <!--Share Button-->
+                    <div class="share-btn">
+                    	<div class="hover-state">
+                      	<a class="fa fa-facebook-square" href="#"></a>
+                        <a class="fa fa-twitter-square" href="#"></a>
+                        <a class="fa fa-google-plus-square" href="#"></a>
+                      </div>
+                      <i class="fa fa-share"></i>
+                    </div>
+                    <!--Add To Wishlist Button-->
+                    <a class="wishlist-btn" href="#">
+                    	<div class="hover-state">View More</div>
+                    	<i class="fa fa-plus"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Tile-->
+          	<div class="col-lg-3 col-md-4 col-sm-6">
+            	<div class="tile">
+              	<div class="badges">
+                	<span class="sale"></span>
+                </div>
+              	<div class="price-label">Expire Date: 10 Oct</div>
+              	<div class="image">
+              	<a href="#"><img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="1"/></a>
+              	<div class="buttons">
+									<div class="open-down">
+										<button type="button" class="rotate1">
+											<i class="fa fa-link" aria-hidden="true"></i>
+										</button>
+										<button type="button" class="rotate1">
+											<i class="fa fa-search" aria-hidden="true"></i>
+										</button>
+									</div>
+							</div>	
+				</div>
+                
+                 <div class="matter">
+							<h4>  IT Department Manager</h4>
+							<ul class="list-inline">
+								<li>
+									<a href="#"><i class="fa fa-bookmark" aria-hidden="true"></i>   Full Time</a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>  Chandigarh</a>
+								</li>
+							</ul>
+							<p>There are many variations of passages of lorem Ipsum available [...]</p>
+						</div>
+						<div class="footer">
+                  <div class="tools">
+                  	<div class="rate">
+                    	<span class="active"></span>
+                      <span class="active"></span>
+                      <span class="active"></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <!--Add To Cart Button-->
+                    <a class="add-cart-btn" href="#"><span>Apply now</span><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a>
+                    <!--Share Button-->
+                    <div class="share-btn">
+                    	<div class="hover-state">
+                      	<a class="fa fa-facebook-square" href="#"></a>
+                        <a class="fa fa-twitter-square" href="#"></a>
+                        <a class="fa fa-google-plus-square" href="#"></a>
+                      </div>
+                      <i class="fa fa-share"></i>
+                    </div>
+                    <!--Add To Wishlist Button-->
+                    <a class="wishlist-btn" href="#">
+                    	<div class="hover-state">View More</div>
+                    	<i class="fa fa-plus"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Tile-->
+          	<div class="col-lg-3 col-md-4 col-sm-6">
+            	<div class="tile">
+              	<div class="badges">
+                	<span class="sale"></span>
+                </div>
+              	<div class="price-label">Expire Date: 10 Oct</div>
+              	<div class="image">
+              	<a href="#"><img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="1"/></a>
+              	<div class="buttons">
+									<div class="open-down">
+										<button type="button" class="rotate1">
+											<i class="fa fa-link" aria-hidden="true"></i>
+										</button>
+										<button type="button" class="rotate1">
+											<i class="fa fa-search" aria-hidden="true"></i>
+										</button>
+									</div>
+							</div>	
+				</div>
+                
+                 <div class="matter">
+							<h4>  IT Department Manager</h4>
+							<ul class="list-inline">
+								<li>
+									<a href="#"><i class="fa fa-bookmark" aria-hidden="true"></i>   Full Time</a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>  Chandigarh</a>
+								</li>
+							</ul>
+							<p>There are many variations of passages of lorem Ipsum available [...]</p>
+						</div>
+						<div class="footer">
+                  <div class="tools">
+                  	<div class="rate">
+                    	<span class="active"></span>
+                      <span class="active"></span>
+                      <span class="active"></span>
+                      <span></span>
+                      <span></span>
+                    </div>
+                    <!--Add To Cart Button-->
+                    <a class="add-cart-btn" href="#"><span>Apply now</span><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a>
+                    <!--Share Button-->
+                    <div class="share-btn">
+                    	<div class="hover-state">
+                      	<a class="fa fa-facebook-square" href="#"></a>
+                        <a class="fa fa-twitter-square" href="#"></a>
+                        <a class="fa fa-google-plus-square" href="#"></a>
+                      </div>
+                      <i class="fa fa-share"></i>
+                    </div>
+                    <!--Add To Wishlist Button-->
+                    <a class="wishlist-btn" href="#">
+                    	<div class="hover-state">View More</div>
+                    	<i class="fa fa-plus"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+<!-- end featured job layout -->
 <!-- browse start here -->
 	<div class="browse">
 		<div class="container">
@@ -663,7 +938,7 @@
 <!-- partner end here -->
 
 <!-- footer start -->
-@include('frontend/JobPortal/include/jobfooter')
+@include('frontend/JobPortal/include/jobfooter1')
 <!--footer end -->
 
 <!-- jquery -->
@@ -678,6 +953,26 @@
 <script src="{{URL::to('public/JobPortal_Frontend/assets')}}/js/internal.js" type="text/javascript"></script>
 <!-- color switcher-->
 <script src="{{URL::to('public/JobPortal_Frontend/assets')}}/js/switcher.js" type="text/javascript"></script>
+
+<!-- Additional -->
+<script src="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/js/libs/jquery-1.11.1.min.js"></script>
+		<script src="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/js/libs/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/js/libs/jquery.easing.min.js"></script>
+		<script src="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/js/plugins/bootstrap.min.js"></script>
+		<script src="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/js/plugins/smoothscroll.js"></script>
+		<script src="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/js/plugins/jquery.validate.min.js"></script>
+		<script src="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/js/plugins/icheck.min.js"></script>
+		<script src="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/js/plugins/jquery.placeholder.js"></script>
+		<script src="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/js/plugins/jquery.stellar.min.js"></script>
+		<script src="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/js/plugins/jquery.touchSwipe.min.js"></script>
+		<script src="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/js/plugins/jquery.shuffle.min.js"></script>
+    <script src="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/js/plugins/lightGallery.min.js"></script>
+    <script src="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/js/plugins/owl.carousel.min.js"></script>
+    <script src="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/js/plugins/masterslider.min.js"></script>
+    <script src="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/mailer/mailer.js"></script>
+		<script src="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/js/scripts.js"></script>
+    <script src="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/color-switcher/color-switcher.js"></script>
+<!-- end additional -->
 </body>
 
 <!-- Mirrored from ocsolutions.co.in/html/jobportal/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 31 Aug 2018 10:24:08 GMT -->
