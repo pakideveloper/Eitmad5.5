@@ -27,4 +27,6 @@ Route::post('companies/updateStatus','admin\job\AdminCompanyController@UpdateSta
 Route::resource('/industries','admin\job\IndustryController');
 Route::resource('companies','admin\job\AdminCompanyController');
 Route::post('companies/updateStatus','admin\job\AdminCompanyController@UpdateStatus');
+Route::resource('post','admin\job\PostController');
+Route::post('post/logodeleteFile','admin\job\PostController@logodeleteFile');
 

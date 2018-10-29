@@ -19,6 +19,14 @@ $(document).ready(function(){
         showThumbs: true,
         addMore: true
     });
+    $('#filer_input3').filer({
+        limit: 3,
+        maxSize: 3,
+        extensions: ['jpg', 'jpeg', 'png', 'gif', 'psd'],
+        changeInput: true,
+        showThumbs: true,
+        addMore: true
+    });
 
 	//Example 1
     $("#filer_input1").filer({
