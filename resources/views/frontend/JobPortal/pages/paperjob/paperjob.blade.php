@@ -213,23 +213,71 @@
 		</div>	
 	</div>
 <!-- slider end here -->
+<!-- slider
+ -->
 
-
+ <div id="partner">
+		<div class="container">
+			<div class="row">
+				<!-- our-partner start here -->
+				<div class="our-partner">
+					<div class="border"></div>
+					<div class="border1"></div>
+				</div>
+				<!-- our-partner end here -->
+				
+				<div id="partners" class="owl-carousel">
+					<div class="item">
+						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
+							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l2.jpg" class="img-responsive" alt="l1" title="l1" />
+						</div>
+						<span  style="margin-left: 85px"> 10 Jobs </span>
+					</div>
+					<div class="item">
+						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
+							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l2.jpg" class="img-responsive" alt="l2" title="l2" />
+						</div>
+						<span  style="margin-left: 85px"> 11 Jobs </span>
+					</div>
+					<div class="item">
+						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
+							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l3.jpg" class="img-responsive" alt="l3" title="l3" />
+						</div>
+						<span  style="margin-left: 85px"> 12 Jobs </span>
+					</div>
+					<div class="item">
+						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
+							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l4.jpg" class="img-responsive" alt="l4" title="l4" />
+						</div>
+						<span  style="margin-left: 85px"> 13 Jobs </span>
+					</div>
+					<div class="item">
+						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
+							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l5.jpg" class="img-responsive" alt="l5" title="l5" />
+						</div>
+						<span  style="margin-left: 85px"> 14 Jobs </span>
+					</div>
+					<div class="item">
+						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
+							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l2.jpg" class="img-responsive" alt="l1" title="l1" />
+						</div>
+						<span  style="margin-left: 85px"> 15 Jobs </span>
+					</div>
+					<div class="item">
+						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
+							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l2.jpg" class="img-responsive" alt="l2" title="l2" />
+						</div>
+						<span  style="margin-left: 85px"> 16 Jobs </span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- end slider
+ -->
 <!-- paper job -->
 <div class="JobsByCntryCity gray jobLisitngPanel">
 <div class="topBx">
-            <div class="tpBxLft">
-                <div class="nmbr" id="job-search-count">
-                    <span>
-                        40667
-                    </span>
-                </div>
-                
-
-                <div class="txt">
-                        <h3>NEW VACANCIES IN LAST 30 DAYS in <span id="span-total-v">912</span> job ads</h3>
-                </div>
-            </div>
 </div>
 <div class="btmBx">
 <div class="job-listing-block" id="jobs-append-box">
