@@ -83,9 +83,10 @@ Route::post('/banktransfer', function () {
 //vendor
     /*dasboard*/
     Route::get('vendor/dashboard','Ecommerce\Vendor\VendorController@dashboard');
+    Route::get('/{vue_capture?}', function () { return redirect()->back(); })->where('vue_capture', '[\/\w\.-]*');
 
     //add product
-    Route::get('vendor/add-product','Ecommerce\Vendor\VendorController@addProduct')->name('add-product');
+    // Route::get('vendor/add-product','Ecommerce\Vendor\VendorController@addProduct')->name('add-product');
     //add product
     /*dasboard*/
 
