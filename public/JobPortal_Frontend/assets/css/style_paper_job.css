@@ -1,0 +1,4064 @@
+a:focus {
+    outline: 0 none
+}
+.no-margin-top {
+    margin-top: 0px!important
+}
+.no-padding-bottom {
+    padding-bottom: 0px!important
+}
+.no-margin-bottom {
+    margin-bottom: 0px!important
+}
+.text-bold {
+    font-weight: bold!important
+}
+.text-uppercase {
+    text-transform: uppercase!important
+}
+
+
+div.top-job-section {
+    float: left;
+    width: 100%;
+    min-height: 289px;
+    height: 280px;
+    overflow: hidden;
+    background-color: #0975ad;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover
+}
+.no-min-height{
+     min-height: auto !important;
+     height: auto !important;
+}
+.no-padding-bottom{
+     padding-bottom: 0px !important;
+}
+div.wrapper div.top-job-section h1.banner-title {
+    font-weight: normal!important;
+    text-transform: none!important
+}
+div.top-job-section h1.banner-title {
+    font-size: 40px;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: #fff;
+    text-align: center;
+    padding-top: 20px
+}
+div.top-job-section h1.banner-title.paddingTop40 {
+    padding-top: 40px
+}
+div.top-job-section h1.banner-title.marginBtm15 {
+    margin-bottom: 15px
+}
+div.top-job-section p.desc {
+    float: left;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    color: #fff
+}
+div.top-job-section div.ikdfancyLinks {
+    margin-top: 0
+}
+div.top-job-section div.ikdfancyLinks a {
+    color: #fff
+}
+div.top-job-section div.ikdfancyLinks a:before {
+    background-image: url(../images/fancylink-white-bg-left.png)
+}
+div.top-job-section div.ikdfancyLinks a:after {
+    background-image: url(../images/fancylink-white-bg-right.png)
+}
+div.jobSearchForm {
+    float: left;
+    width: 100%;
+    margin: 10px 0;
+    padding: 0 60px;
+    box-sizing: border-box;
+    margin-bottom: 38px
+}
+div.jobSearchForm input::-webkit-input-placeholder {
+    color: #000;
+    opacity: 1
+}
+div.jobSearchForm input::-moz-placeholder {
+    opacity: 1;
+    color: #000
+}
+div.jobSearchForm input:-ms-input-placeholder {
+    opacity: 1;
+    color: #000
+}
+div.jobSearchForm input:-moz-placeholder {
+    opacity: 1;
+    color: #000
+}
+div.jobSearchForm div.formfieldtitle {
+    float: left;
+    width: 58%;
+    padding-right: 2px;
+    box-sizing: border-box
+}
+div.jobSearchForm div.formfieldtitle input.title {
+    float: left;
+    width: 100%;
+    height: 52px;
+    border: 1px #fff solid;
+    box-sizing: border-box;
+    background: #fff;
+    font-size: 18px;
+    color: #000;
+    padding: 10px 20px;
+    box-shadow: none;
+    outline: 0 none
+}
+div.jobSearchForm div.formfieldtitle input.title:focus {
+    box-shadow: none;
+    border-color: #83c928
+}
+div.jobSearchForm div.formfieldSelectCity {
+    float: left;
+    width: 270px;
+    padding-right: 2px;
+    box-sizing: border-box
+}
+div.jobSearchForm div.formfieldSelectCity select.cityField {
+    float: left;
+    width: 100%;
+    height: 52px;
+    border: 1px #fff solid;
+    box-sizing: border-box;
+    background: #fff;
+    font-size: 18px;
+    color: #000;
+    padding: 10px 20px;
+    box-shadow: none;
+    outline: 0 none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url(../images/jobs/ic-select-double-white.jpg);
+    background-repeat: no-repeat;
+    background-position: 90% center
+}
+div.jobSearchForm div.formfieldSelectCity select.cityField:focus {
+    box-shadow: none;
+    border-color: #83c928
+}
+div.jobSearchForm div.formfieldSearchButton {
+    float: left;
+    width: 160px
+}
+div.jobSearchForm div.formfieldSearchButton input.btnjobSearch {
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+    border: 0;
+    background: #83c928 url(../images/jobs/ic-white-search.png) no-repeat 35px center;
+    height: 52px;
+    color: #fff;
+    font-size: 18px;
+    padding-left: 0;
+    text-align: center;
+    padding: 0;
+    padding-left: 26px;
+    cursor: pointer
+}
+div.jobSearchForm div.formfieldSearchButton input.btnjobSearch:hover {
+    background-color: rgba(131, 201, 40, .9)
+}
+div.jobSearchForm.style2 {
+    padding: 0;
+    width: 67%;
+    float: none;
+    overflow: hidden;
+    clear: both;
+    margin: 10px auto 0
+}
+div.jobSearchForm.style2 div.formfieldtitle {
+    width: 68%
+}
+div.job-counting-section-in-newspapers {
+    float: left;
+    width: 100%;
+    background: #def4c1;
+    height: 255px;
+    overflow: hidden;
+    margin-bottom: 7px
+}
+div.job-counting-section-in-newspapers h4.secTitle {
+    position: relative;
+    width: auto;
+    font-size: 22px;
+    color: #000;
+    font-weight: 700;
+    display: inline-block
+}
+div.custom-tab-section .slick-slider {
+    padding: 0 20px 0 15px
+}
+div.job-counting-section-in-newspapers ul.slick-dots {
+    display: none!important
+}
+div.job-counting-section-in-newspapers .slick-prev,
+div.job-counting-section-in-newspapers .slick-next {
+    top: 38%;
+    z-index: 99999
+}
+div.job-counting-section-in-newspapers .slick-next {
+    width: 17px;
+    height: 30px;
+    right: 0;
+    background: url(https://ikddata.ilmkidunya.com/jobs/images/jobs/img-arrow-right-black.png) no-repeat;
+    background-size: 17px 29px
+}
+div.job-counting-section-in-newspapers .slick-next:before,
+div.job-counting-section-in-newspapers .slick-next:after {
+    display: none!important
+}
+div.job-counting-section-in-newspapers .slick-next:hover {
+    background: url(https://ikddata.ilmkidunya.com/jobs/images/jobs/img-arrow-right-green.png) no-repeat
+}
+div.job-counting-section-in-newspapers .slick-prev {
+    width: 17px;
+    z-index: 99999;
+    height: 30px;
+    background: url(https://ikddata.ilmkidunya.com/jobs/images/jobs/img-arrow-left-black.png) no-repeat;
+    background-size: 17px 29px;
+    left: 0
+}
+div.job-counting-section-in-newspapers .slick-prev:before,
+div.job-counting-section-in-newspapers .slick-prev:after {
+    display: none!important
+}
+div.job-counting-section-in-newspapers .slick-prev:hover {
+    background: url(https://ikddata.ilmkidunya.com/jobs/images/jobs/img-arrow-left-green.png) no-repeat
+}
+div.custom-tab-section {
+    float: left;
+    width: 100%
+}
+div.custom-tab-section ul.tab-links {
+    float: right;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    margin-top: -44px;
+    margin-bottom: 10px
+}
+div.custom-tab-section ul.tab-links li {
+    float: left
+}
+div.custom-tab-section ul.tab-links li a {
+    color: #000;
+    font-size: 18px;
+    text-transform: capitalize;
+    padding: 15px 20px;
+    box-sizing: border-box;
+    display: inline-block;
+    border-bottom: 2px transparent solid;
+    text-shadow: none;
+    box-shadow: none
+}
+div.custom-tab-section ul.tab-links li a:hover {
+    font-weight: 400;
+    color: #83c928
+}
+div.custom-tab-section ul.tab-links li.active a {
+    font-weight: 700;
+    border-color: #000;
+    color: #000
+}
+div.custom-tab-section ul.tab-links li.active a:hover {
+    color: #000
+}
+div.custom-tab-section div.tab-content {
+    float: left;
+    width: 100%;
+    margin-top: 18px
+}
+div.single-slide-newspaper-jobs p {
+    font-size: 18px;
+    float: left;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-weight: 700
+}
+div.single-slide-newspaper-jobs div.image {
+    width: 116px;
+    height: 116px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 2px #fff solid;
+    box-shadow: 0 0 2px #fff;
+    border-radius: 50%;
+    background: #def4c1;
+    padding: 11px;
+    box-sizing: border-box
+}
+div.single-slide-newspaper-jobs div.image div.imgBox {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    background: #fff;
+    display: table;
+    text-align: center
+}
+div.single-slide-newspaper-jobs div.image div.imgBox span {
+    width: 100%;
+    height: 100%;
+    display: table-cell;
+    vertical-align: middle
+}
+div.single-slide-newspaper-jobs div.image div.imgBox img {
+    max-width: 100%;
+    display: inline-block
+}
+div.single-slide-newspaper-jobs:hover div.image {
+    background: #83c928;
+    border-color: #83c928
+}
+div.single-slide-newspaper-jobs:hover p {
+    color: #83c928
+}
+div.jobpapers-left-box h2.fancyTitle {
+    font-size: 20px;
+    color: #000;
+    float: left;
+    width: 100%;
+    font-weight: 700;
+    border-bottom: 1px #e8e8e8 solid
+}
+div.jobpapers-left-box h2.fancyTitle.no-line{
+     border: 0px !important;
+}
+div.jobpapers-left-box h2.fancyTitle.no-line span:after{
+     display: none;
+}
+div.jobpapers-left-box h2.fancyTitle.marginTop20 {
+    margin-top: 20px!important
+}
+div.jobpapers-left-box h2.fancyTitle span {
+    display: inline-block;
+    padding-bottom: 8px;
+    position: relative;
+    padding-top: 4px
+}
+div.jobpapers-left-box h2.fancyTitle span:after {
+    background: #83c928;
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    bottom: -1px
+}
+div.jobpapers-left-box p {
+    font-size: 16px;
+    color: #000;
+    margin: 8px 0
+}
+div.jobpapers-left-box div.by-google {
+    margin: 10px 0
+}
+div.by-google {
+    float: left;
+    width: 100%
+}
+div.by-google.border {
+    border: 1px #e8e8e8 solid;
+    border-left: 0;
+    border-right: 0;
+    padding: 10px 0
+}
+div.bannerHolder {
+    text-align: center;
+    padding: 15px 0;
+    border: 1px #e8e8e8 solid;
+    border-left: 0;
+    border-right: 0;
+    margin: 10px 0;
+    float: left;
+    width: 100%
+}
+div.JobSearchByCityVise {
+    float: left;
+    width: 100%;
+    background: #e9e9e9;
+    padding: 34px;
+    box-sizing: border-box
+}
+div.JobSearchByCityVise.bg-green {
+    background: #83c928
+}
+div.JobSearchByCityVise div.bxLeft {
+    float: left;
+    width: 50%;
+    padding-right: 34px;
+    box-sizing: border-box
+}
+div.JobSearchByCityVise div.bxRight {
+    float: left;
+    width: 50%;
+    padding-left: 34px;
+    box-sizing: border-box;
+    padding-top: 15px
+}
+div.JobSearchByCityVise div.icon {
+    clear: both;
+    margin-bottom: 4px
+}
+div.JobSearchByCityVise div.title {
+    clear: both;
+    color: #fff;
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: 700
+}
+div.JobSearchByCityVise div.title span {
+    display: block
+}
+div.JobSearchByCityVise p.desc {
+    font-size: 16px;
+    color: #fff;
+    line-height: normal;
+    clear: both
+}
+div.JobSearchByCityVise form {
+    clear: both;
+    margin-top: 20px
+}
+div.JobSearchByCityVise select {
+    width: 100%;
+    background: url(../images/ic-select-green.png) no-repeat 94% 26px #fff;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    border: 0;
+    font-size: 16px;
+    color: #000;
+    border-radius: 3px;
+    height: 62px;
+    outline: 0 none;
+    padding: 10px 15px;
+    box-sizing: border-box
+}
+div.JobSearchByCityVise select:focus {
+    background: url(../images/ic-select-green-up.png) no-repeat 94% 26px #fff
+}
+div.JobSearchByCityVise input.btnSubmit {
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 700;
+    background: #318bbc;
+    width: 100%;
+    border: 0;
+    box-sizing: border-box;
+    padding: 22px 15px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 20px;
+    cursor: pointer
+}
+div.JobSearchByCityVise input.btnSubmit:hover {
+    opacity: .8
+}
+div.jobsCitySlider {
+    float: left;
+    width: 100%;
+    margin: 0px!important;
+    margin-top: 17px!important;
+    max-height: 328px;
+    overflow-y: hidden
+}
+div.jobsCitySlider div.singleBox {
+    float: left;
+    width: 100%;
+    padding: 5px 5px;
+    box-sizing: border-box
+}
+div.jobsCitySlider div.singleBox a {
+    display: block
+}
+div.jobsCitySlider .slick-arrow {
+    display: none!important
+}
+div.jobsCitySlider .slick-dots {
+    width: 100%;
+    margin: 30px 0 0;
+    position: relative;
+    bottom: 0
+}
+div.jobsCitySlider .slick-dots li {
+    width: 40px;
+    overflow: hidden;
+    height: 7px
+}
+div.jobsCitySlider .slick-dots li button {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: block;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    background: #fff
+}
+div.jobsCitySlider .slick-dots li button:before,
+div.jobsCitySlider .slick-dots li button:after {
+    display: none
+}
+div.jobsCitySlider .slick-dots li.slick-active button,
+div.jobsCitySlider .slick-dots li:hover button {
+    background: #318bbc
+}
+div.singleJobConsultantCity {
+    float: left;
+    width: 100%;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 15px;
+    height: 125px;
+    overflow: hidden;
+    display: grid;
+    align-items: center;
+    align-content: center
+}
+div.singleJobConsultantCity div.cityImage {
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px
+}
+div.singleJobConsultantCity div.cityImage img {
+    display: inline-block
+}
+div.singleJobConsultantCity div.cityImage img.img-hovered {
+    display: none
+}
+div.singleJobConsultantCity div.cityTitle {
+    float: left;
+    width: 100%;
+    color: #000;
+    font-size: 16px;
+    text-align: center
+}
+div.singleJobConsultantCity:hover div.cityImage img.img-normal {
+    display: none
+}
+div.singleJobConsultantCity:hover div.cityImage img.img-hovered {
+    display: inline-block
+}
+div.singleJobConsultantCity:hover div.cityTitle {
+    color: #83c928
+}
+div.JobsByCntryCity {
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 45px
+}
+div.JobsByCntryCity.gray {
+    background: #e9e9e9
+}
+div.JobsByCntryCity.blue {
+    background: #2f88b9
+}
+div.JobsByCntryCity.blue .txt-white {
+    color: #fff
+}
+div.JobsByCntryCity.style-job-details div.tpBxLft {
+    float: left;
+    width: 550px
+}
+div.JobsByCntryCity.style-job-details div.tpBxLft div.compimage {
+    width: 67px;
+    height: 67px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 15px
+}
+div.JobsByCntryCity.style-job-details div.tpBxLft div.compimage span {
+    display: table;
+    width: 100%;
+    height: 100%
+}
+div.JobsByCntryCity.style-job-details div.tpBxLft div.compimage div.img {
+    display: table-cell;
+    vertical-align: middle
+}
+div.JobsByCntryCity.style-job-details div.tpBxLft div.compimage div.img img {
+    width: 67px;
+    height: 67px;
+    border-radius: 50%
+}
+div.JobsByCntryCity.style-job-details div.txt {
+    width: 100%;
+    margin: 0
+}
+div.JobsByCntryCity.style-job-details div.txt h3 {
+    font-size: 30px;
+    text-transform: capitalize
+}
+div.JobsByCntryCity.style-job-details div.txt span {
+    color: #5095bf;
+    margin-right: 5px
+}
+div.JobsByCntryCity div.icons {
+    margin-top: 5px
+}
+div.JobsByCntryCity div.sicon {
+    width: 84px;
+    height: 84px;
+    border: 2px solid #d1d1d1;
+    border-radius: 50%;
+    background-clip: padding-box;
+    background-color: #fff;
+    line-height: normal;
+    display: block;
+    float: left;
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+    box-sizing: border-box
+}
+div.JobsByCntryCity div.sicon:last-child {
+    position: relative;
+    left: -10px
+}
+div.JobsByCntryCity div.sicon img {
+    width: 45px
+}
+div.JobsByCntryCity div.sicon span {
+    width: 100%;
+    height: 100%;
+    display: table
+}
+div.JobsByCntryCity div.sicon span a {
+    display: table-cell;
+    vertical-align: middle
+}
+div.JobsByCntryCity div.sicon span a.no-link {
+    pointer-events: none
+}
+div.JobsByCntryCity div.tpBxRgt {
+    float: right
+}
+div.JobsByCntryCity div.nmbr {
+    font-size: 73px;
+    color: #2f88b9;
+    font-weight: 700;
+    line-height: 88px;
+    float: left;
+    width: auto!important;
+    min-height: initial!important
+}
+div.JobsByCntryCity div.nmbr.txt-light-blue {
+    color: #93d9ff
+}
+div.JobsByCntryCity div.txt {
+    float: left;
+    width: 330px;
+    margin-left: 15px
+}
+div.JobsByCntryCity div.txt h3 {
+    font-size: 21px;
+    color: #525252;
+    font-weight: 700;
+    line-height: 36px;
+    margin-bottom: 0;
+    text-transform: uppercase
+}
+div.JobsByCntryCity div.txt p {
+    font-size: 20px;
+    color: #525252;
+    line-height: 18px;
+    margin-top: 5px
+}
+div.JobsByCntryCity {
+    float: left;
+    width: 100%;
+    margin: 10px 0 20px
+}
+div.JobsByCntryCity.gray {
+    background: #e9e9e9
+}
+a.post-free-job-btn {
+    box-sizing: border-box;
+    color: #000;
+    font-size: 18px;
+    padding: 10px 15px;
+    line-height: normal;
+    background: #fff;
+    border-radius: 3px;
+    position: relative;
+    margin-top: 26px;
+    display: inline-block
+}
+a.post-free-job-btn:hover {
+    background: #83c928;
+    color: #fff
+}
+div.clear-fix {
+    float: left;
+    width: 100%;
+    clear: both;
+    min-height: 1px
+}
+div.ikdfancyLinks {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center
+}
+div.ikdfancyLinks.no-margin-top {
+    margin-top: 0
+}
+div.ikdfancyLinks.margin-bottom-20 {
+    margin-bottom: 20px
+}
+div.ikdfancyLinks a {
+    display: inline-block;
+    font-size: 16px;
+    color: #000;
+    position: relative;
+    padding: 0 60px;
+    font-weight: 500;
+    margin: 0px!important
+}
+div.ikdfancyLinks a:before {
+    width: 50px;
+    height: 1px;
+    background: url(../images/consultants-by-country/left-shadow-line.png) no-repeat left center;
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 11px
+}
+div.ikdfancyLinks a:after {
+    width: 50px;
+    height: 1px;
+    background: url(../images/consultants-by-country/right-shadow-line.png) no-repeat left center;
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 11px
+}
+div.ikdfancyLinks a:hover {
+    color: #71bc27
+}
+div.ikdfancyLinks a span {
+    width: 16px;
+    height: 16px;
+    background: #71bc27;
+    color: #fff;
+    line-height: 16px;
+    margin-right: 5px;
+    display: inline-block;
+    border-radius: 50%;
+    font-weight: 700
+}
+div.ikdfancyLinks a:hover {
+    color: #71bc27!important
+}
+div.ikdfancyLinks a.no-before-after:before,
+div.ikdfancyLinks a.no-before-after:after {
+    display: none
+}
+div.ikdfancyLinks a.text-black {
+    color: #000
+}
+div.ikdfancyLinks.no-after a {
+    margin-bottom: 10px
+}
+div.ikdfancyLinks.no-after a:after,
+div.ikdfancyLinks.no-after a:before {
+    display: none!important
+}
+div.jobByCategories {
+    float: left;
+    width: 100%;
+    margin: 20px 0;
+    position: relative;
+    z-index: 99
+}
+div.jobByCategories.margin-top-5px {
+    margin-top: 5px
+}
+div.jobByCategories.style2 ul li {
+    width: 206px;
+    height: 140px
+}
+div.jobByCategories ul {
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    border-left: 1px #eee solid;
+    border-bottom: 1px #eee solid
+}
+div.jobByCategories ul div.box {
+    float: left;
+    width: 100%
+}
+div.jobByCategories ul li {
+    width: 165px;
+    height: 125px;
+    background: #fff;
+    overflow: hidden;
+    text-align: center;
+    float: left;
+    padding: 0;
+    position: relative;
+    display: block;
+    align-items: center;
+    box-sizing: border-box
+}
+div.jobByCategories ul li:hover {
+    box-shadow: 0 0 35px rgba(0, 0, 0, .15);
+    z-index: 99;
+    position: relative
+}
+div.jobByCategories ul li:hover p {
+    color: #0975ad
+}
+div.jobByCategories ul li:after {
+    border: 1px #eee solid;
+    position: absolute;
+    left: -1px;
+    right: 0;
+    top: 0;
+    bottom: -1px;
+    content: "";
+    z-index: 99
+}
+div.jobByCategories ul li a {
+    display: flex;
+    padding: 10px;
+    box-sizing: border-box;
+    height: 100%;
+    position: relative;
+    align-items: center;
+    z-index: 999
+}
+div.jobByCategories ul li a:hover img.img-normal {
+    display: none
+}
+div.jobByCategories ul li a:hover img.img-hovered {
+    display: inline-block
+}
+div.jobByCategories ul li img {
+    max-width: 100%
+}
+div.jobByCategories ul li img.img-hovered {
+    display: none
+}
+div.jobByCategories ul li p {
+    font-size: 16px;
+    color: #000
+}
+div.appInformation {
+    float: left;
+    width: 100%;
+    padding: 20px;
+    min-height: 497px;
+    color: #fff;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    background: url(../images/app-screenshot-with-hand.png) no-repeat left bottom #318bbc
+}
+div.appInformation div.inner {
+    float: right;
+    width: 430px
+}
+div.appInformation div.top,
+div.appInformation div.bottom {
+    float: left;
+    width: 100%
+}
+div.appInformation div.top {
+    padding-top: 15px;
+    padding-bottom: 20px
+}
+div.appInformation div.icon {
+    float: left;
+    width: 144px;
+    height: 145px;
+    overflow: hidden;
+    margin-right: 20px
+}
+div.appInformation div.desc {
+    float: left;
+    color: #fff
+}
+div.appInformation div.desc h2 {
+    line-height: 52px;
+    font-size: 68px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 700;
+    margin-top: 20px
+}
+div.appInformation div.desc h3 {
+    line-height: normal;
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 700;
+    margin-top: 0
+}
+div.appInformation div.desc h3 span {
+    display: block
+}
+div.appInformation p {
+    font-size: 16px;
+    line-height: normal;
+    color: #fff
+}
+div.appInformation div.link {
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+    text-align: left
+}
+div.appInformation div.link a {
+    display: inline-block
+}
+div.appInformation div.link a:hover {
+    opacity: .8
+}
+div.featured-job-listing {
+    clear: both;
+    position: relative;
+    margin: 10px -9px 10px;
+    overflow: hidden
+}
+div.single-featured-job {
+    float: left;
+    width: 50%;
+    padding: 9px;
+    box-sizing: border-box
+}
+div.single-featured-job div.innerBx {
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px #eee solid;
+    background: #fff;
+    padding: 11px;
+    position: relative
+}
+div.single-featured-job div.jobType {
+    position: absolute;
+    top: 0;
+    right: 0
+}
+div.single-featured-job div.lftBx {
+    float: left;
+    width: 70%
+}
+div.single-featured-job div.rgtBx {
+    float: right;
+    width: 83px
+}
+div.single-featured-job div.image {
+    width: 83px;
+    height: 83px
+}
+div.single-featured-job div.image img {
+    max-width: 100%;
+    height: 83px
+}
+div.single-featured-job h5 {
+    font-size: 16px;
+    color: #000;
+    font-weight: 700;
+    clear: both
+}
+div.single-featured-job h5 a {
+    color: #000
+}
+div.single-featured-job h5 a:hover {
+    color: #83c928
+}
+div.single-featured-job p.job-info {
+    clear: both;
+    font-size: 13px
+}
+div.single-featured-job span.map-marker {
+    opacity: .5;
+    position: relative;
+    top: 2px;
+    margin-right: 5px
+}
+div.single-featured-job span.city {
+    color: #000;
+    margin-right: 10px
+}
+div.single-featured-job span.date-posted {
+    color: #83c928
+}
+div.talent-need-box {
+    float: left;
+    width: 100%;
+    background: #f3f3f3;
+    padding: 20px 27px;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    margin-top: 35px
+}
+div.talent-need-box div.icon {
+    float: left
+}
+div.talent-need-box div.text {
+    float: left;
+    box-sizing: border-box;
+    padding-left: 13px;
+    padding-top: 5px;
+    width: 212px
+}
+div.talent-need-box h5 {
+    color: #000;
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 0;
+    line-height: normal
+}
+div.talent-need-box p {
+    font-size: 16px;
+    color: #000;
+    margin-top: 0
+}
+div.talent-need-box div.linkButton {
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 6px
+}
+div.talent-need-box div.linkButton a {
+    display: block;
+    background: #83c928;
+    color: #fff;
+    padding: 10px 0
+}
+div.talent-need-box div.linkButton a b {
+    display: block;
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 5px
+}
+div.talent-need-box div.linkButton a span {
+    display: block;
+    font-size: 16px
+}
+div.talent-need-box div.linkButton a:hover {
+    opacity: .8
+}
+div.side-job-alert-notifier-box {
+    float: left;
+    width: 100%;
+    border: 1px #e5e5e5 solid;
+    padding: 25px;
+    box-sizing: border-box;
+    margin-bottom: 25px;
+    text-align: center
+}
+div.side-job-alert-notifier-box div.image {
+    float: left;
+    width: 100%
+}
+div.side-job-alert-notifier-box div.image img {
+    max-width: 100%
+}
+div.side-job-alert-notifier-box h5 {
+    color: #000;
+    font-weight: 700;
+    font-size: 22px;
+    margin-bottom: 0;
+    line-height: normal
+}
+div.side-job-alert-notifier-box p {
+    font-size: 16px;
+    color: #000;
+    margin-top: 0
+}
+div.side-job-alert-notifier-box div.linkButton {
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 6px
+}
+div.side-job-alert-notifier-box div.linkButton a {
+    display: block;
+    background: #83c928;
+    color: #fff;
+    padding: 22px 0;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: normal
+}
+div.side-job-alert-notifier-box div.linkButton a:hover {
+    opacity: .8
+}
+.slick-initialized .slick-slide:focus {
+    outline: none!important
+}
+div.subNavaigtion {
+    float: left;
+    width: 100%;
+    background: #5eabd3;
+    position: relative;
+    margin-top: -63px
+}
+div.subNavaigtion div.row {
+    padding: 0;
+    overflow: hidden
+}
+div.subNavaigtion ul {
+    float: left;
+    width: 100%;
+    padding: 0;
+    margin: 0
+}
+div.subNavaigtion ul li {
+    float: left
+}
+div.subNavaigtion ul a {
+    display: block;
+    padding: 19px 15px;
+    color: #fff;
+    line-height: normal;
+    outline: none;
+    text-decoration: none;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 500;
+    overflow: hidden
+}
+div.subNavaigtion ul a:hover,
+div.subNavaigtion ul a.active {
+    background: #308cbc
+}
+div.subNavaigtion div.icon {
+    float: left;
+    margin-right: 10px;
+    height: 26px;
+    display: flex;
+    align-items: center
+}
+div.subNavaigtion div.text {
+    float: left;
+    position: relative;
+    top: 4px;
+    text-shadow: 0 0 0 #fff
+}
+div.jobCities {
+    float: left;
+    width: 100%;
+    margin: 20px 0
+}
+div.jobCities.margin-top-5px {
+    margin-top: 5px
+}
+div.jobCities.style2 ul li {
+    width: 206px;
+    height: 140px
+}
+div.jobCities ul {
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    border-left: 1px #eee solid;
+   
+}
+div.jobCities ul div.box {
+    float: left;
+    width: 100%
+}
+div.jobCities ul li {
+    width: 165px;
+    height: 125px;
+    background: #fff;
+    overflow: hidden;
+    text-align: center;
+    float: left;
+    padding: 0;
+    position: relative;
+    display: block;
+    align-items: center;
+    box-sizing: border-box
+}
+div.jobCities ul li:hover {
+    box-shadow: 0 0 35px rgba(0, 0, 0, .15);
+    z-index: 99;
+    position: relative
+}
+div.jobCities ul li:hover p {
+    color: #0975ad
+}
+div.jobCities ul li:after {
+    border: 1px #eee solid;
+    position: absolute;
+    left: -1px;
+    right: 0;
+    top: 0;
+    bottom: 0px;
+    content: "";
+    z-index: 9
+}
+div.jobCities ul li a {
+    display: flex;
+    padding: 10px;
+    box-sizing: border-box;
+    height: 100%;
+    position: relative;
+    align-items: center;
+    z-index: 99
+}
+div.jobCities ul li a:hover img.img-normal {
+    display: none
+}
+div.jobCities ul li a:hover img.img-hovered {
+    display: inline-block
+}
+div.jobCities ul li img {
+    max-width: 100%
+}
+div.jobCities ul li img.img-hovered {
+    display: none
+}
+div.jobCities ul li p {
+    font-size: 16px;
+    color: #000
+}
+div.jobCities.style-sm ul li{
+     width: 117px;
+}
+
+
+
+
+
+
+.load-more-content {
+    float: left;
+    width: 100%;
+    position: relative
+}
+.show-more-height {
+    max-height: 60px!important;
+    padding-bottom: 40px;
+    overflow: hidden
+}
+.show-more-height:after {
+    content: "";
+    background: #000;
+    right: 0;
+    z-index: 990;
+    bottom: 0;
+    height: 50px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(100%, #ffffff));
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), #ffffff);
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0), #ffffff);
+    background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0), #ffffff);
+    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0), #ffffff);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff)
+}
+div.content-load-more-button {
+    float: left;
+    width: 100%;
+    text-align: left;
+    margin: 5px 0
+}
+div.content-load-more-button a {
+    display: inline-block;
+    padding: 0;
+    color: #000;
+    background: none;
+    font-size: 18px;
+    color: rgba(0, 0, 0, .8);
+    font-weight: 700;
+    text-transform: uppercase
+}
+div.content-load-more-button a i {
+    font-style: normal
+}
+div.content-load-more-button a span.icon {
+    width: 23px;
+    height: 23px;
+    background: #83c928;
+    border-radius: 50%;
+    display: inline-block;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    line-height: 21px;
+    margin-right: 10px
+}
+div.content-load-more-button a:hover {
+    color: #83c928
+}
+div.job-filter-form {
+    float: left;
+    width: 100%;
+    margin-top: 28px
+}
+div.job-filter-form div.chooseOptions {
+    float: left;
+    margin-right: 18px;
+    width: 324px
+}
+div.job-filter-form div.chooseOptions select {
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, .19);
+    height: 58px;
+    padding: 10px 15px;
+    background: url(../images/jobs/ic-select-double-white.jpg) no-repeat 95% center #fff;
+    border: 1px #eee solid;
+    width: 100%;
+    box-sizing: border-box;
+    outline: 0 none;
+    font-size: 16px;
+    color: #000;
+    padding-right: 6%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none
+}
+div.job-filter-form div.chooseOptions select:focus {
+    border-color: #83c928
+}
+div.job-filter-form div.btnSubmitFilter {
+    width: 52px;
+    height: 58px;
+    float: left
+}
+div.job-filter-form div.btnSubmitFilter input[type="submit"] {
+    background: url(../images/jobs/ic-white-search.png) no-repeat center #2f88b9;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, .19);
+    width: 100%;
+    height: 100%;
+    border: 0;
+    cursor: pointer;
+    border: 1px #2f88b9 solid
+}
+div.job-filter-form div.btnSubmitFilter input[type="submit"]:hover {
+    opacity: .8
+}
+div.job-listing-block {
+    float: left;
+    width: 100%;
+    clear: both;
+    margin-top: 30px;
+    margin-bottom: 9px
+}
+div.single-job-list-block {
+    float: left;
+    width: 100%;
+    height: 110px;
+    position: relative;
+    overflow: visible;
+    border: 1px #eee solid;
+    background: #fff;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    transition: all 0.3s ease 0s
+}
+div.single-job-list-block div.lftBx {
+    float: left;
+    padding: 10px 19px;
+    height: 100%;
+    box-sizing: border-box;
+    width: 68.5%;
+    max-height: 108px;
+    overflow: hidden
+}
+div.single-job-list-block div.rgtBx {
+    float: right;
+    width: 248px;
+    overflow: hidden;
+    border-left: 1px #e9e9e9 solid;
+    background: #fff;
+    height: 108px;
+    overflow: hidden
+}
+div.single-job-list-block div.jDesc {
+    float: left;
+    width: 100%;
+    font-size: 12px;
+    color: rgba(0, 0, 0, .5);
+    max-height: 45px;
+    overflow: hidden
+}
+div.single-job-list-block div.jDesc p {
+    font-size: 11px;
+    color: rgba(0, 0, 0, .5);
+    margin-top: 0
+}
+div.single-job-list-block .jobPostingInfo {
+    float: left;
+    width: 80px;
+    border-right: 1px #eee solid;
+    font-size: 11px;
+    color: rgba(0, 0, 0, .5);
+    font-weight: 700
+}
+div.single-job-list-block .jobPostingInfo .jPostedOn {
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding: 13px 10px 10px;
+    box-sizing: border-box
+}
+div.single-job-list-block .jobPostingInfo .jLastDate {
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding: 0 10px 0;
+    box-sizing: border-box
+}
+div.single-job-list-block .jobPostingInfo b {
+    display: block;
+    font-size: 16px;
+    line-height: normal
+}
+div.single-job-list-block .jobPostingInfo b.green {
+    color: #83c928
+}
+div.single-job-list-block .jobPostingInfo b.red {
+    color: #c00
+}
+div.single-job-list-block div.compImage {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    float: left;
+    margin-right: 19px;
+    position: relative
+}
+div.single-job-list-block div.compImage img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%
+}
+div.single-job-list-block div.compImage div.jLocation {
+    position: absolute;
+    bottom: -22px;
+    left: 0;
+    width: 90px;
+    color: #000;
+    opacity: .5;
+    line-height: 10px;
+    margin-left: -14px;
+    padding-left: 0;
+    text-align: center
+}
+div.single-job-list-block div.compImage div.jLocation img {
+    border-radius: 0;
+    position: relative;
+    left: 0;
+    top: 2px;
+    width: auto;
+    height: auto
+}
+div.single-job-list-block div.desc {
+    float: left;
+    width: 82%;
+    box-sizing: border-box
+}
+div.single-job-list-block div.jTitle {
+    float: left;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    line-height: normal
+}
+div.single-job-list-block div.jTitle a {
+    font-size: 18px;
+    color: #000;
+    font-weight: 700;
+    line-height: normal
+}
+div.single-job-list-block div.jInfo {
+    float: left;
+    width: 100%;
+    font-size: 13px;
+    color: #000;
+    margin-top: 10px;
+    display: none
+}
+div.single-job-list-block span.location {
+    opacity: .5;
+    margin-right: 5px;
+    position: relative;
+    top: 3px
+}
+div.single-job-list-block span.date-posted {
+    font-weight: 700;
+    color: #83c928;
+    margin-left: 20px;
+    margin-right: 20px
+}
+div.single-job-list-block div.jobAd {
+    float: left;
+    width: 111px;
+    height: 108px;
+    overflow: hidden
+}
+div.single-job-list-block div.jobAd:hover .popJobImage {
+    display: block
+}
+div.single-job-list-block div.jobCounting {
+    float: left;
+    border-right: 1px #eee solid;
+    width: 55px
+}
+div.single-job-list-block div.jobtotal {
+    float: left;
+    width: 100%;
+    font-size: 12px;
+    color: #000;
+    text-align: center;
+    border-bottom: 1px #eee solid;
+    padding: 12px 5px 7px;
+    box-sizing: border-box
+}
+div.single-job-list-block div.jobtotal b {
+    font-weight: 700;
+    display: block
+}
+div.single-job-list-block div.jobFavorite {
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    color: #000;
+    text-align: center;
+    padding: 10px 5px;
+    box-sizing: border-box
+}
+div.single-job-list-block div.jobFavorite a {
+    font-size: 12px;
+    color: #000;
+    text-align: center
+}
+div.single-job-list-block div.jobFavorite a:hover span.imgJobFavrt,
+div.single-job-list-block div.jobFavorite a.favorited span.imgJobFavrt {
+    background: url(../images/jobs/ic-fvrt-activated.png) no-repeat center center
+}
+div.single-job-list-block div.jobFavorite span.imgJobFavrt {
+    background: url(../images/jobs/ic-fvrt-normal.png) no-repeat center center;
+    background-size: 21px 17px;
+    height: 17px;
+    width: 21px;
+    display: block;
+    margin: 0 auto
+}
+div.single-job-list-block div.popJobImage {
+    width: 270px;
+    height: auto;
+    padding: 10px;
+    text-align: center;
+    background: #45bce4;
+    position: absolute;
+    z-index: 999999;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-top: 0;
+    top: -105px;
+    display: none;
+    left: 101%
+}
+div.single-job-list-block div.popJobImage.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both
+}
+div.single-job-list-block div.popJobImage img {
+    max-width: 100%;
+    max-height: 100%
+}
+div.single-job-list-block:hover {
+    background: #2f88b9
+}
+div.single-job-list-block:hover .popJobImage {
+    display: block!important
+}
+div.single-job-list-block:hover div.lftBx {
+    background: none
+}
+div.single-job-list-block:hover span.cityName {
+    color: #fff!important
+}
+div.single-job-list-block:hover div.jLocation {
+    opacity: 1!important
+}
+div.single-job-list-block:hover div.jLocation img.normal {
+    display: none
+}
+div.single-job-list-block:hover div.jLocation img.hovered {
+    display: inline-block!important
+}
+div.single-job-list-block:hover div.jTitle {
+    color: #fff
+}
+div.single-job-list-block:hover div.jInfo {
+    color: #fff
+}
+div.single-job-list-block:hover div.jDesc p {
+    color: #fff
+}
+div.jobLisitngPanel {
+    padding: 10px 15px 20px
+}
+div.jobs-email-subscriber {
+    float: left;
+    width: 100%;
+    background: #338cce;
+    color: #fff;
+    padding: 40px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    margin-bottom: 20px
+}
+div.jobs-email-subscriber div.lftBx {
+    float: left;
+    width: 40%;
+    box-sizing: border-box;
+    padding-top: 15px
+}
+div.jobs-email-subscriber div.lftBx img {
+    max-width: 100%
+}
+div.jobs-email-subscriber div.rgtBx {
+    float: left;
+    width: 60%;
+    box-sizing: border-box;
+    padding-left: 20px
+}
+div.jobs-email-subscriber div.tBox {
+    font-size: 40px;
+    color: #fff;
+    font-weight: 700
+}
+div.jobs-email-subscriber p {
+    font-size: 18px;
+    color: #fff
+}
+div.jobs-email-subscriber form {
+    float: left;
+    width: 100%;
+    margin-top: 10px
+}
+div.jobs-email-subscriber form input[type="email"] {
+    height: 49px;
+    background: #fff;
+    border: 1px #fff solid;
+    width: 100%;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    color: #000;
+    font-size: 15px;
+    outline: 0 none;
+    float: left;
+    width: 282px
+}
+div.jobs-email-subscriber form input[type="email"]:focus {
+    border-color: #83c928
+}
+div.jobs-email-subscriber form input[type="submit"] {
+    height: 49px;
+    float: left;
+    background: #83c928;
+    font-weight: 700;
+    border: 1px #83c928 solid;
+    width: 100%;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 20px;
+    width: 130px;
+    margin-left: 15px;
+    cursor: pointer
+}
+div.jobs-email-subscriber form input[type="submit"]:hover {
+    opacity: .8
+}
+div.pgInfoTopBlockLeft {
+    float: left;
+    width: 100%;
+    padding: 60px 0 20px
+}
+div.pgInfoTopBlockLeft.style2 {
+    padding-top: 35px
+}
+div.pgInfoTopBlockLeft div.jobInfoCounting {
+    float: left;
+    width: 100%;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    margin-top: 25px;
+    text-transform: capitalize
+}
+div.pgInfoTopBlockLeft div.jobInfoCounting b {
+    font-weight: 700;
+    margin-bottom: 5px;
+    display: block
+}
+div.pgInfoTopBlockLeft div.jobInfoCounting div.total-Vacancies {
+    float: left;
+    margin-right: 25px
+}
+div.pgInfoTopBlockLeft div.jobInfoCounting div.posted-date {
+    margin-right: 25px;
+    float: left
+}
+div.pgInfoTopBlockLeft div.jobInfoCounting div.last-date {
+    margin-right: 25px;
+    float: left
+}
+div.pgInfoTopBlockLeft div.jobInfoCounting div.mark-fvrt {
+    float: left;
+    color: #fff
+}
+div.pgInfoTopBlockLeft div.jobInfoCounting div.mark-fvrt a {
+    font-size: 18px;
+    color: #fff;
+    text-align: center
+}
+div.pgInfoTopBlockLeft div.jobInfoCounting div.mark-fvrt a:hover span.imgJobFavrt,
+div.pgInfoTopBlockLeft div.jobInfoCounting div.mark-fvrt a.favorited span.imgJobFavrt {
+    background: url(../images/jobs/ic-fvrt-activated.png) no-repeat center center
+}
+div.pgInfoTopBlockLeft div.jobInfoCounting div.mark-fvrt span.imgJobFavrt {
+    background: url(../images/jobs/ic-fvrt-normal-white.png) no-repeat center center;
+    background-size: 21px 17px;
+    height: 17px;
+    width: 21px;
+    display: block;
+    margin: 3px auto 6px
+}
+div.pgInfoTopBlockLeft div.icon {
+    width: 89px;
+    height: 89px;
+    border-radius: 50%;
+    background: #fff;
+    margin-right: 25px;
+    display: table;
+    float: left;
+    padding: 15px;
+    box-sizing: border-box
+}
+div.pgInfoTopBlockLeft div.icon.style2 {
+    width: 130px;
+    height: 130px;
+    position: relative;
+    margin-top: -16px
+}
+div.pgInfoTopBlockLeft div.icon span {
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box
+}
+div.pgInfoTopBlockLeft div.icon span img {
+    max-width: 100%;
+    max-height: 100%;
+    font-size: 0
+}
+div.pgInfoTopBlockLeft div.tBox {
+    float: left;
+    width: 600px
+}
+div.pgInfoTopBlockLeft div.tBox.style2 {
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 50px
+}
+div.pgInfoTopBlockLeft div.tBox h1 {
+    font-size: 30px;
+    font-weight: 400;
+    color: #fff;
+    margin-top: 6px;
+    text-transform: none;
+}
+div.pgInfoTopBlockLeft div.tBox h1.style2 {
+    margin-top: 16px
+}
+div.pgInfoTopBlockLeft div.tBox p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff
+}
+div.pgInfoTopBlockLeft b#currentDateofMonth {
+    display: block;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 48px;
+    text-transform: uppercase
+}
+div.pgInfoTopBlockLeft b#currentMonthofYear {
+    font-size: 18px;
+    color: #000
+}
+div.right-culm.no-padding {
+    padding: 0
+}
+div.pgInfoTopBlockRight {
+    float: right;
+    padding: 37px 0
+}
+div.pgInfoTopBlockRight.style2 {
+    padding: 0
+}
+div.pgInfoTopBlockRight div.tiles {
+    float: left
+}
+div.pgInfoTopBlockRight div.single-tile {
+    border: 1px #a6becd solid;
+    padding: 10px;
+    background: rgba(255, 255, 255, .18);
+    box-sizing: border-box;
+    color: #fff;
+    float: right;
+    height: 140px;
+    overflow: hidden;
+    width: 65px;
+    margin-left: 15px
+}
+div.pgInfoTopBlockRight div.single-tile:last-child {
+    margin-left: 0
+}
+div.pgInfoTopBlockRight div.single-tile span {
+    display: block;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 400;
+    text-transform: capitalize;
+    padding: 8px 0;
+    text-align: center
+}
+div.pgInfoTopBlockRight div.single-tile i {
+    font-style: normal
+}
+div.side-banner {
+    float: left;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 20px
+}
+div.side-banner img {
+    max-width: 100%;
+    width: 100%
+}
+div.jobListingByCompany {
+    float: left;
+    width: 100%;
+    clear: both;
+    padding-left: 1px;
+    box-sizing: border-box;
+    margin: 10px 0 10px
+}
+div.single-job-by-company {
+    float: left;
+    width: 104px;
+    height: 96px;
+    overflow: hidden;
+    border: 1px #eee solid;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    margin: -1px 0 0 -1px
+}
+div.single-job-by-company div.image {
+    float: left;
+    width: 100%;
+    display: table;
+    height: 100%;
+    box-sizing: border-box
+}
+div.single-job-by-company div.image span {
+    display: table-cell;
+    vertical-align: middle
+}
+div.single-job-by-company img {
+    max-width: 100%;
+    display: inline-block
+}
+div.single-job-by-company div.overly {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #83c928;
+    color: #fff;
+    opacity: 0;
+    z-index: 99
+}
+div.single-job-by-company div.ovrlyContent {
+    display: table;
+    width: 100%;
+    height: 100%
+}
+div.single-job-by-company div.text {
+    display: table-cell;
+    vertical-align: middle;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 12px
+}
+div.single-job-by-company:hover div.overly {
+    opacity: 1
+}
+div.top-leading-jobs-in-newspapers {
+    float: left;
+    width: 100%
+}
+div.top-leading-jobs-in-newspapers div.single-slide-newspaper-jobs {
+    float: left;
+    margin: 12px
+}
+div.top-leading-jobs-in-newspapers div.single-slide-newspaper-jobs p {
+    display: none
+}
+div.top-leading-jobs-in-newspapers-listing {
+    clear: both;
+    margin: 0 -12px
+}
+div.job-machine-calender {
+    float: left;
+    width: 100%;
+    background: #1bbfeb
+}
+div.job-machine-calender div.lftBx {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 25px 55px
+}
+div.job-machine-calender div.lftBx p {
+    font-size: 20px;
+    text-align: left;
+    color: #fff
+}
+div.job-machine-calender div.lftBx div.image {
+    padding-top: 15px;
+    padding-bottom: 30px;
+    float: left;
+    width: 100%;
+    text-align: center
+}
+div.job-machine-calender div.rgtBx {
+    float: left;
+    width: 50%;
+    padding: 25px 15px;
+    box-sizing: border-box
+}
+div.job-machine-calender div.rgtBx div.customCalender {
+    width: 324px;
+    float: right;
+    background: #fff;
+    border: 2px #fff solid;
+    padding-bottom: 0
+}
+div.job-machine-calender div.rgtBx div.customCalender .lftArrow,
+div.job-machine-calender div.rgtBx div.customCalender .rgtArrow {
+    top: 28px
+}
+div.overflow-visible {
+    overflow-x: visible!important
+}
+.hidden-x-overflow {
+    overflow-x: hidden!important
+}
+div.jobByCompanyProfile {
+    float: left;
+    width: 100%;
+    background: rgba(255, 255, 255, .22);
+    padding: 25px 10px;
+    box-sizing: border-box;
+    color: #fff;
+    text-align: center;
+    height: 226px;
+    margin-top: -10px
+}
+div.jobByCompanyProfile div.image {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 15px;
+    box-sizing: border-box;
+    margin: 5px auto 15px
+}
+div.jobByCompanyProfile div.image:hover {
+    opacity: .8
+}
+div.jobByCompanyProfile div.image div.img {
+    display: table;
+    width: 100%;
+    height: 100%;
+    text-align: center
+}
+div.jobByCompanyProfile div.image div.img span {
+    display: table-cell;
+    vertical-align: middle
+}
+div.jobByCompanyProfile div.image img {
+    max-width: 100%
+}
+div.jobByCompanyProfile h2.companyName {
+    float: left;
+    width: 100%
+}
+div.jobByCompanyProfile h2.companyName a {
+    font-size: 16px;
+    color: #fff;
+    line-height: normal;
+    text-decoration: none;
+    line-height: 20px;
+    display: block
+}
+div.jobByCompanyProfile h2.companyName a:hover {
+    opacity: .8
+}
+div.width-full {
+    width: 100%;
+    box-sizing: border-box
+}
+div.paperAdHolder {
+    float: left;
+    width: 100%;
+    margin: 20px 0;
+    position: relative;
+    border: 1px #000 solid;
+    box-sizing: border-box;
+    text-align: center
+}
+div.paperAdHolder img.imgadJobInPaper {
+    max-width: 100%
+}
+div.paperAdHolder a.imgZoomButton {
+    opacity: 0;
+    position: absolute;
+    right: 20px;
+    top: 45%;
+    transition: all 0.3s ease 0s
+}
+div.paperAdHolder:hover a.imgZoomButton {
+    opacity: 1
+}
+div.tab.active {
+        display: block;
+    width: auto !important;
+    height: auto !important;
+}
+div.tab {
+    display: none
+}
+div.custom-tab-section div.tab-content {
+    height: 146px;
+    overflow: hidden
+}
+.ikd-loader {
+    border: 5px solid #7ec0e4;
+    border-top: 5px solid #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 2s linear infinite;
+    float: right;
+    margin: 0 auto;
+    float: none;
+    margin-bottom: -6px;
+    margin-top: -6px
+}
+.ikd-loader-load-more {
+    border: 5px solid #74b71e;
+    border-top: 5px solid #fff;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    animation: spin 2s linear infinite;
+    float: right;
+    margin: 0 auto;
+    float: none;
+    margin-bottom: -6px;
+    margin-top: -6px
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg)
+    }
+    100% {
+        transform: rotate(360deg)
+    }
+}
+.ViewJobsbtnSubmit {
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 700;
+    background: #318bbc;
+    width: 100%;
+    border: 0;
+    box-sizing: border-box;
+    padding: 22px 15px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-top: 20px;
+    cursor: pointer
+}
+.ViewJobsbtnSubmit:hover {
+    opacity: .8
+}
+.maindesc {
+    font-size: 16px;
+    color: #000;
+    margin: 8px 0
+}
+.search-btn-control {
+    background: url(https://ikddata.ilmkidunya.com/images/jobs/jobs/ic-white-search.png) no-repeat center #2f88b9;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, .19);
+    width: 100%;
+    height: 100%;
+    border: 0;
+    cursor: pointer;
+    border: 1px #2f88b9 solid;
+    display: inherit
+}
+div.JobSearchByCityVise a.ViewJobsbtnSubmit {
+    display: block;
+    height: 63px;
+    text-align: center;
+    font-size: 16px!important;
+    color: #fff!important
+}
+.ui-menu .ui-menu-item {
+    padding: 0;
+    border-bottom: 0;
+    position: relative
+}
+.ui-menu .ui-menu-item img.imageClass {
+    padding: 4px 0 0;
+    position: absolute;
+    left: 10px;
+    opacity: .2;
+    z-index: 99
+}
+.ui-menu .ui-menu-item a.ui-menu-item-wrapper {
+    padding: 0;
+    position: relative;
+    font-size: 14px;
+    line-height: normal;
+    padding: 9px 10px 9px 45px;
+    display: block;
+    border-bottom: 1px rgba(0, 0, 0, .13) solid
+}
+.ui-menu .ui-menu-item a.ui-menu-item-wrapper:hover,
+.ui-menu .ui-menu-item a.ui-menu-item-wrapper.ui-state-active {
+    background: rgba(0, 0, 0, .09);
+    color: #000;
+    outline: 0 none;
+    border-top: 0
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active,
+a.ui-button:active,
+.ui-button:active,
+.ui-button.ui-state-active:hover {
+    background: rgba(0, 0, 0, .09);
+    color: #000;
+    outline: 0 none;
+    border-top: 0;
+    border-left: 0
+}
+.ui-menu .ui-menu-item img.imageClass.ui-state-active {
+    border: 0px!important;
+    background: none;
+    box-shadow: none
+}
+body {
+    overflow-x: hidden
+}
+.shadowlayerConfirmation {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .7);
+    z-index: 99999;
+    display: none
+}
+.shadowlayerConfirmation.active {
+    display: block
+}
+.ikd-confirmation-box {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: none;
+    z-index: 999999;
+    display: none
+}
+.ikd-confirmation-box .modal-content {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    height: 100%
+}
+.ikd-confirmation-box .inner {
+    width: 450px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-size: 16px;
+    color: #000;
+    position: relative
+}
+.ikd-confirmation-box .closer {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 27px;
+    height: 15px;
+    text-align: center;
+    padding-top: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: .6
+}
+.ikd-confirmation-box .closer span.line {
+    height: 2px;
+    background: #000;
+    position: relative;
+    width: 25px;
+    display: block
+}
+.ikd-confirmation-box .closer span.line.one {
+    transform: rotate(45deg);
+    top: 2px
+}
+.ikd-confirmation-box .closer span.line.two {
+    transform: rotate(-45deg)
+}
+.ikd-confirmation-box .link {
+    float: left;
+    width: 100%;
+    margin-top: 10px
+}
+.ikd-confirmation-box .link a {
+    background: #17aa1c;
+    display: inline-block;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 17px
+}
+.ikd-confirmation-box .link a:hover {
+    opacity: .8
+}
+div.pgInfoTopBlockRight div.single-tile span i.txt-vancies {
+    font-size: 12px;
+    position: relative;
+    left: -5px
+}
+div.pgInfoTopBlockRight div.tiles a {
+    display: inline-block
+}
+div.pgInfoTopBlockRight div.single-tile:hover {
+    background: rgba(131, 201, 40, .58)
+}
+div.single-job-by-company span.noofjobs {
+    color: #000;
+    position: relative;
+    top: -5px
+}
+div.fancy-list-links {
+    position: relative;
+    overflow: hidden;
+    margin: 0 -1.5%
+}
+div.fancy-list-links li {
+    border: 0
+}
+div.fancy-list-links li a {
+    border: 1px #eee solid;
+    display: block;
+    text-align: center;
+    min-height: 50px;
+    display: grid;
+    align-items: center;
+    align-content: center;
+    font-size: 14px;
+    color: rgba(0, 0, 0, .79)
+}
+div.fancy-list-links li a:hover {
+    background: #83c928;
+    color: #fff;
+    border-color: #83c928
+}
+.scollerElmnt {
+    max-height: 400px;
+    overflow: hidden;
+    overflow-y: auto;
+    float: left;
+    width: 100%
+}
+.scollerElmnt::-webkit-scrollbar-track {
+    -webkit-box-shadow: none!important;
+    background: #e9e9e9
+}
+.scollerElmnt::-webkit-scrollbar-thumb {
+    background-color: #83c928;
+    outline: 1px solid #83c928
+}
+.scollerElmnt::-webkit-scrollbar {
+    width: 1em
+}
+div.scollerElmnt {
+    max-height: 400px;
+    overflow: hidden;
+    overflow-y: auto;
+    float: left;
+    width: 100%
+}
+.newsPaperJobTilesBlock .pgInfoTopBlockRight {
+    width: 100%;
+    clear: both;
+    padding-top: 0;
+    padding-bottom: 0
+}
+div.tiles.style2 a {
+    display: block;
+    background: rgb(255, 255, 255);
+    margin: 5px;
+    border: 2px #83c928 solid;
+    width: 67px
+}
+div.tiles.style2 a:hover {
+    background: #83c928;
+    border: 2px #fff solid
+}
+div.tiles.style2 a:hover span.dtime {
+    color: #fff!important
+}
+div.tiles.style2 a:hover span.tjobs {
+    color: #fff!important
+}
+.newsPaperJobTilesBlock .pgInfoTopBlockRight .tiles.style2.tilesStyle2 {
+    margin: 0 -5px;
+    text-align: center
+}
+div.tiles.style2 div.single-tile {
+    border: 0;
+    background: none;
+    width: 100%;
+    margin: 0;
+    background: none;
+    color: #000;
+    padding: 0;
+    height: auto;
+    text-align: center
+}
+div.tiles.style2 div.single-tile span.dtime {
+    color: #000
+}
+div.tiles.style2 div.single-tile span.tjobs {
+    color: #000;
+    text-align: center
+}
+div.tiles.style2 div.single-tile span i.txt-vancies {
+    font-size: 12px;
+    position: relative;
+    left: 0;
+}
+div.pgInfoTopBlockLeft div.tBox h1 {
+    margin-top: 0px
+}
+div.jobListingByCompany.list2 .single-job-by-company {
+    height: 140px;
+    padding: 5px
+}
+div.jobListingByCompany.list2 .single-job-by-company div.image {
+    height: 60px
+}
+div.jobListingByCompany.list2 .single-job-by-company .desc {
+    color: #000;
+    font-size: 12px;
+    line-height: 11px;
+    margin-top: 0;
+    float: left;
+    width: 100%;
+    opacity: .5;margin-top: 5px;
+}
+div.jobListingByCompany.list2 .single-job-by-company span.noofjobs {
+    top: 2px;
+    font-size: 11px
+}
+div.jobListingByCompany.list2 .single-job-by-company:hover {
+    background: rgba(131, 201, 40, .25)
+}
+div.jobListingByCompany.list2 .single-job-by-company div.overly {
+    display: none!important
+}
+div.single-slide-newspaper-jobs div.image div.imgBox img {
+    max-width: 100%;
+    display: inline-block;
+    border-radius: 0;
+    width: auto;
+    height: auto
+}
+.jobpapers-left-box .maindesc {
+    position: relative;
+    margin-top: -20px
+}
+.jobpapers-left-box .maindesc.no-mns-margin {
+    margin-top: 0px!important
+}
+div.top-job-section .JustHeadingDesc {
+    height: 204px;
+    font-size: 30px;
+    display: flex;
+    align-items: center
+}
+div.top-job-section .JustHeadingDesc .tBox {
+    float: left;
+    width: 100%;
+    text-align: center
+}
+div.top-job-section .JustHeadingDesc .tBox h1 {
+    color: #fff;
+    font-size: 35px
+}
+.pgInfoTopBlockLeft.nStyle {
+    padding: 0px!important;
+    height: 205px
+}
+.pgInfoTopBlockLeft.nStyle .icon {
+    height: 100%;
+    overflow: hidden;
+    padding: 0;
+    background: none!important;
+    display: grid;
+    align-items: center;
+    align-content: center
+}
+.pgInfoTopBlockLeft.nStyle .icon span {
+    padding: 15px;
+    display: block;
+    height: 89px!important;
+    background: #fff!important;
+    display: grid;
+    align-items: center;
+    border-radius: 50%!important
+}
+.pgInfoTopBlockLeft.nStyle div.tBox {
+    height: 100%;
+    overflow: hidden;
+    display: grid;
+    align-items: center;
+    align-content: center;
+    line-height: normal
+}
+.pgInfoTopBlockLeft.nStyle div.tBox h1 {
+    margin-top: 0px!important
+}
+div.pgInfoTopBlockRight.nStyle {
+    height: 205px!important;
+    padding: 0px!important;
+    display: grid;
+    align-items: center;
+    align-content: center
+}
+div.pgJDetails .pgInfoTopBlockLeft {
+    padding: 0;
+    height: 206px;
+    display: grid;
+    align-items: center;
+    align-content: center
+}
+div.pgJDetails .pgInfoTopBlockLeft h1 {
+    margin-top: 0px!important
+}
+div.job-filter-form.singleDropDownBox .chooseOptions {
+    width: 90%
+}
+@media only screen and (max-width: 1199px) {
+    div.jobSearchForm {
+        padding: 0;
+        text-align: center;
+        margin-bottom: 28px
+    }
+    div.jobSearchForm div.formfieldtitle {
+        float: none;
+        display: inline-block;
+        max-width: 100%;
+        float: none;
+        vertical-align: top;
+    }
+    div.jobSearchForm div.formfieldSelectCity {
+        float: none;
+        width: 300px;
+        float: none;
+        display: inline-block
+    }
+    div.jobSearchForm div.formfieldSearchButton {
+        float: none;
+        max-width: 320px;
+        display: inline-block
+    }
+    div.custom-tab-section ul.tab-links {
+        margin-top: 0;
+        float: left;
+        width: 100%;
+        text-align: center
+    }
+    div.job-counting-section-in-newspapers h4.secTitle {
+        float: left;
+        width: 100%;
+        text-align: center
+    }
+    div.custom-tab-section ul.tab-links li a {
+        font-size: 16px;
+        padding: 10px
+    }
+    div.custom-tab-section ul.tab-links li {
+        float: none;
+        display: inline-block
+    }
+    div.job-counting-section-in-newspapers {
+        height: 295px
+    }
+    div.tiles.style2 a {
+        margin: 1px;
+        width: 59px
+    }
+    div.singleJobConsultantCity div.cityImage img {
+        max-width: 100%
+    }
+    div.JobsByCntryCity {
+        padding: 15px
+    }
+    div.JobsByCntryCity div.nmbr {
+        font-size: 70px
+    }
+    div.JobsByCntryCity div.txt h3 {
+        font-size: 25px;
+        margin-top: 14px;
+        line-height: 30px
+    }
+    div.job-filter-form {
+        margin-top: 15px
+    }
+    div.job-filter-form div.chooseOptions {
+        width: 230px
+    }
+    div.single-job-list-block div.lftBx {
+        width: 58%
+    }
+    div.single-job-list-block div.jTitle a {
+        font-size: 14px
+    }
+    div.single-job-list-block span.date-posted {
+        margin-left: 5px;
+        margin-right: 5px
+    }
+    div.single-job-list-block div.compImage {
+        margin-right: 10px
+    }
+    div.single-job-list-block div.desc {
+        width: 73%
+    }
+    div.single-job-list-block div.jTitle {
+        font-size: 12px
+    }
+    div.jobByCategories ul li {
+        width: 157px
+    }
+    div.subNavaigtion ul a {
+        padding: 15px 10px
+    }
+    div.subNavaigtion {
+        margin-top: -56px
+    }
+    div.pgInfoTopBlockLeft div.tBox {
+        width: 500px
+    }
+    div.jobCities ul li {
+        width: 158px
+    }
+    div.jobListingByCompany.list2 .single-job-by-company {
+        width: 127px
+    }
+    div.jobSearchForm.style2 div.formfieldtitle {
+        width: 300px
+    }
+    div.top-job-section h1.banner-title {
+        font-size: 30px
+    }
+    div.single-job-by-company {
+        width: 127px
+    }
+    div.fancy-list-links li a {
+        font-size: 14px
+    }
+    div.pgInfoTopBlockLeft div.tBox h1 {
+        margin-top: 0
+    }
+    div.single-job-list-block .jobPostingInfo b {
+        font-size: 14px
+    }
+}
+@media only screen and (max-width: 1024px) {
+    .pgInfoTopBlockLeft.nStyle,
+    div.pgInfoTopBlockRight.nStyle {
+        height: 213px
+    }
+    div.JobsByCntryCity div.txt {
+        float: left;
+        width: 100%;
+        margin-left: 0;
+        text-align: center
+    }
+    div.JobsByCntryCity div.nmbr {
+        font-size: 70px;
+        float: left;
+        width: 100%!important;
+        text-align: center
+    }
+    .pgInfoTopBlockLeft.nStyle .icon {
+        border-radius: 0px!important
+    }
+    .pgInfoTopBlockLeft.nStyle .icon span {
+        display: flex
+    }
+    .pgInfoTopBlockLeft.nStyle .icon {
+        border-radius: 0px!important;
+        display: block;
+        height: auto;
+        margin-top: 60px
+    }
+    .pgInfoTopBlockLeft.nStyle,
+    div.pgInfoTopBlockRight.nStyle {
+        height: auto!important
+    }
+    .pgInfoTopBlockLeft.nStyle div.tBox h1 {
+        min-height: 75px;
+        margin-top: 16px!important
+    }
+    .pgInfoTopBlockLeft.nStyle .icon span {
+        height: 100%;
+        vertical-align: middle;
+        display: table-cell
+    }
+    .pgInfoTopBlockLeft.nStyle div.tBox {
+        height: auto!important
+    }
+    .pgInfoTopBlockLeft.nStyle,
+    div.pgInfoTopBlockRight.nStyle {
+        display: table
+    }
+    .pgInfoTopBlockLeft.nStyle,
+    div.pgInfoTopBlockRight.nStyle {
+        height: 213px!important;
+        display: block;
+        position: relative;
+        top: 0
+    }
+    div.fancy-list-links li a {
+        font-size: 14px;
+        display: block;
+        min-height: 50px;
+        padding: 5px 0;
+        display: table-cell;
+        width: 100%;
+        min-width: 125px;
+        height: 50px;
+        vertical-align: middle
+    }
+    .pgInfoTopBlockLeft.nStyle div.tBox .tTble {
+        display: table;
+        width: 100%;
+        height: 100%
+    }
+    .pgInfoTopBlockLeft.nStyle div.tBox .tTble .tTblCtnt {
+        display: table-cell;
+        vertical-align: middle
+    }
+    .pgInfoTopBlockLeft.nStyle div.tBox h1 {
+        min-height: initial;
+        margin-top: 0px!important
+    }
+    .pgInfoTopBlockLeft.nStyle div.tBox {
+        height: 100%!important
+    }
+    div.pgInfoTopBlockRight.nStyle .tiles {
+        margin-top: 37px
+    }
+    .pgInfoTopBlockLeft.nStyle div.tBox .tTble .tTblCtnt .tTextTbl {
+        display: block
+    }
+    div.top-job-section .JustHeadingDesc {
+        display: table;
+        width: 100%
+    }
+    div.top-job-section .JustHeadingDesc .tBox {
+        float: none;
+        width: 100%;
+        text-align: center;
+        height: 100%;
+        display: table-cell;
+        vertical-align: middle
+    }
+    div.jobByCompanyProfile {
+        top: 0px!important;
+        margin-top: -9px;
+        height: 232px!important
+    }
+    .pgJDetails div.pgInfoTopBlockLeft div.tBox h1 {
+        font-size: 25px;
+        margin-top: 30px!important
+    }
+    .newsPaperJobTilesBlock .pgInfoTopBlockRight {
+        float: left;
+        width: 100%!important;
+        padding: 5px;
+        box-sizing: border-box
+    }
+    div.tiles.style2 a {
+        width: 62px!important
+    }
+    div.talent-need-box div.text {
+        width: 190px
+    }
+}
+@media only screen and (max-width: 768px) {
+    div.jobSearchForm div.formfieldtitle {
+        width: 330px
+    }
+    div.jobSearchForm div.formfieldSelectCity:nth-child(2) {
+        width: 160px
+    }
+    div.JobSearchByCityVise div.bxLeft {
+        padding: 0;
+        width: 100%
+    }
+    div.JobSearchByCityVise div.bxRight {
+        padding: 10px;
+        width: 100%
+    }
+    div.job-filter-form div.chooseOptions {
+        width: 100%;
+        margin-bottom: 10px
+    }
+    div.job-filter-form div.btnSubmitFilter {
+        width: 100%
+    }
+    div.single-job-list-block div.lftBx {
+        width: 240px;
+        padding: 0
+    }
+    div.single-job-list-block div.lftBx a.linker {
+        padding: 5px
+    }
+    div.single-job-list-block div.lftBx .jTitle {
+        font-size: 14px
+    }
+    div.single-job-list-block div.compImage {
+        width: 50px;
+        height: 50px;
+        margin-top: 26px
+    }
+    div.single-job-list-block div.desc {
+        width: 170px
+    }
+    div.single-job-list-block div.jTitle a {
+        line-height: normal;
+        font-size: 12px
+    }
+    div.single-job-list-block div.jInfo {
+        margin-top: 5px;
+        font-size: 12px
+    }
+    div.jobByCategories ul li {
+        width: 139px
+    }
+    div.jobByCategories ul li p {
+        font-size: 14px
+    }
+    div.custom-tab-section div.tab-content .slick-slider {
+        padding: 0 25px;
+        box-sizing: border-box
+    }
+    div.pgInfoTopBlockRight div.tiles.style2.tilesStyle2 {
+        width: 100%;
+        overflow: hidden;
+        height: 137px
+    }
+    div.single-job-list-block div.jobAd {
+        width: 90px
+    }
+    div.single-job-list-block div.rgtBx {
+        width: 146px
+    }
+    div.subNavaigtion ul a {
+        padding: 15px 5px;
+        font-size: 12px;
+        font-weight: 400
+    }
+    div.pgInfoTopBlockLeft div.tBox {
+        width: 280px
+    }
+    div.jobCities ul li {
+        width: 137px
+    }
+    div.jobListingByCompany.list2 .single-job-by-company,
+    div.single-job-by-company {
+        width: 140px
+    }
+    div.pgInfoTopBlockLeft div.tBox h1 {
+        font-size: 25px
+    }
+    div.jobByCompanyProfile {
+        height: 233px;
+        position: relative;
+        top: -10px
+    }
+    .pgInfoTopBlockLeft.nStyle,
+    div.pgInfoTopBlockRight.nStyle {
+        height: 213px
+    }
+    div.JobsByCntryCity div.txt {
+        float: left;
+        width: 100%;
+        margin-left: 0;
+        text-align: center
+    }
+    div.JobsByCntryCity div.nmbr {
+        font-size: 70px;
+        float: left;
+        width: 100%!important;
+        text-align: center
+    }
+    .pgInfoTopBlockLeft.nStyle .icon {
+        border-radius: 0px!important
+    }
+    .pgInfoTopBlockLeft.nStyle .icon span {
+        display: flex
+    }
+    .pgInfoTopBlockLeft.nStyle .icon {
+        border-radius: 0px!important;
+        display: block;
+        height: auto;
+        margin-top: 60px
+    }
+    .pgInfoTopBlockLeft.nStyle,
+    div.pgInfoTopBlockRight.nStyle {
+        height: auto!important
+    }
+    .pgInfoTopBlockLeft.nStyle div.tBox h1 {
+        min-height: 75px;
+        margin-top: 16px!important
+    }
+    .pgInfoTopBlockLeft.nStyle .icon span {
+        height: 100%;
+        vertical-align: middle;
+        display: table-cell
+    }
+    .pgInfoTopBlockLeft.nStyle div.tBox {
+        height: auto!important
+    }
+    .pgInfoTopBlockLeft.nStyle,
+    div.pgInfoTopBlockRight.nStyle {
+        display: table
+    }
+    .pgInfoTopBlockLeft.nStyle,
+    div.pgInfoTopBlockRight.nStyle {
+        height: 213px!important;
+        display: block;
+        position: relative;
+        top: 0
+    }
+    div.fancy-list-links li a {
+        font-size: 14px;
+        display: block;
+        min-height: 50px;
+        padding: 5px 0;
+        display: table-cell;
+        width: 100%;
+        min-width: 125px;
+        height: 50px;
+        vertical-align: middle
+    }
+    .pgInfoTopBlockLeft.nStyle div.tBox .tTble {
+        display: table;
+        width: 100%;
+        height: 100%
+    }
+    .pgInfoTopBlockLeft.nStyle div.tBox .tTble .tTblCtnt {
+        display: table-cell;
+        vertical-align: middle
+    }
+    .pgInfoTopBlockLeft.nStyle div.tBox h1 {
+        min-height: initial;
+        margin-top: 0px!important
+    }
+    .pgInfoTopBlockLeft.nStyle div.tBox {
+        height: 100%!important
+    }
+    div.pgInfoTopBlockRight.nStyle .tiles {
+        margin-top: 37px
+    }
+    .pgInfoTopBlockLeft.nStyle div.tBox .tTble .tTblCtnt .tTextTbl {
+        display: block
+    }
+    div.top-job-section .JustHeadingDesc {
+        display: table;
+        width: 100%
+    }
+    div.top-job-section .JustHeadingDesc .tBox {
+        float: none;
+        width: 100%;
+        text-align: center;
+        height: 100%;
+        display: table-cell;
+        vertical-align: middle
+    }
+    div.jobByCompanyProfile {
+        top: 0px!important
+    }
+    div.pgInfoTopBlockLeft div.jobInfoCounting div.total-Vacancies,
+    div.pgInfoTopBlockLeft div.jobInfoCounting div.posted-date,
+    div.pgInfoTopBlockLeft div.jobInfoCounting div.last-date {
+        margin-right: 10px
+    }
+    .pgJDetails .tBox.style2 {
+        padding-right: 0px!important
+    }
+    .pgJDetails div.pgInfoTopBlockLeft div.tBox h1 {
+        font-size: 20px;
+        margin-top: 30px!important
+    }
+    div.single-job-list-block .jobPostingInfo {
+        display: none
+    }
+    div.single-job-list-block div.jobAd {
+        display: none!important
+    }
+    div.single-job-list-block div.jDesc {
+        display: none
+    }
+    div.single-job-list-block div.desc {
+        width: 100%;
+        padding-left: 60px;
+        box-sizing: border-box
+    }
+    div.single-job-list-block div.lftBx a.linker {
+        padding: 5px;
+        display: block;
+        float: left;
+        width: 100%;
+        box-sizing: border-box
+    }
+    div.single-job-list-block div.compImage div.jLocation {
+        display: none
+    }
+    div.single-job-list-block div.lftBx {
+        width: 100%;
+        padding: 0;
+        padding-right: 70px;
+        box-sizing: border-box;
+        min-height: 80px;
+        border-bottom: 1px #e9e9e9 solid!important;
+        overflow: hidden
+    }
+    div.single-job-list-block div.rgtBx {
+        width: auto;
+        position: absolute;
+        height: 80px!important;
+        top: 0;
+        right: 0;
+        overflow: hidden
+    }
+    div.single-job-list-block .link-inner {
+        float: left;
+        width: 100%;
+        position: relative
+    }
+    div.single-job-list-block div.compImage {
+        width: 50px;
+        height: 50px;
+        margin-top: 0;
+        position: absolute;
+        left: 0;
+        top: 10px;
+        ;
+        margin: 0
+    }
+    div.single-job-list-block div.lftBx .jTitle {
+        font-size: 14px;
+        margin-top: 10px
+    }
+    div.single-job-list-block div.jobtotal {
+        padding: 4px
+    }
+    div.single-job-list-block div.jobFavorite {
+        padding: 2px 3px
+    }
+    div.single-job-list-block div.jobFavorite span.imgJobFavrt {
+        background-size: 15px 13px!important;
+        height: 13px;
+        width: 15px;
+        position: relative;
+        top: 3px
+    }
+    div.single-job-list-block div.jobFavorite {
+        padding: 2px 3px;
+        border-bottom: 1px #e9e9e9 solid
+    }
+    div.single-job-list-block div.jobFavorite:hover {
+        background: #cce5ff
+    }
+    div.single-job-list-block {
+        height: auto
+    }
+    div.by-google {
+        overflow: hidden
+    }
+    div.single-job-list-block .jShowMobo {
+        float: left;
+        width: 100%;
+        display: block!important;
+        padding: 5px!important;
+        box-sizing: border-box
+    }
+    div.single-job-list-block .jShowMobo .mbjDesc {
+        float: left;
+        width: 100%;
+        text-align: center;
+        font-size: 12px
+    }
+    div.single-job-list-block .jShowMobo .mbjDesc p {
+        margin: 0;
+        font-size: 12px
+    }
+    div.single-job-list-block .jShowMobo .jInfo {
+        float: left;
+        width: 100%;
+        display: block!important;
+        text-align: center
+    }
+}
+@media only screen and (max-width: 599px) {
+    div.top-job-section h1.banner-title {
+        font-size: 20px
+    }
+    div.jobSearchForm div.formfieldtitle,
+    div.jobSearchForm div.formfieldSelectCity {
+        width: 100%;
+        margin-bottom: 10px
+    }
+    div.jobSearchForm div.formfieldSelectCity select.cityField {
+        background-position: 96% center
+    }
+    div.job-counting-section-in-newspapers h4.secTitle {
+        float: left;
+        width: 100%;
+        text-align: center;
+        margin-top: 15px
+    }
+    div.custom-tab-section ul.tab-links {
+        margin: 0
+    }
+    div.job-counting-section-in-newspapers {
+        height: auto;
+        padding: 0 10px 20px;
+        box-sizing: border-box
+    }
+    div.custom-tab-section ul.tab-links li a {
+        font-size: 14px;
+        text-transform: capitalize;
+        padding: 15px 10px
+    }
+    div.jobSearchForm {
+        padding: 0 15px
+    }
+    div.JobSearchByCityVise div.bxLeft {
+        width: 100%;
+        padding: 10px;
+    }
+    div.JobSearchByCityVise {
+        padding: 15px
+    }
+    div.JobSearchByCityVise div.bxRight {
+        padding-right: 10px;
+        width: 100%
+    }
+    div.JobsByCntryCity {
+        padding: 15px
+    }
+    div.JobsByCntryCity div.nmbr {
+        font-size: 50px;
+        text-align: center;
+        float: left;
+        width: 100%!important; line-height: 1
+    }
+    div.JobsByCntryCity div.txt {
+        float: left;
+        width: 100%;
+        margin-left: 0;
+        text-align: center
+    }
+    div.JobsByCntryCity div.txt h3 {
+        font-size: 20px;
+        line-height: normal
+    }
+    div.job-filter-form div.chooseOptions {
+        float: left;
+        margin-right: 18px;
+        width: 100%;
+        margin: 0 0 10px!important
+    }
+    div.job-filter-form div.btnSubmitFilter {
+        width: 100%
+    }
+    div.jobByCategories ul li {
+        width: 25%;
+    }
+	div.jobListingByCompany.list2 .single-job-by-company, div.single-job-by-company {
+		width: 25% !important;
+	}
+    div.jobCities ul li {
+        width: 25%;
+    }
+	div.jobCities ul li p{
+		font-size:12px;
+	}
+	div.jobCities ul li img{
+		max-width:60%;
+	}
+	div.jobByCategories ul li p {
+		font-size: 12px;
+		line-height: 14px;
+	}
+	/* .jobsCitySlider.slick-initialized div.singleBox{
+		width:100% !important;
+     } */
+     
+    div.top-job-section {
+        height: auto!important
+    }
+    div.jobSearchForm {
+        margin-bottom: 0
+    }
+    div.jobSearchForm div.formfieldSearchButton {
+        width: 100%
+    }
+    div.jobSearchForm div.formfieldSearchButton input.btnjobSearch {
+        background: #83c928;
+        padding: 0
+    }
+    div.top-job-section p.desc {
+        padding: 15px;
+        font-size: 16px;
+        box-sizing: border-box
+    }
+    div.JobSearchByCityVise div.bxRight {
+        padding: 0
+    }
+    div.single-job-list-block div.jTitle {
+        text-align: center
+    }
+    div.pgInfoTopBlockLeft {
+        float: left;
+        width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
+        text-align: center
+    }
+    div.pgInfoTopBlockLeft div.icon {
+        float: none;
+        display: inline-block;
+        margin: 0 auto
+    }
+    div.pgInfoTopBlockLeft div.tBox {
+        float: left;
+        width: 100%
+    }
+    div.pgInfoTopBlockLeft div.tBox h1 {
+        margin-top: 15px;
+        font-size: 20px
+    }
+    div.pgInfoTopBlockRight {
+        float: right;
+        padding: 37px 0;
+        width: 100%;
+        padding: 15px 15px;
+        box-sizing: border-box
+    }
+    div.subNavaigtion {
+        margin-top: 0
+    }
+    div.pgInfoTopBlockRight div.tiles {
+        float: left;
+        width: 100%;
+        text-align: center
+    }
+    div.subNavaigtion ul li {
+        width: 50%
+    }
+    div.jobSearchForm.style2 {
+        width: 100%;
+        float: none;
+        overflow: hidden;
+        clear: both;
+        margin: 0;
+        padding: 15px 0;
+        box-sizing: border-box
+    }
+    div.jobSearchForm.style2 div.formfieldtitle {
+        width: 100%
+    }
+    div.top-leading-jobs-in-newspapers-listing {
+        margin: 0
+    }
+    div.top-leading-jobs-in-newspapers div.single-slide-newspaper-jobs {
+        float: left;
+        margin: 0;
+        width: 50%;
+        padding: 10px;
+        box-sizing: border-box
+    }
+    .lists-three li {
+            width: 48%;
+			float: left;
+			margin: 0.5%;
+    }
+    div.single-job-by-company {
+        width: 50%
+    }
+    div.pgInfoTopBlockLeft div.tBox.style2 {
+        padding-right: 0
+    }
+    div.jobSearchForm div.formfieldSelectCity:nth-child(2) {
+        width: 100%
+    }
+    div.custom-tab-section ul.tab-links li a {
+        font-size: 12px;
+        padding: 5px
+    }
+    div.single-slide-newspaper-jobs div.image {
+        width: 75px;
+        height: 75px;
+        padding: 5px;
+        box-sizing: border-box
+    }
+    div.single-slide-newspaper-jobs div.image div.imgBox img {
+        padding: 5px;
+        box-sizing: border-box
+    }
+    div.single-slide-newspaper-jobs div.image div.imgBox {
+        overflow: hidden
+    }
+    div.single-slide-newspaper-jobs p {
+        font-size: 12px
+    }
+    div.custom-tab-section div.tab-content {
+        height: 100px
+    }
+    div.newsPaperJobTilesBlock div.tiles.style2 div.single-tile span.dtime {
+        padding-bottom: 0px!important;
+        font-size: 14px;
+        line-height: normal;
+        padding-top: 5px
+    }
+    div.newsPaperJobTilesBlock div.tiles.style2 div.single-tile span.tjobs {
+        padding-bottom: 0;
+        font-size: 12px;
+        padding-top: 5px
+    }
+    div.pgInfoTopBlockRight div.tiles.style2.tilesStyle2 {
+        height: 88px!important
+    }
+    body.pgJOBIKD .row.mid-mrgn-top {
+        margin-left: 5px;
+        margin-right: 5px!important
+    }
+    div.JobsByCntryCity {
+        padding: 10px 
+    }
+    div.JobSearchByCityVise {
+        padding: 10px
+    }
+    .pgInfoTopBlockLeft.nStyle .icon {
+        margin-top: 10px!important
+    }
+    .pgInfoTopBlockLeft.nStyle div.tBox {
+        height: auto!important;
+        margin-top: 10px!important
+    }
+    div.pgInfoTopBlockRight.nStyle .tiles {
+        margin-top: 10px!important
+    }
+    .pgInfoTopBlockLeft.nStyle,
+    div.pgInfoTopBlockRight.nStyle {
+        height: auto!important
+    }
+    div.subNavaigtion ul a {
+        padding: 5px 5px;
+        font-size: 12px;
+        font-weight: 400;
+        border-bottom: 1px rgba(213, 213, 213, .38) solid
+    }
+    div.top-leading-jobs-in-newspapers-listing .single-slide-newspaper-jobs {
+        width: 25%!important;
+        padding: 5px!important
+    }
+    div.fancy-list-links li a {
+        font-size: 14px;
+        display: block;
+        min-height: 50px;
+        padding: 5px 0;
+        display: block;
+        width: 100%;
+        min-height: fit-content;
+        min-width: 125px;
+        height: auto;
+        vertical-align: middle
+    }
+    div.jobListingByCompany.list2 .single-job-by-company,
+    div.single-job-by-company {
+        width: 25%!important
+    }
+    div.jobByCompanyProfile {
+        top: 0px!important;
+        height: auto;
+        margin: 0px!important;
+        margin-bottom: 3px!important
+    }
+    div.pgInfoTopBlockLeft div.jobInfoCounting {
+        margin-top: 10px
+    }
+    div.pgJDetails .pgInfoTopBlockLeft {
+        height: auto
+    }
+    div.job-filter-form.singleDropDownBox .chooseOptions {
+        width: 100%
+    }
+	div.singleJobConsultantCity{
+		padding:5px;
+	}
+	div.singleJobConsultantCity div.cityImage{
+		padding:0px 10px;
+		box-sizing:border-box;
+	}
+	div.singleJobConsultantCity div.cityTitle {
+		font-size: 14px;
+		min-height: 30px;
+		line-height: 13px;
+	}
+	div.jobsCitySlider .slick-dots{
+		margin-top:5px;
+    }
+    
+    div.slick-slide,
+	div.jobsCitySlider div.singleBox{
+		padding:1px;
+		width:50% !important;
+	}
+	div.jobsCitySlider{
+		margin-top:5px !important;
+	}
+	div.JobSearchByCityVise a.ViewJobsbtnSubmit{
+		margin-top:5px !important;
+	}
+	div.jobsCitySlider{
+		max-height:252px !important;
+	}
+	.jobsCitySlider.slick-initialized {
+		max-height: initial !important;
+	}
+	div.JobSearchByCityVise div.icon , div.JobSearchByCityVise div.title, div.JobSearchByCityVise p.desc{
+		text-align:center;
+	}
+	div.JobSearchByCityVise div.title span {
+		display: inline;
+	}
+	div.JobSearchByCityVise p.desc {
+		margin: 3px 0px 5px;
+		padding: 0px 30px;
+		box-sizing: border-box;
+		font-size: 14px;
+	}
+	div.JobSearchByCityVise div.title{
+		font-size:22px;
+	}
+}
+div.latest-job-block-content {
+    float: left;
+    width: 100%;
+    margin: 20px 0
+}
+div.latest-job-block-content .dt-block {
+    float: left;
+    width: 100%;
+    height: 330px;
+    background: #f1f1f1;
+    position: relative
+}
+div.latest-job-block-content .dt-block .image {
+    float: left;
+    width: 250px;
+    height: 330px;
+    background: #fff;
+    overflow: hidden
+}
+div.latest-job-block-content .dt-block .image a {
+    display: block;
+    height: 100%;
+    width: 100%
+}
+div.latest-job-block-content .dt-block .image img {
+    width: 100%!important;
+    height: 100%!important;
+    border: 0;
+    border-radius: 0px!important
+}
+div.latest-job-block-content .job-tag {
+    position: absolute;
+    top: -15px;
+    right: 30px
+}
+div.latest-job-block-content .dt-block .desc {
+    float: left;
+    height: 100%;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-pack: start;
+    justify-content: center;
+    display: flex;
+    padding: 35px;
+    box-sizing: border-box;
+    width: 500px
+}
+div.latest-job-block-content .title {
+    font-size: 20px;
+    line-height: normal;
+    color: #0975ad;
+    margin-bottom: 10px;
+    font-weight: 400
+}
+div.latest-job-block-content .dtinfo {
+    float: left;
+    width: 100%;
+    margin: 10px 0
+}
+div.latest-job-block-content .dtinfo .bx {
+    float: left;
+    text-align: left;
+    width: 125px;
+    margin-right: 15px
+}
+div.latest-job-block-content .block {
+    display: block
+}
+div.latest-job-block-content .dtinfo .bx span {
+    font-size: 14px;
+    opacity: .8
+}
+div.latest-job-block-content .dtinfo .bx b {
+    font-size: 16px;
+    margin-top: 5px;
+    display: block;
+    color: #000
+}
+div.latest-job-block-content b.black {
+    color: #000!important
+}
+div.latest-job-block-content b.green {
+    color: #83c928!important
+}
+div.latest-job-block-content b.red {
+    color: #cc0000!important
+}
+div.latest-job-block-content .dt-block .desc .link {
+    float: left;
+    width: 100%;
+    text-align: left;
+    margin: 10px 0
+}
+div.latest-job-block-content .dt-block .desc .link a {
+    background: #83c928;
+    display: inline-block;
+    border-radius: 4px;
+    padding: 9px 25px;
+    font-weight: 700;
+    line-height: normal;
+    font-size: 20px;
+    color: #fff;
+    text-transform: capitalize
+}
+div.latest-job-block-content .dt-block .desc .link a:hover {
+    opacity: .8
+}
+div.test-help-blocks {
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    background: #f6f6f6;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 12px;
+    color: #000
+}
+div.test-help-blocks * {
+    box-sizing: border-box
+}
+div.test-help-blocks div.text-info {
+    float: left;
+    width: 100%
+}
+div.test-help-blocks div.text-info span.img {
+    display: inline-block;
+    overflow: hidden
+}
+div.test-help-blocks div.text-info span.txt {
+    display: inline-block;
+    overflow: hidden;
+    min-height: 38px;
+    line-height: normal;
+    padding: 4px 0 0 5px;
+    box-sizing: border-box;
+    position: relative;
+    top: 8px
+}
+div.test-help-blocks .text-test-prepartion {
+    float: left;
+    width: 100%;
+    margin-top: 0
+}
+div.test-help-blocks .text-test-prepartion .test-prepation-btn {
+    clear: both;
+    margin-top: 6px;
+    margin-bottom: 10px
+}
+div.test-help-blocks .text-test-prepartion a {
+    display: inline-block;
+    padding-left: 35px;
+    position: relative
+}
+div.test-help-blocks .text-test-prepartion span.txt {
+    color: #0975ad;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: normal;
+    min-height: 27px;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    top: 5px;
+    padding: 0 5px
+}
+div.test-help-blocks .text-test-prepartion a:hover span.txt {
+    color: #83c928
+}
+div.test-help-blocks .text-test-prepartion span.img {
+    width: 30px;
+    height: 27px;
+    background: url(http://resources.ilmkidunya.com/img/img-mouse-blue.png) no-repeat left center transparent;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    top: 3px
+}
+div.test-help-blocks .text-test-prepartion a:hover span.img {
+    background: url(http://resources.ilmkidunya.com/img/mouse-green.png) no-repeat left center transparent
+}
+div.single-test-help-block {
+    width: 145px;
+    height: 116px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    background-color: rgba(70, 70, 70, .15);
+    display: inline-block;
+    overflow: hidden;
+    margin: 10px
+}
+div.single-test-help-block .flexi-layout {
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    -ms-flex-pack: start;
+    justify-content: center;
+    display: flex;
+    height: 100%
+}
+div.single-test-help-block span.block,
+div.single-test-help-block i.block {
+    display: block;
+    font-style: normal
+}
+div.single-test-help-block span.sm {
+    color: #464646;
+    font-size: 12px
+}
+div.single-test-help-block span.md {
+    font-size: 20px
+}
+div.single-test-help-block span.link a {
+    font-size: 20px;
+    color: #0975ad;
+    display: block;
+    height: 100%;
+    width: 100%
+}
+div.single-test-help-block span.link a:hover {
+    color: #83c928
+}
+.single-slide-newspaper-jobs {
+    float: none;
+    display: inline-block;
+}
+div.tab.active{
+	text-align:center;
+}
+div.jobsCitySlider div.singleBox {
+    width: 50%;
+}
+.jobsCitySlider.slick-initialized div.singleBox {
+    width: 100%;
+}
+div.jobsCitySlider{
+	max-height:270px;
+}
+.jobsCitySlider.slick-initialized {
+    max-height: 315px;
+}
+.ui-menu .ui-menu-item {
+    padding: 6px 10px !important;
+}
+.ui-menu .ui-menu-item a {
+    display: inline-block !important;
+    padding: 5px 10px 5px 30px !important;
+    position: relative;
+    top: 3px !important;
+}
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+    box-sizing: border-box !important;
+    border: 0px !important;
+    margin: 0px !important;
+}
+.ui-widget-content {
+    padding: 0 !important;
+}
+
+/*code date 06-12-2017 start here*/
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 1;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(40, 40);
+  }
+}
+
+div.nat-tp-banner-box{
+     float: left;
+     width: 100%;
+     height: 100%;
+
+}
+div.nat-tp-banner-box div.nt-lft-bx{
+     float: left;
+     width: 50%;
+     min-height: 520px;
+     background-color: rgba(0, 114, 255, 0.3);
+     padding: 30px 40px 24px;
+     box-sizing: border-box;
+}
+div.nat-tp-banner-box div.nt-rgt-bx{
+     float: left;
+     width: 50%;
+     min-height: 520px;
+     background-color: rgba(131, 201, 40, 0.5);
+     padding: 30px 40px 16px;
+     box-sizing: border-box;
+}
+div.top-job-section div.nat-tp-banner-box  h1.banner-title{font-size: 22px !important;padding-top:0px;margin-bottom: 23px;}
+div.nat-tp-banner-box div.jobSearchForm.style2{
+     width: 100%;margin: 0px;
+}
+/* div.nat-tp-banner-box div.jobSearchForm.style2 div.formfieldtitle{width: 68%;} */
+
+div.nt-tp-links-rounded{
+     clear: both;
+     overflow: hidden;
+     text-align: center;
+     font-size: 0px;
+     margin: 20px -9px 0px;
+}
+div.single-tp-nt-link-round{
+     display: inline-block;margin: 10px 5px ;
+     width: 90px;overflow: hidden; vertical-align: top;
+}
+div.single-tp-nt-link-round a{
+     width: 100%;height: 100%;
+     overflow: hidden;
+     display: block;
+}
+div.single-tp-nt-link-round a:hover div.ic{
+     background: #83c928;
+     border: 1px #83c928 solid;
+}
+div.single-tp-nt-link-round div.ic{
+     height: 76px;
+     width: 76px;
+     overflow: hidden;
+     margin: 0 auto 10px;
+     display: table;
+     padding: 5px;
+     box-sizing: border-box;
+     border-radius: 50%;
+     border: 1px #fff solid;
+}
+div.single-tp-nt-link-round div.ic span{
+     text-align: center;
+     display: table-cell;
+     vertical-align: middle;
+}
+div.single-tp-nt-link-round div.ic img{
+     max-width: 100%;
+}
+div.single-tp-nt-link-round div.lktxt{
+     color: #fff;text-transform: capitalize;
+     font-size: 16px;
+}
+div.single-tp-nt-link-round div.lktxt span.block{
+     display: block;
+}
+div.single-tp-nt-link-round a:hover div.lktxt{
+     color: #83c928;
+}
+
+div.nt-tp-rec-boxes{
+     clear: both;
+     font-size: 0px;
+     text-align: center;
+     margin: -15px -15px 0px;
+}
+div.nt-tp-rec-single{
+     width: 210px;
+     height: 159px;
+     display: inline-block;
+     font-size: 16px;
+     margin: 15px;
+}
+div.nt-tp-rec-single a{
+     width: 100%;
+     height: 100%;
+     display: block;
+     overflow: hidden;
+     position: relative;
+}
+div.nt-tp-rec-single a:after{
+     content: '';
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     width: 5px;
+     height: 5px;
+     background: rgba(79, 32, 175, 0.5);
+     opacity: 0;
+     border-radius: 50%;
+     transform: scale(1, 1) translate(-50%);
+     transform-origin: 50% 50%;
+}
+div.nt-tp-rec-single a:hover:after{
+         animation: ripple 0.4s ease-out;
+}
+div.nt-tp-rec-single div.inner{
+     -ms-flex-direction: column;
+     flex-direction: column;
+     -ms-flex-wrap: nowrap;
+     flex-wrap: nowrap;
+     -ms-flex-pack: start;
+     justify-content: center;
+     display: flex;
+     text-align: center;
+     width: 100%;
+     height: 100%;
+}
+div.nt-tp-rec-single div.nt-test-lg{
+     color: #fff;
+     font-weight: bold;
+     font-size: 40px;
+     line-height: 35px;margin-top: 10px;
+     margin-bottom: 5px;
+}
+div.nt-tp-rec-single div.nt-test-sm{
+     color: #fff;
+     font-size: 18px;
+}
+
+/*code date 06-12-2017 end*/
+
+
+
+
+@media only screen and (max-width: 1025px) {
+    div.latest-job-block-content .dt-block .desc {
+        width: 390px
+    }
+    div.latest-job-block-content .job-tag {
+        right: 15px
+    }
+}
+@media only screen and (max-width: 768px) {
+    div.latest-job-block-content .dt-block .image {
+        width: 100%;
+        border: 1px #000 solid;
+        height: 130px;
+        box-sizing: border-box
+    }
+    div.latest-job-block-content .dt-block .desc {
+        padding: 15px;
+        width: 260px
+    }
+    div.latest-job-block-content .title {
+        font-size: 16px
+    }
+    div.latest-job-block-content .dt-block .image img {
+        height: auto!important
+    }
+    div.latest-job-block-content .dt-block .desc {
+        padding: 15px;
+        width: 100%;
+        height: auto;
+        display: block
+    }
+    div.latest-job-block-content .dt-block {
+        height: auto
+    }
+}
+@media only screen and (max-width: 767px) {
+    div.latest-job-block-content .title {
+        margin: 10px 0;
+        text-align: center
+    }
+    div.latest-job-block-content .dtinfo .bx {
+        width: 33.33%;
+        margin-right: 0;
+        text-align: center
+    }
+    div.latest-job-block-content .dt-block .desc .link {
+        text-align: center
+    }
+    div.latest-job-block-content .dt-block .desc .link a {
+        font-size: 16px
+    }
+
+    div.nat-tp-banner-box div.nt-rgt-bx, 
+    div.nat-tp-banner-box div.nt-lft-bx{
+        float: none; width: 100%;  padding: 15px 20px 15px;
+       }
+
+    div.jobSearchForm div.formfieldtitle input.title,
+    div.nat-tp-banner-box div.jobSearchForm.style2 div.formfieldtitle {width: 100%; float: none}
+
+    div.single-tp-nt-link-round{
+      
+        width: 90px; 
+   }
+
+   div.nt-tp-rec-single {width: 40%}
+
+   div.nt-tp-rec-single div.nt-test-lg {font-size: 30px}
+
+   .body-row {box-sizing: border-box; padding: 0px;}
+
+   div#expertAdviceBx div.expertAdviceForm {padding: 15px}
+
+   div.ikd-nat-top-section {min-height: 260px}
+
+}
+@media only screen and (max-width: 1025px) {
+    div.single-test-help-block {
+        margin: 5px
+    }
+    div.single-tp-nt-link-round{
+      
+        width: 90px; 
+   }
+   div.nat-tp-banner-box {max-height: 1330px}
+}
+@media only screen and (max-width: 479px) {
+    div.test-help-blocks .text-test-prepartion {
+        padding: 0 10px;
+        box-sizing: border-box
+    }
+    div.test-help-blocks .text-test-prepartion a {
+        padding: 0
+    }
+    div.test-help-blocks .text-test-prepartion .test-prepation-btn {
+        margin: 10px 0 0
+    }
+	
+}
+
+
+/* small devices portrait */
+@media screen and (min-width: 768px) and (max-width: 991px){
+
+    div.nat-tp-banner-box div.nt-rgt-bx, 
+    div.nat-tp-banner-box div.nt-lft-bx{ padding: 15px 20px 15px;
+       }
+
+    div.jobSearchForm div.formfieldSearchButton,
+    div.jobSearchForm div.formfieldtitle input.title,
+    div.nat-tp-banner-box div.jobSearchForm.style2 div.formfieldtitle {width: 100%; float: none}
+
+    div.single-tp-nt-link-round{
+      
+        width: 100px; 
+   }
+
+   .body-row {box-sizing: border-box; padding: 5px;}
+
+}
+.ribbon-wrapper {
+  width: 85px;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: -3px;
+  left: -3px;
+}
+.ribbon-wrapper .ribbon {
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  position: relative;
+  padding: 4px 0;
+  top: 9px;
+  left: -40px;
+  width: 120px;
+  background-color: #ff6600;
+  color: #fff;
+}
+
+.ribbon-wrapper-pts {
+  width: 85px;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: -3px;
+  left: -3px;
+}
+.ribbon-wrapper-pts .ribbon-pts {
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  position: relative;
+  padding: 4px 0;
+  top: 9px;
+  left: -40px;
+  width: 120px;
+  background-color: #006f1f;
+  color: #fff;
+}
+.ribbon-wrapper-jts {
+  width: 85px;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: -3px;
+  left: -3px;
+}
+.ribbon-wrapper-jts .ribbon-jts {
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  position: relative;
+  padding: 4px 0;
+  top: 9px;
+  left: -40px;
+  width: 120px;
+  background-color: #343a40;
+  color: #fff;
+}
+.ribbon-wrapper-bts {
+  width: 85px;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: -3px;
+  left: -3px;
+}
+.ribbon-wrapper-bts .ribbon-bts {
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  position: relative;
+  padding: 4px 0;
+  top: 9px;
+  left: -40px;
+  width: 120px;
+  background-color: #2856a3;
+  color: #fff;
+}

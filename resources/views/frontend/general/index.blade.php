@@ -191,13 +191,13 @@
       </section><!--Testimonials Widget Close-->
 
      
-     <div class="container" id="contactus"><h2>Contact US</h2></div>
+     <div class="container" id="contactus"><center><h2>Contact US</h2></center></div>
       <div class="row">
       <!--Google Map-->
-      <section class="map container col-lg-6 col-md-6 col-sm-6 ">
-      	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11365119.183662498!2d26.671722792891288!3d45.93754926598604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1403521777633" width="800" height="400" style="border:0"></iframe>
-      </section>
-      <section>
+      <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="map container col-lg-6 col-md-6 col-sm-6">
+      	<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11365119.183662498!2d26.671722792891288!3d45.93754926598604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1403521777633" width="600" height="350" style="border:0"></iframe>
+      </div>
         <div class="col-lg-6 col-md-6 col-sm-6">
             <form class="contact-form ajax-form" method="post">
               <div class="form-group">
@@ -219,7 +219,8 @@
             </form>
           </div>
         </div>
-      </section><!--Google Map Close-->
+      
+      </div><!--Google Map Close-->
       
       <!--Contacts-->
 
@@ -228,31 +229,32 @@
       <!--Support-->
       <section class="support" id="support">
       	<div class="container">
-        	<div class="row">
-          
+        	
+          <div class="col-lg-12 col-md-12 col-sm-12" >
+            <div class="row">
           	<!--Left Column-->
-          	<div class="col-lg-8 col-md-8">
             	<h2 class="title">Support/ FAQ</h2>
-              <div class="row space-top">
-              	<div class="clo-lg-6 col-md-6 col-sm-6 space-bottom">
+             
+              	<div class="clo-lg-6 col-md-6 col-sm-6">
                 	<h4 class="light-weight uppercase">Privacy Policy</h4>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat.</p>
                   <a class="btn btn-success btn-sm" href="#">Read more</a>
                 </div>
-              	<div class="clo-lg-6 col-md-6 col-sm-6 space-bottom">
+              	<div class="clo-lg-6 col-md-6 col-sm-6">
                 	<h4 class="light-weight uppercase">Shipping Agreement</h4>
                   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis.</p>
                 </div>
-              </div>
-              
+
+          </div>
               <!--Acccordion-->
               <div class="row">
+
                 <div class="accordion panel-group" id="accordion">
                   <div class="panel">
                     <div class="panel-heading active">
                       <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><i></i>FAQ Collapsible section 01</a>
                     </div>
-                    <div id="collapseOne" class="collapse in">
+                    <div id="collapseOne" class="collapse">
                       <div class="panel-body">
                         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table.
                       </div>
