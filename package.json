@@ -19,6 +19,7 @@
         "vue": "^2.5.7"
     },
     "dependencies": {
+        "vue-dynamic-forms": "^1.1.0",
         "vue-router": "^3.0.1"
     }
 }

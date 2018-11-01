@@ -224,7 +224,7 @@
                     <div class="price-label">Rs. {{$product->product_price}}</div>
                     <a href="{{url('ecommerce/single-product')}}/{{$product->slug}}"><img src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}" alt="1"/></a>
                     <div class="footer">
-                      <a href="#">{{$product->product_name}}</a>
+                      <a href="{{url('ecommerce/single-product')}}/{{$product->slug}}">{{$product->product_name}}</a>
                       <span>by Pirate3d</span>
                       <div class="tools">
                         <div class="rate">

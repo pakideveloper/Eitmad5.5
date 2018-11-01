@@ -54,7 +54,9 @@ class CartController extends Controller
 		    	return redirect()->back()->with('status', $product->product_name.' '.'was successfully added to your cart.');
     			// break;
 			case 'old':
-				Cart::instance('shopping')->update($rowId, $quantity);
+            echo $quantity_n+$quantity;
+            die();
+				Cart::instance('shopping')->update($rowId, $quantity_n+$quantity);
 				$item = Cart::instance('shopping')->get($rowId);
 				// $object = new \stdClass;
 		  //   	$object->discount_id = \Crypt::decrypt($id);
