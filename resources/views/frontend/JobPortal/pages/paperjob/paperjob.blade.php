@@ -227,13 +227,18 @@
 				<!-- our-partner end here -->
 				
 				<div id="partners" class="owl-carousel">
+					@foreach($pnews as $new)
+
 					<div class="item">
 						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l2.jpg" class="img-responsive" alt="l1" title="l1" />
+							<img src="{{URL::to('public/admin/job/upload')}}/Logo/{{$new->paper_logo}}" class="img-responsive" alt="l1" title="" style="border-radius: 50%;width: 60%;" />
 						</div>
+
 						<span  style="margin-left: 85px"> 10 Jobs </span>
+					
 					</div>
-					<div class="item">
+					@endforeach
+					<!-- <div class="item">
 						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
 							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l2.jpg" class="img-responsive" alt="l2" title="l2" />
 						</div>
@@ -268,7 +273,7 @@
 							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l2.jpg" class="img-responsive" alt="l2" title="l2" />
 						</div>
 						<span  style="margin-left: 85px"> 16 Jobs </span>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -280,36 +285,51 @@
 <div class="topBx">
 </div>
 <div class="btmBx">
+	@foreach($posts as $post)
 <div class="job-listing-block" id="jobs-append-box">
 <div class="single-job-list-block">
 <div class="lftBx">
 <a target="_blank" href="{{URL::to('public/JobPortal_Frontend/assets')}}/images/slider-1.jpg" class="linker">
 <div class="link-inner">
 <div class="compImage">
-<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/slider-1.jpg" alt="img-army">
-<div class="jLocation">
+		
+<img src="{{URL::to('public/admin/job/upload')}}/Logo/{{$post->logo->paper_logo}}" alt="img-army">
+<!-- <div class="jLocation">
 <img src="https://ikddata.ilmkidunya.com/images/jobs/jobs/ic-map-marker-sm-black.png" alt="ic-map-marker-sm-black" class="normal">
 <img src="https://ikddata.ilmkidunya.com/images/jobs/jobs/ic-map-marker-sm-white.png" alt="ic-map-marker-sm-black" class="hovered" style="display:none;"> 
-<span class="cityName">Peshawar</span></div>
+<span class="cityName">Peshawar</span></div> -->
 </div>
 <div class="desc">
-<div class="jTitle">Jobs In Chip Training &amp; Consulting 23 Oct 2018</div>
-<div class="jDesc"> <p>Communication Support Officer, Human Resource Officer</p></div>
+<div class="jTitle">{{$post->paper_post_title}}</div>
+<div class="jDesc"> <p>{{$post->post_description}}</p></div>
+
 </div>
 </div>
 </a>
 </div>
 <div class="rgtBx">
 <div class="jobPostingInfo">
-<div class="jPostedOn">Posted On<b class="green">23 Oct</b></div>
-<div class="jLastDate">Last Date<b class="red">28 Oct</b></div>
-</div><div class="jobCounting"><div class="jobtotal"><b>6</b>Jobs</div>
-<div class="jobFavorite"><input type="hidden" value="Jobs In Chip Training &amp; Consulting 23 Oct 2018">
+	 <?php 
+    $posted  = date_format($post->created_at,"d/m/y");
+    $old_date_timestamp = strtotime($post->expired);
+$new_date = date('d-m-y', $old_date_timestamp);
+     // $expired  = date_format($post->expired,"d/m/y");
+      // echo $new_date;
+      // die();
+
+	  ?>  
+         
+	
+<div class="jPostedOn">Posted On<b class="green">{{$posted}}</b></div>
+<div class="jLastDate">Last Date<b class="red">{{$new_date}}</b></div>
+</div><div class="jobCounting"><div class="jobtotal"><b>{{$post->number_of_jobs}}</b>Jobs</div>
+<!-- <div class="jobFavorite"><input type="hidden" value="Jobs In Chip Training &amp; Consulting 23 Oct 2018">
+	
 <a onclick="makeJobFvrt(155203,this);">
-<span class="imgJobFavrt"></span>Favorite</a></div>
+<span class="imgJobFavrt"></span>Favorite</a></div> -->
 </div>
 <div class="jobAd">
-<img style="width: 100%;" src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/news.jpg" alt="newsaper"></div>
+<img style="width: 100%;" src="{{URL::to('public/admin/job/upload')}}/Ad/{{$post->paper_ad}}" alt="newsaper"></div>
 </div>
 <a target="_blank" href="/jobs/jobs-in-chip-training-consulting-23-oct-2018-155203.aspx" class="mobilink">
 <div class="jShowMobo" style="display:none;">
@@ -326,7 +346,9 @@
 </div>
 </a>
 </div>
+
 </div>
+@endforeach
 </div>
 </div>
 
