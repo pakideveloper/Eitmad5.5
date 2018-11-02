@@ -34,6 +34,10 @@ Route::get('/paperjobs', function()
 {
   return view('frontend/JobPortal/pages/paperjob/paperjob');
 });
+Route::get('/single-paperjob', function()
+{
+  return view('frontend/JobPortal/pages/paperjob/single-paperjob');
+});
 
 /////////// Company Registration /////
 Route::get('/addcompany', function () {
