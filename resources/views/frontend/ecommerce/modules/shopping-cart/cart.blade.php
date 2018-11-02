@@ -97,9 +97,7 @@
                   <td class="name"><a href="{{url('ecommerce/single-product')}}/{{$cart_item->options['product_slug']}}">{{$cart_item->name}}</a></td>
                   <td class="price">Rs. {{$cart_item->price}}</td>
                   <td class="qnt-count">
-                    <a class="incr-btn" href="{{URL::to('public/frontend/ecommerce/assets')}}/#">-</a>
-                    <input class="quantity form-control" type="text" value="2">
-                    <a class="incr-btn" href="{{URL::to('public/frontend/ecommerce/assets')}}/#">+</a>
+                    {{$cart_item->qty}}
                   </td>
                   <td class="total">Rs. {{$cart_item->subtotal}}</td>
                   <td class="delete"><a href="{{url('/ecommerce/removeFromCart')}}/{{$cart_item->rowId}}"><i class="icon-delete"></i></a></td>

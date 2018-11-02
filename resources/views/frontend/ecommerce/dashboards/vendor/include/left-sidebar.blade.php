@@ -2,7 +2,7 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <router-link  to="dashboard">dashboard</router-link>
+                <router-link  to="dashboard" class="nav-link">dashboard</router-link>
               </li>
               <li class="nav-item has-sub">
                 <a class="nav-link" href="JavaScript:void(0)">
@@ -17,7 +17,7 @@
                     </a>
                   </li>
                   <li>
-                      <router-link  to="add-product">Add Product</router-link>
+                      <router-link  to="add-product" class="nav-link">Add Product</router-link>
                     
                   </li>
                 </ul>
