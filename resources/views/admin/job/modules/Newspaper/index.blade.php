@@ -91,16 +91,16 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <div class="page-title-box">
-                                    <h4 class="page-title">Newspaper Posts</h4>
+                                    <h4 class="page-title">Newspaper</h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
                                             <a href="#">Eitmad</a>
                                         </li>
                                         <li>
-                                            <a href="#">Newspaper Posts</a>
+                                            <a href="#">Newspaper</a>
                                         </li>
                                         <li class="active">
-                                            All Newspaper Posts
+                                            All Newspaper
                                         </li>
                                     </ol>
                                     <div class="clearfix"></div>
@@ -115,7 +115,7 @@
                                 <div class="card-box">
 
                                     <div class="table-rep-plugin">
-                                        <h4 class="m-t-0 header-title"><b>All Newspaper Posts</b></h4>
+                                        <h4 class="m-t-0 header-title"><b>All Newspaper</b></h4>
                                         <p class="text-muted m-b-30 font-13">
                                         just start typing to edit, or move around with arrow keys or mouse clicks!
                                     </p>
@@ -125,38 +125,31 @@
                                                     <tr>
                                                         <th>Id</th>
 
-                                                        <th data-priority="1">Post-Title</th>
-                                                        <th data-priority="1">Post-Description</th>
-                                                        <th data-priority="1">Newspaper ID</th>
-                                                        <th data-priority="1">Post-Type</th>
-
-                                                        <th data-priority="1">Post-Expired</th>
+                                                        <th data-priority="1">Paper Name</th>
+                                                        
                                                         
                                                         <th data-priority="3">Actions</th>                           
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    @foreach($posts as $post)
+                                                    @foreach($news as $new)
                                                     <tr>
                                                         
-                                                        <td>{{$post->id}}</td>
+                                                        <td>{{$new->id}}</td>
                                                         
-                                                        <th>{{$post->paper_post_title}}</th>
-                                                        <th>{{$post->post_description}}</th>
-                                                        <th>{{$post->paper_id}}</th>
-                                                        <th>{{$post->paper_ad_type}}</th>
-                                                        <td>{{$post->expired}}</td>
+                                                        <th>{{$new->paper_name}}</th>
+                                                        
                                                         
                                                         <td>
-                                                            <a href="{{url('/jobs/admin/post')}}/{{$post->id}}/edit"  style="float: left;">
+                                                            <a href="{{url('/jobs/admin/newspaper')}}/{{$new->id}}/edit"  style="float: left;">
                                                                 <i class="fa fa-pencil"></i>
                                                             </a>
-                                                           <form id="delete-form{{$post->id}}" 
-                                                                action="{{url('/jobs/admin/post')}}/{{$post->id}}" method="post">
+                                                           <form id="delete-form{{$new->id}}" 
+                                                                action="{{url('/jobs/admin/newspaper')}}/{{$new->id}}" method="post">
                                                                 {{csrf_field() }}
                                                                 {{ method_field('DELETE') }}
                                                                  
-                                                                <i  onclick="return deleteSubCategory({{$post->id}});" class="fa fa-trash-o" style="cursor: pointer;"></i>
+                                                                <i  onclick="return deleteNewspaper({{$new->id}});" class="fa fa-trash-o" style="cursor: pointer;"></i>
                                                             
                                                             </form>
                                                             
@@ -226,7 +219,7 @@
         <script src="{{URL::to('public/admin/job')}}/assets/js/jquery.core.js"></script>
         <script src="{{URL::to('public/admin/job')}}/assets/js/jquery.app.js"></script>
         <script type="text/javascript">
-            var deleteSubCategory = function(id){
+            var deleteNewspaper = function(id){
             if (confirm('Are you sure you want to delete this?')) {
         event.preventDefault();
         document.getElementById('delete-form'+id).submit(); 

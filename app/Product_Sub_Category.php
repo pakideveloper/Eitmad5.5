@@ -12,5 +12,9 @@ class Product_Sub_Category extends Model
     public function parent()
     {
     	return $this->hasOne('App\Product_Category','id', 'product_category_id');
+    } 
+    public function products()
+    {
+    	return $this->hasMany('App\Product','sub_category_id', 'id');
     }  
 }

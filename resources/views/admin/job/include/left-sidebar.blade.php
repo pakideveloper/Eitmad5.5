@@ -134,6 +134,15 @@
                                     <li><a href="{{url('/job/admin/area')}}">View All</a></li>
                                 </ul>
                             </li>
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span>Newspaper</span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    
+                                    <li><a href="{{url('/jobs/admin/newspaper')}}/create">Add</a></li>
+                                   
+                                    <li><a href="{{url('/jobs/admin/newspaper')}}">View</a></li>
+                                </ul>
+                            </li>
 
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span>Newspaper Post</span> <span class="menu-arrow"></span></a>

@@ -143,28 +143,28 @@
                                                         ?>
               <p class="p-style2">{{$description}}</p>
               <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-5">
+                <!-- <div class="col-lg-4 col-md-4 col-sm-5">
                   <h3>Tell friedns</h3>
                   <div class="social-links">
                     <a href="#"><i class="fa fa-tumblr-square"></i></a>
                     <a href="#"><i class="fa fa-pinterest-square"></i></a>
                     <a href="#"><i class="fa fa-facebook-square"></i></a>
                   </div>
-                </div>
-                <div class="col-lg-8 col-md-8 col-sm-7">
+                </div> -->
+                <!-- <div class="col-lg-8 col-md-8 col-sm-7">
                   <h3>Tags</h3>
                   <div class="tags">
                     <a href="#">Nikon, </a>
                     <a href="#">camera, </a>
                     <a href="#">hd video</a>
                   </div>
-                </div>
+                </div> -->
               </div>
-              <div class="promo-labels">
+<!--               <div class="promo-labels">
                 <div data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."><i class="fa fa-truck"></i>Free delivery</div>
                 <div data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."><i class="fa fa-space-shuttle"></i>Deliver even on Mars</div>
                 <div data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."><i class="fa fa-shield"></i>Safe Buy</div>
-              </div>
+              </div> -->
             </div>
           </div>
         </div>
