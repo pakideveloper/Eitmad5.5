@@ -25,6 +25,9 @@
 <link href="{{URL::to('public/JobPortal_Frontend/assets')}}/js/dist/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
 <!-- style paper job -->
 <link href="{{URL::to('public/JobPortal_Frontend/assets')}}/css/style_paper_job.css" rel="stylesheet" type="text/css"/>
+<link href="{{URL::to('public/JobPortal_Frontend/assets')}}/css/listing.css" rel="stylesheet" type="text/css"/>
+<link href="{{URL::to('public/JobPortal_Frontend/assets')}}/css/listings-details.css" rel="stylesheet" type="text/css"/>
+<link href="{{URL::to('public/JobPortal_Frontend/social_share')}}/css/font/fontello/css/fontello.css" rel="stylesheet" type="text/css"/>
 
  <!-- End style paper job -->
 <!-- Header link -->
@@ -228,18 +231,13 @@
 				<!-- our-partner end here -->
 				
 				<div id="partners" class="owl-carousel">
-					@foreach($pnews as $new)
-
 					<div class="item">
 						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="{{URL::to('public/admin/job/upload')}}/Logo/{{$new->paper_logo}}" class="img-responsive" alt="l1" title="" style="border-radius: 50%;width: 60%;" />
+							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l2.jpg" class="img-responsive" alt="l1" title="l1" />
 						</div>
-
 						<span  style="margin-left: 85px"> 10 Jobs </span>
-					
 					</div>
-					@endforeach
-					<!-- <div class="item">
+					<div class="item">
 						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
 							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l2.jpg" class="img-responsive" alt="l2" title="l2" />
 						</div>
@@ -274,86 +272,65 @@
 							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l2.jpg" class="img-responsive" alt="l2" title="l2" />
 						</div>
 						<span  style="margin-left: 85px"> 16 Jobs </span>
-					</div> -->
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-<!-- end slider
- -->
-<!-- paper job -->
-<div class="JobsByCntryCity gray jobLisitngPanel">
-<div class="topBx">
-</div>
-<div class="btmBx">
-	@foreach($posts as $post)
-<div class="job-listing-block" id="jobs-append-box">
-<div class="single-job-list-block">
-<div class="lftBx">
-<a target="_blank" href="{{url('/jobs/single-paperjob')}}" class="linker">
-<div class="link-inner">
-<div class="compImage">
-		
-<img src="{{URL::to('public/admin/job/upload')}}/Logo/{{$post->logo->paper_logo}}" alt="img-army">
-<!-- <div class="jLocation">
-<img src="https://ikddata.ilmkidunya.com/images/jobs/jobs/ic-map-marker-sm-black.png" alt="ic-map-marker-sm-black" class="normal">
-<img src="https://ikddata.ilmkidunya.com/images/jobs/jobs/ic-map-marker-sm-white.png" alt="ic-map-marker-sm-black" class="hovered" style="display:none;"> 
-<span class="cityName">Peshawar</span></div> -->
-</div>
-<div class="desc">
-<div class="jTitle">{{$post->paper_post_title}}</div>
-<div class="jDesc"> <p>{{$post->post_description}}</p></div>
+<!-- end slider -->
+<!-- Single Paper Job -->
+  <div id="inner-page-wrapper">
+                    <div class="listings-details-wrap" data-aios-staggered-parent="true" data-aios-animation-offset="0" data-aios-animation-reset="false">
 
-</div>
-</div>
-</a>
-</div>
-<div class="rgtBx">
-<div class="jobPostingInfo">
-	 <?php 
-    $posted  = date_format($post->created_at,"d/m/y");
-    $old_date_timestamp = strtotime($post->expired);
-$new_date = date('d-m-y', $old_date_timestamp);
-     // $expired  = date_format($post->expired,"d/m/y");
-      // echo $new_date;
-      // die();
+                        <div class="container">
 
-	  ?>  
-         
-	
-<div class="jPostedOn">Posted On<b class="green">{{$posted}}</b></div>
-<div class="jLastDate">Last Date<b class="red">{{$new_date}}</b></div>
-</div><div class="jobCounting"><div class="jobtotal"><b>{{$post->number_of_jobs}}</b>Jobs</div>
-<!-- <div class="jobFavorite"><input type="hidden" value="Jobs In Chip Training &amp; Consulting 23 Oct 2018">
-	
-<a onclick="makeJobFvrt(155203,this);">
-<span class="imgJobFavrt"></span>Favorite</a></div> -->
-</div>
-<div class="jobAd">
-<img style="width: 100%;" src="{{URL::to('public/admin/job/upload')}}/Ad/{{$post->paper_ad}}" alt="newsaper"></div>
-</div>
-<a target="_blank" href="/jobs/jobs-in-chip-training-consulting-23-oct-2018-155203.aspx" class="mobilink">
-<div class="jShowMobo" style="display:none;">
-<div class="mbjDesc">
-<p>Communication Support Officer, Human Resource Officer</p>
-</div>
-<div class="jInfo">
-	<span class="location"><img src="https://ikddata.ilmkidunya.com/images/jobs/jobs/ic-map-marker-sm-black.png" alt="ic-map-marker-sm-black" class="normal">
-	</span>
-	<span class="cityName">Peshawar</span>
-	<span class="date-posted">23 Oct</span>
-	<span class="last-date">Last date: 28 Oct</span>
-</div>
-</div>
-</a>
-</div>
+                            
+                            <div class="listings-details-left">
 
-</div>
-@endforeach
-</div>
-</div>
+                                <h1 data-aios-reveal="true" data-aios-animation="fadeInLeft" data-aios-animation-delay="0s" data-aios-animation-reset="false" data-aios-animation-offset="0.3"><span>IT Manager</span></h1>
+                                <br>
+                                <span>Posted Date: 02-11-2018</span>
+                                <span>Expire Date: 12-12-2018</span>
+                                <div class="ld-text-wrap" data-aios-reveal="true" data-aios-animation="fadeInUp" data-aios-animation-delay="0s" data-aios-animation-reset="false" data-aios-animation-offset="0.3">
 
-<!-- end paper job -->
+                                    <strong> IT Manager</strong>
+
+                                    <p>
+                                       We are looking for an IT manager to be responsible and accountable for the smooth running of our computer systems within the limits of requirements, specifications, costs and timelines. You will supervise the implementation and maintenance of our company’s computing needs.
+
+                                       The successful candidate will have improved skills, a proven professional experience and a detailed knowledge of industry’s best practice processes.
+                                    </p>
+
+                                </div>
+                                <!--social share buttons start-->
+                <hr />
+    <div class="inline-share">
+      <span class="share">Share  :</span>
+    </div>
+  <hr/>
+   <!--social share buttons end-->
+
+                            </div>
+                        </div>
+
+                    </div>
+<div id="bottom-slider-wrapper" data-aios-reveal="true" data-aios-animation="fadeInUp" data-aios-animation-delay="0s" data-aios-animation-reset="false" data-aios-animation-offset="0.25">
+
+                        <div class="listings-main-slide-holder">
+
+                            <div class="listings-details-main-slides">
+                                <div class="listings-photo-entry">
+
+                                    <canvas width="1600" height="700" style="background-image: url({{URL::to('public/JobPortal_Frontend/assets')}}/images/news.jpg)"></canvas>
+
+                                </div>
+                                
+                            </div>
+                    </div>
+       </div>
+<!-- End Single Paper JoB -->
+
+
 <!-- footer start -->
 @include('frontend/JobPortal/include/jobfooter1')
 <!--footer end -->

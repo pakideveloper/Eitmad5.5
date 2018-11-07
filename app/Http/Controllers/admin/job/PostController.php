@@ -5,7 +5,8 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 use App\Post;
-
+use App\newspaper;
+use DB;
 class PostController extends Controller
 {
     /**
@@ -17,6 +18,7 @@ class PostController extends Controller
     {
         //
         $posts = Post::all();
+        
         return view ('admin/job/modules/newspaper_Post/index',compact('posts'));
     }
 
@@ -28,8 +30,8 @@ class PostController extends Controller
     public function create()
     {
         //
-
-        return view ('admin/job/modules/newspaper_Post/create');
+$news = newspaper::all();
+        return view ('admin/job/modules/newspaper_Post/create',compact('news'));
     }
 
     /**
@@ -43,28 +45,30 @@ class PostController extends Controller
         //
         $this->storeValidation($request);
         $posts = new Post();
+        $posts->paper_id = $request->paper_id;
         $posts->paper_post_title = $request->post_title;
-        $posts->paper_name = $request->paper_name;
+        $posts->post_description = $request->paper_descrip;
         $posts->paper_ad_type = $request->post_type;
+        $posts->number_of_jobs = $request->no_of_jobs;
         $posts->expired = $request->expires_after;
-        $logo = $request->newspaper_logo[0];
-        $file_name = $logo -> getClientOriginalName();
-        $file_name = uniqid().$file_name;
-         $file_name = preg_replace('/\s+/', '', $file_name);
-         $file_type = $logo->getClientOriginalExtension();
-            $logo -> move(public_path().'/admin/job/upload/Logo',$file_name);
-            $posts->paper_logo = $file_name;
+        // $logo = $request->newspaper_logo[0];
+        // $file_name = $logo -> getClientOriginalName();
+        // $file_name = uniqid().$file_name;
+        //  $file_name = preg_replace('/\s+/', '', $file_name);
+        //  $file_type = $logo->getClientOriginalExtension();
+        //     $logo -> move(public_path().'/admin/job/upload/Logo',$file_name);
+        //     $posts->paper_logo = $file_name;
             // $file_size = $logo->getClientSize();
             // $file_size = $file_size/1000;
             // $file_size = $file_size.' '.'kb';
 
         $ad = $request->post_ad_images[0];
-        // $file_name = $ad -> getClientOriginalName();
-        // $file_name = uniqid().$file_name;
-        //     $file_name = preg_replace('/\s+/', '', $file_name);
+        $file_name = $ad -> getClientOriginalName();
+        $file_name = uniqid().$file_name;
+            $file_name = preg_replace('/\s+/', '', $file_name);
             $file_type = $ad->getClientOriginalExtension();
             $ad -> move(public_path().'/admin/job/upload/Ad',$file_name);
-            $file_size = $logo->getClientSize();
+            $file_size = $ad->getClientSize();
             $file_size = $file_size/1000;
             $file_size = $file_size.' '.'kb';
             $posts->paper_ad = $file_name;
@@ -98,9 +102,23 @@ class PostController extends Controller
      */
     public function edit($id)
     {
+
         //
         $posts = Post::find($id);
-        return view ('admin/job/modules/newspaper_Post/edit',compact('posts'));
+       $selectnews = $posts->paper_id;
+
+       $finalnews = DB::table('newspaper')
+       //      ->join('newspaper', 'paper_posts.paper_id', '=', 'newspaper.id')
+             ->select( 'newspaper.paper_name','newspaper.id')
+             ->where('newspaper.id','=',$selectnews)
+            ->get();
+
+            // echo $finalnews;
+            // die();
+            
+            
+        $news = newspaper::all();
+        return view ('admin/job/modules/newspaper_Post/edit',compact('posts','news','finalnews'));
     }
 
     /**
@@ -115,28 +133,30 @@ class PostController extends Controller
         //
         
         $posts = Post::find($id);
+        $posts->paper_id = $request->paper_id;
         $posts->paper_post_title = $request->post_title;
-        $posts->paper_name = $request->paper_name;
+        $posts->post_description = $request->paper_descrip;
         $posts->paper_ad_type = $request->post_type;
+         $posts->number_of_jobs = $request->no_of_jobs;
         $posts->expired = $request->expires_after;
-        $logo = $request->newspaper_logo[0];
-        $file_name = $logo -> getClientOriginalName();
-        $file_name = uniqid().$file_name;
-         $file_name = preg_replace('/\s+/', '', $file_name);
-         $file_type = $logo->getClientOriginalExtension();
-            $logo -> move(public_path().'/admin/job/upload/Logo',$file_name);
-            $posts->paper_logo = $file_name;
+        // $logo = $request->newspaper_logo[0];
+        // $file_name = $logo -> getClientOriginalName();
+        // $file_name = uniqid().$file_name;
+        //  $file_name = preg_replace('/\s+/', '', $file_name);
+        //  $file_type = $logo->getClientOriginalExtension();
+        //     $logo -> move(public_path().'/admin/job/upload/Logo',$file_name);
+        //     $posts->paper_logo = $file_name;
             // $file_size = $logo->getClientSize();
             // $file_size = $file_size/1000;
             // $file_size = $file_size.' '.'kb';
 
         $ad = $request->post_ad_images[0];
-        // $file_name = $ad -> getClientOriginalName();
-        // $file_name = uniqid().$file_name;
-        //     $file_name = preg_replace('/\s+/', '', $file_name);
+        $file_name = $ad -> getClientOriginalName();
+        $file_name = uniqid().$file_name;
+            $file_name = preg_replace('/\s+/', '', $file_name);
             $file_type = $ad->getClientOriginalExtension();
             $ad -> move(public_path().'/admin/job/upload/Ad',$file_name);
-            $file_size = $logo->getClientSize();
+            $file_size = $ad->getClientSize();
             $file_size = $file_size/1000;
             $file_size = $file_size.' '.'kb';
             $posts->paper_ad = $file_name;
@@ -169,34 +189,38 @@ class PostController extends Controller
         // echo "string";
         // die();
         $posts = Post::find($request->file_id);
-        $file_name=$posts->paper_logo;
-         $dir = public_path()."/admin/job/upload/Logo/";        
+        $file_name=$posts->paper_ad;
+
+         $dir = public_path()."/admin/job/upload/Ad/";        
          $dirHandle = opendir($dir);
          while ($fil = readdir($dirHandle)) {
            if($fil==$file_name) {
                   unlink($dir.'/'.$fil);
            }
          }
-        $file_name->delete();
+        
       
         return response()->json(['code'=>200,'success' => $request->file_id],200);
     }
     public function storeValidation(Request $request){
         $messages = [
+            'paper_id.required' => 'please select paper name',
             'post_title.required' => 'please enter post title',
-            'paper_name.required' => 'please enter paper name',
+            'paper_descrip.required' => 'please enter post Description',
             'post_type.required' => 'please select post type',
+            'no_of_jobs.required' => 'please select Number of Jobs',
             'expires_after.required' => 'please select expiry date',
-            'newspaper_logo.required' => 'please select newspaper logo',
+            // 'newspaper_logo.required' => 'please select newspaper logo',
             'post_ad_images.required' => 'please select post ad image',
             
         ];
         $this->validate($request, [
+             'paper_id' => 'required',
             'post_title' => 'required',
-            'paper_name' => 'required',
+            'paper_descrip' => 'required',
             'post_type' => 'required',
             'expires_after' => 'required',          
-            'newspaper_logo' => 'required',            
+             'no_of_jobs' => 'required',            
             'post_ad_images' => 'required',            
         ],$messages);
     }

@@ -123,6 +123,21 @@
                                             
 
                                             <div class="p-20">
+
+                                                <div class="form-group">
+                                                    <label for="paper_name">Choose Paper *:</label>
+                                                    <select id="" name="paper_id" class="form-control"  required="">
+                                                        <option > Choose Paper Name</option>
+                                                        
+                                                        @foreach($news as $new)
+                                                        <option value = "{{$new->id}}">{{$new->paper_name}}</option>
+                                                       @endforeach
+                                                    </select>
+                                                     @if ($errors->has('paper_id'))
+                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('paper_id') }}.</li></ul>
+                                                        @endif
+                                                </div>
+
                                                 
                                                     <div class="form-group {{$errors->has('post_title') ? 'has-error' : ''}}" >
                                                         <label for="post_title">Post Title<span class="text-danger">*</span></label>
@@ -132,12 +147,12 @@
                                                             <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('post_title') }}.</li></ul>
                                                         @endif
                                                     </div>
-                                                    <div class="form-group {{$errors->has('paper_name') ? 'has-error' : ''}}" >
-                                                        <label for="paper_name">Paper Name<span class="text-danger">*</span></label>
-                                                        <input type="text" name="paper_name" parsley-trigger="change" 
-                                                               placeholder="Enter Paper Name" class="form-control" id="" value="{{ old('paper_name') }}">
-                                                        @if ($errors->has('paper_name'))
-                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('paper_name') }}.</li></ul>
+                                                    <div class="form-group {{$errors->has('paper_descrip') ? 'has-error' : ''}}" >
+                                                        <label for="paper_descrip">Post Description<span class="text-danger">*</span></label>
+                                                        <textarea name="paper_descrip" parsley-trigger="change" 
+                                                               placeholder="Enter Paper description" class="form-control" id="" value="{{ old('paper_descrip') }}"></textarea>
+                                                        @if ($errors->has('paper_descrip'))
+                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('paper_descrip') }}.</li></ul>
                                                         @endif
                                                     </div>
 
@@ -154,6 +169,14 @@
                                                             <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('post_type') }}.</li></ul>
                                                         @endif
                                                 </div>
+                                                <div class="form-group {{$errors->has('no_of_jobs') ? 'has-error' : ''}}" >
+                                                        <label for="job">Number Of Jobs<span class="text-danger">*</span></label>
+                                                        <input type="number" name="no_of_jobs" parsley-trigger="change" 
+                                                               placeholder="Enter Number of Jobs" class="form-control" id="postTitle" value="{{ old('no_of_jobs') }}">
+                                                        @if ($errors->has('no_of_jobs'))
+                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('no_of_jobs') }}.</li></ul>
+                                                        @endif
+                                                    </div>
                                                 <div class="form-group {{$errors->has('expires_after') ? 'has-error' : ''}}">
                                                         <label for="expires_after">Expires after</label>
                                                         <input type="date" name="expires_after"  class="form-control" placeholder="mm/dd/yyyy" id="datepicker-autoclose" value="{{ old('expires_after') }}">
@@ -179,7 +202,7 @@
                                                 
                                                 
                                                 
-                                                <div class="form-group m-b-20 {{$errors->has('newspaper_logo') ? 'has-error' : ''}}">
+                                                <!-- <div class="form-group m-b-20 {{$errors->has('newspaper_logo') ? 'has-error' : ''}}">
                                                     <label for="">Newspaper Logo</label>
                                                     <div class="col-sm-12 padding-left-0 padding-right-0">
                                                             <input type="file" name="newspaper_logo" id="filer_input2">
@@ -187,7 +210,7 @@
                                                                 <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('newspaper_logo') }}.</li></ul>
                                                             @endif
                                                     </div>
-                                                </div>
+                                                </div> -->
                                                 <div class="form-group m-b-20 {{$errors->has('post_ad_images') ? 'has-error' : ''}}">
                                                     <label for="">Post Ad_image</label>
                                                      <div class="col-sm-12 padding-left-0 padding-right-0">
