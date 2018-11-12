@@ -168,7 +168,7 @@
           	
 
           	<li><a href="{{url('/jobs/paperjobs')}}">Paper Job</a></li>
-          	<li><a href="">Submit A Job</a></li>
+          	<li><a href="{{ url('jobs/addcompany') }}">Submit A Job</a></li>
           	<!-- <li><a href="shop-filters-left-3cols.html">TV sets</a></li> -->
           </ul>
         </nav>

@@ -2,7 +2,7 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <router-link  to="dashboard" class="nav-link">dashboard</router-link>
+                <router-link  to="dashboard" class="nav-link"><span data-feather="shopping-cart"></span>&nbsp;Dasboard</router-link>
               </li>
               <li class="nav-item has-sub">
                 <a class="nav-link" href="JavaScript:void(0)">
@@ -10,14 +10,29 @@
                   Product
                   <span class="positive">+</span>
                 </a>
-                <ul class="nav flex-column is-sub">
+                <ul class="nav flex-column is-sub">                  
                   <li>
-                    <a class="nav-link" href="#">
-                      Manage Products
-                    </a>
+                      <router-link  to="add-product" class="nav-link">Manage Products</router-link>
+                    
                   </li>
                   <li>
                       <router-link  to="add-product" class="nav-link">Add Product</router-link>
+                    
+                  </li>
+                  <li>
+                      <router-link  to="add-product" class="nav-link">Add Product</router-link>
+                    
+                  </li>
+                  <li>
+                      <router-link  to="add-product" class="nav-link">Media Center</router-link>
+                    
+                  </li>
+                  <li>
+                      <router-link  to="add-product" class="nav-link">Manage Image</router-link>
+                    
+                  </li>
+                  <li>
+                      <router-link  to="add-product" class="nav-link">Fulfilment by Eitmad</router-link>
                     
                   </li>
                 </ul>
@@ -25,33 +40,74 @@
               <li class="nav-item has-sub">
                 <a class="nav-link" href="JavaScript:void(0)">
                   <span data-feather="user"></span>
-                  Profile
+                  Orders
                   <span class="positive">+</span>
                 </a>
-                <ul class="nav flex-column is-sub">
-                  <li class="" style="">
-                    <a class="nav-link" href="#">
-                      View <span class="sr-only">(current)</span>
-                    </a>
+                <ul class="nav flex-column is-sub">                  
+                  <li>
+                      <router-link  to="add-product" class="nav-link">Manage orders</router-link>   
                   </li>
-                  <li class="" style="">
-                    <a class="nav-link" href="#">
-                      Edit <span class="sr-only">(current)</span>
-                    </a>
+                  <li>
+                      <router-link  to="add-product" class="nav-link">Manage Reviews</router-link>   
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item has-sub">
+                <a class="nav-link" href="JavaScript:void(0)">
+                  <span data-feather="user"></span>
+                  Promotion
+                  <span class="positive">+</span>
+                </a>
+                <ul class="nav flex-column is-sub">                  
+                  <li>
+                      <router-link  to="add-product" class="nav-link">Compaign Managment</router-link>   
+                  </li>
+                  <li>
+                      <router-link  to="add-product" class="nav-link">Bundles</router-link>   
+                  </li>
+                  <li>
+                      <router-link  to="add-product" class="nav-link">Seller Voucher</router-link>   
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item has-sub">
+                <a class="nav-link" href="JavaScript:void(0)">
+                  <span data-feather="user"></span>
+                  Promotion
+                  <span class="positive">+</span>
+                </a>
+                <ul class="nav flex-column is-sub">                  
+                  <li>
+                      <router-link  to="add-product" class="nav-link">Compaign Managment</router-link>   
+                  </li>
+                  <li>
+                      <router-link  to="add-product" class="nav-link">Bundles</router-link>   
+                  </li>
+                  <li>
+                      <router-link  to="add-product" class="nav-link">Seller Voucher</router-link>   
                   </li>
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="file"></span>
-                  Orders
-                </a>
+                <router-link  to="add-product" class="nav-link"><span data-feather="shopping-cart"></span>&nbsp;Store</router-link>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="shopping-cart"></span>
-                  Products
+              <li class="nav-item has-sub">
+                <a class="nav-link" href="JavaScript:void(0)">
+                  <span data-feather="user"></span>
+                  Finance
+                  <span class="positive">+</span>
                 </a>
+                <ul class="nav flex-column is-sub">                  
+                  <li>
+                      <router-link  to="add-product" class="nav-link">Account Statements</router-link>   
+                  </li>
+                  <li>
+                      <router-link  to="add-product" class="nav-link">Order Overview</router-link>   
+                  </li>
+                  <li>
+                      <router-link  to="add-product" class="nav-link">Transaction Overview</router-link>   
+                  </li>
+                </ul>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
@@ -65,12 +121,12 @@
                   Reports
                 </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="layers"></span>
                   Integrations
                 </a>
-              </li>
+              </li> -->
             </ul>
 
             <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">

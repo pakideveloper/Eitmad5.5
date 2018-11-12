@@ -11,4 +11,8 @@ class Post extends Model
     public function logo(){
         return $this->hasOne('App\newspaper' , 'id', 'paper_id');
     }
+
+    
+
+
 }

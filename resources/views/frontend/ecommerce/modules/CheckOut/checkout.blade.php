@@ -178,9 +178,11 @@
                   <label for="co-country">Country *</label>
                   <div class="select-style">
                    
-                    <select name="b_country" id="co-country" >
+                    <select name="b_country" id="b-country" >
+                      <option value="" >Select Country</option>
                        @foreach($countries as $country)
-                      <option value="{{$country->id}}">{{$country->country_name}}</option>
+
+                      <option value="{{$country->id}}" >{{$country->country_name}}</option>
                       <!-- <option>Belgium</option>
                       <option>Germany</option>
                       <option>United Kingdom</option>
@@ -196,15 +198,8 @@
                   <label for="co-country">State *</label>
                   <div class="select-style">
                    
-                    <select name="b_region" id="co-country">
-                       @foreach($regions as $region)
-                      <option value="{{$region->id}}">{{$region->region_name}}</option>
-                      <!-- <option>Belgium</option>
-                      <option>Germany</option>
-                      <option>United Kingdom</option>
-                      <option>Switzerland</option>
-                      <option>USA</option> -->
-                       @endforeach
+                    <select name="b_region" id="b-region">
+                      <!--  <option value="" >Select Country First</option> -->
                     </select>
                    
                   </div>
@@ -215,15 +210,8 @@
                     <label for="co-city">Town/ city *</label>
                     <div class="select-style">
                    
-                    <select name="b_city" id="co-country">
-                       @foreach($cities as $city)
-                      <option value="{{$city->id}}">{{$city->city_name}}</option>
-                      <!-- <option>Belgium</option>
-                      <option>Germany</option>
-                      <option>United Kingdom</option>
-                      <option>Switzerland</option>
-                      <option>USA</option> -->
-                       @endforeach
+                    <select name="b_city" id="b-city">
+                     <!--  <option value="" >Select State First</option> -->
                     </select>
                    
                   </div>
@@ -429,7 +417,7 @@
                 	<tr><th>Product</th></tr>
                   <tr>
                    
-                  	<td class="name border">{{$cart_item->name}}<span>x{{$cart_item->quantity}}</span></td>
+                  	<td class="name border">{{$cart_item->name}}<span>x{{$cart_item->qty}}</span></td>
                     <td class="price border">Rs. {{$cart_item->price}}</td>
                    
                   </tr>
@@ -475,7 +463,7 @@
 <input type='hidden' name='li_0_type' value='product' />
 <input type='hidden' name='li_0_name' value='{{$cart_item->name}}' />
 <input type='hidden' name='li_0_price' value='{{$cart_item->total}}' />
-<input type='hidden' name='li_0_quantity' value='{{$cart_item->quantity}}' />
+<input type='hidden' name='li_0_quantity' value='{{$cart_item->qty}}' />
 <input type='hidden' name='card_holder_name' value='Checkout Shopper' />
 <input type='hidden' name='street_address' value='123 Test Address' />
 <input type='hidden' name='street_address2' value='Suite 200' />
@@ -752,6 +740,72 @@
     
 </script>
   
+<script type="text/javascript">
+    // $(document).ready(function() {
+$.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+        $('#b-country').on('change', function() {
+            
+            var countryID = $(this).val();
+           alert(countryID);
+            if (countryID) {
+                $.ajax({
+
+                    url: '{{ url('/ecommerce/city/selectregions')}}'+'/' +countryID ,
+                    type: "GET",
+                    dataType: "json",
+                    
+                    success:function(data) {
+
+                        
+                        $('select[name="b_region"]').empty();
+                        $.each(data, function(key, value) {
+                            $('select[name="b_region"]').append('<option value="'+ value.id +'">'+ value.region_name +'</option>');
+                        });
+
+                    }
+                });
+            }else{
+                $('select[name="b_region"]').empty();
+            }
+        });
+
+
+
+        $('#b-region').on('change', function() {
+            
+            var stateID = $(this).val();
+           alert(stateID);
+            if (stateID) {
+                $.ajax({
+
+                    url: '{{ url('/ecommerce/city/selectcities')}}'+'/' +stateID ,
+                    type: "GET",
+                    dataType: "json",
+                    
+                    success:function(data) {
+
+                        
+                        $('select[name="b_city"]').empty();
+                        $.each(data, function(key, value) {
+                            $('select[name="b_city"]').append('<option value="'+ value.id +'">'+ value.city_name +'</option>');
+                        });
+
+                    }
+                });
+            }else{
+                $('select[name="b_city"]').empty();
+            }
+        });
+
+
+
+
+    // });
+</script>
 
 
 

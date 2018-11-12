@@ -222,6 +222,7 @@
 			<div class="row">
 				<!-- our-partner start here -->
 				<div class="our-partner">
+					 <b style="font-size: 40px;">Newspapers Job Post</b>
 					<div class="border"></div>
 					<div class="border1"></div>
 				</div>
@@ -231,8 +232,8 @@
 					@foreach($pnews as $new)
 
 					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="{{URL::to('public/admin/job/upload')}}/Logo/{{$new->paper_logo}}" class="img-responsive" alt="l1" title="" style="border-radius: 50%;width: 60%;" />
+						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image" style="height: 100px;">
+							<img src="{{URL::to('public/admin/job/upload')}}/Logo/{{$new->paper_logo}}" class="img-responsive" alt="l1" title="" style="border-radius: 50%;max-width: 100%;max-height: 100%;object-fit: contain;" />
 						</div>
 
 						<span  style="margin-left: 85px"> 10 Jobs </span>
@@ -290,7 +291,7 @@
 <div class="job-listing-block" id="jobs-append-box">
 <div class="single-job-list-block">
 <div class="lftBx">
-<a target="_blank" href="{{url('/jobs/single-paperjob')}}" class="linker">
+<a target="_blank" href="{{url('/jobs/single-paperjob')}}/{{$post->id}}" class="linker">
 <div class="link-inner">
 <div class="compImage">
 		
@@ -323,7 +324,7 @@ $new_date = date('d-m-y', $old_date_timestamp);
 	
 <div class="jPostedOn">Posted On<b class="green">{{$posted}}</b></div>
 <div class="jLastDate">Last Date<b class="red">{{$new_date}}</b></div>
-</div><div class="jobCounting"><div class="jobtotal"><b>{{$post->number_of_jobs}}</b>Jobs</div>
+</div><div class="jobCounting"><div class="jobtotal"><b>{{$post->number_of_jobs}}</b>Vacancy</div>
 <!-- <div class="jobFavorite"><input type="hidden" value="Jobs In Chip Training &amp; Consulting 23 Oct 2018">
 	
 <a onclick="makeJobFvrt(155203,this);">

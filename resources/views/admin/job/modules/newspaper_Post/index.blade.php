@@ -128,8 +128,10 @@
                                                         <th data-priority="1">Post-Title</th>
                                                         <th data-priority="1">Post-Description</th>
                                                         <th data-priority="1">Newspaper ID</th>
+                                                       
                                                         <th data-priority="1">Post-Type</th>
-
+                                                         <th data-priority="1">Total Vacancies</th>
+                                                        
                                                         <th data-priority="1">Post-Expired</th>
                                                         
                                                         <th data-priority="3">Actions</th>                           
@@ -143,8 +145,10 @@
                                                         
                                                         <th>{{$post->paper_post_title}}</th>
                                                         <th>{{$post->post_description}}</th>
-                                                        <th>{{$post->paper_id}}</th>
+                                                        <th>{{$post->logo->paper_name}}</th>
+                                                        
                                                         <th>{{$post->paper_ad_type}}</th>
+                                                        <th>{{$post->number_of_jobs}}</th>
                                                         <td>{{$post->expired}}</td>
                                                         
                                                         <td>

@@ -30,7 +30,7 @@ class PaymentCheckoutController extends Controller
          // $billings = new Billing();
           echo "success";
           // $cart_items = Cart::instance('shopping')->content();
-       // dd($request->all());
+        // dd($request->all());
 //     	$hashSecretWord = 'hassan'; //2Checkout Secret Word
 // $hashSid = 901394952; //2Checkout account number
 // $hashTotal = $_REQUEST['total']; //Sale total to validate against
@@ -51,8 +51,8 @@ $billings = new Billing();
         $billings->biller_last_name = $_REQUEST['b_l_name'];
         $billings->biller_email = $_REQUEST['b_email'];
         $billings->biller_phone_number = $_REQUEST['b_phone'];
-        $billings->country_id = $_REQUEST['b_country'];
-        $billings->region_id = $_REQUEST['b_region'];
+        // $billings->country_id = $_REQUEST['b_country'];
+        // $billings->region_id = $_REQUEST['b_region'];
         $billings->city_id = $_REQUEST['b_city'];
         $billings->biller_address = $_REQUEST['b_address'];
         if($_REQUEST['s_check']=='on')
@@ -76,8 +76,8 @@ $billings = new Billing();
         $shippings->shipper_last_name = $_REQUEST['s_l_name'];
         $shippings->shipper_email = $_REQUEST['s_email'];
         $shippings->shipper_phone_number = $_REQUEST['s_phone'];
-        $shippings->country_id = $_REQUEST['s_country'];
-        $shippings->region_id = $_REQUEST['s_region'];
+        // $shippings->country_id = $_REQUEST['s_country'];
+        // $shippings->region_id = $_REQUEST['s_region'];
         $shippings->city_id = $_REQUEST['s_city'];
         $shippings->shipper_address = $_REQUEST['s_address'];
         $shippings->save();
@@ -89,8 +89,8 @@ $billings = new Billing();
         $shippings->shipper_last_name = $_REQUEST['b_l_name'];
         $shippings->shipper_email = $_REQUEST['b_email'];
         $shippings->shipper_phone_number = $_REQUEST['b_phone'];
-        $shippings->country_id = $_REQUEST['b_country'];
-        $shippings->region_id = $_REQUEST['b_region'];
+        // $shippings->country_id = $_REQUEST['b_country'];
+        // $shippings->region_id = $_REQUEST['b_region'];
         $shippings->city_id = $_REQUEST['b_city'];
         $shippings->shipper_address = $_REQUEST['b_address'];
         $shippings->save();
@@ -105,19 +105,19 @@ $orders = new Order();
         $orders->biller_id = $billings->id;
         
         
-        $orders->order_amount = $_REQUEST['total'];
-        $orders->order_item = $_REQUEST['li_0_name'];
+        // $orders->order_amount = $_REQUEST['total'];
+        // $orders->order_item = $_REQUEST['li_0_name'];
         $orders->order_amount_receivable = $_REQUEST['total'];
         
         $orders->shipping_charges = "100";
         $orders->order_tax = "100";
         
         $orders->user_id = Auth::user()->id;
-        $orders->city_id = $billings->city_id;
+        // $orders->city_id = $billings->city_id;
         $orders->discount_id = 1;
         $orders->save();
         $orderproducts = new Order_Product();
-        $orderproducts->order_product_price = $_REQUEST['total'];
+        $orderproducts->order_product_unit_price = $_REQUEST['total'];
         $orderproducts->order_product_quantity = $_REQUEST['li_0_quantity'];
         $orderproducts->order_product_total_price = $_REQUEST['total'];
          $orderproducts->order_id = $orders->id;

@@ -30,5 +30,13 @@ class PostController extends Controller
         return view ('frontend/JobPortal/pages/paperjob/paperjob',compact('posts','pnewslogo','pnews'));
 
     }
+    public function single_post($id)
+    {
+        $posts = Post::find($id);
+
+         $pnews = newspaper::all();
+         return view ('frontend/JobPortal/pages/paperjob/single-paperjob',compact('pnews','posts'));
+
+    }
 
 }
