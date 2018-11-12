@@ -30,11 +30,18 @@ Route::get('/contactus', function () {
 Route::get('/addjob', function () {
     return view('frontend/JobPortal/pages/AddJob');
 });
+
 Route::get('/paperjobs', function()
 {
   return view('frontend/JobPortal/pages/paperjob/paperjob');
 });
+
 Route::get('/single-paperjob/{id}', 'Job\PostController@single_post');
+Route::get('/single-paperjob', function()
+{
+  return view('frontend/JobPortal/pages/paperjob/single-paperjob');
+});
+
 Route::get('/paperjobs', 'Job\PostController@post' );
 
 

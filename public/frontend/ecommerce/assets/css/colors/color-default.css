@@ -1,5 +1,5 @@
 a {
-  color: #2ba8db;
+  color: #2f343b;
 }
 a:hover {
   color: #2ba8db;
@@ -64,13 +64,13 @@ a:hover {
   color: #2ba8db;
 }
 header .right-bg {
-  background: #2ba8db !important;
+  background: #52b381 !important;
 }
 header .search-form {
   background: #2ba8db;
 }
 .toolbar {
-  background: #2ba8db;
+  background: #52b381;
 }
 .toolbar button:hover,
 .toolbar a:hover {
@@ -409,7 +409,7 @@ header .search-form {
   background: #2ba8db;
 }
 .sticky-btns span {
-  background: #2ba8db;
+  background: #52b381;
 }
 .sticky-btns span:hover {
   background: #1f89b4;

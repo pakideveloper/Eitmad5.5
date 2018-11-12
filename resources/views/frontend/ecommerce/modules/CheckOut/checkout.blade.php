@@ -463,7 +463,7 @@
 <input type='hidden' name='li_0_type' value='product' />
 <input type='hidden' name='li_0_name' value='{{$cart_item->name}}' />
 <input type='hidden' name='li_0_price' value='{{$cart_item->total}}' />
-<input type='hidden' name='li_0_quantity' value='{{$cart_item->quantity}}' />
+<input type='hidden' name='li_0_quantity' value='{{$cart_item->qty}}' />
 <input type='hidden' name='card_holder_name' value='Checkout Shopper' />
 <input type='hidden' name='street_address' value='123 Test Address' />
 <input type='hidden' name='street_address2' value='Suite 200' />

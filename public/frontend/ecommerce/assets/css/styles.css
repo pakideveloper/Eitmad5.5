@@ -9627,7 +9627,7 @@ p.large {
   margin-bottom: 16px;
 }
 .light-color {
-  color: #fff !important;
+  color: #fdbc00 !important;
 }
 .primary-color,
 .text-primary {
@@ -10230,14 +10230,14 @@ header {
 }
 header .left-bg {
   position: absolute;
-  background: #2f343b;
+  background: #f5f5f5;
   width: 70%;
   height: 144px;
   left: 0;
 }
 header .right-bg {
   position: absolute;
-  background: #2ba8db;
+  background: #52b381;
   width: 30%;
   height: 144px;
   right: 0;
@@ -10254,9 +10254,9 @@ header .logo {
   display: block;
   position: absolute;
   width: 100%;
-  max-width: 146px;
-  top: 27px;
-  left: 27px;
+  max-width: 200px;
+  top: 20px;
+  left: 0px;
 }
 header .search-form {
   display: block;
@@ -10449,7 +10449,7 @@ header .search-form .close-search:hover {
   top: 0;
   right: 15px;
   height: 144px;
-  background: #2ba8db;
+  background: #52b381;
   padding: 12px 0 12px 3px;
 }
 .toolbar .search-btn,
@@ -10756,7 +10756,7 @@ header .search-form .close-search:hover {
 }
 .small-header .left-bg {
   position: absolute;
-  background: #2f343b;
+  background: #f5f5f5;
   width: 70%;
   height: 72px;
   left: 0;
@@ -11715,7 +11715,7 @@ header .search-form .close-search:hover {
   display: block;
   width: 100%;
   height: 144px;
-  background: #2f343b;
+  background: #f5f5f5;
   padding: 20px 0 0 0;
 }
 .menu .main,
@@ -11886,7 +11886,7 @@ header .search-form .close-search:hover {
 }
 .menu .catalog li a {
   padding: 9px 14px 20px 14px;
-  color: #fff;
+  color: #52b381;
   background: none;
 }
 @media only screen and (max-width: 1200px) {

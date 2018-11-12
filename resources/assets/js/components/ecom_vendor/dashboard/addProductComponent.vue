@@ -13,67 +13,71 @@
         </button>
       </div>
     </div>
-
-    <form>
-      <div class="row">
-        <div class="form-group col-md-6 col-sm-6">
-          <label for="product_name">Product Name</label>
-          <input type="text" class="form-control" id="product_name" aria-describedby="emailHelp" placeholder="Enter email" v-model="formData.name">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group col-md-6 col-sm-6">
-          <label for="product_description">Product Description</label>
-          <input type="text" class="form-control" id="product_description" placeholder="text" v-model="formData.description">
-        </div>
-        <div class="form-group col-md-6 col-sm-6">
-          <label for="product_size">Product Size</label>
-          <input type="text" class="form-control" id="product_size" placeholder="text" v-model="formData.size">
-        </div>
-        <div class="form-group col-md-6 col-sm-6">
-          <label for="product_color">Product Color</label>
-          <input type="text" class="form-control" id="product_color" placeholder="text" v-model="formData.color">
-        </div>
-        <div class="form-group col-md-6 col-sm-6">
-          <label for="product_price">Product Price</label>
-          <input type="text" class="form-control" id="product_price" placeholder="text" v-model="formData.price">
-        </div>
-        <div class="form-group col-md-6 col-sm-6">
-          <label for="product_quantity">Product Quantity</label>
-          <input type="text" class="form-control" id="product_quantity" placeholder="Password" v-model="formData.quantity">
-        </div>
-        
-        <div class="form-group col-md-6 col-sm-6">
-          <label for="product_category">Select Category</label>
-          <select class="form-control" v-model="formData.category" @change="catChange()">
-            <optgroup v-for="category in categories" :label="category.category_name">
-              <option v-for="sub_cat in sub_categories" v-if="sub_cat.product_category_id == category.id" :value="sub_cat.id"  >{{sub_cat.sub_category_name}}</option>
-            </optgroup>
-          </select>
-        </div>
-        <div class="form-group col-md-6 col-sm-6" v-for="input in inputs">
-          <label for="product_quantity">Product {{input.label}}</label>
-          <input type="text" class="form-control" id="product_quantity" placeholder="Password" v-model.trim="formData[input.name]" >
-        </div>
-        <div class="form-group col-md-6 col-sm-6">
-          <label for="product_category">Select Brand</label>
-          <select class="form-control" v-model="formData.brand">
-            <option v-for="brand in brands" :value="brand.id">{{brand.brand_name}}</option>
-          </select>
-        </div>
-        <div class="form-group col-md-6 col-sm-6">
-          <label for="product_category">Select Discount</label>
-          <select class="form-control" v-model="formData.discount">
-            <option v-for="discount in discounts" :value="discount.id">{{discount.discount_name}}&nbsp;{{discount.discount_percent}}%</option>\
-          </select>
-        </div>
-        <div class="form-group form-check  col-md-12 col-sm-12">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div><br>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
-      
-    </form>
+    <div class="col-md-12">
+      <form>
+        <div class="row">
+          <div class="col-md-3"></div>
+          <div class="col-md-6 col-sm-12">
+            <div class="form-group col-md-12 col-sm-12">
+              <label for="product_name">Product Name</label>
+              <input type="text" class="form-control" id="product_name" aria-describedby="emailHelp" placeholder="Enter email" v-model="formData.name">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group col-md-12 col-sm-12">
+              <label for="product_description">Product Description</label>
+              <input type="text" class="form-control" id="product_description" placeholder="text" v-model="formData.description">
+            </div>
+            <div class="form-group col-md-12 col-sm-12">
+              <label for="product_size">Product Size</label>
+              <input type="text" class="form-control" id="product_size" placeholder="text" v-model="formData.size">
+            </div>
+            <div class="form-group col-md-12 col-sm-12">
+              <label for="product_color">Product Color</label>
+              <input type="text" class="form-control" id="product_color" placeholder="text" v-model="formData.color">
+            </div>
+            <div class="form-group col-md-12 col-sm-12">
+              <label for="product_price">Product Price</label>
+              <input type="text" class="form-control" id="product_price" placeholder="text" v-model="formData.price">
+            </div>
+            <div class="form-group col-md-12 col-sm-12">
+              <label for="product_quantity">Product Quantity</label>
+              <input type="text" class="form-control" id="product_quantity" placeholder="Password" v-model="formData.quantity">
+            </div>
+            
+            <div class="form-group col-md-12 col-sm-12">
+              <label for="product_category">Select Category</label>
+              <select class="form-control" v-model="formData.category" @change="catChange()">
+                <optgroup v-for="category in categories" :label="category.category_name">
+                  <option v-for="sub_cat in sub_categories" v-if="sub_cat.product_category_id == category.id" :value="sub_cat.id"  >{{sub_cat.sub_category_name}}</option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="form-group col-md-12 col-sm-12" v-for="input in inputs">
+              <label for="product_quantity">Product {{input.label}}</label>
+              <input type="text" class="form-control" id="product_quantity" placeholder="Password" v-model.trim="formData[input.name]" >
+            </div>
+            <div class="form-group col-md-12 col-sm-12">
+              <label for="product_category">Select Brand</label>
+              <select class="form-control" v-model="formData.brand">
+                <option v-for="brand in brands" :value="brand.id">{{brand.brand_name}}</option>
+              </select>
+            </div>
+            <div class="form-group col-md-12 col-sm-12">
+              <label for="product_category">Select Discount</label>
+              <select class="form-control" v-model="formData.discount">
+                <option v-for="discount in discounts" :value="discount.id">{{discount.discount_name}}&nbsp;{{discount.discount_percent}}%</option>\
+              </select>
+            </div>
+            <div class="form-group form-check  col-md-12 col-sm-12">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div><br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>  
+        </div>      
+      </form>
+    </div>
+    
   </main>
 </template>
 
