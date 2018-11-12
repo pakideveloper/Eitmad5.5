@@ -151,8 +151,12 @@
                                                         <div class="row">
                                                             <div class="col-xs-6">
                                                                 @foreach($subcategories as $key=>$category)
-                                                                <?php $key = $key+2; ?>
-                                                                @if($key%2 == 0 )   
+                                                                <?php $key = $key+2;
+                                                                
+
+                                                                 ?>
+                                                                @if($key%2 == 0 ) 
+
                                                                <div class="checkbox checkbox-primary m-b-15">
                                                              <input id="checkbox_c{{$category->id}}" name="categories[]" value="{{$category->id}}" 
                                                              type="checkbox" >

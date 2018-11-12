@@ -47,7 +47,7 @@ class BrandController extends Controller
         $brand = new Brand(); 
         $subcategories = new Product_Sub_Category();
         $brand->brand_name = $request->brand_name;
-        $subcategories->sub_category_id = $request->sub_category_id;
+        // $subcategories->sub_category_id = $request->sub_category_id;
         $file_name = $request->file['0'] -> getClientOriginalName();
         $file_name = uniqid().$file_name;
         $file_name = preg_replace('/\s+/', '', $file_name);
@@ -60,18 +60,19 @@ class BrandController extends Controller
         $brand->brand_logo_size = $file_size;
         $brand->brand_logo_file_type = $file_type;
         $brand->save();
-         if ($request->subcategories) 
+         if ($request->categories) 
         {
-            foreach ($request->subcategories as $key => $value) 
+            foreach ($request->categories as $key => $value) 
             {
+                
+                // echo $value;
+                // die();
                 $Brand_Sub_Category_Assoc = new Brand_Sub_Category_Assoc();
                 $Brand_Sub_Category_Assoc->sub_category_id = $value;
                 $Brand_Sub_Category_Assoc->brand_id = $brand->id;
                 $Brand_Sub_Category_Assoc->save();
-                
-                // print_r($request->Brand_Sub_Category_Assoc);
             }
-        }   
+           }
         return Redirect()->back()->with('status', 'Brand created successfully!');
     }
 
