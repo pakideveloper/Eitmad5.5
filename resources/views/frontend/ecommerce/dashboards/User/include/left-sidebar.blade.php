@@ -7,6 +7,13 @@
               <li class="nav-item has-sub">
                 <a class="nav-link" href="JavaScript:void(0)">
                   <span data-feather="user"></span>
+                  Profile
+                 <!--  <span class="positive">+</span> -->
+                </a>
+
+
+                <a class="nav-link" href="JavaScript:void(0)">
+                  <span data-feather="user"></span>
                   Product
                   <span class="positive">+</span>
                 </a>
