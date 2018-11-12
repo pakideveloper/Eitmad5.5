@@ -58,6 +58,7 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
+        $this->storeValidation($request);
         //
         $billings = new Billing();
         $billings->biller_first_name = $request->b_f_name;
@@ -159,5 +160,38 @@ class CheckoutController extends Controller
     public function destroy($id)
     {
         //
+    }
+    public function selectregions($id)
+    {
+        // echo "string";
+        // die();
+        //
+         return Region::where('country_id',$id)->get();
+    }
+    public function selectcities($id)
+    {
+        // echo "string";
+        // die();
+        //
+         return City::where('region_id',$id)->get();
+    }
+
+
+
+    public function storeValidation(Request $request){
+        $messages = [
+            'country_id.required' => 'please Enter paper name',
+            
+             'city_id.required' => 'please Select newspaper logo',
+             'region_id.required' => 'please Select newspaper logo',
+            
+            
+        ];
+        $this->validate($request, [
+             'country_id' => 'required',
+                     
+            'city_id' => 'required',            
+               'region_id'   => 'required',       
+        ],$messages);
     }
 }

@@ -1368,10 +1368,10 @@ div.single-job-list-block {
     height: 110px;
     position: relative;
     overflow: visible;
-    border: 1px #eee solid;
+    border: 1px solid;
     background: #fff;
     box-sizing: border-box;
-    margin-bottom: 10px;
+   /* margin-bottom: 10px;*/
     transition: all 0.3s ease 0s
 }
 div.single-job-list-block div.lftBx {

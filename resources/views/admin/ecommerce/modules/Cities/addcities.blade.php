@@ -5,6 +5,7 @@
 <!-- Mirrored from coderthemes.com/zircos/material-design/real-estate-add.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 08 Jun 2018 19:49:15 GMT -->
 <head>
         <meta charset="utf-8">
+         <meta name="csrf-token" content="{{ csrf_token() }}" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="A fully categoryd admin theme which can be used to build CRM, CMS, etc.">
         <meta name="author" content="Coderthemes">
@@ -47,6 +48,8 @@
         </style>
         <script src="{{URL::to('public/admin/ecommerce')}}/assets/js/modernizr.min.js"></script>
 
+    <script src="http://demo.itsolutionstuff.com/plugin/jquery.js"></script>
+    
     </head>
 
 
@@ -166,11 +169,7 @@
                                                     <div class="form-group">
                                                     <label for="region">Region Name *:</label>
                                                     <select id="region" name="region" class="form-control" required="">
-                                                        <option > Choose Region Name</option>
-                                                        @foreach($regions as $region)
                                                         
-                                                        <option value="{{$region->id}}">{{$region->region_name}}</option>
-                                                        @endforeach
                                                     </select>
                                                      @if ($errors->has('region'))
                                                             <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('region') }}.</li></ul>
@@ -258,7 +257,42 @@
                     return false; // Don't submit form for this demo
                 });
             });
-        </script> 
+        </script>
+
+        <script type="text/javascript">
+    // $(document).ready(function() {
+$.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+        $('#country').on('change', function() {
+            
+            var countryID = $(this).val();
+           alert(countryID);
+            if (countryID) {
+                $.ajax({
+
+                    url: '{{ url('/ecommerce/admin/city/selectcities')}}'+'/' +countryID ,
+                    type: "GET",
+                    dataType: "json",
+                    
+                    success:function(data) {
+
+                        
+                        $('select[name="region"]').empty();
+                        $.each(data, function(key, value) {
+                            $('select[name="region"]').append('<option value="'+ value.id +'">'+ value.region_name +'</option>');
+                        });
+
+                    }
+                });
+            }else{
+                $('select[name="region"]').empty();
+            }
+        });
+    // });
+</script>
 
     </body>
 

@@ -1604,7 +1604,7 @@ header .button-login .btn-primary{
 [ partner / .our-partner ]
 ----------------------------------- */
 #partner{
-	padding:80px 0;
+	/*padding:80px 0;*/
 }
 #partner .our-partner{
 	text-align:center;
@@ -1621,16 +1621,16 @@ header .button-login .btn-primary{
 }
 .our-partner .border{
     border-bottom: 1px solid #333333;
-    left: 40%;
+    left: 33.5%;
     position: absolute;
-    width: 147px;
+    width: 220px;
 }
 .our-partner .border1{
     border-bottom: 1px solid #333333;
-    right: 40%;
+    right: 33%;
     margin-top:10px;
     position: absolute;
-    width: 147px;
+    width: 240px;
 }
 #partners img{
 	margin:0 auto;

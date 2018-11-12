@@ -170,7 +170,7 @@
                                                         @endif
                                                 </div>
                                                 <div class="form-group {{$errors->has('no_of_jobs') ? 'has-error' : ''}}" >
-                                                        <label for="job">Number Of Jobs<span class="text-danger">*</span></label>
+                                                        <label for="job">Number Of Job Vacancies<span class="text-danger">*</span></label>
                                                         <input type="number" name="no_of_jobs" parsley-trigger="change" 
                                                                placeholder="Enter Number of Jobs" class="form-control" id="postTitle" value="{{ old('no_of_jobs') }}">
                                                         @if ($errors->has('no_of_jobs'))

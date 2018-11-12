@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\City;
 use App\Region;
 use App\country;
-
+use DB;
 class CityController extends Controller
 {
     /**
@@ -33,11 +33,28 @@ class CityController extends Controller
      */
     public function create()
     {
-        $regions = Region::all();
+       
         $countries = country::all();
+          $regions = Region::all();
+
         return view('admin/ecommerce/modules/Cities/addcities',compact('regions','countries'));
     }
 
+
+    public function selectcities($id)
+    {
+        // echo $id;
+        //  die();
+        // $regions = DB::table("regions")
+        // ->select("region_name","id")
+                    // ->where("country_id",$id);
+                    
+                    
+
+                     // ->lists("region_name","id");
+        // return json_encode($regions);
+    return Region::where('country_id',$id)->get();
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -63,7 +80,7 @@ class CityController extends Controller
      */
     public function show($id)
     {
-        //
+        echo "gggggg";
     }
 
     /**
