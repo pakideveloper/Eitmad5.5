@@ -474,6 +474,16 @@ header .button-login .btn-primary{
 #header2 .browse-jobs .border, #header2 .browse-jobs .border1, #header2 .featured-jobs .border, #header2 .featured-jobs .border1{
     border-bottom: 4px solid #279B61;
 }
+.border
+{
+border-bottom: 4px solid #2ba8db;
+}
+}
+.border1
+{
+	border-bottom: 4px solid #2ba8db;
+}
+}
 #header2 #testimonial{
 	padding:80px 0;
 	background:none;

@@ -11,10 +11,10 @@
 |
 */
 //usama
+
 Route::get('/', function () {
     return view('frontend/JobPortal/index');
 });
-
 Route::get('/employers', function () {
     return view('frontend/JobPortal/pages/employers');
 });

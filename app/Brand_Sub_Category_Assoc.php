@@ -8,6 +8,6 @@ class Brand_Sub_Category_Assoc extends Model
 {
     protected $table = 'brand_subcategory_assoc'; 
     public function category(){
-    	return $this->hasOne('App\Category', 'id', 'category_id');
+    	return $this->hasOne('App\Category', 'id', 'sub_category_id');
     }
 }

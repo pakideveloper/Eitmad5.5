@@ -6,7 +6,7 @@
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Home</title>
+<title>JOB Portal</title>
 <!-- Bootstrap stylesheet -->
 <link href="{{URL::to('public/JobPortal_Frontend/assets')}}/bootstrap/css/bootstrap.css" rel="stylesheet">
 <!-- font -->
@@ -210,161 +210,12 @@
 	</div>
 <!-- slider end here -->
 
-<!-- featured start here -->
-	<div id="featured">
-		<div class="container">
-			<div class="row">
-				<!-- featured-jobs start here -->
-				<div class="featured-jobs">
-					<h1>FEATURED JOBS</h1>
-					<div class="border"></div>
-					<div class="border1"></div>
-				</div>
-				<!-- featured-jobs end here -->
-				
-				
-				<div class="col-md-3 col-sm-3 col-xs-12">
-					<div class="product-box">
-						<div class="image">
-							<a href="jobs.html">
-								<img class="img-responsive" src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="p1" title="p1"/>
-							</a>	
-								<div class="buttons">
-									<div class="open-down">
-										<button type="button" class="rotate1">
-											<i class="fa fa-link" aria-hidden="true"></i>
-										</button>
-										<button type="button" class="rotate1">
-											<i class="fa fa-search" aria-hidden="true"></i>
-										</button>
-									</div>
-								</div>		
-						</div>		
-						<div class="matter">
-							<h1>IT Department Manager</h1>
-							<ul class="list-inline">
-								<li>
-									<a href="#"><i class="fa fa-bookmark" aria-hidden="true"></i> Full Time</a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> Chandigarh</a>
-								</li>
-							</ul>
-							<p>There are many variations of passages of lorem Ipsum available [...]</p>
-						</div>
-						<button type="button" class="btn btn-info" onclick="location.href='jobs.html'">VIEW MORE</button>
-						<button type="button" class="btn btn-info" onclick="location.href='apply-job-form.html'">APPLY NOW</button>
-					</div>
-				</div>
-				
-				<div class="col-md-3 col-sm-3 col-xs-12">
-					<div class="product-box">
-						<div class="image">
-							<a href="jobs.html">
-								<img class="img-responsive" src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p2.jpg" alt="p2" title="p2"/>
-							</a>	
-								<div class="buttons">
-									<div class="open-down">
-										<button type="button" class="rotate1">
-											<i class="fa fa-link" aria-hidden="true"></i>
-										</button>
-										<button type="button" class="rotate1">
-											<i class="fa fa-search" aria-hidden="true"></i>
-										</button>
-									</div>
-								</div>		
-						</div>		
-						<div class="matter">
-							<h1>IT Department Manager</h1>
-							<ul class="list-inline">
-								<li>
-									<a href="#"><i class="fa fa-bookmark" aria-hidden="true"></i> Full Time</a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> Chandigarh</a>
-								</li>
-							</ul>
-							<p>There are many variations of passages of lorem Ipsum available [...]</p>
-						</div>
-						<button type="button" class="btn btn-info" onclick="location.href='jobs.html'">VIEW MORE</button>
-						<button type="button" class="btn btn-info" onclick="location.href='apply-job-form.html'">APPLY NOW</button>
-					</div>
-				</div>
-				
-				<div class="col-md-3 col-sm-3 col-xs-12">
-					<div class="product-box">
-						<div class="image">
-							<a href="jobs.html">
-								<img class="img-responsive" src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p3.jpg" alt="p3" title="p3"/>
-							</a>	
-								<div class="buttons">
-									<div class="open-down">
-										<button type="button" class="rotate1">
-											<i class="fa fa-link" aria-hidden="true"></i>
-										</button>
-										<button type="button" class="rotate1">
-											<i class="fa fa-search" aria-hidden="true"></i>
-										</button>
-									</div>
-								</div>		
-						</div>		
-						<div class="matter">
-							<h1>IT Department Manager</h1>
-							<ul class="list-inline">
-								<li>
-									<a href="#"><i class="fa fa-bookmark" aria-hidden="true"></i> Full Time</a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> Chandigarh</a>
-								</li>
-							</ul>
-							<p>There are many variations of passages of lorem Ipsum available [...]</p>
-						</div>
-						<button type="button" class="btn btn-info" onclick="location.href='jobs.html'">VIEW MORE</button>
-						<button type="button" class="btn btn-info" onclick="location.href='apply-job-form.html'">APPLY NOW</button>
-					</div>
-				</div>
-				
-				<div class="col-md-3 col-sm-3 col-xs-12">
-					<div class="product-box">
-						<div class="image">
-							<a href="jobs.html">
-								<img class="img-responsive" src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p4.jpg" alt="p4" title="p4"/>
-							</a>	
-								<div class="buttons">
-									<div class="open-down">
-										<button type="button" class="rotate1">
-											<i class="fa fa-link" aria-hidden="true"></i>
-										</button>
-										<button type="button" class="rotate1">
-											<i class="fa fa-search" aria-hidden="true"></i>
-										</button>
-									</div>
-								</div>		
-						</div>		
-						<div class="matter">
-							<h1>IT Department Manager</h1>
-							<ul class="list-inline">
-								<li>
-									<a href="#"><i class="fa fa-bookmark" aria-hidden="true"></i> Full Time</a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> Chandigarh</a>
-								</li>
-							</ul>
-							<p>There are many variations of passages of lorem Ipsum available [...]</p>
-						</div>
-						<button type="button" class="btn btn-info" onclick="location.href='jobs.html'">VIEW MORE</button>
-						<button type="button" class="btn btn-info" onclick="location.href='apply-job-form.html'">APPLY NOW</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-<!-- featured end here -->
+
 <!-- new featured job layout -->
 <section class="catalog-grid">
       	<div class="container">
+       	<h2 class="primary-color" style="text-align: center;">Feature Jobs</h2>
+       	<div class="border"></div>
           <div class="row">
           	<!--Tile-->
           	<div class="col-lg-3 col-md-4 col-sm-6">
@@ -624,9 +475,7 @@
 			<div class="row">
 				<!-- featured-jobs start here -->
 				<div class="browse-jobs">
-					<h1>BROWSE JOBS</h1>
-					<div class="border"></div>
-					<div class="border1"></div>
+				   	<h2 class="primary-color" style="text-align: center;">Browse Jobs</h2>
 				</div>
 				<!-- featured-jobs end here -->
 				
@@ -724,7 +573,7 @@
 			<div class="row">
 				<!-- testimonial-jobs start here -->
 				<div class="testimonial-jobs">
-					<h1>TESTIMONIAL</h1>
+					<h2 class="primary-color" style="text-align: center;">Browse Jobs</h2>
 					<div class="border"></div>
 					<div class="border1"></div>
 				</div>
@@ -883,59 +732,7 @@
 
 
 
-<!-- partner start here -->
-	<div id="partner">
-		<div class="container">
-			<div class="row">
-				<!-- our-partner start here -->
-				<div class="our-partner">
-					<h1>TOP EMPLOYERS</h1>
-					<div class="border"></div>
-					<div class="border1"></div>
-				</div>
-				<!-- our-partner end here -->
-				
-				<div id="partners" class="owl-carousel">
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l1.jpg" class="img-responsive" alt="l1" title="l1" />
-						</div>
-					</div>
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l2.jpg" class="img-responsive" alt="l2" title="l2" />
-						</div>
-					</div>
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l3.jpg" class="img-responsive" alt="l3" title="l3" />
-						</div>
-					</div>
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l4.jpg" class="img-responsive" alt="l4" title="l4" />
-						</div>
-					</div>
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l5.jpg" class="img-responsive" alt="l5" title="l5" />
-						</div>
-					</div>
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l1.jpg" class="img-responsive" alt="l1" title="l1" />
-						</div>
-					</div>
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l2.jpg" class="img-responsive" alt="l2" title="l2" />
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-<!-- partner end here -->
+@include('frontend/JobPortal/include/brand-crusal')
 
 <!-- footer start -->
 @include('frontend/JobPortal/include/jobfooter1')
