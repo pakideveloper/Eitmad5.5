@@ -8,7 +8,10 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+
 import VueRouter from 'vue-router'
+import Vuelidate from 'vuelidate'
+Vue.use(Vuelidate)
 
 Vue.use(VueRouter)
 
@@ -18,20 +21,38 @@ Vue.use(VueRouter)
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-// Vue.component('example-component', require('./components/ExampleComponent.vue'));
-const example = require('./components/ExampleComponent.vue');
+Vue.mixin({
+  data: function() {
+    return {
+      globalVar:''
+      }
+    }
+});
+
+const index = require('./components/Job/CompanyDashboard/indexComponent.vue');
+const addJob = require('./components/Job/CompanyDashboard/testComponent.vue');
+
 const routes = [
 	{
-		path: '/example',
-		component: example
-	}
+	path:'/Eitmad5.5/jobs/company/dashboard',
+	component: index
+	},
+	{
+	path:'/Eitmad5.5/jobs/company/add-job',
+	component: addJob
+	},
 ];
 
 const router = new VueRouter({
 	mode:'history',
 	routes
-})
+});
+
 const app = new Vue({
-    el: '#app',
+    el: '#CompanyDashboard',
+     created: function() {
+    this.globalVar = "/Eitmad5.5/jobs/company/dashboard";
+  },
     router,
 });
+global.app = app;
