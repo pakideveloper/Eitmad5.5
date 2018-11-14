@@ -20,7 +20,7 @@
           <div class="col-md-6 col-sm-12">
             <div class="form-group col-md-12 col-sm-12">
               <label for="product_name">Product Name</label>
-              <input type="text" class="form-control" id="product_name" aria-describedby="emailHelp" placeholder="Enter email" v-model="formData.name">
+              <input type="text" class="form-control" id="product_name" aria-describedby="emailHelp" placeholder="Enter email" v-model="$v.name.$model">
               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group col-md-12 col-sm-12">
@@ -54,7 +54,7 @@
             </div>
             <div class="form-group col-md-12 col-sm-12" v-for="input in inputs">
               <label for="product_quantity">Product {{input.label}}</label>
-              <input type="text" class="form-control" id="product_quantity" placeholder="Password" v-model.trim="formData[input.name]" >
+              <input type="text" class="form-control" id="product_quantity" placeholder="Password" v-model.trim="input.name" >
             </div>
             <div class="form-group col-md-12 col-sm-12">
               <label for="product_category">Select Brand</label>
@@ -72,7 +72,7 @@
               <input type="checkbox" class="form-check-input" id="exampleCheck1">
               <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </div><br>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" @click.prevent="submit">Submit</button>
           </div>  
         </div>      
       </form>
@@ -83,6 +83,7 @@
 
 <script>
   import hasUrl from './hasUrl'
+  import { required, minLength, between, email } from 'vuelidate/lib/validators'
     export default {
         mounted() {
         },
@@ -91,10 +92,52 @@
               categories: [],
               sub_categories:[],
               brands:[],
+              name:'',
               discounts: [],
-              formData:{name: '', description:'', size:'', color:'', price:'', quantity:'', category:'', brand:'', discount:''},
+              formData:{},
+              name: '', 
+              description:'', 
+              size:'', 
+              color:'', 
+              price:'', 
+              quantity:'', 
+              category:'', 
+              brand:'', 
+              discount:'',
               inputs:[] 
           };
+        },
+        validations: {
+          name: {
+            
+            minLength: minLength(4),
+            required,
+          },
+          description: {
+            email,
+            required
+          },
+          size: {
+            required,
+          },
+          color: {
+            required,
+          },
+          price: {
+            required,
+          },
+          quantity: {
+            required,
+          },
+          category: {
+            required,
+          },
+          brand: {
+            required,
+          },
+          discount: {
+            required,
+          },
         },
         methods: {
           getCategories(){
@@ -132,16 +175,28 @@
               this.inputs.push(input);
               input = {name:'', label:''};
            }.bind(this));
-          }
+          },
+          submit(){
+            console.log('ss');
+          },
         },
         created(){
           this.getCategories();
           this.getSubCategories();
           this.getBrands();
           this.getDiscounts();
+          // Vue.set(app.$data, 'b', 2);
+          // Vue.set(this.$data, 'page', 1)
         },
         mixins: [hasUrl]
     }
 </script>
 <!-- //https://www.npmjs.com/package/vue-dynamic-forms -->
 <!-- //https://www.youtube.com/watch?v=yFduo7kFbBM -->
+<style>
+  .error{
+    position: absolute;
+      font-size: 14px;
+      color: red;
+  }
+</style>
