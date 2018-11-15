@@ -21,24 +21,24 @@ Vue.use(VueRouter)
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.mixin({
-  data: function() {
-    return {
-      globalVar:''
-      }
-    }
-});
-
+// Vue.mixin({
+//   data: function() {
+//     return {
+//       globalVar:''
+//       }
+//     }
+// });
+Vue.prototype.CompanyDashboardRoute = '/Eitmad5.5/jobs/company/dashboard';
 const index = require('./components/Job/CompanyDashboard/indexComponent.vue');
 const addJob = require('./components/Job/CompanyDashboard/testComponent.vue');
 
 const routes = [
 	{
-	path:'/Eitmad5.5/jobs/company/dashboard',
+	path: Vue.prototype.CompanyDashboardRoute,
 	component: index
 	},
 	{
-	path:'/Eitmad5.5/jobs/company/add-job',
+	path: Vue.prototype.CompanyDashboardRoute+'/add-job',
 	component: addJob
 	},
 ];
@@ -50,9 +50,12 @@ const router = new VueRouter({
 
 const app = new Vue({
     el: '#CompanyDashboard',
-     created: function() {
-    this.globalVar = "/Eitmad5.5/jobs/company/dashboard";
-  },
+  //    created: function() {
+  //   this.CompanyDashboardRoute = "/Eitmad5.5/jobs/company/dashboard";
+  // },
+	  // data: {
+	  // 		CompanyDashboardRoute : '/Eitmad5.5/jobs/company/dashboard',
+	  // },
     router,
 });
 global.app = app;

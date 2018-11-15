@@ -12,7 +12,7 @@
                 </a>
                 <ul class="nav flex-column is-sub">                  
                   <li>
-                      <router-link  to="add-job" exact class="nav-link">Post A Job </router-link>
+                      <router-link  :to="CompanyDashboardRoute +'/add-job'" exact class="nav-link">Post A Job </router-link>
                     
                   </li>
                   <li>
