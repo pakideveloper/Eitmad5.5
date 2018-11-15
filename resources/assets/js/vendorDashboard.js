@@ -29,7 +29,11 @@ const routes = [
 	},
 	{
 	path:'/Eitmad5.5/ecommerce/vendor/add-product',
-	component: addProduct
+	component: addProducttt
+	},
+
+	path:'/Eitmad5.5/ecommerce/vendor/add-product',
+	component: addProducttt
 	},
 ];
 
