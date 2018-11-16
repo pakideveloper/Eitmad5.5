@@ -1,80 +1,88 @@
 <template>
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-        <h1>index</h1>
-
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h1 class="h2">Add Product</h1>
+      <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group mr-2">
+          <button class="btn btn-sm btn-outline-secondary">Share</button>
+          <button class="btn btn-sm btn-outline-secondary">Export</button>
+        </div>
+        <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+        <span data-feather="calendar"></span>
+        This week
+        </button>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <form>
         <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-      <form class="form-horizontal" role="form">
-        <fieldset>
-
-          <!-- Form Name -->
-          <legend>Address Details</legend>
-
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="textinput">Line 1</label>
-            <div class="col-sm-10">
-              <input type="text" placeholder="Address Line 1" class="form-control">
+          <div class="col-md-3"></div>
+          <div class="col-md-6 col-sm-12">
+            <div class="form-group col-md-12 col-sm-12">
+              <label for="product_name">Product Name</label>
+              <input type="text" class="form-control" id="product_name" aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
-          </div>
-
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="textinput">Line 2</label>
-            <div class="col-sm-10">
-              <input type="text" placeholder="Address Line 2" class="form-control">
+            <div class="form-group col-md-12 col-sm-12">
+              <label for="product_description">Product Description</label>
+              <input type="text" class="form-control" id="product_description" placeholder="text">
             </div>
-          </div>
-
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="textinput">City</label>
-            <div class="col-sm-10">
-              <input type="text" placeholder="City" class="form-control">
+            <div class="form-group col-md-12 col-sm-12">
+              <label for="product_size">Product Size</label>
+              <input type="text" class="form-control" id="product_size" placeholder="text">
             </div>
-          </div>
-
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="textinput">State</label>
-            <div class="col-sm-4">
-              <input type="text" placeholder="State" class="form-control">
+            <div class="form-group col-md-12 col-sm-12">
+              <label for="product_color">Product Color</label>
+              <input type="text" class="form-control" id="product_color" placeholder="text" >
             </div>
-
-            <label class="col-sm-2 control-label" for="textinput">Postcode</label>
-            <div class="col-sm-4">
-              <input type="text" placeholder="Post Code" class="form-control">
+            <div class="form-group col-md-12 col-sm-12">
+              <label for="product_price">Product Price</label>
+              <input type="text" class="form-control" id="product_price" placeholder="text" >
             </div>
-          </div>
-
-
-
-          <!-- Text input-->
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="textinput">Country</label>
-            <div class="col-sm-10">
-              <input type="text" placeholder="Country" class="form-control">
+            <div class="form-group col-md-12 col-sm-12">
+              <label for="product_quantity">Product Quantity</label>
+              <input type="text" class="form-control" id="product_quantity" placeholder="Password" >
             </div>
-          </div>
-
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-10">
-              <div class="pull-right">
-                <button type="submit" class="btn btn-default">Cancel</button>
-                <button type="submit" class="btn btn-primary">Save</button>
-              </div>
+            
+            <div class="form-group col-md-12 col-sm-12">
+              <label for="product_category">Select Category</label>
+              <select class="form-control"  >
+                <optgroup v-for="" label="test">
+                  <option v-for="" v-if="" value=""  >test</option>
+                </optgroup>
+              </select>
             </div>
-          </div>
-
-        </fieldset>
+            <div class="form-group col-md-12 col-sm-12" v-for="">
+              <label for="product_quantity">test</label>
+              <input type="text" class="form-control" id="product_quantity" placeholder="Password" >
+            </div>
+            <div class="form-group col-md-12 col-sm-12">
+              <label for="product_category">Select Brand</label>
+              <select class="form-control" >
+                <option v-for="" value="">test</option>
+              </select>
+            </div>
+            <div class="form-group col-md-12 col-sm-12">
+              <label for="product_category">Select Discount</label>
+              <select class="form-control" >
+                <option v-for="" value="">test</option>\
+              </select>
+            </div>
+            <div class="form-group form-check  col-md-12 col-sm-12">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Check me out</label>
+            </div><br>
+            <button type="submit" class="btn btn-primary" >Submit</button>
+          </div>  
+        </div>      
       </form>
-    </div><!-- /.col-lg-12 -->
-</div><!-- /.row -->
-    </main>
+    </div>
+    
+  </main>
 </template>
 
 <style type="text/css" scoped>
-	@import url(https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css);
+	
 </style>
 <script  scoped>
 	
