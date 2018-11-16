@@ -12,7 +12,7 @@ window.Vue = require('vue');
 import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
-
+Vue.component('examplecomponent', require('./components/ExampleComponent.vue'));
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -21,7 +21,7 @@ Vue.use(VueRouter)
 
 const index = require('./components/ecom_vendor/dashboard/indexComponent.vue');
 const addProduct = require('./components/ecom_vendor/dashboard/addProductComponent.vue');
-
+const examplecomponent = require('./components/ExampleComponent.vue');
 const routes = [
 	{
 	path:'/Eitmad5.5/ecommerce/vendor/dashboard',
@@ -29,7 +29,7 @@ const routes = [
 	},
 	{
 	path:'/Eitmad5.5/ecommerce/vendor/add-product',
-	component: addProduct
+	component: examplecomponent
 	},
 ];
 

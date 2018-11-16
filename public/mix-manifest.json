@@ -1,3 +1,6 @@
 {
-    "/js/vendorDashboard.js": "/js/vendorDashboard.js"
+    "/js/vendorDashboard.js": "/js/vendorDashboard.js",
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/js/userdashboard.js": "/js/userdashboard.js"
 }

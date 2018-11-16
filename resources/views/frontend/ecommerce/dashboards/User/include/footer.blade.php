@@ -1,5 +1,7 @@
     <!-- vue js -->
-    <script src="{{URL::to('public/js')}}/vendorDashboard.js"></script>
+    <!-- <script src="{{URL::to('public/js')}}/vendordashboard.js"></script> -->
+    <!-- <script src="{{URL::to('public/js')}}/app.js"></script> -->
+    <script src="{{URL::to('public/js')}}/userdashboard.js"></script>
     <!-- vue js -->
     <!-- Bootstrap core JavaScript
     ================================================== -->

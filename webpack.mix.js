@@ -12,6 +12,7 @@ mix.webpackConfig({ node: { fs: 'empty' }})
  |
  */
 
-// mix.js('resources/assets/js/app.js', 'public/js')
-//    .sass('resources/assets/sass/app.scss', 'public/css');
+mix.js('resources/assets/js/app.js', 'public/js')
+   .sass('resources/assets/sass/app.scss', 'public/css');
 mix.js('resources/assets/js/vendorDashboard.js', 'public/js');
+mix.js('resources/assets/js/userdashboard.js', 'public/js');
