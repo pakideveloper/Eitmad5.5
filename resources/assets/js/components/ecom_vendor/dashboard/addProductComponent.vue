@@ -25,28 +25,28 @@
             </div>
             <div class="form-group col-md-12 col-sm-12">
               <label for="product_description">Product Description</label>
-              <input type="text" class="form-control" id="product_description" placeholder="text" v-model="formData.description">
+              <input type="text" class="form-control" id="product_description" placeholder="text" v-model="$v.description.$model">
             </div>
             <div class="form-group col-md-12 col-sm-12">
               <label for="product_size">Product Size</label>
-              <input type="text" class="form-control" id="product_size" placeholder="text" v-model="formData.size">
+              <input type="text" class="form-control" id="product_size" placeholder="text" v-model="$v.size.$model">
             </div>
             <div class="form-group col-md-12 col-sm-12">
               <label for="product_color">Product Color</label>
-              <input type="text" class="form-control" id="product_color" placeholder="text" v-model="formData.color">
+              <input type="text" class="form-control" id="product_color" placeholder="text" v-model="$v.color.$model">
             </div>
             <div class="form-group col-md-12 col-sm-12">
               <label for="product_price">Product Price</label>
-              <input type="text" class="form-control" id="product_price" placeholder="text" v-model="formData.price">
+              <input type="text" class="form-control" id="product_price" placeholder="text" v-model="$v.price.$model">
             </div>
             <div class="form-group col-md-12 col-sm-12">
               <label for="product_quantity">Product Quantity</label>
-              <input type="text" class="form-control" id="product_quantity" placeholder="Password" v-model="formData.quantity">
+              <input type="text" class="form-control" id="product_quantity" placeholder="Password" v-model="$v.quantity.$model">
             </div>
             
             <div class="form-group col-md-12 col-sm-12">
               <label for="product_category">Select Category</label>
-              <select class="form-control" v-model="formData.category" @change="catChange()">
+              <select class="form-control" v-model="$v.category.$model" @change="catChange()">
                 <optgroup v-for="category in categories" :label="category.category_name">
                   <option v-for="sub_cat in sub_categories" v-if="sub_cat.product_category_id == category.id" :value="sub_cat.id"  >{{sub_cat.sub_category_name}}</option>
                 </optgroup>
@@ -54,17 +54,17 @@
             </div>
             <div class="form-group col-md-12 col-sm-12" v-for="input in inputs">
               <label for="product_quantity">Product {{input.label}}</label>
-              <input type="text" class="form-control" id="product_quantity" placeholder="Password" v-model.trim="input.name" >
+              <input type="text" class="form-control" id="product_quantity" placeholder="Password" v-model.trim="formData[input.name]" >
             </div>
             <div class="form-group col-md-12 col-sm-12">
               <label for="product_category">Select Brand</label>
-              <select class="form-control" v-model="formData.brand">
+              <select class="form-control" v-model="$v.brand.$model">
                 <option v-for="brand in brands" :value="brand.id">{{brand.brand_name}}</option>
               </select>
             </div>
             <div class="form-group col-md-12 col-sm-12">
               <label for="product_category">Select Discount</label>
-              <select class="form-control" v-model="formData.discount">
+              <select class="form-control" v-model="$v.discount.$model">
                 <option v-for="discount in discounts" :value="discount.id">{{discount.discount_name}}&nbsp;{{discount.discount_percent}}%</option>\
               </select>
             </div>
@@ -92,11 +92,10 @@
               categories: [],
               sub_categories:[],
               brands:[],
-              name:'',
               discounts: [],
               formData:{},
-              name: '', 
-              description:'', 
+              name: '',
+              description:'',
               size:'', 
               color:'', 
               price:'', 
@@ -104,18 +103,15 @@
               category:'', 
               brand:'', 
               discount:'',
-              inputs:[] 
+              inputs:[] ,              
           };
         },
         validations: {
           name: {
-            
-            minLength: minLength(4),
             required,
           },
           description: {
-            email,
-            required
+            required,
           },
           size: {
             required,
@@ -166,7 +162,7 @@
           },
           catChange(){
             this.inputs = [];
-            var data = JSON.parse(this.sub_categories[this.formData.category-1].feature_names);
+            var data = JSON.parse(this.sub_categories[this.category-1].feature_names);
             $.each(data, function(key, value) {
               var input = {name:'', label:''};
               var value2 = value.replace(/\s/g, '') ;
@@ -177,7 +173,26 @@
            }.bind(this));
           },
           submit(){
-            console.log('ss');
+            console.log(this.$v.$invalid);
+            if (this.$v.$invalid) {
+              let endpoint = this.url+'/product';
+              let data = {
+                  name : this.name,
+                  description : this.description,
+                  size : this.size,
+                  color : this.color,
+                  price : this.price,
+                  quantity : this.quantity,
+                  category  : this.category,
+                  brand   : this.brand,
+                  discount  : this.discount,
+                  sub_categories : this.formData 
+              };
+            axios.post(endpoint, data)
+            .then(({ data }) => {
+                console.log(data);
+            });
+            }
           },
         },
         created(){
