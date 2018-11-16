@@ -253,8 +253,6 @@
     var maxDate = year + '-' + month + '-' + day;
     // alert(maxDate);
     $('#txtDate').attr('max', maxDate);
-
-
     $('#cnic').keydown(function(){
 
   //allow  backspace, tab, ctrl+A, escape, carriage return
@@ -271,6 +269,8 @@
    $(this).val($(this).val()+'-');
 
 });
+    
  });
+
   
 </script>

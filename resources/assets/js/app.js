@@ -11,6 +11,7 @@ window.Vue = require('vue');
 import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -40,8 +41,21 @@ const router = new VueRouter({
 	mode:'history',
 	routes
 });
+// Vue.component('example-component', require('./components/ExampleComponent.vue'));
+// const example = require('./components/ExampleComponent.vue');
+// const routes = [
+// 	{
+// 		path: '/example',
+// 		component: example
+// 	}
+// ];
 
+// const router = new VueRouter({
+// 	mode:'history',
+// 	routes
+// })
 const app = new Vue({
     el: '#dashboard_app',
+    // el: '#company_dashboard_app',
     router,
 });
