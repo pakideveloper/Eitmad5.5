@@ -1,6 +1,10 @@
+<<<<<<< HEAD
+{}
+=======
 {
     "/js/vendorDashboard.js": "/js/vendorDashboard.js",
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/js/userdashboard.js": "/js/userdashboard.js"
 }
+>>>>>>> 7a005eda7938f2152ae7f783266d409f1e59cc48

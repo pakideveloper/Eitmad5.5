@@ -20,33 +20,33 @@
           <div class="col-md-6 col-sm-12">
             <div class="form-group col-md-12 col-sm-12">
               <label for="product_name">Product Name</label>
-              <input type="text" class="form-control" id="product_name" aria-describedby="emailHelp" placeholder="Enter email" v-model="formData.name">
+              <input type="text" class="form-control" id="product_name" aria-describedby="emailHelp" placeholder="Enter email" v-model="$v.name.$model">
               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group col-md-12 col-sm-12">
               <label for="product_description">Product Description</label>
-              <input type="text" class="form-control" id="product_description" placeholder="text" v-model="formData.description">
+              <input type="text" class="form-control" id="product_description" placeholder="text" v-model="$v.description.$model">
             </div>
             <div class="form-group col-md-12 col-sm-12">
               <label for="product_size">Product Size</label>
-              <input type="text" class="form-control" id="product_size" placeholder="text" v-model="formData.size">
+              <input type="text" class="form-control" id="product_size" placeholder="text" v-model="$v.size.$model">
             </div>
             <div class="form-group col-md-12 col-sm-12">
               <label for="product_color">Product Color</label>
-              <input type="text" class="form-control" id="product_color" placeholder="text" v-model="formData.color">
+              <input type="text" class="form-control" id="product_color" placeholder="text" v-model="$v.color.$model">
             </div>
             <div class="form-group col-md-12 col-sm-12">
               <label for="product_price">Product Price</label>
-              <input type="text" class="form-control" id="product_price" placeholder="text" v-model="formData.price">
+              <input type="text" class="form-control" id="product_price" placeholder="text" v-model="$v.price.$model">
             </div>
             <div class="form-group col-md-12 col-sm-12">
               <label for="product_quantity">Product Quantity</label>
-              <input type="text" class="form-control" id="product_quantity" placeholder="Password" v-model="formData.quantity">
+              <input type="text" class="form-control" id="product_quantity" placeholder="Password" v-model="$v.quantity.$model">
             </div>
             
             <div class="form-group col-md-12 col-sm-12">
               <label for="product_category">Select Category</label>
-              <select class="form-control" v-model="formData.category" @change="catChange()">
+              <select class="form-control" v-model="$v.category.$model" @change="catChange()">
                 <optgroup v-for="category in categories" :label="category.category_name">
                   <option v-for="sub_cat in sub_categories" v-if="sub_cat.product_category_id == category.id" :value="sub_cat.id"  >{{sub_cat.sub_category_name}}</option>
                 </optgroup>
@@ -58,13 +58,13 @@
             </div>
             <div class="form-group col-md-12 col-sm-12">
               <label for="product_category">Select Brand</label>
-              <select class="form-control" v-model="formData.brand">
+              <select class="form-control" v-model="$v.brand.$model">
                 <option v-for="brand in brands" :value="brand.id">{{brand.brand_name}}</option>
               </select>
             </div>
             <div class="form-group col-md-12 col-sm-12">
               <label for="product_category">Select Discount</label>
-              <select class="form-control" v-model="formData.discount">
+              <select class="form-control" v-model="$v.discount.$model">
                 <option v-for="discount in discounts" :value="discount.id">{{discount.discount_name}}&nbsp;{{discount.discount_percent}}%</option>\
               </select>
             </div>
@@ -72,7 +72,7 @@
               <input type="checkbox" class="form-check-input" id="exampleCheck1">
               <label class="form-check-label" for="exampleCheck1">Check me out</label>
             </div><br>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" @click.prevent="submit">Submit</button>
           </div>  
         </div>      
       </form>
@@ -83,6 +83,7 @@
 
 <script>
   import hasUrl from './hasUrl'
+  import { required, minLength, between, email } from 'vuelidate/lib/validators'
     export default {
         mounted() {
         },
@@ -92,9 +93,47 @@
               sub_categories:[],
               brands:[],
               discounts: [],
-              formData:{name: '', description:'', size:'', color:'', price:'', quantity:'', category:'', brand:'', discount:''},
-              inputs:[] 
+              formData:{},
+              name: '',
+              description:'',
+              size:'', 
+              color:'', 
+              price:'', 
+              quantity:'', 
+              category:'', 
+              brand:'', 
+              discount:'',
+              inputs:[] ,              
           };
+        },
+        validations: {
+          name: {
+            required,
+          },
+          description: {
+            required,
+          },
+          size: {
+            required,
+          },
+          color: {
+            required,
+          },
+          price: {
+            required,
+          },
+          quantity: {
+            required,
+          },
+          category: {
+            required,
+          },
+          brand: {
+            required,
+          },
+          discount: {
+            required,
+          },
         },
         methods: {
           getCategories(){
@@ -123,7 +162,7 @@
           },
           catChange(){
             this.inputs = [];
-            var data = JSON.parse(this.sub_categories[this.formData.category-1].feature_names);
+            var data = JSON.parse(this.sub_categories[this.category-1].feature_names);
             $.each(data, function(key, value) {
               var input = {name:'', label:''};
               var value2 = value.replace(/\s/g, '') ;
@@ -132,16 +171,47 @@
               this.inputs.push(input);
               input = {name:'', label:''};
            }.bind(this));
-          }
+          },
+          submit(){
+            console.log(this.$v.$invalid);
+            if (this.$v.$invalid) {
+              let endpoint = this.url+'/product';
+              let data = {
+                  name : this.name,
+                  description : this.description,
+                  size : this.size,
+                  color : this.color,
+                  price : this.price,
+                  quantity : this.quantity,
+                  category  : this.category,
+                  brand   : this.brand,
+                  discount  : this.discount,
+                  sub_categories : this.formData 
+              };
+            axios.post(endpoint, data)
+            .then(({ data }) => {
+                console.log(data);
+            });
+            }
+          },
         },
         created(){
           this.getCategories();
           this.getSubCategories();
           this.getBrands();
           this.getDiscounts();
+          // Vue.set(app.$data, 'b', 2);
+          // Vue.set(this.$data, 'page', 1)
         },
         mixins: [hasUrl]
     }
 </script>
 <!-- //https://www.npmjs.com/package/vue-dynamic-forms -->
 <!-- //https://www.youtube.com/watch?v=yFduo7kFbBM -->
+<style>
+  .error{
+    position: absolute;
+      font-size: 14px;
+      color: red;
+  }
+</style>

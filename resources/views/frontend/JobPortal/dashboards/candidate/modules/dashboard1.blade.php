@@ -14,12 +14,9 @@
 
     <!-- Custom styles for this template -->
     <link href="{{URL::to('public/bootstrap-4.1')}}/css/dashboard.css" rel="stylesheet">
-
-    <link href="{{asset('public/css/app.css')}}" rel="stylesheet">
   </head>
 
   <body>
-    <div id="company_dashboard_app">
     <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Eitmad</a>
       <ul class="navbar-nav px-3">
@@ -65,12 +62,6 @@
                 <a class="nav-link" href="#">
                   <span data-feather="user"></span>
                   Profile
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link">
-                  <span data-feather="user"></span>
-                  <router-link to="/example">Post a Job</router-link>
                 </a>
               </li>
               <li class="nav-item">
@@ -139,7 +130,7 @@
             </ul>
           </div>
         </nav>
-        <router-view></router-view>
+
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1 class="h2">Dashboard</h1>
@@ -288,12 +279,10 @@
         </main>
       </div>
     </div>
-    </div>
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/javascript" src="{{asset('public/js/app.js')}}"></script>
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="{{URL::to('public/bootstrap-4.1')}}/assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="{{URL::to('public/bootstrap-4.1')}}/assets/js/vendor/popper.min.js"></script>
