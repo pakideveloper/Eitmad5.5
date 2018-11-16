@@ -43,6 +43,11 @@ Route::get('/single-paperjob', function()
 });
 
 Route::get('/paperjobs', 'Job\PostController@post' );
+//manage-cvs
+Route::get('candidate/manage-cv',function(){
+
+    return view('frontend/JobPortal/dashboards/candidate/modules/manage-cv/index') ;
+});
 
 
 

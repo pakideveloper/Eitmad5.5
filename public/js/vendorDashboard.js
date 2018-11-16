@@ -60,13 +60,20 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
+<<<<<<< HEAD
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+=======
 /******/ 	return __webpack_require__(__webpack_require__.s = 12);
+>>>>>>> 7a005eda7938f2152ae7f783266d409f1e59cc48
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
+<<<<<<< HEAD
+module.exports = __webpack_require__(1);
+=======
 "use strict";
 
 
@@ -451,12 +458,16 @@ module.exports = {
   extend: extend,
   trim: trim
 };
+>>>>>>> 7a005eda7938f2152ae7f783266d409f1e59cc48
 
 
 /***/ }),
 /* 2 */
 /***/ (function(module, exports) {
 
+<<<<<<< HEAD
+throw new Error("Module build failed: SyntaxError: C:/xampp/htdocs/Eitmad5.5/resources/assets/js/vendorDashboard.js: Unexpected token, expected , (35:5)\n\n\u001b[0m \u001b[90m 33 | \u001b[39m\t}\u001b[33m,\u001b[39m\n \u001b[90m 34 | \u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 35 | \u001b[39m\tpath\u001b[33m:\u001b[39m\u001b[32m'/Eitmad5.5/ecommerce/vendor/add-product'\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m    | \u001b[39m\t    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 36 | \u001b[39m\tcomponent\u001b[33m:\u001b[39m addProducttt\n \u001b[90m 37 | \u001b[39m\t}\u001b[33m,\u001b[39m\n \u001b[90m 38 | \u001b[39m]\u001b[33m;\u001b[39m\u001b[0m\n");
+=======
 var g;
 
 // This works in non-strict mode
@@ -48933,6 +48944,7 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-36e12f2e", module.exports)
   }
 }
+>>>>>>> 7a005eda7938f2152ae7f783266d409f1e59cc48
 
 /***/ })
 /******/ ]);

@@ -31,7 +31,8 @@
         <link rel="stylesheet" href="{{URL::to('public/frontend/general/assets')}}/css/elements.css" />
         <!-- responsive -->
         <link rel="stylesheet" href="{{URL::to('public/frontend/general/assets')}}/css/responsive.css" />
-		<link rel="stylesheet" href="{{URL::to('public/frontend/general/assets')}}/css/button.css"/>
+        <link rel="stylesheet" href="{{URL::to('public/frontend/general/assets')}}/css/button.css"/>
+		<link rel="stylesheet" href="{{URL::to('public/frontend/general/assets')}}/css/hover_effect.css"/>
         <!--[if IE 9]>
         <link rel="stylesheet" type="text/css" href="css/ie.css" />
     </head>
@@ -55,8 +56,8 @@
                             </button>
                             <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse pull-right">
                                 <ul class="nav navbar-nav">
-                                    <li class="propClone"><a class="inner-link text-white" style="text-align:center;" href="#about">E Commerce Portal</a></li>
-                                    <li class="propClone"><a class="inner-link text-white" href="#services">Job Portal</a></li>
+                                    <li class="propClone"><a class="inner-link text-white" style="text-align:center;" href="{{url('/ecommerce')}}">E Commerce Portal</a></li>
+                                    <li class="propClone"><a class="inner-link text-white" href="{{url('/jobs')}}">Job Portal</a></li>
                                     <li class="propClone"><a class="inner-link text-white" href="#menu">Education Portal</a></li>
                                     <li class="nav-button propClone sm-no-margin-tb float-left btn-medium sm-no-border"><a href="#reservation" class="inner-link btn btn-small propClone bg-golden text-black border-radius-0 font-weight-500 sm-padding-nav-btn">Registration</a> </li>
                                 </ul>
@@ -73,19 +74,25 @@
                     <div class="slider-typography text-center xs-position-absolute">
                         <div class="slider-text-middle-main">
                             <div class="slider">
-                                <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 250px;">
-                                  <h2 style="color: #fff; font-size:21px;">EITAMD provides the <span style="color: #52b381">E Commerce, Job Portal and Education </span> Portal Services</h2>
-                                 <h3 style="color: #fff; font-size: 16px;"> I love you soo much janu </h3>
-								  <div class="col-md-4 col-sm-4 col-xs-4">
-                                       <button class="btn-1">E Commerce</button>
-								  </div>
-								  <div class="col-md-4 col-sm-4 col-xs-4">
-                                       <button class="btn-1">Job Portal</button>
-								  </div>
-								  <div class="col-md-4 col-sm-4 col-xs-4">
-                                       <button class="btn-1">Education Portal</button>
-								  </div>
-								</div>
+                                 <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 215px;">
+                                  <h2 style="color: #fff; font-size:21px;">EITMAD provides the <span style="color: #52b381">E Commerce, Job and Education </span> Portal Services</h2>
+                                 <h3 style="color: #fff; font-size: 16px;"> EItmad </h3>
+                                 <div class="col-md-4 col-sm-4 col-xs-4">
+                                      <div href="#" class="hovereffect">
+                                    <a href="{{url('/ecommerce')}}">   <img class="img-responsive"  src="{{URL::to('public/frontend/general/assets')}}/images/Ecom.png" alt=""></a>
+                                  </div>
+                              </div>
+                              <div class="col-md-4 col-sm-4 col-xs-4">
+                                      <div href="" class="hovereffect">
+                                    <a href="{{url('/jobs')}}">   <img class="img-responsive"  src="{{URL::to('public/frontend/general/assets')}}/images/job.png" alt=""></a>
+                                  </div>  
+                              </div>
+                              <div class="col-md-4 col-sm-4 col-xs-4">
+                                      <div  class="hovereffect">
+                                    <a href="">   <img class="img-responsive"  src="{{URL::to('public/frontend/general/assets')}}/images/education.png" alt=""></a>
+                                  </div>
+                               </div>
+                        </div>
                             </div>                                
                         </div>
                     </div>
