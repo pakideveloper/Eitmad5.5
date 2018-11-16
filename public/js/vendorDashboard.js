@@ -47414,8 +47414,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__hasUrl__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__);
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 //
 //
 //
@@ -47505,26 +47503,30 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {},
   data: function data() {
-    var _ref;
-
-    return _ref = {
+    return {
       categories: [],
       sub_categories: [],
       brands: [],
-      name: '',
       discounts: [],
-      formData: {}
-    }, _defineProperty(_ref, 'name', ''), _defineProperty(_ref, 'description', ''), _defineProperty(_ref, 'size', ''), _defineProperty(_ref, 'color', ''), _defineProperty(_ref, 'price', ''), _defineProperty(_ref, 'quantity', ''), _defineProperty(_ref, 'category', ''), _defineProperty(_ref, 'brand', ''), _defineProperty(_ref, 'discount', ''), _defineProperty(_ref, 'inputs', []), _ref;
+      formData: {},
+      name: '',
+      description: '',
+      size: '',
+      color: '',
+      price: '',
+      quantity: '',
+      category: '',
+      brand: '',
+      discount: '',
+      inputs: []
+    };
   },
 
   validations: {
     name: {
-
-      minLength: Object(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["minLength"])(4),
       required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"]
     },
     description: {
-      email: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["email"],
       required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"]
     },
     size: {
@@ -47553,8 +47555,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     getCategories: function getCategories() {
       var _this = this;
 
-      axios.get(this.url + '/getCategories').then(function (_ref2) {
-        var data = _ref2.data;
+      axios.get(this.url + '/getCategories').then(function (_ref) {
+        var data = _ref.data;
 
         _this.categories = data;
       });
@@ -47562,8 +47564,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     getSubCategories: function getSubCategories() {
       var _this2 = this;
 
-      axios.get(this.url + '/getSubCategories').then(function (_ref3) {
-        var data = _ref3.data;
+      axios.get(this.url + '/getSubCategories').then(function (_ref2) {
+        var data = _ref2.data;
 
         _this2.sub_categories = data;
       });
@@ -47571,8 +47573,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     getBrands: function getBrands() {
       var _this3 = this;
 
-      axios.get(this.url + '/getBrands').then(function (_ref4) {
-        var data = _ref4.data;
+      axios.get(this.url + '/getBrands').then(function (_ref3) {
+        var data = _ref3.data;
 
         _this3.brands = data;
       });
@@ -47580,15 +47582,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     getDiscounts: function getDiscounts() {
       var _this4 = this;
 
-      axios.get(this.url + '/getDiscounts').then(function (_ref5) {
-        var data = _ref5.data;
+      axios.get(this.url + '/getDiscounts').then(function (_ref4) {
+        var data = _ref4.data;
 
         _this4.discounts = data;
       });
     },
     catChange: function catChange() {
       this.inputs = [];
-      var data = JSON.parse(this.sub_categories[this.formData.category - 1].feature_names);
+      var data = JSON.parse(this.sub_categories[this.category - 1].feature_names);
       $.each(data, function (key, value) {
         var input = { name: '', label: '' };
         var value2 = value.replace(/\s/g, '');
@@ -47599,7 +47601,27 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }.bind(this));
     },
     submit: function submit() {
-      console.log('ss');
+      console.log(this.$v.$invalid);
+      if (this.$v.$invalid) {
+        var endpoint = this.url + '/product';
+        var data = {
+          name: this.name,
+          description: this.description,
+          size: this.size,
+          color: this.color,
+          price: this.price,
+          quantity: this.quantity,
+          category: this.category,
+          brand: this.brand,
+          discount: this.discount,
+          sub_categories: this.formData
+        };
+        axios.post(endpoint, data).then(function (_ref5) {
+          var data = _ref5.data;
+
+          console.log(data);
+        });
+      }
     }
   },
   created: function created() {
@@ -48470,8 +48492,8 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.formData.description,
-                        expression: "formData.description"
+                        value: _vm.$v.description.$model,
+                        expression: "$v.description.$model"
                       }
                     ],
                     staticClass: "form-control",
@@ -48480,15 +48502,15 @@ var render = function() {
                       id: "product_description",
                       placeholder: "text"
                     },
-                    domProps: { value: _vm.formData.description },
+                    domProps: { value: _vm.$v.description.$model },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
                         _vm.$set(
-                          _vm.formData,
-                          "description",
+                          _vm.$v.description,
+                          "$model",
                           $event.target.value
                         )
                       }
@@ -48506,8 +48528,8 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.formData.size,
-                        expression: "formData.size"
+                        value: _vm.$v.size.$model,
+                        expression: "$v.size.$model"
                       }
                     ],
                     staticClass: "form-control",
@@ -48516,13 +48538,13 @@ var render = function() {
                       id: "product_size",
                       placeholder: "text"
                     },
-                    domProps: { value: _vm.formData.size },
+                    domProps: { value: _vm.$v.size.$model },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
-                        _vm.$set(_vm.formData, "size", $event.target.value)
+                        _vm.$set(_vm.$v.size, "$model", $event.target.value)
                       }
                     }
                   })
@@ -48538,8 +48560,8 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.formData.color,
-                        expression: "formData.color"
+                        value: _vm.$v.color.$model,
+                        expression: "$v.color.$model"
                       }
                     ],
                     staticClass: "form-control",
@@ -48548,13 +48570,13 @@ var render = function() {
                       id: "product_color",
                       placeholder: "text"
                     },
-                    domProps: { value: _vm.formData.color },
+                    domProps: { value: _vm.$v.color.$model },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
-                        _vm.$set(_vm.formData, "color", $event.target.value)
+                        _vm.$set(_vm.$v.color, "$model", $event.target.value)
                       }
                     }
                   })
@@ -48570,8 +48592,8 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.formData.price,
-                        expression: "formData.price"
+                        value: _vm.$v.price.$model,
+                        expression: "$v.price.$model"
                       }
                     ],
                     staticClass: "form-control",
@@ -48580,13 +48602,13 @@ var render = function() {
                       id: "product_price",
                       placeholder: "text"
                     },
-                    domProps: { value: _vm.formData.price },
+                    domProps: { value: _vm.$v.price.$model },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
-                        _vm.$set(_vm.formData, "price", $event.target.value)
+                        _vm.$set(_vm.$v.price, "$model", $event.target.value)
                       }
                     }
                   })
@@ -48602,8 +48624,8 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.formData.quantity,
-                        expression: "formData.quantity"
+                        value: _vm.$v.quantity.$model,
+                        expression: "$v.quantity.$model"
                       }
                     ],
                     staticClass: "form-control",
@@ -48612,13 +48634,13 @@ var render = function() {
                       id: "product_quantity",
                       placeholder: "Password"
                     },
-                    domProps: { value: _vm.formData.quantity },
+                    domProps: { value: _vm.$v.quantity.$model },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
-                        _vm.$set(_vm.formData, "quantity", $event.target.value)
+                        _vm.$set(_vm.$v.quantity, "$model", $event.target.value)
                       }
                     }
                   })
@@ -48636,8 +48658,8 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.formData.category,
-                          expression: "formData.category"
+                          value: _vm.$v.category.$model,
+                          expression: "$v.category.$model"
                         }
                       ],
                       staticClass: "form-control",
@@ -48653,8 +48675,8 @@ var render = function() {
                                 return val
                               })
                             _vm.$set(
-                              _vm.formData,
-                              "category",
+                              _vm.$v.category,
+                              "$model",
                               $event.target.multiple
                                 ? $$selectedVal
                                 : $$selectedVal[0]
@@ -48698,8 +48720,8 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model.trim",
-                            value: input.name,
-                            expression: "input.name",
+                            value: _vm.formData[input.name],
+                            expression: "formData[input.name]",
                             modifiers: { trim: true }
                           }
                         ],
@@ -48709,13 +48731,17 @@ var render = function() {
                           id: "product_quantity",
                           placeholder: "Password"
                         },
-                        domProps: { value: input.name },
+                        domProps: { value: _vm.formData[input.name] },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
-                            _vm.$set(input, "name", $event.target.value.trim())
+                            _vm.$set(
+                              _vm.formData,
+                              input.name,
+                              $event.target.value.trim()
+                            )
                           },
                           blur: function($event) {
                             _vm.$forceUpdate()
@@ -48738,8 +48764,8 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.formData.brand,
-                          expression: "formData.brand"
+                          value: _vm.$v.brand.$model,
+                          expression: "$v.brand.$model"
                         }
                       ],
                       staticClass: "form-control",
@@ -48754,8 +48780,8 @@ var render = function() {
                               return val
                             })
                           _vm.$set(
-                            _vm.formData,
-                            "brand",
+                            _vm.$v.brand,
+                            "$model",
                             $event.target.multiple
                               ? $$selectedVal
                               : $$selectedVal[0]
@@ -48783,8 +48809,8 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.formData.discount,
-                          expression: "formData.discount"
+                          value: _vm.$v.discount.$model,
+                          expression: "$v.discount.$model"
                         }
                       ],
                       staticClass: "form-control",
@@ -48799,8 +48825,8 @@ var render = function() {
                               return val
                             })
                           _vm.$set(
-                            _vm.formData,
-                            "discount",
+                            _vm.$v.discount,
+                            "$model",
                             $event.target.multiple
                               ? $$selectedVal
                               : $$selectedVal[0]

@@ -2,7 +2,11 @@
 {}
 =======
 {
+<<<<<<< HEAD
     "/js/vendorDashboard.js": "/js/vendorDashboard.js",
     "/js/companydashboard.js": "/js/companydashboard.js"
+=======
+    "/js/vendorDashboard.js": "/js/vendorDashboard.js"
+>>>>>>> 3a4d9abd371e49f13fcda04cad32398a43b33cf0
 }
 >>>>>>> 7a005eda7938f2152ae7f783266d409f1e59cc48
