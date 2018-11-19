@@ -47215,7 +47215,7 @@ exports = module.exports = __webpack_require__(48)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n.form-group.required .control-label[data-v-0acc29bc]:after { \n    color: #d00;\n    content: \"*\";\n    position: absolute;\n    margin-left: 2px;\n}\n", ""]);
 
 // exports
 
@@ -47655,6 +47655,136 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -47727,183 +47857,473 @@ var staticRenderFns = [
         _c("div", { staticClass: "col-md-12" }, [
           _c("form", [
             _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-3" }),
+              _c("div", { staticClass: "col-md-2" }),
               _vm._v(" "),
-              _c("div", { staticClass: "col-md-6 col-sm-12" }, [
-                _c("div", { staticClass: "form-group col-md-12 col-sm-12" }, [
-                  _c("label", { attrs: { for: "product_name" } }, [
-                    _vm._v("Product Name")
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      id: "product_name",
-                      "aria-describedby": "emailHelp",
-                      placeholder: "Enter email"
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "small",
-                    {
-                      staticClass: "form-text text-muted",
-                      attrs: { id: "emailHelp" }
-                    },
-                    [_vm._v("We'll never share your email with anyone else.")]
-                  )
-                ]),
+              _c("div", { staticClass: "col-md-8 col-sm-12" }, [
+                _c(
+                  "div",
+                  { staticClass: "form-group required col-md-12 col-sm-12" },
+                  [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "control-label",
+                        attrs: { for: "job_title" }
+                      },
+                      [_vm._v("Job Title")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "text",
+                        id: "job_title",
+                        "aria-describedby": "emailHelp",
+                        placeholder: ""
+                      }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "form-group required col-md-12 col-sm-12" },
+                  [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "control-label",
+                        attrs: { for: "job_description" }
+                      },
+                      [_vm._v("Job Description")]
+                    ),
+                    _vm._v(" "),
+                    _c("textarea", {
+                      staticClass: "form-control",
+                      attrs: { id: "job_description" }
+                    })
+                  ]
+                ),
                 _vm._v(" "),
                 _c("div", { staticClass: "form-group col-md-12 col-sm-12" }, [
-                  _c("label", { attrs: { for: "product_description" } }, [
-                    _vm._v("Product Description")
+                  _c("label", { attrs: { for: "job_skills" } }, [
+                    _vm._v("Required Skills")
                   ]),
                   _vm._v(" "),
                   _c("input", {
                     staticClass: "form-control",
                     attrs: {
                       type: "text",
-                      id: "product_description",
+                      id: "job_skills",
                       placeholder: "text"
                     }
                   })
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form-group col-md-12 col-sm-12" }, [
-                  _c("label", { attrs: { for: "product_size" } }, [
-                    _vm._v("Product Size")
-                  ]),
+                _c(
+                  "div",
+                  { staticClass: "form-group required col-md-12 col-sm-12" },
+                  [
+                    _c("h6", { staticClass: "control-label" }, [
+                      _vm._v("Job Location")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "row form-group" }, [
+                      _c("div", { staticClass: "col-md-6 col-sm-12" }, [
+                        _c("label", { attrs: { for: "country" } }, [
+                          _vm._v("Country")
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "select",
+                          {
+                            staticClass: "form-control",
+                            attrs: { id: "country" }
+                          },
+                          [_c("option", [_vm._v("--Select Country--")])]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-6 col-sm-12" }, [
+                        _c("label", { attrs: { for: "city_id" } }, [
+                          _vm._v("City")
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "select",
+                          {
+                            staticClass: "form-control",
+                            attrs: { id: "city_id" }
+                          },
+                          [_c("option", [_vm._v("--Select City--")])]
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "form-group required col-md-12 col-sm-12" },
+                  [
+                    _c(
+                      "label",
+                      {
+                        staticClass: "control-label",
+                        attrs: { for: "job_career_level" }
+                      },
+                      [_vm._v("Career Level")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "select",
+                      {
+                        staticClass: "form-control",
+                        attrs: { id: "job_career_level" }
+                      },
+                      [_c("option", [_vm._v("--Choose Career Level--")])]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "form-group required col-md-12 col-sm-12" },
+                  [
+                    _c("h6", { staticClass: "control-label" }, [
+                      _vm._v("Salary Range")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "row form-group" }, [
+                      _c("div", { staticClass: "col-md-6 col-sm-12" }, [
+                        _c(
+                          "label",
+                          { attrs: { for: "job_salary_min_range" } },
+                          [_vm._v("Min.")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "select",
+                          {
+                            staticClass: "form-control",
+                            attrs: { id: "job_salary_min_range" }
+                          },
+                          [_c("option", [_vm._v("--From (Pkr)--")])]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-6 col-sm-12" }, [
+                        _c(
+                          "label",
+                          { attrs: { for: "job_salary_max_range" } },
+                          [_vm._v("Max.")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "select",
+                          {
+                            staticClass: "form-control",
+                            attrs: { id: "job_salary_max_range" }
+                          },
+                          [_c("option", [_vm._v("--To (Pkr)--")])]
+                        )
+                      ])
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-12 col-sm-12" }, [
+                  _c("h6", [_vm._v("Job Domain")]),
                   _vm._v(" "),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      id: "product_size",
-                      placeholder: "text"
-                    }
-                  })
+                  _c("div", { staticClass: "row form-group" }, [
+                    _c("div", { staticClass: "col-md-6 col-sm-12" }, [
+                      _c("label", { attrs: { for: "job_cateory" } }, [
+                        _vm._v("Job Category")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "select",
+                        {
+                          staticClass: "form-control",
+                          attrs: { id: "job_cateory" }
+                        },
+                        [_c("option", [_vm._v("--Select Category--")])]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-6 col-sm-12" }, [
+                      _c("label", { attrs: { for: "job_sub_category_id" } }, [
+                        _vm._v("Job Sub-Category")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "select",
+                        {
+                          staticClass: "form-control",
+                          attrs: { id: "job_sub_category_id" }
+                        },
+                        [_c("option", [_vm._v("--Select Sub-Category--")])]
+                      )
+                    ])
+                  ])
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form-group col-md-12 col-sm-12" }, [
-                  _c("label", { attrs: { for: "product_color" } }, [
-                    _vm._v("Product Color")
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      id: "product_color",
-                      placeholder: "text"
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group col-md-12 col-sm-12" }, [
-                  _c("label", { attrs: { for: "product_price" } }, [
-                    _vm._v("Product Price")
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      id: "product_price",
-                      placeholder: "text"
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group col-md-12 col-sm-12" }, [
-                  _c("label", { attrs: { for: "product_quantity" } }, [
-                    _vm._v("Product Quantity")
-                  ]),
-                  _vm._v(" "),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      id: "product_quantity",
-                      placeholder: "Password"
-                    }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group col-md-12 col-sm-12" }, [
-                  _c("label", { attrs: { for: "product_category" } }, [
-                    _vm._v("Select Category")
-                  ]),
-                  _vm._v(" "),
-                  _c("select", { staticClass: "form-control" }, [
-                    _c("optgroup", { attrs: { label: "test" } }, [
-                      _c("option", { attrs: { value: "" } }, [_vm._v("test")])
+                _c("div", { staticClass: "col-md-12 col-sm-12" }, [
+                  _c("div", { staticClass: "row form-group" }, [
+                    _c("div", { staticClass: "col-md-6 col-sm-12" }, [
+                      _c("label", { attrs: { for: "job_type_id" } }, [
+                        _vm._v("Job Type")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "select",
+                        {
+                          staticClass: "form-control",
+                          attrs: { id: "job_type_id" }
+                        },
+                        [_c("option", [_vm._v("--Select Job Type--")])]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-6 col-sm-12" }, [
+                      _c("label", { attrs: { for: "job_shift" } }, [
+                        _vm._v("Job Shift")
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "select",
+                        {
+                          staticClass: "form-control",
+                          attrs: { id: "job_shift" }
+                        },
+                        [_c("option", [_vm._v("--Select Job Shift--")])]
+                      )
                     ])
                   ])
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "form-group col-md-12 col-sm-12" }, [
-                  _c("label", { attrs: { for: "product_quantity" } }, [
-                    _vm._v("test")
+                  _c("label", { attrs: { for: "job_gender_preference" } }, [
+                    _vm._v("Gender Requirement")
                   ]),
                   _vm._v(" "),
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      id: "product_quantity",
-                      placeholder: "Password"
-                    }
-                  })
+                  _c(
+                    "select",
+                    {
+                      staticClass: "form-control",
+                      attrs: { id: "job_gender_preference" }
+                    },
+                    [
+                      _c("option", [_vm._v("--No preference--")]),
+                      _vm._v(" "),
+                      _c("option", [_vm._v("--Male--")]),
+                      _vm._v(" "),
+                      _c("option", [_vm._v("--Female--")]),
+                      _vm._v(" "),
+                      _c("option", [_vm._v("--Others--")])
+                    ]
+                  )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "form-group col-md-12 col-sm-12" }, [
-                  _c("label", { attrs: { for: "product_category" } }, [
-                    _vm._v("Select Brand")
-                  ]),
-                  _vm._v(" "),
-                  _c("select", { staticClass: "form-control" }, [
-                    _c("option", { attrs: { value: "" } }, [_vm._v("test")])
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("div", { staticClass: "form-group col-md-12 col-sm-12" }, [
-                  _c("label", { attrs: { for: "product_category" } }, [
-                    _vm._v("Select Discount")
-                  ]),
-                  _vm._v(" "),
-                  _c("select", { staticClass: "form-control" }, [
-                    _c("option", { attrs: { value: "" } }, [_vm._v("test")]),
-                    _vm._v("\\\n            ")
+                _c("div", { staticClass: "col-md-12 col-sm-12" }, [
+                  _c("div", { staticClass: "row form-group required" }, [
+                    _c("div", { staticClass: "col-md-6 col-sm-12" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "control-label",
+                          attrs: { for: "job_no_of_position" }
+                        },
+                        [_vm._v("Positions Available")]
+                      ),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "number",
+                          min: "1",
+                          name: "job_no_of_position",
+                          id: "job_no_of_position"
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-6 col-sm-12" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "control-label",
+                          attrs: { for: "apply_by" }
+                        },
+                        [_vm._v("Apply By")]
+                      ),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "date",
+                          name: "apply_by",
+                          id: "apply_by"
+                        }
+                      })
+                    ])
                   ])
                 ]),
                 _vm._v(" "),
                 _c(
                   "div",
-                  { staticClass: "form-group form-check  col-md-12 col-sm-12" },
+                  { staticClass: "form-group required col-md-12 col-sm-12" },
                   [
-                    _c("input", {
-                      staticClass: "form-check-input",
-                      attrs: { type: "checkbox", id: "exampleCheck1" }
-                    }),
+                    _c("h2", { staticClass: "h2 form-group" }, [
+                      _vm._v("Applicant Requirements")
+                    ]),
                     _vm._v(" "),
-                    _c(
-                      "label",
-                      {
-                        staticClass: "form-check-label",
-                        attrs: { for: "exampleCheck1" }
-                      },
-                      [_vm._v("Check me out")]
-                    )
+                    _c("h6", [_vm._v("Required Qualification")]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "row form-group required" }, [
+                      _c("div", { staticClass: "col-md-6 col-sm-12" }, [
+                        _c(
+                          "label",
+                          {
+                            staticClass: "control-label",
+                            attrs: { for: "degree_level_id" }
+                          },
+                          [_vm._v("Degree Level")]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "select",
+                          {
+                            staticClass: "form-control",
+                            attrs: { id: "degree_level_id" }
+                          },
+                          [_c("option", [_vm._v("--Select Degree Level--")])]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-6 col-sm-12" }, [
+                        _c("label", { attrs: { for: "degree_type_id" } }, [
+                          _vm._v("Degree Title")
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "select",
+                          {
+                            staticClass: "form-control",
+                            attrs: { id: "degree_type_id" }
+                          },
+                          [_c("option", [_vm._v("--Select Degree Title--")])]
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c("label", { attrs: { for: "specific_degree" } }, [
+                        _vm._v("Specific Degree Title")
+                      ]),
+                      _vm._v(" "),
+                      _c("input", {
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "text",
+                          id: "specific_degree",
+                          placeholder: ""
+                        }
+                      })
+                    ]),
+                    _vm._v(" "),
+                    _c("h6", { staticClass: "control-label" }, [
+                      _vm._v("Years Of Experience")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "row form-group" }, [
+                      _c("div", { staticClass: "col-md-6 col-sm-12" }, [
+                        _c(
+                          "label",
+                          { attrs: { for: "job_year_of_experience_min" } },
+                          [_vm._v("Min.")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "number",
+                            min: "1",
+                            name: "job_year_of_experience_min",
+                            id: "job_year_of_experience_min"
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-6 col-sm-12" }, [
+                        _c(
+                          "label",
+                          { attrs: { for: "job_year_of_experience_max" } },
+                          [_vm._v("Max.")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "number",
+                            min: "1",
+                            name: "job_year_of_experience_max",
+                            id: "job_year_of_experience_max"
+                          }
+                        })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("h6", { staticClass: "control-label" }, [
+                      _vm._v("Age Requirement")
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "row form-group" }, [
+                      _c("div", { staticClass: "col-md-6 col-sm-12" }, [
+                        _c("label", { attrs: { for: "age_requirement_min" } }, [
+                          _vm._v("Min.")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "number",
+                            min: "1",
+                            name: "age_requirement_min",
+                            id: "age_requirement_min"
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "col-md-6 col-sm-12" }, [
+                        _c("label", { attrs: { for: "age_requirement_max" } }, [
+                          _vm._v("Max.")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "number",
+                            min: "1",
+                            name: "age_requirement_max",
+                            id: "age_requirement_max"
+                          }
+                        })
+                      ])
+                    ])
                   ]
                 ),
-                _c("br"),
                 _vm._v(" "),
-                _c(
-                  "button",
-                  { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-                  [_vm._v("Submit")]
-                )
+                _c("div", { staticClass: "form-group  col-md-12 col-sm-12" }, [
+                  _c(
+                    "button",
+                    {
+                      staticClass: "btn btn-primary",
+                      attrs: { type: "submit" }
+                    },
+                    [_vm._v("Submit")]
+                  )
+                ])
               ])
             ])
           ])
