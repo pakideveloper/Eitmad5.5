@@ -29,7 +29,7 @@
             </div>
             <div class="form-group col-md-12 col-sm-12">
               <label for="job_skills">Required Skills</label>
-              <input type="text" class="form-control" id="job_skills" placeholder="text">
+              <input type="text" class="form-control" id="job_skills" value="Amsterdam,Washington,Sydney,Beijing,Cairo" placeholder="" data-role="tagsinput">
             </div>
             <div class="form-group required col-md-12 col-sm-12">
               <h6 class="control-label">Job Location</h6>
@@ -140,7 +140,7 @@
               </div>
             </div>
 
-            <div class="form-group required col-md-12 col-sm-12">
+            <div class="form-group required col-md-12 col-sm-12" style="margin-top:5%;">
               <h2 class="h2 form-group">Applicant Requirements</h2>
              
                 <h6>Required Qualification</h6>
@@ -194,7 +194,7 @@
             </div>
           
             <div class="form-group  col-md-12 col-sm-12">
-               <button type="submit" class="btn btn-primary" >Submit</button>
+               <button type="button" class="btn btn-primary" >Submit</button>
             </div>
            
           </div>  
@@ -215,10 +215,58 @@
 }
 </style>
 <script  scoped>
-	
+	 import { required, minLength, between, email } from 'vuelidate/lib/validators'
     export default {
         mounted() {
             console.log('Component mounted.')
+        },
+        data() {
+          return {
+              categories: [],
+              sub_categories:[],
+              brands:[],
+              discounts: [],
+              formData:{},
+              name: '',
+              description:'',
+              size:'', 
+              color:'', 
+              price:'', 
+              quantity:'', 
+              category:'', 
+              brand:'', 
+              discount:'',
+              inputs:[] ,              
+          };
+        },
+        validations: {
+          name: {
+            required,
+          },
+          description: {
+            required,
+          },
+          size: {
+            required,
+          },
+          color: {
+            required,
+          },
+          price: {
+            required,
+          },
+          quantity: {
+            required,
+          },
+          category: {
+            required,
+          },
+          brand: {
+            required,
+          },
+          discount: {
+            required,
+          },
         }
     }
 </script>
