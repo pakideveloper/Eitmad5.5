@@ -47654,8 +47654,9 @@ module.exports = function listToStyles (parentId, list) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__hasUrl__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__);
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 //
@@ -47886,6 +47887,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     //  [App.vue specific] When App.vue is finish loading finish the progress bar
@@ -47920,106 +47922,58 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
   validations: {
     job_title: {
-      required: __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["required"]
+      required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"]
     },
     job_description: {
-      required: __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["required"]
+      required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"]
     },
     country: {
-      required: __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["required"]
+      required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"]
     },
     city_id: {
-      required: __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["required"]
+      required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"]
     },
     job_career_level: {
-      required: __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["required"]
+      required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"]
     },
     job_salary_min_range: {
-      required: __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["required"],
-      between: Object(__WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["between"])(5000, 1000000)
+      required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"],
+      between: Object(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["between"])(5000, 1000000)
     },
     job_salary_max_range: {
-      required: __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["required"],
-      between: Object(__WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["between"])(5000, 1000000)
+      required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"],
+      between: Object(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["between"])(5000, 1000000)
     },
     job_no_of_position: {
-      required: __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["required"],
-      between: Object(__WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["between"])(1, 1000)
+      required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"],
+      between: Object(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["between"])(1, 1000)
     },
     apply_by: {
-      required: __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["required"]
+      required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"]
     },
     degree_level_id: {
-      required: __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["required"]
+      required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"]
     },
     job_year_of_experience_min: {
-      required: __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["required"],
-      between: Object(__WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["between"])(1, 20)
+      required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"],
+      between: Object(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["between"])(1, 20)
     },
     job_year_of_experience_max: {
-      required: __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["required"],
-      between: Object(__WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["between"])(1, 20)
+      required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"],
+      between: Object(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["between"])(1, 20)
     },
     age_requirement_min: {
-      required: __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["required"],
-      between: Object(__WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["between"])(18, 60)
+      required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"],
+      between: Object(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["between"])(18, 60)
     },
     age_requirement_max: {
-      required: __WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["required"],
-      between: Object(__WEBPACK_IMPORTED_MODULE_0_vuelidate_lib_validators__["between"])(18, 60)
+      required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"],
+      between: Object(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["between"])(18, 60)
     }
   },
   methods: {
-    getCategories: function getCategories() {
-      var _this = this;
-
-      axios.get(this.url + '/getCategories').then(function (_ref2) {
-        var data = _ref2.data;
-
-        _this.categories = data;
-      });
-    },
-    getSubCategories: function getSubCategories() {
-      var _this2 = this;
-
-      axios.get(this.url + '/getSubCategories').then(function (_ref3) {
-        var data = _ref3.data;
-
-        _this2.sub_categories = data;
-      });
-    },
-    getBrands: function getBrands() {
-      var _this3 = this;
-
-      axios.get(this.url + '/getBrands').then(function (_ref4) {
-        var data = _ref4.data;
-
-        _this3.brands = data;
-      });
-    },
-    getDiscounts: function getDiscounts() {
-      var _this4 = this;
-
-      axios.get(this.url + '/getDiscounts').then(function (_ref5) {
-        var data = _ref5.data;
-
-        _this4.discounts = data;
-      });
-    },
-    catChange: function catChange() {
-      this.inputs = [];
-      var data = JSON.parse(this.sub_categories[this.category - 1].feature_names);
-      $.each(data, function (key, value) {
-        var input = { name: '', label: '' };
-        var value2 = value.replace(/\s/g, '');
-        input.name = value2;
-        input.label = value;
-        this.inputs.push(input);
-        input = { name: '', label: '' };
-      }.bind(this));
-    },
     submit: function submit() {
-      var _this5 = this;
+      var _this = this;
 
       console.log(this.$v.$invalid);
       this.$v.$touch();
@@ -48027,55 +47981,41 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         this.$Progress.start();
         var endpoint = this.url + '/product';
         var data = new FormData();
-        data.append('name', this.name);
-        data.append('description', this.des);
-        data.append('size', this.size);
-        data.append('color', this.color);
-        data.append('price', this.price);
-        data.append('quantity', this.quantity);
-        data.append('sub_category_id', this.category);
-        data.append('brand', this.brand);
-        data.append('discount', this.discount);
+        data.append('job_title', this.job_title);
+        data.append('job_description', this.job_description);
+        data.append('job_skills', this.job_skills);
+        data.append('city_id', this.city_id);
+        data.append('country', this.country);
+        data.append('job_career_level', this.job_career_level);
+        data.append('job_salary_min_range', this.job_salary_min_range);
+        data.append('job_salary_max_range', this.job_salary_max_range);
+        data.append('job_cateory', this.job_cateory);
+        data.append('job_sub_category_id', this.job_sub_category_id);
+        data.append('job_type_id', this.job_type_id);
+        data.append('job_shift', this.job_shift);
+        data.append('job_gender_preference', this.job_gender_preference);
+        data.append('job_no_of_position', this.job_no_of_position);
+        data.append('apply_by', this.apply_by);
+        data.append('degree_level_id', this.degree_level_id);
+        data.append('degree_type_id', this.degree_type_id);
+        data.append('specific_degree', this.specific_degree);
+        data.append('job_year_of_experience_min', this.job_year_of_experience_min);
+        data.append('job_year_of_experience_max', this.job_year_of_experience_max);
+        data.append('age_requirement_min', this.age_requirement_min);
+        data.append('age_requirement_min', this.age_requirement_min);
 
-        for (var i = 0; i < this.selectedFile.length; i++) {
-          data.append('sliderImages[]', this.selectedFile[i]);
-        }
-        $.each(this.formData, function (key, value) {
-          data.append(key, value);
-        });
-
-        data.append('titleImage', this.selectedTitleImage, this.selectedTitleImage.name);
         axios.post(endpoint, data).then(function (response) {
           if (response.status === 200) {
-            _this5.$Progress.finish();
+            _this.$Progress.finish();
           }
           // this.name = ' ';this.description = ' ';this.size = ' ';this.color = ' ';this.price = ' ';this.quantity = ' ';this.sliderImages = null;this.titleImage=null;
         }).catch(function (e) {
-          _this5.$Progress.fail();
+          _this.$Progress.fail();
         });
       }
-    },
-    onFileSelected: function onFileSelected(event) {
-      var files = event.target.files;
-      // this.selectedFile=event.target.files;
-      for (var i = 0; i < files.length; i++) {
-        this.selectedFile.push(files[i]);
-      }
-      // console.log(event.target.files);
-    },
-    onTitleImageSelected: function onTitleImageSelected(event) {
-      this.selectedTitleImage = event.target.files[0];
-    },
-    resetForm: function resetForm() {
-      console.log('Reseting the form');
-      var self = this; //you need this because *this* will refer to Object.keys below`
-
-      //Iterate through each object field, key is name of the object field`
-      Object.keys(this.data.form).forEach(function (key, index) {
-        self.data.form[key] = '';
-      });
     }
-  }
+  },
+  mixins: [__WEBPACK_IMPORTED_MODULE_0__hasUrl__["a" /* default */]]
 });
 
 /***/ }),
@@ -50134,6 +50074,20 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-b880f65c", module.exports)
   }
 }
+
+/***/ }),
+/* 78 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+  computed: {
+    url: function url() {
+      // `this` points to the vm instance
+      return "http://localhost:8080/Eitmad5.5/api/jobs/company";
+    }
+  }
+});
 
 /***/ })
 /******/ ]);

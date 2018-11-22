@@ -225,7 +225,8 @@
 }
 </style>
 <script>
-	 import { required, minLength, between, email } from 'vuelidate/lib/validators'
+    import hasUrl from './hasUrl'
+	 import { required, between } from 'vuelidate/lib/validators'
     export default {
         mounted() {
           //  [App.vue specific] When App.vue is finish loading finish the progress bar
@@ -310,42 +311,6 @@
           },
         },
         methods: {
-          getCategories(){
-            axios.get(this.url+'/getCategories')
-                .then(({ data }) => {
-                    this.categories = data;
-                });
-          },
-          getSubCategories(){
-            axios.get(this.url+'/getSubCategories')
-                .then(({ data }) => {
-                    this.sub_categories = data;
-                });
-          },
-          getBrands(){
-            axios.get(this.url+'/getBrands')
-                .then(({ data }) => {
-                    this.brands = data;
-                });
-          },
-          getDiscounts(){
-            axios.get(this.url+'/getDiscounts')
-                .then(({ data }) => {
-                    this.discounts = data;
-                });
-          },
-          catChange(){
-            this.inputs = [];
-            var data = JSON.parse(this.sub_categories[this.category-1].feature_names);
-            $.each(data, function(key, value) {
-              var input = {name:'', label:''};
-              var value2 = value.replace(/\s/g, '') ;
-              input.name = value2;
-              input.label = value;
-              this.inputs.push(input);
-              input = {name:'', label:''};
-           }.bind(this));
-          },
           submit(){
             console.log(this.$v.$invalid);
             this.$v.$touch();
@@ -353,24 +318,33 @@
               this.$Progress.start()
               let endpoint = this.url+'/product';
               const data = new FormData();
-              data.append('name',this.name)
-              data.append('description',this.des)
-              data.append('size',this.size)
-              data.append('color',this.color)
-              data.append('price',this.price)
-              data.append('quantity',this.quantity)
-              data.append('sub_category_id',this.category)
-              data.append('brand',this.brand)
-              data.append('discount',this.discount)
+              data.append('job_title',this.job_title)
+              data.append('job_description',this.job_description)
+              data.append('job_skills',this.job_skills)
+              data.append('city_id',this.city_id)
+              data.append('country',this.country)
+              data.append('job_career_level',this.job_career_level)
+              data.append('job_salary_min_range',this.job_salary_min_range)
+              data.append('job_salary_max_range',this.job_salary_max_range)
+              data.append('job_cateory',this.job_cateory)
+              data.append('job_sub_category_id',this.job_sub_category_id)
+              data.append('job_type_id',this.job_type_id)
+              data.append('job_shift',this.job_shift)
+              data.append('job_gender_preference',this.job_gender_preference)
+              data.append('job_no_of_position',this.job_no_of_position)
+              data.append('apply_by',this.apply_by)
+              data.append('degree_level_id',this.degree_level_id)
+              data.append('degree_type_id',this.degree_type_id)
+              data.append('specific_degree',this.specific_degree)
+               data.append('job_year_of_experience_min',this.job_year_of_experience_min)
+              data.append('job_year_of_experience_max',this.job_year_of_experience_max)
+              data.append('age_requirement_min',this.age_requirement_min)
+               data.append('age_requirement_min',this.age_requirement_min)
               
-              for (var i = 0; i < this.selectedFile.length; i++) {
-                data.append('sliderImages[]',this.selectedFile[i])
-              }
-              $.each(this.formData, function(key, value) {
-               data.append(key,value)
-             });
               
-              data.append('titleImage',this.selectedTitleImage,this.selectedTitleImage.name)
+              
+              
+             
               axios.post(endpoint, data)
               .then(response => {
                  if(response.status === 200){
@@ -382,26 +356,9 @@
               })
             }
           },
-          onFileSelected(event){
-            let files =event.target.files;
-            // this.selectedFile=event.target.files;
-            for (var i = 0; i < files.length; i++) {
-              this.selectedFile.push(files[i]);
-            }
-            // console.log(event.target.files);
-          },
-          onTitleImageSelected(event){
-            this.selectedTitleImage=event.target.files[0]
-          },
-          resetForm() {
-            console.log('Reseting the form')
-            var self = this; //you need this because *this* will refer to Object.keys below`
-
-            //Iterate through each object field, key is name of the object field`
-            Object.keys(this.data.form).forEach(function(key,index) {
-              self.data.form[key] = '';
-            });
-          },
-        }
+          
+          
+        },
+        mixins: [hasUrl]
     }
 </script>
