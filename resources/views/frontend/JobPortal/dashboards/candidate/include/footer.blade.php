@@ -1,6 +1,5 @@
     <!-- vue js -->
-    <!-- <script src="{{URL::to('public/js')}}/candidateDashboard.js"></script>  -->
-    <!-- why this above link -->
+    <!-- <script src="{{URL::to('public/js')}}/vendorDashboard.js"></script> -->
     <!-- vue js -->
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -50,7 +49,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- dropdown  -->
     <script type="text/javascript">
-      $('li.has-sub > a').click(function(){ 
+      $('li.has-sub > a').click(function(){
         if (jQuery(this).hasClass("subDrop")) {
           jQuery(this).siblings("ul").slideUp();
           jQuery(this).removeClass("subDrop");

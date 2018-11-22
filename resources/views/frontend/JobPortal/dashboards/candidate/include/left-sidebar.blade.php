@@ -2,22 +2,22 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a href="{{'dashboard'}}" class="nav-link"><span data-feather="shopping-cart"></span>&nbsp;Dasboard</a>
+                <router-link  to="dashboard" class="nav-link"><span data-feather="shopping-cart"></span>&nbsp;Dasboard</router-link>
               </li>
               <li class="nav-item has-sub">
                 <a class="nav-link" href="JavaScript:void(0)">
                   <span data-feather="user"></span>
-                  CV
+                  Product
                   <span class="positive">+</span>
                 </a>
                 <ul class="nav flex-column is-sub">                  
                   <li>
-                    
-                      <a href="{{'create-cv'}}" class="nav-link">Create CV</a>
+                      <router-link  to="add-product" class="nav-link">Manage Products</router-link>
                     
                   </li>
                   <li>
-                      <router-link  to="editcv" class="nav-link">Edit Cv</router-link>        
+                      <router-link  to="add-product" class="nav-link">Add Product</router-link>
+                    
                   </li>
                   <li>
                       <router-link  to="add-product" class="nav-link">Add Product</router-link>

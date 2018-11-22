@@ -7,7 +7,6 @@
     "require": {
         "php": ">=7.0.0",
         "fideloper/proxy": "~3.3",
-        "finaldream/w3-total-cache": "0.9.4.6",
         "gloudemans/shoppingcart": "^2.5",
         "laravel/framework": "5.5.*",
         "laravel/tinker": "~1.0",
