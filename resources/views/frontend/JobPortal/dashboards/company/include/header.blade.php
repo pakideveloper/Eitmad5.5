@@ -12,7 +12,8 @@
 
     <!-- Bootstrap core CSS -->
     <link href="{{URL::to('public/bootstrap-4.1')}}/css/bootstrap.min.css" rel="stylesheet">
-
+    <!-- tag input css -->
+    <link href="{{URL::to('public/bootstrap-4.1')}}/css/tagsinput.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="{{URL::to('public/bootstrap-4.1')}}/css/dashboard.css" rel="stylesheet">
     <style type="text/css">

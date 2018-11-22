@@ -110,155 +110,18 @@
 
 <script>
   import hasUrl from './hasUrl'
-  import { required, minLength, between, email } from 'vuelidate/lib/validators'
     export default {
         mounted() {
           //  [App.vue specific] When App.vue is finish loading finish the progress bar
           this.$Progress.finish()
         },
         data() {
-          return {
-              categories: [],
-              sub_categories:[],
-              brands:[],
-              discounts: [],
-              formData:{},
-              name: '',
-              des:'',
-              size:'', 
-              color:'', 
-              price:'', 
-              quantity:'', 
-              category:'', 
-              brand:'', 
-              discount:'',
-              inputs:[] , 
-              selectedFile:[],
-              selectedTitleImage:null             
+          return {            
           };
         },
-        validations: {
-          name: {
-            required,
-          },
-          des: {
-            required,
-          },
-          size: {
-            required,
-          },
-          color: {
-            required,
-          },
-          price: {
-            required,
-          },
-          quantity: {
-            required,
-          },
-          category: {
-            required,
-          },
-          brand: {
-            required,
-          },
-          discount: {
-            required,
-          },
-        },
+        
         methods: {
-          getCategories(){
-            axios.get(this.url+'/getCategories')
-                .then(({ data }) => {
-                    this.categories = data;
-                });
-          },
-          getSubCategories(){
-            axios.get(this.url+'/getSubCategories')
-                .then(({ data }) => {
-                    this.sub_categories = data;
-                });
-          },
-          getBrands(){
-            axios.get(this.url+'/getBrands')
-                .then(({ data }) => {
-                    this.brands = data;
-                });
-          },
-          getDiscounts(){
-            axios.get(this.url+'/getDiscounts')
-                .then(({ data }) => {
-                    this.discounts = data;
-                });
-          },
-          catChange(){
-            this.inputs = [];
-            var data = JSON.parse(this.sub_categories[this.category-1].feature_names);
-            $.each(data, function(key, value) {
-              var input = {name:'', label:''};
-              var value2 = value.replace(/\s/g, '') ;
-              input.name = value2;
-              input.label = value;
-              this.inputs.push(input);
-              input = {name:'', label:''};
-           }.bind(this));
-          },
-          submit(){
-            console.log(this.$v.$invalid);
-            this.$v.$touch();
-            if (!this.$v.$invalid) {
-              this.$Progress.start()
-              let endpoint = this.url+'/product';
-              const data = new FormData();
-              data.append('name',this.name)
-              data.append('description',this.des)
-              data.append('size',this.size)
-              data.append('color',this.color)
-              data.append('price',this.price)
-              data.append('quantity',this.quantity)
-              data.append('sub_category_id',this.category)
-              data.append('brand',this.brand)
-              data.append('discount',this.discount)
-              
-              for (var i = 0; i < this.selectedFile.length; i++) {
-                data.append('sliderImages[]',this.selectedFile[i])
-              }
-              $.each(this.formData, function(key, value) {
-               data.append(key,value)
-             });
-              
-              data.append('titleImage',this.selectedTitleImage,this.selectedTitleImage.name)
-              axios.post(endpoint, data)
-              .then(response => {
-                 if(response.status === 200){
-                    this.$Progress.finish();
-                 }
-                 // this.name = ' ';this.description = ' ';this.size = ' ';this.color = ' ';this.price = ' ';this.quantity = ' ';this.sliderImages = null;this.titleImage=null;
-              }).catch(e => {
-                this.$Progress.fail()
-              })
-            }
-          },
-          onFileSelected(event){
-            let files =event.target.files;
-            // this.selectedFile=event.target.files;
-            for (var i = 0; i < files.length; i++) {
-              this.selectedFile.push(files[i]);
-            }
-            // console.log(event.target.files);
-          },
-          onTitleImageSelected(event){
-            this.selectedTitleImage=event.target.files[0]
-          },
-          resetForm() {
-            console.log('Reseting the form')
-            var self = this; //you need this because *this* will refer to Object.keys below`
-
-            //Iterate through each object field, key is name of the object field`
-            Object.keys(this.data.form).forEach(function(key,index) {
-              self.data.form[key] = '';
-            });
-          },
+          
         },
         created(){
           this.$Progress.start()
@@ -279,64 +142,10 @@
             //  finish the progress bar
             this.$Progress.finish()
           })
-          this.getCategories();
-          this.getSubCategories();
-          this.getBrands();
-          this.getDiscounts();
-          // Vue.set(app.$data, 'b', 2);
-          // Vue.set(this.$data, 'page', 1)
         },
         mixins: [hasUrl]
     }
 </script>
-<!-- //https://www.npmjs.com/package/vue-dynamic-forms -->
-<!-- //https://www.youtube.com/watch?v=yFduo7kFbBM -->
 <style>
-  .error{
-      font-size: 12px;
-      color: red;
-  }
-  .has-error{
-    animation-name: shakeError;
-    animation-fill-mode: forward;
-    animation-duration: .6s;
-    animation-timing-function: ease-in-out;
-  }
-  .has-error input{
-    border-color: #f79483;
-    
-  }
-  .has-error > .form-control:focus{
-    color: #495057;
-    background-color: #fff;
-    border-color: #ff9d9d;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgb(236, 176, 176);
-
-  }
-
-  .has-error {
-  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
-}
-
-@keyframes shake {
-  10%, 90% {
-    transform: translate3d(-1px, 0, 0);
-  }
-  
-  20%, 80% {
-    transform: translate3d(2px, 0, 0);
-  }
-
-  30%, 50%, 70% {
-    transform: translate3d(-4px, 0, 0);
-  }
-
-  40%, 60% {
-    transform: translate3d(4px, 0, 0);
-  }
-}
+ 
 </style>

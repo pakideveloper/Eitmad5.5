@@ -9,6 +9,7 @@
     <script src="{{URL::to('public/bootstrap-4.1')}}/assets/js/vendor/popper.min.js"></script>
     <script src="{{URL::to('public/bootstrap-4.1')}}/js/bootstrap.min.js"></script>
 
+
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <script>
@@ -63,5 +64,8 @@
       });
     </script>
     <!-- dropdown  -->
+
+    <!-- taginput -->
+     <script src="{{URL::to('public/bootstrap-4.1')}}/js/tagsinput.js"></script>
   </body>
 </html>
