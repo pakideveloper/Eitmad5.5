@@ -476,6 +476,7 @@
 <input type='hidden' name='phone' value='{{$users->contact_number}}' />
 <input type="hidden" name="_token" value='{{ csrf_token() }}' />
 <input type="hidden" name="payment" value='' />
+<input type="hidden" name="total" value='{{$cart_item->total}}' />
 
                   @endforeach
                             

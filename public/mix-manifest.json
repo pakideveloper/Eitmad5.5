@@ -1,3 +1,7 @@
 {
+<<<<<<< HEAD
     "/js/userdashboard.js": "/js/userdashboard.js"
+=======
+    "/js/vendorDashboard.js": "/js/vendorDashboard.js"
+>>>>>>> 235404c9a4cd31d747a953ffaddea3ba6df071c7
 }
