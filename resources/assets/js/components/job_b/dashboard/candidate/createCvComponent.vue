@@ -1,39 +1,11 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
-
-    <title>Candidate CV</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="{{URL::to('public/bootstrap-4.1')}}/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="{{URL::to('public/bootstrap-4.1')}}/css/dashboard.css" rel="stylesheet">
-  </head>
-
-
-<!-- header start -->
-@include('frontend/JobPortal/dashboards/candidate/include/header')
-  <!-- header end -->
-  <!-- Sidebaar -->
-@include('frontend/JobPortal/dashboards/candidate/include/left-sidebar')
-<!-- sidebar end -->
-
-
-<!-- CV form starts here -->
-
-<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+<template>
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
 	    <div class="container col-lg-10 bg-light "style="margin-top: 40px;">
-	    	<form action="#" method="post" >
 			<div class="row">
 				<div class="dark-grey col-lg-12" style="text-align: center;" >
 					<h3>Create Your CV</h3>
 				</div>
+			
 				<div class=" form-group col-lg-6">
 					<label>First Name</label>
 					<input type="" name="" class="form-control" id="" value="">
@@ -52,7 +24,8 @@
 				</div>
 				<div class="form-group col-lg-6">
 					<label>Father Name</label>
-					<input type="text" name="" class="form-control">					
+					<input type="text" name="" class="form-control">
+					
 				</div>
 				<div class="form-group col-lg-6">
 					<label>Date Of Birth</label>
@@ -137,10 +110,12 @@
 						<option value="">Entry Level</option>
 						<option value="">Experienced</option>
 						<option value="">Profesional</option>
-						<option value="">Managerial </option>							
-					</select>					
+						<option value="">Managerial </option>
+							
+					</select>
+					
 				</div>
-				<div class="form-group col-lg-6">
+					<div class="form-group col-lg-6">
 					<label>Industry</label>
 					<select class="form-control selectpicker">
 						<option value="">Select One Industry</option>
@@ -150,22 +125,11 @@
 						<option value="">Textiles</option>
 						<option value="">Electronics </option>
 							
-					</select>				
+					</select>
+					
 				</div>
 				<div class="form-group col-lg-6">
-					<label>Functional Area</label>
-					<select class="form-control selectpicker">
-						<option value="">Select One Industry</option>
-						<option value="">IT</option>
-						<option value="">Telecome</option>
-						<option value="">Engineering</option>
-						<option value="">Textiles</option>
-						<option value="">Electronics </option>
-							
-					</select>				
-				</div>
-				<div class="form-group col-lg-6">
-				    <label>Current Salary</label>
+					<label>Current Salary</label>
 					<select class="form-control selectpicker">
 						<option value="">Select One</option>
 						<option value="">10000 - 20000</option>
@@ -194,112 +158,122 @@
 					<input type="Submit" name="" class="btn btn-secondary active" value="Submit">
 					<input type="reset" name="" class="btn btn-outline-secondary" value="Cancel">
 						
-				</div>				
+				</div>
+				
 			</div>
-			</form>
+
+
+         
+
 		</div>
         
        <!--  <div class="container bg-light col-lg-10" style="margin-top: 20px; text-align: right;">
      			<p class="fa fa-plus-square-o" @click="btnClicked"> Add More </p>
          </div> -->
-		<div class="container col-lg-10 col-md-10 bg-light"  style="margin-top: 20px; ">
+		<div class="container col-lg-10 bg-light"  style="margin-top: 20px; ">
 			<div class="row">
 			 
-			<div class="bg-info text-white  col-lg-12 col-md-12 fa fa-plus-square-o" 
-			style="float:right; text-align: right; line-height: 40px; vertical-align: middle; font-size: 20px; margin-bottom:20px;" @click="btnClicked" id="add_edu_btn"> <b>ADD MORE EDUCATION</b></div>
+			<div class="bg-info text-white  col-lg-12 col-md-12 fa fa-plus-square-o" style="float:right; text-align: right; line-height: 30px; vertical-align: middle; margin-bottom: : 20px;" @click="btnClicked" id="add_edu_btn"> <b>ADD MORE EDUCATION</b></div>
 			<!-- <div class="col-lg-1 col-md-1" style="text-align: center;" ><p style=" float: right; text-align: center;"> Education</p></div> -->
-			</div>
-			<form action="#" method="post" >	
+			</div>	
 			<div class="row" id="add_edu_form" style="display:none;" >
 			   
-			   <div class="dark-grey col-lg-12 col-md-12" style="text-align: center;" >
+			   <div class="dark-grey col-lg-12" style="text-align: center;" >
 					<h4>Education</h4>
-				</div>				
-					<div class="form-group col-lg-6">
-						<label>Degree Level</label>
-						<select class="form-control selectpicker">
-							<option value="">Select One</option>
-							<option value="">Non-Matriculation</option>
-							<option value="">Matriculation / O-Level</option>
-							<option value="">Inter / A-Level </option>
-							<option value="">Bachelors-14years</option>	
-							<option value="">Bachelors-16years</option>
-							<option value="">Masters-16years</option>
-							<option value="">Masters-18years</option>			
-						</select>	
-					</div>
-					<div class="form-group col-lg-6">
-						<label>Degree Type</label>
-						<select class="form-control selectpicker">
-							<option value="">Select One</option>
-							<option value="">Type-A</option>
-							<option value="">Type-B</option>
-							<option value="">Type-C</option>
-							<option value="">Type-D</option>
-							<option value="">Type-E</option>
-						</select>	
-					</div>
-					<div class="form-group col-lg-6">
-						<label>Degree Title</label>
-						<input type="text" name="" class="form-control">
-					</div>
-					<div class="form-group col-lg-6">
-						<label>Major Subjects</label>
-						<input type="text" name="" class="form-control">
-					</div>
-					<div class="form-group col-lg-6">
-						<label>Institute </label>
-						<input type="text" name="" class="form-control">
-					</div>
-					<div class="form-group col-lg-6">
-						<label>Result Type</label>
-						<select class="form-control selectpicker">
-							<option value="">Select One</option>
-							<option value="">CGPA</option>
-							<option value="">Grade</option>
-							<option value="">Percentage</option>
-					
-						</select>	
-					</div>
-	             	<div class="form-group col-lg-6">
-						<label>Completion Year</label>
-						<select class="form-control selectpicker">
-							<option value="">Select One</option>
-							<option value="">2005</option>
-							<option value="">2006</option>
-							<option value="">2007</option>
-							<option value="">2008</option>
-							<option value="">2009</option>
-						</select>	
-					</div>
-			     	<div class="form-group col-lg-6">
-						<label>Result Type</label>
-						<select class="form-control selectpicker">
-							<option value="">Select One</option>
-							<option value="">CGPA</option>
-							<option value="">Grade</option>
-							<option value="">Percentage </option>
-						</select>	
-					</div>
-		         	<div class="form-group col-lg-6">
-						<input type="Submit" name="" class="btn btn-secondary active" value="Submit">
-						<input type="reset" name="" class="btn btn-outline-secondary" value="Cancel">		
-					</div>
+				</div>
+				<div class="form-group col-lg-6">
+					<label>Degree Level</label>
+					<select class="form-control selectpicker">
+						<option value="">Select One</option>
+						<option value="">Non-Matriculation</option>
+						<option value="">Matriculation / O-Level</option>
+						<option value="">Inter / A-Level </option>
+						<option value="">Bachelors-14years</option>	
+						<option value="">Bachelors-16years</option>
+						<option value="">Masters-16years</option>
+						<option value="">Masters-18years</option>			
+					</select>	
+				</div>
+				<div class="form-group col-lg-6">
+					<label>Degree Type</label>
+					<select class="form-control selectpicker">
+						<option value="">Select One</option>
+						<option value="">Type-A</option>
+						<option value="">Type-B</option>
+						<option value="">Type-C</option>
+						<option value="">Type-D</option>
+						<option value="">Type-E</option>
+					</select>	
+				</div>
+				<div class="form-group col-lg-6">
+					<label>Degree Title</label>
+					<input type="text" name="" class="form-control">
+				</div>
+				<div class="form-group col-lg-6">
+					<label>Major Subjects</label>
+					<input type="text" name="" class="form-control">
+				</div>
+				<div class="form-group col-lg-6">
+					<label>Institute </label>
+					<input type="text" name="" class="form-control">
+				</div>
+				<div class="form-group col-lg-6">
+					<label>Result Type</label>
+					<select class="form-control selectpicker">
+						<option value="">Select One</option>
+						<option value="">CGPA</option>
+						<option value="">Grade</option>
+						<option value="">Percentage</option>
+				
+					</select>	
+				</div>
+                 <div class="form-group col-lg-6">
+					<label>Completion Year</label>
+					<select class="form-control selectpicker">
+						<option value="">Select One</option>
+						<option value="">2005</option>
+						<option value="">2006</option>
+						<option value="">2007</option>
+						<option value="">2008</option>
+						<option value="">2009</option>
+					</select>	
+				</div>
+			     <div class="form-group col-lg-6">
+					<label>Result Type</label>
+					<select class="form-control selectpicker">
+						<option value="">Select One</option>
+						<option value="">CGPA</option>
+						<option value="">Grade</option>
+						<option value="">Percentage </option>
+					</select>	
+				</div>
+		         <div class="form-group col-lg-6">
+				
+					<input type="Submit" name="" class="btn btn-secondary active" value="Submit">
+					<input type="reset" name="" class="btn btn-outline-secondary" value="Cancel">
+						
+				</div>
 			</div>
-			</form>
 		</div>
 	</main>	
+</template>
 
-<!-- footer start -->
-@include('frontend/JobPortal/dashboards/candidate/include/footer')
-<!--footer end -->
-
-  </body>
-</html>
 <script>
+    export default {
+        mounted() {
+            console.log('Component mounted.')
+        },
+        data() {
+          return {}
+      },
+      methods: {
+      	btnClicked(){
+      		$("#add_edu_form , #add_edu_btn").toggle(500);
+      	}
+      }
+    }
 
     $("#add_edu_btn").click(function(){
-    	$("#add_edu_form").toggle(500);
         
     });
 

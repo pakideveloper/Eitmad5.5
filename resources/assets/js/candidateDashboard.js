@@ -10,8 +10,6 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import VueRouter from 'vue-router'
-import Vuelidate from 'vuelidate'
-Vue.use(Vuelidate)
 
 Vue.use(VueRouter)
 
@@ -21,17 +19,22 @@ Vue.use(VueRouter)
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const index = require('./components/ecom_vendor/dashboard/indexComponent.vue');
-const addProduct = require('./components/ecom_vendor/dashboard/addProductComponent.vue');
+const index = require('./components/job_b/dashboard/candidate/indexComponent.vue');
+const createCv = require('./components/job_b/dashboard/candidate/createCvComponent.vue');
+const editcv = require('./components/job_b/dashboard/candidate/editCvComponent.vue');
 
 const routes = [
 	{
-	path:'/Eitmad5.5/ecommerce/vendor/dashboard',
+	path:'/Eitmad5.5/jobs/candidate/dashboard',
 	component: index
 	},
 	{
-	path:'/Eitmad5.5/ecommerce/vendor/add-product',
-	component: addProduct
+	path:'/Eitmad5.5/jobs/candidate/createCv',
+	component: createCv
+	},
+	{
+	path:'/Eitmad5.5/jobs/candidate/editCv',
+	component: editcv
 	},
 ];
 
@@ -41,7 +44,7 @@ const router = new VueRouter({
 });
 
 const app = new Vue({
-    el: '#dashboard_app',
+    el: '#candidate_dashboard_app',
     router,
 });
 global.app = app;
