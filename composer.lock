@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e3b7350b0ca651425ab644f9a5d01974",
+    "content-hash": "a4ccc0aee18c4bfd8ed322eb12677079",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -319,6 +319,28 @@
                 "trusted proxy"
             ],
             "time": "2017-06-15T17:19:42+00:00"
+        },
+        {
+            "name": "finaldream/w3-total-cache",
+            "version": "0.9.4.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/finaldream/w3-total-cache.git",
+                "reference": "0836d8151a9d421ce1cc91ef1f01c3903f1d2930"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/finaldream/w3-total-cache/zipball/0836d8151a9d421ce1cc91ef1f01c3903f1d2930",
+                "reference": "0836d8151a9d421ce1cc91ef1f01c3903f1d2930",
+                "shasum": ""
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "ICS"
+            ],
+            "description": "Updated W3 Total Cache with Composer support",
+            "time": "2016-09-20T17:21:33+00:00"
         },
         {
             "name": "gloudemans/shoppingcart",

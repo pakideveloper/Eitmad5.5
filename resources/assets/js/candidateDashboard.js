@@ -8,6 +8,7 @@
 require('./bootstrap');
 
 window.Vue = require('vue');
+
 import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
@@ -18,20 +19,32 @@ Vue.use(VueRouter)
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-// Vue.component('example-component', require('./components/ExampleComponent.vue'));
-const example = require('./components/ExampleComponent.vue');
+const index = require('./components/job_b/dashboard/candidate/indexComponent.vue');
+const createCv = require('./components/job_b/dashboard/candidate/createCvComponent.vue');
+const editcv = require('./components/job_b/dashboard/candidate/editCvComponent.vue');
+
 const routes = [
 	{
-		path: '/example',
-		component: example
-	}
+	path:'/Eitmad5.5/jobs/candidate/dashboard',
+	component: index
+	},
+	{
+	path:'/Eitmad5.5/jobs/candidate/createCv',
+	component: createCv
+	},
+	{
+	path:'/Eitmad5.5/jobs/candidate/editCv',
+	component: editcv
+	},
 ];
 
 const router = new VueRouter({
 	mode:'history',
 	routes
-})
+});
+
 const app = new Vue({
-    el: '#company_dashboard_app',
+    el: '#candidate_dashboard_app',
     router,
 });
+global.app = app;

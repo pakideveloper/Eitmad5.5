@@ -25,9 +25,7 @@
       
     	<div class="container">
       	<a class="logo" href="http://localhost/Eitmad5.5" style="font-size: 47px; top: 8px;
-    left: 18px;">
-    <img src="public/frontend/ecommerce/assets/img/Eitmadweblogo.png" alt="Bushido"/>
-    <!-- <span style="
+    left: 18px;"><!-- <img src="http://localhost/Eitmad5.5/public/frontend/ecommerce/assets/img/logo.png" alt="Bushido"/> --><span style="
     color: #4dfb4d;
 ">E</span><span style="
     color: #a772ff;
@@ -35,8 +33,7 @@
     color: red;
 ">m</span><span style="
     color: yellow;
-">a</span><span>d</span> -->
-</a>
+">a</span><span>d</span></a>
         
         <!--Language / Currency Switchers-->
         <ul class="switchers">

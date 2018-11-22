@@ -33,4 +33,3 @@ Route::get('/getDiscounts', function(){
 	$discounts = App\Discount::all();
 	return $discounts;
 });
-Route::Resource('product','Ecommerce\Vendor\ProductController');

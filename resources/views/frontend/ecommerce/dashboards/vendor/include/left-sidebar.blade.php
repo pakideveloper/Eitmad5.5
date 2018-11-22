@@ -12,7 +12,7 @@
                 </a>
                 <ul class="nav flex-column is-sub">                  
                   <li>
-                      <router-link  to="products" class="nav-link">Manage Products</router-link>
+                      <router-link  to="add-product" class="nav-link">Manage Products</router-link>
                     
                   </li>
                   <li>
