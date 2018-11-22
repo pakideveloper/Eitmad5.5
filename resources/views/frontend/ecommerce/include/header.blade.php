@@ -12,7 +12,7 @@
       	<div class="container">
           <div class="close-search"><i class="icon-delete"></i></div>
             <div class="form-group">
-              <label class="sr-only" for="search-hd">Search for procuct</label>
+              <label class="sr-only" for="search-hd">Search for product</label>
               <input type="text" class="form-control" name="search-hd" id="search-hd" placeholder="Search for procuct">
               <button type="submit"><i class="icon-magnifier"></i></button>
           </div>
@@ -62,7 +62,7 @@
         <!--Main Menu-->
         <nav class="menu">
           <ul class="main">
-          	<li class="has-submenu"><a href="{{url('/ecommerce')}}">Home<i class="fa fa-chevron-down"></i></a><!--Class "has-submenu" for proper highlighting and dropdown-->
+          	<li class="has-submenu"><a href="{{url('/ecommerce')}}">Homesss<i class="fa fa-chevron-down"></i></a><!--Class "has-submenu" for proper highlighting and dropdown-->
             	<ul class="submenu">
               	<li><a href="index.html">Home - Slideshow</a></li>
               	<li><a href="home-fullscreen.html">Home - Fullscreen Slider</a></li>
