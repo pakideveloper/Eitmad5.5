@@ -4,20 +4,15 @@
               <li class="nav-item">
                 <router-link  to="dashboard" class="nav-link"><span data-feather="shopping-cart"></span>&nbsp;Dasboard</router-link>
               </li>
-              <li class="nav-item">
-                <router-link  to="profile" class="nav-link"><span data-feather="user"></span>&nbsp;Profile</router-link>
-              </li>
               <li class="nav-item has-sub">
-               
-
                 <a class="nav-link" href="JavaScript:void(0)">
-                  <span data-feather="user" ></span>
-                  Product
+                  <span data-feather="user"></span>
+                  Jobs
                   <span class="positive">+</span>
                 </a>
                 <ul class="nav flex-column is-sub">                  
                   <li>
-                      <router-link  to="add-product1" class="nav-link">Manage Products</router-link>
+                      <router-link  :to="CompanyDashboardRoute +'/add-job'" exact class="nav-link">Post A Job </router-link>
                     
                   </li>
                   <li>

@@ -1,7 +1,5 @@
     <!-- vue js -->
-    <!-- <script src="{{URL::to('public/js')}}/vendordashboard.js"></script> -->
-    <!-- <script src="{{URL::to('public/js')}}/app.js"></script> -->
-    <script src="{{URL::to('public/js')}}/userdashboard.js"></script>
+    <script src="{{URL::to('public/js')}}/companydashboard.js"></script>
     <!-- vue js -->
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -11,6 +9,7 @@
     <script src="{{URL::to('public/bootstrap-4.1')}}/assets/js/vendor/popper.min.js"></script>
     <script src="{{URL::to('public/bootstrap-4.1')}}/js/bootstrap.min.js"></script>
 
+
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <script>
@@ -18,35 +17,35 @@
     </script>
 
     <!-- Graphs -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
     <script>
-      // var ctx = document.getElementById("myChart");
-      // var myChart = new Chart(ctx, {
-      //   type: 'line',
-      //   data: {
-      //     labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      //     datasets: [{
-      //       data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-      //       lineTension: 0,
-      //       backgroundColor: 'transparent',
-      //       borderColor: '#007bff',
-      //       borderWidth: 4,
-      //       pointBackgroundColor: '#007bff'
-      //     }]
-      //   },
-      //   options: {
-      //     scales: {
-      //       yAxes: [{
-      //         ticks: {
-      //           beginAtZero: false
-      //         }
-      //       }]
-      //     },
-      //     legend: {
-      //       display: false,
-      //     }
-      //   }
-      // });
+      var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          datasets: [{
+            data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+            lineTension: 0,
+            backgroundColor: 'transparent',
+            borderColor: '#007bff',
+            borderWidth: 4,
+            pointBackgroundColor: '#007bff'
+          }]
+        },
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: false
+              }
+            }]
+          },
+          legend: {
+            display: false,
+          }
+        }
+      });
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- dropdown  -->
@@ -65,5 +64,8 @@
       });
     </script>
     <!-- dropdown  -->
+
+    <!-- taginput -->
+     <script src="{{URL::to('public/bootstrap-4.1')}}/js/tagsinput.js"></script>
   </body>
 </html>
