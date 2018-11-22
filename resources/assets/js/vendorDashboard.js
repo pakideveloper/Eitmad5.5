@@ -10,8 +10,8 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import VueRouter from 'vue-router'
-import Vuelidate from 'vuelidate'
-Vue.use(Vuelidate)
+// import Vuelidate from 'vuelidate'
+// Vue.use(Vuelidate)
 
 Vue.use(VueRouter)
 Vue.component('examplecomponent', require('./components/ExampleComponent.vue'));
@@ -46,4 +46,4 @@ const app = new Vue({
     el: '#dashboard_app',
     router,
 });
-// global.app = app;
+global.app = app;

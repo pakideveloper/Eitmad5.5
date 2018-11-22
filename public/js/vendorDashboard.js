@@ -1165,8 +1165,7 @@ module.exports = __webpack_require__(15);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(45);
-throw new Error("Cannot find module \"vuelidate\"");
+/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue_router__ = __webpack_require__(45);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -1179,8 +1178,8 @@ __webpack_require__(18);
 window.Vue = __webpack_require__(42);
 
 
-
-Vue.use(__WEBPACK_IMPORTED_MODULE_1_vuelidate___default.a);
+// import Vuelidate from 'vuelidate'
+// Vue.use(Vuelidate)
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]);
 Vue.component('examplecomponent', __webpack_require__(66));
@@ -1210,7 +1209,8 @@ var app = new Vue({
 	el: '#dashboard_app',
 	router: router
 });
-// global.app = app;
+global.app = app;
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(1)))
 
 /***/ }),
 /* 16 */,

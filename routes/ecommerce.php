@@ -15,6 +15,11 @@ Route::get('/', function () {
 	$slider = App\Slider::latest()->get();
     return view('frontend/ecommerce/modules/index',compact('slider'));
 });
+Auth::routes();
+
+Route::get('/home', function () {
+    return view('frontend/general/index');
+});
 
 Route::get('/items', function () {
 
@@ -86,6 +91,13 @@ Route::post('/banktransfer', function () {
     /*dasboard*/
     Route::get('vendor/dashboard','Ecommerce\Vendor\VendorController@dashboard');
     Route::get('user/dashboard','Ecommerce\User\UserController@dashboard');
+    Route::post('/profile','Ecommerce\User\UserController@profileEdit');
+    Route::get('/myorders','Ecommerce\User\UserController@Order');
+   Route::get('/changepassword', function () {
+    return view('frontend/ecommerce/dashboards/User/modules/changePassword');
+    });
+   Route::post('/passwordchange','Ecommerce\User\UserController@changePass');
+
     Route::get('/{vue_capture?}', function () { return redirect()->back(); })->where('vue_capture', '[\/\w\.-]*');
 
     //add product

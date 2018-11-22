@@ -13,21 +13,14 @@ mix.webpackConfig({ node: { fs: 'empty' }})
  */
 
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
-mix.js('resources/assets/js/vendorDashboard.js', 'public/js');
+ // mix.js('resources/assets/js/app.js', 'public/js')
+ //   .sass('resources/assets/sass/app.scss', 'public/css');
+// mix.js('resources/assets/js/vendorDashboard.js', 'public/js');
 mix.js('resources/assets/js/userdashboard.js', 'public/js');
 
 // mix.js('resources/assets/js/app.js', 'public/js')
 //    .sass('resources/assets/sass/app.scss', 'public/css');
-<<<<<<< HEAD
-mix.js('resources/assets/js/vendorDashboard.js', 'public/js');
-mix.js('resources/assets/js/companydashboard.js', 'public/js');
-=======
+// mix.js('resources/assets/js/companydashboard.js', 'public/js');
 // mix.js('resources/assets/js/vendorDashboard.js', 'public/js');
-mix.js('resources/assets/js/candidateDashboard.js', 'public/js');
-<<<<<<< HEAD
+// mix.js('resources/assets/js/candidateDashboard.js', 'public/js');
 
-=======
->>>>>>> 649b538bff352a49d841b7fc30d08d0731929910
->>>>>>> a4f2af26ca22e7c09e6430bd8c3b7be43ff69db4
