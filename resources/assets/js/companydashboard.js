@@ -15,6 +15,12 @@ Vue.use(Vuelidate)
 
 Vue.use(VueRouter)
 
+// import VueProgressBar from 'vue-progressbar'
+// Vue.use(VueProgressBar, {
+//   color: 'rgb(143, 255, 199)',
+//   failedColor: 'red',
+//   height: '4px'
+// })
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -57,5 +63,5 @@ const app = new Vue({
 	  // 		CompanyDashboardRoute : '/Eitmad5.5/jobs/company/dashboard',
 	  // },
     router,
-});
-global.app = app;
+}).$mount('#CompanyDashboard');
+// global.app = app;
