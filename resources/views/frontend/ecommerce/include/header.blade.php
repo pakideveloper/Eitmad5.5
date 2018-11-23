@@ -99,7 +99,7 @@
           	<li class="has-submenu"><a href="#">Pages<span class="label">NEW</span><i class="fa fa-chevron-down"></i></a>
             	<ul class="submenu">
               	<li><a href="{{ route('register') }}">Login / Registration</a></li>
-                <li><a href="account-personal-info.html">Account: Personal Info<span class="label">NEW</span></a></li>
+                <li><a href="{{ url('ecommerce/become-seller') }}">Become a Seller<span class="label">NEW</span></a></li>
                 <li><a href="account-addresses.html">Account: Addresses<span class="label">NEW</span></a></li>
                 <li><a href="order-history.html">Orders History<span class="label">NEW</span></a></li>
                 <li><a href="order-tracking.html">Order Tracking<span class="label">NEW</span></a></li>
