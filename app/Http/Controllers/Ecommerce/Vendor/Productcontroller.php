@@ -14,7 +14,12 @@ class Productcontroller extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::latest()->get();
+        foreach ($products as $key => $value) {
+            $products->title_img = $value->title_image;
+            $products->discount = $value->discount;
+        }
+        return $products;
     }
 
     /**
