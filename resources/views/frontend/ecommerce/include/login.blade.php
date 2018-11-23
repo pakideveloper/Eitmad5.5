@@ -13,7 +13,7 @@
             </div>
           </div>
           <div class="modal-body">
-          <form class="login-form">
+          <form class="login-form" action="{{route('login')}}">
             <div class="form-group group">
             	<label for="log-email">Email</label>
               <input type="email" class="form-control" name="log-email" id="log-email" placeholder="Enter your email" required>

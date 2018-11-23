@@ -178,12 +178,22 @@
         <!--Toolbar-->
         <div class="toolbar group">
           <button class="search-btn btn-outlined-invert"><i class="icon-magnifier"></i></button>
-          <div class="middle-btns">
+
+
+          <!-- <div class="middle-btns">
             <a class="btn-outlined-invert" href=""><i class="icon-heart"></i> <span>Sign Up</span></a>            
             <a class="login-btn btn-outlined-invert" href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-profile"></i> <span>Login</span></a>
             
             <form id="logout-form" action="" method="POST" style="display: none;">{{ csrf_field() }}</form>
             
+          </div> -->
+          <div class="middle-btns">
+            <a class="btn-outlined-invert" href="{{url('/ecommerce/wishlist')}}"><i class="icon-heart"></i> <span>Wishlist</span></a>
+            @if (Auth::guest())
+            <a class="login-btn btn-outlined-invert" href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-profile"></i> <span>Login</span></a>
+            @else
+            <a class="login-btn btn-outlined-invert" href="#" ><i class="icon-profile"></i> <span>{{ Auth::user()->first_name }}</span></a>
+            @endif
           </div>
          
         </div><!--Toolbar Close-->
