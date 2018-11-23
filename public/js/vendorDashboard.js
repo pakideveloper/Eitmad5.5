@@ -48986,15 +48986,20 @@ if (false) {
 /* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(82)
+}
 var normalizeComponent = __webpack_require__(4)
 /* script */
-var __vue_script__ = null
+var __vue_script__ = __webpack_require__(84)
 /* template */
-var __vue_template__ = null
+var __vue_template__ = __webpack_require__(85)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -49009,8 +49014,259 @@ var Component = normalizeComponent(
 )
 Component.options.__file = "resources/assets/js/components/ecom_vendor/dashboard/viewAllProductsComponent.vue"
 
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-00eeba33", Component.options)
+  } else {
+    hotAPI.reload("data-v-00eeba33", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
 module.exports = Component.exports
 
+
+/***/ }),
+/* 82 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(83);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(13)("0add28c2", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-00eeba33\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./viewAllProductsComponent.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-00eeba33\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./viewAllProductsComponent.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(12)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.product{\n  text-align: center;\n  border: 1px solid #c3c3c3;\n  cursor: pointer;\n}\n.product > img{\n  width: 112px;\n}\n.product > .discount{\n  position: absolute;\n  right: 0;\n  padding: 10px;\n  font-size: 17px;\n  color: #ffa700;\n  font-family: fantasy;\n  border: 1px solid #c3c3c3;\n}\n.product > .price{\n  font-size: 17px;\n  padding-left: 9px;\n  color: red;\n}\n.product > strike{\n  font-size: 14px;\n}\n.product > hr{\n  border-top: 2px solid rgb(195, 195, 195);\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 84 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__hasUrl__ = __webpack_require__(14);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  mounted: function mounted() {
+    //  [App.vue specific] When App.vue is finish loading finish the progress bar
+    this.$Progress.finish();
+  },
+  data: function data() {
+    return {
+      products: []
+    };
+  },
+
+
+  methods: {
+    getProducts: function getProducts() {
+      var _this = this;
+
+      axios.get(this.url + '/product').then(function (_ref) {
+        var data = _ref.data;
+
+        _this.products = data;
+      });
+    },
+    singleProduct: function singleProduct() {
+      this.$router.push({ path: 'add-product' });
+    }
+  },
+  created: function created() {
+    var _this2 = this;
+
+    this.$Progress.start();
+    this.getProducts();
+    this.$router.beforeEach(function (to, from, next) {
+      //  does the page we want to go to have a meta.progress object
+      if (to.meta.progress !== undefined) {
+        var meta = to.meta.progress;
+        // parse meta tags
+        _this2.$Progress.parseMeta(meta);
+      }
+      //  start the progress bar
+      _this2.$Progress.start();
+      //  continue to next page
+      next();
+    });
+    //  hook the progress bar to finish after we've finished moving router-view
+    this.$router.afterEach(function (to, from) {
+      //  finish the progress bar
+      _this2.$Progress.finish();
+    });
+  },
+
+  mixins: [__WEBPACK_IMPORTED_MODULE_0__hasUrl__["a" /* default */]]
+});
+
+/***/ }),
+/* 85 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "main",
+    {
+      staticClass: "col-md-9 ml-sm-auto col-lg-10 px-4",
+      attrs: { role: "main" }
+    },
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "row" },
+        _vm._l(_vm.products, function(product) {
+          return _c(
+            "div",
+            {
+              staticClass: "col-md-3 col-sm-6 col-xs-12 product",
+              on: { click: _vm.singleProduct }
+            },
+            [
+              _c("span", { staticClass: "discount" }, [
+                _vm._v(_vm._s(product.discount.discount_percent) + "%")
+              ]),
+              _vm._v(" "),
+              _c("img", {
+                attrs: {
+                  src:
+                    "http://localhost/Eitmad5.5/public/admin/ecommerce/upload/products/" +
+                    product.title_image.product_file_name
+                }
+              }),
+              _vm._v(" "),
+              _c("hr"),
+              _vm._v(" "),
+              _c("h5", [_vm._v(_vm._s(product.product_name))]),
+              _vm._v(" "),
+              _c("strike", [_vm._v("Rs." + _vm._s(product.product_price))]),
+              _vm._v(" "),
+              _c("span", { staticClass: "price" }, [
+                _vm._v("Rs." + _vm._s(product.product_discounted_price))
+              ])
+            ],
+            1
+          )
+        })
+      )
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+      },
+      [
+        _c("h1", { staticClass: "h2" }, [_vm._v("All Product")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "btn-toolbar mb-2 mb-md-0" }, [
+          _c("div", { staticClass: "btn-group mr-2" }, [
+            _c("button", { staticClass: "btn btn-sm btn-outline-secondary" }, [
+              _vm._v("Share")
+            ]),
+            _vm._v(" "),
+            _c("button", { staticClass: "btn btn-sm btn-outline-secondary" }, [
+              _vm._v("Export")
+            ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "button",
+            { staticClass: "btn btn-sm btn-outline-secondary dropdown-toggle" },
+            [
+              _c("span", { attrs: { "data-feather": "calendar" } }),
+              _vm._v("\n      This week\n      ")
+            ]
+          )
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-00eeba33", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
