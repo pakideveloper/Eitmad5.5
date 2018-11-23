@@ -81,7 +81,7 @@ Object.defineProperty(exports, "withParams", {
 });
 exports.regex = exports.ref = exports.len = exports.req = void 0;
 
-var _withParams = _interopRequireDefault(__webpack_require__(55));
+var _withParams = _interopRequireDefault(__webpack_require__(56));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -47227,7 +47227,7 @@ var normalizeComponent = __webpack_require__(11)
 /* script */
 var __vue_script__ = __webpack_require__(52)
 /* template */
-var __vue_template__ = __webpack_require__(77)
+var __vue_template__ = __webpack_require__(78)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -47300,7 +47300,7 @@ exports = module.exports = __webpack_require__(49)(false);
 
 
 // module
-exports.push([module.i, "\n.form-group.required .control-label[data-v-b880f65c]:after { \n    color: #d00;\n    content: \"*\";\n    position: absolute;\n    margin-left: 2px;\n}\n", ""]);
+exports.push([module.i, "\n.form-group.required .control-label[data-v-b880f65c]:after { \n    color: #d00;\n    content: \"*\";\n    position: absolute;\n    margin-left: 2px;\n}\n.error[data-v-b880f65c]{\n      font-size: 12px;\n      color: red;\n}\n.has-error[data-v-b880f65c]{\n    animation-name: shakeError;\n    animation-fill-mode: forward;\n    animation-duration: .6s;\n    animation-timing-function: ease-in-out;\n}\n.has-error input[data-v-b880f65c]{\n    border-color: #f79483;\n}\n.has-error > .form-control[data-v-b880f65c]:focus{\n    color: #495057;\n    background-color: #fff;\n    border-color: #ff9d9d;\n    outline: 0;\n    box-shadow: 0 0 0 0.2rem rgb(236, 176, 176);\n}\n.has-error[data-v-b880f65c] {\n  animation: shake-data-v-b880f65c 0.82s cubic-bezier(.36,.07,.19,.97) both;\n  transform: translate3d(0, 0, 0);\n  backface-visibility: hidden;\n  perspective: 1000px;\n}\n@keyframes shake-data-v-b880f65c {\n10%, 90% {\n    transform: translate3d(-1px, 0, 0);\n}\n20%, 80% {\n    transform: translate3d(2px, 0, 0);\n}\n30%, 50%, 70% {\n    transform: translate3d(-4px, 0, 0);\n}\n40%, 60% {\n    transform: translate3d(4px, 0, 0);\n}\n}\n", ""]);
 
 // exports
 
@@ -47654,19 +47654,9 @@ module.exports = function listToStyles (parentId, list) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__hasUrl__ = __webpack_require__(78);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__hasUrl__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__);
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -47895,7 +47885,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     //this.$Progress.finish()
   },
   data: function data() {
-    return _defineProperty({
+    return {
       job_title: '',
       job_description: '',
       job_skills: [],
@@ -47916,8 +47906,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       specific_degree: '',
       job_year_of_experience_min: '',
       job_year_of_experience_max: '',
-      age_requirement_min: ''
-    }, 'age_requirement_min', '');
+      age_requirement_min: '',
+      age_requirement_max: ''
+    };
   },
 
   validations: {
@@ -47929,6 +47920,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     country: {
       required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"]
+
     },
     city_id: {
       required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"]
@@ -47937,12 +47929,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"]
     },
     job_salary_min_range: {
-      required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"],
-      between: Object(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["between"])(5000, 1000000)
+      required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"]
+
     },
     job_salary_max_range: {
-      required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"],
-      between: Object(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["between"])(5000, 1000000)
+      required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"]
+
     },
     job_no_of_position: {
       required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"],
@@ -47964,22 +47956,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     age_requirement_min: {
       required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"],
-      between: Object(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["between"])(18, 60)
+      between: Object(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["between"])(18, 30)
     },
     age_requirement_max: {
       required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"],
-      between: Object(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["between"])(18, 60)
+      between: Object(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["between"])(31, 60)
     }
   },
   methods: {
     submit: function submit() {
-      var _this = this;
-
       console.log(this.$v.$invalid);
       this.$v.$touch();
       if (!this.$v.$invalid) {
-        this.$Progress.start();
-        var endpoint = this.url + '/product';
+        //this.$Progress.start()
+        console.log(this.url);
+        var endpoint = this.url + '/add-job';
         var data = new FormData();
         data.append('job_title', this.job_title);
         data.append('job_description', this.job_description);
@@ -48002,15 +47993,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         data.append('job_year_of_experience_min', this.job_year_of_experience_min);
         data.append('job_year_of_experience_max', this.job_year_of_experience_max);
         data.append('age_requirement_min', this.age_requirement_min);
-        data.append('age_requirement_min', this.age_requirement_min);
+        data.append('age_requirement_max', this.age_requirement_max);
 
         axios.post(endpoint, data).then(function (response) {
-          if (response.status === 200) {
-            _this.$Progress.finish();
-          }
+          if (response.status === 200) {}
+          //this.$Progress.finish();
+
           // this.name = ' ';this.description = ' ';this.size = ' ';this.color = ' ';this.price = ' ';this.quantity = ' ';this.sliderImages = null;this.titleImage=null;
         }).catch(function (e) {
-          _this.$Progress.fail();
+          //this.$Progress.fail()
         });
       }
     }
@@ -48020,6 +48011,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 /* 53 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+  computed: {
+    url: function url() {
+      // `this` points to the vm instance
+      return "http://localhost:8080/Eitmad5.5/api/company";
+    }
+  }
+});
+
+/***/ }),
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48156,47 +48161,47 @@ Object.defineProperty(exports, "decimal", {
 });
 exports.helpers = void 0;
 
-var _alpha = _interopRequireDefault(__webpack_require__(54));
+var _alpha = _interopRequireDefault(__webpack_require__(55));
 
-var _alphaNum = _interopRequireDefault(__webpack_require__(57));
+var _alphaNum = _interopRequireDefault(__webpack_require__(58));
 
-var _numeric = _interopRequireDefault(__webpack_require__(58));
+var _numeric = _interopRequireDefault(__webpack_require__(59));
 
-var _between = _interopRequireDefault(__webpack_require__(59));
+var _between = _interopRequireDefault(__webpack_require__(60));
 
-var _email = _interopRequireDefault(__webpack_require__(60));
+var _email = _interopRequireDefault(__webpack_require__(61));
 
-var _ipAddress = _interopRequireDefault(__webpack_require__(61));
+var _ipAddress = _interopRequireDefault(__webpack_require__(62));
 
-var _macAddress = _interopRequireDefault(__webpack_require__(62));
+var _macAddress = _interopRequireDefault(__webpack_require__(63));
 
-var _maxLength = _interopRequireDefault(__webpack_require__(63));
+var _maxLength = _interopRequireDefault(__webpack_require__(64));
 
-var _minLength = _interopRequireDefault(__webpack_require__(64));
+var _minLength = _interopRequireDefault(__webpack_require__(65));
 
-var _required = _interopRequireDefault(__webpack_require__(65));
+var _required = _interopRequireDefault(__webpack_require__(66));
 
-var _requiredIf = _interopRequireDefault(__webpack_require__(66));
+var _requiredIf = _interopRequireDefault(__webpack_require__(67));
 
-var _requiredUnless = _interopRequireDefault(__webpack_require__(67));
+var _requiredUnless = _interopRequireDefault(__webpack_require__(68));
 
-var _sameAs = _interopRequireDefault(__webpack_require__(68));
+var _sameAs = _interopRequireDefault(__webpack_require__(69));
 
-var _url = _interopRequireDefault(__webpack_require__(69));
+var _url = _interopRequireDefault(__webpack_require__(70));
 
-var _or = _interopRequireDefault(__webpack_require__(70));
+var _or = _interopRequireDefault(__webpack_require__(71));
 
-var _and = _interopRequireDefault(__webpack_require__(71));
+var _and = _interopRequireDefault(__webpack_require__(72));
 
-var _not = _interopRequireDefault(__webpack_require__(72));
+var _not = _interopRequireDefault(__webpack_require__(73));
 
-var _minValue = _interopRequireDefault(__webpack_require__(73));
+var _minValue = _interopRequireDefault(__webpack_require__(74));
 
-var _maxValue = _interopRequireDefault(__webpack_require__(74));
+var _maxValue = _interopRequireDefault(__webpack_require__(75));
 
-var _integer = _interopRequireDefault(__webpack_require__(75));
+var _integer = _interopRequireDefault(__webpack_require__(76));
 
-var _decimal = _interopRequireDefault(__webpack_require__(76));
+var _decimal = _interopRequireDefault(__webpack_require__(77));
 
 var helpers = _interopRequireWildcard(__webpack_require__(0));
 
@@ -48207,7 +48212,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48225,7 +48230,7 @@ var _default = (0, _common.regex)('alpha', /^[a-zA-Z]*$/);
 exports.default = _default;
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48235,12 +48240,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var withParams = Object({"NODE_ENV":"development"}).BUILD === 'web' ? __webpack_require__(56).withParams : __webpack_require__(10).withParams;
+var withParams = Object({"NODE_ENV":"development"}).BUILD === 'web' ? __webpack_require__(57).withParams : __webpack_require__(10).withParams;
 var _default = withParams;
 exports.default = _default;
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48268,7 +48273,7 @@ exports.withParams = withParams;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48286,7 +48291,7 @@ var _default = (0, _common.regex)('alphaNum', /^[a-zA-Z0-9]*$/);
 exports.default = _default;
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48304,7 +48309,7 @@ var _default = (0, _common.regex)('numeric', /^[0-9]*$/);
 exports.default = _default;
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48330,7 +48335,7 @@ var _default = function _default(min, max) {
 exports.default = _default;
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48350,7 +48355,7 @@ var _default = (0, _common.regex)('email', emailRegex);
 exports.default = _default;
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48398,7 +48403,7 @@ var nibbleValid = function nibbleValid(nibble) {
 };
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48436,7 +48441,7 @@ var hexValid = function hexValid(hex) {
 };
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48461,7 +48466,7 @@ var _default = function _default(length) {
 exports.default = _default;
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48486,7 +48491,7 @@ var _default = function _default(length) {
 exports.default = _default;
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48506,7 +48511,7 @@ var _default = (0, _common.withParams)({
 exports.default = _default;
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48531,7 +48536,7 @@ var _default = function _default(prop) {
 exports.default = _default;
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48556,7 +48561,7 @@ var _default = function _default(prop) {
 exports.default = _default;
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48581,7 +48586,7 @@ var _default = function _default(equalTo) {
 exports.default = _default;
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48601,7 +48606,7 @@ var _default = (0, _common.regex)('url', urlRegex);
 exports.default = _default;
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48637,7 +48642,7 @@ var _default = function _default() {
 exports.default = _default;
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48673,7 +48678,7 @@ var _default = function _default() {
 exports.default = _default;
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48697,7 +48702,7 @@ var _default = function _default(validator) {
 exports.default = _default;
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48722,7 +48727,7 @@ var _default = function _default(min) {
 exports.default = _default;
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48747,7 +48752,7 @@ var _default = function _default(max) {
 exports.default = _default;
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48765,7 +48770,7 @@ var _default = (0, _common.regex)('integer', /^-?[0-9]*$/);
 exports.default = _default;
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -48783,7 +48788,7 @@ var _default = (0, _common.regex)('decimal', /^[-]?\d*(\.\d+)?$/);
 exports.default = _default;
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -48891,20 +48896,20 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.$v.job_title.$model,
-                          expression: "$v.job_title.$model"
+                          value: _vm.$v.job_description.$model,
+                          expression: "$v.job_description.$model"
                         }
                       ],
                       staticClass: "form-control",
                       attrs: { id: "job_description" },
-                      domProps: { value: _vm.$v.job_title.$model },
+                      domProps: { value: _vm.$v.job_description.$model },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
                           _vm.$set(
-                            _vm.$v.job_title,
+                            _vm.$v.job_description,
                             "$model",
                             $event.target.value
                           )
@@ -48930,8 +48935,8 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.$v.job_skills.$model,
-                        expression: "$v.job_skills.$model"
+                        value: _vm.job_skills,
+                        expression: "job_skills"
                       }
                     ],
                     staticClass: "form-control",
@@ -48942,17 +48947,13 @@ var render = function() {
                       placeholder: "",
                       "data-role": "tagsinput"
                     },
-                    domProps: { value: _vm.$v.job_skills.$model },
+                    domProps: { value: _vm.job_skills },
                     on: {
                       input: function($event) {
                         if ($event.target.composing) {
                           return
                         }
-                        _vm.$set(
-                          _vm.$v.job_skills,
-                          "$model",
-                          $event.target.value
-                        )
+                        _vm.job_skills = $event.target.value
                       }
                     }
                   })
@@ -49290,8 +49291,8 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.$v.job_cateory.$model,
-                              expression: "$v.job_cateory.$model"
+                              value: _vm.job_cateory,
+                              expression: "job_cateory"
                             }
                           ],
                           staticClass: "form-control",
@@ -49306,13 +49307,9 @@ var render = function() {
                                   var val = "_value" in o ? o._value : o.value
                                   return val
                                 })
-                              _vm.$set(
-                                _vm.$v.job_cateory,
-                                "$model",
-                                $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
-                              )
+                              _vm.job_cateory = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
                             }
                           }
                         },
@@ -49332,8 +49329,8 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.$v.job_sub_category_id.$model,
-                              expression: "$v.job_sub_category_id.$model"
+                              value: _vm.job_sub_category_id,
+                              expression: "job_sub_category_id"
                             }
                           ],
                           staticClass: "form-control",
@@ -49348,13 +49345,9 @@ var render = function() {
                                   var val = "_value" in o ? o._value : o.value
                                   return val
                                 })
-                              _vm.$set(
-                                _vm.$v.job_sub_category_id,
-                                "$model",
-                                $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
-                              )
+                              _vm.job_sub_category_id = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
                             }
                           }
                         },
@@ -49378,8 +49371,8 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.$v.job_type_id.$model,
-                              expression: "$v.job_type_id.$model"
+                              value: _vm.job_type_id,
+                              expression: "job_type_id"
                             }
                           ],
                           staticClass: "form-control",
@@ -49394,13 +49387,9 @@ var render = function() {
                                   var val = "_value" in o ? o._value : o.value
                                   return val
                                 })
-                              _vm.$set(
-                                _vm.$v.job_type_id,
-                                "$model",
-                                $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
-                              )
+                              _vm.job_type_id = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
                             }
                           }
                         },
@@ -49420,8 +49409,8 @@ var render = function() {
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.$v.job_shift.$model,
-                              expression: "$v.job_shift.$model"
+                              value: _vm.job_shift,
+                              expression: "job_shift"
                             }
                           ],
                           staticClass: "form-control",
@@ -49436,13 +49425,9 @@ var render = function() {
                                   var val = "_value" in o ? o._value : o.value
                                   return val
                                 })
-                              _vm.$set(
-                                _vm.$v.job_shift,
-                                "$model",
-                                $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
-                              )
+                              _vm.job_shift = $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
                             }
                           }
                         },
@@ -49464,8 +49449,8 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.$v.job_gender_preference.$model,
-                          expression: "$v.job_gender_preference.$model"
+                          value: _vm.job_gender_preference,
+                          expression: "job_gender_preference"
                         }
                       ],
                       staticClass: "form-control",
@@ -49480,13 +49465,9 @@ var render = function() {
                               var val = "_value" in o ? o._value : o.value
                               return val
                             })
-                          _vm.$set(
-                            _vm.$v.job_gender_preference,
-                            "$model",
-                            $event.target.multiple
-                              ? $$selectedVal
-                              : $$selectedVal[0]
-                          )
+                          _vm.job_gender_preference = $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
                         }
                       }
                     },
@@ -49702,8 +49683,8 @@ var render = function() {
                               {
                                 name: "model",
                                 rawName: "v-model",
-                                value: _vm.$v.degree_type_id.$model,
-                                expression: "$v.degree_type_id.$model"
+                                value: _vm.degree_type_id,
+                                expression: "degree_type_id"
                               }
                             ],
                             staticClass: "form-control",
@@ -49718,13 +49699,9 @@ var render = function() {
                                     var val = "_value" in o ? o._value : o.value
                                     return val
                                   })
-                                _vm.$set(
-                                  _vm.$v.degree_type_id,
-                                  "$model",
-                                  $event.target.multiple
-                                    ? $$selectedVal
-                                    : $$selectedVal[0]
-                                )
+                                _vm.degree_type_id = $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
                               }
                             }
                           },
@@ -49743,8 +49720,8 @@ var render = function() {
                           {
                             name: "model",
                             rawName: "v-model",
-                            value: _vm.$v.specific_degree.$model,
-                            expression: "$v.specific_degree.$model"
+                            value: _vm.specific_degree,
+                            expression: "specific_degree"
                           }
                         ],
                         staticClass: "form-control",
@@ -49753,17 +49730,13 @@ var render = function() {
                           id: "specific_degree",
                           placeholder: ""
                         },
-                        domProps: { value: _vm.$v.specific_degree.$model },
+                        domProps: { value: _vm.specific_degree },
                         on: {
                           input: function($event) {
                             if ($event.target.composing) {
                               return
                             }
-                            _vm.$set(
-                              _vm.$v.specific_degree,
-                              "$model",
-                              $event.target.value
-                            )
+                            _vm.specific_degree = $event.target.value
                           }
                         }
                       })
@@ -49952,57 +49925,61 @@ var render = function() {
                         ]
                       ),
                       _vm._v(" "),
-                      _c("div", { staticClass: "col-md-6 col-sm-12" }, [
-                        _c(
-                          "label",
-                          {
-                            class: {
-                              "has-error": _vm.$v.age_requirement_max.$error
-                            },
-                            attrs: { for: "age_requirement_max" }
-                          },
-                          [_vm._v("Max.")]
-                        ),
-                        _vm._v(" "),
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.$v.age_requirement_max.$model,
-                              expression: "$v.age_requirement_max.$model"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: {
-                            type: "number",
-                            min: "1",
-                            name: "age_requirement_max",
-                            id: "age_requirement_max"
-                          },
-                          domProps: {
-                            value: _vm.$v.age_requirement_max.$model
-                          },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                _vm.$v.age_requirement_max,
-                                "$model",
-                                $event.target.value
-                              )
-                            }
+                      _c(
+                        "div",
+                        {
+                          staticClass: "col-md-6 col-sm-12",
+                          class: {
+                            "has-error": _vm.$v.age_requirement_max.$error
                           }
-                        }),
-                        _vm._v(" "),
-                        _vm.$v.age_requirement_max.$error
-                          ? _c("span", { staticClass: "error" }, [
-                              _vm._v("Field is required")
-                            ])
-                          : _vm._e()
-                      ])
+                        },
+                        [
+                          _c(
+                            "label",
+                            { attrs: { for: "age_requirement_max" } },
+                            [_vm._v("Max.")]
+                          ),
+                          _vm._v(" "),
+                          _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.$v.age_requirement_max.$model,
+                                expression: "$v.age_requirement_max.$model"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            attrs: {
+                              type: "number",
+                              min: "1",
+                              name: "age_requirement_max",
+                              id: "age_requirement_max"
+                            },
+                            domProps: {
+                              value: _vm.$v.age_requirement_max.$model
+                            },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.$v.age_requirement_max,
+                                  "$model",
+                                  $event.target.value
+                                )
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _vm.$v.age_requirement_max.$error
+                            ? _c("span", { staticClass: "error" }, [
+                                _vm._v("Field is required")
+                              ])
+                            : _vm._e()
+                        ]
+                      )
                     ])
                   ]
                 ),
@@ -50060,7 +50037,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "form-group  col-md-12 col-sm-12" }, [
       _c(
         "button",
-        { staticClass: "btn btn-primary", attrs: { type: "button" } },
+        { staticClass: "btn btn-primary", attrs: { type: "submit" } },
         [_vm._v("Submit")]
       )
     ])
@@ -50074,20 +50051,6 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-b880f65c", module.exports)
   }
 }
-
-/***/ }),
-/* 78 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
-  computed: {
-    url: function url() {
-      // `this` points to the vm instance
-      return "http://localhost:8080/Eitmad5.5/api/jobs/company";
-    }
-  }
-});
 
 /***/ })
 /******/ ]);

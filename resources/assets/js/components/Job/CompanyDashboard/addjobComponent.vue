@@ -25,12 +25,12 @@
             </div>
             <div class="form-group required col-md-12 col-sm-12" :class="{ 'has-error': $v.job_description.$error }">
               <label for="job_description" class="control-label">Job Description</label>
-              <textarea class="form-control" id="job_description" v-model="$v.job_title.$model"></textarea>
+              <textarea class="form-control" id="job_description" v-model="$v.job_description.$model"></textarea>
               <span class="error" v-if="$v.job_description.$error">Field is required</span>
             </div>
             <div class="form-group col-md-12 col-sm-12">
               <label for="job_skills">Required Skills</label>
-              <input type="text" class="form-control" id="job_skills" value="Amsterdam,Washington,Sydney,Beijing,Cairo" placeholder="" data-role="tagsinput" v-model="$v.job_skills.$model">
+              <input type="text" class="form-control" id="job_skills" value="Amsterdam,Washington,Sydney,Beijing,Cairo" placeholder="" data-role="tagsinput" v-model="job_skills">
             </div>
             <div class="form-group required col-md-12 col-sm-12">
               <h6 class="control-label">Job Location</h6>
@@ -87,14 +87,14 @@
               <div class="row form-group">
                 <div class="col-md-6 col-sm-12">
                 <label for="job_cateory">Job Category</label>
-                <select class="form-control" id="job_cateory" v-model="$v.job_cateory.$model">
+                <select class="form-control" id="job_cateory" v-model="job_cateory">
                   <option>--Select Category--</option>
                 </select>
                
               </div>
               <div class="col-md-6 col-sm-12">
                 <label for="job_sub_category_id">Job Sub-Category</label>
-                <select class="form-control" id="job_sub_category_id" v-model="$v.job_sub_category_id.$model">
+                <select class="form-control" id="job_sub_category_id" v-model="job_sub_category_id">
                   <option>--Select Sub-Category--</option>
                 </select>
               </div>
@@ -106,14 +106,14 @@
               <div class="row form-group">
                 <div class="col-md-6 col-sm-12">
                 <label for="job_type_id">Job Type</label>
-                <select class="form-control" id="job_type_id" v-model="$v.job_type_id.$model">
+                <select class="form-control" id="job_type_id" v-model="job_type_id">
                   <option>--Select Job Type--</option>
                 </select>
                
               </div>
               <div class="col-md-6 col-sm-12">
                 <label for="job_shift">Job Shift</label>
-                <select class="form-control" id="job_shift" v-model="$v.job_shift.$model">
+                <select class="form-control" id="job_shift" v-model="job_shift">
                   <option>--Select Job Shift--</option>
                 </select>
               </div>
@@ -123,7 +123,7 @@
             
             <div class="form-group col-md-12 col-sm-12">
               <label for="job_gender_preference">Gender Requirement</label>
-              <select class="form-control" id="job_gender_preference" v-model="$v.job_gender_preference.$model">
+              <select class="form-control" id="job_gender_preference" v-model="job_gender_preference">
                   <option>--No preference--</option>
                   <option>--Male--</option>
                   <option>--Female--</option>
@@ -160,7 +160,7 @@
               </div>
               <div class="col-md-6 col-sm-12">
                 <label for="degree_type_id">Degree Title</label>
-                <select class="form-control" id="degree_type_id" v-model="$v.degree_type_id.$model">
+                <select class="form-control" id="degree_type_id" v-model="degree_type_id">
                   <option>--Select Degree Title--</option>
                 </select>
               </div>
@@ -168,7 +168,7 @@
 
               <div class="form-group">
                 <label for="specific_degree">Specific Degree Title</label>
-                <input type="text" class="form-control" id="specific_degree" placeholder="" v-model="$v.specific_degree.$model">
+                <input type="text" class="form-control" id="specific_degree" placeholder="" v-model="specific_degree">
               
               </div>
 
@@ -194,8 +194,8 @@
                <input class="form-control" type="number" min="1" name="age_requirement_min" id="age_requirement_min" v-model="$v.age_requirement_min.$model">
                <span class="error" v-if="$v.age_requirement_min.$error">Field is required</span>
                 </div>
-              <div class="col-md-6 col-sm-12">
-                <label for="age_requirement_max" :class="{ 'has-error': $v.age_requirement_max.$error }">Max.</label>
+              <div class="col-md-6 col-sm-12" :class="{ 'has-error': $v.age_requirement_max.$error }">
+                <label for="age_requirement_max">Max.</label>
                 <input class="form-control" type="number" min="1" name="age_requirement_max" id="age_requirement_max" v-model="$v.age_requirement_max.$model">
                 <span class="error" v-if="$v.age_requirement_max.$error">Field is required</span>
               </div>
@@ -204,7 +204,7 @@
             </div>
           
             <div class="form-group  col-md-12 col-sm-12">
-               <button type="button" class="btn btn-primary" >Submit</button>
+               <button type="submit" class="btn btn-primary" >Submit</button>
             </div>
            
           </div>  
@@ -215,15 +215,7 @@
   </main>
 </template>
 
-<style type="text/css" scoped>
-	.form-group.required .control-label:after { 
-    color: #d00;
-    content: "*";
-    position: absolute;
-    margin-left: 2px;
-    
-}
-</style>
+
 <script>
     import hasUrl from './hasUrl'
 	 import { required, between } from 'vuelidate/lib/validators'
@@ -256,7 +248,7 @@
               job_year_of_experience_min:'',
               job_year_of_experience_max:'',
               age_requirement_min:'',  
-              age_requirement_min:'',              
+              age_requirement_max:'',              
           };
         },
         validations: {
@@ -268,6 +260,7 @@
           },
           country: {
             required,
+
           },
           city_id: {
             required,
@@ -277,11 +270,11 @@
           },
           job_salary_min_range: {
             required,
-            between: between(5000, 1000000)
+            
           },
           job_salary_max_range: {
             required,
-            between: between(5000, 1000000)
+          
           },
           job_no_of_position: {
             required,
@@ -303,11 +296,11 @@
           },
           age_requirement_min: {
             required,
-            between: between(18, 60)
+            between: between(18, 30)
           },
-          age_requirement_max: {
+         age_requirement_max: {
             required,
-            between: between(18, 60)
+            between: between(31, 60)
           },
         },
         methods: {
@@ -315,8 +308,9 @@
             console.log(this.$v.$invalid);
             this.$v.$touch();
             if (!this.$v.$invalid) {
-              this.$Progress.start()
-              let endpoint = this.url+'/product';
+              //this.$Progress.start()
+              console.log(this.url);
+              let endpoint = this.url+'/add-job';
               const data = new FormData();
               data.append('job_title',this.job_title)
               data.append('job_description',this.job_description)
@@ -339,20 +333,16 @@
                data.append('job_year_of_experience_min',this.job_year_of_experience_min)
               data.append('job_year_of_experience_max',this.job_year_of_experience_max)
               data.append('age_requirement_min',this.age_requirement_min)
-               data.append('age_requirement_min',this.age_requirement_min)
-              
-              
-              
-              
-             
+               data.append('age_requirement_max',this.age_requirement_max)
+  
               axios.post(endpoint, data)
               .then(response => {
                  if(response.status === 200){
-                    this.$Progress.finish();
+                    //this.$Progress.finish();
                  }
                  // this.name = ' ';this.description = ' ';this.size = ' ';this.color = ' ';this.price = ' ';this.quantity = ' ';this.sliderImages = null;this.titleImage=null;
               }).catch(e => {
-                this.$Progress.fail()
+                //this.$Progress.fail()
               })
             }
           },
@@ -362,3 +352,59 @@
         mixins: [hasUrl]
     }
 </script>
+<style type="text/css" scoped>
+  .form-group.required .control-label:after { 
+    color: #d00;
+    content: "*";
+    position: absolute;
+    margin-left: 2px;
+    
+}
+.error{
+      font-size: 12px;
+      color: red;
+  }
+  .has-error{
+    animation-name: shakeError;
+    animation-fill-mode: forward;
+    animation-duration: .6s;
+    animation-timing-function: ease-in-out;
+  }
+  .has-error input{
+    border-color: #f79483;
+    
+  }
+  .has-error > .form-control:focus{
+    color: #495057;
+    background-color: #fff;
+    border-color: #ff9d9d;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(236, 176, 176);
+
+  }
+
+  .has-error {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+</style>
