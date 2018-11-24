@@ -15,7 +15,7 @@ Route::get('/', function () {
 	$slider = App\Slider::latest()->get();
     return view('frontend/ecommerce/modules/index',compact('slider'));
 });
-
+Auth::routes();
 Route::get('/items', function () {
 
     
