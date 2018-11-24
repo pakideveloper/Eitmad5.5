@@ -47888,7 +47888,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     return {
       job_title: '',
       job_description: '',
-      job_skills: [],
+      job_skills: '',
       city_id: '',
       country: '',
       job_career_level: '',
@@ -47956,11 +47956,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     age_requirement_min: {
       required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"],
-      between: Object(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["between"])(18, 30)
+      between: Object(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["between"])(18, 60)
     },
     age_requirement_max: {
       required: __WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["required"],
-      between: Object(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["between"])(31, 60)
+      between: Object(__WEBPACK_IMPORTED_MODULE_1_vuelidate_lib_validators__["between"])(18, 60)
     }
   },
   methods: {
@@ -48940,13 +48940,7 @@ var render = function() {
                       }
                     ],
                     staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      id: "job_skills",
-                      value: "Amsterdam,Washington,Sydney,Beijing,Cairo",
-                      placeholder: "",
-                      "data-role": "tagsinput"
-                    },
+                    attrs: { type: "text", id: "job_skills", placeholder: "" },
                     domProps: { value: _vm.job_skills },
                     on: {
                       input: function($event) {

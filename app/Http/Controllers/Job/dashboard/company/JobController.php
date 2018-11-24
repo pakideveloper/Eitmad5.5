@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Job\dashboard\company;
 use App\Http\Controllers\Controller;
 use App\Job;
+use Illuminate\Html\HtmlBuilder;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
 
@@ -41,7 +44,12 @@ class JobController extends Controller
          $job = new Job();
         $job->job_title = $request->job_title ;
         $job->job_description = $request->job_description ;
-        // $job->job_skills = $request->job_skills ;
+        if ($request->job_skills) {
+           $skills = $request->job_skills;
+        $Arrayskills = explode(',', $skills);
+        $job->job_skills =  json_encode($Arrayskills); 
+        }
+        // $job->job_skills =  ;
         $job->job_career_level = $request->job_career_level ;
         $job->job_no_of_position = $request->job_no_of_position ;
         $job->job_year_of_experience_min = $request->job_year_of_experience_min ;

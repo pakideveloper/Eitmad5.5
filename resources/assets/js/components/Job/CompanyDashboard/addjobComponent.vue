@@ -30,7 +30,7 @@
             </div>
             <div class="form-group col-md-12 col-sm-12">
               <label for="job_skills">Required Skills</label>
-              <input type="text" class="form-control" id="job_skills" value="Amsterdam,Washington,Sydney,Beijing,Cairo" placeholder="" data-role="tagsinput" v-model="job_skills">
+              <input type="text" class="form-control" id="job_skills"  placeholder="" v-model="job_skills">
             </div>
             <div class="form-group required col-md-12 col-sm-12">
               <h6 class="control-label">Job Location</h6>
@@ -229,7 +229,7 @@
           return {
               job_title:'',
               job_description:'',
-              job_skills:[],
+              job_skills:'',
               city_id: '',
               country:'',
               job_career_level: '',
@@ -296,11 +296,11 @@
           },
           age_requirement_min: {
             required,
-            between: between(18, 30)
+            between: between(18, 60)
           },
          age_requirement_max: {
             required,
-            between: between(31, 60)
+            between: between(18, 60)
           },
         },
         methods: {
@@ -334,7 +334,7 @@
               data.append('job_year_of_experience_max',this.job_year_of_experience_max)
               data.append('age_requirement_min',this.age_requirement_min)
                data.append('age_requirement_max',this.age_requirement_max)
-  
+
               axios.post(endpoint, data)
               .then(response => {
                  if(response.status === 200){
