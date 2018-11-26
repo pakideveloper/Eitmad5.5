@@ -1,7 +1,7 @@
 <template>
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-      <h1 class="h2">Add Product</h1>
+      <h1 class="h2">Add Job</h1>
       <div class="btn-toolbar mb-2 mb-md-0">
         <div class="btn-group mr-2">
           <button class="btn btn-sm btn-outline-secondary">Share</button>
@@ -14,6 +14,7 @@
       </div>
     </div>
     <div class="col-md-12">
+      <p class="alert alert-success" v-if="success.length>0">{{success}}</p>
       <form @submit.prevent="submit">
         <div class="row">
           <div class="col-md-2"></div>
@@ -248,7 +249,8 @@
               job_year_of_experience_min:'',
               job_year_of_experience_max:'',
               age_requirement_min:'',  
-              age_requirement_max:'',              
+              age_requirement_max:'',
+              success:'',              
           };
         },
         validations: {
@@ -339,6 +341,8 @@
               .then(response => {
                  if(response.status === 200){
                     //this.$Progress.finish();
+                    this.success = "Job added successfully !";
+                    //this.initialData();
                  }
                  // this.name = ' ';this.description = ' ';this.size = ' ';this.color = ' ';this.price = ' ';this.quantity = ' ';this.sliderImages = null;this.titleImage=null;
               }).catch(e => {

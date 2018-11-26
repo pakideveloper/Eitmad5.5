@@ -37,6 +37,7 @@ Vue.use(VueRouter)
 Vue.prototype.CompanyDashboardRoute = '/Eitmad5.5/jobs/company/dashboard';
 const index = require('./components/Job/CompanyDashboard/indexComponent.vue');
 const addJob = require('./components/Job/CompanyDashboard/addjobComponent.vue');
+const viewJobs = require('./components/Job/CompanyDashboard/viewjobsComponent.vue');
 
 const routes = [
 	{
@@ -46,6 +47,10 @@ const routes = [
 	{
 	path: Vue.prototype.CompanyDashboardRoute+'/add-job',
 	component: addJob
+	},
+	{
+	path: Vue.prototype.CompanyDashboardRoute+'/all-jobs',
+	component: viewJobs
 	},
 ];
 

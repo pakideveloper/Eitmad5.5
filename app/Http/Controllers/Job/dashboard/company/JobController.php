@@ -18,7 +18,8 @@ class JobController extends Controller
      */
     public function index()
     {
-        //
+        $jobs = Job::all();
+        return request()->json(200, $jobs);
     }
 
     /**
@@ -131,6 +132,18 @@ class JobController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $job = Job::find($id);
+        if($job->delete()){
+            return $this->_getRecord();
+        }
+        else{
+            return response()->json(425, ['delete'=> "error deleting record"]);
+        }
+        
+    }
+
+    private function _getRecord(){
+        $jobs = Job::orderBy('created_at', 'desc')->get();
+        return request()->json(200, $jobs);
     }
 }
