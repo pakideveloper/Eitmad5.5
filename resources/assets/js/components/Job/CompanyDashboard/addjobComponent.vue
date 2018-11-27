@@ -122,14 +122,15 @@
               
             </div>
             
-            <div class="form-group col-md-12 col-sm-12">
-              <label for="job_gender_preference">Gender Requirement</label>
-              <select class="form-control" id="job_gender_preference" v-model="job_gender_preference">
+            <div class="form-group required col-md-12 col-sm-12" :class="{ 'has-error': $v.job_gender_preference.$error }">
+              <label class="control-label" for="job_gender_preference">Gender Requirement</label>
+              <select class="form-control" id="job_gender_preference" v-model="$v.job_gender_preference.$model">
                   <option>--No preference--</option>
                   <option>--Male--</option>
                   <option>--Female--</option>
                   <option>--Others--</option>
                 </select>
+                <span class="error" v-if="$v.job_gender_preference.$error">Field is required</span>
             </div>
 
              <div class="col-md-12 col-sm-12">
@@ -277,6 +278,9 @@
           job_salary_max_range: {
             required,
           
+          },
+          job_gender_preference: {
+            required,
           },
           job_no_of_position: {
             required,
