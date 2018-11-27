@@ -1,3 +1,8 @@
+<style>
+	
+</style>
+
+
 
 <template>
 	
@@ -10,7 +15,7 @@
 <div class="container bootstrap snippet">
     <div class="row">
 
-  		<div class="col-sm-10"><h1>{{name}}</h1></div>
+  		<div class="col-sm-10"><h1>User name</h1></div>
     	<!-- <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100"></a></div> -->
     </div>
     <div class="row">
@@ -62,7 +67,7 @@
                           
                           <div class="col-xs-6">
                               <label for="first_name"><h4>First name</h4></label>
-                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Enter Your first name" :value = "{{this.first_name}}" title="enter your first name if any.">
+                              <input type="text" class="form-control" name="first_name" id="first_name" placeholder="Enter Your first name" title="enter your first name if any.">
                           </div>
                       </div>
                       <div class="form-group">
@@ -99,13 +104,13 @@
                       <div class="form-group">
                           <div class="col-xs-6">
                              <label for="mobile"><h4>Contact Number</h4></label>
-                              <input type="text" class="form-control" name="mobile" id="mobile"  maxlength="12" placeholder="enter mobile number" title="enter your mobile number if any.">
+                              <input type="text" class="form-control" name="mobile" id="mobile"  maxlength="10" placeholder="enter mobile number" title="enter your mobile number if any.">
                           </div>
                       </div>
                        <div class="form-group"> 
                           <div class="col-xs-6">
                              <label for="dob"><h4>Date Of Birth</h4></label>
-                              <input type="date" class="form-control" id="txtDate" />
+                              <input type='date' class="form-control" id='txtDate' />
                           </div>
                       </div>
 
@@ -226,52 +231,15 @@
 
     </main>
 </template>
+
+
 <script>
-   export default {
-data () {
-    return {
-      first_name:'',
-     last_name: '',
-      email: '',
-      address:'',
-      cnic:'',
-      contact_number:'',
-      date_of_birth:'',
-      gender:'',
-      nationality:'',
-
-    };
-  },
-
-  methods:
-  {
-
-    getUser(){
-            axios.get(this.url+'/getUser')
-                .then(({ data }) => {
-                    this.first_name = data.first_name;
-                });
-          },
-  },
-  created(){
-          this.getUser();
-          // this.getSubCategories();
-          // this.getBrands();
-          // this.getDiscounts();
-          // Vue.set(app.$data, 'b', 2);
-          // Vue.set(this.$data, 'page', 1)
-        },
-
-
-
+    export default {
         mounted() {
             console.log('Component mounted.')
-
-
-
-
-
-            $(function(){
+        }
+    }
+     $(function(){
     var dtToday = new Date();
     
     var month = dtToday.getMonth() + 1;
@@ -285,9 +253,7 @@ data () {
     var maxDate = year + '-' + month + '-' + day;
     // alert(maxDate);
     $('#txtDate').attr('max', maxDate);
- });
-
-$('#cnic').keydown(function(){
+    $('#cnic').keydown(function(){
 
   //allow  backspace, tab, ctrl+A, escape, carriage return
   if (event.keyCode == 8 || event.keyCode == 9 
@@ -302,30 +268,9 @@ $('#cnic').keydown(function(){
   if(length == 5 || length == 13)
    $(this).val($(this).val()+'-');
 
- });
-$('#mobile').keydown(function(){
-
-  //allow  backspace, tab, ctrl+A, escape, carriage return
-  if (event.keyCode == 8 || event.keyCode == 9 
-                    || event.keyCode == 27 || event.keyCode == 13 
-                    || (event.keyCode == 65 && event.ctrlKey === true) )
-                        return;
-  if((event.keyCode < 48 || event.keyCode > 57))
-   event.preventDefault();
-
-  var length = $(this).val().length; 
-              
-  if(length == 4)
-   $(this).val($(this).val()+'-');
-
- });
-
-
-
-        }
-
-
-    }
-  
+});
     
+ });
+
+  
 </script>

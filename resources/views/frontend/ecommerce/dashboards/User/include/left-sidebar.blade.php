@@ -5,17 +5,17 @@
                 <router-link  to="dashboard" class="nav-link"><span data-feather="shopping-cart"></span>&nbsp;Dasboard</router-link>
               </li>
               <li class="nav-item">
-                <a  href="{{url('ecommerce/user/dashboard')}}" class="nav-link"><span data-feather="user"></span>&nbsp;Profile</a>
+                <router-link  to="profile" class="nav-link"><span data-feather="user"></span>&nbsp;Profile</router-link>
               </li>
               <li class="nav-item has-sub">
                
 
-                <!-- <a class="nav-link" href="JavaScript:void(0)">
+                <a class="nav-link" href="JavaScript:void(0)">
                   <span data-feather="user" ></span>
                   Product
                   <span class="positive">+</span>
-                </a> -->
-                <!-- <ul class="nav flex-column is-sub">                  
+                </a>
+                <ul class="nav flex-column is-sub">                  
                   <li>
                       <router-link  to="add-product1" class="nav-link">Manage Products</router-link>
                     
@@ -40,24 +40,24 @@
                       <router-link  to="add-product" class="nav-link">Fulfilment by Eitmad</router-link>
                     
                   </li>
-                </ul> -->
+                </ul>
               </li>
               <li class="nav-item has-sub">
-                <a class="nav-link" href="{{url('ecommerce/myorders')}}">
+                <a class="nav-link" href="JavaScript:void(0)">
                   <span data-feather="user"></span>
-                  My Orders
-                  <!-- <span class="positive">+</span> -->
+                  Orders
+                  <span class="positive">+</span>
                 </a>
-                <!-- <ul class="nav flex-column is-sub">                  
+                <ul class="nav flex-column is-sub">                  
                   <li>
                       <router-link  to="add-product" class="nav-link">Manage orders</router-link>   
                   </li>
                   <li>
                       <router-link  to="add-product" class="nav-link">Manage Reviews</router-link>   
                   </li>
-                </ul> -->
+                </ul>
               </li>
-              <!-- <li class="nav-item has-sub">
+              <li class="nav-item has-sub">
                 <a class="nav-link" href="JavaScript:void(0)">
                   <span data-feather="user"></span>
                   Promotion
@@ -74,8 +74,8 @@
                       <router-link  to="add-product" class="nav-link">Seller Voucher</router-link>   
                   </li>
                 </ul>
-              </li> -->
-              <!-- <li class="nav-item has-sub">
+              </li>
+              <li class="nav-item has-sub">
                 <a class="nav-link" href="JavaScript:void(0)">
                   <span data-feather="user"></span>
                   Promotion
@@ -92,7 +92,7 @@
                       <router-link  to="add-product" class="nav-link">Seller Voucher</router-link>   
                   </li>
                 </ul>
-              </li> -->
+              </li> 
               <li class="nav-item">
                  <a class="nav-link" href="{{url('ecommerce/changepassword')}}">
                   <span data-feather="user"></span>
@@ -121,7 +121,10 @@
                   <!-- <span class="positive">+</span> -->
                 </a>
               </li>
-              <!-- <li class="nav-item has-sub">
+              <li class="nav-item">
+                <router-link  to="add-product" class="nav-link"><span data-feather="shopping-cart"></span>&nbsp;Store</router-link>
+              </li>
+              <li class="nav-item has-sub">
                 <a class="nav-link" href="JavaScript:void(0)">
                   <span data-feather="user"></span>
                   Finance
@@ -138,8 +141,8 @@
                       <router-link  to="add-product" class="nav-link">Transaction Overview</router-link>   
                   </li>
                 </ul>
-              </li> -->
-              <!-- <li class="nav-item">
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="users"></span>
                   Customers
@@ -150,7 +153,7 @@
                   <span data-feather="bar-chart-2"></span>
                   Reports
                 </a>
-              </li> -->
+              </li>
               <!-- <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="layers"></span>
@@ -159,13 +162,13 @@
               </li> -->
             </ul>
 
-           <!--  <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
               <span>Saved reports</span>
               <a class="d-flex align-items-center text-muted" href="#">
                 <span data-feather="plus-circle"></span>
               </a>
-            </h6> -->
-            <!-- <ul class="nav flex-column mb-2">
+            </h6>
+            <ul class="nav flex-column mb-2">
               <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="file-text"></span>
@@ -190,6 +193,6 @@
                   Year-end sale
                 </a>
               </li>
-            </ul> -->
+            </ul>
           </div>
         </nav>

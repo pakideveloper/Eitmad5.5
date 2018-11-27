@@ -3,17 +3,13 @@
 namespace App\Http\Controllers\Ecommerce\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Auth;
-use App\User;
-use DB;
+
 class UserController extends Controller
 {
     //
    
     public function dashboard(){
-
-    	$users  = User::find(Auth::user()->id);
-    	return view('frontend.ecommerce.dashboards.User.modules.dashboard',compact('users'));
+    	return view('frontend.ecommerce.dashboards.User.modules.dashboard');
     }
     public function profileEdit(Request $request){
 

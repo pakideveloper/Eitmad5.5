@@ -12,7 +12,7 @@
       	<div class="container">
           <div class="close-search"><i class="icon-delete"></i></div>
             <div class="form-group">
-              <label class="sr-only" for="search-hd">Search for procuct</label>
+              <label class="sr-only" for="search-hd">Search for product</label>
               <input type="text" class="form-control" name="search-hd" id="search-hd" placeholder="Search for procuct">
               <button type="submit"><i class="icon-magnifier"></i></button>
           </div>
@@ -62,14 +62,12 @@
         <!--Main Menu-->
         <nav class="menu">
           <ul class="main">
-          	<li class="has-submenu"><a href="{{url('/')}}">Home<i class="fa fa-chevron-down"></i></a><!--Class "has-submenu" for proper highlighting and dropdown-->
+          	<li class="has-submenu"><a href="{{url('/')}}">Home<i class="fa fa-chevron-down"></i></a>
+              <!--Class "has-submenu" for proper highlighting and dropdown-->
             	<!-- <ul class="submenu">
-              	<li><a href="index.html">Home - Slideshow</a></li>
-              	<li><a href="home-fullscreen.html">Home - Fullscreen Slider</a></li>
-              	<li><a href="home-showcase.html">Home - Product Showcase</a></li>
-              	<li><a href="home-categories.html">Home - Categories Slider</a></li>
-              	<li><a href="home-offers.html">Home - Special Offers</a></li>
-              </ul> -->
+          	<li class="has-submenu"><a href="{{url('/ecommerce')}}">Homesss<i class="fa fa-chevron-down"></i></a>
+            Class "has-submenu" for proper highlighting and dropdown-->
+            	
             </li>
           	<li class="has-submenu"><a href="{{ url('ecommerce/products') }}">Shop<i class="fa fa-chevron-down"></i></a>
               
@@ -99,7 +97,7 @@
           	<li class="has-submenu"><a href="{{url('ecommerce/about')}}">About Us<i class="fa fa-chevron-down"></i></a>
 <!--             	<ul class="submenu">
               	<li><a href="{{ route('register') }}">Login / Registration</a></li>
-                <li><a href="account-personal-info.html">Account: Personal Info<span class="label">NEW</span></a></li>
+                <li><a href="{{ url('ecommerce/become-seller') }}">Become a Seller<span class="label">NEW</span></a></li>
                 <li><a href="account-addresses.html">Account: Addresses<span class="label">NEW</span></a></li>
                 <li><a href="order-history.html">Orders History<span class="label">NEW</span></a></li>
                 <li><a href="order-tracking.html">Order Tracking<span class="label">NEW</span></a></li>
