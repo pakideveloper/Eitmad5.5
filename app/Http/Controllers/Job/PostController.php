@@ -27,7 +27,7 @@ class PostController extends Controller
          // echo $pnewslogo;
          // die();
         // $totaljobs = DB::table('paper_posts')->count()->where('');
-        return view ('frontend/JobPortal/pages/paperjob/paperjob',compact('posts','pnewslogo','pnews'));
+        return view ('frontend/JobPortal/modules/paperjob/paperjob',compact('posts','pnewslogo','pnews'));
 
     }
     public function single_post($id)
@@ -35,7 +35,7 @@ class PostController extends Controller
         $posts = Post::find($id);
 
          $pnews = newspaper::all();
-         return view ('frontend/JobPortal/pages/paperjob/single-paperjob',compact('pnews','posts'));
+         return view ('frontend/JobPortal/modules/paperjob/single-paperjob',compact('pnews','posts'));
 
     }
 

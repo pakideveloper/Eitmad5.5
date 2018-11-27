@@ -16,30 +16,34 @@ Route::get('/', function () {
     return view('frontend/JobPortal/index');
 });
 Route::get('/employers', function () {
-    return view('frontend/JobPortal/pages/employers');
+    return view('frontend/JobPortal/modules/company/companies');
 });
 Route::get('/employerdetail', function () {
-    return view('frontend/JobPortal/pages/employerdetail');
+    return view('frontend/JobPortal/modules/employerdetail');
 });
 Route::get('/aboutportal', function () {
-    return view('frontend/JobPortal/pages/AboutPortal');
+    return view('frontend/JobPortal/modules/AboutPortal');
 });
 Route::get('/contactus', function () {
-    return view('frontend/JobPortal/pages/ContactUs');
+    return view('frontend/JobPortal/modules/ContactUs');
 });
 Route::get('/addjob', function () {
-    return view('frontend/JobPortal/pages/AddJob');
+    return view('frontend/JobPortal/modules/AddJob');
 });
 
 Route::get('/paperjobs', function()
 {
-  return view('frontend/JobPortal/pages/paperjob/paperjob');
+  return view('frontend/JobPortal/modules/paperjob/paperjob');
+});
+Route::get('/job', function()
+{
+  return view('frontend/JobPortal/modules/Jobs/jobs');
 });
 
 Route::get('/single-paperjob/{id}', 'Job\PostController@single_post');
 Route::get('/single-paperjob', function()
 {
-  return view('frontend/JobPortal/pages/paperjob/single-paperjob');
+  return view('frontend/JobPortal/modules/paperjob/single-paperjob');
 });
 
 Route::get('/paperjobs', 'Job\PostController@post' );
@@ -55,7 +59,7 @@ Route::get('candidate/manage-cv',function(){
 Route::get('/addcompany', function () {
 	$industries = App\Industry::all();
 	$countries = App\country::all();
-    return view('frontend/JobPortal/pages/company/addcompany', compact('industries', 'countries'));
+    return view('frontend/JobPortal/modules/company/addcompany', compact('industries', 'countries'));
 });
 
 Route::resource('company_registration', 'Job\CompanyController');

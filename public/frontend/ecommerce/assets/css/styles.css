@@ -1091,7 +1091,7 @@ textarea {
   line-height: inherit;
 }
 a {
-  color: #2ba8db;
+  color: #52b381;
   text-decoration: none;
 }
 a:hover,
@@ -9662,7 +9662,7 @@ p.large {
 }
 a {
   text-decoration: none;
-  color: #2ba8db;
+  color: #000000;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -10447,7 +10447,7 @@ header .search-form .close-search:hover {
   position: absolute;
   z-index: 3;
   top: 0;
-  right: 15px;
+  right: -80px;
   height: 144px;
   background: #52b381;
   padding: 12px 0 12px 3px;
@@ -11990,7 +11990,7 @@ header .search-form .close-search:hover {
   margin-bottom: 12px;
 }
 .menu .catalog li .submenu .offer .btn {
-  background: #2ba8db;
+  /*background: #2ba8db;*/
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -14750,14 +14750,15 @@ header .search-form .close-search:hover {
   display: block;
   position: relative;
   width: 100%;
-  background: #fff;
+  /*background: #fff;*/
 }
 .gallery-widget .gallery-grid .gallery-item a .overlay {
   position: absolute;
   width: 100%;
   min-height: 100%;
   top: 0;
-  left: 0;
+  /*left: 0;*/
+  right: 85px;
   background: url(../img/overlays/overlay-primary.png) repeat;
   opacity: 0;
   filter: alpha(opacity=0);

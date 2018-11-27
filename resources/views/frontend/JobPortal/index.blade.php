@@ -735,7 +735,7 @@
 @include('frontend/JobPortal/include/brand-crusal')
 
 <!-- footer start -->
-@include('frontend/JobPortal/include/jobfooter1')
+@include('frontend/ecommerce/include/footer')
 <!--footer end -->
 
 <!-- jquery -->

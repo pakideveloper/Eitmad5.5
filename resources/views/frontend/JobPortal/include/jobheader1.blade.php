@@ -53,7 +53,7 @@
         <!--Main Menu-->
         <nav class="menu">
           <ul class="main">
-          	<li class="has-submenu"><a href="index.html">Home<i class="fa fa-chevron-down"></i></a><!--Class "has-submenu" for proper highlighting and dropdown-->
+          	<li class="has-submenu"><a href="{{url('/')}}">Home<i class="fa fa-chevron-down"></i></a><!--Class "has-submenu" for proper highlighting and dropdown-->
             	<!-- <ul class="submenu">
               	<li><a href="index.html">Home - Slideshow</a></li>
               	<li><a href="home-fullscreen.html">Home - Fullscreen Slider</a></li>
@@ -79,27 +79,27 @@
             </li> -->
             
             
-            <li class="has-submenu"><a href="#aboutus">About Us<i class="fa fa-chevron-down"></i></a>
+            <li class="has-submenu"><a href="{{url('jobs/job')}}">Jobs<i class="fa fa-chevron-down"></i></a>
             	<!-- <ul class="submenu">
               	<li><a href="blog-sidebar-left.html">Blog - Sidebar Left</a></li>
               	<li><a href="blog-sidebar-right.html">Blog - Sidebar Right</a></li>
               	<li><a href="blog-single.html">Blog - Single Post</a></li>
               </ul> -->
             </li>
-             <li class="has-submenu"><a href="#services">Services<i class="fa fa-chevron-down"></i></a>
-            	<ul class="submenu">
+             <li class="has-submenu"><a href="{{url('jobs/employers')}}">Employers<i class="fa fa-chevron-down"></i></a>
+            <!-- 	<ul class="submenu">
               	<li><a href="blog-sidebar-left.html">Service 1</a></li>
               	<li><a href="blog-sidebar-right.html">Service 2</a></li>
               	<li><a href="blog-single.html">Service 1</a></li>
               	<li><a href="blog-sidebar-left.html">Service 1</a></li>
               	<li><a href="blog-sidebar-right.html">Service 1</a></li>
               	<li><a href="blog-single.html">Service 1</a></li>
-              </ul>
+              </ul> -->
             </li>
-            <li class="has-submenu"><a href="#testimonials">Testimonials<i class="fa fa-chevron-down"></i></a>
+            <li class="has-submenu"><a href="{{url('ecommerce/about')}}">About Us<i class="fa fa-chevron-down"></i></a>
             	
             </li>
-            <li class="has-submenu"><a href="#contactus">Contact Us<i class="fa fa-chevron-down"></i></a>
+            <li class="has-submenu"><a href="#footer">Contact Us<i class="fa fa-chevron-down"></i></a>
             	<!-- <ul class="submenu">
               	<li><a href="blog-sidebar-left.html">Blog - Sidebar Left</a></li>
               	<li><a href="blog-sidebar-right.html">Blog - Sidebar Right</a></li>
@@ -129,7 +129,7 @@
               	<li><a href="cs-page.html">Components &amp; Styles</a></li>
               </ul>
             </li> -->
-          	<li class="hide-sm"><a href="#support">Support</a></li>
+          	<!-- <li class="hide-sm"><a href="#support">Support</a></li> -->
           </ul>
           <ul class="catalog">
           	<!-- <li class="has-submenu"><a href="shop-filters-left-3cols.html">Phones<i class="fa fa-chevron-down"></i></a>
@@ -178,22 +178,25 @@
         <!--Toolbar-->
         <div class="toolbar group">
           <button class="search-btn btn-outlined-invert"><i class="icon-magnifier"></i></button>
-
-
-          <!-- <div class="middle-btns">
-            <a class="btn-outlined-invert" href=""><i class="icon-heart"></i> <span>Sign Up</span></a>            
-            <a class="login-btn btn-outlined-invert" href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-profile"></i> <span>Login</span></a>
-            
-            <form id="logout-form" action="" method="POST" style="display: none;">{{ csrf_field() }}</form>
-            
-          </div> -->
           <div class="middle-btns">
-            <a class="btn-outlined-invert" href="{{url('/ecommerce/wishlist')}}"><i class="icon-heart"></i> <span>Wishlist</span></a>
-            @if (Auth::guest())
+           <!--  <a class="btn-outlined-invert" href=""><i class="icon-heart"></i> <span>Sign Up</span></a> !-->
+
+
+         
+             @if (Auth::guest())
+             <a class="btn-outlined-invert" href="{{ url('/register') }}"><i class="icon-heart"></i> <span>Sign Up</span></a>            
             <a class="login-btn btn-outlined-invert" href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-profile"></i> <span>Login</span></a>
             @else
-            <a class="login-btn btn-outlined-invert" href="#" ><i class="icon-profile"></i> <span>{{ Auth::user()->first_name }}</span></a>
+             <a class="btn-outlined-invert" href="#" ><i class="icon-profile"></i> <span style="text-transform: capitalize;">{{ Auth::user()->first_name }}</span></a>
+            <a class="login-btn btn-outlined-invert"  onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" ><i class="icon-profile"></i> <span style="text-transform: capitalize;">logout</span></a>
             @endif
+            <form id="logout-form" action="" method="POST" style="display: none;">{{ csrf_field() }}</form>
+            
+          </div>
+          <div class="middle-btns">
+            <a class="btn-outlined-invert" href="{{url('/ecommerce/wishlist')}}"><i class="icon-heart"></i> <span>Wishlist</span></a>
+            
           </div>
          
         </div><!--Toolbar Close-->
