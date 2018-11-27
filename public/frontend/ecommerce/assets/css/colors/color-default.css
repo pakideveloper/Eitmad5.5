@@ -1,5 +1,5 @@
 a {
-  color: #52b381;
+  color: #000000;
 }
 a:hover {
   color: #2ba8db;
@@ -109,7 +109,7 @@ header .search-form {
   border-color: #a3c756;
 }
 .menu .main li.has-submenu:hover {
-  background: #2ba8db;
+  background: #a3c756;;
 }
 .menu .main .submenu {
   border-color: #2ba8db;
@@ -163,13 +163,13 @@ header .search-form {
   }
   .menu .main li a:hover,
   .small-header .menu .main li a:hover {
-    background: #2ba8db;
+    background: #a3c756;
   }
   .menu .submenu li:hover,
   .small-header .menu .submenu li:hover,
   .menu .submenu li:hover a,
   .small-header .menu .submenu li:hover a {
-    color: #2ba8db !important;
+    color: #a3c756 !important;
   }
   .menu .catalog li a,
   .small-header .menu .catalog li a {

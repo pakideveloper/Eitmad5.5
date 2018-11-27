@@ -30,7 +30,8 @@ class PaymentCheckoutController extends Controller
          // $billings = new Billing();
           echo "success";
           // $cart_items = Cart::instance('shopping')->content();
-         dd($request->all());
+       //  dd($request->all());
+        // dd($request->all());
 //     	$hashSecretWord = 'hassan'; //2Checkout Secret Word
 // $hashSid = 901394952; //2Checkout account number
 // $hashTotal = $_REQUEST['total']; //Sale total to validate against
@@ -108,7 +109,7 @@ $orders = new Order();
         // $orders->order_amount = $_REQUEST['total'];
         // $orders->order_item = $_REQUEST['li_0_name'];
         $orders->order_amount_receivable = $_REQUEST['total'];
-        $orders->payment_method = $_REQUEST['s_check'];
+         $orders->payment_method = $_REQUEST['s_check'];
         $orders->shipping_charges = "100";
         $orders->order_tax = "100";
         

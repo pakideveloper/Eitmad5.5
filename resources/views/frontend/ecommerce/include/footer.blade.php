@@ -1,4 +1,4 @@
-Sticky Buttons-->
+
 <div class="sticky-btns">
   <form class="quick-contact ajax-form" method="post" name="quick-contact">
     <h3>Contact us</h3>
@@ -56,14 +56,14 @@ Sticky Buttons-->
 </section>
 <!--Subscription Widget Close-->
  <!-- Footer -->
-   <footer class="footer">
+   <footer class="footer" id = "footer">
     	<div class="container">
       	<div class="row">
         	<div class="col-lg-5 col-md-5 col-sm-5">
           	<div class="info">
               <!-- <a class="logo" href="index.html"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/logo.png" alt="Bushido"/></a> -->
               <a class="logo" href="http://localhost/Eitmad5.5/home" style="font-size: 63px; top: 8px; left: 18px; padding-bottom: 3px;">
-                 <img src="public/frontend/ecommerce/assets/img/Eitmadweblogo.png" alt="Bushido"/>
+                 <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/Eitmadweblogo.png" alt="Bushido"/>
                  <!-- <span style="
           color: #4dfb4d;">E</span><span style="color: #a772ff;">i</span><span>t</span><span style="color: red;">m</span><span style="color: yellow;">a</span><span>d</span> -->
         </a>

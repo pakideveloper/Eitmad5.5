@@ -100,6 +100,13 @@
                   <!-- <span class="positive">+</span> -->
                 </a>
               </li>
+              <li class="nav-item">
+                 <a class="nav-link" href="{{url('ecommerce/changepassword')}}">
+                  <span data-feather="user"></span>
+                 Claim Request
+                  <!-- <span class="positive">+</span> -->
+                </a>
+              </li>
               <li class="nav-item has-sub">
                 <a class="nav-link" href="{{url('ecommerce/changepassword')}}">
                   <span data-feather="user"></span>
@@ -108,7 +115,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                 <a class="nav-link" href="{{url('ecommerce/changepassword')}}">
+                 <a class="nav-link" href="{{url('ecommerce/deactivate')}}">
                   <span data-feather="user"></span>
                  Deactivate Account
                   <!-- <span class="positive">+</span> -->

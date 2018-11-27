@@ -36,7 +36,7 @@
   <body>
   
   	<!--Color Switcher-->
-    <div class="color-switcher group animated">
+    <!-- <div class="color-switcher group animated">
     	<div class="toggle"><i class="fa fa-cog"></i></div>
     	<div class="color">
       	<a class="current" style="background-image:url(color-switcher/img/default.png);" href="{{URL::to('public/frontend/ecommerce/assets')}}/#" data-color="default"></a>
@@ -54,7 +54,7 @@
       	<a style="background-image:url(color-switcher/img/scheme4.png);" href="{{URL::to('public/frontend/ecommerce/assets')}}/#" data-color="scheme4"></a>
         <span>#73cbbe<br/>#c7b07b</span>
       </div>
-    </div><!--Color Switcher End-->
+    </div> --><!--Color Switcher End-->
   
   	<!--Login Modal-->
     @include('frontend/ecommerce/include/login')

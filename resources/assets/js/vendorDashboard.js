@@ -11,6 +11,7 @@ window.Vue = require('vue');
 
 import VueRouter from 'vue-router'
 <<<<<<< HEAD
+<<<<<<< HEAD
 // import Vuelidate from 'vuelidate'
 // Vue.use(Vuelidate)
 =======
@@ -41,6 +42,12 @@ Vue.use(VueProgressBar, {
   failedColor: 'red',
   height: '4px'
 })
+=======
+import Vuelidate from 'vuelidate'
+Vue.use(Vuelidate)
+
+Vue.use(VueRouter)
+>>>>>>> 6f0095791375845ece0f24c2b42e446e1cbbf3b9
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -50,7 +57,10 @@ Vue.use(VueProgressBar, {
 
 const index = require('./components/ecom_vendor/dashboard/indexComponent.vue');
 const addProduct = require('./components/ecom_vendor/dashboard/addProductComponent.vue');
+<<<<<<< HEAD
 const viewAllProducts = require('./components/ecom_vendor/dashboard/viewAllProductsComponent.vue');
+=======
+>>>>>>> 6f0095791375845ece0f24c2b42e446e1cbbf3b9
 
 const routes = [
 	{
@@ -71,6 +81,7 @@ const routes = [
 	path:'/Eitmad5.5/ecommerce/vendor/add-product',
 	component: addProduct
 	},
+<<<<<<< HEAD
 	{
 		path:'/Eitmad5.5/ecommerce/vendor/products',
 		component: viewAllProducts,
@@ -85,6 +96,8 @@ const routes = [
 	      }
 	    }
 	},
+=======
+>>>>>>> 6f0095791375845ece0f24c2b42e446e1cbbf3b9
 ];
 
 const router = new VueRouter({

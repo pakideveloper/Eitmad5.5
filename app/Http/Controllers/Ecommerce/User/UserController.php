@@ -57,7 +57,7 @@ $orders = DB::table('order_products')
             ->join('products', 'products.id','=','order_products.product_id')
              ->join('discounts', 'discounts.id', '=', 'products.discount_id')
             ->where('orders.user_id', '=' , Auth::user()->id)
-             ->select('orders.id','order_products.order_product_unit_price','order_products.order_product_quantity','orders.shipping_charges','orders.order_tax','order_products.order_product_total_price','products.product_name','discounts.discount_percent')
+             ->select('orders.id','order_products.order_product_unit_price','order_products.order_product_quantity','orders.shipping_charges','orders.order_tax','order_products.order_product_total_price','products.product_name','discounts.discount_percent','orders.order_status','orders.payment_method')
             ->get();
 
  // $products = DB::table('products')
@@ -97,6 +97,13 @@ public function changePass(Request $request)
  
 // return view('frontend.ecommerce.dashboards.User.modules.changePassword');
 }
+public function destroy()
+    {
+        $users = User::find(Auth::user()->id);
+      $users->delete();
+
+       return view('frontend.general.index');
+    }
 
 
 

@@ -25,3 +25,6 @@ Route::get('/home', function () {
 Route::view('/register/vendor','frontend.ecommerce.modules.registration.vendor-registration');
 //vendor
 
+Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
+Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
+

@@ -36,7 +36,7 @@
   <body>
   
   	<!--Color Switcher-->
-    <div class="color-switcher group animated">
+<!--     <div class="color-switcher group animated">
     	<div class="toggle"><i class="fa fa-cog"></i></div>
     	<div class="color">
       	<a class="current" style="background-image:url({{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/img/default.png);" href="#" data-color="default"></a>
@@ -54,7 +54,7 @@
       	<a style="background-image:url({{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/img/scheme4.png);" href="#" data-color="scheme4"></a>
         <span>#73cbbe<br/>#c7b07b</span>
       </div>
-    </div><!--Color Switcher End-->
+    </div> --><!--Color Switcher End-->
   
   	<!--Login Modal-->
     @include('frontend/ecommerce/include/login')
@@ -148,7 +148,7 @@
       <!--Catalog Grid-->
       <section class="catalog-grid">
       	<div class="container">
-        	<h2 class="primary-color">Catalog picks</h2>
+        	<h2 class="primary-color">Our Products</h2>
           <div class="row">
           	<!--Tile-->
             @foreach($products as $product)
@@ -158,7 +158,7 @@
                 	<span class="sale"></span>
                 </div>
               	<div class="price-label">Rs. {{$product->product_price}}</div>
-              	<a href="{{url('ecommerce/single-product')}}/{{$product->slug}}"><img src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}" alt="1"/></a>
+              	<a href="{{url('ecommerce/single-product')}}/{{$product->slug}}"><img src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}" width = "190" height="auto" alt="1"/></a>
                 <div class="footer">
                 	<a href="{{url('ecommerce/single-product')}}/{{$product->slug}}">{{$product->product_name}}</a>
                   <span>by Pirate3d</span>
@@ -406,7 +406,7 @@
             <div class="gallery-item" data-groups='["{{$sub_category->sub_category_name}}"]' data-src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}">
               <a href="img/gallery-widget/1.jpg">
                 <div class="overlay"><span><i class="icon-expand"></i></span></div>
-                <img src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}" alt="1"/>
+                <img src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}" width="190px" height="auto" alt="1"/>
               </a>
             </div>
             <!--Item--> 

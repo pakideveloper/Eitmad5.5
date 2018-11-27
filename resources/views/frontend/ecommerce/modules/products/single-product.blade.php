@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-    <title>Bushido - HTML5 E-Commerce Template</title>
+    <title>Eitmad - Products</title>
     <!--SEO Meta Tags-->
     <meta name="description" content="Responsive HTML5 E-Commerce Template" />
 		<meta name="keywords" content="responsive html5 template, e-commerce, shop, bootstrap 3.0, css, jquery, flat, modern" />
@@ -36,7 +36,7 @@
   <body>
   
   	<!--Color Switcher-->
-    <div class="color-switcher group animated">
+    <!-- <div class="color-switcher group animated">
     	<div class="toggle"><i class="fa fa-cog"></i></div>
     	<div class="color">
       	<a class="current" style="background-image:url({{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/img/default.png);" href="#" data-color="default"></a>
@@ -54,7 +54,7 @@
       	<a style="background-image:url({{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/img/scheme4.png);" href="#" data-color="scheme4"></a>
         <span>#73cbbe<br/>#c7b07b</span>
       </div>
-    </div><!--Color Switcher End-->
+    </div> --><!--Color Switcher End-->
   
   	<!--Login Modal-->
     @include('frontend/ecommerce/include/login')<!-- /.modal -->
