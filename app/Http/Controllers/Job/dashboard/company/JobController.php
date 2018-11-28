@@ -2,10 +2,6 @@
 
 namespace App\Http\Controllers\Job\dashboard\company;
 use App\Http\Controllers\Controller;
-use App\Job;
-use Illuminate\Html\HtmlBuilder;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
 
@@ -18,6 +14,7 @@ class JobController extends Controller
      */
     public function index( $term = null)
     {
+<<<<<<< HEAD
         if($term != null)
         {
             $jobs['data'] = Job::where('job_title', 'like', '%'.$term.'%')->get();
@@ -25,6 +22,9 @@ class JobController extends Controller
         }
         return $this->_getRecord();
        
+=======
+        //
+>>>>>>> parent of 56434b8... frontend and social media integration
     }
 
     /**
@@ -47,6 +47,7 @@ class JobController extends Controller
      */
     public function store(Request $request)
     {
+<<<<<<< HEAD
          $job = new Job();
         $job->job_title = $request->job_title ;
         $job->job_description = $request->job_description ;
@@ -93,6 +94,9 @@ class JobController extends Controller
         // $product->slug = $slug;
 
         $job->save();
+=======
+        //
+>>>>>>> parent of 56434b8... frontend and social media integration
     }
 
     /**
@@ -137,6 +141,7 @@ class JobController extends Controller
      */
     public function destroy($id)
     {
+<<<<<<< HEAD
         $job = Job::find($id);
         if($job->delete()){
             return $this->_getRecord();
@@ -150,5 +155,8 @@ class JobController extends Controller
     private function _getRecord(){
         $jobs = Job::orderBy('created_at', 'desc')->paginate(2);
         return request()->json(200, $jobs);
+=======
+        //
+>>>>>>> parent of 56434b8... frontend and social media integration
     }
 }

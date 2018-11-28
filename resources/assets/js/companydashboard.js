@@ -10,17 +10,11 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import VueRouter from 'vue-router'
-import Vuelidate from 'vuelidate'
-Vue.use(Vuelidate)
+// import Vuelidate from 'vuelidate'
+// Vue.use(Vuelidate)
 
 Vue.use(VueRouter)
 
-// import VueProgressBar from 'vue-progressbar'
-// Vue.use(VueProgressBar, {
-//   color: 'rgb(143, 255, 199)',
-//   failedColor: 'red',
-//   height: '4px'
-// })
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -37,7 +31,6 @@ Vue.use(VueRouter)
 Vue.prototype.CompanyDashboardRoute = '/Eitmad5.5/jobs/company/dashboard';
 const index = require('./components/Job/CompanyDashboard/indexComponent.vue');
 const addJob = require('./components/Job/CompanyDashboard/addjobComponent.vue');
-const viewJobs = require('./components/Job/CompanyDashboard/viewjobsComponent.vue');
 
 const routes = [
 	{
@@ -47,10 +40,6 @@ const routes = [
 	{
 	path: Vue.prototype.CompanyDashboardRoute+'/add-job',
 	component: addJob
-	},
-	{
-	path: Vue.prototype.CompanyDashboardRoute+'/all-jobs',
-	component: viewJobs
 	},
 ];
 
@@ -68,5 +57,5 @@ const app = new Vue({
 	  // 		CompanyDashboardRoute : '/Eitmad5.5/jobs/company/dashboard',
 	  // },
     router,
-}).$mount('#CompanyDashboard');
-// global.app = app;
+});
+global.app = app;
