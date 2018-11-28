@@ -79,14 +79,6 @@
             <a class="dropdown-item" href="{{url('/')}}" style="color: blue">Log Out</a>
           </div>
         </li>
-          <div class="middle-btns">
-            <span style="color: white;">You Logged as :</span>
-            @if (Auth::guest())
-            <a class="login-btn btn-outlined-invert" href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-profile"></i> <span>Login</span></a>
-            @else
-            <a class="login-btn btn-outlined-invert" href="#" ><i class="icon-profile"></i> <span style="color: yellow;">{{ Auth::user()->first_name }}</span></a>
-            @endif
-          </div>
         <!-- <li class="nav-item">
             <a class="nav-link dropdown-toggle" href="javascript:void(0)">Settings</a>
             <div class="c_dropdown-menu">

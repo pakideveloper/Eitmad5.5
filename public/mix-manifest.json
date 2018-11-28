@@ -1,3 +1,15 @@
 {
+<<<<<<< HEAD
     "/js/companydashboard.js": "/js/companydashboard.js"
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+    "/js/userdashboard.js": "/js/userdashboard.js"
+=======
+    "/js/vendorDashboard.js": "/js/vendorDashboard.js"
+>>>>>>> 235404c9a4cd31d747a953ffaddea3ba6df071c7
+=======
+    "/js/candidateDashboard.js": "/js/candidateDashboard.js"
+>>>>>>> 6f0095791375845ece0f24c2b42e446e1cbbf3b9
+>>>>>>> parent of 56434b8... frontend and social media integration
 }

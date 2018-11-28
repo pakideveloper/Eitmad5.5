@@ -3,16 +3,24 @@
 namespace App\Http\Controllers\Ecommerce\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 use DB;
 use App\user;
 use Auth;
 
+=======
+use Auth;
+use App\User;
+use DB;
+>>>>>>> parent of 56434b8... frontend and social media integration
 class UserController extends Controller
 {
     //
    
     public function dashboard(){
-    	return view('frontend.ecommerce.dashboards.User.modules.dashboard');
+
+    	$users  = User::find(Auth::user()->id);
+    	return view('frontend.ecommerce.dashboards.User.modules.dashboard',compact('users'));
     }
     public function profileEdit(Request $request){
 
