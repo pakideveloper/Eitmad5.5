@@ -1,6 +1,3 @@
 {
-    "/js/userdashboard.js"
-    "/js/vendorDashboard.js"
-    "/js/candidateDashboard.js"
-     "/js/companydashboard.js"
+    "/js/companydashboard.js": "/js/companydashboard.js"
 }
