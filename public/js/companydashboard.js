@@ -50101,7 +50101,7 @@ var normalizeComponent = __webpack_require__(4)
 /* script */
 var __vue_script__ = __webpack_require__(82)
 /* template */
-var __vue_template__ = __webpack_require__(83)
+var __vue_template__ = __webpack_require__(84)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -50305,34 +50305,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
-Vue.component('pagination', __webpack_require__(84));
+Vue.component('pagination', __webpack_require__(83));
+Vue.component('editmodal', __webpack_require__(85));
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -50411,321 +50386,6 @@ Vue.component('pagination', __webpack_require__(84));
 
 /***/ }),
 /* 83 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "main",
-    {
-      staticClass: "col-md-9 ml-sm-auto col-lg-10 px-4",
-      attrs: { role: "main" }
-    },
-    [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "container" }, [
-        _c("div", { staticClass: "row" }, [
-          _c("div", { staticClass: "col-md-12" }, [
-            _c("div", { staticClass: "row" }, [
-              _vm._m(1),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group col-md-4" }, [
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.search,
-                      expression: "search"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: { type: "search" },
-                  domProps: { value: _vm.search },
-                  on: {
-                    keyup: _vm.searchRecord,
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.search = $event.target.value
-                    }
-                  }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { staticClass: "table-responsive" },
-              [
-                _c(
-                  "table",
-                  {
-                    staticClass: "table table-bordred table-striped",
-                    attrs: { id: "mytable" }
-                  },
-                  [
-                    _vm._m(2),
-                    _vm._v(" "),
-                    _c(
-                      "tbody",
-                      _vm._l(_vm.jobs.data, function(job) {
-                        return _c("tr", [
-                          _c("td", [_vm._v(_vm._s(job.job_title))]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(job.job_description))]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(job.job_career_level))]),
-                          _vm._v(" "),
-                          _c("td", [_vm._v(_vm._s(job.job_no_of_position))]),
-                          _vm._v(" "),
-                          _c("td", [
-                            _vm._v(
-                              _vm._s(job.job_year_of_experience_min) +
-                                "-" +
-                                _vm._s(job.job_year_of_experience_max)
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("td", { staticClass: "row" }, [
-                            _vm._m(3, true),
-                            _vm._v(" "),
-                            _c(
-                              "p",
-                              {
-                                staticClass: "col-md-3",
-                                attrs: {
-                                  "data-placement": "top",
-                                  "data-toggle": "tooltip",
-                                  title: "Delete"
-                                }
-                              },
-                              [
-                                _c(
-                                  "button",
-                                  {
-                                    staticClass: "btn btn-danger btn-xs",
-                                    staticStyle: { "font-size": "11px" },
-                                    attrs: {
-                                      "data-title": "Delete",
-                                      "data-toggle": "modal",
-                                      "data-target": "#delete"
-                                    },
-                                    on: {
-                                      click: function($event) {
-                                        _vm.delRecord(job.id)
-                                      }
-                                    }
-                                  },
-                                  [_vm._v("Delete")]
-                                )
-                              ]
-                            )
-                          ])
-                        ])
-                      })
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "clearfix" }),
-                _vm._v(" "),
-                _c("pagination", {
-                  attrs: { data: _vm.jobs },
-                  on: { "pagination-change-page": _vm.getResults }
-                })
-              ],
-              1
-            )
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _vm._m(4)
-    ]
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass:
-          "d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
-      },
-      [_c("h1", { staticClass: "h2" }, [_vm._v("View Jobs")])]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("label", { staticClass: "label label-primary col-md-1" }, [
-      _c("strong", [_vm._v("Search:")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("th", [_vm._v("Title")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Description")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Career Level")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("No. Of Positions")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Required Experience")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Actions")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "p",
-      {
-        staticClass: "col-md-3",
-        attrs: {
-          "data-placement": "top",
-          "data-toggle": "tooltip",
-          title: "Edit"
-        }
-      },
-      [
-        _c(
-          "button",
-          {
-            staticClass: "btn btn-primary btn-xs",
-            staticStyle: { "font-size": "11px" },
-            attrs: {
-              "data-title": "Edit",
-              "data-toggle": "modal",
-              "data-target": "#edit"
-            }
-          },
-          [_vm._v("Edit")]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "modal fade",
-        attrs: {
-          id: "edit",
-          tabindex: "-1",
-          role: "dialog",
-          "aria-labelledby": "edit",
-          "aria-hidden": "true"
-        }
-      },
-      [
-        _c("div", { staticClass: "modal-dialog" }, [
-          _c("div", { staticClass: "modal-content" }, [
-            _c("div", { staticClass: "modal-header" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "close",
-                  attrs: {
-                    type: "button",
-                    "data-dismiss": "modal",
-                    "aria-hidden": "true"
-                  }
-                },
-                [
-                  _c("span", {
-                    staticClass: "glyphicon glyphicon-remove",
-                    attrs: { "aria-hidden": "true" }
-                  })
-                ]
-              ),
-              _vm._v(" "),
-              _c(
-                "h4",
-                {
-                  staticClass: "modal-title custom_align",
-                  attrs: { id: "Heading" }
-                },
-                [_vm._v("Edit Your Detail")]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-body" }, [
-              _c("div", { staticClass: "form-group" }, [
-                _c("input", {
-                  staticClass: "form-control ",
-                  attrs: { type: "text", placeholder: "Mohsin" }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("input", {
-                  staticClass: "form-control ",
-                  attrs: { type: "text", placeholder: "Irshad" }
-                })
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group" }, [
-                _c("textarea", {
-                  staticClass: "form-control",
-                  attrs: {
-                    rows: "2",
-                    placeholder:
-                      "CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan"
-                  }
-                })
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-footer " }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-warning btn-lg",
-                  staticStyle: { width: "100%" },
-                  attrs: { type: "button" }
-                },
-                [
-                  _c("span", { staticClass: "glyphicon glyphicon-ok-sign" }),
-                  _vm._v(" Update")
-                ]
-              )
-            ])
-          ])
-        ])
-      ]
-    )
-  }
-]
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-079b5ff3", module.exports)
-  }
-}
-
-/***/ }),
-/* 84 */
 /***/ (function(module, exports) {
 
 module.exports =
@@ -52029,6 +51689,472 @@ module.exports = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u20
 
 /******/ })["default"];
 //# sourceMappingURL=laravel-vue-pagination.common.js.map
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "main",
+    {
+      staticClass: "col-md-9 ml-sm-auto col-lg-10 px-4",
+      attrs: { role: "main" }
+    },
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _c("div", { staticClass: "container" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-12" }, [
+            _c("div", { staticClass: "row" }, [
+              _vm._m(1),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-group col-md-4" }, [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.search,
+                      expression: "search"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: { type: "search" },
+                  domProps: { value: _vm.search },
+                  on: {
+                    keyup: _vm.searchRecord,
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.search = $event.target.value
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "table-responsive" },
+              [
+                _c(
+                  "table",
+                  {
+                    staticClass: "table table-bordred table-striped",
+                    attrs: { id: "mytable" }
+                  },
+                  [
+                    _vm._m(2),
+                    _vm._v(" "),
+                    _c(
+                      "tbody",
+                      _vm._l(_vm.jobs.data, function(job) {
+                        return _c("tr", [
+                          _c("td", [_vm._v(_vm._s(job.job_title))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(job.job_description))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(job.job_career_level))]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(job.job_no_of_position))]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _vm._v(
+                              _vm._s(job.job_year_of_experience_min) +
+                                "-" +
+                                _vm._s(job.job_year_of_experience_max)
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("td", { staticClass: "row" }, [
+                            _vm._m(3, true),
+                            _vm._v(" "),
+                            _c(
+                              "p",
+                              {
+                                staticClass: "col-md-3",
+                                attrs: {
+                                  "data-placement": "top",
+                                  "data-toggle": "tooltip",
+                                  title: "Delete"
+                                }
+                              },
+                              [
+                                _c(
+                                  "button",
+                                  {
+                                    staticClass: "btn btn-danger btn-xs",
+                                    staticStyle: { "font-size": "11px" },
+                                    attrs: {
+                                      "data-title": "Delete",
+                                      "data-toggle": "modal",
+                                      "data-target": "#delete"
+                                    },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.delRecord(job.id)
+                                      }
+                                    }
+                                  },
+                                  [_vm._v("Delete")]
+                                )
+                              ]
+                            )
+                          ])
+                        ])
+                      })
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("div", { staticClass: "clearfix" }),
+                _vm._v(" "),
+                _c("pagination", {
+                  attrs: { data: _vm.jobs },
+                  on: { "pagination-change-page": _vm.getResults }
+                })
+              ],
+              1
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { attrs: { id: "modal" } }, [_c("editmodal")], 1)
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+      },
+      [_c("h1", { staticClass: "h2" }, [_vm._v("View Jobs")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("label", { staticClass: "label label-primary col-md-1" }, [
+      _c("strong", [_vm._v("Search:")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("thead", [
+      _c("th", [_vm._v("Title")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Description")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Career Level")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("No. Of Positions")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Required Experience")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("Actions")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "p",
+      {
+        staticClass: "col-md-3",
+        attrs: {
+          "data-placement": "top",
+          "data-toggle": "tooltip",
+          title: "Edit"
+        }
+      },
+      [
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-primary btn-xs",
+            staticStyle: { "font-size": "11px" },
+            attrs: {
+              "data-title": "Edit",
+              "data-toggle": "modal",
+              "data-target": "#edit"
+            }
+          },
+          [_vm._v("Edit")]
+        )
+      ]
+    )
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-079b5ff3", module.exports)
+  }
+}
+
+/***/ }),
+/* 85 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(86)
+}
+var normalizeComponent = __webpack_require__(4)
+/* script */
+var __vue_script__ = __webpack_require__(88)
+/* template */
+var __vue_template__ = __webpack_require__(89)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Job/CompanyDashboard/editjobComponent.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-dd2fd0ae", Component.options)
+  } else {
+    hotAPI.reload("data-v-dd2fd0ae", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 86 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(87);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(13)("10f1ba25", content, false, {});
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-dd2fd0ae\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./editjobComponent.vue", function() {
+     var newContent = require("!!../../../../../../node_modules/css-loader/index.js!../../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-dd2fd0ae\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./editjobComponent.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 87 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(12)(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 88 */
+/***/ (function(module, exports) {
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+/* 89 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        attrs: {
+          id: "edit",
+          tabindex: "-1",
+          role: "dialog",
+          "aria-labelledby": "edit",
+          "aria-hidden": "true"
+        }
+      },
+      [
+        _c("div", { staticClass: "modal-dialog" }, [
+          _c("div", { staticClass: "modal-content" }, [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c("div", { staticClass: "modal-header" }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "close",
+                    attrs: {
+                      type: "button",
+                      "data-dismiss": "modal",
+                      "aria-hidden": "true"
+                    }
+                  },
+                  [
+                    _c("span", {
+                      staticClass: "glyphicon glyphicon-remove",
+                      attrs: { "aria-hidden": "true" }
+                    })
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "h4",
+                  { staticClass: "modal-title", attrs: { id: "Heading" } },
+                  [_vm._v("Edit Your Detail")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-body" }, [
+                _c("div", { staticClass: "form-group" }, [
+                  _c("input", {
+                    staticClass: "form-control ",
+                    attrs: { type: "text", placeholder: "Mohsin" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("input", {
+                    staticClass: "form-control ",
+                    attrs: { type: "text", placeholder: "Irshad" }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("textarea", {
+                    staticClass: "form-control",
+                    attrs: {
+                      rows: "2",
+                      placeholder:
+                        "CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan"
+                    }
+                  })
+                ])
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-footer " }, [
+                _c(
+                  "button",
+                  {
+                    staticClass: "btn btn-warning btn-lg",
+                    staticStyle: { width: "100%" },
+                    attrs: { type: "button" }
+                  },
+                  [
+                    _c("span", { staticClass: "glyphicon glyphicon-ok-sign" }),
+                    _vm._v(" Update")
+                  ]
+                )
+              ])
+            ])
+          ])
+        ])
+      ]
+    )
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-dd2fd0ae", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
