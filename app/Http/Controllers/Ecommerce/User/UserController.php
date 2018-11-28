@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Ecommerce\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use DB;
+use App\user;
+use Auth;
 
 class UserController extends Controller
 {
