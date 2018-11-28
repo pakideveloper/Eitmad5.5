@@ -102,4 +102,4 @@ const dashboard_app = new Vue({
     router,
 }).$mount('#dashboard_app')
 
-// global.app = app;
+global.dashboard_app = dashboard_app;
