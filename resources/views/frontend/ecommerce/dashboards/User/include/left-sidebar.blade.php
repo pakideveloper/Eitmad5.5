@@ -92,6 +92,34 @@
                       <router-link  to="add-product" class="nav-link">Seller Voucher</router-link>   
                   </li>
                 </ul>
+              </li> 
+              <li class="nav-item">
+                 <a class="nav-link" href="{{url('ecommerce/changepassword')}}">
+                  <span data-feather="user"></span>
+                 WishList
+                  <!-- <span class="positive">+</span> -->
+                </a>
+              </li>
+              <li class="nav-item">
+                 <a class="nav-link" href="{{url('ecommerce/changepassword')}}">
+                  <span data-feather="user"></span>
+                 Claim Request
+                  <!-- <span class="positive">+</span> -->
+                </a>
+              </li>
+              <li class="nav-item has-sub">
+                <a class="nav-link" href="{{url('ecommerce/changepassword')}}">
+                  <span data-feather="user"></span>
+                 Change Password
+                  <!-- <span class="positive">+</span> -->
+                </a>
+              </li>
+              <li class="nav-item">
+                 <a class="nav-link" href="{{url('ecommerce/deactivate')}}">
+                  <span data-feather="user"></span>
+                 Deactivate Account
+                  <!-- <span class="positive">+</span> -->
+                </a>
               </li>
               <li class="nav-item">
                 <router-link  to="add-product" class="nav-link"><span data-feather="shopping-cart"></span>&nbsp;Store</router-link>

@@ -82,7 +82,7 @@
             	<h2 class="title">Blog posts</h2>
               <!--Post-->
               <div class="post">
-              	<h3 class="title"><a href="{{URL::to('public/frontend/ecommerce/assets')}}/blog-single.html">New awesome theme from 8Guild team</a></h3>
+              	<h3 class="title"><a href="{{URL::to('ecommerce/singleblog')}}">New awesome theme from 8Guild team</a></h3>
                 <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/blog/blog_01.jpg" alt="Blog post"/>
                 <p class="p-style3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur....</p>
                 <footer>
@@ -103,7 +103,7 @@
              
               <!--Post-->
               <div class="post">
-              	<h3 class="title"><a href="{{URL::to('public/frontend/ecommerce/assets')}}/blog-single.html">Beautiful and clickable post title</a></h3>
+              	<h3 class="title"><a href="{{URL::to('ecommerce/singleblog')}}">Beautiful and clickable post title</a></h3>
                 <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/blog/blog_02.jpg" alt="Blog post"/>
                 <p class="p-style3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur....</p>
                 <footer>

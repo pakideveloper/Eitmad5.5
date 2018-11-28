@@ -24,9 +24,9 @@
     	<div class="right-bg"></div>
       
     	<div class="container">
-      	<a class="logo" href="http://localhost/Eitmad5.5" style="font-size: 47px; top: 8px;
+      	<a class="logo" href="http://localhost/Eitmad5.5" style="font-size: 47px; top: 15px;
     left: 18px;">
-    <img src="public/frontend/ecommerce/assets/img/Eitmadweblogo.png" alt="Bushido"/>
+    <img src="{{url('public/frontend/ecommerce/assets')}}/img/Eitmadweblogo.png" alt="Bushido"/>
     <!-- <span style="
     color: #4dfb4d;
 ">E</span><span style="
@@ -62,18 +62,16 @@
         <!--Main Menu-->
         <nav class="menu">
           <ul class="main">
-          	<li class="has-submenu"><a href="{{url('/ecommerce')}}">Homesss<i class="fa fa-chevron-down"></i></a><!--Class "has-submenu" for proper highlighting and dropdown-->
-            	<ul class="submenu">
-              	<li><a href="index.html">Home - Slideshow</a></li>
-              	<li><a href="home-fullscreen.html">Home - Fullscreen Slider</a></li>
-              	<li><a href="home-showcase.html">Home - Product Showcase</a></li>
-              	<li><a href="home-categories.html">Home - Categories Slider</a></li>
-              	<li><a href="home-offers.html">Home - Special Offers</a></li>
-              </ul>
+          	<li class="has-submenu"><a href="{{url('/')}}">Home<i class="fa fa-chevron-down"></i></a>
+              <!--Class "has-submenu" for proper highlighting and dropdown-->
+            	<!-- <ul class="submenu">
+          	<li class="has-submenu"><a href="{{url('/ecommerce')}}">Homesss<i class="fa fa-chevron-down"></i></a>
+            Class "has-submenu" for proper highlighting and dropdown-->
+            	
             </li>
-          	<li class="has-submenu"><a href="{{ url('shop') }}">Shop<i class="fa fa-chevron-down"></i></a>
+          	<li class="has-submenu"><a href="{{ url('ecommerce/products') }}">Shop<i class="fa fa-chevron-down"></i></a>
               
-            	<ul class="submenu">
+            	<!-- <ul class="submenu">
                 
               	
                 
@@ -87,7 +85,7 @@
                 <li><a href="{{url('/ecommerce/cart')}}">Shopping Cart</a></li>
                 <li><a href="checkout.html">Checkout Page</a></li>
                 <li><a href="{{url('/ecommerce/wishlist')}}">Wishlist</a></li>
-              </ul>
+              </ul> -->
             </li>
           	<li class="has-submenu"><a href="{{url('/ecommerce/blog')}}">Blog<i class="fa fa-chevron-down"></i></a>
             	<!-- <ul class="submenu">
@@ -96,8 +94,8 @@
               	<li><a href="blog-single.html">Blog - Single Post</a></li>
               </ul> -->
             </li>
-          	<li class="has-submenu"><a href="#">Pages<span class="label">NEW</span><i class="fa fa-chevron-down"></i></a>
-            	<ul class="submenu">
+          	<li class="has-submenu"><a href="{{url('ecommerce/about')}}">About Us<i class="fa fa-chevron-down"></i></a>
+<!--             	<ul class="submenu">
               	<li><a href="{{ route('register') }}">Login / Registration</a></li>
                 <li><a href="{{ url('ecommerce/become-seller') }}">Become a Seller<span class="label">NEW</span></a></li>
                 <li><a href="account-addresses.html">Account: Addresses<span class="label">NEW</span></a></li>
@@ -110,24 +108,24 @@
               	<li><a href="404.html">404 Page</a></li>
               	<li><a href="support.html">Support Page</a></li>
               	<li><a href="cs-page.html">Components &amp; Styles</a></li>
-              </ul>
+              </ul> -->
             </li>
-          	<li class="hide-sm"><a href="support.html">Support</a></li>
+          	<li class="has-submenu"><a href="{{url('ecommerce/support')}}">Support</a></li>
           </ul>
           <ul class="catalog">
-          	<li class="has-submenu"><a href="shop-filters-left-3cols.html">Categories<i class="fa fa-chevron-down"></i></a>
+          	<li class="has-submenu"><a href="{{ url('ecommerce/products') }}">Electronics<i class="fa fa-chevron-down"></i></a>
               <?php
                                  
                                  $categories=App\Product_Category::all();
                                  ?>
-            	<ul class="submenu">
+            
                <!--  @foreach($categories as $category)
-              	<li><a href="#">{{$category->category_name}}</a></li>
+                <li><a href="#">{{$category->category_name}}</a></li>
                 @endforeach -->
                 @foreach($categories as $category)
-              	<li class="has-submenu"><a href="#">{{$category->category_name}}</a><!--Class "has-submenu" for adding carret and dropdown-->
+                <!-- <li class="has-submenu"><a href="#">{{$category->category_name}}</a> --><!--Class "has-submenu" for adding carret and dropdown-->
                   
-                	<ul class="sub-submenu">
+                  <ul class="submenu">
                     @foreach($category->sub_categories as $subcategory)
                     <li><a href="{{url('/ecommerce/category')}}/{{$subcategory->sub_category_name}}">{{$subcategory->sub_category_name}}</a></li>
                      @endforeach
@@ -137,22 +135,24 @@
                   </ul>
                 </li>
                  @endforeach
-              	
+                
                 <li class="offer">
-                	<!-- <div class="col-1">
-                  	<p class="p-style2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <!-- <div class="col-1">
+                    <p class="p-style2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                   </div> -->
                   <!-- <div class="col-2">
-                  	<img src="img/offers/menu-drodown-offer.jpg" alt="Special Offer"/>
-                  	<a class="btn btn-block" href="#"><span>584$</span>Special offer</a>
+                    <img src="img/offers/menu-drodown-offer.jpg" alt="Special Offer"/>
+                    <a class="btn btn-block" href="#"><span>584$</span>Special offer</a>
                   </div> -->
                 </li>
-              </ul>
+              
+              
             </li>
-          	<li><a href="shop-filters-left-3cols.html">Dashboard</a></li>
-          	<li><a href="shop-filters-left-3cols.html">Personal</a></li>
-          	<li><a href="shop-filters-left-3cols.html">Gaming consoles</a></li>
-          	<li><a href="shop-filters-left-3cols.html">TV sets</a></li>
+          	<li><a href="{{ url('ecommerce/products') }}">Furniture</a></li>
+          	<li><a href="{{ url('ecommerce/products') }}">House-Hold</a></li>
+          	<li><a href="{{ url('ecommerce/products') }}">Clothing</a></li>
+            <!-- <li><a href="shop-filters-left-3cols.html">Sports</a></li> -->
+          	<li><a href="shop-filters-left-3cols.html">Property</a></li>
           </ul>
         </nav>
         
@@ -160,11 +160,15 @@
         <div class="toolbar group">
           <button class="search-btn btn-outlined-invert"><i class="icon-magnifier"></i></button>
           <div class="middle-btns">
-            <a class="btn-outlined-invert" href="{{url('/ecommerce/wishlist')}}"><i class="icon-heart"></i> <span>Wishlist</span></a>
             @if (Auth::guest())
+             <a class="btn-outlined-invert" href="{{ url('/register') }}"><i class="icon-heart"></i> <span>Sign Up</span></a>            
             <a class="login-btn btn-outlined-invert" href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-profile"></i> <span>Login</span></a>
             @else
-            <a class="login-btn btn-outlined-invert" href="#" ><i class="icon-profile"></i> <span>{{ Auth::user()->first_name }}</span></a>
+             <a class="btn-outlined-invert" href="{{url('ecommerce/user/dashboard')}}" ><i class="icon-profile"></i> <span style="text-transform: capitalize;">{{ Auth::user()->first_name }}</span></a>
+            <a class="login-btn btn-outlined-invert"  onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();" ><i class="icon-profile"></i> <span style="text-transform: capitalize;">logout</span></a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
+           
             @endif
           </div>
           <div class="cart-btn">
@@ -202,6 +206,18 @@
               </div>
             </div><!--Cart Dropdown Close-->
           </div>
+
+          <div class="cart-btn">
+            <a class="btn btn-outlined-invert" href="{{url('/ecommerce/cart')}}"><i class="icon-heart" style="font-size: 18px;"></i><span id="" style="font-size: 18px;">Wishlist</span></a>
+            
+            
+            <!--Cart Dropdown-->
+           
+          </div>
+
+
+
+
         </div><!--Toolbar Close-->
       </div>
     </header>

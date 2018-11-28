@@ -9,6 +9,7 @@
         "fideloper/proxy": "~3.3",
         "gloudemans/shoppingcart": "^2.5",
         "laravel/framework": "5.5.*",
+        "laravel/socialite": "^3.2",
         "laravel/tinker": "~1.0",
         "zizaco/entrust": "5.2.x-dev"
     },
