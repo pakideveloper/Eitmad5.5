@@ -15,9 +15,9 @@
 .file-upload .file-select.file-select-disabled:hover .file-select-name{line-height:40px;display:inline-block;padding:0 10px;}
 
  </style>
-    <div id="dashboard_user">
+    <!-- <div id="">
     <div class="container-fluid">
-      <div class="row">
+      <div class="row"> -->
         
         @include('frontend.ecommerce.dashboards.User.include.left-sidebar')
 
@@ -297,9 +297,9 @@
             
           
         
-        </div>
+        <!-- </div>
       </div>
-    </div>
+    </div> -->
     @include('frontend.ecommerce.dashboards.User.include.footer')
 
 <script type="">

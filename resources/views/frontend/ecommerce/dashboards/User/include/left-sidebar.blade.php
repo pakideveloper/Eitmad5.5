@@ -5,10 +5,7 @@
                 <router-link  to="dashboard" class="nav-link"><span data-feather="shopping-cart"></span>&nbsp;Dasboard</router-link>
               </li> -->
               <li class="nav-item">
-<<<<<<< HEAD
-                <a class="nav-link" href="{{url('ecommerce/user/dashboard')}}"  ><span data-feather="user"></span>&nbsp;Profile</a>
-=======
-                <a  href="{{url('ecommerce/user/dashboard')}}" class="nav-link"><span data-feather="user"></span>&nbsp;Profile</a>
+                <a class="nav-link" href="{{url('ecommerce/user/dashboard')}}" ><span data-feather="user"></span>&nbsp;Profile</a>
               </li>
               <li class="nav-item has-sub">
                
@@ -44,21 +41,11 @@
                     
                   </li>
                 </ul> -->
->>>>>>> parent of 56434b8... frontend and social media integration
               </li>
              
               <li class="nav-item has-sub">
                 <a class="nav-link" href="{{url('ecommerce/myorders')}}">
                   <span data-feather="user"></span>
-<<<<<<< HEAD
-                  Orders
-                  
-                </a>
-                
-              </li>
-              
-             
-=======
                   My Orders
                   <!-- <span class="positive">+</span> -->
                 </a>
@@ -107,7 +94,6 @@
                   </li>
                 </ul>
               </li> -->
->>>>>>> parent of 56434b8... frontend and social media integration
               <li class="nav-item">
                  <a class="nav-link" href="{{url('ecommerce/changepassword')}}">
                   <span data-feather="user"></span>
@@ -115,13 +101,13 @@
                   <!-- <span class="positive">+</span> -->
                 </a>
               </li>
-              <li class="nav-item">
+             <!--  <li class="nav-item">
                  <a class="nav-link" href="{{url('ecommerce/changepassword')}}">
                   <span data-feather="user"></span>
                  Claim Request
-                  <!-- <span class="positive">+</span> -->
+                
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item has-sub">
                 <a class="nav-link" href="{{url('ecommerce/changepassword')}}">
                   <span data-feather="user"></span>
@@ -136,12 +122,7 @@
                   <!-- <span class="positive">+</span> -->
                 </a>
               </li>
-<<<<<<< HEAD
-             
-              
-             
-=======
-              <!-- <li class="nav-item has-sub">
+    <!-- <li class="nav-item has-sub">
                 <a class="nav-link" href="JavaScript:void(0)">
                   <span data-feather="user"></span>
                   Finance
@@ -171,7 +152,6 @@
                   Reports
                 </a>
               </li> -->
->>>>>>> parent of 56434b8... frontend and social media integration
               <!-- <li class="nav-item">
                 <a class="nav-link" href="#">
                   <span data-feather="layers"></span>
@@ -180,9 +160,7 @@
               </li> -->
             </ul>
 
-<<<<<<< HEAD
-            
-=======
+
            <!--  <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
               <span>Saved reports</span>
               <a class="d-flex align-items-center text-muted" href="#">
@@ -215,6 +193,5 @@
                 </a>
               </li>
             </ul> -->
->>>>>>> parent of 56434b8... frontend and social media integration
           </div>
         </nav>
