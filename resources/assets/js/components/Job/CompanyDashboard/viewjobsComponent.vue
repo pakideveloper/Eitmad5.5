@@ -18,13 +18,7 @@
     
     
     <div class="col-md-12">
-      <div class="row">
-        <label class="label label-primary col-md-1"><strong>Search:</strong> </label>
-        <div class="form-group col-md-4">
-          <input class="form-control" type="search" v-model="search" @keyup="searchRecord">
-        </div>
-      </div>
-      
+      <h4>Bootstrap Snipp for Datatable</h4>
       <div class="table-responsive">
         
         <table id="mytable" class="table table-bordred table-striped">
@@ -43,7 +37,7 @@
           </thead>
           <tbody>
             
-            <tr v-for="job in jobs.data">
+            <tr v-for="job in jobs">
               
               <td>{{job.job_title}}</td>
               <td>{{job.job_description}}</td>
@@ -74,8 +68,16 @@
           
         </table>
         <div class="clearfix"></div>
-        <pagination :data="jobs" @pagination-change-page="getResults"></pagination>
-      
+        <ul class="pagination pull-right">
+          <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+          <li class="active"><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+        </ul>
+        
       </div>
       
     </div>
@@ -129,30 +131,13 @@
         data() {
           return {
               jobs:{},
-              search:'',
                      
           };
         },
         
         methods: {
-            getResults(page = 1) {
-              axios.get(this.url+'/all-jobs?page=' + page)
-              .then(response => this.jobs = response.data)
-              .catch(error => console.log(error));
-            },
             refreshRecord(record){
               this.jobs = record.data
-            },
-            searchRecord(){
-              if(this.search.length >= 2){
-                axios.get(this.url+'/all-jobs/search/'+this.search)
-                .then(response => this.jobs = response.data)
-                .catch(error => console.log(error))
-              }
-              else{
-                this.getResults()
-              }
-              
             },
             delRecord(id){
               const reply = confirm("Are you sure, you want to delete this record?");

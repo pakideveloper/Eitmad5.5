@@ -70,9 +70,7 @@ Route::get('/addcompany/cities/{country}/cities.json', function($country){
 });
 
 Route::get('company/dashboard','Job\dashboard\company\CompanyController@dashboard');
-//////////End Company  Registration///////////////
-
 Route::get('candidate/dashboard','Job\dashboard\candidate\CandidateController@dashboard');
 
 /////////// Job Section////////
-Route::resource('company/dashboard/add-job', 'Job\dashboard\company\JobController');
+Route::resource('company/dashboard/post-job', 'Job\dashboard\company\JobController');

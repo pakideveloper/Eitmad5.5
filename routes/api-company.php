@@ -36,4 +36,3 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::Resource('add-job','Job\dashboard\company\JobController');
 Route::Resource('all-jobs','Job\dashboard\company\JobController');
 Route::Resource('del-job','Job\dashboard\company\JobController');
-Route::get('all-jobs/search/{term?}','Job\dashboard\company\JobController@index');
