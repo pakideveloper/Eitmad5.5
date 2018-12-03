@@ -23,15 +23,9 @@
     	<div class="right-bg"></div>
       
     	<div class="container">
-      	<!-- <a class="logo" href="index.html"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/logo.png" alt="Bushido"/></a> -->
-              <a class="logo" href="{{url('/frontend/general/index')}}" style="font-size: 47px; top: 8px; left: 18px;"><!-- <img src="http://localhost/Eitmad5.5/public/frontend/ecommerce/assets/img/logo.png" alt="Bushido"/> --><span style="
-          color: #4dfb4d;">E</span><span style="color: #a772ff;">i</span><span>t</span><span style="color: red;">m</span><span style="color: yellow;">a</span><span>d</span></a>
-      	<a class="logo" href="index.html"><img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/Eitmadweblogo.png" alt="Bushido"/></a>
-             <!--  <a class="logo" href="http://localhost/Eitmad5.5" style="font-size: 47px; top: 8px; left: 18px;"> -->
-                <!-- <img src="http://localhost/Eitmad5.5/public/frontend/ecommerce/assets/img/logo.png" alt="Bushido"/> -->
-               <!--  <span style="
-          color: #4dfb4d;">E</span><span style="color: #a772ff;">i</span><span>t</span><span style="color: red;">m</span><span style="color: yellow;">a</span><span>d</span> -->
-        </a>
+      	 <a class="logo" href="index.html"><img src="public/frontend/ecommerce/assets/img/Eitmadweblogo.png" alt="Bushido"/></a> 
+              
+        
         <!--Language / Currency Switchers-->
        <!--  <ul class="switchers">
         	<li>$

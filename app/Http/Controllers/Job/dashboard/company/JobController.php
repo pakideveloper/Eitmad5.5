@@ -16,9 +16,15 @@ class JobController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index( $term = null)
     {
-        //
+        if($term != null)
+        {
+            $jobs['data'] = Job::where('job_title', 'like', '%'.$term.'%')->get();
+        return request()->json(200, $jobs); 
+        }
+        return $this->_getRecord();
+       
     }
 
     /**
@@ -49,7 +55,7 @@ class JobController extends Controller
         $Arrayskills = explode(',', $skills);
         $job->job_skills =  json_encode($Arrayskills); 
         }
-        // $job->job_skills =  ;
+        
         $job->job_career_level = $request->job_career_level ;
         $job->job_no_of_position = $request->job_no_of_position ;
         $job->job_year_of_experience_min = $request->job_year_of_experience_min ;
@@ -131,6 +137,18 @@ class JobController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $job = Job::find($id);
+        if($job->delete()){
+            return $this->_getRecord();
+        }
+        else{
+            return response()->json(425, ['delete'=> "error deleting record"]);
+        }
+        
+    }
+
+    private function _getRecord(){
+        $jobs = Job::orderBy('created_at', 'desc')->paginate(2);
+        return request()->json(200, $jobs);
     }
 }

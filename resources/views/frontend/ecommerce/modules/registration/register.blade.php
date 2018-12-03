@@ -4,7 +4,7 @@
 <!-- Mirrored from template.8guild.com/bushido/v1.4/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Aug 2018 05:02:43 GMT -->
 <head>
     <meta charset="utf-8">
-    <title>Bushido - HTML5 E-Commerce Template</title>
+    <title>Eitmad - Register</title>
     <!--SEO Meta Tags-->
     <meta name="description" content="Responsive HTML5 E-Commerce Template" />
     <meta name="keywords" content="responsive html5 template, e-commerce, shop, bootstrap 3.0, css, jquery, flat, modern" />
@@ -35,7 +35,7 @@
   <body>
   
     <!--Color Switcher-->
-    <div class="color-switcher group animated">
+    <!-- <div class="color-switcher group animated">
       <div class="toggle"><i class="fa fa-cog"></i></div>
       <div class="color">
         <a class="current" style="background-image:url(color-switcher/img/default.png);" href="#" data-color="default"></a>
@@ -53,83 +53,14 @@
         <a style="background-image:url(color-switcher/img/scheme4.png);" href="#" data-color="scheme4"></a>
         <span>#73cbbe<br/>#c7b07b</span>
       </div>
-    </div><!--Color Switcher End-->
+    </div> --><!--Color Switcher End-->
   
     <!--Login Modal-->
-    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
-            <h2>Login or <a href="register.html">Register</a></h2>
-            <p class="large">Use social accounts</p>
-            <div class="social-login">
-              <a class="facebook" href="#"><i class="fa fa-facebook-square"></i></a>
-              <a class="google" href="#"><i class="fa fa-google-plus-square"></i></a>
-              <a class="twitter" href="#"><i class="fa fa-twitter-square"></i></a>
-            </div>
-          </div>
-          <div class="modal-body">
-          <form class="login-form">
-            <div class="form-group group">
-              <label for="log-email">Email</label>
-              <input type="email" class="form-control" name="log-email" id="log-email" placeholder="Enter your email" required>
-              <a class="help-link" href="#">Forgot email?</a>
-            </div>
-            <div class="form-group group">
-              <label for="log-password">Password</label>
-              <input type="text" class="form-control" name="log-password" id="log-password" placeholder="Enter your password" required>
-              <a class="help-link" href="#">Forgot password?</a>
-            </div>
-            <div class="checkbox">
-              <label><input type="checkbox" name="remember"> Remember me</label>
-            </div>
-            <input class="btn btn-success" type="submit" value="Login">
-          </form>
-          </div>
-        </div><!-- /.modal-content -->
-      </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+    
 
     @include('frontend/ecommerce/include/header')
     <!--Page Content-->
-    <div class="page-content">
     
-      <!--Breadcrumbs-->
-      <ol class="breadcrumb">
-        <li><a href="index.html">Home</a></li>
-        <li>Login/ register</li>
-      </ol><!--Breadcrumbs Close-->
-      
-      <!--Login / Register-->
-      <section class="log-reg container">
-       <h2>Login/ register</h2>
-       <p class="large">Use social accounts</p>
-       <div class="social-login">
-        <a class="facebook" href="#"><i class="fa fa-facebook-square"></i></a>
-        <a class="google" href="#"><i class="fa fa-google-plus-square"></i></a>
-        <a class="twitter" href="#"><i class="fa fa-twitter-square"></i></a>
-        </div>
-        <div class="row">
-          <!--Login-->
-          <div class="col-lg-5 col-md-5 col-sm-5">
-            <form method="post" class="login-form">
-              <div class="form-group group">
-                <label for="log-email2">Email</label>
-                <input type="email" class="form-control" name="log-email2" id="log-email2" placeholder="Enter your email" required>
-                <a class="help-link" href="#">Forgot email?</a>
-              </div>
-              <div class="form-group group">
-                <label for="log-password2">Password</label>
-                <input type="text" class="form-control" name="log-password2" id="log-password2" placeholder="Enter your password" required>
-                <a class="help-link" href="#">Forgot password?</a>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" name="remember"> Remember me</label>
-              </div>
-              <input class="btn btn-success" type="submit" value="Login">
-            </form>
-          </div>
           <!--Registration-->
           <div class="col-lg-7 col-md-7 col-sm-7">
             <form method="post" class="registr-form" action="{{route("register")}}">

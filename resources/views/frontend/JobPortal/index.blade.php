@@ -223,9 +223,9 @@
               	<div class="badges">
                 	<span class="sale"></span>
                 </div>
-              	<div class="price-label">Expire Date: 11 Oct</div>
+              	<div class="price-label">Expire Date: 10 Oct</div>
               	<div class="image">
-              	<a href="{{'jobs/candidate/dashboard'}}"><img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="1"/></a>
+              	<a href="#"><img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="1"/></a>
               	<div class="buttons">
 									<div class="open-down">
 										<button type="button" class="rotate1">
@@ -735,7 +735,7 @@
 @include('frontend/JobPortal/include/brand-crusal')
 
 <!-- footer start -->
-@include('frontend/JobPortal/include/jobfooter1')
+@include('frontend/ecommerce/include/footer')
 <!--footer end -->
 
 <!-- jquery -->
