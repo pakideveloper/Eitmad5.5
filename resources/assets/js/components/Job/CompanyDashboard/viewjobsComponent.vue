@@ -34,10 +34,24 @@
            
             <th>Title</th>
             <th>Description</th>
+            <th>Location</th>
+            <th>Job Skills</th>
             <th>Career Level</th>
             <th>No. Of Positions</th>
             <th>Required Experience</th>
-            <th>Actions</th>
+            <th>Salary Requirement</th>
+            <th>Gender Preference</th>
+            <th>Job Type</th>
+            <th>Job Category</th>
+            <th>Degree Level</th>
+            <th>Degree Type</th>
+            <th>Age Requirement</th>
+            <th>Apply By</th>
+            <th>Posted By</th>
+            <th>Approval Status</th>
+            <th>Post Status</th>
+            <th>Created At</th>
+            <th style="text-align:center;" colspan="2">Actions</th>
             
            
           </thead>
@@ -47,12 +61,38 @@
               
               <td>{{job.job_title}}</td>
               <td>{{job.job_description}}</td>
+              <td>{{job.city_name}},{{job.country_name}}</td>
+              <td>{{job.job_skills}}</td>
               <td>{{job.job_career_level}}</td>
               <td>{{job.job_no_of_position}}</td>
-              <td>{{job.job_year_of_experience_min}}-{{job.job_year_of_experience_max}}</td>
-              <td class="row">
-                <p class="col-md-3" data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" style="font-size:11px;">Edit</button></p>
-                <p class="col-md-3" data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" style="font-size:11px;" @click="delRecord(job.id)">Delete</button></p>
+              <td>{{job.job_year_of_experience_min}}-{{job.job_year_of_experience_max}}(years)</td>
+              <td>{{job.job_salary_min_range}}-{{job.job_salary_max_range}}(Pkr)</td>
+              <td>{{job.job_gender_preference}}</td>
+              <td>{{job.job_type_name}}</td>
+              <td>{{job.job_subcategory}}, {{job.job_category}}</td>
+              <td>{{job.DegreeLevel}}</td>
+              <td>{{job.DegreeType}}, {{job.specific_degree}}</td>
+              <td>{{job.age_requirement_min}}-{{job.age_requirement_max}}(years)</td>
+              <td>{{job.applyby_date}}</td>
+              <td>{{job.company_id}}</td>
+              <td>
+                <label v-if="job.approval_status == 0" class="label label-danger">Pending</label>
+                <label v-if="job.approval_status == 1" class="label label-success">Approved</label>
+              </td>
+              <td>
+                <label v-if="job.active_status == 0" class="label label-danger">Inactive</label>
+                <label v-if="job.active_status == 1" class="label label-success">Active</label>
+              </td>
+              <td>{{job.creation_date}}</td>
+              <td>
+                <p  data-placement="top" data-toggle="tooltip" title="Edit">
+                  <!-- <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" style="font-size:11px;">Edit</button> -->
+                  <a :href="CompanyDashboardRoute+'/job/'+job.id+'/edit'" class="btn btn-primary btn-xs" style="color:white; font-size:11px;">Edit</a>
+                </p>
+                
+              </td>
+              <td>
+                <p  data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" style="font-size:11px;" @click="delRecord(job.id)">Delete</button></p>
               </td>
               
             </tr>
@@ -146,7 +186,7 @@
             searchRecord(){
               if(this.search.length >= 2){
                 axios.get(this.url+'/all-jobs/search/'+this.search)
-                .then(response => this.jobs = response.data)
+                .then(response => this.jobs = response)
                 .catch(error => console.log(error))
               }
               else{

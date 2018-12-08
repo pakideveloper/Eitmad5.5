@@ -34,7 +34,7 @@ Vue.use(VueRouter)
 //       }
 //     }
 // });
-Vue.prototype.CompanyDashboardRoute = '/Eitmad5.5/jobs/company/dashboard';
+Vue.prototype.CompanyDashboardRoute = '/Eitmad5.5/jobs/company';
 const index = require('./components/Job/CompanyDashboard/indexComponent.vue');
 const addJob = require('./components/Job/CompanyDashboard/addjobComponent.vue');
 const viewJobs = require('./components/Job/CompanyDashboard/viewjobsComponent.vue');

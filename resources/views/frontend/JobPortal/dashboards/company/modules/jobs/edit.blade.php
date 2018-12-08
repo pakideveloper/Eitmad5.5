@@ -23,7 +23,7 @@
 
           <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-              <h1 class="h2">Add Job</h1>
+              <h1 class="h2">Edit Job</h1>
               <div class="btn-toolbar mb-2 mb-md-0">
                 <div class="btn-group mr-2">
                   <button class="btn btn-sm btn-outline-secondary">Share</button>
@@ -41,28 +41,29 @@
                             {{ session('status') }}
                         </div>
                     @endif
-              <form class="form-horizontal" id="addjobform" action="{{url('jobs/company/add-job')}}" method="post" enctype="multipart/form-data">
+              <form class="form-horizontal" id="addjobform" action="{{url('jobs/company/job')}}/{{$job->id}}" method="post" enctype="multipart/form-data">
                  {{csrf_field()}}
+                 {{ method_field('PUT')}}
                 <div class="row">
                   <div class="col-md-2"></div>
                   <div class="col-md-8 col-sm-12">
                     <div class="form-group required col-md-12 col-sm-12">
                       <label for="job_title" class="control-label">Job Title</label>
-                      <input  class="form-control" id="job_title" name="job_title" placeholder="">
+                      <input  class="form-control" id="job_title" name="job_title" placeholder="" value="{{$job->job_title}}">
                        <span class="help-block">
                               <strong class="error"></strong>
                       </span>
                     </div>
                     <div class="form-group required col-md-12 col-sm-12">
                       <label for="job_description" class="control-label">Job Description</label>
-                      <textarea class="form-control" id="job_description" name="job_description"></textarea>
+                      <textarea class="form-control" id="job_description" name="job_description">{{$job->job_description}}</textarea>
                        <span class="help-block">
                               <strong class="error"></strong>
                       </span>
                     </div>
                     <div class="form-group col-md-12 col-sm-12">
                       <label for="job_skills">Required Skills</label>
-                      <input type="text" class="form-control" id="job_skills" name="job_skills"  placeholder="">
+                      <input type="text" class="form-control" id="job_skills" name="job_skills" value="{{$job->job_skills}}"  placeholder="">
                        <span class="help-block">
                               <strong class="error"></strong>
                       </span>
@@ -73,9 +74,8 @@
                         <div class="col-md-6 col-sm-12">
                           <label for="country">Country</label>
                           <select class="form-control" id="country" name="country">
-                            <option value="">--Select Country--</option>
-                            @foreach($countries as $country)
-                            <option value="{{$country->id}}">{{$country->country_name}}</option>
+                             @foreach($countries as $country)
+                            <option value="{{$country->id}}" @if($job->city->country->id==$country->id) selected="" @endif>{{$country->country_name}}</option>
                             @endforeach
                           </select>
                           <span class="help-block">
@@ -85,7 +85,8 @@
                         <div class="col-md-6 col-sm-12">
                           <label for="city_id">City</label>
                           <select class="form-control" id="city_id" name="city_id">
-                            <option value="">--Select City--</option>
+                            <option value="{{$job->city->id}}">{{$job->city->city_name}}</option>
+                            
                           </select>
                           <span class="help-block">
                               <strong class="error"></strong>
@@ -99,11 +100,11 @@
                       <label for="job_career_level" class="control-label">Career Level</label>
                       <select class="form-control" id="job_career_level" name="job_career_level">
                         <option value="">--Choose Career Level--</option>
-                         <option value="Intern/Student">Intern/Student</option>
-                          <option value="Entry Level">Entry Level</option>
-                           <option value="Experienced Professional">Experienced Professional</option>
-                            <option value="Department Head">Department Head</option>
-                             <option value="GM/CEO/Country Head/President">GM/CEO/Country Head/President</option>
+                        <option value="Intern/Student" @if($job->job_career_level=='Intern/Student') selected="" @endif>Intern/Student</option>
+                          <option value="Entry Level" @if($job->job_career_level=='Entry Level') selected="" @endif>Entry Level</option>
+                           <option value="Experienced Professional" @if($job->job_career_level=='Experienced Professional') selected="" @endif>Experienced Professional</option>
+                            <option value="Department Head" @if($job->job_career_level=='Department Head') selected="" @endif>Department Head</option>
+                             <option value="GM/CEO/Country Head/President" @if($job->job_career_level=='GM/CEO/Country Head/President') selected="" @endif>GM/CEO/Country Head/President</option>
                       </select>
                       <span class="help-block">
                               <strong class="error"></strong>
@@ -114,7 +115,7 @@
                       <div class="row form-group">
                         <div class="col-md-6 col-sm-12">
                           <label for="job_salary_min_range">Min.</label>
-                          <input  class="form-control" id="job_salary_min_range" name="job_salary_min_range">
+                          <input  class="form-control" id="job_salary_min_range" name="job_salary_min_range" value="{{$job->job_salary_min_range}}">
                             <span class="help-block">
                               <strong class="error"></strong>
                           </span>
@@ -123,7 +124,7 @@
                         </div>
                         <div class="col-md-6 col-sm-12">
                           <label for="job_salary_max_range">Max.</label>
-                          <input class="form-control" id="job_salary_max_range" name="job_salary_max_range">
+                          <input class="form-control" id="job_salary_max_range" name="job_salary_max_range" value="{{$job->job_salary_max_range}}">
                             <span class="help-block">
                               <strong class="error"></strong>
                           </span>
@@ -138,9 +139,9 @@
                         <div class="col-md-6 col-sm-12">
                           <label for="job_cateory">Job Category</label>
                           <select class="form-control" id="job_cateory" name="job_cateory">
-                            <option>--Select Category--</option>
+                            <!-- <option>--Select Category--</option> -->
                              @foreach($job_categories as $job_category)
-                            <option value="{{$job_category->id}}">{{$job_category->job_category_name}}</option>
+                            <option value="{{$job_category->id}}" @if($job->subcategory->category->id == $job_category->id) selected="" @endif>{{$job_category->job_category_name}}</option>
                             @endforeach
                           </select>
                           <span class="help-block">
@@ -150,7 +151,12 @@
                         <div class="col-md-6 col-sm-12">
                           <label for="job_sub_category_id">Job Sub-Category</label>
                           <select class="form-control" id="job_sub_category_id" name="job_sub_category_id">
-                            <option>--Select Sub-Category--</option>
+                            @if($job->subcategory!= null)
+                            <option value="$job->job_sub_category_id">{{$job->subcategory->job_sub_category_name}}</option>
+                            @else
+                            <option value="">--Select Sub Category--</option>
+                            @endif
+                            
                           </select>
                           <span class="help-block">
                               <strong class="error"></strong>
@@ -164,9 +170,8 @@
                         <div class="col-md-6 col-sm-12">
                           <label for="job_type_id">Job Type</label>
                           <select class="form-control" id="job_type_id" name="job_type_id">
-                            <option>--Select Job Type--</option>
                              @foreach($job_types as $job_type)
-                            <option value="{{$job_type->id}}">{{$job_type->job_type_name}}</option>
+                            <option value="{{$job_type->id}}" @if($job->job_type_id == $job_type->id) selected="" @endif>{{$job_type->job_type_name}}</option>
                             @endforeach
                           </select>
                           <span class="help-block">
@@ -177,10 +182,10 @@
                           <label for="job_shift">Job Shift</label>
                           <select class="form-control" id="job_shift" name="job_shift">
                             <option value="">--Select Job Shift--</option>
-                            <option value="First Shift(Day)">First Shift(Day)</option>
-                            <option value="Second Shift(Evening)">Second Shift(Evening)</option>
-                            <option value="Third Shift(Night)">Third Shift(Night)</option>
-                            <option value="Rotating">Rotating</option>
+                            <option value="First Shift(Day)" @if($job->job_shift == 'First Shift(Day)') selected="" @endif>First Shift(Day)</option>
+                            <option value="Second Shift(Evening)" @if($job->job_shift == 'Second Shift(Evening)') selected="" @endif>Second Shift(Evening)</option>
+                            <option value="Third Shift(Night)" @if($job->job_shift == 'Third Shift(Night)') selected="" @endif>Third Shift(Night)</option>
+                            <option value="Rotating" @if($job->job_shift == 'Rotating') selected="" @endif>Rotating</option>
 
                           </select>
                         </div>
@@ -192,9 +197,9 @@
                       <label class="control-label" for="job_gender_preference">Gender Requirement</label>
                       <select class="form-control" id="job_gender_preference" name="job_gender_preference">
                         <option value="">--No preference--</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Others">Others</option>
+                       <option value="Male" @if($job->job_gender_preference =='Male') selected="" @endif>Male</option>
+                        <option value="Female" @if($job->job_gender_preference =='Female') selected="" @endif>Female</option>
+                        <option value="Others" @if($job->job_gender_preference =='Others') selected="" @endif>Others</option>
                       </select>
                       <span class="help-block">
                               <strong class="error"></strong>
@@ -204,14 +209,14 @@
                       <div class="row form-group required">
                         <div class="col-md-6 col-sm-12">
                           <label for="job_no_of_position" class="control-label">Positions Available</label>
-                          <input class="form-control" type="number" min="1" name="job_no_of_position" id="job_no_of_position">
+                          <input class="form-control" type="number" min="1" name="job_no_of_position" id="job_no_of_position" value="{{$job->job_no_of_position}}">
                           <span class="help-block">
                               <strong class="error"></strong>
                           </span>
                         </div>
                         <div class="col-md-6 col-sm-12">
                           <label for="apply_by" class="control-label">Apply By</label>
-                          <input class="form-control" type="date" name="apply_by" id="apply_by">
+                          <input class="form-control" type="date" name="apply_by" id="apply_by" value="{{$job->apply_by}}">
                           <span class="help-block">
                               <strong class="error"></strong>
                           </span>
@@ -226,9 +231,8 @@
                         <div class="col-md-6 col-sm-12">
                           <label for="degree_level_id" class="control-label">Degree Level</label>
                           <select class="form-control" id="degree_level_id" name="degree_level_id">
-                            <option value="">--Select Degree Level--</option>
-                            @foreach($degree_levels as $degree_level)
-                            <option value="{{$degree_level->id}}">{{$degree_level->degree_level_name}}</option>
+                             @foreach($degree_levels as $degree_level)
+                            <option value="{{$degree_level->id}}" @if($job->degreelevel->id == $degree_level->id) selected="" @endif>{{$degree_level->degree_level_name}}</option>
                             @endforeach
                           </select>
                           <span class="help-block">
@@ -238,7 +242,12 @@
                         <div class="col-md-6 col-sm-12">
                           <label for="degree_type_id">Degree Title</label>
                           <select class="form-control" id="degree_type_id" name="degree_type_id">
-                            <option>--Select Degree Title--</option>
+                            @if($job->degreetype != null)
+                            <option value="$job->degree_type_id">{{$job->degreetype->degree_type_name}}</option>
+                            @else
+                            <option value="">--Select Degree Title--</option>
+                            @endif
+                            
                           </select>
                           <span class="help-block">
                               <strong class="error"></strong>
@@ -247,7 +256,7 @@
                       </div>
                       <div class="form-group">
                         <label for="specific_degree">Specific Degree Title</label>
-                        <input type="text" class="form-control" id="specific_degree" name="specific_degree" placeholder="">
+                        <input type="text" class="form-control" id="specific_degree" name="specific_degree" placeholder="" value="{{$job->specific_degree}}">
                         <span class="help-block">
                               <strong class="error"></strong>
                           </span>
@@ -257,14 +266,14 @@
                       <div class="row form-group">
                         <div class="col-md-6 col-sm-12">
                           <label for="job_year_of_experience_min">Min.</label>
-                          <input class="form-control" type="number" min="1" name="job_year_of_experience_min" id="job_year_of_experience_min">
+                          <input class="form-control" type="number" min="1" name="job_year_of_experience_min" id="job_year_of_experience_min" value="{{$job->job_year_of_experience_min}}">
                           <span class="help-block">
                               <strong class="error"></strong>
                           </span>
                         </div>
                         <div class="col-md-6 col-sm-12">
                           <label for="job_year_of_experience_max">Max.</label>
-                          <input class="form-control" type="number" min="1" name="job_year_of_experience_max" id="job_year_of_experience_max">
+                          <input class="form-control" type="number" min="1" name="job_year_of_experience_max" id="job_year_of_experience_max" value="{{$job->job_year_of_experience_max}}">
                           <span class="help-block">
                               <strong class="error"></strong>
                           </span>
@@ -274,14 +283,14 @@
                       <div class="row form-group">
                         <div class="col-md-6 col-sm-12">
                           <label for="age_requirement_min">Min.</label>
-                          <input class="form-control" type="number" min="1" name="age_requirement_min" id="age_requirement_min">
+                          <input class="form-control" type="number" min="1" name="age_requirement_min" id="age_requirement_min" value="{{$job->age_requirement_min}}">
                           <span class="help-block">
                               <strong class="error"></strong>
                           </span>
                         </div>
                         <div class="col-md-6 col-sm-12">
                           <label for="age_requirement_max">Max.</label>
-                          <input class="form-control" type="number" min="1" name="age_requirement_max" id="age_requirement_max">
+                          <input class="form-control" type="number" min="1" name="age_requirement_max" id="age_requirement_max" value="{{$job->age_requirement_max}}">
                           <span class="help-block">
                               <strong class="error"></strong>
                           </span>
@@ -305,7 +314,7 @@
       </div>
    
     @include('frontend.JobPortal.dashboards.company.include.footer')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
  <!-- form validation -->
     <script src="{{URL::to('public/JobPortal_Frontend/assets')}}/jquery-validation/dist/jquery.validate.js"></script>
     <script type="text/javascript">
@@ -473,10 +482,8 @@
 
    
       });
-
-
     </script>
-    
+
      <script type="text/javascript">
         
            // demo.initChartist();
