@@ -62,10 +62,10 @@ const router = new VueRouter({
 const app = new Vue({
     el: '#CompanyDashboard',
   //    created: function() {
-  //   this.CompanyDashboardRoute = "/Eitmad5.5/jobs/company/dashboard";
+  //   this.CompanyDashboardRoute = "/MyEitmad/jobs/company/dashboard";
   // },
 	  // data: {
-	  // 		CompanyDashboardRoute : '/Eitmad5.5/jobs/company/dashboard',
+	  // 		CompanyDashboardRoute : '/MyEitmad/jobs/company/dashboard',
 	  // },
     router,
 }).$mount('#CompanyDashboard');

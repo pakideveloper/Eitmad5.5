@@ -20,7 +20,7 @@
                     
                   </li>
                   <li>
-                      <router-link  to="add-product" class="nav-link">Add Product</router-link>
+                      <router-link  to="add-product" class="nav-link">Add Product test</router-link>
                     
                   </li>
                   <li>

@@ -10,13 +10,17 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import VueRouter from 'vue-router'
+<<<<<<< HEAD
+<<<<<<< HEAD
 // import Vuelidate from 'vuelidate'
 // Vue.use(Vuelidate)
+=======
 import Vuelidate from 'vuelidate'
 
 
 
 Vue.use(Vuelidate)
+>>>>>>> 235404c9a4cd31d747a953ffaddea3ba6df071c7
 
 Vue.use(VueRouter)
 import VueProgressBar from 'vue-progressbar'
@@ -61,11 +65,11 @@ const viewAllProducts = require('./components/ecom_vendor/dashboard/viewAllProdu
 const routes = [
 	{
 		path:'/Eitmad5.5/ecommerce/vendor/dashboard',
-		component: viewAllProducts,
+		component: index,
 		meta: {
 	      progress: {
 	        func: [
-	          {call: 'color', modifier: 'temp', argument: 'rgb(143, 255, 199)'},
+	          {call: 'color', modifier: 'temp', argument: '#ffb000'},
 	          {call: 'fail', modifier: 'temp', argument: '#6e0000'},
 	          {call: 'location', modifier: 'temp', argument: 'top'},
 	          {call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
@@ -74,18 +78,8 @@ const routes = [
 	    }
 	},
 	{
-		path:'/Eitmad5.5/ecommerce/vendor/add-product',
-		component: addProduct,
-		meta: {
-	      progress: {
-	        func: [
-	          {call: 'color', modifier: 'temp', argument: 'rgb(143, 255, 199)'},
-	          {call: 'fail', modifier: 'temp', argument: '#6e0000'},
-	          {call: 'location', modifier: 'temp', argument: 'top'},
-	          {call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
-	        ]
-	      }
-	    }
+	path:'/Eitmad5.5/ecommerce/vendor/add-product',
+	component: addProduct
 	},
 <<<<<<< HEAD
 	{
@@ -94,7 +88,7 @@ const routes = [
 		meta: {
 	      progress: {
 	        func: [
-	          {call: 'color', modifier: 'temp', argument: 'rgb(143, 255, 199)'},
+	          {call: 'color', modifier: 'temp', argument: '#ffb000'},
 	          {call: 'fail', modifier: 'temp', argument: '#6e0000'},
 	          {call: 'location', modifier: 'temp', argument: 'top'},
 	          {call: 'transition', modifier: 'temp', argument: {speed: '1.5s', opacity: '0.6s', termination: 400}}
@@ -114,6 +108,15 @@ const router = new VueRouter({
 const dashboard_app = new Vue({
     el: '#dashboard_app',
     router,
+<<<<<<< HEAD
+});
+global.app = app;
+=======
 }).$mount('#dashboard_app')
 
+<<<<<<< HEAD
 global.dashboard_app = dashboard_app;
+=======
+// global.app = app;
+>>>>>>> 235404c9a4cd31d747a953ffaddea3ba6df071c7
+>>>>>>> parent of 56434b8... frontend and social media integration

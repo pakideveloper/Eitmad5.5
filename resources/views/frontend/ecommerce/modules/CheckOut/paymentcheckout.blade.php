@@ -87,7 +87,7 @@
 
               <!--Hidden Panels-->
               
-
+                <input class="btn btn-success btn-block" name='submit' type='submit' value='Proceed Order' />
           
       </section><!--Checkout Close-->
       
