@@ -21,7 +21,7 @@
                      <!--  <router-link  :to="CompanyDashboardRoute +'/all-jobs'" class="nav-link">All Jobs</router-link> -->
                       <a href="{{url('/jobs/company/all-jobs')}}" class="nav-link">All Jobs</a>
                   </li>
-                  <li>
+                 <!--  <li>
                       <router-link  to="add-product" class="nav-link">Add Product test</router-link>
                     
                   </li>
@@ -36,7 +36,7 @@
                   <li>
                       <router-link  to="add-product" class="nav-link">Fulfilment by Eitmad</router-link>
                     
-                  </li>
+                  </li> -->
                 </ul>
               </li>
               <li class="nav-item has-sub">

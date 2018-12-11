@@ -103,7 +103,10 @@
                           <option value="Entry Level">Entry Level</option>
                            <option value="Experienced Professional">Experienced Professional</option>
                             <option value="Department Head">Department Head</option>
-                             <option value="GM/CEO/Country Head/President">GM/CEO/Country Head/President</option>
+                            <option value="General Manager">General Manager</option>
+                             <option value="CEO">CEO</option>
+                             <option value="Country Head">Country Head</option>
+                             <option value="President">President</option>
                       </select>
                       <span class="help-block">
                               <strong class="error"></strong>

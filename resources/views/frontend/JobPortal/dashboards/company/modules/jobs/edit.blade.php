@@ -104,7 +104,10 @@
                           <option value="Entry Level" @if($job->job_career_level=='Entry Level') selected="" @endif>Entry Level</option>
                            <option value="Experienced Professional" @if($job->job_career_level=='Experienced Professional') selected="" @endif>Experienced Professional</option>
                             <option value="Department Head" @if($job->job_career_level=='Department Head') selected="" @endif>Department Head</option>
-                             <option value="GM/CEO/Country Head/President" @if($job->job_career_level=='GM/CEO/Country Head/President') selected="" @endif>GM/CEO/Country Head/President</option>
+                            <option value="General Manager" @if($job->job_career_level=='General Manager') selected="" @endif>General Manager</option>
+                             <option value="CEO" @if($job->job_career_level=='CEO') selected="" @endif>CEO</option>
+                             <option value="Country Head" @if($job->job_career_level=='Country Head') selected="" @endif>Country Head</option>
+                             <option value="President" @if($job->job_career_level=='President') selected="" @endif>President</option>
                       </select>
                       <span class="help-block">
                               <strong class="error"></strong>

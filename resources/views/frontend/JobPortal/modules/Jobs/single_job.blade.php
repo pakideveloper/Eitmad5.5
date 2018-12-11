@@ -86,14 +86,14 @@
 				<div class="col-md-12 col-sm-12 col-xs-12">
 					<!-- about-content start here -->
 					<div class="jobs-content">
-						<h1>Jobs</h1>
+						<h1>Job Detail</h1>
 						<ul class="list-inline">
 							<li>
 								<a href="index.html">Home</a>
 							</li>
 							<li>></li>
 							<li>
-								<a href="jobs-list-view.html">Jobs</a>
+								<a href="jobs-detail.html">Jobs</a>
 							</li>
 						</ul>
 					</div>
@@ -106,141 +106,64 @@
 
 
 <!-- job start here -->
-	<div id="job">
+	<div id="jobdetail">
 		<div class="container">
-			<div class="col-md-12 col-sm-12 col-xs-12 form1">
-				<div class="sort col-md-2 col-sm-2 col-xs-12">
-					<label class="control-label">Sort By:</label>
-					<select  class="form-control selectpicker">
-						<option value="" selected="selected">1</option>
-						<option value="">2</option>
-					</select>
-				</div>
-				<div class="show col-md-2 col-sm-2 col-xs-12">
-					<label class="control-label">Show:</label>
-					<select  class="form-control selectpicker">
-						<option value="" selected="selected">1</option>
-						<option value="">2</option>
-					</select>
-				</div>
-				<div class="category col-md-2 col-sm-2 col-xs-12">
-					<label class="control-label" >Category:</label>
-					<select  class="form-control selectpicker">
-						<option value="" selected="selected">1</option>
-						<option value="">2</option>
-					</select>
-				</div>
-				<div class="keyword col-md-6 col-sm-6 col-xs-12">
-					<label class="control-label">Keywords:</label>
-					<br>
-					<button type="button" class="btn btn-primary" onclick="location.href='jobs.html'">Engineering</button>
-					<button type="button" value="Submit" class="btn btn-success" onclick="location.href='jobs.html'">IT</button>
-					<button type="button" value="Submit" class="btn btn-danger" onclick="location.href='jobs.html'">Marketing</button>
-					<button type="button" value="Submit" class="btn btn-warning" onclick="location.href='jobs.html'">Banking</button>
-				</div>	
-			</div>
 			<div class="row">
-				<div class="col-md-3 col-sm-3 col-xs-12 hidden-xs">
-					<!-- <div class="left left1">
-						<div class="job-candidate">
-							<h1>FEATURED CANDIDATES</h1>
-							<div class="border"></div>
-							<div class="border1"></div>
-						</div>
-						<div id="latestsfeat" class="owl-carousel">
-							<div class="item">
-								<div class="col-sm-12 col-xs-12">
-									<div class="candidate">
-										<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-1.png" class="img-responsive" alt="cand-1" title="cand-1" />
-										<h1>John Doe</h1>
-										<p>Web Designer </p>
-									</div>
-								</div>
-							</div>	
-							<div class="item">
-								<div class="col-sm-12 col-xs-12">
-									<div class="candidate">
-										<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-2.png" class="img-responsive" alt="cand-2" title="cand-2" />
-										<h1>John Doe</h1>
-										<p>Web Designer </p>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="col-sm-12 col-xs-12">
-									<div class="candidate">
-										<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-3.png" class="img-responsive" alt="cand-3" title="cand-3" />
-										<h1>John Doe</h1>
-										<p>Web Designer </p>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="col-sm-12 col-xs-12">
-									<div class="candidate">
-										<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-4.png" class="img-responsive" alt="cand-4" title="cand-4" />
-										<h1>John Doe</h1>
-										<p>Web Designer </p>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="col-sm-12 col-xs-12">
-									<div class="candidate">
-										<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-5.png" class="img-responsive" alt="cand-5" title="cand-5" />
-										<h1>John Doe</h1>
-										<p>Web Designer </p>
-									</div>
-								</div>
-							</div>
-							<div class="item">
-								<div class="col-sm-12 col-xs-12">
-									<div class="candidate">
-										<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/cand-6.png" class="img-responsive" alt="cand-6" title="cand-6" />
-										<h1>John Doe</h1>
-										<p>Web Designer </p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div> -->	
-					<div class="leftside">
-						<div class="latest-jobs">
-							<h1>LATEST JOBS</h1>
-							<div class="border"></div>
-							<div class="border1"></div>
-						</div>
-						@foreach($latest_jobs as $job)
-						<div class="job-content">
-							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="p1" title="p1" />
-							<h1>{{$job->job_title}}</h1>
-							<ul class="list-inline">
-								<li>
-									<a href="#"><i class="fa fa-bookmark" aria-hidden="true"></i> {{$job->job_career_level}}</a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> {{$job->city->city_name}},{{$job->city->country->country_name}}</a>
-								</li>
-							</ul>
-							<a href="apply-job-form.html">Apply Now <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
-						</div>
-						@endforeach
-						
-						
-					</div>
-					<div class="career">
-						<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/left-banner.jpg" title="left-banner" alt="left-banner" class="img-responsive">
+				<div class="col-md-4 col-sm-4 col-xs-12 hidden-xs">
+					<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p6.png" alt="p6" title="p6" class="img-responsive" />
+					<div class="left-side">
+						<ul class="list-unstyled">
+							<li>
+								<h5><i class="fa fa-map-marker" aria-hidden="true"></i> Location</h5>
+								<p>{{$job->city->city_name}},{{$job->city->country->country_name}}</p>
+							</li>
+							<li>
+								<h5><i class="fa fa-money" aria-hidden="true"></i> 
+								Salary</h5>
+								<p>{{$job->job_salary_min_range}}-{{$job->job_salary_max_range}}(Pkr) /month</p>
+							</li>
+							<li>
+								<h5><i class="fa fa-shield" aria-hidden="true"></i> 
+								Experience</h5>
+								<p>{{$job->job_year_of_experience_min}}-{{$job->job_year_of_experience_max}}(yrs.)</p>
+							</li>
+							<li>
+								<h5><i class="fa fa-clock-o" aria-hidden="true"></i> Posted</h5>
+								<p>{{Carbon\Carbon::parse($job->created_at)->format('d M,Y')}}</p>
+							</li>
+						</ul>
 					</div>
 				</div>
 				
-				<div class="col-md-9 col-sm-9 col-xs-12 padd0 product-list">
-					@foreach($jobs as $job)
-					<div class="col-md-12 col-sm-12 col-xs-12">
-						<div class="product-box">
-							<div class="image">
-								<a href="jobs-detail.html">
-									<img class="img-responsive" src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="p1" title="p1"/>
-								</a>	
+				<div class="col-md-8 col-sm-8 col-xs-12 paddleft content">
+					<h1>{{$job->job_title}}</h1>
+					<ul class="list-inline">
+						<li>
+							<a href="#"><i class="fa fa-bookmark" aria-hidden="true"></i> {{$job->job_career_level}}</a>
+						</li>
+					</ul>
+					<!-- <p>Aliquam hendrit rutrum iaculis nullam ondimentum maluada velit beum donec sit amet tristique erosam amet risus mollis malesuada quis quis nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae mattis nisi vel elit porttitor euismod pharetra sem interdum.</p> -->
+					<h5>Job Description</h5>
+					<p><span>{{$job->job_description}}</span>
+					</p>
+					<!-- <p><span>Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures,</span></p> -->
+					<button type="button" class="btn btn-info" onclick="location.href='submit-job.html'">APPLY THIS JOB</button>
+				</div>
+					
+				<!-- featured start here -->
+				<div id="similar" class="col-md-12 col-sm-12 col-xs-12 padd0">
+					<div class="similar-jobs">
+						<div class="border"></div>
+						<h1><span>Similars</span> JOBS</h1>
+						<div class="border1"></div>
+					</div>
+				@foreach($similar_jobs as $job)
+				<div class="col-md-3 col-sm-3 col-xs-12">
+					<div class="product-box">
+						<div class="image">
+							<a href="jobs.html">
+								<img class="img-responsive" src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p4.jpg" alt="p4" title="p4"/>
+							</a>	
 								<div class="buttons">
 									<div class="open-down">
 										<button type="button" class="rotate1">
@@ -251,24 +174,18 @@
 										</button>
 									</div>
 								</div>		
-							</div>		
-							<div class="matter">
-								<h1>{{$job->job_title}}</h1>
-								<ul class="list-inline">
-									<li>
-										<a href="#"><i class="fa fa-bookmark" aria-hidden="true"></i> {{$job->job_career_level}}</a>
-									</li>
-									<li>
-										<a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> {{$job->city->city_name}},{{$job->city->country->country_name}}</a>
-									</li>
-									<li>
-										<a href="#"><i class="fa fa-money" aria-hidden="true"></i> {{$job->job_salary_min_range}}-{{$job->job_salary_max_range}}(Pkr) /month</a>
-									</li>
-									<li>
-										<a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i> {{Carbon\Carbon::parse($job->apply_by)->format('d M,Y')}}</a>
-									</li>
-								</ul>
-								<?php
+						</div>		
+						<div class="matter">
+							<h1>{{$job->job_title}}</h1>
+							<ul class="list-inline">
+								<li>
+									<a href="#"><i class="fa fa-bookmark" aria-hidden="true"></i> {{$job->job_career_level}}</a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i> {{$job->city->city_name}},{{$job->city->country->country_name}}</a>
+								</li>
+							</ul>
+							<?php
                                                         if(strlen($job->job_description)>101){
                                                             $description = substr($job->job_description, 0, 100).'[...]';
                                                         }
@@ -277,51 +194,17 @@
                                                             $description = $job->job_description;
                                                         }
                                                         ?>
-								<p>{{$description}}</p>
-								<a href="{{url('jobs/single_job/')}}/{{$job->id}}" class="btn btn-info" >VIEW MORE</a>
-								<button type="button" class="btn btn-info" onclick="location.href='apply-job-form.html'">APPLY NOW</button>
-							</div>
+							<p>{{$description}}</p>
 						</div>
+						<a href="{{url('jobs/single_job/')}}/{{$job->id}}" class="btn btn-info" >VIEW MORE</a>
+						<button type="button" class="btn btn-info" onclick="location.href='apply-job-form.html'">APPLY NOW</button>
 					</div>
-					@endforeach
-				
-	
-					
-					
-					
-					
-					
-					<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align:center">
-						<ul class="pagination">
-							{{$jobs->links()}}
-							<!-- <li>
-								<a href="#" aria-label="Previous"><span aria-hidden="true" class="fa fa-angle-left"></span></a>
-							</li>
-							<li class="active">
-								<a href="#"> 1</a> 
-							</li>
-							<li>
-								<a href="#"> 2</a> 
-							</li>
-							<li>
-								<a href="#">3</a>
-							</li>
-							<li>
-								<a href="#"> 4</a> 
-							</li>
-							<li>
-								<a href="#"> 5</a> 
-							</li>
-							<li>
-								<a href="#" aria-label="Next"><span aria-hidden="true" class="fa fa-angle-right"></span></a>
-							</li>
-							<li>
-								<a href="#" aria-label="Next"><span aria-hidden="true" class="fa fa-angle-double-right"></span></a>
-							</li> -->
-						</ul>
-					</div>
+				</div>
+				@endforeach	
 				
 				</div>
+				<!-- featured end here -->
+				
 			</div>
 		</div>
 	</div>
