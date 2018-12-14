@@ -215,6 +215,19 @@
 <section class="catalog-grid">
       	<div class="container">
        	<h2 class="primary-color" style="text-align: center;">Feature Jobs</h2>
+      
+       	@if($user->cnic == true)
+			<!-- <a href="{{'jobs/candidate/user-profile'}}/{{Auth::user()->id}}/edit"> -->
+			<a href="{{'jobs'}}">
+
+      		<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="1"/>
+      		</a>
+  		@elseif($user->cnic == false)
+      		<a href="{{'jobs/candidate/user-profile'}}">
+
+      		<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="1"/>
+      		</a>
+  		@endif
        	<div class="border"></div>
           <div class="row">
           	<!--Tile-->
@@ -223,9 +236,14 @@
               	<div class="badges">
                 	<span class="sale"></span>
                 </div>
-              	<div class="price-label">Expire Date: 11 Oct</div>
+              	<div class="price-label">Expire Date: 11 Oct </div>
+              
               	<div class="image">
-              	<a href="{{'jobs/candidate/dashboard'}}"><img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="1"/></a>
+
+              	<!-- <a href="{{'jobs/candidate/dashboard'}}"> -->
+              		<!-- <img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="1"/> -->
+                 
+              	<!-- </a> -->
               	<div class="buttons">
 									<div class="open-down">
 										<button type="button" class="rotate1">
@@ -235,7 +253,7 @@
 											<i class="fa fa-search" aria-hidden="true"></i>
 										</button>
 									</div>
-							</div>	
+					</div>	
 				</div>
                 
                  <div class="matter">

@@ -13,7 +13,8 @@
 //usama
 
 Route::get('/', function () {
-    return view('frontend/JobPortal/index');
+    $user = App\User::find(Auth::user()->id);
+    return view('frontend/JobPortal/index',compact('user'));
 });
 Route::get('/employers', function () {
     return view('frontend/JobPortal/pages/employers');
@@ -43,11 +44,6 @@ Route::get('/single-paperjob', function()
 });
 
 Route::get('/paperjobs', 'Job\PostController@post' );
-//manage-cvs
-Route::get('candidate/manage-cv',function(){
-
-    return view('frontend/JobPortal/dashboards/candidate/modules/manage-cv/index') ;
-});
 
 
 
@@ -65,8 +61,34 @@ Route::get('/addcompany/cities/{country}/cities.json', function($country){
     return App\City::where('country_id',$country)->get();
 });
 
+// <<<<<<<<<<<<<<<<<<<<<<<< JOBS SECTION >>>>>>>>>>>>>>>>>>>>>>>>>
 Route::get('company/dashboard','Job\dashboard\company\CompanyController@dashboard');
 Route::get('candidate/dashboard','Job\dashboard\candidate\CandidateController@dashboard');
 
 /////////// Job Section////////
 Route::resource('company/dashboard/post-job', 'Job\dashboard\company\JobController');
+
+// <<<<<<<<<<<<<<<<<<<<<Candidate Profile >>>>>>>>>>>>>>>>>>>>>>>>
+//manage-cvs
+/*Route::get('candidate/create-cv',function(){
+
+    return view('frontend/JobPortal/dashboards/candidate/modules/manage-cv/create') ;
+});*/
+Route::resource('candidate/user-profile', 'Job\CandidateProfileController' );
+Route::get("/candidate/user-profile/{id}/del", 'Job\CandidateProfileController@deleteFunction' );
+
+// Route::resource('candidate/user-profile', 'Job\CandidateProfileController' );
+// Route::resource('candidate/update-profile', 'Job\CandidateProfileController' );
+
+// Route::resource('candidate/edit-profile', 'Job\CandidateProfileController' );
+
+Route::post('candidate/user-edu-profile', 'Job\CandidateProfileController@storeEducation' ); 
+Route::post('candidate/user-edu-certificates', 'Job\CandidateProfileController@storeCertificate' ); 
+Route::post('candidate/user-add-project', 'Job\CandidateProfileController@storeProjects' ); 
+Route::post('candidate/user-add-experience', 'Job\CandidateProfileController@storeExperience' ); 
+Route::get('candidate/view-profile', 'Job\CandidateProfileController@indexToView' ); 
+
+/*Route::post('candidate/user-profile-update',function(){
+
+    return view('frontend/JobPortal/dashboards/candidate/modules/manage-cv/create') ;
+});*/
