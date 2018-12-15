@@ -4,7 +4,7 @@
 <!-- Mirrored from template.8guild.com/bushido/v1.4/wishlist.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Aug 2018 05:04:23 GMT -->
 <head>
     <meta charset="utf-8">
-    <title>Wishlist - Eitmad</title>
+    <title>Eitmad - Wishlist</title>
     <!--SEO Meta Tags-->
     <meta name="description" content="Responsive HTML5 E-Commerce Template" />
 		<meta name="keywords" content="responsive html5 template, e-commerce, shop, bootstrap 3.0, css, jquery, flat, modern" />

@@ -36,7 +36,7 @@
   <body>
   
   	<!--Color Switcher-->
-    <div class="color-switcher group animated">
+    <!-- <div class="color-switcher group animated">
     	<div class="toggle"><i class="fa fa-cog"></i></div>
     	<div class="color">
       	<a class="current" style="background-image:url(color-switcher/img/default.png);" href="{{URL::to('public/frontend/ecommerce/assets')}}/#" data-color="default"></a>
@@ -54,7 +54,7 @@
       	<a style="background-image:url(color-switcher/img/scheme4.png);" href="{{URL::to('public/frontend/ecommerce/assets')}}/#" data-color="scheme4"></a>
         <span>#73cbbe<br/>#c7b07b</span>
       </div>
-    </div><!--Color Switcher End-->
+    </div> --><!--Color Switcher End-->
   
   	<!--Login Modal-->
     @include('frontend/ecommerce/include/login')
@@ -230,7 +230,7 @@
                 
                 <div class="form-group">
                   <label for="co-str-adress">Address *</label>
-                  <textarea  class="form-control" id="co-str-adress" name="b_address" placeholder="Street adress" value = "" required>{{$users->address}}
+                  <textarea  class="form-control" id="co-str-adress" name="b_address" placeholder="Street adress" value = "{{$users->address}}" required>{{$users->address}}
                   </textarea>
                 </div>
                 <!-- <div class="form-group">
@@ -471,11 +471,12 @@
 <input type='hidden' name='state' value='OH' />
 <input type='hidden' name='zip' value='43228' />
 <input type='hidden' name='country' value='USA' />
-<input type='hidden' name='s_check' value='' />
-<input type='hidden' name='email' value='example@2co.com' />
-<input type='hidden' name='phone' value='614-921-2450' />
+<input type='hidden' name='s_check' value='Online_pay' />
+<input type='hidden' name='email' value='{{$users->email}}' />
+<input type='hidden' name='phone' value='{{$users->contact_number}}' />
 <input type="hidden" name="_token" value='{{ csrf_token() }}' />
 <input type="hidden" name="payment" value='' />
+<input type="hidden" name="total" value='{{$cart_item->total}}' />
 
                   @endforeach
                             
@@ -750,7 +751,7 @@ $.ajaxSetup({
         $('#b-country').on('change', function() {
             
             var countryID = $(this).val();
-           alert(countryID);
+           // alert(countryID);
             if (countryID) {
                 $.ajax({
 
@@ -762,6 +763,7 @@ $.ajaxSetup({
 
                         
                         $('select[name="b_region"]').empty();
+                        $('select[name="b_region"]').append('<option value="'+ "" +'">'+ "Select State" +'</option>');
                         $.each(data, function(key, value) {
                             $('select[name="b_region"]').append('<option value="'+ value.id +'">'+ value.region_name +'</option>');
                         });
@@ -778,7 +780,7 @@ $.ajaxSetup({
         $('#b-region').on('change', function() {
             
             var stateID = $(this).val();
-           alert(stateID);
+           // alert(stateID);
             if (stateID) {
                 $.ajax({
 

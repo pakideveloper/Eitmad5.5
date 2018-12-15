@@ -32,35 +32,115 @@
 		}
     	.logo > img{
 		    width: 173px;
-    		margin: 28px;
+    		/*margin: 28px;*/
+		    margin-top: 28px;
+    		margin-bottom: 15px;
+    	}
+    	.logo{
+    		padding-left: 0px;
+    		margin-left: -23px;
     	}
     	.form{
-		    height: -webkit-fill-available;
 		    background-color: white;
 		    border-radius: 10px;
 		    box-shadow: 0 0 50px #c7c7c7;
     	}
-    	.form-heading{
-    		margin-top: 14px;
-    		margin-bottom: 18px;
+    	.form-heading > h2{
+    		margin-top: 14px !important;
+    		margin-bottom: 17px !important;
     		text-align: center;
-    		border-bottom: 1px solid black;
+    	}
+    	.form-heading{
+
+    		border-bottom: 1px solid #d6d6d6;
+    	}
+    	.row{
+    		padding-left: 14px;
+    		padding-right: 14px;
     	}
 
     </style>
  
   </head>
 <body>
-	<div class="col-md-12 logo">
-		<img src="../public/frontend/ecommerce/assets/img/Eitmadweblogo.png">
-	</div>
+	
 	<div class="container">		
-		<div class="row">			
-			<h4>Welcome! You are just one step away to sell on Daraz</h4>
+		<div class="row">
+			<div class="col-md-12 logo">
+				<img src="../public/frontend/ecommerce/assets/img/Eitmadweblogo.png">
+			</div>			
+			<h4>Welcome! You are just one step away to sell on Eitmad</h4>
 			<div class="col-md-12 form">
-				<div class="col-md-12">
-					<h2 class="form-heading">Registration</h2>
+				<div class="col-md-12 form-heading">
+					<h2>Registration</h2>
 				</div>
+				<div class="row">
+					<div class="col-md-3"></div>
+					<form>
+						<div class="col-md-6">
+							<div class="form-group col-md-12 col-sm-12" style="    margin-top: 12px;"  >
+				              <label for="product_images">Your Company Name</label>
+				              <input type="text" class="form-control"  placeholder="name">
+				            </div>
+				            <div class="form-group col-md-12 col-sm-12">
+				              <label for="product_images">Whats about your company</label>
+				              <textarea class="form-control"></textarea>
+				            </div>
+				            <div class="form-group col-md-12 col-sm-12">
+				              <label for="product_images">Logo</label>
+				              <input type="file" name="" class="form-control">
+				            </div>
+				            <div class="form-group col-md-12 col-sm-12">
+				              <label for="product_images">Email</label>
+				              <input type="email" name="" class="form-control">
+				            </div>
+				            <div class="form-group col-md-12 col-sm-12">
+				              <label for="product_images">Contact</label>
+				              <input type="text" name="" class="form-control">
+				            </div>
+				            <div class="form-group col-md-12 col-sm-12">
+				              <label for="product_images">URL (optional)</label>
+				              <input type="text" name="" class="form-control">
+				            </div>
+				            <div class="form-group col-md-12 col-sm-12">
+				              <label for="product_images">Fax No.</label>
+				              <input type="text" name="" class="form-control">
+				            </div>
+				            <div class="form-group col-md-12 col-sm-12">
+				              <label for="product_images">Reg No.</label>
+				              <input type="text" name="" class="form-control">
+				            </div>
+				            <div class="form-group col-md-12 col-sm-12">
+				              <label for="product_images">Person Incharge</label>
+				              <input type="text" name="" class="form-control">
+				            </div>
+				            <div class="form-group col-md-12 col-sm-12">
+				              <label for="product_images">Person Incharge Conatct No.</label>
+				              <input type="text" name="" class="form-control">
+				            </div>
+				            <div class="form-group col-md-12 col-sm-12">
+				              <label for="product_images">Person Incharge Email</label>
+				              <input type="text" name="" class="form-control">
+				            </div>
+				            <div class="form-group col-md-12 col-sm-12">
+				              <label for="product_images">Person Incharge CNIC</label>
+				              <input type="text" name="" class="form-control">
+				            </div>
+				            <div class="form-group col-md-12 col-sm-12">
+				              <label for="product_images">Person Incharge CNIC Front Image</label>
+				              <input type="file" name="" class="form-control">
+				            </div>
+				            <div class="form-group col-md-12 col-sm-12">
+				              <label for="product_images">Person Incharge CNIC Back Image</label>
+				              <input type="file" name="" class="form-control">
+				            </div>
+				            <div class="form-group col-md-12 col-sm-12">
+				              <input type="submit" name="submit" class="btn btn-success">
+				            </div>
+						</div>
+					</form>
+				</div>
+				
 			</div>
 		</div>
 	</div>

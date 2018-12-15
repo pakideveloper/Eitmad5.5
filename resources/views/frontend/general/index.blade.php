@@ -33,12 +33,12 @@
         <link rel="stylesheet" href="{{URL::to('public/frontend/general/assets')}}/css/responsive.css" />
         <link rel="stylesheet" href="{{URL::to('public/frontend/general/assets')}}/css/button.css"/>
 		<link rel="stylesheet" href="{{URL::to('public/frontend/general/assets')}}/css/hover_effect.css"/>
-        <!--[if IE 9]>
+        
         <link rel="stylesheet" type="text/css" href="css/ie.css" />
     </head>
     <body>
         <header class="header-black" id="header-section2">
-            <!-- nav -->
+             
             <nav class="navbar tz-header-bg no-margin alt-font shrink-transparent-header-dark header-border-light position-fixed dark-header">
                 <div class="container navigation-menu">
                     <div class="row">
@@ -57,7 +57,7 @@
                             <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse pull-right">
                                 <ul class="nav navbar-nav">
                                     <li class="propClone"><a class="inner-link text-white" style="text-align:center;" href="{{url('/ecommerce')}}">E Commerce Portal</a></li>
-                                    <li class="propClone"><a class="inner-link text-white" href="\]{{url('/jobs')}}">Job Portal</a></li>
+                                    <li class="propClone"><a class="inner-link text-white" href="{{url('/jobs')}}">Job Portal</a></li>
                                     <li class="propClone"><a class="inner-link text-white" href="#menu">Education Portal</a></li>
                                     <li class="nav-button propClone sm-no-margin-tb float-left btn-medium sm-no-border"><a href="#reservation" class="inner-link btn btn-small propClone bg-golden text-black border-radius-0 font-weight-500 sm-padding-nav-btn">Registration</a> </li>
                                 </ul>
