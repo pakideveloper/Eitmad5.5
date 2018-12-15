@@ -34,5 +34,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // 	return $discounts;
 // });
 Route::Resource('add-job','Job\dashboard\company\JobController');
-Route::Resource('all-jobs','Job\dashboard\company\JobController');
+Route::get('all-jobs','Job\dashboard\company\JobController@AllJobs');
 Route::Resource('del-job','Job\dashboard\company\JobController');
+Route::get('all-jobs/search/{term?}','Job\dashboard\company\JobController@AllJobs');

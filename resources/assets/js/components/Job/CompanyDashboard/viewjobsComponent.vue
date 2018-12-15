@@ -18,7 +18,13 @@
     
     
     <div class="col-md-12">
-      <h4>Bootstrap Snipp for Datatable</h4>
+      <div class="row">
+        <label class="label label-primary col-md-1"><strong>Search:</strong> </label>
+        <div class="form-group col-md-4">
+          <input class="form-control" type="search" v-model="search" @keyup="searchRecord">
+        </div>
+      </div>
+      
       <div class="table-responsive">
         
         <table id="mytable" class="table table-bordred table-striped">
@@ -28,25 +34,65 @@
            
             <th>Title</th>
             <th>Description</th>
+            <th>Location</th>
+            <th>Job Skills</th>
             <th>Career Level</th>
             <th>No. Of Positions</th>
             <th>Required Experience</th>
-            <th>Actions</th>
+            <th>Salary Requirement</th>
+            <th>Gender Preference</th>
+            <th>Job Type</th>
+            <th>Job Category</th>
+            <th>Degree Level</th>
+            <th>Degree Type</th>
+            <th>Age Requirement</th>
+            <th>Apply By</th>
+            <th>Posted By</th>
+            <th>Approval Status</th>
+            <th>Post Status</th>
+            <th>Created At</th>
+            <th style="text-align:center;" colspan="2">Actions</th>
             
            
           </thead>
           <tbody>
             
-            <tr v-for="job in jobs">
+            <tr v-for="job in jobs.data">
               
               <td>{{job.job_title}}</td>
               <td>{{job.job_description}}</td>
+              <td>{{job.city_name}},{{job.country_name}}</td>
+              <td>{{job.job_skills}}</td>
               <td>{{job.job_career_level}}</td>
               <td>{{job.job_no_of_position}}</td>
-              <td>{{job.job_year_of_experience_min}}-{{job.job_year_of_experience_max}}</td>
-              <td class="row">
-                <p class="col-md-3" data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" style="font-size:11px;">Edit</button></p>
-                <p class="col-md-3" data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" style="font-size:11px;" @click="delRecord(job.id)">Delete</button></p>
+              <td>{{job.job_year_of_experience_min}}-{{job.job_year_of_experience_max}}(years)</td>
+              <td>{{job.job_salary_min_range}}-{{job.job_salary_max_range}}(Pkr)</td>
+              <td>{{job.job_gender_preference}}</td>
+              <td>{{job.job_type_name}}</td>
+              <td>{{job.job_subcategory}}, {{job.job_category}}</td>
+              <td>{{job.DegreeLevel}}</td>
+              <td>{{job.DegreeType}}, {{job.specific_degree}}</td>
+              <td>{{job.age_requirement_min}}-{{job.age_requirement_max}}(years)</td>
+              <td>{{job.applyby_date}}</td>
+              <td>{{job.company_id}}</td>
+              <td>
+                <label v-if="job.approval_status == 0" class="label label-danger">Pending</label>
+                <label v-if="job.approval_status == 1" class="label label-success">Approved</label>
+              </td>
+              <td>
+                <label v-if="job.active_status == 0" class="label label-danger">Inactive</label>
+                <label v-if="job.active_status == 1" class="label label-success">Active</label>
+              </td>
+              <td>{{job.creation_date}}</td>
+              <td>
+                <p  data-placement="top" data-toggle="tooltip" title="Edit">
+                  <!-- <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" style="font-size:11px;">Edit</button> -->
+                  <a :href="CompanyDashboardRoute+'/job/'+job.id+'/edit'" class="btn btn-primary btn-xs" style="color:white; font-size:11px;">Edit</a>
+                </p>
+                
+              </td>
+              <td>
+                <p  data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" style="font-size:11px;" @click="delRecord(job.id)">Delete</button></p>
               </td>
               
             </tr>
@@ -68,16 +114,8 @@
           
         </table>
         <div class="clearfix"></div>
-        <ul class="pagination pull-right">
-          <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
-          <li class="active"><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
-        </ul>
-        
+        <pagination :data="jobs" @pagination-change-page="getResults"></pagination>
+      
       </div>
       
     </div>
@@ -131,13 +169,30 @@
         data() {
           return {
               jobs:{},
+              search:'',
                      
           };
         },
         
         methods: {
+            getResults(page = 1) {
+              axios.get(this.url+'/all-jobs?page=' + page)
+              .then(response => this.jobs = response.data)
+              .catch(error => console.log(error));
+            },
             refreshRecord(record){
               this.jobs = record.data
+            },
+            searchRecord(){
+              if(this.search.length >= 2){
+                axios.get(this.url+'/all-jobs/search/'+this.search)
+                .then(response => this.jobs = response)
+                .catch(error => console.log(error))
+              }
+              else{
+                this.getResults()
+              }
+              
             },
             delRecord(id){
               const reply = confirm("Are you sure, you want to delete this record?");

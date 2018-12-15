@@ -39,6 +39,9 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapVendorApiRoutes();
 
+        $this->mapCompanyApiRoutes();
+        $this->mapJob_CompanyWebRoutes();
+
         $this->mapEcommerceAdminWebRoutes();
 
         $this->mapEcommerceWebRoutes();
@@ -108,6 +111,22 @@ class RouteServiceProvider extends ServiceProvider
              ->namespace($this->namespace)
              ->group(base_path('routes/api-vendor.php'));
     }
+
+    protected function mapCompanyApiRoutes()
+    {
+        Route::prefix('api/company')
+             ->middleware('api')
+             ->namespace($this->namespace)
+             ->group(base_path('routes/api-company.php'));
+    }
+
+     protected function mapJob_CompanyWebRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->prefix('jobs/company')
+            ->group(base_path('routes/company.php'));
+    }   
     /**
      * Define the "api" routes for the application.
      *

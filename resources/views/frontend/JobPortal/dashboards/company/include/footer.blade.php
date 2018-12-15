@@ -1,5 +1,5 @@
     <!-- vue js -->
-    <script src="{{URL::to('public/js')}}/companydashboard.js"></script>
+   <!--  <script src="{{URL::to('public/js')}}/companydashboard.js"></script> -->
     <!-- vue js -->
     <!-- Bootstrap core JavaScript
     ================================================== -->
