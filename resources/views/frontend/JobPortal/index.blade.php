@@ -45,6 +45,7 @@
 <!-- end header link -->
 </head>
 <body>
+	@include('frontend/JobPortal/include/login')
 	<!-- header start -->
 @include('frontend/JobPortal/include/jobheader1')
 	<!-- header end -->

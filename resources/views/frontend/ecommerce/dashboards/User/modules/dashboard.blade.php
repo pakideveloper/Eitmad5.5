@@ -195,6 +195,41 @@
                               <input type="text" class="form-control" name="nationality" id="nationality" placeholder="Enter Your Nationality" value="{{$users->nationality}}" title="enter your Nationality if any.">
                           </div>
                       </div>
+
+                      <div class="form-group"> 
+                          <div class="col-xs-6">
+                             <label for="country"><h4>Country</h4></label>
+                              <select  class="form-control" id="country" name="country">
+                                <option value = "">Please Select Country</option>
+                                @foreach($countries as $country)
+                                <option value = "{{$country->id}}">{{$country->country_name}}</option>
+                                @endforeach
+                                <!-- <option value = "Female">Female</option> -->
+                              </select>
+                          </div>
+                      </div>
+
+                       <div class="form-group"> 
+                          <div class="col-xs-6">
+                             <label for="state"><h4>State</h4></label>
+                              <select  class="form-control" id="area" name="area">
+                                <option value = "">Please Select Country First</option>
+                                
+                                <!-- <option value = "Female">Female</option> -->
+                              </select>
+                          </div>
+                      </div>
+
+                      <div class="form-group"> 
+                          <div class="col-xs-6">
+                             <label for="cities"><h4>City</h4></label>
+                              <select  class="form-control" id="city" name="city">
+                                <option value = "">Please Select State First</option>
+                                
+                                <!-- <option value = "Female">Female</option> -->
+                              </select>
+                          </div>
+                      </div>
                       
                      
                      
@@ -364,4 +399,71 @@ $(function(){
     $("#noFile").text(filename.replace("C:\\fakepath\\", "")); 
   }
 });
+</script>
+<script type="text/javascript">
+    // $(document).ready(function() {
+$.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+        $('#country').on('change', function() {
+            
+            var countryID = $(this).val();
+            alert(countryID);
+            if (countryID) {
+                $.ajax({
+
+                    url: '{{ url('/ecommerce/city/regions')}}'+'/' +countryID ,
+                    type: "GET",
+                    dataType: "json",
+                    
+                    success:function(data) {
+
+                        
+                        $('select[name="area"]').empty();
+                        $('select[name="area"]').append('<option value="'+ "" +'">'+ "Select State" +'</option>');
+                        $.each(data, function(key, value) {
+                            $('select[name="area"]').append('<option value="'+ value.id +'">'+ value.region_name +'</option>');
+                        });
+
+                    }
+                });
+            }else{
+                $('select[name="area"]').empty();
+            }
+        });
+
+
+
+        $('#area').on('change', function() {
+            
+            var stateID = $(this).val();
+            alert(stateID);
+            if (stateID) {
+                $.ajax({
+
+                    url: '{{ url('/ecommerce/city/cities')}}'+'/' +stateID ,
+                    type: "GET",
+                    dataType: "json",
+                    
+                    success:function(data) {
+
+                        
+                        $('select[name="city"]').empty();
+                        $.each(data, function(key, value) {
+                            $('select[name="city"]').append('<option value="'+ value.id +'">'+ value.city_name +'</option>');
+                        });
+
+                    }
+                });
+            }else{
+                $('select[name="city"]').empty();
+            }
+        });
+
+
+
+
+    // });
 </script>

@@ -86,11 +86,11 @@
       </section><!--Hero Slider Close-->
     
     	<!--Categories-->
-      <section class="cat-tiles">
+      <!-- <section class="cat-tiles">
       	<div class="container">
         	<h2>Browse categories</h2>
         	<div class="row">
-          	<!--Category-->
+          
            <?php
                                  
                                  $categories=App\Product_Category::all();
@@ -104,44 +104,12 @@
               </a>
             </div>
             @endforeach
-          	<!--Category-->
-          	<!-- <div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6">
-            	<a href="#">
-                <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/categories/2.jpg" alt="2"/>
-                <p>Category name</p>
-              </a>
-            </div>
           	
-          	<div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6">
-            	<a href="#">
-                <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/categories/3.jpg" alt="3"/>
-                <p>Category name</p>
-              </a>
-            </div>
-          	
-          	<div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6">
-            	<a href="#">
-                <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/categories/4.jpg" alt="4"/>
-                <p>Category name</p>
-              </a>
-            </div>
-          	
-          	<div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6">
-            	<a href="#">
-                <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/categories/5.jpg" alt="5"/>
-                <p>Category name</p>
-              </a>
-            </div>
-          	
-          	<div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6">
-            	<a href="#">
-                <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/categories/6.jpg" alt="5"/>
-                <p>Category name</p>
-              </a>
-            </div> -->
           </div>
         </div>
-      </section><!--Categories Close-->
+      </section> -->
+      @include('frontend/ecommerce/include/brand-crusal')
+      <!--Categories Close-->
       <?php
         $products = App\Product::latest()->take(8)->get();
       ?>
@@ -158,34 +126,36 @@
                 	<span class="sale"></span>
                 </div>
               	<div class="price-label">Rs. {{$product->product_price}}</div>
-              	<a href="{{url('ecommerce/single-product')}}/{{$product->slug}}"><img src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}" width = "190" height="auto" alt="1"/></a>
+              	<a href="{{url('ecommerce/single-product')}}/{{$product->slug}}"><img src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}" width = "190" height="190" alt="1"/></a>
                 <div class="footer">
                 	<a href="{{url('ecommerce/single-product')}}/{{$product->slug}}">{{$product->product_name}}</a>
-                  <span>by Pirate3d</span>
+                  <span>by Admin</span>
                   <div class="tools">
                   	<div class="rate">
-                    	<span class="active"></span>
+                    	<!-- <span class="active"></span>
                       <span class="active"></span>
                       <span class="active"></span>
                       <span></span>
-                      <span></span>
+                      <span></span> -->
+                      <button type="button" class="btn-primary" data-toggle="modal" data-target="#affiliated{{$product->id}}" >AffiliateMarketing</button>
                     </div>
                     <!--Add To Cart Button-->
                     <a class="add-cart-btn" href="#"><span>To cart</span><i class="icon-shopping-cart"></i></a>
+                    <a class="wishlist-btn" href="#">
+                      <div class="hover-state">Wishlist</div>
+                      <i class="fa fa-plus"></i>
+                    </a>
                     <!--Share Button-->
-                    <div class="share-btn">
+                    <!-- <div class="share-btn">
                     	<div class="hover-state">
                       	<a class="fa fa-facebook-square" href="#"></a>
                         <a class="fa fa-twitter-square" href="#"></a>
                         <a class="fa fa-google-plus-square" href="#"></a>
                       </div>
                       <i class="fa fa-share"></i>
-                    </div>
+                    </div> -->
                     <!--Add To Wishlist Button-->
-                    <a class="wishlist-btn" href="#">
-                    	<div class="hover-state">Wishlist</div>
-                    	<i class="fa fa-plus"></i>
-                    </a>
+                    
                   </div>
                 </div>
               </div>
@@ -213,7 +183,7 @@
                   	<div class="overlay">
                     	<div class="descr"><div>X-MAS LIGHT IPHONE LENS<span>$14.95</span></div></div>
                     </div>
-                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/1.jpg" alt="1"/>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/image1.jpeg" alt="1"/>
                   </a>
                 </div>
               	<div class="col-lg-5 col-md-5 col-sm-5">
@@ -221,7 +191,7 @@
                   	<div class="overlay">
                     	<div class="descr"><div>Hedadset for iPhone<span>$19.40</span></div></div>
                     </div>
-                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/2.jpg" alt="2"/>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/image2.jpeg" alt="2"/>
                   </a>
                 </div>
               </div>
@@ -231,7 +201,7 @@
                   	<div class="overlay">
                     	<div class="descr"><div>Product Name<span>$24.15</span></div></div>
                     </div>
-                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/3.jpg" alt="3"/>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/image3.jpeg" alt="3"/>
                   </a>
                 </div>
               	<div class="col-lg-5 col-md-5 col-sm-5">
@@ -239,7 +209,7 @@
                   	<div class="overlay">
                     	<div class="descr"><div>Product Name<span>$24.15</span></div></div>
                     </div>
-                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/4.jpg" alt="4"/>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/image4.jpeg" alt="4"/>
                   </a>
                 </div>
               	<div class="col-lg-3 col-md-3 col-sm-3">
@@ -247,7 +217,7 @@
                   	<div class="overlay">
                     	<div class="descr"><div>Product Name<span>$24.15</span></div></div>
                     </div>
-                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/5.jpg" alt="5"/>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/image5.jpeg" alt="5"/>
                   </a>
                 </div>
               </div>
@@ -261,7 +231,7 @@
                   	<div class="overlay">
                     	<div class="descr"><div>Product Name<span>$14.95</span></div></div>
                     </div>
-                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/6.jpg" alt="6"/>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/image6.jpeg" alt="6"/>
                   </a>
                 </div>
               	<div class="col-lg-4 col-md-4 col-sm-4">
@@ -269,7 +239,7 @@
                   	<div class="overlay">
                     	<div class="descr"><div>Product Name<span>$19.40</span></div></div>
                     </div>
-                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/7.jpg" alt="7"/>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/image7.jpeg" alt="7"/>
                   </a>
                 </div>
               	<div class="col-lg-4 col-md-4 col-sm-4">
@@ -277,7 +247,7 @@
                   	<div class="overlay">
                     	<div class="descr"><div>Product Name<span>$19.40</span></div></div>
                     </div>
-                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/8.jpg" alt="8"/>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/image8.jpeg" alt="8"/>
                   </a>
                 </div>
               </div>
@@ -287,7 +257,7 @@
                   	<div class="overlay">
                     	<div class="descr"><div>Product Name<span>$14.95</span></div></div>
                     </div>
-                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/9.jpg" alt="9"/>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/image9.jpeg" alt="9"/>
                   </a>
                 </div>
               	<div class="col-lg-4 col-md-4 col-sm-4">
@@ -295,7 +265,7 @@
                   	<div class="overlay">
                     	<div class="descr"><div>Product Name<span>$19.40</span></div></div>
                     </div>
-                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/10.jpg" alt="10"/>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/image10.jpeg" alt="10"/>
                   </a>
                 </div>
               	<div class="col-lg-4 col-md-4 col-sm-4">
@@ -406,7 +376,7 @@
             <div class="gallery-item" data-groups='["{{$sub_category->sub_category_name}}"]' data-src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}">
               <a href="img/gallery-widget/1.jpg">
                 <div class="overlay"><span><i class="icon-expand"></i></span></div>
-                <img src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}" width="190px" height="auto" alt="1"/>
+                <img src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}" width="190px" height="190" alt="1"/>
               </a>
             </div>
             <!--Item--> 
@@ -417,11 +387,106 @@
       </section><!--Gallery Widget Close-->
       
       <!--Brands Carousel Widget-->
-      @include('frontend/ecommerce/include/brand-crusal')<!--Brands Carousel Close-->
+     <!--  @include('frontend/ecommerce/include/brand-crusal') -->
+      <!--Brands Carousel Close-->
       
     </div><!--Page Content Close-->
+    @foreach($products as $product)
+    <div class="modal fade" id="affiliated{{$product->id}}" role="dialog">
+    <div class="modal-dialog">
     
-   
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Affiliate Marketer Form</h4>
+        </div>
+        <div class="modal-body" style="height: 700px;">
+          <?php
+          $check = 0; 
+           ?>
+          <form method="post" action="{{url('ecommerce/marketer/bidForm')}}">
+            {{ csrf_field()}}
+            <div class="form-group">
+                          
+                          <div class="col-xs-12">
+                              <label for="product_name"><h4>Product_Name:</h4></label>
+                              <input type="text" class="form-control" name="product" id="product" value="{{$product->product_name}}" readonly>
+                              
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-12">
+                              <label for="product_price"><h4>Product_Price:</h4></label>
+                              <input type="text" class="form-control" name="price" id="price" value="{{$product->product_price}}" readonly>
+                              
+                          </div>
+                      </div>
+
+                      
+           <div class="form-group">
+                          
+                          <div class="col-xs-12">
+                              <label for="proposal"><h4>Proposal:</h4></label>
+                              <textarea  class="form-control" id="proposal" name="proposal" placeholder="Please Describe Your Proposal" value="" title="Enter Your Proposal"></textarea>
+                          </div>
+                      </div>
+                      <hr>
+                      <div class="form-group" style="">
+                          
+                          <div class="col-xs-12">
+                            <label for="commission_ratio"><h4>Comission_ratio:</h4></label>
+                              <input type="number" class="form-control" name="ratio" id="ratio" placeholder="Enter Your Expected commission ratio" value="" title="Enter Your Expected commission ratio in %">%
+                              
+                          </div>
+                      </div>
+                      <div class="form-group" style="">
+                          
+                          <div class="col-xs-8">
+                            <label for="timeline"><h4>Expected Time:</h4></label>
+                        
+                              <input type="number" class="form-control" name="timeline" id="timeline" placeholder="e.g, 2" value="" title="Enter Your Expected Time in days,hours,minutes, or seconds">
+                              <hr>
+                              <!-- <input type="number" class="form-control" name="timeline" id="timeline" placeholder="Enter Your Expected Time in days,hours,minutes, or seconds" value="" title="Enter Your Expected Time in days,hours,minutes, or seconds"> -->
+                              <select name = "time" id="time" class="form-control">
+                                <option value="months">
+                                  Month
+                                </option>
+                                <option value="days">
+                                  Days
+                                </option>
+                                <option value="minutes">
+                                  Minutes
+                                </option>
+                                <option value="seconds">
+                                  Seconds
+                                </option>
+                              </select>
+                                
+                                                   
+                              
+                                
+                              </div>
+                      </div>
+                      
+        </div>
+        <div class="modal-footer">
+         
+            
+          <button type="submit" class="btn btn-primary">Submit</button>
+         <!--  $check++; -->
+        
+        
+
+        </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+  
+   @endforeach
     
    
       

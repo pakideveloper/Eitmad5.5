@@ -11905,7 +11905,7 @@ header .search-form .close-search:hover {
 .menu .catalog li .submenu {
   position: absolute;
   top: 56px;
-  width: 740px;
+  /*width: 740px;*/
   z-index: 10;
   background: #2f343b;
   padding: 12px 6px 12px 6px;

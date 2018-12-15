@@ -237,71 +237,20 @@
 			<div class="row">
 				<!-- our-partner start here -->
 				<div class="our-partner">
-					 <b style="font-size: 40px;">Newspaper Post</b>
+					 <b style="font-size: 40px;">Job Details</b>
 					<div class="border"></div>
 					<div class="border1"></div>
 				</div>
 				<!-- our-partner end here -->
-				<div style="margin-bottom: 5%;"><h2><b style="color: #f98a00;">Newspaper Brands</b></h2></div>
-				<div id="partners" class="owl-carousel">
-
-					@foreach($pnews as $new)
-
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image" style="height: 100px;" >
-							<img src="{{URL::to('public/admin/job/upload')}}/Logo/{{$new->paper_logo}}"  class="img-responsive" alt="l1" title="" style="border-radius: 50%;max-width: 100%;max-height: 100%;object-fit: contain;" />
-						</div>
-
-						<span  style="margin-left: 85px"> 10 Jobs </span>
-					
-					</div>
-					@endforeach
-					<!-- <div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l2.jpg" class="img-responsive" alt="l2" title="l2" />
-						</div>
-						<span  style="margin-left: 85px"> 11 Jobs </span>
-					</div>
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l3.jpg" class="img-responsive" alt="l3" title="l3" />
-						</div>
-						<span  style="margin-left: 85px"> 12 Jobs </span>
-					</div>
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l4.jpg" class="img-responsive" alt="l4" title="l4" />
-						</div>
-						<span  style="margin-left: 85px"> 13 Jobs </span>
-					</div>
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l5.jpg" class="img-responsive" alt="l5" title="l5" />
-						</div>
-						<span  style="margin-left: 85px"> 14 Jobs </span>
-					</div>
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l2.jpg" class="img-responsive" alt="l1" title="l1" />
-						</div>
-						<span  style="margin-left: 85px"> 15 Jobs </span>
-					</div>
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l2.jpg" class="img-responsive" alt="l2" title="l2" />
-						</div>
-						<span  style="margin-left: 85px"> 16 Jobs </span>
-					</div> -->
-				</div>
+				<!-- <div style="margin-bottom: 5%;"><h2><b style="color: #f98a00;">Newspaper Brands</b></h2></div> -->
+				
 			</div>
 		</div>
 	</div>
 <!-- end slider -->
 <!-- Single Paper Job -->
-<div style="margin-bottom: 5%;">
-<center>
-	<h2 style="color: #f98a00;"><b>Newspaper Advertisement</b></h2>
-</center>
+<div style="margin-bottom: 5%;margin-left: 8%;">
+	<h4 style="color: #f98a00;"><b>Job Advertisement</b></h4>
 </div>
 <div style="margin-top: 5%;">
 	
@@ -321,9 +270,7 @@
 </div>
 
 
-
-
-                    <div class="listings-details-wrap" data-aios-staggered-parent="true" data-aios-animation-offset="0" data-aios-animation-reset="false">
+<div class="listings-details-wrap" data-aios-staggered-parent="true" data-aios-animation-offset="0" data-aios-animation-reset="false">
 
                         <div class="container">
                         
@@ -333,28 +280,30 @@
 						
                             
                             <div class="listings-details-left">
-                            	<h3 style="color: #f98a00;"><b>Post Title:</b></h3>
-                            	<span style="font-weight: 600;font-size: 25px;">{{$posts->paper_post_title}}</span>
+                            	<h4 style="color: #f98a00;"><b>Post Title:</b></h4>
+                            	<p style="font-weight: 600;font-size: 15px;">{{$posts->paper_post_title}}</p>
                                 <!-- <h4 data-aios-reveal="true" data-aios-animation="fadeInLeft" data-aios-animation-delay="0s" data-aios-animation-reset="false" data-aios-animation-offset="0.3"></h4> -->
                                 
                                 <!-- <div style=""> -->
 										
-						
+						 <hr />
 						
 						<!-- </div> -->
 
                                 <div class="ld-text-wrap" data-aios-reveal="true" data-aios-animation="fadeInUp" data-aios-animation-delay="0s" data-aios-animation-reset="false" data-aios-animation-offset="0.3">
 
                                     <!-- <strong> IT Manr</strong> -->
-                                    <h3 style="color: #f98a00;"><b>Post Description:</b></h3>
+                                    <h4 style="color: #f98a00;"><b>Post Description:</b></h4>
 
-                                    <p style="font-weight: 600;font-size: 25px;">
+                                    <p style="font-weight: 600;font-size: 15px;">
                                        <!-- We are looking for an IT manager to be responsible and accountable for the smooth running of our computer systems within the limits of requirements, specifications, costs and timelines. You will supervise the implementation and maintenance of our company’s computing needs.
 
                                        The successful candidate will have improved skills, a proven professional experience and a detailed knowledge of industry’s best practice processes. -->
                                        {{$posts->post_description}}
                                     </p>
+                                     <hr />
                                     <br>
+                                    
                                     <?php 
     $posted  = date_format($posts->created_at,"d-m-y");
     $old_date_timestamp = strtotime($posts->expired);
@@ -364,12 +313,16 @@ $new_date = date('d-m-y', $old_date_timestamp);
       // die();
 
 	  ?>  
-                                <span ><b style="color: #f98a00;">Posted Date:</b><p style="font-weight: 600;font-size: 25px;"> {{$posted}}</p></span>
+                                <span ><b style="color: #f98a00;">Posted Date:</b><p style="font-weight: 600;font-size: 15px;"> {{$posted}}</p></span>
+                                  <hr />
                                 <br>
-                                <span ><b style="color: #f98a00;">Expire Date:</b> <p style="font-weight: 600;font-size: 25px;">{{$new_date}}</p></span>
+
+                                <span ><b style="color: #f98a00;">Expire Date:</b> <p style="font-weight: 600;font-size: 15px;">{{$new_date}}</p></span>
                                 </div>
                                 <!--social share buttons start-->
                 <hr />
+                <span ><b style="color: #f98a00;">Newspaper Category:</b><p style="font-weight: 600;font-size: 15px;"> {{$posts->logo->paper_name}}</p></span>
+                 <hr />
     <div class="inline-share">
       <span class="share" style="color: #f98a00;"><b>Share  :</b></span>
     </div>

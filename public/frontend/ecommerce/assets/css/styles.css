@@ -9484,7 +9484,8 @@ html {
 img {
   display: block;
   max-width: 100%;
-  height: auto;
+ /* height: 190px;*/
+ object-fit: contain;
 }
 .img-rounded {
   -webkit-border-radius: 5px;
@@ -9569,7 +9570,7 @@ h5,
 h6,
 .h6 {
   font-weight: 400;
-  margin-top: 0;
+  margin-top: 15px;
   margin-bottom: 12px;
 }
 h1,
@@ -9627,7 +9628,7 @@ p.large {
   margin-bottom: 16px;
 }
 .light-color {
-  color: #fdbc00 !important;
+  color: #fffdf7 !important;
 }
 .primary-color,
 .text-primary {
@@ -9662,7 +9663,7 @@ p.large {
 }
 a {
   text-decoration: none;
-  color: #000000;
+  color: #f99302;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -10230,14 +10231,14 @@ header {
 }
 header .left-bg {
   position: absolute;
-  background: #f5f5f5;
+  background: #454c54;
   width: 70%;
   height: 144px;
   left: 0;
 }
 header .right-bg {
   position: absolute;
-  background: #52b381;
+  background: #f99302;
   width: 30%;
   height: 144px;
   right: 0;
@@ -10449,7 +10450,7 @@ header .search-form .close-search:hover {
   top: 0;
   right: -80px;
   height: 144px;
-  background: #52b381;
+  background: #f99302;
   padding: 12px 0 12px 3px;
 }
 .toolbar .search-btn,
@@ -10756,7 +10757,7 @@ header .search-form .close-search:hover {
 }
 .small-header .left-bg {
   position: absolute;
-  background: #f5f5f5;
+  background: #454c54;
   width: 70%;
   height: 72px;
   left: 0;
@@ -11715,7 +11716,7 @@ header .search-form .close-search:hover {
   display: block;
   width: 100%;
   height: 144px;
-  background: #f5f5f5;
+  background: #454c54;
   padding: 20px 0 0 0;
 }
 .menu .main,
@@ -11886,7 +11887,7 @@ header .search-form .close-search:hover {
 }
 .menu .catalog li a {
   padding: 9px 14px 20px 14px;
-  color: #52b381;
+  color: #fff8e3;
   background: none;
 }
 @media only screen and (max-width: 1200px) {
@@ -11897,7 +11898,7 @@ header .search-form .close-search:hover {
 .menu .catalog li .submenu {
   position: absolute;
   top: 56px;
-  width: 740px;
+  /*width: 740px;*/
   z-index: 10;
   background: #2f343b;
   padding: 12px 6px 12px 6px;
@@ -12687,7 +12688,7 @@ header .search-form .close-search:hover {
 }
 .catalog-grid .tile .footer .tools .wishlist-btn {
   top: 13px;
-  right: 100px;
+  right: 60px;
   color: #2ba8db;
 }
 .catalog-grid .tile .footer .tools .wishlist-btn i {
@@ -14642,7 +14643,7 @@ header .search-form .close-search:hover {
 .subscr-widget {
   color: #fff;
   padding: 48px 0 33.6px 0;
-  background: #2ba8db;
+  background: #f99302;
 }
 .subscr-form {
   margin-top: 24px;
@@ -14805,7 +14806,7 @@ header .search-form .close-search:hover {
   border-bottom: 1px solid #e6e6e6;
 }
 .brand-carousel h2 {
-  font-size: 1.125em;
+  /*font-size: 1.125em;*/
   color: #b2b2b2;
   font-weight: normal;
 }
@@ -15131,7 +15132,7 @@ header .search-form .close-search:hover {
   text-align: center;
   font-size: 1.375em;
   color: #fff;
-  background: #2ba8db;
+  background: #f99302;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   border-radius: 5px;

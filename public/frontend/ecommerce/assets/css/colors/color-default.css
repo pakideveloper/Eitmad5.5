@@ -1,5 +1,5 @@
 a {
-  color: #000000;
+  color: #febe00;
 }
 a:hover {
   color: #2ba8db;
@@ -64,13 +64,13 @@ a:hover {
   color: #2ba8db;
 }
 header .right-bg {
-  background: #52b381 !important;
+  background: #febe00 !important;
 }
 header .search-form {
   background: #2ba8db;
 }
 .toolbar {
-  background: #52b381;
+  background: #febe00;
 }
 .toolbar button:hover,
 .toolbar a:hover {
@@ -368,7 +368,7 @@ header .search-form {
   background: #2ba8db;
 }
 .subscr-widget {
-  background: #2ba8db;
+  background: #febe00;
 }
 .gallery-widget .gallery-grid .gallery-item a .overlay span {
   background: #2ba8db;
@@ -409,7 +409,7 @@ header .search-form {
   background: #2ba8db;
 }
 .sticky-btns span {
-  background: #52b381;
+  background: #f99302;
 }
 .sticky-btns span:hover {
   background: #1f89b4;

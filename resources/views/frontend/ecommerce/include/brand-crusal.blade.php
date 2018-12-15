@@ -3,7 +3,7 @@
 ?>
  <section class="brand-carousel">
         <div class="container">
-          <h2>Brands in our shop</h2>
+          <h2>Our Brands</h2>
           <div  class="inner">
             @foreach($brands as $brand)
             <a style="height: 100px;" class="item img-circle thumb-sm" href="{{URL::to('public/admin/upload')}}/{{$brand->brand_logo}}">
