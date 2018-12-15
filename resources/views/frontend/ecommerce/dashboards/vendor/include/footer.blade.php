@@ -1,5 +1,5 @@
     <!-- vue js -->
-    <script src="{{URL::to('public/js')}}/vendorDashboard.js"></script>
+    <!-- <script src="{{URL::to('public/js')}}/vendorDashboard.js"></script> -->
     <!-- vue js -->
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -61,6 +61,28 @@
           jQuery(this).children("span.positive").html("-");
         }
       });
+      // $('#sub_category_id').change(function(){
+      //           id = this.value;
+      //           $("#features_div").html('');
+      //           $.get('http://localhost/Eitmad_my/ecommerce/vendor/product/'+this.value + '/features', function(features){
+                     
+      //                   $.each(features, function(index, feature) { 
+      //                   feature_s = feature.replace(/\s+/g, '');                             
+      //                       content = '<div class="form-group col-md-12 col-sm-12 ">                                                    <label for="product_'+feature_s+'">Product '+feature+'<span class="text-danger">*</span></label>                                                        <input type="text" name="product_'+feature_s+'" parsley-trigger="change"                                                               placeholder="Enter product '+feature+'" class="form-control edit_input" id="product_'+feature_s+'"  }}">                                                   </div>'                        
+      //                       $("#features_div").append(content);
+                                                    
+      //                   });
+      //           });
+      //       });
+      var deleteProduct = function(id){
+                if (confirm('Are you sure you want to delete this?')) {
+                    event.preventDefault();
+                    document.getElementById('delete-form'+id).submit(); 
+                }           
+            }
+      
+
+
     </script>
     <!-- dropdown  -->
   </body>

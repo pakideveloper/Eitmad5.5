@@ -7,9 +7,9 @@
 
         
           
-            <router-view></router-view>
-            <vue-progress-bar></vue-progress-bar>
-          
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <h1>indexxxxx</h1>
+            </main>
         
         </div>
       </div>

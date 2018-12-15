@@ -33,6 +33,66 @@
       .dropdown-menu{
         position: absolute !important;
       }
+      .parsley-errors-list >li{
+        list-style: none;
+        color: #ff6262;
+      }
+      .parsley-errors-list{
+        padding-left: 0;
+      }
+      .product{
+    text-align: center;
+    border: 1px solid #c3c3c3;
+        background-color: white;
+            -webkit-box-shadow: inset 0 0 12px #000000 !important;
+                border-radius: 3%;
+    padding-bottom: 16px;
+    /*cursor: pointer;*/
+  }
+  .product > img{
+    width: 112px;
+    margin-top: 14px;
+  }
+  .product > .discount{
+    position: absolute;
+    right: 0;
+    padding: 10px;
+    font-size: 17px;
+    color: #ffa700;
+    font-family: fantasy;
+    border: 1px solid #c3c3c3;
+  }
+  .product > .price{
+    font-size: 17px;
+    padding-left: 9px;
+    color: red;
+  }
+  .product > strike{
+    font-size: 14px;
+  }
+  .product > hr{
+    border-top: 2px solid rgb(195, 195, 195);
+  }
+  .edit_input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    padding-left: 0;
+  }
+  .edit_input:focus{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding-left: 0;
+  }
+  main{
+    background-color: #f7f7f7 !important;
+    height: auto;
+  }
+
     </style>
   </head>
 
@@ -67,7 +127,7 @@
           </a>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profile_dropdown">
             <a class="dropdown-item" href="javascript:void(0)" style="font-weight: 700;">My Account</a>
-            <a class="dropdown-item" href="/docs/4.1/">Profile</a>
+            <a class="dropdown-item" href="{{url('ecommerce/vendor/profile')}}">Profile</a>
             <a class="dropdown-item" href="/docs/4.0/">User Management</a>
             <a class="dropdown-item" href="/docs/4.0/">Document Template</a>
             <a class="dropdown-item" href="/docs/4.0/">Account Settings</a>

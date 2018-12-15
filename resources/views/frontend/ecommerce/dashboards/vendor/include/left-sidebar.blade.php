@@ -12,11 +12,12 @@
                 </a>
                 <ul class="nav flex-column is-sub">                  
                   <li>
-                      <router-link  to="products" class="nav-link">Manage Products</router-link>
+                      <a href="{{url('ecommerce/vendor/product')}}" class="nav-link">Manage Products</a>
                     
                   </li>
                   <li>
-                      <router-link  to="add-product" class="nav-link">Add Product</router-link>
+                      <!-- <router-link  to="add-product" class="nav-link"></router-link> -->
+                      <a href="{{url('ecommerce/vendor/product')}}/create" class="nav-link">Add Product</a>
                     
                   </li>
                   <li>
@@ -45,11 +46,11 @@
                 </a>
                 <ul class="nav flex-column is-sub">                  
                   <li>
-                      <router-link  to="add-product" class="nav-link">Manage orders</router-link>   
+                      <a href="{{url('ecommerce/vendor/order')}}" class="nav-link">Manage Orders</a>  
                   </li>
-                  <li>
-                      <router-link  to="add-product" class="nav-link">Manage Reviews</router-link>   
-                  </li>
+                  <!-- <li>
+                      <a href="{{url('ecommerce/vendor/order')}}" class="nav-link">Manage Products</a>   
+                  </li> -->
                 </ul>
               </li>
               <li class="nav-item has-sub">
