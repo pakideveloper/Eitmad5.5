@@ -90,10 +90,21 @@
                        <a  href="{{url('ecommerce/user/addproduct')}}" class="nav-link">Manage Products</a>    
                   </li>
                   <li>
-                       <a  href="{{url('ecommerce/user/show/AllProducts')}}" class="nav-link">All Products</a>   
+                       <a  href="{{url('ecommerce/user/allproducts')}}" class="nav-link">All Products</a>   
                   </li>
                 </ul>
               </li>
+
+              <li class="nav-item has-sub">
+                <a class="nav-link" href="{{url('ecommerce/user/marketerRequest')}}">
+                  <span data-feather="user"></span>
+                  Affiliate Marketer Requests
+                  
+                </a>
+                
+              </li>
+
+
               <li class="nav-item">
                  <a class="nav-link" href="{{url('ecommerce/changepassword')}}">
                   <span data-feather="user"></span>

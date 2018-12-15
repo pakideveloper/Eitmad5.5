@@ -3,13 +3,14 @@
 namespace App\Http\Controllers\Ecommerce\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\StatusLiked;
 use Auth;
 use App\User;
 use App\country;
 use App\City;
 use App\Region;
 use DB;
+use App\Bidding;
 class UserController extends Controller
 {
     //
@@ -130,5 +131,43 @@ public function regions($id)
          return City::where('region_id',$id)->get();
     }
 
+
+    public function request(){
+        // echo "hello";
+        //      die();
+
+
+$requests = DB::table('biddings')
+            ->join('users' , 'users.id', '=', 'biddings.user_id')
+            ->join('products', 'products.id','=','biddings.product_id')
+            ->where('biddings.user_id', '=' , Auth::user()->id)
+             ->select('biddings.id','biddings.proposal','biddings.commission_ratio','biddings.timestamp','biddings.commission_amount','biddings.status','products.product_name','products.product_price')
+            ->get();
+
+            // echo $requests;
+            //  die();
+
+ 
+return view('frontend.ecommerce.dashboards.User.modules.marketer-request',compact('requests'));
+
+}
+public function CancelRequest($id)
+{
+$biddings = Bidding::find($id);
+$biddings->delete();
+return Redirect()->back()->with('status', 'Request Deleted successfully!');
+
+}
+public function AcceptRequest($id)
+{
+    // echo "ok";
+    // die();
+$biddings = Bidding::find($id);
+$biddings->status = 1;
+$biddings->save();
+
+return Redirect()->back()->with('status', 'Request Accepted successfully!');
+
+}
 
 }

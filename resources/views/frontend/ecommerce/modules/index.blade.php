@@ -401,15 +401,17 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Affiliate Marketer Form</h4>
         </div>
-        <div class="modal-body" style="height: 450px;">
-          
+        <div class="modal-body" style="height: 700px;">
+          <?php
+          $check = 0; 
+           ?>
           <form method="post" action="{{url('ecommerce/marketer/bidForm')}}">
             {{ csrf_field()}}
             <div class="form-group">
                           
                           <div class="col-xs-12">
                               <label for="product_name"><h4>Product_Name:</h4></label>
-                              <input type="text" class="form-control" name="product" id="product" value="{{$product->id}}">
+                              <input type="text" class="form-control" name="product" id="product" value="{{$product->product_name}}" readonly>
                               
                           </div>
                       </div>
@@ -417,7 +419,7 @@
                           
                           <div class="col-xs-12">
                               <label for="product_price"><h4>Product_Price:</h4></label>
-                              <input type="text" class="form-control" name="price" id="price" value="{{$product->product_price}}">
+                              <input type="text" class="form-control" name="price" id="price" value="{{$product->product_price}}" readonly>
                               
                           </div>
                       </div>
@@ -435,22 +437,48 @@
                           
                           <div class="col-xs-12">
                             <label for="commission_ratio"><h4>Comission_ratio:</h4></label>
-                              <input type="number" class="form-control" name="ratio" id="ratio" placeholder="Enter Your Expected commission ratio" value="" title="Enter Your Expected commission ratio in %">
+                              <input type="number" class="form-control" name="ratio" id="ratio" placeholder="Enter Your Expected commission ratio" value="" title="Enter Your Expected commission ratio in %">%
                               
                           </div>
                       </div>
                       <div class="form-group" style="">
                           
-                          <div class="col-xs-12">
+                          <div class="col-xs-8">
                             <label for="timeline"><h4>Expected Time:</h4></label>
-                              <input type="number" class="form-control" name="timeline" id="timeline" placeholder="Enter Your Expected Time in days,hours,minutes, or seconds" value="" title="Enter Your Expected Time in days,hours,minutes, or seconds">
+                        
+                              <input type="number" class="form-control" name="timeline" id="timeline" placeholder="e.g, 2" value="" title="Enter Your Expected Time in days,hours,minutes, or seconds">
+                              <hr>
+                              <!-- <input type="number" class="form-control" name="timeline" id="timeline" placeholder="Enter Your Expected Time in days,hours,minutes, or seconds" value="" title="Enter Your Expected Time in days,hours,minutes, or seconds"> -->
+                              <select name = "time" id="time" class="form-control">
+                                <option value="months">
+                                  Month
+                                </option>
+                                <option value="days">
+                                  Days
+                                </option>
+                                <option value="minutes">
+                                  Minutes
+                                </option>
+                                <option value="seconds">
+                                  Seconds
+                                </option>
+                              </select>
+                                
+                                                   
                               
-                          </div>
+                                
+                              </div>
                       </div>
                       
         </div>
         <div class="modal-footer">
+         
+            
           <button type="submit" class="btn btn-primary">Submit</button>
+         <!--  $check++; -->
+        
+        
+
         </div>
         </form>
       </div>

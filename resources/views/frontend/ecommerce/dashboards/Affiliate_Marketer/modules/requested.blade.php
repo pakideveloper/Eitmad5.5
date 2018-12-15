@@ -19,18 +19,18 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Order ID</th>
-      <th scope="col">Product Name</th>
-      <th scope="col">Product Unit Price</th>
-      <th scope="col">Order Quantity</th>
       
-      <th scope="col">Shipping Charges</th>
-      <th scope="col">Tax</th>
-      <th scope="col">Discount</th>
-      <th scope="col">Total</th>
-      <th scope="col">Payment Method</th>
+      <th scope="col">Product Name</th>
+      <th scope="col">bid_Proposal</th>
+      <th scope="col">Commission_ratio</th>
+      
+      <th scope="col">timestamp</th>
+      <th scope="col">commission_amount</th>
+      <th scope="col">status</th>
+       <th scope="col">Action</th>
+     <!-- <th scope="col">Payment Method</th>
       <th scope="col">Status</th>
-      <th scope="col">Claim Order</th>
+      <th scope="col">Claim Order</th> -->
     </tr>
   </thead>
   <tbody>
@@ -38,28 +38,33 @@
 $i = 1;
 
      ?>
-    @foreach($orders as $order)
+    @foreach($requests as $request)
     
     <tr>
       <th scope="row">{{$i++}}</th>
-      <td>{{$order->id}}</td>
-     
-      <td>{{$order->product_name}}</td>
-
-      <td>{{$order->order_product_unit_price}}</td>
-       <td>{{$order->order_product_quantity}}</td>
       
-      <td>{{$order->shipping_charges}}</td>
-      <td>{{$order->order_tax}}</td>
-       <td>{{$order->discount_percent}}%</td>
-      <td>{{$order->order_product_total_price}}</td>
-       <td>{{$order->payment_method}}</td>
-      @if($order->order_status == 0)
+     
+      <td>{{$request->product_name}}</td>
+
+      <td>{{$request->proposal}}</td>
+       <td>{{$request->commission_ratio}}</td>
+      
+      <td>{{$request->timestamp}}</td>
+      <td>{{$request->commission_amount}}</td>
+       
+      
+      @if($request->status == 0)
       <td>Pending</td>
       @else
-      <td>Done</td>
+      <td>Accept</td>
       @endif
-      <td><a data-toggle="modal" data-target="#myModal" style="cursor: pointer;color: red;text-decoration: underline;">wants to claim?</a></td>
+      <td>
+        <a data-toggle="modal" data-target="#bid{{$request->id}}" style="float: left;cursor: pointer;">
+          <i class="fa fa-pencil"></i>
+       </a>
+
+      </td>
+      
     </tr>
     
     @endforeach
@@ -154,7 +159,90 @@ $i = 1;
       
     </div>
   </div>
-  
+
+
+
+
+
+
+@foreach($requests as $request)
+
+<div class="modal fade" id="bid{{$request->id}}" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" style="display:block !important">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Edit Form</h4>
+        </div>
+        <div class="modal-body" style="height: 460px;">
+          <?php
+          $check = 0; 
+           ?>
+          <form method="post" action="{{url('ecommerce/marketer/dashboard')}}/{{$request->id}}">
+            {{ csrf_field()}}
+            {{ method_field('PUT')}}
+            <div class="form-group">
+                          
+                          <div class="col-xs-12">
+                              <label for="product_name"><h4>Product_Name:</h4></label>
+                              <input type="text" class="form-control" name="product" id="product" value="{{$request->product_name}}" readonly>
+                              
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-12">
+                              <label for="product_price"><h4>Product_Price:</h4></label>
+                              <input type="text" class="form-control" name="price" id="price" value="{{$request->product_price}}" readonly>
+                              
+                          </div>
+                      </div>
+
+                      
+           <div class="form-group">
+                          
+                          <div class="col-xs-12">
+                              <label for="proposal"><h4>Proposal:</h4></label>
+                              <textarea  class="form-control" id="proposal" name="proposal" placeholder="Please Describe Your Proposal" value="{{$request->proposal}}" title="Enter Your Proposal">{{$request->proposal}}</textarea>
+                          </div>
+                      </div>
+                      <hr>
+                      <div class="form-group" style="">
+                          
+                          <div class="col-xs-12">
+                            <label for="commission_ratio"><h4>Comission_ratio:</h4></label>
+                              <input type="number" class="form-control" name="ratio" id="ratio" placeholder="Enter Your Expected commission ratio" value="{{$request->commission_ratio}}" title="Enter Your Expected commission ratio in %">
+                              
+                          </div>
+                      </div>
+                      <div class="form-group" style="">
+                          
+                          <div class="col-xs-12">
+                            <label for="timeline"><h4>Expected Time:</h4></label>
+                              <input type="number" class="form-control" name="timeline" id="timeline" placeholder="Enter Your Expected Time in days,hours,minutes, or seconds" value="{{$request->timestamp}}" title="Enter Your Expected Time in days,hours,minutes, or seconds">
+                              
+                          </div>
+                      </div>
+                      
+        </div>
+        <div class="modal-footer">
+         
+            
+          <button type="submit" class="btn btn-primary">Submit</button>
+         <!--  $check++; -->
+        
+        
+
+        </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+
+  @endforeach
 
     </main>
           

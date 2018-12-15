@@ -28,3 +28,29 @@ Route::view('/register/vendor','frontend.ecommerce.modules.registration.vendor-r
 Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
 
+Route::post('test2/{id}', function ($id) {
+    // event(new App\Events\StatusLiked('Someone'));
+    // return "Event has been sent!";
+    $biddings = App\Bidding::find($id);
+$biddings->status = 1;
+$biddings->save();
+$products = DB::table('products')
+            ->where('products.id','=',$biddings->product_id)
+            ->get();
+         foreach ($products as $product) {
+            	# code...
+            }   
+            event(new App\Events\StatusLiked($product->added_by_user));
+            // echo $products;
+            // die();
+    return Redirect()->back()->with('status', 'Request Accepted successfully! Now Your Product go to Marketer Bucket');
+});
+
+Route::post('test3/{id}', function ($id) {
+    event(new App\Events\SendRequest('Sender'));
+    // return "Event has been sent!";
+//     $biddings = App\Bidding::find($id);
+// $biddings->status = 1;
+// $biddings->save();
+    return Redirect()->back()->with('status', 'Request Send successfully!');
+});

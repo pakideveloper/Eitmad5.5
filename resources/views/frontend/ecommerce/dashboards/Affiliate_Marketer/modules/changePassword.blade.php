@@ -24,7 +24,7 @@
 <div class="row">
 <div class="col-sm-6 col-sm-offset-3">
 <p class="text-center">Use the form below to change your password. Your password cannot be the same as your username.</p>
-<form method="post" id="passwordForm" action="{{url('ecommerce/passwordchange')}}" enctype="multipart/form-data">
+<form method="post" id="passwordForm" action="{{url('ecommerce/marketer_passwordchange')}}" enctype="multipart/form-data">
   {{ csrf_field()}}
 <input type="password" class="input-lg form-control" name="password1" id="password1" placeholder="New Password" autocomplete="off">
 <div class="row">

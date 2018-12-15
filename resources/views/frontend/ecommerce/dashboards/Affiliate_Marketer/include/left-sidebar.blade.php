@@ -5,7 +5,7 @@
                 <router-link  to="dashboard" class="nav-link"><span data-feather="shopping-cart"></span>&nbsp;Dasboard</router-link>
               </li> -->
               <li class="nav-item">
-                <a class="nav-link" href="{{url('ecommerce/user/dashboard')}}" ><span data-feather="user"></span>&nbsp;Profile</a>
+                <a class="nav-link" href="{{url('ecommerce/marketer/dashboard')}}" ><span data-feather="user"></span>&nbsp;Profile</a>
               </li>
               <li class="nav-item has-sub">
                
@@ -44,9 +44,9 @@
               </li>
              
               <li class="nav-item has-sub">
-                <a class="nav-link" href="{{url('ecommerce/marketer/requests')}}">
+                <a class="nav-link" href="{{url('ecommerce/marketer/bid')}}">
                   <span data-feather="user"></span>
-                  Affiliate Marketer Requests
+                  My Bid Products
                   <!-- <span class="positive">+</span> -->
                 </a>
                 <!-- <ul class="nav flex-column is-sub">                  
@@ -76,31 +76,30 @@
                   </li>
                 </ul>
               </li> -->
-              <li class="nav-item has-sub">
+             <!--  <li class="nav-item has-sub">
                 <a class="nav-link" href="JavaScript:void(0)">
                   <span data-feather="user"></span>
-                  Product
-                  <span class="positive">+</span>
+                  My Products To Sell
+                 
                 </a>
-                <ul class="nav flex-column is-sub">                  
-                  <li>
-                      <a  href="{{url('ecommerce/user/addproduct')}}/create" class="nav-link">Add</a>   
-                  </li>
-                  <li>
-                       <a  href="{{url('ecommerce/user/addproduct')}}" class="nav-link">Manage Products</a>    
-                  </li>
-                  <li>
-                       <a  href="{{url('ecommerce/user/show/AllProducts')}}" class="nav-link">All Products</a>   
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
+                
+              </li> -->
+              <!-- <li class="nav-item">
                  <a class="nav-link" href="{{url('ecommerce/changepassword')}}">
                   <span data-feather="user"></span>
                  WishList
-                  <!-- <span class="positive">+</span> -->
+                  
                 </a>
-              </li>
+              </li> -->
+
+
+              <!-- <li class="nav-item">
+                 <a class="nav-link" href="" >
+                  <span data-feather="user"></span>
+                  Notifications
+                 
+                </a>
+              </li> -->
              <!--  <li class="nav-item">
                  <a class="nav-link" href="{{url('ecommerce/changepassword')}}">
                   <span data-feather="user"></span>
@@ -109,7 +108,7 @@
                 </a>
               </li> -->
               <li class="nav-item has-sub">
-                <a class="nav-link" href="{{url('ecommerce/changepassword')}}">
+                <a class="nav-link" href="{{url('ecommerce/marketer_changepassword')}}">
                   <span data-feather="user"></span>
                  Change Password
                   <!-- <span class="positive">+</span> -->
@@ -154,7 +153,7 @@
         
         <button type="button" class="btn btn-primary" onclick="document.getElementById('confirms').style.display='none'" style="float:right;margin:5px;background-color: black;
     border: black;">No</button>
-    <a href="{{url('ecommerce/deactivate')}}"><button type="button" class="btn btn-primary" style="float:right;margin:5px;background-color: black;
+    <a href="{{url('ecommerce/marketer_deactivate')}}"><button type="button" class="btn btn-primary" style="float:right;margin:5px;background-color: black;
     border: black;">Yes</button></a>
        
         <p></p>
@@ -235,3 +234,4 @@
             </ul> -->
           </div>
         </nav>
+        

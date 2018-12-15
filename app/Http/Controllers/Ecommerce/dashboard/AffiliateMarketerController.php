@@ -10,6 +10,7 @@ use App\Region;
 use DB;
 use App\Marketer;
 use Illuminate\Http\Request;
+use App\Bidding;
 
 class AffiliateMarketerController extends Controller
 {
@@ -105,6 +106,7 @@ class AffiliateMarketerController extends Controller
     public function edit($id)
     {
         //
+       
     }
 
     /**
@@ -117,7 +119,77 @@ class AffiliateMarketerController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $biddings =Bidding::find($id);
+        $biddings->proposal = $request->proposal;
+        $biddings->commission_ratio = $request->ratio;
+        $ratio = $request->ratio;
+        $price = $request->price;
+        $biddings->timestamp= $request->timeline;
+        $users = User::find(Auth::user()->id);
+
+        $checks = DB::table('biddings')
+                ->select('biddings.user_id')
+                ->where('biddings.user_id','=', $users->id)
+                ->get();
+                
+                //  echo $checks;
+                // die();
+        
+        $biddings->user_id = $users->id;
+        $products = DB::table('products')
+                    ->select('products.id')
+                    ->where('products.product_name','=',$request->product)
+                    ->get();
+         
+         foreach ($products as  $value) {
+             # code...
+         
+            $biddings->product_id = $value->id;                        # code...
+         }                      
+
+        // $biddings->product_id = $request->product;
+        $biddings->commission_amount = $ratio * $price/100;
+         //echo $users;
+         //die();
+
+       
+            $biddings->update();
+            return Redirect()->back()->with('status', 'Your Form has been successfully updated');
+           
+            # code...
+        
+        
+        
+        
+       
+        
+        
+    
+
     }
+    public function changePass(Request $request)
+{
+//echo "welcome";
+ //die();
+ $user = User::find(Auth::user()->id);
+ $pass1 = $request->password1;
+ $pass2 = $request->password2;
+
+ if ($pass1 == $pass2) {
+    echo "correct";
+    $user->password = bcrypt($request->password1);
+    $user->save();
+    // die();
+     # code...
+    return Redirect()->back()->with('status', 'Marketer Password Updated successfully!');
+ }
+ else
+ {
+    echo "Sorry Password is not matched!!";
+ }
+ 
+// return view('frontend.ecommerce.dashboards.User.modules.changePassword');
+}
 
     /**
      * Remove the specified resource from storage.
@@ -128,6 +200,9 @@ class AffiliateMarketerController extends Controller
     public function destroy($id)
     {
         //
+        $user = User::find(Auth::user()->id);
+        $user->delete();
+         return Redirect()->back()->with('status', 'Your profile has been successfully deleted');
     }
 
     public function regions($id)
@@ -145,17 +220,25 @@ class AffiliateMarketerController extends Controller
          return City::where('region_id',$id)->get();
     }
     public function request(){
+        // echo "hello";
+            // die();
+
 
 $requests = DB::table('biddings')
             ->join('users' , 'users.id', '=', 'biddings.user_id')
             ->join('products', 'products.id','=','biddings.product_id')
             ->where('biddings.user_id', '=' , Auth::user()->id)
-             ->select('orders.id','order_products.order_product_unit_price','order_products.order_product_quantity','orders.shipping_charges','orders.order_tax','order_products.order_product_total_price','products.product_name','discounts.discount_percent','orders.order_status','orders.payment_method')
+             ->select('biddings.id','biddings.proposal','biddings.commission_ratio','biddings.timestamp','biddings.commission_amount','biddings.status','products.product_name','products.product_price')
             ->get();
+
+            // echo $requests;
+            // die();
 
  
 return view('frontend.ecommerce.dashboards.Affiliate_Marketer.modules.requested',compact('requests'));
 
 }
+
+
 
 }
