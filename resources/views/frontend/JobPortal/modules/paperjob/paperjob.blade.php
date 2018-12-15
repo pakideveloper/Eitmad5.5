@@ -222,25 +222,28 @@
 			<div class="row">
 				<!-- our-partner start here -->
 				<div class="our-partner">
-					 <b style="font-size: 40px;">Newspapers Job Post</b>
+					 <b style="font-size: 40px;">Newspaper Post</b>
 					<div class="border"></div>
 					<div class="border1"></div>
 				</div>
+				 @include('frontend/JobPortal/include/brand-crusal')
 				<!-- our-partner end here -->
 				
-				<div id="partners" class="owl-carousel">
+				<!-- <div id="partners" class="owl-carousel">
 					@foreach($pnews as $new)
-
+						
 					<div class="item">
 						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image" style="height: 100px;">
+							<a href="{{url('/jobs/paperjobs')}}/{{$new->id}}">
 							<img src="{{URL::to('public/admin/job/upload')}}/Logo/{{$new->paper_logo}}" class="img-responsive" alt="l1" title="" style="border-radius: 50%;max-width: 100%;max-height: 100%;object-fit: contain;" />
+							</a>
 						</div>
 
 						<span  style="margin-left: 85px"> 10 Jobs </span>
 					
 					</div>
 					@endforeach
-					<!-- <div class="item">
+					<div class="item">
 						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
 							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l2.jpg" class="img-responsive" alt="l2" title="l2" />
 						</div>
@@ -275,43 +278,28 @@
 							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l2.jpg" class="img-responsive" alt="l2" title="l2" />
 						</div>
 						<span  style="margin-left: 85px"> 16 Jobs </span>
-					</div> -->
-				</div>
+					</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
-<!-- end slider
- -->
-<!-- paper job -->
-<div class="JobsByCntryCity gray jobLisitngPanel">
-<div class="topBx">
-</div>
-<div class="btmBx">
-	@foreach($posts as $post)
-<div class="job-listing-block" id="jobs-append-box">
-<div class="single-job-list-block">
-<div class="lftBx">
-<a target="_blank" href="{{url('/jobs/single-paperjob')}}/{{$post->id}}" class="linker">
-<div class="link-inner">
-<div class="compImage">
-		
-<img src="{{URL::to('public/admin/job/upload')}}/Logo/{{$post->logo->paper_logo}}" alt="img-army">
-<!-- <div class="jLocation">
-<img src="https://ikddata.ilmkidunya.com/images/jobs/jobs/ic-map-marker-sm-black.png" alt="ic-map-marker-sm-black" class="normal">
-<img src="https://ikddata.ilmkidunya.com/images/jobs/jobs/ic-map-marker-sm-white.png" alt="ic-map-marker-sm-black" class="hovered" style="display:none;"> 
-<span class="cityName">Peshawar</span></div> -->
-</div>
-<div class="desc">
-<div class="jTitle">{{$post->paper_post_title}}</div>
-<div class="jDesc"> <p>{{$post->post_description}}</p></div>
-
-</div>
-</div>
-</a>
-</div>
-<div class="rgtBx">
-<div class="jobPostingInfo">
-	 <?php 
+	<div class="container">
+	<div class="table-responsive">
+	<table class="table" style="width: 100%">
+		<thead>
+		<tr>
+			
+				<th>Posted</th>
+				<th>Post Title</th>
+				<th>Newspaper</th>
+				<th>Last Date</th>
+				<th>Apply</th>
+			
+		</tr>
+		</thead>
+		<tbody>
+			@foreach($posts as $post)
+			<?php 
     $posted  = date_format($post->created_at,"d/m/y");
     $old_date_timestamp = strtotime($post->expired);
 $new_date = date('d-m-y', $old_date_timestamp);
@@ -320,39 +308,23 @@ $new_date = date('d-m-y', $old_date_timestamp);
       // die();
 
 	  ?>  
-         
-	
-<div class="jPostedOn">Posted On<b class="green">{{$posted}}</b></div>
-<div class="jLastDate">Last Date<b class="red">{{$new_date}}</b></div>
-</div><div class="jobCounting"><div class="jobtotal"><b>{{$post->number_of_jobs}}</b>Vacancy</div>
-<!-- <div class="jobFavorite"><input type="hidden" value="Jobs In Chip Training &amp; Consulting 23 Oct 2018">
-	
-<a onclick="makeJobFvrt(155203,this);">
-<span class="imgJobFavrt"></span>Favorite</a></div> -->
-</div>
-<div class="jobAd">
-<img style="width: 100%;" src="{{URL::to('public/admin/job/upload')}}/Ad/{{$post->paper_ad}}" alt="newsaper"></div>
-</div>
-<a target="_blank" href="/jobs/jobs-in-chip-training-consulting-23-oct-2018-155203.aspx" class="mobilink">
-<div class="jShowMobo" style="display:none;">
-<div class="mbjDesc">
-<p>Communication Support Officer, Human Resource Officer</p>
-</div>
-<div class="jInfo">
-	<span class="location"><img src="https://ikddata.ilmkidunya.com/images/jobs/jobs/ic-map-marker-sm-black.png" alt="ic-map-marker-sm-black" class="normal">
-	</span>
-	<span class="cityName">Peshawar</span>
-	<span class="date-posted">23 Oct</span>
-	<span class="last-date">Last date: 28 Oct</span>
-</div>
-</div>
-</a>
-</div>
+			<tr>
+				<td>{{$posted}}</td>
+				<td><a href="{{url('/jobs/single-paperjob')}}/{{$post->id}}"> {{$post->paper_post_title}}</a></td>
+				<td>{{$post->logo->paper_name}}</td>
+				<td>{{$new_date}}</td>
+				<td><a href="{{url('/jobs/single-paperjob')}}/{{$post->id}}">Details</a></td>
+			</tr>
+			@endforeach
+		</tbody>
 
+
+	</table>
+	</div>
 </div>
-@endforeach
-</div>
-</div>
+<!-- end slider
+ -->
+<!-- paper job -->
 
 <!-- end paper job -->
 <!-- footer start -->

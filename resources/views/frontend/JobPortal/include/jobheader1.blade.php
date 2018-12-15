@@ -169,7 +169,14 @@
           	<li><a href="">CV Manager</a></li>
           	
 
-          	<li><a href="{{url('/jobs/paperjobs')}}">Paper Job</a></li>
+          	<li class="has-submenu"><a href="{{url('/jobs/paperjobs')}}">Newspaper Ads</a>
+              <ul class="submenu">
+               <li><a href="{{url('/jobs/paperjobs')}}">Job</a></li>
+               <li><a href="{{url('/jobs/paperjobs/Admission')}}">Admission</a></li>
+               <li><a href="{{url('/jobs/paperjobs/Tender')}}">Tender</a></li>
+            
+             </ul>
+            </li>
           	<li><a href="{{ url('jobs/addcompany') }}">Submit A Job</a></li>
           	<!-- <li><a href="shop-filters-left-3cols.html">TV sets</a></li> -->
           </ul>
@@ -190,7 +197,7 @@
             <a class="login-btn btn-outlined-invert"  onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();" ><i class="icon-profile"></i> <span style="text-transform: capitalize;">logout</span></a>
             @endif
-            <form id="logout-form" action="" method="POST" style="display: none;">{{ csrf_field() }}</form>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
             
           </div>
          

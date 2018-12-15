@@ -1,5 +1,5 @@
 function loadscroler(){
-	$('body').prepend('<a href="#" class="bottom-top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>');
+	$('body').prepend('');
 	var amountScrolled = 300;
 	$(window).on('scroll',function() {
 		if ( $(window).scrollTop() > amountScrolled ) {

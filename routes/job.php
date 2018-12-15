@@ -41,12 +41,15 @@ Route::get('/job', function()
 });
 
 Route::get('/single-paperjob/{id}', 'Job\PostController@single_post');
+Route::get('/paperjobs/{id}', 'Job\PostController@singlepaper_post');
 Route::get('/single-paperjob', function()
 {
   return view('frontend/JobPortal/modules/paperjob/single-paperjob');
 });
 
 Route::get('/paperjobs', 'Job\PostController@post' );
+Route::get('/paperjobs/Tender', 'Job\PostController@Tenderpost' );
+Route::get('/paperjobs/Admission', 'Job\PostController@Admissionpost' );
 //manage-cvs
 Route::get('candidate/manage-cv',function(){
 

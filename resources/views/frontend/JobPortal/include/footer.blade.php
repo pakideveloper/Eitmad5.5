@@ -21,7 +21,6 @@
     <input class="btn btn-success btn-sm btn-block" type="submit" value="Send">
   </form>
   <span id="qcf-btn"><i class="fa fa-envelope"></i></span>
-  <span id="scrollTop-btn"><i class="fa fa-chevron-up"></i></span>
 </div><!--Sticky Buttons Close-->
 <!--Subscription Widget-->
 <section class="subscr-widget">

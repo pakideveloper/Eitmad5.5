@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use Auth;
 use App\User;
+use App\country;
+use App\City;
+use App\Region;
 use DB;
 class UserController extends Controller
 {
@@ -14,7 +17,10 @@ class UserController extends Controller
     public function dashboard(){
 
     	$users  = User::find(Auth::user()->id);
-    	return view('frontend.ecommerce.dashboards.User.modules.dashboard',compact('users'));
+        $countries = country::all();
+        $regions = Region::all();
+        $cities = City::all(); 
+    	return view('frontend.ecommerce.dashboards.User.modules.dashboard',compact('users','countries','regions','cities'));
     }
     public function profileEdit(Request $request){
 
@@ -32,6 +38,8 @@ class UserController extends Controller
     	$users->date_of_birth = $request->date_of_birth;
     	$users->gender = $request->gender;
     	$users->nationality = $request->nationality;
+        // $users->area_id = $request->area;
+        $users->city_id = $request->city;
         $profile_img = $request->profileImage;
         // echo $profile_img;
         //die();
@@ -85,7 +93,7 @@ public function changePass(Request $request)
 
  if ($pass1 == $pass2) {
     echo "correct";
-    $user->password = $request->password1;
+    $user->password = bcrypt($request->password1);
     $user->save();
     // die();
      # code...
@@ -106,6 +114,21 @@ public function destroy()
        return view('frontend.general.index');
     }
 
+
+public function regions($id)
+    {
+        // echo "string";
+        // die();
+        //
+         return Region::where('country_id',$id)->get();
+    }
+    public function cities($id)
+    {
+        // echo "string";
+        // die();
+        //
+         return City::where('region_id',$id)->get();
+    }
 
 
 }

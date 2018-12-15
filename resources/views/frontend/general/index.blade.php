@@ -33,12 +33,12 @@
         <link rel="stylesheet" href="{{URL::to('public/frontend/general/assets')}}/css/responsive.css" />
         <link rel="stylesheet" href="{{URL::to('public/frontend/general/assets')}}/css/button.css"/>
 		<link rel="stylesheet" href="{{URL::to('public/frontend/general/assets')}}/css/hover_effect.css"/>
-        
+        <!--[if IE 9]>
         <link rel="stylesheet" type="text/css" href="css/ie.css" />
     </head>
     <body>
         <header class="header-black" id="header-section2">
-             
+            <!-- nav -->
             <nav class="navbar tz-header-bg no-margin alt-font shrink-transparent-header-dark header-border-light position-fixed dark-header">
                 <div class="container navigation-menu">
                     <div class="row">

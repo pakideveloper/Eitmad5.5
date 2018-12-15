@@ -2,8 +2,7 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <!--  <router-link  :to="CompanyDashboardRoute" class="nav-link"><span data-feather="shopping-cart"></span>&nbsp;Dasboard</router-link> -->
-               <a href="{{url('/jobs/company')}}" class="nav-link"><span data-feather="shopping-cart"></span>&nbsp;Dashboard</a>
+                <router-link  :to="CompanyDashboardRoute" class="nav-link"><span data-feather="shopping-cart"></span>&nbsp;Dasboard</router-link>
               </li>
               <li class="nav-item has-sub">
                 <a class="nav-link" href="JavaScript:void(0)">
@@ -12,17 +11,16 @@
                   <span class="positive">+</span>
                 </a>
                 <ul class="nav flex-column is-sub">                  
-                   <li>
-                      <!-- <router-link  :to="CompanyDashboardRoute +'/add-job'" exact class="nav-link">Post A Job </router-link> -->
-                      <a href="{{url('/jobs/company/add-job')}}/create" class="nav-link">Post A Job</a>
+                  <li>
+                      <router-link  :to="CompanyDashboardRoute +'/add-job'" exact class="nav-link">Post A Job </router-link>
                     
                   </li>
                   <li>
-                     <!--  <router-link  :to="CompanyDashboardRoute +'/all-jobs'" class="nav-link">All Jobs</router-link> -->
-                      <a href="{{url('/jobs/company/all-jobs')}}" class="nav-link">All Jobs</a>
+                      <router-link  :to="CompanyDashboardRoute +'/all-jobs'" class="nav-link">All Jobs</router-link>
+                    
                   </li>
                   <li>
-                      <router-link  to="add-product" class="nav-link">Add Product test</router-link>
+                      <router-link  to="add-product" class="nav-link">Add Product</router-link>
                     
                   </li>
                   <li>

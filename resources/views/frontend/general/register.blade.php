@@ -4,7 +4,7 @@
 <!-- Mirrored from template.8guild.com/bushido/v1.4/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Aug 2018 05:02:43 GMT -->
 <head>
     <meta charset="utf-8">
-    <title>Bushido - HTML5 E-Commerce Template</title>
+    <title>Eitmad - Registration</title>
     <!--SEO Meta Tags-->
     <meta name="description" content="Responsive HTML5 E-Commerce Template" />
     <meta name="keywords" content="responsive html5 template, e-commerce, shop, bootstrap 3.0, css, jquery, flat, modern" />
@@ -57,6 +57,8 @@
         <a class="facebook" href="{{url('/auth/facebook')}}"><i class="fa fa-facebook-square"></i></a>
         <a class="google" href="{{url('/auth/google')}}"><i class="fa fa-google-plus-square"></i></a>
         <a class="twitter" href="#"><i class="fa fa-twitter-square"></i></a>
+        <a class="" href="#" style="float: right;
+    font-size: medium;">Become a Affiliate Marketer?</a>
         </div>
         <div class="row">
           <!--Login-->

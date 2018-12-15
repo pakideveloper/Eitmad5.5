@@ -152,9 +152,16 @@
             </li>
           	<li><a href="{{ url('ecommerce/products') }}">Furniture</a></li>
           	<li><a href="{{ url('ecommerce/products') }}">House-Hold</a></li>
-          	<li><a href="{{ url('ecommerce/products') }}">Clothing</a></li>
+          	<!-- <li><a href="{{ url('ecommerce/products') }}">Clothing</a></li> -->
             <!-- <li><a href="shop-filters-left-3cols.html">Sports</a></li> -->
-          	<li><a href="shop-filters-left-3cols.html">Property</a></li>
+          	<li><a href="{{ url('ecommerce/products') }}">Property</a></li>
+            <li class="has-submenu"><a href="shop-filters-left-3cols.html">More</a>
+            <ul class="submenu">
+               <li><a href="{{ url('ecommerce/products') }}">Clothing</a></li>
+            
+             </ul>
+
+            </li>
           </ul>
         </nav>
         

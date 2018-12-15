@@ -10,10 +10,11 @@
     <link rel="icon" href="../../../../favicon.ico">
 
     <title>User Area</title>
-   
+
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <!-- Bootstrap core CSS -->
     <link href="{{URL::to('public/bootstrap-4.1')}}/css/bootstrap.min.css" rel="stylesheet">
-
+<link href="{{URL::to('public/admin/ecommerce')}}/assets/css/icons.css" rel="stylesheet" type="text/css" />
     <!-- Custom styles for this template -->
     <link href="{{URL::to('public/bootstrap-4.1')}}/css/dashboard.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -66,9 +67,83 @@
       <input class="form-control form-control-dark w-50" type="text" placeholder="Search" aria-label="Search">
       <ul class="navbar-nav px-3">
         <li class="nav-item dropdown">
-          <a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="profile_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Shop Name
+          <a onclick="document.getElementById('marketer').style.display='block'" style="cursor: pointer;color: white;text-decoration: underline;">
+            Become a Affiliate Marketer?
           </a>
+
+          <div id="marketer" class="w3-modal">
+    <div class="w3-modal-content w3-animate-zoom" style="height:auto; width:30%;">
+    <header class="w3-container w3-black" >
+     
+      <h3 style = "font-family:Segoe UI,Arial,sans-serif;font-weight: 400;margin: 10px 0;">Confirm</h3>
+    </header>
+
+      <div class="w3-container">
+          
+          <center>
+                     
+                                                        
+                                                </center>
+                                                
+                                                <hr>
+                                                    <span>Do You Really Wants To Become an Affiliate Marketer</span>
+                                                    
+                                                    
+                                                     <hr>
+        
+       
+        
+        <button type="button" class="btn btn-primary" onclick="document.getElementById('marketer').style.display='none'" style="float:right;margin:5px;background-color: black;
+    border: black;">No</button>
+    <button type="button" class="btn btn-primary" onclick="document.getElementById('confirmed_message').style.display='block',document.getElementById('marketer').style.display='none'" style="float:right;margin:5px;background-color: black;
+    border: black;">Yes</button>
+       
+        <p></p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div id="confirmed_message" class="w3-modal">
+    <div class="w3-modal-content w3-animate-zoom" style="height:auto; width:30%;">
+    <header class="w3-container w3-black" >
+     
+      <h3 style = "font-family:Segoe UI,Arial,sans-serif;font-weight: 400;margin: 10px 0;">Confirmation Alert</h3>
+    </header>
+
+      <div class="w3-container">
+          
+          <center>
+                     
+                                                        
+                                                </center>
+                                                
+                                                <hr>
+                                                    <span>Congratulations! You Are Successfully Login as an Affiliate Marketer.
+
+                                                     </span>
+                                                    
+                                                    
+                                                     <hr>
+        
+       
+        
+        <!-- <button type="button" class="btn btn-primary" onclick="document.getElementById('confirmed_message').style.display='none'" style="float:right;margin:5px;background-color: black;
+    border: black;">OK</button> -->
+    <a href="{{url('ecommerce/marketer/dashboard')}}"><button type="button" class="btn btn-primary"  style="float:right;margin:5px;background-color: black;
+    border: black;">OK</button></a>
+    <!-- <button type="button" class="btn btn-primary" onclick="document.getElementById('confirmed_message').style.display='block'" style="float:right;margin:5px;background-color: black;
+    border: black;">Yes</button> -->
+       
+        <p></p>
+      </div>
+    </div>
+  </div>
+
+
+
+
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profile_dropdown">
             <a class="dropdown-item" href="javascript:void(0)" style="font-weight: 700;">My Account</a>
             <a class="dropdown-item" href="/docs/4.1/">Profile</a>
@@ -94,3 +169,4 @@
       </ul>
 
     </nav>
+  </body>

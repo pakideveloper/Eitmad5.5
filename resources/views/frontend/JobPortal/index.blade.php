@@ -38,21 +38,20 @@
     <link href="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/css/styles.css" rel="stylesheet" media="screen">
     <!--Color Scheme-->
     <link class="color-scheme" href="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/css/colors/color-default.css" rel="stylesheet" media="screen">
-    <!--Color Switcher-->
-    <link href="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/color-switcher/color-switcher.css" rel="stylesheet" media="screen">
     <!--Modernizr-->
 		<script src="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/js/libs/modernizr.custom.js"></script>
 <!-- end header link -->
 </head>
 <body>
-	<!-- header start -->
+@include('frontend/JobPortal/include/login')
+<!-- header start -->
 @include('frontend/JobPortal/include/jobheader1')
 	<!-- header end -->
 
 <!-- slider start here -->
 	<div class="slideshow owl-carousel">
 		<div class="item">
-			<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/slider-1.jpg" alt="slider" title="slider" class="img-responsive"/>
+			<img style="margin-top: 144px; height: 470px;" src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/jobslider.jpg" alt="slider" title="slider" class="img-responsive"/>
 			<div class="slide-detail">
 				<div class="container">
 					<div class="slider-caption">
@@ -89,124 +88,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="item">
-			<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/slider-1.jpg" alt="slider" title="slider" class="img-responsive"/>
-			<div class="slide-detail">
-				<div class="container">
-					<div class="slider-caption">
-						<div class="off"></div>
-						<h1>Find Your Job</h1>
-						<div class="col-md-4 col-sm-4 col-xs-12 paddleft">
-							<select class="selectpicker form-control" name="allcate">
-								<option value="1">All Category</option>
-								<option value="0">Category 1</option>
-								<option value="0">Category 2</option>
-								<option value="0">Category 3</option>
-							</select>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-12">
-							<select class="selectpicker form-control" name=	"location">
-								<option value="1">Select Location</option>
-								<option value="0">Location 1</option>
-								<option value="0">Location 2</option>
-								<option value="0">Location 3</option>
-							</select>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-12 paddright">
-							<div class="input-group">
-								<input name="s" class="form-control" value="" placeholder="Search" type="text">
-								<span>
-									<button type="submit" class="btnsrch" onclick="location.href='jobs.html'"><i class="fa fa-search"></i></button>
-								</span>
-							</div>
-						</div>
-						<div class="center">
-							<button class="btn-default">ADVANCE JOB SEARCH <i class="fa fa-plus-square-o" aria-hidden="true"></i>
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>	
-		<div class="item">
-			<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/slider-1.jpg" alt="slider" title="slider" class="img-responsive"/>
-			<div class="slide-detail">
-				<div class="container">
-					<div class="slider-caption">
-						<div class="off"></div>
-						<h1>Find Your Job</h1>
-						<div class="col-md-4 col-sm-4 col-xs-12 paddleft">
-							<select class="selectpicker form-control" name="allcate">
-								<option value="1">All Category</option>
-								<option value="0">Category 1</option>
-								<option value="0">Category 2</option>
-								<option value="0">Category 3</option>
-							</select>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-12">
-							<select class="selectpicker form-control" name=	"location">
-								<option value="1">Select Location</option>
-								<option value="0">Location 1</option>
-								<option value="0">Location 2</option>
-								<option value="0">Location 3</option>
-							</select>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-12 paddright">
-							<div class="input-group">
-								<input name="s" class="form-control" value="" placeholder="Search" type="text">
-								<span>
-									<button type="submit" class="btnsrch" onclick="location.href='jobs.html'"><i class="fa fa-search"></i></button>
-								</span>
-							</div>
-						</div>
-						<div class="center">
-							<button class="btn-default">ADVANCE JOB SEARCH <i class="fa fa-plus-square-o" aria-hidden="true"></i>
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>	
-		<div class="item">
-			<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/slider-1.jpg" alt="slider" title="slider" class="img-responsive"/>
-			<div class="slide-detail">
-				<div class="container">
-					<div class="slider-caption">
-						<div class="off"></div>
-						<h1>Find Your Job</h1>
-						<div class="col-md-4 col-sm-4 col-xs-12 paddleft">
-							<select class="selectpicker form-control" name="allcate">
-								<option value="1">All Category</option>
-								<option value="0">Category 1</option>
-								<option value="0">Category 2</option>
-								<option value="0">Category 3</option>
-							</select>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-12">
-							<select class="selectpicker form-control" name=	"location">
-								<option value="1">Select Location</option>
-								<option value="0">Location 1</option>
-								<option value="0">Location 2</option>
-								<option value="0">Location 3</option>
-							</select>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-12 paddright">
-							<div class="input-group">
-								<input name="s" class="form-control" value="" placeholder="Search" type="text">
-								<span>
-									<button type="submit" class="btnsrch" onclick="location.href='jobs.html'"><i class="fa fa-search"></i></button>
-								</span>
-							</div>
-						</div>
-						<div class="center">
-							<button class="btn-default">ADVANCE JOB SEARCH <i class="fa fa-plus-square-o" aria-hidden="true"></i>
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>	
+		</div>			
 	</div>
 <!-- slider end here -->
 
@@ -735,7 +617,7 @@
 @include('frontend/JobPortal/include/brand-crusal')
 
 <!-- footer start -->
-@include('frontend/ecommerce/include/footer')
+@include('frontend/JobPortal/include1/footer')
 <!--footer end -->
 
 <!-- jquery -->
@@ -748,8 +630,6 @@
 <script src="{{URL::to('public/JobPortal_Frontend/assets')}}/js/owl-carousel/owl.carousel.min.js" type="text/javascript"></script>
 <!--internal js-->
 <script src="{{URL::to('public/JobPortal_Frontend/assets')}}/js/internal.js" type="text/javascript"></script>
-<!-- color switcher-->
-<script src="{{URL::to('public/JobPortal_Frontend/assets')}}/js/switcher.js" type="text/javascript"></script>
 
 <!-- Additional -->
 <script src="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/js/libs/jquery-1.11.1.min.js"></script>
