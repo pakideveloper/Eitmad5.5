@@ -38,7 +38,7 @@
     </head>
     <body>
         <header class="header-black" id="header-section2">
-            <!-- nav -->
+             nav -->
             <nav class="navbar tz-header-bg no-margin alt-font shrink-transparent-header-dark header-border-light position-fixed dark-header">
                 <div class="container navigation-menu">
                     <div class="row">
@@ -68,15 +68,15 @@
             </nav> 
             <!-- end nav -->
         </header>
-        <section class="position-relative cover-background tz-builder-bg-image border-none hero-style9 bg-img-one" id="home" data-img-size="(W)1920px X (H)961px" style="height: 657px; background:linear-gradient(rgba(35,31,41,0.7), rgba(35,31,41,0.7)), url('{{URL::to('public/frontend/general/assets')}}/images/bg-image/hero-bg40.jpg')">
+        <section class="position-relative cover-background tz-builder-bg-image border-none hero-style9 bg-img-one" id="home" data-img-size="(W)1920px X (H)961px" style="height: 626px; background:linear-gradient(rgba(35,31,41,0.7), rgba(35,31,41,0.7)), url('{{URL::to('public/frontend/general/assets')}}/images/bg-image/banner1.jpg')">
             <div class="container one-sixth-screen xs-one-third-screen position-relative">
                 <div class="row">
                     <div class="slider-typography text-center xs-position-absolute">
                         <div class="slider-text-middle-main">
                             <div class="slider">
                                  <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 215px;">
-                                  <h2 style="color: #fff; font-size:21px;">EITMAD provides the <span style="color: #52b381">E Commerce, Job and Education </span> Portal Services</h2>
-                                 <h3 style="color: #fff; font-size: 16px;"> EItmad </h3>
+                                  <h12 style="color: #fff; font-size:21px;">EITMAD provides the <span style="color: #f2992c">E Commerce, Job and Education </span> Portal Services</h2>
+                                 <h3 style="color: #fff; font-size: 16px;"> Eitmad </h3>
                                  <div class="col-md-4 col-sm-4 col-xs-4">
                                       <div href="#" class="hovereffect">
                                     <a href="{{url('/ecommerce')}}">   <img class="img-responsive"  src="{{URL::to('public/frontend/general/assets')}}/images/Ecom.png" alt=""></a>

@@ -218,14 +218,11 @@
                 @foreach($products as $product)
                 <div class="col-lg-4 col-md-6 col-sm-12">
                   <div class="tile">
-                    <div class="badges">
-                      <span class="sale"></span>
-                    </div>
                     <div class="price-label">Rs. {{$product->product_price}}</div>
                     <a href="{{url('ecommerce/single-product')}}/{{$product->slug}}"><img src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}" alt="1"/></a>
                     <div class="footer">
                       <a href="{{url('ecommerce/single-product')}}/{{$product->slug}}">{{$product->product_name}}</a>
-                      <span>by Pirate3d</span>
+                      <span>by Admin</span>
                       <div class="tools">
                         <div class="rate">
                           <span class="active"></span>
@@ -236,15 +233,6 @@
                         </div>
                         <!--Add To Cart Button-->
                         <a class="add-cart-btn" href="#"><span>To cart</span><i class="icon-shopping-cart"></i></a>
-                        <!--Share Button-->
-                        <div class="share-btn">
-                          <div class="hover-state">
-                            <a class="fa fa-facebook-square" href="#"></a>
-                            <a class="fa fa-twitter-square" href="#"></a>
-                            <a class="fa fa-google-plus-square" href="#"></a>
-                          </div>
-                          <i class="fa fa-share"></i>
-                        </div>
                         <!--Add To Wishlist Button-->
                         <a class="wishlist-btn" href="#">
                           <div class="hover-state">Wishlist</div>
