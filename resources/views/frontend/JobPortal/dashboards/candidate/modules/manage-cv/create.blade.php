@@ -56,7 +56,7 @@
 		</div>
 		<div class="form-group col-lg-6">
 			<label>CNIC#</label>
-			<input type="text" name="cnic" class="form-control" value="{{$users->cnic?$users->cnic:''}}" >			
+			<input type="text" name="cnic" id="quaid_college" class="form-control" value="{{$users->cnic?$users->cnic:''}}" >			
 		</div>
 		<div class="form-group col-lg-6">
 			<label>Gender</label>
@@ -169,14 +169,32 @@
 		</div>
 		<div class="form-group col-lg-6">
 			<label>Skills</label>
+           @if(count($skills)!=0)
+        	<select class="form-control" name="skills" required="true" >
+			@foreach($skills as $skill)
+			<option value="">{{$skill}}</option>	
+			@endforeach 				
+			</select>
+			@else
+			<input type="text" name="skills" class="form-control" value="">           	
+             
+			@endif
 
-			<input type="text" name="skills" class="form-control" value="{{count($candidate_profile)!= 0?$candidate_profile->candidate_skills:''}}">
 			 
 		</div>
 		<div class="form-group col-lg-6">
 			<label>Languages</label>
-
-			<input type="text" name="languages" class="form-control" value="{{count($candidate_profile)!= 0?$candidate_profile->candidate_languages:''}}">
+            
+            @if(count($skills)!=0)
+        	<select class="form-control" name="languages" required="true" >
+			@foreach($languages as $lang)
+			<option value="">{{$lang}}</option>	
+			@endforeach 				
+			</select>
+			@else
+			<input type="text" name="languages" class="form-control" value="">           	
+             
+			@endif
 			 
 		</div>
 		<div class="form-group col-lg-12">
@@ -293,7 +311,7 @@
 	
 		<div class="form-group col-lg-6">
 			<label>Institute Name</label>
-			<input type="text" name="insti_name" class="form-control" id="" value="" >
+			<input type="text" name="insti_name"  class="form-control" id="" value="" >
 		</div>		
 		
 		<div class="form-group col-lg-12">
@@ -449,6 +467,14 @@
 </html>
 <script type="text/javascript">
 	
+var inputValue = $('#quaid_college').val();
+if(inputValue==true){
+$('input').prop("disabled",true);
+
+}
+</script>
+<script type="text/javascript">
+	
 $(document).ready(function(){
 
  $(".click-edu").css("cursor", "pointer"); 
@@ -457,23 +483,20 @@ $(document).ready(function(){
  $(".click-proj").css("cursor", "pointer");
 
 $(".click-edu").click(function(){ 
-        $(".toggle-edu-row").toggle(1000);       
+    $(".toggle-edu-row").toggle(1000);       
     });
 $(".click-certi").click(function(){ 
-       $(".toggle-certificate-row").toggle(1000);     
+    $(".toggle-certificate-row").toggle(1000);     
        
     });
 $(".click-exp").click(function(){ 
-           $(".toggle-exp-row").toggle(1000); 
+    $(".toggle-exp-row").toggle(1000); 
        
     });
 $(".click-proj").click(function(){ 
-            $(".toggle-projects-row").toggle(1000);
+    $(".toggle-projects-row").toggle(1000);
        
     });
-
- 
-
 
 });
 

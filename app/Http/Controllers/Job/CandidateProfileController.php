@@ -39,9 +39,11 @@ class CandidateProfileController extends Controller
         $education  = Candidate_Educational_Profile::all();
         $users = User::find(Auth::user()->id);
 
-
+        
        $candidate_profile = Candidate_Profile::where('id','=', $users->id )->first() ; 
-        return view('frontend/JobPortal/dashboards/candidate/modules/manage-cv/create',compact('users','cities','candidate_profile','degreeType','companies','industries')) ;
+       $skills = json_decode($candidate_profile->candidate_skills);
+       $languages = json_decode($candidate_profile->candidate_languages);
+        return view('frontend/JobPortal/dashboards/candidate/modules/manage-cv/create',compact('users','cities','candidate_profile','skills','languages','degreeType','companies','industries')) ;
     }
   public function indexToView()
     {

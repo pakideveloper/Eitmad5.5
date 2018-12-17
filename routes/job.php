@@ -13,8 +13,12 @@
 //usama
 
 Route::get('/', function () {
+  if (Auth::user()->id) {
     $user = App\User::find(Auth::user()->id);
     return view('frontend/JobPortal/index',compact('user'));
+  }else{
+    return view('frontend/JobPortal/index',compact('user'));
+    }
 });
 Route::get('/employers', function () {
     return view('frontend/JobPortal/pages/employers');
