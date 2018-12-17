@@ -88,6 +88,8 @@ Route::get('/removeFromCart/{rowId}', 'Ecommerce\Cart\CartController@romoveOne')
 Route::Resource('/checkout', 'Ecommerce\CheckoutController');
 Route::get('/city/selectregions/{id}', 'Ecommerce\CheckoutController@selectregions');
 Route::get('/city/selectcities/{id}', 'Ecommerce\CheckoutController@selectcities');
+Route::get('/city/regions/{id}', 'Ecommerce\User\UserController@regions');
+Route::get('/city/cities/{id}', 'Ecommerce\User\UserController@cities');
 Route::get('/callback', 'Ecommerce\PaymentCheckoutController@callback');
 Route::post('/ship_bill_details', 'Ecommerce\PaymentCheckoutController@create');
 Route::post('/banktransfer', function () {
@@ -100,13 +102,26 @@ Route::post('/banktransfer', function () {
     Route::post('/profile','Ecommerce\User\UserController@profileEdit');
     Route::get('/myorders','Ecommerce\User\UserController@Order');
     Route::get('/deactivate','Ecommerce\User\UserController@destroy');
+    Route::get('/user/marketerRequest','Ecommerce\User\UserController@request');
+    Route::get('/user/cancelrequest/{id}','Ecommerce\User\UserController@CancelRequest');
+    Route::post('/user/acceptrequest/{id}','Ecommerce\User\UserController@AcceptRequest');
+    Route::get('/marketer_deactivate','Ecommerce\dashboard\AffiliateMarketerController@destroy');
    Route::get('/changepassword', function () {
     return view('frontend/ecommerce/dashboards/User/modules/changePassword');
     });
+   Route::get('/marketer_changepassword', function () {
+    return view('frontend/ecommerce/dashboards/Affiliate_Marketer/modules/changePassword');
+    });
+   Route::Resource('/user/addproduct', 'Ecommerce\dashboard\User\ProductController');
+   Route::Resource('/marketer/dashboard', 'Ecommerce\dashboard\AffiliateMarketerController');
+   Route::get('/marketer/bid', 'Ecommerce\dashboard\AffiliateMarketerController@request');
+   Route::Post('/city/regions/{id}', 'Ecommerce\dashboard\AffiliateMarketerController@regions');
+   Route::Post('/city/cities/{id}', 'Ecommerce\dashboard\AffiliateMarketerController@cities');
+   Route::get('/user/allproducts', 'Ecommerce\dashboard\User\ProductController@AllProducts');
    Route::post('/passwordchange','Ecommerce\User\UserController@changePass');
-
+   Route::post('/marketer_passwordchange','Ecommerce\dashboard\AffiliateMarketerController@changePass');
+   Route::post('/marketer/bidForm', 'Ecommerce\Marketer_FrontController@bidForm');
     Route::get('/{vue_capture?}', function () { return redirect()->back(); })->where('vue_capture', '[\/\w\.-]*');
-
     //add product
     // Route::get('vendor/add-product','Ecommerce\Vendor\VendorController@addProduct')->name('add-product');
     //add product

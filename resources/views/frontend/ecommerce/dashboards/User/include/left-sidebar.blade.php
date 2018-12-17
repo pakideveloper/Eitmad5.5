@@ -76,24 +76,35 @@
                   </li>
                 </ul>
               </li> -->
-              <!-- <li class="nav-item has-sub">
+              <li class="nav-item has-sub">
                 <a class="nav-link" href="JavaScript:void(0)">
                   <span data-feather="user"></span>
-                  Promotion
+                  Product
                   <span class="positive">+</span>
                 </a>
                 <ul class="nav flex-column is-sub">                  
                   <li>
-                      <router-link  to="add-product" class="nav-link">Compaign Managment</router-link>   
+                      <a  href="{{url('ecommerce/user/addproduct')}}/create" class="nav-link">Add</a>   
                   </li>
                   <li>
-                      <router-link  to="add-product" class="nav-link">Bundles</router-link>   
+                       <a  href="{{url('ecommerce/user/addproduct')}}" class="nav-link">Manage Products</a>    
                   </li>
                   <li>
-                      <router-link  to="add-product" class="nav-link">Seller Voucher</router-link>   
+                       <a  href="{{url('ecommerce/user/allproducts')}}" class="nav-link">All Products</a>   
                   </li>
                 </ul>
-              </li> -->
+              </li>
+
+              <li class="nav-item has-sub">
+                <a class="nav-link" href="{{url('ecommerce/user/marketerRequest')}}">
+                  <span data-feather="user"></span>
+                  Affiliate Marketer Requests
+                  
+                </a>
+                
+              </li>
+
+
               <li class="nav-item">
                  <a class="nav-link" href="{{url('ecommerce/changepassword')}}">
                   <span data-feather="user"></span>
@@ -115,13 +126,53 @@
                   <!-- <span class="positive">+</span> -->
                 </a>
               </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                  <a class="nav-link" href="{{url('ecommerce/deactivate')}}">
                   <span data-feather="user"></span>
                  Deactivate Account
-                  <!-- <span class="positive">+</span> -->
+                  
+                </a>
+              </li> -->
+
+              <li class="nav-item">
+                 <a class="nav-link" onclick="document.getElementById('confirms').style.display='block'" style="cursor: pointer;">
+                  <span data-feather="user"></span>
+                 Deactivate Account
+                  
                 </a>
               </li>
+              <div id="confirms" class="w3-modal">
+    <div class="w3-modal-content w3-animate-zoom" style="height:auto; width:30%;">
+    <header class="w3-container w3-black" >
+     
+      <h3 style = "font-family:Segoe UI,Arial,sans-serif;font-weight: 400;margin: 10px 0;">Confirm</h3>
+    </header>
+
+      <div class="w3-container">
+          
+          <center>
+                     
+                                                        
+                                                </center>
+                                                
+                                                <hr>
+                                                    <span>Do You Really Wants To Deactivate Your Account?</span>
+                                                    
+                                                    
+                                                     <hr>
+        
+       
+        
+        <button type="button" class="btn btn-primary" onclick="document.getElementById('confirms').style.display='none'" style="float:right;margin:5px;background-color: black;
+    border: black;">No</button>
+    <a href="{{url('ecommerce/deactivate')}}"><button type="button" class="btn btn-primary" style="float:right;margin:5px;background-color: black;
+    border: black;">Yes</button></a>
+       
+        <p></p>
+      </div>
+    </div>
+  </div>
+
     <!-- <li class="nav-item has-sub">
                 <a class="nav-link" href="JavaScript:void(0)">
                   <span data-feather="user"></span>

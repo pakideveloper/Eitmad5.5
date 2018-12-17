@@ -8,8 +8,8 @@
     <title>Eitmad</title>
     <!--SEO Meta Tags-->
     <meta name="description" content="Responsive HTML5 E-Commerce Template" />
-		<meta name="keywords" content="responsive html5 template, e-commerce, shop, bootstrap 3.0, css, jquery, flat, modern" />
-		<meta name="author" content="8Guild" />
+    <meta name="keywords" content="responsive html5 template, e-commerce, shop, bootstrap 3.0, css, jquery, flat, modern" />
+    <meta name="author" content="8Guild" />
     <!--Mobile Specific Meta Tag-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <!--Favicon-->
@@ -24,7 +24,7 @@
     <!--Color Switcher-->
     <link href="{{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/color-switcher.css" rel="stylesheet" media="screen">
     <!--Modernizr-->
-		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/libs/modernizr.custom.js"></script>
+    <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/libs/modernizr.custom.js"></script>
     <!--Adding Media Queries Support for IE8-->
     <!--[if lt IE 9]>
       <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/respond.js"></script>
@@ -35,28 +35,28 @@
   <!--Body-->
   <body>
   
-  	<!--Color Switcher-->
+    <!--Color Switcher-->
 <!--     <div class="color-switcher group animated">
-    	<div class="toggle"><i class="fa fa-cog"></i></div>
-    	<div class="color">
-      	<a class="current" style="background-image:url({{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/img/default.png);" href="#" data-color="default"></a>
+      <div class="toggle"><i class="fa fa-cog"></i></div>
+      <div class="color">
+        <a class="current" style="background-image:url({{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/img/default.png);" href="#" data-color="default"></a>
         <span>#2ba8db<br/>#a3c756</span>
       </div>
-    	<div class="color">
-      	<a style="background-image:url({{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/img/scheme2.png);" href="#" data-color="scheme2"></a>
+      <div class="color">
+        <a style="background-image:url({{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/img/scheme2.png);" href="#" data-color="scheme2"></a>
         <span>#a1b0ca<br/>#e7807f</span>
       </div>
-    	<div class="color">
-      	<a style="background-image:url({{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/img/scheme3.png);" href="#" data-color="scheme3"></a>
+      <div class="color">
+        <a style="background-image:url({{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/img/scheme3.png);" href="#" data-color="scheme3"></a>
         <span>#4bb5c1<br/>#bfa995</span>
       </div>
-    	<div class="color">
-      	<a style="background-image:url({{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/img/scheme4.png);" href="#" data-color="scheme4"></a>
+      <div class="color">
+        <a style="background-image:url({{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/img/scheme4.png);" href="#" data-color="scheme4"></a>
         <span>#73cbbe<br/>#c7b07b</span>
       </div>
     </div> --><!--Color Switcher End-->
   
-  	<!--Login Modal-->
+    <!--Login Modal-->
     @include('frontend/ecommerce/include/login')
       <!-- /.modal -->
 
@@ -67,15 +67,15 @@
     <!--Page Content-->
     <div class="page-content">
     
-    	<!--Hero Slider-->
+      <!--Hero Slider-->
       <section class="hero-slider">
-      	<div class="master-slider" id="hero-slider">
+        <div class="master-slider" id="hero-slider">
         
-        	<!--Slide 1-->
+          <!--Slide 1-->
           @foreach($slider as $Vslider)
-        	<div class="ms-slide" data-delay="7">
-          	<div class="overlay"></div>
-          	<img src="{{url::to('public/admin/upload/sliders')}}/{{$Vslider->image_name}}" data-src="{{url::to('public/admin/upload/sliders')}}/{{$Vslider->image_name}}" alt=""/>
+          <div class="ms-slide" data-delay="7">
+            <div class="overlay"></div>
+            <img src="{{url::to('public/admin/upload/sliders')}}/{{$Vslider->image_name}}" data-src="{{url::to('public/admin/upload/sliders')}}/{{$Vslider->image_name}}" alt=""/>
             <h2 style="width: 456px; left: 110px; top: 110px;" class="light-color ms-layer" data-effect="top(50,true)" data-duration="700" data-delay="250" data-ease="easeOutQuad">{{$Vslider->title}}</h2>
             <p style="width: 456px; left: 110px; top: 210px;" class="light-color ms-layer" data-effect="back(500)" data-duration="700" data-delay="500" data-ease="easeOutQuad">{{$Vslider->description}}</p>
             <div style="left: 110px; top: 300px;" class="ms-layer button" data-effect="bottom(50,true)" data-duration="600" data-delay="950" data-ease="easeOutQuad"><a class="btn btn-primary" href="#"><span>1845$</span>Buy it now</a></div>
@@ -85,114 +85,84 @@
         </div>
       </section><!--Hero Slider Close-->
     
-    	<!--Categories-->
-      <section class="cat-tiles">
-      	<div class="container">
-        	<h2>Browse categories</h2>
-        	<div class="row">
-          	<!--Category-->
+      <!--Categories-->
+      <!-- <section class="cat-tiles">
+        <div class="container">
+          <h2>Browse categories</h2>
+          <div class="row">
+          
            <?php
                                  
                                  $categories=App\Product_Category::all();
                                  ?>
            @foreach($categories as $category)
-          	<div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6">
+            <div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6">
                
-            	<a href="#">
+              <a href="#">
                 <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/categories/1.jpg" alt="1"/>
                 <p>{{$category->category_name}}</p>
               </a>
             </div>
             @endforeach
-          	<!--Category-->
-          	<!-- <div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6">
-            	<a href="#">
-                <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/categories/2.jpg" alt="2"/>
-                <p>Category name</p>
-              </a>
-            </div>
-          	
-          	<div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6">
-            	<a href="#">
-                <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/categories/3.jpg" alt="3"/>
-                <p>Category name</p>
-              </a>
-            </div>
-          	
-          	<div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6">
-            	<a href="#">
-                <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/categories/4.jpg" alt="4"/>
-                <p>Category name</p>
-              </a>
-            </div>
-          	
-          	<div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6">
-            	<a href="#">
-                <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/categories/5.jpg" alt="5"/>
-                <p>Category name</p>
-              </a>
-            </div>
-          	
-          	<div class="category col-lg-2 col-md-2 col-sm-4 col-xs-6">
-            	<a href="#">
-                <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/categories/6.jpg" alt="5"/>
-                <p>Category name</p>
-              </a>
-            </div> -->
+            
           </div>
         </div>
-      </section><!--Categories Close-->
+      </section> -->
+      @include('frontend/ecommerce/include/brand-crusal')
+      <!--Categories Close-->
       <?php
         $products = App\Product::latest()->take(8)->get();
       ?>
       <!--Catalog Grid-->
       <section class="catalog-grid">
-      	<div class="container">
-        	<h2 class="primary-color">Our Products</h2>
+        <div class="container">
+          <h2 class="primary-color">Our Products</h2>
           <div class="row">
-          	<!--Tile-->
+            <!--Tile-->
             @foreach($products as $product)
-          	<div class="col-lg-3 col-md-4 col-sm-6">
-            	<div class="tile">
-              	<div class="badges">
-                	<span class="sale"></span>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+              <div class="tile">
+                <div class="badges">
+                  <span class="sale"></span>
                 </div>
-              	<div class="price-label">Rs. {{$product->product_price}}</div>
-              	<a href="{{url('ecommerce/single-product')}}/{{$product->slug}}"><img src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}" width = "190" height="auto" alt="1"/></a>
+                <div class="price-label">Rs. {{$product->product_price}}</div>
+                <a href="{{url('ecommerce/single-product')}}/{{$product->slug}}"><img src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}" width = "190" height="190" alt="1"/></a>
                 <div class="footer">
-                	<a href="{{url('ecommerce/single-product')}}/{{$product->slug}}">{{$product->product_name}}</a>
-                  <span>by Pirate3d</span>
+                  <a href="{{url('ecommerce/single-product')}}/{{$product->slug}}">{{$product->product_name}}</a>
+                  <span>by Admin</span>
                   <div class="tools">
-                  	<div class="rate">
-                    	<span class="active"></span>
+                    <div class="rate">
+                      <!-- <span class="active"></span>
                       <span class="active"></span>
                       <span class="active"></span>
                       <span></span>
-                      <span></span>
+                      <span></span> -->
+                      <button type="button" class="btn-primary" data-toggle="modal" data-target="#affiliated{{$product->id}}" >AffiliateMarketing</button>
                     </div>
                     <!--Add To Cart Button-->
                     <a class="add-cart-btn" href="#"><span>To cart</span><i class="icon-shopping-cart"></i></a>
+                    <a class="wishlist-btn" href="#">
+                      <div class="hover-state">Wishlist</div>
+                      <i class="fa fa-plus"></i>
+                    </a>
                     <!--Share Button-->
-                    <div class="share-btn">
-                    	<div class="hover-state">
-                      	<a class="fa fa-facebook-square" href="#"></a>
+                    <!-- <div class="share-btn">
+                      <div class="hover-state">
+                        <a class="fa fa-facebook-square" href="#"></a>
                         <a class="fa fa-twitter-square" href="#"></a>
                         <a class="fa fa-google-plus-square" href="#"></a>
                       </div>
                       <i class="fa fa-share"></i>
-                    </div>
+                    </div> -->
                     <!--Add To Wishlist Button-->
-                    <a class="wishlist-btn" href="#">
-                    	<div class="hover-state">Wishlist</div>
-                    	<i class="fa fa-plus"></i>
-                    </a>
+                    
                   </div>
                 </div>
               </div>
             </div>
             @endforeach
             <!--Tile-->
-          	
+            
           </div>
         </div>
       </section><!--Catalog Grid Close-->
@@ -206,102 +176,102 @@
         </ul>
         <div class="tab-content">
           <div class="tab-pane fade in active" id="bestsel">
-          	<div class="container">
-            	<div class="row">
-              	<div class="col-lg-7 col-md-7 col-sm-7">
-                	<a class="media-link" href="#">
-                  	<div class="overlay">
-                    	<div class="descr"><div>X-MAS LIGHT IPHONE LENS<span>$14.95</span></div></div>
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-7 col-md-7 col-sm-7">
+                  <a class="media-link" href="#">
+                    <div class="overlay">
+                      <div class="descr"><div>X-MAS LIGHT IPHONE LENS<span>$14.95</span></div></div>
                     </div>
-                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/1.jpg" alt="1"/>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/image1.jpeg" alt="1"/>
                   </a>
                 </div>
-              	<div class="col-lg-5 col-md-5 col-sm-5">
-                	<a class="media-link" href="#">
-                  	<div class="overlay">
-                    	<div class="descr"><div>Hedadset for iPhone<span>$19.40</span></div></div>
+                <div class="col-lg-5 col-md-5 col-sm-5">
+                  <a class="media-link" href="#">
+                    <div class="overlay">
+                      <div class="descr"><div>Hedadset for iPhone<span>$19.40</span></div></div>
                     </div>
-                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/2.jpg" alt="2"/>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/image2.jpeg" alt="2"/>
                   </a>
                 </div>
               </div>
               <div class="row">
-              	<div class="col-lg-4 col-md-4 col-sm-4">
-                	<a class="media-link" href="#">
-                  	<div class="overlay">
-                    	<div class="descr"><div>Product Name<span>$24.15</span></div></div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  <a class="media-link" href="#">
+                    <div class="overlay">
+                      <div class="descr"><div>Product Name<span>$24.15</span></div></div>
                     </div>
-                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/3.jpg" alt="3"/>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/image3.jpeg" alt="3"/>
                   </a>
                 </div>
-              	<div class="col-lg-5 col-md-5 col-sm-5">
-                	<a class="media-link" href="#">
-                  	<div class="overlay">
-                    	<div class="descr"><div>Product Name<span>$24.15</span></div></div>
+                <div class="col-lg-5 col-md-5 col-sm-5">
+                  <a class="media-link" href="#">
+                    <div class="overlay">
+                      <div class="descr"><div>Product Name<span>$24.15</span></div></div>
                     </div>
-                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/4.jpg" alt="4"/>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/image4.jpeg" alt="4"/>
                   </a>
                 </div>
-              	<div class="col-lg-3 col-md-3 col-sm-3">
-                	<a class="media-link" href="#">
-                  	<div class="overlay">
-                    	<div class="descr"><div>Product Name<span>$24.15</span></div></div>
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                  <a class="media-link" href="#">
+                    <div class="overlay">
+                      <div class="descr"><div>Product Name<span>$24.15</span></div></div>
                     </div>
-                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/5.jpg" alt="5"/>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/image5.jpeg" alt="5"/>
                   </a>
                 </div>
               </div>
             </div>
           </div>
           <div class="tab-pane fade" id="onsale">
-          	<div class="container">
-            	<div class="row">
-              	<div class="col-lg-4 col-md-4 col-sm-4">
-                	<a class="media-link" href="#">
-                  	<div class="overlay">
-                    	<div class="descr"><div>Product Name<span>$14.95</span></div></div>
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  <a class="media-link" href="#">
+                    <div class="overlay">
+                      <div class="descr"><div>Product Name<span>$14.95</span></div></div>
                     </div>
-                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/6.jpg" alt="6"/>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/image6.jpeg" alt="6"/>
                   </a>
                 </div>
-              	<div class="col-lg-4 col-md-4 col-sm-4">
-                	<a class="media-link" href="#">
-                  	<div class="overlay">
-                    	<div class="descr"><div>Product Name<span>$19.40</span></div></div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  <a class="media-link" href="#">
+                    <div class="overlay">
+                      <div class="descr"><div>Product Name<span>$19.40</span></div></div>
                     </div>
-                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/7.jpg" alt="7"/>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/image7.jpeg" alt="7"/>
                   </a>
                 </div>
-              	<div class="col-lg-4 col-md-4 col-sm-4">
-                	<a class="media-link" href="#">
-                  	<div class="overlay">
-                    	<div class="descr"><div>Product Name<span>$19.40</span></div></div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  <a class="media-link" href="#">
+                    <div class="overlay">
+                      <div class="descr"><div>Product Name<span>$19.40</span></div></div>
                     </div>
-                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/8.jpg" alt="8"/>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/image8.jpeg" alt="8"/>
                   </a>
                 </div>
               </div>
-            	<div class="row">
-              	<div class="col-lg-4 col-md-4 col-sm-4">
-                	<a class="media-link" href="#">
-                  	<div class="overlay">
-                    	<div class="descr"><div>Product Name<span>$14.95</span></div></div>
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  <a class="media-link" href="#">
+                    <div class="overlay">
+                      <div class="descr"><div>Product Name<span>$14.95</span></div></div>
                     </div>
-                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/9.jpg" alt="9"/>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/image9.jpeg" alt="9"/>
                   </a>
                 </div>
-              	<div class="col-lg-4 col-md-4 col-sm-4">
-                	<a class="media-link" href="#">
-                  	<div class="overlay">
-                    	<div class="descr"><div>Product Name<span>$19.40</span></div></div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  <a class="media-link" href="#">
+                    <div class="overlay">
+                      <div class="descr"><div>Product Name<span>$19.40</span></div></div>
                     </div>
-                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/10.jpg" alt="10"/>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/image10.jpeg" alt="10"/>
                   </a>
                 </div>
-              	<div class="col-lg-4 col-md-4 col-sm-4">
-                	<a class="media-link" href="#">
-                  	<div class="overlay">
-                    	<div class="descr"><div>Product Name<span>$19.40</span></div></div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  <a class="media-link" href="#">
+                    <div class="overlay">
+                      <div class="descr"><div>Product Name<span>$19.40</span></div></div>
                     </div>
                     <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/11.jpg" alt="11"/>
                   </a>
@@ -391,8 +361,8 @@
       ?>
       <!--Gallery Widget-->
       <section class="gray-bg gallery-widget">
-      	<div class="container">
-        	<h2>Product gallery</h2>
+        <div class="container">
+          <h2>Product gallery</h2>
           <div class="filters">
             <a class="active" href="#" data-group="all">All</a>
             @foreach($sub_categories as $sub_category)
@@ -406,7 +376,7 @@
             <div class="gallery-item" data-groups='["{{$sub_category->sub_category_name}}"]' data-src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}">
               <a href="img/gallery-widget/1.jpg">
                 <div class="overlay"><span><i class="icon-expand"></i></span></div>
-                <img src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}" width="190px" height="auto" alt="1"/>
+                <img src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}" width="190px" height="190" alt="1"/>
               </a>
             </div>
             <!--Item--> 
@@ -417,35 +387,130 @@
       </section><!--Gallery Widget Close-->
       
       <!--Brands Carousel Widget-->
-      @include('frontend/ecommerce/include/brand-crusal')<!--Brands Carousel Close-->
+     <!--  @include('frontend/ecommerce/include/brand-crusal') -->
+      <!--Brands Carousel Close-->
       
     </div><!--Page Content Close-->
+    @foreach($products as $product)
+    <div class="modal fade" id="affiliated{{$product->id}}" role="dialog">
+    <div class="modal-dialog">
     
-   
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Affiliate Marketer Form</h4>
+        </div>
+        <div class="modal-body" style="height: 700px;">
+          <?php
+          $check = 0; 
+           ?>
+          <form method="post" action="{{url('ecommerce/marketer/bidForm')}}">
+            {{ csrf_field()}}
+            <div class="form-group">
+                          
+                          <div class="col-xs-12">
+                              <label for="product_name"><h4>Product_Name:</h4></label>
+                              <input type="text" class="form-control" name="product" id="product" value="{{$product->product_name}}" readonly>
+                              
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-12">
+                              <label for="product_price"><h4>Product_Price:</h4></label>
+                              <input type="text" class="form-control" name="price" id="price" value="{{$product->product_price}}" readonly>
+                              
+                          </div>
+                      </div>
+
+                      
+           <div class="form-group">
+                          
+                          <div class="col-xs-12">
+                              <label for="proposal"><h4>Proposal:</h4></label>
+                              <textarea  class="form-control" id="proposal" name="proposal" placeholder="Please Describe Your Proposal" value="" title="Enter Your Proposal"></textarea>
+                          </div>
+                      </div>
+                      <hr>
+                      <div class="form-group" style="">
+                          
+                          <div class="col-xs-12">
+                            <label for="commission_ratio"><h4>Comission_ratio:</h4></label>
+                              <input type="number" class="form-control" name="ratio" id="ratio" placeholder="Enter Your Expected commission ratio" value="" title="Enter Your Expected commission ratio in %">%
+                              
+                          </div>
+                      </div>
+                      <div class="form-group" style="">
+                          
+                          <div class="col-xs-8">
+                            <label for="timeline"><h4>Expected Time:</h4></label>
+                        
+                              <input type="number" class="form-control" name="timeline" id="timeline" placeholder="e.g, 2" value="" title="Enter Your Expected Time in days,hours,minutes, or seconds">
+                              <hr>
+                              <!-- <input type="number" class="form-control" name="timeline" id="timeline" placeholder="Enter Your Expected Time in days,hours,minutes, or seconds" value="" title="Enter Your Expected Time in days,hours,minutes, or seconds"> -->
+                              <select name = "time" id="time" class="form-control">
+                                <option value="months">
+                                  Month
+                                </option>
+                                <option value="days">
+                                  Days
+                                </option>
+                                <option value="minutes">
+                                  Minutes
+                                </option>
+                                <option value="seconds">
+                                  Seconds
+                                </option>
+                              </select>
+                                
+                                                   
+                              
+                                
+                              </div>
+                      </div>
+                      
+        </div>
+        <div class="modal-footer">
+         
+            
+          <button type="submit" class="btn btn-primary">Submit</button>
+         <!--  $check++; -->
+        
+        
+
+        </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+  
+   @endforeach
     
    
       
-  	<!--Footer-->
+    <!--Footer-->
    @include('frontend/ecommerce/include/footer')
     <!--Footer Close-->
     
     <!--Javascript (jQuery) Libraries and Plugins-->
-		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/libs/jquery-1.11.1.min.js"></script>
-		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/libs/jquery-ui-1.10.4.custom.min.js"></script>
+    <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/libs/jquery-1.11.1.min.js"></script>
+    <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/libs/jquery-ui-1.10.4.custom.min.js"></script>
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/libs/jquery.easing.min.js"></script>
-		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/bootstrap.min.js"></script>
-		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/smoothscroll.js"></script>
-		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/jquery.validate.min.js"></script>
-		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/icheck.min.js"></script>
-		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/jquery.placeholder.js"></script>
-		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/jquery.stellar.min.js"></script>
-		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/jquery.touchSwipe.min.js"></script>
-		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/jquery.shuffle.min.js"></script>
+    <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/bootstrap.min.js"></script>
+    <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/smoothscroll.js"></script>
+    <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/jquery.validate.min.js"></script>
+    <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/icheck.min.js"></script>
+    <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/jquery.placeholder.js"></script>
+    <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/jquery.stellar.min.js"></script>
+    <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/jquery.touchSwipe.min.js"></script>
+    <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/jquery.shuffle.min.js"></script>
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/lightGallery.min.js"></script>
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/owl.carousel.min.js"></script>
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/masterslider.min.js"></script>
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/mailer/mailer.js"></script>
-		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/scripts.js"></script>
+    <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/scripts.js"></script>
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/color-switcher.js"></script>
 
     

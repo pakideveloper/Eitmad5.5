@@ -57,7 +57,7 @@ $i = 1;
       @if($order->order_status == 0)
       <td>Pending</td>
       @else
-      <td>Done</td>
+      <td>Accept</td>
       @endif
       <td><a data-toggle="modal" data-target="#myModal" style="cursor: pointer;color: red;text-decoration: underline;">wants to claim?</a></td>
     </tr>
