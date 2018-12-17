@@ -122,6 +122,9 @@
             @foreach($products as $product)
           	<div class="col-lg-3 col-md-4 col-sm-6">
             	<div class="tile">
+              	<div class="badges">
+                	<span class="sale"></span>
+                </div>
               	<div class="price-label">Rs. {{$product->product_price}}</div>
               	<a href="{{url('ecommerce/single-product')}}/{{$product->slug}}"><img src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}" width = "190" height="190" alt="1"/></a>
                 <div class="footer">

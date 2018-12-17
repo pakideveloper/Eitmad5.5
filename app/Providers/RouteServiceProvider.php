@@ -39,6 +39,9 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapVendorApiRoutes();
 
+        $this->mapCompanyApiRoutes();
+        $this->mapJob_CompanyWebRoutes();
+
         $this->mapEcommerceAdminWebRoutes();
 
         $this->mapEcommerceWebRoutes();
@@ -46,6 +49,8 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapJobAdminWebRoutes();
 
         $this->mapJobWebRoutes();
+
+        $this->mapVendorWebRoutes();
 
         $this->mapWebRoutes();
 
@@ -101,6 +106,21 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @return void
      */
+    protected function mapVendorWebRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->prefix('ecommerce/vendor')
+            ->group(base_path('routes/vendor.php'));
+    }   
+
+    /**
+     * Define the "api" routes for the application.
+     *
+     * These routes are typically stateless.
+     *
+     * @return void
+     */
     protected function mapVendorApiRoutes()
     {
         Route::prefix('api/vendor')
@@ -108,6 +128,22 @@ class RouteServiceProvider extends ServiceProvider
              ->namespace($this->namespace)
              ->group(base_path('routes/api-vendor.php'));
     }
+
+    protected function mapCompanyApiRoutes()
+    {
+        Route::prefix('api/company')
+             ->middleware('api')
+             ->namespace($this->namespace)
+             ->group(base_path('routes/api-company.php'));
+    }
+
+     protected function mapJob_CompanyWebRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->prefix('jobs/company')
+            ->group(base_path('routes/company.php'));
+    }   
     /**
      * Define the "api" routes for the application.
      *

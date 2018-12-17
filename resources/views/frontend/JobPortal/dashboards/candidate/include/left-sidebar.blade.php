@@ -4,6 +4,24 @@
               <li class="nav-item">
                 <router-link  to="dashboard" class="nav-link"><span data-feather="shopping-cart"></span>&nbsp;Dasboard</router-link>
               </li>
+                <li class="nav-item has-sub">
+                <a class="nav-link" href="JavaScript:void(0)">
+                  <span data-feather="user"></span>
+                  CV
+                  <span class="positive">+</span>
+                </a>
+                <ul class="nav flex-column is-sub">                  
+                  <li>
+                      <a href="{{url('jobs/candidate/user-profile')}}"  to="add-product" class="nav-link">Create CV   </a>
+                    
+                  </li>
+                  <li>
+                      <a href="{{url('jobs/candidate/view-profile')}}"  to="add-product" class="nav-link">View CV</router-link>         
+                  </li>
+
+                </ul>
+
+              </li>
               <li class="nav-item has-sub">
                 <a class="nav-link" href="JavaScript:void(0)">
                   <span data-feather="user"></span>

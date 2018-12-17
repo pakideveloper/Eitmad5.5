@@ -2,7 +2,6 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <!-- <router-link  :to="CompanyDashboardRoute" class="nav-link"><span data-feather="shopping-cart"></span>&nbsp;Dasboard</router-link> -->
                 <!--  <router-link  :to="CompanyDashboardRoute" class="nav-link"><span data-feather="shopping-cart"></span>&nbsp;Dasboard</router-link> -->
                <a href="{{url('/jobs/company')}}" class="nav-link"><span data-feather="shopping-cart"></span>&nbsp;Dashboard</a>
               </li>
@@ -18,9 +17,7 @@
                       <a href="{{url('/jobs/company/add-job')}}/create" class="nav-link">Post A Job</a>
                     
                   </li>
-                 <li>
-                      <!-- <router-link  :to="CompanyDashboardRoute +'/all-jobs'" class="nav-link">All Jobs</router-link> -->
-                    
+                  <li>
                      <!--  <router-link  :to="CompanyDashboardRoute +'/all-jobs'" class="nav-link">All Jobs</router-link> -->
                       <a href="{{url('/jobs/company/all-jobs')}}" class="nav-link">All Jobs</a>
                   </li>

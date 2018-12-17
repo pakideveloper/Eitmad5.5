@@ -45,14 +45,13 @@
 <!-- end header link -->
 </head>
 <body>
-	@include('frontend/JobPortal/include/login')
 	<!-- header start -->
 @include('frontend/JobPortal/include/jobheader1')
 	<!-- header end -->
 
 <!-- slider start here -->
 	<div class="slideshow owl-carousel">
-		<div class="item">
+		<!-- <div class="item">
 			<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/slider-1.jpg" alt="slider" title="slider" class="img-responsive"/>
 			<div class="slide-detail">
 				<div class="container">
@@ -90,8 +89,47 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<div class="item">
+			<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/jobslider.jpg" alt="slider" title="slider" class="img-responsive"/>
+			<div class="slide-detail">
+				<div class="container">
+					<div class="slider-caption">
+						<div class="off"></div>
+						<h1>Find Your Job</h1>
+						<div class="col-md-4 col-sm-4 col-xs-12 paddleft">
+							<select class="selectpicker form-control" name="allcate">
+								<option value="1">All Category</option>
+								<option value="0">Category 1</option>
+								<option value="0">Category 2</option>
+								<option value="0">Category 3</option>
+							</select>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-12">
+							<select class="selectpicker form-control" name=	"location">
+								<option value="1">Select Location</option>
+								<option value="0">Location 1</option>
+								<option value="0">Location 2</option>
+								<option value="0">Location 3</option>
+							</select>
+						</div>
+						<div class="col-md-4 col-sm-4 col-xs-12 paddright">
+							<div class="input-group">
+								<input name="s" class="form-control" value="" placeholder="Search" type="text">
+								<span>
+									<button type="submit" class="btnsrch" onclick="location.href='jobs.html'"><i class="fa fa-search"></i></button>
+								</span>
+							</div>
+						</div>
+						<div class="center">
+							<button class="btn-default">ADVANCE JOB SEARCH <i class="fa fa-plus-square-o" aria-hidden="true"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<!-- <div class="item">
 			<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/slider-1.jpg" alt="slider" title="slider" class="img-responsive"/>
 			<div class="slide-detail">
 				<div class="container">
@@ -168,46 +206,7 @@
 					</div>
 				</div>
 			</div>
-		</div>	
-		<div class="item">
-			<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/slider-1.jpg" alt="slider" title="slider" class="img-responsive"/>
-			<div class="slide-detail">
-				<div class="container">
-					<div class="slider-caption">
-						<div class="off"></div>
-						<h1>Find Your Job</h1>
-						<div class="col-md-4 col-sm-4 col-xs-12 paddleft">
-							<select class="selectpicker form-control" name="allcate">
-								<option value="1">All Category</option>
-								<option value="0">Category 1</option>
-								<option value="0">Category 2</option>
-								<option value="0">Category 3</option>
-							</select>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-12">
-							<select class="selectpicker form-control" name=	"location">
-								<option value="1">Select Location</option>
-								<option value="0">Location 1</option>
-								<option value="0">Location 2</option>
-								<option value="0">Location 3</option>
-							</select>
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-12 paddright">
-							<div class="input-group">
-								<input name="s" class="form-control" value="" placeholder="Search" type="text">
-								<span>
-									<button type="submit" class="btnsrch" onclick="location.href='jobs.html'"><i class="fa fa-search"></i></button>
-								</span>
-							</div>
-						</div>
-						<div class="center">
-							<button class="btn-default">ADVANCE JOB SEARCH <i class="fa fa-plus-square-o" aria-hidden="true"></i>
-							</button>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>	
+		</div> -->	
 	</div>
 <!-- slider end here -->
 
@@ -216,8 +215,21 @@
 <section class="catalog-grid">
       	<div class="container">
        	<h2 class="primary-color" style="text-align: center;">Feature Jobs</h2>
+      
+       	@if($user->cnic == true)
+			<!-- <a href="{{'jobs/candidate/user-profile'}}/{{Auth::user()->id}}/edit"> -->
+			<a href="{{'jobs'}}">
+
+      		<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="1"/>
+      		</a>
+  		@elseif($user->cnic == false)
+      		<a href="{{'jobs/candidate/user-profile'}}">
+
+      		<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="1"/>
+      		</a>
+  		@endif
        	<div class="border"></div>
-           <div class="row">
+          <div class="row">
           	<!--Tile-->
           	@foreach($jobs as $key=>$job)
           	@if($key<=3)
@@ -243,6 +255,86 @@
                 
                  <div class="matter">
 							<h4>{{$job->job_title}}</h4>
+							<ul class="list-inline">
+								<li>
+									
+									<a href="#"><i class="fa fa-bookmark" aria-hidden="true"></i>   {{$job->job_career_level}}</a>
+									
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>  {{$job->city->city_name}},{{$job->city->country->country_name}}</a>
+								</li>
+							</ul>
+							 <?php
+                                                        if(strlen($job->job_description)>101){
+                                                            $description = substr($job->job_description, 0, 100).'[...]';
+                                                        }
+                                                        else
+                                                        {
+                                                            $description = $job->job_description;
+                                                        }
+                                                        ?>
+							<p>{{$description}}</p>
+						</div>
+						<div class="footer">
+                  <div class="tools">
+                  	<!-- <div class="rate">
+                    	<span class="active"></span>
+                      <span class="active"></span>
+                      <span class="active"></span>
+                      <span></span>
+                      <span></span>
+                    </div> -->
+                    <!--Add To Cart Button-->
+                    <a class="add-cart-btn" href="#"><span>Apply now</span><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a>
+                    <!--Share Button-->
+                    <div class="share-btn">
+                    	<div class="hover-state">
+                      	<a class="fa fa-facebook-square" href="#"></a>
+                        <a class="fa fa-twitter-square" href="#"></a>
+                        <a class="fa fa-google-plus-square" href="#"></a>
+                      </div>
+                      <i class="fa fa-share"></i>
+                    </div>
+                    <!--Add To Wishlist Button-->
+                     <a class="wishlist-btn" href="{{url('jobs/single_job/')}}/{{$job->id}}">
+                    	<div class="hover-state">View More</div>
+                    	<i class="fa fa-plus"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            @endif
+            @endforeach
+          </div>
+
+          <div class="row">
+          	<!--Tile-->
+          	@foreach($jobs as $key=>$job)
+          	@if($key>3)
+          	<div class="col-lg-3 col-md-4 col-sm-6">
+            	<div class="tile">
+              	<!-- <div class="badges">
+                	<span class="sale"></span>
+                </div> -->
+              	<div class="price-label">Apply By: {{Carbon\Carbon::parse($job->created_at)->format('d M,Y')}}</div>
+              	<div class="image">
+              	<a href="{{'jobs/candidate/dashboard'}}"><img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="1"/></a>
+              	<div class="buttons">
+									<div class="open-down">
+										<button type="button" class="rotate1">
+											<i class="fa fa-link" aria-hidden="true"></i>
+										</button>
+										<button type="button" class="rotate1">
+											<i class="fa fa-search" aria-hidden="true"></i>
+										</button>
+									</div>
+							</div>	
+				</div>
+                
+                 <div class="matter">
+							<h4>   {{$job->job_title}}</h4>
 							<ul class="list-inline">
 								<li>
 									@if($job->jobtype != null)
@@ -287,88 +379,8 @@
                       <i class="fa fa-share"></i>
                     </div>
                     <!--Add To Wishlist Button-->
-                    <a class="wishlist-btn" href="#">
-                    	<div class="hover-state" onclick="location.href='{{url('jobs/single_job/')}}/{{$job->id}}'">View More</div>
-                    	<i class="fa fa-plus"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            @endif
-            @endforeach
-          </div>
-
-          <div class="row">
-          	<!--Tile-->
-          	@foreach($jobs as $key=>$job)
-          	@if($key>3)
-          	<div class="col-lg-3 col-md-4 col-sm-6">
-            	<div class="tile">
-              	<!-- <div class="badges">
-                	<span class="sale"></span>
-                </div> -->
-              	<div class="price-label">Apply By: {{Carbon\Carbon::parse($job->created_at)->format('d M,Y')}}</div>
-              	<div class="image">
-              	<a href="{{'jobs/candidate/dashboard'}}"><img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="1"/></a>
-              	<div class="buttons">
-									<div class="open-down">
-										<button type="button" class="rotate1">
-											<i class="fa fa-link" aria-hidden="true"></i>
-										</button>
-										<button type="button" class="rotate1">
-											<i class="fa fa-search" aria-hidden="true"></i>
-										</button>
-									</div>
-							</div>	
-				</div>
-                
-                 <div class="matter">
-							<h4>   {{$job->job_title}}</h4>
-							<ul class="list-inline">
-								<li>
-									
-									<a href="#"><i class="fa fa-bookmark" aria-hidden="true"></i>   {{$job->job_career_level}}</a>
-									
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>  {{$job->city->city_name}},{{$job->city->country->country_name}}</a>
-								</li>
-							</ul>
-							 <?php
-                                                        if(strlen($job->job_description)>101){
-                                                            $description = substr($job->job_description, 0, 100).'[...]';
-                                                        }
-                                                        else
-                                                        {
-                                                            $description = $job->job_description;
-                                                        }
-                                                        ?>
-							<p>{{$description}}</p>
-						</div>
-						<div class="footer">
-                  <div class="tools">
-                  	<!-- <div class="rate">
-                    	<span class="active"></span>
-                      <span class="active"></span>
-                      <span class="active"></span>
-                      <span></span>
-                      <span></span>
-                    </div> -->
-                    <!--Add To Cart Button-->
-                    <a class="add-cart-btn" href="#"><span>Apply now</span><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a>
-                    <!--Share Button-->
-                    <div class="share-btn">
-                    	<div class="hover-state">
-                      	<a class="fa fa-facebook-square" href="#"></a>
-                        <a class="fa fa-twitter-square" href="#"></a>
-                        <a class="fa fa-google-plus-square" href="#"></a>
-                      </div>
-                      <i class="fa fa-share"></i>
-                    </div>
-                    <!--Add To Wishlist Button-->
-                    <a class="wishlist-btn" href="#">
-                    	<div class="hover-state" onclick="location.href='{{url('jobs/single_job/')}}/{{$job->id}}'">View More</div>
+                     <a class="wishlist-btn" href="{{url('jobs/single_job/')}}/{{$job->id}}">
+                    	<div class="hover-state">View More</div>
                     	<i class="fa fa-plus"></i>
                     </a>
                   </div>
@@ -647,7 +659,7 @@
 @include('frontend/JobPortal/include/brand-crusal')
 
 <!-- footer start -->
-@include('frontend/ecommerce/include/footer')
+@include('frontend/JobPortal/include/jobfooter1')
 <!--footer end -->
 
 <!-- jquery -->

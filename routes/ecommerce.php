@@ -122,7 +122,6 @@ Route::post('/banktransfer', function () {
    Route::post('/marketer_passwordchange','Ecommerce\dashboard\AffiliateMarketerController@changePass');
    Route::post('/marketer/bidForm', 'Ecommerce\Marketer_FrontController@bidForm');
     Route::get('/{vue_capture?}', function () { return redirect()->back(); })->where('vue_capture', '[\/\w\.-]*');
-
     //add product
     // Route::get('vendor/add-product','Ecommerce\Vendor\VendorController@addProduct')->name('add-product');
     //add product
