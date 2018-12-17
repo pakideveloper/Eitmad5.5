@@ -29,6 +29,13 @@
     <!--[if lt IE 9]>
       <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/respond.js"></script>
     <![endif]-->
+    <style type="text/css">
+      .alert-success {
+    background-color: #ff7d7d;
+    border-color: #ff7f7f;
+    color: #ffffff;
+}
+    </style>
  
   </head>
 
@@ -66,7 +73,11 @@
     
     <!--Page Content-->
     <div class="page-content">
-    
+    @if (session('status'))
+                <div class="alert alert-success" style="margin-bottom: 0px;">
+                    <center>{{ session('status') }}</center>
+                </div>
+            @endif 
       <!--Hero Slider-->
       <section class="hero-slider">
         <div class="master-slider" id="hero-slider">
