@@ -13,11 +13,19 @@
 //usama
 
 Route::get('/', function () {
-    $user = App\User::find(Auth::user()->id);
     $jobs = App\Job::where('featuring_status','=','1')
             ->take(8)
             ->get();
+    if (isset(Auth::user()->id)) {
+       
+    
+    $user = App\User::find(Auth::user()->id);
+    
     return view('frontend/JobPortal/index',compact('user','jobs'));
+}
+else{
+    return view('frontend/JobPortal/index',compact('jobs'));
+}
 });
 
 ///// all jobs on frontend///////////
