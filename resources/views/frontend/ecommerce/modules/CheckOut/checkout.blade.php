@@ -4,6 +4,7 @@
 <!-- Mirrored from template.8guild.com/bushido/v1.4/checkout.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Aug 2018 05:04:23 GMT -->
 <head>
     <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Eitmad - Checkout</title>
     <!--SEO Meta Tags-->
     <meta name="description" content="Responsive HTML5 E-Commerce Template" />
@@ -140,7 +141,7 @@
           <div class="row">
           	<!-- <form action="{{url('/ecommerce/ship_bill_details')}}" id="checkout-form" method="post"> -->
               <form action="https://sandbox.2checkout.com/checkout/purchase" id="checkout-form" method="post" name="myform">
-            	{{ csrf_field()}}
+            	<input type="hidden" name="_token" value="uEVKfoA0mpDJ0eQWrS9xQTlY90Cz0MRFUY1k1ESE">
               <!--Left Column-->
               <div class="col-lg-8 col-md-8 col-sm-8">
                 <h3>Billing Details</h3>
@@ -474,7 +475,7 @@
 <input type='hidden' name='s_check' value='Online_pay' />
 <input type='hidden' name='email' value='{{$users->email}}' />
 <input type='hidden' name='phone' value='{{$users->contact_number}}' />
-<input type="hidden" name="_token" value='{{ csrf_token() }}' />
+
 <input type="hidden" name="payment" value='' />
 <input type="hidden" name="total" value='{{$cart_item->total}}' />
 
@@ -707,6 +708,13 @@
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/mailer/mailer.js"></script>
 		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/scripts.js"></script>
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/color-switcher.js"></script>
+    <script type="text/javascript">
+      $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+    </script>
     <script src="https://sandbox.2checkout.com/static/checkout/javascript/direct.min.js"></script>
 
 

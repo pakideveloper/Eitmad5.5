@@ -15,6 +15,9 @@ Route::get('/', function () {
 	$slider = App\Slider::latest()->get();
     return view('frontend/ecommerce/modules/index',compact('slider'));
 });
+Route::post('/postcallback', function () {
+    echo "posted";
+});
 Auth::routes();
 
 Route::get('/home', function () {
