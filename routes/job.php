@@ -14,8 +14,37 @@
 
 Route::get('/', function () {
     $user = App\User::find(Auth::user()->id);
-    return view('frontend/JobPortal/index',compact('user'));
+    $jobs = App\Job::where('featuring_status','=','1')
+            ->take(8)
+            ->get();
+    return view('frontend/JobPortal/index',compact('user','jobs'));
 });
+
+///// all jobs on frontend///////////
+Route::get('/job', function()
+{
+  $jobs = App\Job::where('approval_status','=','1')
+            ->where('active_status','=','1')
+            ->paginate(6);
+            $latest_jobs = App\Job::where('approval_status','=','1')
+            ->where('active_status','=','1')
+            ->latest()->take(8)->get();
+            // print_r($latest_jobs);
+            // die();
+  return view('frontend/JobPortal/modules/Jobs/jobs', compact('jobs','latest_jobs'));
+});
+
+/////// single job on front end///////////
+Route::get('/single_job/{id}', function($id)
+{
+    $job = App\Job::find($id);
+    $similar_jobs = App\Job::where('job_sub_category_id','=', $job->job_sub_category_id)
+                    ->take(4)
+                    ->get();
+
+  return view('frontend/JobPortal/modules/Jobs/single_job', compact('job','similar_jobs'));
+});
+
 Route::get('/employers', function () {
     return view('frontend/JobPortal/pages/employers');
 });

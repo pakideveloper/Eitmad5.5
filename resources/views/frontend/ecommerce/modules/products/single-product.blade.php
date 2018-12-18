@@ -197,8 +197,8 @@
 
                         @foreach($names as $key=>$name )
                         @if($key <= $border)
-                        <div class="item" style="border-bottom-color: #a3c756;
-    border: 1px solid #2ba8db;
+  <div class="item" style="border-bottom-color: #36465d;
+    border: 1px solid #36465d;
     margin-bottom: 6px;
     padding-left: 10px;
     padding-bottom: 3px;
@@ -252,8 +252,8 @@
                         <!--Item-->
                         @foreach($names as $key=>$name )
                         @if($key > $border)
-                        <div class="item" style="border-bottom-color: #a3c756;
-    border: 1px solid #2ba8db;
+                        <div class="item" style="border-bottom-color: #36465d;
+    border: 1px solid #36465d;
     margin-bottom: 6px;
     padding-left: 10px;
     padding-bottom: 3px;
