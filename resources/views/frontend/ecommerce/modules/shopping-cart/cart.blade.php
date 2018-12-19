@@ -44,6 +44,8 @@
   height: 64px;
   top: 50%;
     left: 50%;
+    background-color: rgb(158, 158, 158);
+        border-radius: 50%;
 }
 .lds-roller div {
   animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
@@ -56,7 +58,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #f2992e;
+  background: #36465d;
   margin: -3px 0 0 -3px;
 }
 .lds-roller div:nth-child(1) {
