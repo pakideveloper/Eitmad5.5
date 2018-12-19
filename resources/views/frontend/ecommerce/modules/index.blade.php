@@ -66,6 +66,13 @@
     
     <!--Page Content-->
     <div class="page-content">
+      @if (session('status'))
+                        <div class="alert alert-success" style="margin-bottom: 0px; background-color: #ffb6b7;
+    border-color: #d67474;
+    color: #ffffff;">
+                            {{ session('status') }}
+                        </div>
+                    @endif
     
     	<!--Hero Slider-->
       <section class="hero-slider">

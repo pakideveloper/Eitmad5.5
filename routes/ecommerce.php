@@ -127,7 +127,11 @@ Route::post('/banktransfer', function () {
     //add product
     /*dasboard*/
 
-//vendor
+//vendor   
+/*updateCatrt*/
+Route::post('/cart/update', 'Ecommerce\Cart\CartController@updateCart');    
+/*updateCatrt*/    
+
 
 
 

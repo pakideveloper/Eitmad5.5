@@ -28,6 +28,103 @@
     <!--[if lt IE 9]>
       <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/respond.js"></script>
     <![endif]-->
+    <style type="text/css">
+      td{
+        text-align: center;
+      }
+      th{
+        text-align: center;
+      }
+    </style>
+    <style type="text/css">
+            .lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+  top: 50%;
+    left: 50%;
+}
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 32px 32px;
+}
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f2992e;
+  margin: -3px 0 0 -3px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 50px;
+  left: 50px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 54px;
+  left: 45px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 57px;
+  left: 39px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 58px;
+  left: 32px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 57px;
+  left: 25px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 54px;
+  left: 19px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+  top: 50px;
+  left: 14px;
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+  top: 45px;
+  left: 10px;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+        </style>
  
   </head>
 
@@ -64,6 +161,16 @@
     
     <!--Page Content-->
     <div class="page-content">
+      <div id="ids_loader" style="position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999999;
+    display: none;">
+        
+        <div class="lds-roller" ><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
     
       <!--Breadcrumbs-->
       <ol class="breadcrumb">
@@ -80,7 +187,8 @@
           	<div class="col-lg-9 col-md-9">
             	<h2 class="title">Shopping cart</h2>
             	<table class="items-list">
-              	<tr>
+              	<tr style="    background-color: #f7f7f7;
+    height: 36px;">
                 	<th>&nbsp;</th>
                   <th>Product name</th>
                   <th>Product price</th>
@@ -89,15 +197,19 @@
                 </tr>
                 <?php
                   $cart_items = Cart::instance('shopping')->content();
+                  
                   ?>
                 @foreach($cart_items as $cart_item)
                 <!--Item-->
                 <tr class="item">
                 	<td class="thumb"><a href="{{url('ecommerce/single-product')}}/{{$cart_item->options['product_slug']}}"><img src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$cart_item->options['image']->product_file_name}}" alt="Nikon D4S"/></a></td>
-                  <td class="name"><a href="{{url('ecommerce/single-product')}}/{{$cart_item->options['product_slug']}}">{{$cart_item->name}}</a></td>
+                  <td class="name"><a href="{{url('ecommerce/single-product')}}/{{$cart_item->options['product_slug']}}" style="color: #f2992e;">{{$cart_item->name}}</a></td>
                   <td class="price">Rs. {{$cart_item->price}}</td>
                   <td class="qnt-count">
-                    {{$cart_item->qty}}
+                    <a class="incr-btn" href="javascript:void(0)" onclick="lessQuantity('{{$cart_item->rowId}}');">-</a>
+                    
+                    <input id="quantity{{$cart_item->rowId}}"  name="quantity" class="form-control" type="text" value="{{$cart_item->qty}}" >
+                    <a class="incr-btn" href="javascript:void(0)" onclick="addQuantity('{{$cart_item->rowId}}');">+</a>
                   </td>
                   <td class="total">Rs. {{$cart_item->subtotal}}</td>
                   <td class="delete"><a href="{{url('/ecommerce/removeFromCart')}}/{{$cart_item->rowId}}"><i class="icon-delete"></i></a></td>
@@ -249,6 +361,57 @@
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/mailer/mailer.js"></script>
 		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/scripts.js"></script>
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/color-switcher.js"></script>
+    <script type="text/javascript">
+      $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+      var addQuantity = function(id){
+        $('#ids_loader').show();
+        var rowId = id;
+        var quantity = $('#quantity'+rowId).val();
+        quantity = parseInt(quantity);
+        ++quantity;
+        $.ajax({
+            url: 'http://localhost/Eitmad5.5/ecommerce/cart/update',
+            data: {rowId: rowId, quantity: quantity},
+            method:'post',
+            success: function (response) {
+                $('#quantity'+rowId).val(response);
+                    $('#ids_loader').hide();
+                // }
+                // $('#msg').html(response); // display success response from the server
+                console.log(response);
+            },
+            error: function (response) {
+                $('#msg').html(response); // display error response from the server
+            }
+        });
+      }
+      var lessQuantity = function(id){
+        $('#ids_loader').show();
+        var rowId = id;
+        var quantity = $('#quantity'+rowId).val();
+        quantity = parseInt(quantity);
+        --quantity;
+        $.ajax({
+            url: 'http://localhost/Eitmad5.5/ecommerce/cart/update',
+            data: {rowId: rowId, quantity: quantity},
+            method:'post',
+            success: function (response) {
+                $('#quantity'+rowId).val(response);
+                    $('#ids_loader').hide();
+                // }
+                // $('#msg').html(response); // display success response from the server
+                console.log(response);
+            },
+            error: function (response) {
+                $('#msg').html(response); // display error response from the server
+            }
+        });
+      }
+    </script>
 
     
   </body><!--Body Close-->

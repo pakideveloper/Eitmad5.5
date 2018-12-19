@@ -123,7 +123,7 @@
                   {{csrf_field()}}
                   <div class="qnt-count">
                     <a class="incr-btn" href="#">-</a>
-                    <input id="quantity" name="quantity" class="form-control" type="text" value="2">
+                    <input id="quantity" name="quantity" class="form-control" type="text" value="1">
                     <a class="incr-btn" href="#">+</a>
                   </div>
                   <input type="hidden" name="product_id" value="{{\Crypt::encrypt($product->id)}}">
