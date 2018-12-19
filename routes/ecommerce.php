@@ -15,9 +15,6 @@ Route::get('/', function () {
 	$slider = App\Slider::latest()->get();
     return view('frontend/ecommerce/modules/index',compact('slider'));
 });
-Route::post('/postcallback', function () {
-    echo "posted";
-});
 Auth::routes();
 
 Route::get('/home', function () {
@@ -88,7 +85,7 @@ Route::get('/support', function () {
 });
 Route::post('/product/addToCart', 'Ecommerce\Cart\CartController@addToCart');
 Route::get('/removeFromCart/{rowId}', 'Ecommerce\Cart\CartController@romoveOne');
-Route::Resource('/checkout', 'Ecommerce\CheckoutController');
+Route::Resource('/checkout', 'Ecommerce\CheckoutController')->middleware('auth');
 Route::get('/city/selectregions/{id}', 'Ecommerce\CheckoutController@selectregions');
 Route::get('/city/selectcities/{id}', 'Ecommerce\CheckoutController@selectcities');
 Route::get('/city/regions/{id}', 'Ecommerce\User\UserController@regions');

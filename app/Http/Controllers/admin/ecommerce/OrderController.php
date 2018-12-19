@@ -90,7 +90,10 @@ die();*/
      */
     public function update(Request $request, $id)
     {
-        //
+        $order = Order::find($id);
+        $order->order_status = $request->status;
+        $order->save();
+        return 'ok';
     }
 
     /**
@@ -101,6 +104,8 @@ die();*/
      */
     public function destroy($id)
     {
-        //
+        $order = Order::find($id);
+        $order->delete();
+        return Redirect()->back()->with('status','Deleted successfully');
     }
 }
