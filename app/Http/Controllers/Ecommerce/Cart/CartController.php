@@ -142,4 +142,16 @@ class CartController extends Controller
     // $cart_items = session('key');
     // 	print_r($cart_items);
     }
+    public function updateCart(Request $request){
+        $rowId = $request->rowId;
+        $quantity = $request->quantity;
+        Cart::instance('shopping')->update($rowId, $quantity); // Will update the quantity
+        $item = Cart::instance('shopping')->get($rowId);
+        // dd($item);
+        $updatedQntty = $item->qty;
+        // while ($updatedQntty == $item->qty) {
+        //     Cart::instance('shopping')->update($rowId, $quantity);
+        // }
+        return $updatedQntty;
+    }
 }
