@@ -1,18 +1,11 @@
 <?php
 
+namespace App\Http\Controllers\Ecommerce\Vendor;
 
-namespace App\Http\Controllers\admin\ecommerce;
-//use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Order;
 use App\User;
-use App\Discount;
-use App\Permission;
-use Redirect; 
-use DB;
-use Alert;
-
 
 class OrderController extends Controller
 {
@@ -23,19 +16,14 @@ class OrderController extends Controller
      */
     public function index()
     {
-        
-       $orders = Order::all();
-       // print_r($orders);
-       // die();
+        $orders = Order::join('users', 'users.id', '=', 'orders.user_id')
+                    ->join('order_products', 'order_products.order_id', '=', 'orders.id')
+                    ->join('products', 'order_products.product_id', '=', 'products.id')
+                    ->get();
+                    dd($orders);
+                    die();
 
-      /* foreach ($orders as $key => $value) {
-           //print_r($value->user);
-               echo $value->user->first_name ;
-                 echo $value->user->first_name ;  
-          }            
-die();*/
-       
-        return view('admin/ecommerce/modules/orders/index',compact('orders'));
+        return view('frontend.ecommerce.dashboards.vendor.modules.order.index');
     }
 
     /**
@@ -90,10 +78,7 @@ die();*/
      */
     public function update(Request $request, $id)
     {
-        $order = Order::find($id);
-        $order->order_status = $request->status;
-        $order->save();
-        return 'ok';
+        //
     }
 
     /**
@@ -104,8 +89,6 @@ die();*/
      */
     public function destroy($id)
     {
-        $order = Order::find($id);
-        $order->delete();
-        return Redirect()->back()->with('status','Deleted successfully');
+        //
     }
 }

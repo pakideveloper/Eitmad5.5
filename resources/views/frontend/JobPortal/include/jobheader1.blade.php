@@ -79,7 +79,7 @@
             </li> -->
             
             
-            <li class="has-submenu"><a href="{{url('jobs/job')}}">Jobs<i class="fa fa-chevron-down"></i></a>
+             <li class="has-submenu"><a href="{{url('jobs/job')}}">Jobs<i class="fa fa-chevron-down"></i></a>
             	<!-- <ul class="submenu">
               	<li><a href="blog-sidebar-left.html">Blog - Sidebar Left</a></li>
               	<li><a href="blog-sidebar-right.html">Blog - Sidebar Right</a></li>

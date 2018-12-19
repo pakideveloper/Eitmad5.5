@@ -28,20 +28,32 @@ class PaymentCheckoutController extends Controller
 
          $i;
          // $billings = new Billing();
-          echo "success";
+          // echo "success";
           // $cart_items = Cart::instance('shopping')->content();
-         dd($request->all());
         // dd($request->all());
-//     	$hashSecretWord = 'hassan'; //2Checkout Secret Word
+        // die();
+          $i = 0 ;
+            $input = 'li_'.$i.'_name';
+            $total_types_of_pro = 0;
+            while ($request->$input) {
+              $i++;
+              $input = 'li_'.$i.'_name';
+              $total_types_of_pro++;
+
+            }
+        echo $total_types_of_pro;
+        // dd($request->all());
+        // die();
+//      $hashSecretWord = 'hassan'; //2Checkout Secret Word
 // $hashSid = 901394952; //2Checkout account number
 // $hashTotal = $_REQUEST['total']; //Sale total to validate against
 // $hashOrder = $_REQUEST['order_number']; //2Checkout Order Number
 // $StringToHash = strtoupper(md5($hashSecretWord . $hashSid . $hashOrder . $hashTotal));
 
 // if ($StringToHash != $_REQUEST['key']) {
-// 	$result = 'Fail - Hash Mismatch'; 
-// 	} else { 
-// 	$result = 'Success - Hash Matched';
+//  $result = 'Fail - Hash Mismatch'; 
+//  } else { 
+//  $result = 'Success - Hash Matched';
 // }
 
 // echo $result;
@@ -67,7 +79,7 @@ $billings = new Billing();
 
         $billings->save();
         
-
+// die();
 
         if ($billings->address_check == 1) {
 
@@ -95,13 +107,13 @@ $billings = new Billing();
         $shippings->city_id = $_REQUEST['b_city'];
         $shippings->shipper_address = $_REQUEST['b_address'];
         $shippings->save();
-
+// die();
 
 
 
 
 $orders = new Order();
-        $orders->order_status = 0;
+        $orders->order_status = 'pending';
         $orders->shipper_id = $shippings->id;
         $orders->biller_id = $billings->id;
         
@@ -117,23 +129,47 @@ $orders = new Order();
         // $orders->city_id = $billings->city_id;
         $orders->discount_id = 1;
         $orders->save();
-        $orderproducts = new Order_Product();
-        $orderproducts->order_product_unit_price = $_REQUEST['total'];
-        $orderproducts->order_product_quantity = $_REQUEST['li_0_quantity'];
-        $orderproducts->order_product_total_price = $_REQUEST['total'];
-         $orderproducts->order_id = $orders->id;
+        // die();
+        // $orderproducts = new Order_Product();
+        // $orderproducts->order_product_unit_price = $_REQUEST['total'];
+        // $orderproducts->order_product_quantity = $_REQUEST['li_0_quantity'];
+        // $orderproducts->order_product_total_price = $_REQUEST['total'];
+        //  $orderproducts->order_id = $orders->id;
         
-         $oproducts = Product::where('product_name', '=' , $_REQUEST['li_0_name'])
-        ->select('products.id')
-        ->get();
+        //  $oproducts = Product::where('product_name', '=' , $_REQUEST['li_0_name'])
+        // ->select('products.id')
+        // ->get();
             
-          foreach ($oproducts as  $oproduct) {
-             $orderproducts->product_id = $oproduct->id;
+        //   foreach ($oproducts as  $oproduct) {
+        //      $orderproducts->product_id = $oproduct->id;
 
          
-          }
+        //   }
          
-         $orderproducts->save();
+        //  $orderproducts->save();
+
+        for ($i=0; $i < $total_types_of_pro; $i++) {
+
+            $quantity_input_name = 'li_'.$i.'_quantity';
+            $u_price_input_name = 'li_'.$i.'_price';
+            $product_id_input_name = 'li_'.$i.'_product_id';
+            $product_id = $request->product_id_input_name;
+
+            $product = Product::find($product_id);
+
+            $total = $product->$product_discounted_price*$request->$quantity_input_name;
+
+
+            $orderproducts = new Order_Product();
+            $orderproducts->order_product_unit_price = $total;
+            $orderproducts->order_product_quantity = $request->$quantity_input_name;
+            $orderproducts->product_id = $product_id;
+            $orderproducts->order_product_total_price = $total;
+            $orderproducts->order_id = $orders->id;
+
+            $orderproducts->save();
+
+        }
 
 
 

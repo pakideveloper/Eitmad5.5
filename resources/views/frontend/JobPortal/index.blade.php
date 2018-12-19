@@ -216,96 +216,105 @@
       	<div class="container">
        	<h2 class="primary-color" style="text-align: center;">Feature Jobs</h2>
       
-       	@if($user->cnic == true)
-			<!-- <a href="{{'jobs/candidate/user-profile'}}/{{Auth::user()->id}}/edit"> -->
+       	
+		
 			<a href="{{'jobs'}}">
 
       		<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="1"/>
       		</a>
-  		@elseif($user->cnic == false)
-      		<a href="{{'jobs/candidate/user-profile'}}">
-
-      		<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="1"/>
-      		</a>
-  		@endif
        	<div class="border"></div>
           <div class="row">
           	<!--Tile-->
+          	@foreach($jobs as $key=>$job)
+          	@if($key<=3)
           	<div class="col-lg-3 col-md-4 col-sm-6">
             	<div class="tile">
-              	<div class="badges">
+              	<!-- <div class="badges">
                 	<span class="sale"></span>
-                </div>
-              	<div class="price-label">Expire Date: 11 Oct </div>
-              
+                </div> -->
+              	<div class="price-label">Apply By: {{Carbon\Carbon::parse($job->apply_by)->format('d M,Y')}}</div>
               	<div class="image">
+              	<a href="{{'jobs/candidate/dashboard'}}"><img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="1"/></a>
+              	<div class="buttons">
+									<div class="open-down">
+										<button type="button" class="rotate1">
+											<i class="fa fa-link" aria-hidden="true"></i>
+										</button>
+										<button type="button" class="rotate1">
+											<i class="fa fa-search" aria-hidden="true"></i>
+										</button>
+									</div>
+							</div>	
+				</div>
+                
+                 <div class="matter">
+							<h4>{{$job->job_title}}</h4>
+							<ul class="list-inline">
+								<li>
+									
+									<a href="#"><i class="fa fa-bookmark" aria-hidden="true"></i>   {{$job->job_career_level}}</a>
+									
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>  {{$job->city->city_name}},{{$job->city->country->country_name}}</a>
+								</li>
+							</ul>
+							 <?php
+                                                        if(strlen($job->job_description)>101){
+                                                            $description = substr($job->job_description, 0, 100).'[...]';
+                                                        }
+                                                        else
+                                                        {
+                                                            $description = $job->job_description;
+                                                        }
+                                                        ?>
+							<p>{{$description}}</p>
+						</div>
+						<div class="footer">
+                  <div class="tools">
+                  	<!-- <div class="rate">
+                    	<span class="active"></span>
+                      <span class="active"></span>
+                      <span class="active"></span>
+                      <span></span>
+                      <span></span>
+                    </div> -->
+                    <!--Add To Cart Button-->
+                    <a class="add-cart-btn" href="#"><span>Apply now</span><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a>
+                    <!--Share Button-->
+                    <div class="share-btn">
+                    	<div class="hover-state">
+                      	<a class="fa fa-facebook-square" href="#"></a>
+                        <a class="fa fa-twitter-square" href="#"></a>
+                        <a class="fa fa-google-plus-square" href="#"></a>
+                      </div>
+                      <i class="fa fa-share"></i>
+                    </div>
+                    <!--Add To Wishlist Button-->
+                     <a class="wishlist-btn" href="{{url('jobs/single_job/')}}/{{$job->id}}">
+                    	<div class="hover-state">View More</div>
+                    	<i class="fa fa-plus"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            @endif
+            @endforeach
+          </div>
 
-              	<!-- <a href="{{'jobs/candidate/dashboard'}}"> -->
-              		<!-- <img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="1"/> -->
-                 
-              	<!-- </a> -->
-              	<div class="buttons">
-									<div class="open-down">
-										<button type="button" class="rotate1">
-											<i class="fa fa-link" aria-hidden="true"></i>
-										</button>
-										<button type="button" class="rotate1">
-											<i class="fa fa-search" aria-hidden="true"></i>
-										</button>
-									</div>
-					</div>	
-				</div>
-                
-                 <div class="matter">
-							<h4>  IT Department Manager</h4>
-							<ul class="list-inline">
-								<li>
-									<a href="#"><i class="fa fa-bookmark" aria-hidden="true"></i>   Full Time</a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>  Chandigarh</a>
-								</li>
-							</ul>
-							<p>There are many variations of passages of lorem Ipsum available [...]</p>
-						</div>
-						<div class="footer">
-                  <div class="tools">
-                  	<div class="rate">
-                    	<span class="active"></span>
-                      <span class="active"></span>
-                      <span class="active"></span>
-                      <span></span>
-                      <span></span>
-                    </div>
-                    <!--Add To Cart Button-->
-                    <a class="add-cart-btn" href="#"><span>Apply now</span><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a>
-                    <!--Share Button-->
-                    <div class="share-btn">
-                    	<div class="hover-state">
-                      	<a class="fa fa-facebook-square" href="#"></a>
-                        <a class="fa fa-twitter-square" href="#"></a>
-                        <a class="fa fa-google-plus-square" href="#"></a>
-                      </div>
-                      <i class="fa fa-share"></i>
-                    </div>
-                    <!--Add To Wishlist Button-->
-                    <a class="wishlist-btn" href="#">
-                    	<div class="hover-state">View More</div>
-                    	<i class="fa fa-plus"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-           <!--Tile-->
+          <div class="row">
+          	<!--Tile-->
+          	@foreach($jobs as $key=>$job)
+          	@if($key>3)
           	<div class="col-lg-3 col-md-4 col-sm-6">
             	<div class="tile">
-              	<div class="badges">
+              	<!-- <div class="badges">
                 	<span class="sale"></span>
-                </div>
-              	<div class="price-label">Expire Date: 10 Oct</div>
+                </div> -->
+              	<div class="price-label">Apply By: {{Carbon\Carbon::parse($job->created_at)->format('d M,Y')}}</div>
               	<div class="image">
-              	<a href="#"><img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="1"/></a>
+              	<a href="{{'jobs/candidate/dashboard'}}"><img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="1"/></a>
               	<div class="buttons">
 									<div class="open-down">
 										<button type="button" class="rotate1">
@@ -319,26 +328,39 @@
 				</div>
                 
                  <div class="matter">
-							<h4>  IT Department Manager</h4>
+							<h4>   {{$job->job_title}}</h4>
 							<ul class="list-inline">
 								<li>
-									<a href="#"><i class="fa fa-bookmark" aria-hidden="true"></i>   Full Time</a>
+									@if($job->jobtype != null)
+									<a href="#"><i class="fa fa-bookmark" aria-hidden="true"></i>   {{$job->jobtype->job_type_name}}</a>
+									@else
+									<a href="#"><i class="fa fa-bookmark" aria-hidden="true"></i>   {{$job->job_career_level}}</a>
+									@endif
 								</li>
 								<li>
-									<a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>  Chandigarh</a>
+									<a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>  {{$job->city->city_name}},{{$job->city->country->country_name}}</a>
 								</li>
 							</ul>
-							<p>There are many variations of passages of lorem Ipsum available [...]</p>
+							 <?php
+                                                        if(strlen($job->job_description)>101){
+                                                            $description = substr($job->job_description, 0, 100).'[...]';
+                                                        }
+                                                        else
+                                                        {
+                                                            $description = $job->job_description;
+                                                        }
+                                                        ?>
+							<p>{{$description}}</p>
 						</div>
 						<div class="footer">
                   <div class="tools">
-                  	<div class="rate">
+                  	<!-- <div class="rate">
                     	<span class="active"></span>
                       <span class="active"></span>
                       <span class="active"></span>
                       <span></span>
                       <span></span>
-                    </div>
+                    </div> -->
                     <!--Add To Cart Button-->
                     <a class="add-cart-btn" href="#"><span>Apply now</span><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a>
                     <!--Share Button-->
@@ -351,7 +373,7 @@
                       <i class="fa fa-share"></i>
                     </div>
                     <!--Add To Wishlist Button-->
-                    <a class="wishlist-btn" href="#">
+                     <a class="wishlist-btn" href="{{url('jobs/single_job/')}}/{{$job->id}}">
                     	<div class="hover-state">View More</div>
                     	<i class="fa fa-plus"></i>
                     </a>
@@ -359,130 +381,8 @@
                 </div>
               </div>
             </div>
-            <!--Tile-->
-          	<div class="col-lg-3 col-md-4 col-sm-6">
-            	<div class="tile">
-              	<div class="badges">
-                	<span class="sale"></span>
-                </div>
-              	<div class="price-label">Expire Date: 10 Oct</div>
-              	<div class="image">
-              	<a href="#"><img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="1"/></a>
-              	<div class="buttons">
-									<div class="open-down">
-										<button type="button" class="rotate1">
-											<i class="fa fa-link" aria-hidden="true"></i>
-										</button>
-										<button type="button" class="rotate1">
-											<i class="fa fa-search" aria-hidden="true"></i>
-										</button>
-									</div>
-							</div>	
-				</div>
-                
-                 <div class="matter">
-							<h4>  IT Department Manager</h4>
-							<ul class="list-inline">
-								<li>
-									<a href="#"><i class="fa fa-bookmark" aria-hidden="true"></i>   Full Time</a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>  Chandigarh</a>
-								</li>
-							</ul>
-							<p>There are many variations of passages of lorem Ipsum available [...]</p>
-						</div>
-						<div class="footer">
-                  <div class="tools">
-                  	<div class="rate">
-                    	<span class="active"></span>
-                      <span class="active"></span>
-                      <span class="active"></span>
-                      <span></span>
-                      <span></span>
-                    </div>
-                    <!--Add To Cart Button-->
-                    <a class="add-cart-btn" href="#"><span>Apply now</span><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a>
-                    <!--Share Button-->
-                    <div class="share-btn">
-                    	<div class="hover-state">
-                      	<a class="fa fa-facebook-square" href="#"></a>
-                        <a class="fa fa-twitter-square" href="#"></a>
-                        <a class="fa fa-google-plus-square" href="#"></a>
-                      </div>
-                      <i class="fa fa-share"></i>
-                    </div>
-                    <!--Add To Wishlist Button-->
-                    <a class="wishlist-btn" href="#">
-                    	<div class="hover-state">View More</div>
-                    	<i class="fa fa-plus"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!--Tile-->
-          	<div class="col-lg-3 col-md-4 col-sm-6">
-            	<div class="tile">
-              	<div class="badges">
-                	<span class="sale"></span>
-                </div>
-              	<div class="price-label">Expire Date: 10 Oct</div>
-              	<div class="image">
-              	<a href="#"><img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="1"/></a>
-              	<div class="buttons">
-									<div class="open-down">
-										<button type="button" class="rotate1">
-											<i class="fa fa-link" aria-hidden="true"></i>
-										</button>
-										<button type="button" class="rotate1">
-											<i class="fa fa-search" aria-hidden="true"></i>
-										</button>
-									</div>
-							</div>	
-				</div>
-                
-                 <div class="matter">
-							<h4>  IT Department Manager</h4>
-							<ul class="list-inline">
-								<li>
-									<a href="#"><i class="fa fa-bookmark" aria-hidden="true"></i>   Full Time</a>
-								</li>
-								<li>
-									<a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>  Chandigarh</a>
-								</li>
-							</ul>
-							<p>There are many variations of passages of lorem Ipsum available [...]</p>
-						</div>
-						<div class="footer">
-                  <div class="tools">
-                  	<div class="rate">
-                    	<span class="active"></span>
-                      <span class="active"></span>
-                      <span class="active"></span>
-                      <span></span>
-                      <span></span>
-                    </div>
-                    <!--Add To Cart Button-->
-                    <a class="add-cart-btn" href="#"><span>Apply now</span><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a>
-                    <!--Share Button-->
-                    <div class="share-btn">
-                    	<div class="hover-state">
-                      	<a class="fa fa-facebook-square" href="#"></a>
-                        <a class="fa fa-twitter-square" href="#"></a>
-                        <a class="fa fa-google-plus-square" href="#"></a>
-                      </div>
-                      <i class="fa fa-share"></i>
-                    </div>
-                    <!--Add To Wishlist Button-->
-                    <a class="wishlist-btn" href="#">
-                    	<div class="hover-state">View More</div>
-                    	<i class="fa fa-plus"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+             @endif
+            @endforeach
           </div>
         </div>
       </section>

@@ -14,5 +14,8 @@ class Order extends Model
     public function discount(){
     	return $this->hasOne('App\Discount', 'id', 'discount_id');
     }
+    public function order_products(){
+    	return $this->hasMany('App\Order_Product');
+    }
     
 }

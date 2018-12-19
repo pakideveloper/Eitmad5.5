@@ -11866,6 +11866,7 @@ header .search-form .close-search:hover {
   -webkit-transition: none;
   -moz-transition: none;
   transition: none;
+  background: #36465d;
 }
 .menu .catalog li.has-submenu:hover .submenu {
   display: block;
@@ -11883,7 +11884,7 @@ header .search-form .close-search:hover {
 .menu .catalog li .submenu {
   position: absolute;
   top: 56px;
-  width: 740px;
+  width: 645px;
   z-index: 10;
   background: #f2992e;
   padding: 12px 6px 12px 6px;
@@ -12636,7 +12637,7 @@ header .search-form .close-search:hover {
 }
 .catalog-grid .tile .footer .tools .share-btn {
   top: 2px;
-  right: 62px;
+  right: 65px;
   color: #f2992e;
   cursor: pointer;
   padding-top: 12px;
@@ -12674,7 +12675,7 @@ header .search-form .close-search:hover {
 }
 .catalog-grid .tile .footer .tools .wishlist-btn {
   top: 13px;
-  right: 60px;
+  right: 65px;
   color: #f2992e;
 }
 .catalog-grid .tile .footer .tools .wishlist-btn i {

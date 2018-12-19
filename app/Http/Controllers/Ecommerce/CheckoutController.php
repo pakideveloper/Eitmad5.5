@@ -37,7 +37,8 @@ class CheckoutController extends Controller
         //                             ->join('orders', 'orders.id', '=', 'order_products.order_id')
         //                             ->where('orders.user_id','=',Auth::user()->id);
         $orderproducts = Order_Product::all();
-        return view('frontend/ecommerce/modules/CheckOut/checkout',compact('countries','orderproducts','users','cities','regions'));
+        $token = csrf_token();
+        return view('frontend/ecommerce/modules/CheckOut/checkout',compact('countries','orderproducts','users','cities','regions','token'));
     }
 
     /**
