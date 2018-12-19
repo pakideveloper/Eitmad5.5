@@ -9,6 +9,7 @@ use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use App\notifications;
 
 class SendRequest implements ShouldBroadcast
 {
@@ -16,6 +17,7 @@ class SendRequest implements ShouldBroadcast
      public $username;
 
     public $message;
+    public $notify;
     /**
      * Create a new event instance.
      *
@@ -26,6 +28,11 @@ class SendRequest implements ShouldBroadcast
         //
         $this->username = $username;
         $this->message  = "{$username} Sending Bid On Your Product!! Please Visits Request Tab To Confirm It.";
+        $this->notify = new notifications();
+        $this->notify->username = $this->username;
+        $this->notify->message = $this->message;
+        $this->notify->save();
+        
     }
 
     /**

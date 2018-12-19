@@ -19,12 +19,11 @@
     <link href="{{URL::to('public/bootstrap-4.1')}}/css/dashboard.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"
-    ></script>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{URL::to('public/css')}}/bootstrap-notifications.min.css">
-    <style type="text/css">
+    <!-- <style type="text/css">
       .is-sub{
         padding-left: 23px;
         display: none;
@@ -42,7 +41,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
       .dropdown-menu{
         position: absolute !important;
       }
-    </style>
+    </style> -->
   </head>
 
   <body>
@@ -68,11 +67,17 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
           <a class="nav-link" href="#">Sign out</a>
         </li>
       </ul> -->
+      <?php 
+        $notify = App\notifications::all();
+        $count = count($notify);
+        // echo $count;
+        // die();
+         ?>
       <input class="form-control form-control-dark w-50" type="text" placeholder="Search" aria-label="Search">
       <ul class="nav navbar-nav">
             <li class="dropdown dropdown-notifications">
-              <a href="#notifications-panel" class="dropdown-toggle" data-toggle="dropdown">
-                <i data-count="0" class="glyphicon glyphicon-bell notification-icon"></i>
+              <a href="{{url('ecommerce/user/marketerRequest')}}" class="dropdown-toggle" data-toggle="dropdown">
+                <i data-count="{{$count}}" class="glyphicon glyphicon-bell notification-icon"></i>
               </a>
 
               <div class="dropdown-container">
@@ -80,12 +85,12 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
                   <div class="dropdown-toolbar-actions">
                     <a href="#">Mark all as read</a>
                   </div>
-                  <h3 class="dropdown-toolbar-title">Notifications (<span class="notif-count">0</span>)</h3>
+                  <h3 class="dropdown-toolbar-title">Notifications (<span class="notif-count">{{$count}}</span>)</h3>
                 </div>
                 <ul class="dropdown-menu">
                 </ul>
                 <div class="dropdown-footer text-center">
-                  <a href="#">View All</a>
+                  <a href="{{url('ecommerce/user/marketerRequest')}}">View All</a>
                 </div>
               </div>
             </li>
@@ -183,7 +188,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
       </ul>
 
     </nav>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
     <script src="https://js.pusher.com/4.3/pusher.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
@@ -199,7 +204,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
       }
 
       // Enable pusher logging - don't include this in production
-      Pusher.logToConsole = true;
+      //Pusher.logToConsole = true;
 
       var pusher = new Pusher('d91158c1362e44bf0a16', {
         cluster: 'ap1',
@@ -211,7 +216,6 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
 
       // Bind a function to a Event (the full Laravel class)
       channel.bind('App\\Events\\SendRequest', function(data) {
-       
         var existingNotifications = notifications.html();
         var avatar = Math.floor(Math.random() * (71 - 20 + 1)) + 20;
         var newNotificationHtml =`
@@ -223,7 +227,7 @@ integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh
                   </div>
                 </div>
                 <div class="media-body">
-                  <strong class="notification-title">`+data.message+`</strong>
+                  <strong class="notification-title">`+data.notify+`</strong>
                   
                   <div class="notification-meta">
                     <small class="timestamp">about a minute ago</small>

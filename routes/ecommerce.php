@@ -88,6 +88,8 @@ Route::get('/removeFromCart/{rowId}', 'Ecommerce\Cart\CartController@romoveOne')
 Route::Resource('/checkout', 'Ecommerce\CheckoutController');
 Route::get('/city/selectregions/{id}', 'Ecommerce\CheckoutController@selectregions');
 Route::get('/city/selectcities/{id}', 'Ecommerce\CheckoutController@selectcities');
+Route::get('/city/selectshippingregions/{id}', 'Ecommerce\CheckoutController@selectShippingregions');
+Route::get('/city/selectshippingcities/{id}', 'Ecommerce\CheckoutController@selectShippingcities');
 Route::get('/city/regions/{id}', 'Ecommerce\User\UserController@regions');
 Route::get('/city/cities/{id}', 'Ecommerce\User\UserController@cities');
 Route::get('/callback', 'Ecommerce\PaymentCheckoutController@callback');

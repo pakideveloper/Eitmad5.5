@@ -116,7 +116,7 @@
       <!--Catalog Grid-->
       <section class="catalog-grid">
         <div class="container">
-          <h2 class="primary-color">Our Products</h2>
+          <h2 class="primary-color">Products For Sale</h2>
           <div class="row">
             <!--Tile-->
             @foreach($products as $product)
@@ -171,8 +171,8 @@
       <section class="tabs-widget">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs">
-          <li class="active"><a href="#bestsel" data-toggle="tab">Bestseller items</a></li>
-          <li><a href="#onsale" data-toggle="tab">Items on sale</a></li>
+          <li class="active"><a href="#bestsel" data-toggle="tab" style="color: #36465d;">Bestseller items</a></li>
+          <li><a href="#onsale" data-toggle="tab" style="color: #36465d;">Items on sale</a></li>
         </ul>
         <div class="tab-content">
           <div class="tab-pane fade in active" id="bestsel">
@@ -512,7 +512,20 @@
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/mailer/mailer.js"></script>
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/scripts.js"></script>
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/color-switcher.js"></script>
+   <!--  <script>
+      $(document).ready(function () {
+    $("#brand-crusal").owlCarousel({
 
+        autoPlay: 3000, //Set AutoPlay to 3 seconds
+        dots: true,
+        items: 2,
+        itemsDesktop: [1199, 3],
+        itemsDesktopSmall: [979, 3]
+    });
+});
+
+ 
+    </script> -->
     
   </body><!--Body Close-->
 

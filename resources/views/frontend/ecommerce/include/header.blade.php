@@ -4,6 +4,40 @@
     .logo:hover{
       text-decoration: none;
     }
+    .dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f2992e;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: white;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
   </style>
     <header data-offset-top="500" data-stuck="600"><!--data-offset-top is when header converts to small variant and data-stuck when it becomes visible. Values in px represent position of scroll from top. Make sure there is at least 100px between those two values for smooth animation-->
     
@@ -166,7 +200,18 @@
              <a class="btn-outlined-invert" href="{{ url('/register') }}"><i class="icon-heart"></i> <span>Sign Up</span></a>            
             <a class="login-btn btn-outlined-invert" href="#" data-toggle="modal" data-target="#loginModal"><i class="icon-profile"></i> <span>Login</span></a>
             @else
-             <a class="btn-outlined-invert" href="{{url('ecommerce/user/dashboard')}}" ><i class="icon-profile"></i> <span style="text-transform: capitalize;">{{ Auth::user()->first_name }}</span></a>
+             <!-- <a class="btn-outlined-invert" href="{{url('ecommerce/user/dashboard')}}" ><i class="icon-profile"></i> <span style="text-transform: capitalize;">{{ Auth::user()->first_name }}</span>
+             </a> -->
+             <div class="dropdown">
+  <!-- <button class="dropbtn">Dropdown</button> -->
+  <a class="btn-outlined-invert" href="{{url('ecommerce/user/dashboard')}}" ><i class="icon-profile"></i> <span style="text-transform: capitalize;">{{ Auth::user()->first_name }}</span>
+             </a>
+  <div class="dropdown-content">
+    <a class="login-btn btn-outlined-invert" href="{{url('ecommerce/user/dashboard')}}" data-toggle="modal" data-target="#loginModal"><i class=""></i> <span>My Dashboard</span></a>
+    <!-- <a href="#">Link 2</a>
+    <a href="#">Link 3</a> -->
+  </div>
+</div>
             <a class="login-btn btn-outlined-invert"  onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();" ><i class="icon-profile"></i> <span style="text-transform: capitalize;">logout</span></a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>

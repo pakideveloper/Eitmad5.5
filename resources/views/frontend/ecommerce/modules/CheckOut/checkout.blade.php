@@ -178,7 +178,7 @@
                   <label for="co-country">Country *</label>
                   <div class="select-style">
                    
-                    <select name="b_country" id="b-country" >
+                    <select name="b_country" id="b-country" required>
                       <option value="" >Select Country</option>
                        @foreach($countries as $country)
 
@@ -198,7 +198,7 @@
                   <label for="co-country">State *</label>
                   <div class="select-style">
                    
-                    <select name="b_region" id="b-region">
+                    <select name="b_region" id="b-region" required>
                       <!--  <option value="" >Select Country First</option> -->
                     </select>
                    
@@ -210,7 +210,7 @@
                     <label for="co-city">Town/ city *</label>
                     <div class="select-style">
                    
-                    <select name="b_city" id="b-city">
+                    <select name="b_city" id="b-city" required>
                      <!--  <option value="" >Select State First</option> -->
                     </select>
                    
@@ -230,7 +230,7 @@
                 
                 <div class="form-group">
                   <label for="co-str-adress">Address *</label>
-                  <textarea  class="form-control" id="co-str-adress" name="b_address" placeholder="Street adress" value = "{{$users->address}}" required>{{$users->address}}
+                  <textarea  class="form-control" id="co-str-adress" name="b_address" placeholder="Street address" value = "" required>{{$users->address}}
                   </textarea>
                 </div>
                 <!-- <div class="form-group">
@@ -296,7 +296,8 @@
                   <label for="co-country">Country *</label>
                   <div class="select-style">
                    
-                    <select name="s_country" id="co-country" >
+                    <select name="s_country" id="s-country" required>
+                      <option value="" >Select Country</option>
                        @foreach($countries as $country)
                       <option value="{{$country->id}}">{{$country->country_name}}</option>
                       <!-- <option>Belgium</option>
@@ -314,15 +315,8 @@
                   <label for="co-country">State *</label>
                   <div class="select-style">
                    
-                    <select name="s_region" id="co-country">
-                       @foreach($regions as $region)
-                      <option value="{{$region->id}}">{{$region->region_name}}</option>
-                      <!-- <option>Belgium</option>
-                      <option>Germany</option>
-                      <option>United Kingdom</option>
-                      <option>Switzerland</option>
-                      <option>USA</option> -->
-                       @endforeach
+                    <select name="s_region" id="s-region" required>
+                       
                     </select>
                    
                   </div>
@@ -334,15 +328,8 @@
                     <label for="co-city">Town/ city *</label>
                     <div class="select-style">
                    
-                    <select name="s_city" id="co-country">
-                       @foreach($cities as $city)
-                      <option value="{{$city->id}}">{{$city->city_name}}</option>
-                      <!-- <option>Belgium</option>
-                      <option>Germany</option>
-                      <option>United Kingdom</option>
-                      <option>Switzerland</option>
-                      <option>USA</option> -->
-                       @endforeach
+                    <select name="s_city" id="s-city" required>
+                       
                     </select>
                    
                   </div>
@@ -734,7 +721,11 @@
     if (value == 'online_pay') {
       document.myform.action = "https://sandbox.2checkout.com/checkout/purchase";
       myform.submit();
-    }
+  }
+  if (value == 'cash_delivery') {
+      document.myform.action = "";
+      myform.submit();
+  }
     });
 
 
@@ -776,6 +767,35 @@ $.ajaxSetup({
         });
 
 
+        $('#s-country').on('change', function() {
+            
+            var countryID = $(this).val();
+           // alert(countryID);
+            if (countryID) {
+                $.ajax({
+
+                    url: '{{ url('/ecommerce/city/selectshippingregions')}}'+'/' +countryID ,
+                    type: "GET",
+                    dataType: "json",
+                    
+                    success:function(data) {
+
+                        
+                        $('select[name="s_region"]').empty();
+                        $('select[name="s_region"]').append('<option value="'+ "" +'">'+ "Select State" +'</option>');
+                        $.each(data, function(key, value) {
+                            $('select[name="s_region"]').append('<option value="'+ value.id +'">'+ value.region_name +'</option>');
+                        });
+
+                    }
+                });
+            }else{
+                $('select[name="s_region"]').empty();
+            }
+        });
+
+
+
 
         $('#b-region').on('change', function() {
             
@@ -804,6 +824,31 @@ $.ajaxSetup({
         });
 
 
+         $('#s-region').on('change', function() {
+            
+            var stateID = $(this).val();
+           // alert(stateID);
+            if (stateID) {
+                $.ajax({
+
+                    url: '{{ url('/ecommerce/city/selectshippingcities')}}'+'/' +stateID ,
+                    type: "GET",
+                    dataType: "json",
+                    
+                    success:function(data) {
+
+                        
+                        $('select[name="s_city"]').empty();
+                        $.each(data, function(key, value) {
+                            $('select[name="s_city"]').append('<option value="'+ value.id +'">'+ value.city_name +'</option>');
+                        });
+
+                    }
+                });
+            }else{
+                $('select[name="s_city"]').empty();
+            }
+        });
 
 
     // });

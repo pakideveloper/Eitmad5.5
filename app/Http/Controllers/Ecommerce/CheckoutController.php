@@ -175,7 +175,20 @@ class CheckoutController extends Controller
         //
          return City::where('region_id',$id)->get();
     }
-
+    public function selectShippingregions($id)
+    {
+        // echo "string";
+        // die();
+        //
+         return Region::where('country_id',$id)->get();
+    }
+    public function selectShippingcities($id)
+    {
+        // echo "string";
+        // die();
+        //
+         return City::where('region_id',$id)->get();
+    }
 
 
     public function storeValidation(Request $request){
