@@ -280,7 +280,7 @@
                       <span></span>
                     </div> -->
                     <!--Add To Cart Button-->
-                    <a class="add-cart-btn" href="#"><span>Apply now</span><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a>
+                    <a class="add-cart-btn" href="{{url('jobs/single_job/')}}/{{$job->id}}"><span>View More</span><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a>
                     <!--Share Button-->
                     <div class="share-btn">
                     	<div class="hover-state">
@@ -291,10 +291,10 @@
                       <i class="fa fa-share"></i>
                     </div>
                     <!--Add To Wishlist Button-->
-                     <a class="wishlist-btn" href="{{url('jobs/single_job/')}}/{{$job->id}}">
+                    <!--  <a class="wishlist-btn" href="{{url('jobs/single_job/')}}/{{$job->id}}">
                     	<div class="hover-state">View More</div>
                     	<i class="fa fa-plus"></i>
-                    </a>
+                    </a> -->
                   </div>
                 </div>
               </div>
@@ -362,7 +362,7 @@
                       <span></span>
                     </div> -->
                     <!--Add To Cart Button-->
-                    <a class="add-cart-btn" href="#"><span>Apply now</span><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a>
+                    <a class="add-cart-btn" href="{{url('jobs/single_job/')}}/{{$job->id}}"><span>View More</span><i class="fa fa-caret-square-o-right" aria-hidden="true"></i></a>
                     <!--Share Button-->
                     <div class="share-btn">
                     	<div class="hover-state">
@@ -373,10 +373,10 @@
                       <i class="fa fa-share"></i>
                     </div>
                     <!--Add To Wishlist Button-->
-                     <a class="wishlist-btn" href="{{url('jobs/single_job/')}}/{{$job->id}}">
+                    <!--  <a class="wishlist-btn" href="{{url('jobs/single_job/')}}/{{$job->id}}">
                     	<div class="hover-state">View More</div>
                     	<i class="fa fa-plus"></i>
-                    </a>
+                    </a> -->
                   </div>
                 </div>
               </div>

@@ -279,7 +279,7 @@
                                                         ?>
 								<p>{{$description}}</p>
 								<a href="{{url('jobs/single_job/')}}/{{$job->id}}" class="btn btn-info" >VIEW MORE</a>
-								<button type="button" class="btn btn-info" onclick="location.href='apply-job-form.html'">APPLY NOW</button>
+								<!-- <button type="button" class="btn btn-info" onclick="location.href='apply-job-form.html'">APPLY NOW</button> -->
 							</div>
 						</div>
 					</div>
