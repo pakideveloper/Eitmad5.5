@@ -30,11 +30,17 @@
 
 			</div>
 		</div> 
+			
+			@if(count($candidate_profile)!= 0)
 
-         <div class="form-group col-lg-6">
+			<input type="file" name="profile_img" class="form-control" style="display: none;"  >
+			@else
 			<label>Profile Img</label>
-			<input type="file" name="profile_img" class="form-control" value="">
-		</div>
+			<div class="form-group col-lg-6">
+			<input type="file" name="profile_img" class="form-control"  >
+				</div>
+
+			@endif
         <hr>
 		<div class="form-group col-lg-6">
 			<label>First Name</label>
@@ -52,38 +58,38 @@
 
 		<div class="form-group col-lg-6">
 			<label>Date Of Birth</label>
-			<input type="date" name="data_of_b" class="form-control" value="{{$users->date_of_birth?$users->date_of_birth:''}}">			
+			<input type="date" name="data_of_b"  id="mydob" class="form-control" value="{{$users->date_of_birth?$users->date_of_birth:''}}" >
 		</div>
 		<div class="form-group col-lg-6">
 			<label>CNIC#</label>
-			<input type="text" name="cnic" id="quaid_college" class="form-control" value="{{$users->cnic?$users->cnic:''}}" >			
+			<input type="text" name="cnic" id="mycnic" class="form-control" value="{{$users->cnic?$users->cnic:''}}"   >			
 		</div>
 		<div class="form-group col-lg-6">
 			<label>Gender</label>
-			<select class="form-control " name="gender" value="{{$users->gender?$users->gender:''}}">
-				<option value="{{$users->gender?$users->gender:''}}">{{$users->gender?$users->gender:'Select Gender'}}</option>
+			<select class="form-control " name="gender"  id="mygender" >
+				<option value="{{$users->gender?$users->gender:''}}" >{{$users->gender?$users->gender:'Select Gender'}}</option>
 				<option value="male">Male</option>
 				<option value="female">Female</option>
 			</select>			
 		</div>
 			<div class="form-group col-lg-6">
 			<label>Contact Number</label>
-			<input type="text" name="contact_num" class="form-control" value="{{$users->contact_number?$users->contact_number:''}}">			
+			<input type="text" name="contact_num" class="form-control" value="{{$users->contact_number?$users->contact_number:''}}"  id="myContact">			
 		</div>
 		<div class="form-group col-lg-6">
 			<label>Marital Status</label>
-			<select class="form-control " name="marital_status">
+			<select class="form-control " name="marital_status"  id="myMarital_status">
 				<option value="{{count($candidate_profile)!= 0?$candidate_profile->candidate_marital_status:''}}">{{count($candidate_profile)!= 0?$candidate_profile->candidate_marital_status:'Maritala Status'}}</option>
 				<option value="divorced">Divorced</option>
 				<option value="married">Married</option>
-					<option value="seperated">Seperated</option>
-					<option value="single">Single</option>
-					<option value="widow">Widow</option>
+				<option value="seperated">Seperated</option>
+				<option value="single">Single</option>
+				<option value="widow">Widow</option>
 			</select>			
 		</div>
 			<div class="form-group col-lg-6">
 			<label>Nationality</label>
-			<select class="form-control" name="nationality">
+			<select class="form-control" name="nationality"  id="myNatioanlity">
 				<option value="{{$users->nationality?$users->nationality:''}}">{{$users->nationality?$users->nationality:'Select One'}}</option>
 				<option value="pakistan">Pakistan</option>
 				<option value="afghanistan">Afghanistan</option>
@@ -92,22 +98,22 @@
 		<div class="form-group col-lg-6">
 			<label>City</label>
 
-			<select class="form-control" name="city_id">
-				@foreach($cities as $city)
-				<option value="{{$city->id?$city->id:''}}">{{$city->city_name?$city->city_name:''}}</option>	
-				@endforeach 				
+			<select class="form-control" name="city_id"  id="myCity" >
+			@foreach($cities as $city)
+			<option value="{{$city->id?$city->id:''}}" >{{$city->city_name?$city->city_name:''}}</option>	
+			@endforeach 				
 			</select>		
 				
 		</div>
 		<div class="form-group col-lg-6">
 			<label>Caption About Profession</label>
 
-			<input type="text" name="profession_caption" class="form-control" value="{{count($candidate_profile)!= 0?$candidate_profile->caption:''}}">
+			<input type="text" name="profession_caption" class="form-control" value="{{count($candidate_profile)!= 0?$candidate_profile->caption:''}}"  id="myCaption">
 				
 		</div>
 	    <div class="form-group col-lg-6">
 			<label>Career Level</label> 
-			<select name="career_level" class="form-control">
+			<select name="career_level" class="form-control"  id="myCareel_level">
 				<option value="{{count($candidate_profile)!= 0?$candidate_profile->candidate_career_level:''}}">{{count($candidate_profile)!= 0?$candidate_profile->candidate_career_level:'Select One Level'}}</option>
 				<option value="Intern/Student">Intern / Student</option>
 				<option value="Entry Level">Entry Level</option>
@@ -118,7 +124,7 @@
 		</div>
 		<div class="form-group col-lg-6">
 		<label>Professional Experience </label>
-			<select class="form-control" name="pro_exp">
+			<select class="form-control" name="pro_exp"  id="myProf_exp">
 				<option value="{{count($candidate_profile)!= 0?$candidate_profile->professional_experience:''}}" selected="true">{{count($candidate_profile)!= 0?$candidate_profile->professional_experience:'Select One'}}</option>
 				<option value="Fresh">Fresh </option>
 				<option value="Less Than 1 Year">Less than 1 Year </option>
@@ -128,7 +134,7 @@
 		</div>
 		<div class="form-group col-lg-6">
 			<label>Functional Area</label>
-			<select class="form-control" name="func_area">
+			<select class="form-control" name="func_area"  id="myFunc_area">
 				<option value="{{count($candidate_profile)!= 0?$candidate_profile->candidate_functional_area:''}}" selected="true">{{count($candidate_profile)!= 0?$candidate_profile->candidate_functional_area:'Select One'}}</option>
 				<option value="hardware">hardware</option>
 				<option value="Telecome">software</option>
@@ -139,7 +145,7 @@
 		</div>
 		<div class="form-group col-lg-6">
 			<label>Current Salary</label>
-			<select class="form-control" name="current_salary">
+			<select class="form-control" name="current_salary"  id="myCurrent_salary">
 				<option value="{{count($candidate_profile)!= 0?$candidate_profile->candidate_current_salary:''}}" selected="true">{{count($candidate_profile)!= 0?$candidate_profile->candidate_current_salary:'Select One'}}</option>
 				<option value="10000">10000</option>
 				<option value="20000">20000</option>
@@ -149,8 +155,8 @@
 		</div>
 		<div class="form-group col-lg-6">
 			<label>Expected Salary</label>
-			<select class="form-control" name="expected_salary">
-				<option value="{{count($candidate_profile)!= 0?$candidate_profile->candidate_expected_salary:''}}" selected="true">{{count($candidate_profile)!= 0?$candidate_profile->candidate_expected_salary:'Select One'}}</option>
+			<select class="form-control" name="expected_salary"  id="myExpected_salary">
+				<option value="{{count($candidate_profile)!= 0?$candidate_profile->candidate_expected_salary:''}}" selected="true" >{{count($candidate_profile)!= 0?$candidate_profile->candidate_expected_salary:'Select One'}}</option>
 				<option value="10000">10000 </option>
 				<option value="20000">20000 </option>
 				<option value="30000">30000 </option>
@@ -159,22 +165,22 @@
 		</div>
 		<div class="form-group col-lg-6">
 			<label>Professional Summary</label>
-			<textarea name="prof_summary" rows="2" class="form-control">{{count($candidate_profile)!= 0?$candidate_profile->candidate_profile_summary:''}}</textarea>
+			<textarea name="prof_summary" rows="2" class="form-control"  id="mySummary">{{count($candidate_profile)!= 0?$candidate_profile->candidate_profile_summary:''}}</textarea>
 		</div>
 			<div class="form-group col-lg-6">
 			<label>Blog / PortfolioLink</label>
 
-			<input type="text" name="blog_link" class="form-control" value="{{count($candidate_profile)!= 0?$candidate_profile->blog_link:''}}">
+			<input type="text" name="blog_link" class="form-control" value="{{count($candidate_profile)!= 0?$candidate_profile->blog_link:''}}"  id="myBlog">
 			 
 		</div>
 		<div class="form-group col-lg-6">
 			<label>Skills</label>
            @if(count($skills)!=0)
-        	<select class="form-control" name="skills" required="true" >
+        	<!-- <select class="form-control" name="skills" required="true"  > -->
 			@foreach($skills as $skill)
-			<option value="">{{$skill}}</option>	
-			@endforeach 				
-			</select>
+			<input type="button" name="skills" class=" btn btn-outline-info" value="
+			{{$skill}}">				
+			@endforeach 	
 			@else
 			<input type="text" name="skills" class="form-control" value="">           	
              
@@ -185,10 +191,12 @@
 		<div class="form-group col-lg-6">
 			<label>Languages</label>
             
-            @if(count($skills)!=0)
-        	<select class="form-control" name="languages" required="true" >
+            @if(count($languages)!=0)
+        	<!-- <select class="form-control" name="languages" required="true" > -->
 			@foreach($languages as $lang)
-			<option value="">{{$lang}}</option>	
+			<input type="button" name="languages" class=" btn btn-outline-info" value="
+			{{$lang}}">
+			
 			@endforeach 				
 			</select>
 			@else
@@ -200,7 +208,7 @@
 		<div class="form-group col-lg-12">
 			<label>Postal Address</label>
 
-			<input type="text" name="postal_address" class="form-control" value="{{count($candidate_profile)!= 0?$candidate_profile->candidate_postal_address:''}}">
+			<input type="text" name="postal_address" class="form-control" value="{{count($candidate_profile)!= 0?$candidate_profile->candidate_postal_address:''}}" disabled="{{$candidate_profile->candidate_postal_address?true:false}}">
 			 
 		</div>
          <div class="form group col-lg-6">		
@@ -497,7 +505,88 @@ $(".click-proj").click(function(){
     $(".toggle-projects-row").toggle(1000);
        
     });
+  
+ 	var dob =  $("#mydob").val();
+ 	var cnic =  $("#mycnic").val();
+ 	var gender =  $("#mygender").val();
+ 	var contact =  $("#myContact").val();
+ 	var marital =  $("#myMarital_status").val();
+ 	var nationality =  $("#myNatioanlity").val();
+ 	var city =  $("#myCity").val();
+ 	var caption =  $("#myCaption").val();
+ 	var career =  $("#myCareel_level").val();
+ 	var exp =  $("#myProf_exp").val();
+ 	var func_area =  $("#myFunc_area").val();
+ 	var current_salary =  $("#myCurrent_salary").val();
+ 	var expected_salary =  $("#myExpected_salary").val();
+ 	var summary =  $("#mySummary").val();
+ 	var blog =  $("#myBlog").val();
 
+ 	
+ 	if(dob != ""){
+    	// alert(dob+"value is not empty");
+		$('#mydob').prop("disabled",true);
+ 	}
+ 	if(cnic != ""){
+    	// alert(cnic+"value is not empty");
+		$('#mycnic').prop("disabled",true);
+ 	}else{
+ 		alert('mdlvdfv');
+ 	}
+ 	if(gender != ""){
+    	// alert(xyz+"value is not empty");
+		$('#mygender').prop("disabled",true);
+ 	}
+ 	if(contact != ""){
+    	// alert(xyz+"value is not empty");
+		$('#myContact').prop("disabled",true);
+ 	}
+ 	if(marital != ""){
+    	// alert(xyz+"value is not empty");
+		$('#myMarital_status').prop("disabled",true);
+ 	}
+ 	if(nationality != ""){
+    	// alert(xyz+"value is not empty");
+		$('#myNatioanlity').prop("disabled",true);
+ 	}
+ 	if(city != ""){
+    	// alert(xyz+"value is not empty");
+		$('#myCity').prop("disabled",true);
+ 	}
+ 	if(caption != ""){
+    	// alert(xyz+"value is not empty");
+		$('#myCaption').prop("disabled",true);
+ 	}
+ 	if(career != ""){
+    	// alert(xyz+"value is not empty");
+		$('#myCareel_level').prop("disabled",true);
+ 	}
+ 	if(exp != ""){
+    	// alert(xyz+"value is not empty");
+		$('#myProf_exp').prop("disabled",true);
+ 	}
+ 	if(func_area != ""){
+    	// alert(xyz+"value is not empty");
+		$('#myFunc_area').prop("disabled",true);
+ 	}
+ 	if(current_salary != ""){
+    	// alert(xyz+"value is not empty");
+		$('#myCurrent_salary').prop("disabled",true);
+ 	}
+ 	if(expected_salary != ""){
+    	// alert(xyz+"value is not empty");
+		$('#myExpected_salary').prop("disabled",true);
+ 	}
+ 	if(summary != ""){
+    	// alert(xyz+"value is not empty");
+		$('#mySummary').prop("disabled",true);
+ 	}
+ 	if(blog != ""){
+    	
+		$('#myBlog').prop("disabled",true);
+ 	}
+   	
+   
 });
 
 </script>

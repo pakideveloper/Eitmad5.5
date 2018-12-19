@@ -47,6 +47,7 @@
 <body>
 	<!-- header start -->
 @include('frontend/JobPortal/include/jobheader1')
+@include('frontend/JobPortal/include/login')
 	<!-- header end -->
 
 <!-- slider start here -->
@@ -216,18 +217,7 @@
       	<div class="container">
        	<h2 class="primary-color" style="text-align: center;">Feature Jobs</h2>
       
-       	@if($user->cnic == true)
-			<!-- <a href="{{'jobs/candidate/user-profile'}}/{{Auth::user()->id}}/edit"> -->
-			<a href="{{'jobs'}}">
 
-      		<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="1"/>
-      		</a>
-  		@elseif($user->cnic == false)
-      		<a href="{{'jobs/candidate/user-profile'}}">
-
-      		<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="1"/>
-      		</a>
-  		@endif
        	<div class="border"></div>
           <div class="row">
           	<!--Tile-->
