@@ -113,7 +113,7 @@ $billings = new Billing();
 
 
 $orders = new Order();
-        $orders->order_status = 'pending';
+        $orders->order_status = 0;
         $orders->shipper_id = $shippings->id;
         $orders->biller_id = $billings->id;
         
@@ -154,10 +154,11 @@ $orders = new Order();
             $u_price_input_name = 'li_'.$i.'_price';
             $product_id_input_name = 'li_'.$i.'_product_id';
             $product_id = $request->product_id_input_name;
-
+                echo $product_id;
+                die();
             $product = Product::find($product_id);
-
-            $total = $product->$product_discounted_price*$request->$quantity_input_name;
+            
+            $total = $product->product_discounted_price*$request->$quantity_input_name;
 
 
             $orderproducts = new Order_Product();

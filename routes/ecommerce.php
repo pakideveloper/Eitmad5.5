@@ -92,7 +92,7 @@ Route::get('/city/selectshippingregions/{id}', 'Ecommerce\CheckoutController@sel
 Route::get('/city/selectshippingcities/{id}', 'Ecommerce\CheckoutController@selectShippingcities');
 Route::get('/city/regions/{id}', 'Ecommerce\User\UserController@regions');
 Route::get('/city/cities/{id}', 'Ecommerce\User\UserController@cities');
-Route::get('/callback', 'Ecommerce\PaymentCheckoutController@callback');
+Route::post('/callback', 'Ecommerce\PaymentCheckoutController@callback');
 Route::post('/ship_bill_details', 'Ecommerce\PaymentCheckoutController@create');
 Route::post('/banktransfer', function () {
     return view('frontend/ecommerce/modules/CheckOut/paymentcheckout');

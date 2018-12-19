@@ -5,10 +5,12 @@
 <head>
     <meta charset="utf-8">
     <title>Eitmad - Checkout</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!--SEO Meta Tags-->
     <meta name="description" content="Responsive HTML5 E-Commerce Template" />
     <meta name="keywords" content="responsive html5 template, e-commerce, shop, bootstrap 3.0, css, jquery, flat, modern" />
     <meta name="author" content="8Guild" />
+    
     <!--Mobile Specific Meta Tag-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <!--Favicon-->
@@ -139,8 +141,8 @@
           <!--Checkout Form-->
           <div class="row">
             <!-- <form action="{{url('/ecommerce/ship_bill_details')}}" id="checkout-form" method="post"> -->
-              <form action="https://sandbox.2checkout.com/checkout/purchase" id="checkout-form" method="post" name="myform">
-              {{ csrf_field()}}
+              <form action="https://sandbox.2checkout.com/checkout/purchase" id="checkout-form" method="POST" name="myform" enctype="multipart/form-data">
+             {{ csrf_field()}}
               <!--Left Column-->
               <div class="col-lg-8 col-md-8 col-sm-8">
                 <h3>Billing Details</h3>
@@ -471,7 +473,7 @@
 <input type='hidden' name='s_check' value='Online_pay' />
 <input type='hidden' name='email' value='{{$users->email}}' />
 <input type='hidden' name='phone' value='{{$users->contact_number}}' />
-<input type='hidden' name="_token" value='{{ csrf_token() }}' />
+<input type='hidden' name="csrf_token" value='{{ csrf_token() }}' />
 <input type='hidden' name="payment" value='' />
 <input type='hidden' name="total" value='{{$cart_item->total}}' />
 

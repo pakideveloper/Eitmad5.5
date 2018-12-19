@@ -13,6 +13,6 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         //
-       
+       'http://localhost/Eitmad5.5/ecommerce/callback'
     ];
 }
