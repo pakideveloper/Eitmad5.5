@@ -109,6 +109,15 @@
 	<div id="jobdetail">
 		<div class="container">
 			<div class="row">
+				@if (session('success'))
+                        <div class="alert alert-success" style="margin-bottom: 10px;">
+                            {{ session('success') }}
+                        </div>
+                        @elseif(session('error'))
+                         <div class="alert alert-danger" style="margin-bottom: 10px;">
+                            {{ session('error') }}
+                        </div>
+                    @endif
 				<div class="col-md-4 col-sm-4 col-xs-12 hidden-xs">
 					<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p6.png" alt="p6" title="p6" class="img-responsive" />
 					<div class="left-side">
@@ -147,7 +156,25 @@
 					<p><span>{{$job->job_description}}</span>
 					</p>
 					<!-- <p><span>Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures,</span></p> -->
-					<button type="button" class="btn btn-info" onclick="location.href='submit-job.html'">APPLY THIS JOB</button>
+					@if(isset(Auth::User()->id))
+					<?php
+					
+						$user_id = Auth::User()->id;
+						$applied_job = App\Candidate_Job_Association::where('job_id','=',$job->id)
+																  ->where('candidate_profile_id','=',$user_id)
+																  ->get();
+					
+					//print_r($applied_job);
+					//die();
+					?>
+					@if($applied_job->IsEmpty())
+					<button type="button" class="btn btn-info" onclick="location.href='{{url('jobs/apply_for_job/')}}/{{$job->id}}'">APPLY THIS JOB</button>
+					@else
+					<div  class="btn btn-success" style="background-color: green;">APPLIED</div>
+					@endif
+					@else
+					<button type="button" class="btn btn-info" onclick="location.href='{{url('jobs/apply_for_job/')}}/{{$job->id}}'">APPLY THIS JOB</button>
+					@endif
 				</div>
 					
 				<!-- featured start here -->
@@ -197,7 +224,7 @@
 							<p>{{$description}}</p>
 						</div>
 						<a href="{{url('jobs/single_job/')}}/{{$job->id}}" class="btn btn-info" >VIEW MORE</a>
-						<button type="button" class="btn btn-info" onclick="location.href='apply-job-form.html'">APPLY NOW</button>
+						<!-- <button type="button" class="btn btn-info" onclick="location.href='apply-job-form.html'">APPLY NOW</button> -->
 					</div>
 				</div>
 				@endforeach	

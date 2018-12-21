@@ -52,6 +52,8 @@ Route::get('/single_job/{id}', function($id)
 
   return view('frontend/JobPortal/modules/Jobs/single_job', compact('job','similar_jobs'));
 });
+////// Apply For Job////////
+Route::get('/apply_for_job/{id}', 'Job\JobController@apply_for_job');
 
 Route::get('/employers', function () {
     return view('frontend/JobPortal/pages/employers');
