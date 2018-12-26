@@ -68,15 +68,22 @@
         </li>
       </ul> -->
       <?php 
-        $notify = App\notifications::all();
-        $count = count($notify);
+        $count = 0;
+        $user = App\User::find(Auth::user()->id);
+        $biddings = DB::table('biddings')->select('biddings.to_user')->where('biddings.to_user','=',$user->id)->get();
+        $count = count($biddings);
         // echo $count;
         // die();
+        foreach($biddings as $bidding)
+
          ?>
       <input class="form-control form-control-dark w-50" type="text" placeholder="Search" aria-label="Search">
+      
+     
       <ul class="nav navbar-nav">
             <li class="dropdown dropdown-notifications">
               <a href="{{url('ecommerce/user/marketerRequest')}}" class="dropdown-toggle" data-toggle="dropdown">
+                 
                 <i data-count="{{$count}}" class="glyphicon glyphicon-bell notification-icon"></i>
               </a>
 
@@ -92,10 +99,13 @@
                 <div class="dropdown-footer text-center">
                   <a href="{{url('ecommerce/user/marketerRequest')}}">View All</a>
                 </div>
+                
               </div>
             </li>
            
           </ul>
+        
+         
       <ul class="navbar-nav px-3">
         <li class="nav-item dropdown">
           <a onclick="document.getElementById('marketer').style.display='block'" style="cursor: pointer;color: white;text-decoration: underline;">
@@ -210,7 +220,7 @@
         cluster: 'ap1',
         encrypted: true
       });
-
+      
       // Subscribe to the channel we specified in our Laravel Event
       var channel = pusher.subscribe('send-request');
 
@@ -227,7 +237,7 @@
                   </div>
                 </div>
                 <div class="media-body">
-                  <strong class="notification-title">`+data.notify+`</strong>
+                  <strong class="notification-title">`+data.message+`</strong>
                   
                   <div class="notification-meta">
                     <small class="timestamp">about a minute ago</small>
@@ -235,6 +245,7 @@
                 </div>
               </div>
           </li>`;
+
         notifications.html(newNotificationHtml + existingNotifications);
 
         notificationsCount += 1;
@@ -242,5 +253,6 @@
         notificationsWrapper.find('.notif-count').text(notificationsCount);
         notificationsWrapper.show();
       });
+    
     </script>
   </body>

@@ -207,7 +207,7 @@
   <a class="btn-outlined-invert" href="{{url('ecommerce/user/dashboard')}}" ><i class="icon-profile"></i> <span style="text-transform: capitalize;">{{ Auth::user()->first_name }}</span>
              </a>
   <div class="dropdown-content">
-    <a class="login-btn btn-outlined-invert" href="{{url('ecommerce/user/dashboard')}}" data-toggle="modal" data-target="#loginModal"><i class=""></i> <span>My Dashboard</span></a>
+    <a class="login-btn btn-outlined-invert" href="{{url('ecommerce/user/dashboard')}}"><i class=""></i> <span>My Dashboard</span></a>
     <!-- <a href="#">Link 2</a>
     <a href="#">Link 3</a> -->
   </div>

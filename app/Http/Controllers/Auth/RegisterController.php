@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Mail\VerifyMail;
 use App\User;
+use App\VerifyUser;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
@@ -65,26 +68,75 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\User
      */
+    // protected function create(array $data)
+    // {
+    //     $user = new User();
+    //     $user->first_name=$data['first_name'];
+    //      $user->last_name=$data['last_name'];
+
+    //     $user->email=$data['email'];
+    //     $user->password=bcrypt($data['password']);
+    //     $user->save();
+    //     return $user;
+    // }
+
     protected function create(array $data)
     {
-        $user = new User();
-        $user->first_name=$data['first_name'];
-         $user->last_name=$data['last_name'];
 
-        $user->email=$data['email'];
-        $user->password=bcrypt($data['password']);
-        $user->save();
+        $user = User::create([
+            'first_name' => $data['first_name'],
+            'last_name' => $data['last_name'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
+        ]);
+
+        $verifyUser = VerifyUser::create([
+            'user_id' => $user->id,
+            'token' => str_random(40)
+        ]);
+
+        Mail::to($user->email)->send(new VerifyMail($user));
+
         return $user;
     }
-    public function register(Request $request)
-    {
-        $this->validator($request->all())->validate();
-        event(new Registered($user = $this->create($request->all())));
-        return redirect('/login');
-    }
+
+
+
+    // public function register(Request $request)
+    // {
+    //     $this->validator($request->all())->validate();
+    //     event(new Registered($user = $this->create($request->all())));
+    //     return redirect('/login');
+    // }
 
     public function showRegistrationForm()
     {
         return view('frontend.general.register');
+    }
+
+
+    public function verifyUser($token)
+    {
+        $verifyUser = VerifyUser::where('token', $token)->first();
+        if(isset($verifyUser) ){
+            $user = $verifyUser->user;
+            if(!$user->verified) {
+                $verifyUser->user->verified = 1;
+                $verifyUser->user->save();
+                $status = "Your e-mail is verified. You can now login.";
+            }else{
+                $status = "Your e-mail is already verified. You can now login.";
+            }
+        }else{
+            return redirect('/login')->with('warning', "Sorry your email cannot be identified.");
+        }
+
+        return redirect('/login')->with('status', $status);
+}
+
+protected function registered(Request $request, $user)
+    {
+        $this->guard()->logout();
+        return redirect('/login')->with('status', 'We sent you an activation code. Check your email and click on the link to verify.');
     }
 }

@@ -80,6 +80,16 @@
         </div>
         <div class="row">
           <!--Login-->
+          @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    @if (session('warning'))
+                        <div class="alert alert-warning">
+                            {{ session('warning') }}
+                        </div>
+                    @endif
           <div class="col-lg-5 col-md-5 col-sm-5">
             <form method="POST" action="{{ route('login') }}" class="login-form">
               {{ csrf_field() }}

@@ -49,4 +49,8 @@ class User extends Authenticatable
         ->first();
         return $role;
     }
+    public function verifyUser()
+    {
+        return $this->hasOne('App\VerifyUser');
+    }
 }

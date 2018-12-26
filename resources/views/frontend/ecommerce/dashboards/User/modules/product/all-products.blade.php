@@ -21,7 +21,7 @@
       @foreach($products as $product)
       <div class="col-md-3 col-sm-6 col-xs-12 product">
         <span class="discount">{{$product->discount->discount_percent}}%</span>
-        <img src="http://localhost/Eitmad5.5/public/admin/ecommerce/upload/user/products/{{$product->title_image->product_file_name}}" >
+        <img src="http://localhost/Eitmad5.5/public/admin/ecommerce/upload/products/{{$product->title_image->product_file_name}}" width="190px" height="190px" >
         <hr>
         <h5><a href="{{url('ecommerce/user/addproduct')}}/{{$product->id}}">{{$product->product_name}}</a></h5>
         <strike>Rs.{{$product->product_price}}</strike>
