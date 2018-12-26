@@ -82,7 +82,7 @@
             <div class="col-lg-12">
             	<h2>Use order ID as Your Reference
               Please Transfer this Amount to our Bank Account No: </h2>
-              <p style="font-size: 24px;">4000000000000002</p>
+              <p style="font-size: 24px;">000000000</p>
 
 
               <!--Hidden Panels-->

@@ -32,6 +32,21 @@ Route::get('/', function () {
 
 }
 // >>>>>>> b7d465a0adab1f31eac6eb3ae2d03d9987391413  
+
+    $jobs = App\Job::where('featuring_status','=','1')
+            ->take(8)
+            ->get();
+    if (isset(Auth::user()->id)) {
+       
+    
+    $user = App\User::find(Auth::user()->id);
+    
+    return view('frontend/JobPortal/index',compact('user','jobs'));
+}
+else{
+    return view('frontend/JobPortal/index',compact('jobs'));
+}
+
 });
 
 ///// all jobs on frontend///////////
@@ -59,6 +74,8 @@ Route::get('/single_job/{id}', function($id)
 
   return view('frontend/JobPortal/modules/Jobs/single_job', compact('job','similar_jobs'));
 });
+////// Apply For Job////////
+Route::get('/apply_for_job/{id}', 'Job\JobController@apply_for_job');
 
 Route::get('/employers', function () {
     return view('frontend/JobPortal/pages/employers');

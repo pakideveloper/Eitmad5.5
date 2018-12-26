@@ -9647,7 +9647,8 @@ p.large {
 }
 a {
   text-decoration: none;
-  color: #000000;
+ /* color: #000000;*/
+  color: #ffffff;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -10432,7 +10433,7 @@ header .search-form .close-search:hover {
   position: absolute;
   z-index: 3;
   top: 0;
-  right: -80px;
+  right: -88px;
   height: 144px;
   background: #f2992e;
   padding: 12px 0 12px 3px;
@@ -10551,7 +10552,7 @@ header .search-form .close-search:hover {
 }
 .toolbar .middle-btns a i,
 .toolbar .middle-btns button i {
-  margin-right: 12px;
+  /*margin-right: 12px;*/
   font-size: 1.5em;
   vertical-align: middle;
 }
@@ -11710,7 +11711,7 @@ header .search-form .close-search:hover {
   text-align: right;
   width: 100%;
   max-width: 748px;
-  border-bottom: 1px solid #36465d;
+  border-bottom: 1px solid #f2992e;
 }
 @media only screen and (max-width: 1200px) {
   .menu .main,
@@ -12627,7 +12628,7 @@ header .search-form .close-search:hover {
   vertical-align: middle;
 }
 .catalog-grid .tile .footer .tools .add-cart-btn:hover {
-  width: 140px;
+  width: 100px;
   padding-top: 7px;
   z-index: 2;
 }
@@ -12685,7 +12686,7 @@ header .search-form .close-search:hover {
   display: none;
   top: -13px;
   left: -20px;
-  width: 140px;
+  width: 110px;
   height: 48px;
   z-index: 2;
   background: #fff;

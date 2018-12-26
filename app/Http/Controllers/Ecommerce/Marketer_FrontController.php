@@ -41,6 +41,8 @@ echo $this->check;
                     ->select('products.id')
                     ->where('products.product_name','=',$request->product)
                     ->get();
+
+                   
          
          foreach ($products as  $value) {
              # code...
@@ -52,7 +54,12 @@ echo $this->check;
     	$biddings->commission_amount = $ratio * $price/100;
     	 //echo $users;
     	 //die();
-
+         $checks = DB::table('biddings')
+                ->select('biddings.user_id')
+                ->where('biddings.product_id','=', $value->id)
+                ->get();
+                // echo $checks;
+                // die();
         if ($checks == '[]') {
             $biddings->save();
             event(new SendRequest('Sender'));

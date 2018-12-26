@@ -11,6 +11,7 @@
         "laravel/framework": "5.5.*",
         "laravel/socialite": "^3.2",
         "laravel/tinker": "~1.0",
+        "pusher/pusher-php-server": "^3.2",
         "zizaco/entrust": "5.2.x-dev"
     },
     "require-dev": {
