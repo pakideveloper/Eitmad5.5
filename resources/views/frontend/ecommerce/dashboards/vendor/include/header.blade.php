@@ -52,6 +52,7 @@
   .product > img{
     width: 112px;
     margin-top: 14px;
+    height: 120px;
   }
   .product > .discount{
     position: absolute;
