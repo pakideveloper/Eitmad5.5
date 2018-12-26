@@ -12,6 +12,9 @@
 */
 //usama
 
+// login from job portal
+Route::post('login', 'Auth\LoginController@loginFromJob' ); 
+// end of login controller
 Route::get('/', function () {
    
     if(isset(Auth::user()->id)){
@@ -109,19 +112,11 @@ Route::get('candidate/dashboard','Job\dashboard\candidate\CandidateController@da
 /////////// Job Section////////
 Route::resource('company/dashboard/post-job', 'Job\dashboard\company\JobController');
 
-// <<<<<<<<<<<<<<<<<<<<<Candidate Profile >>>>>>>>>>>>>>>>>>>>>>>>
+// <<<<<<<<<<<<<<<<<<<<<Candidate Profile Section >>>>>>>>>>>>>>>>>>>>>>>>
 //manage-cvs
-/*Route::get('candidate/create-cv',function(){
-
-    return view('frontend/JobPortal/dashboards/candidate/modules/manage-cv/create') ;
-});*/
 Route::resource('candidate/user-profile', 'Job\CandidateProfileController' );
 Route::get("/candidate/user-profile/{id}/del", 'Job\CandidateProfileController@deleteFunction' );
 
-// Route::resource('candidate/user-profile', 'Job\CandidateProfileController' );
-// Route::resource('candidate/update-profile', 'Job\CandidateProfileController' );
-
-// Route::resource('candidate/edit-profile', 'Job\CandidateProfileController' );
 
 Route::post('candidate/user-edu-profile', 'Job\CandidateProfileController@storeEducation' ); 
 Route::post('candidate/user-edu-certificates', 'Job\CandidateProfileController@storeCertificate' ); 
@@ -129,13 +124,4 @@ Route::post('candidate/user-add-project', 'Job\CandidateProfileController@storeP
 Route::post('candidate/user-add-experience', 'Job\CandidateProfileController@storeExperience' ); 
 Route::get('candidate/view-profile', 'Job\CandidateProfileController@indexToView' ); 
 
-/*Route::post('candidate/user-profile-update',function(){
 
-    return view('frontend/JobPortal/dashboards/candidate/modules/manage-cv/create') ;
-});*/
-// login from job portal
-Route::post('login', 'Auth\LoginController@loginFromJob' ); 
-
-/*Route::post('/login', function(){
-    return "hello";
-});*/

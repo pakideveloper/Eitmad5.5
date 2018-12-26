@@ -120,10 +120,10 @@
 		<label>Professional Experience </label>
 			<select class="form-control" name="pro_exp">
 				<option value="{{count($candidate_profile)!= 0?$candidate_profile->professional_experience:''}}" selected="true">{{count($candidate_profile)!= 0?$candidate_profile->professional_experience:'Select One'}}</option>
-				<option value="Fresh">Fresh </option>
-				<option value="Less Than 1 Year">Less than 1 Year </option>
-				<option value="1 Year">1 Year </option>
-				<option value="2 Years">2 Years </option>				
+				<option value="1">Fresh </option>
+				<option value="2">Less than 1 Year </option>
+				<option value="1">1 Year </option>
+				<option value="2">2 Years </option>				
 			</select>	
 		</div>
 		<div class="form-group col-lg-6">

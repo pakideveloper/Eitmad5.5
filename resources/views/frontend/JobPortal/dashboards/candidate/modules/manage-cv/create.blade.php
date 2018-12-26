@@ -14,7 +14,7 @@
        		 {{ session('status') }}
 		</div>
 	@endif
-<div class="container bg-light  col-lg-10" style="top:50px; position: relative;" >
+<div class="container bg-light  col-lg-10" style="top:60px; position: relative;" >
 		
 <form action="{{url('jobs/candidate/user-profile')}}" method="post" enctype="multipart/form-data">
 	
@@ -35,10 +35,11 @@
 
 			<input type="file" name="profile_img" class="form-control" style="display: none;"  >
 			@else
+			<div class="form-group col-lg-12">
+
 			<label>Profile Img</label>
-			<div class="form-group col-lg-6">
 			<input type="file" name="profile_img" class="form-control"  >
-				</div>
+			</div>
 
 			@endif
         <hr>
@@ -126,10 +127,9 @@
 		<label>Professional Experience </label>
 			<select class="form-control" name="pro_exp"  id="myProf_exp">
 				<option value="{{count($candidate_profile)!= 0?$candidate_profile->professional_experience:''}}" selected="true">{{count($candidate_profile)!= 0?$candidate_profile->professional_experience:'Select One'}}</option>
-				<option value="Fresh">Fresh </option>
-				<option value="Less Than 1 Year">Less than 1 Year </option>
-				<option value="1 Year">1 Year </option>
-				<option value="2 Years">2 Years </option>				
+				<option value="0.5">Less than 1 Year</option>
+				<option value="1">1 Year </option>
+				<option value="2">2 Years </option>				
 			</select>	
 		</div>
 		<div class="form-group col-lg-6">
@@ -208,7 +208,7 @@
 		<div class="form-group col-lg-12">
 			<label>Postal Address</label>
 
-			<input type="text" name="postal_address" class="form-control" value="{{count($candidate_profile)!= 0?$candidate_profile->candidate_postal_address:''}}" disabled="{{$candidate_profile->candidate_postal_address?true:false}}">
+			<input type="text" name="postal_address" id="myAddress" class="form-control" value="{{count($candidate_profile)!= 0?$candidate_profile->candidate_postal_address:''}}">
 			 
 		</div>
          <div class="form group col-lg-6">		
@@ -521,6 +521,7 @@ $(".click-proj").click(function(){
  	var expected_salary =  $("#myExpected_salary").val();
  	var summary =  $("#mySummary").val();
  	var blog =  $("#myBlog").val();
+ 	var postal_address = $("#myAddress").val();
 
  	
  	if(dob != ""){
@@ -584,6 +585,10 @@ $(".click-proj").click(function(){
  	if(blog != ""){
     	
 		$('#myBlog').prop("disabled",true);
+ 	}
+ 	if(postal_address != ""){
+    	
+		$('#myAddress').prop("disabled",true);
  	}
    	
    
