@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
+use App\Role;
 
 class RegisterController extends Controller
 {
@@ -97,6 +98,11 @@ class RegisterController extends Controller
 
         Mail::to($user->email)->send(new VerifyMail($user));
 
+        // $user->email=$data['email'];
+        // $user->password=bcrypt($data['password']);
+        // $user->save();
+        // $role = Role::where('name','visitor')->first();
+        // $user->attachRole($role);
         return $user;
     }
 

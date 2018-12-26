@@ -53,7 +53,7 @@
         <!--Main Menu-->
         <nav class="menu">
           <ul class="main">
-          	<li class="has-submenu"><a href="{{url('/')}}">Home<i class="fa fa-chevron-down"></i></a><!--Class "has-submenu" for proper highlighting and dropdown-->
+          	<li class="has-submenu"><a href="{{url('/jobs')}}">Home<i class="fa fa-chevron-down"></i></a><!--Class "has-submenu" for proper highlighting and dropdown-->
             	<!-- <ul class="submenu">
               	<li><a href="index.html">Home - Slideshow</a></li>
               	<li><a href="home-fullscreen.html">Home - Fullscreen Slider</a></li>
@@ -190,7 +190,7 @@
             <a class="login-btn btn-outlined-invert"  onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();" ><i class="icon-profile"></i> <span style="text-transform: capitalize;">logout</span></a>
             @endif
-            <form id="logout-form" action="" method="POST" style="display: none;">{{ csrf_field() }}</form>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
             
           </div>
          

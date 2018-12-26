@@ -214,7 +214,8 @@
 </div>
             <a class="login-btn btn-outlined-invert"  onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();" ><i class="icon-profile"></i> <span style="text-transform: capitalize;">logout</span></a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}</form>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">{{ csrf_field() }}
+            </form>
            
             @endif
           </div>

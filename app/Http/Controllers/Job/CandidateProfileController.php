@@ -39,26 +39,34 @@ class CandidateProfileController extends Controller
         $education  = Candidate_Educational_Profile::all();
         $users = User::find(Auth::user()->id);
 
-
+      
        $candidate_profile = Candidate_Profile::where('id','=', $users->id )->first() ; 
-        return view('frontend/JobPortal/dashboards/candidate/modules/manage-cv/create',compact('users','cities','candidate_profile','degreeType','companies','industries')) ;
+       if(isset($candidate_profile->candidate_skills)){
+       $skills = json_decode($candidate_profile->candidate_skills);
+       $languages = json_decode($candidate_profile->candidate_languages);
+        }
+        return view('frontend/JobPortal/dashboards/candidate/modules/manage-cv/create',compact('users','cities','candidate_profile','skills','languages','degreeType','companies','industries')) ;
     }
   public function indexToView()
     {
-        $users = User::find(Auth::user()->id);
-        
-                         
-                         
 
+    if(User::find(Auth::user()->id)!=null){
+    $users = User::find(Auth::user()->id);
+        
     $edu_profile = Candidate_Educational_Profile::where('candidate_profile_id','=', $users->id )->get();
     $candi_certificates = Candidate_Certificate::where('candidate_profile_id','=', $users->id )->get() ; 
     $candi_projects = Candidate_Project::where('candidate_profile_id','=', $users->id )->get() ;
     $candi_exp = Candidate_Experience::where('candidate_profile_id','=', $users->id )->get() ;
-    $candidate_profile = Candidate_Profile::where('id','=', $users->id )->first() ; 
+    $candidate_profile = Candidate_Profile::where('id','=', $users->id )->first() ;
+    if(isset($candidate_profile->candidate_skills)){ 
     $skills = json_decode($candidate_profile->candidate_skills);
     $languages = json_decode($candidate_profile->candidate_languages);
-    return view('frontend/JobPortal/dashboards/candidate/modules/manage-cv/view-profile',compact('users','candidate_profile','skills','languages','edu_profile','candi_certificates','candi_projects','candi_exp')) ;
     }
+    return view('frontend/JobPortal/dashboards/candidate/modules/manage-cv/view-profile',compact('users','candidate_profile','skills','languages','edu_profile','candi_certificates','candi_projects','candi_exp')) ;
+    
+  }else{
+    return ("not login");
+  }}
     /**
      * Show the form for creating a new resource.
      *

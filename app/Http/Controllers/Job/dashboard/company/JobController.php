@@ -136,7 +136,6 @@ class JobController extends Controller
         $job->job_no_of_position = $request->job_no_of_position ;
         $job->job_year_of_experience_min = $request->job_year_of_experience_min ;
         $job->job_year_of_experience_max = $request->job_year_of_experience_max ;
-        // $job->job_degree_level_type = $request->job_degree_level_type ;
         $job->job_salary_min_range = $request->job_salary_min_range ;
         $job->job_salary_max_range = $request->job_salary_max_range ;
         $job->job_gender_preference = $request->job_gender_preference ;
@@ -231,7 +230,7 @@ class JobController extends Controller
         $job->job_no_of_position = $request->job_no_of_position ;
         $job->job_year_of_experience_min = $request->job_year_of_experience_min ;
         $job->job_year_of_experience_max = $request->job_year_of_experience_max ;
-        // $job->job_degree_level_type = $request->job_degree_level_type ;
+        
         $job->job_salary_min_range = $request->job_salary_min_range ;
         $job->job_salary_max_range = $request->job_salary_max_range ;
         $job->job_gender_preference = $request->job_gender_preference ;
