@@ -114,7 +114,7 @@ class RegisterController extends Controller
         $vendor->cnic_back_extension = $file_type;
         $vendor->save();
         $role = Role::where('name','vendor')->first();
-        $user->attachRole($role);
+        Auth::user()->attachRole($role);
         return Redirect('ecommerce/vendor/dashboard');
     }
 
