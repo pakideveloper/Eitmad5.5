@@ -29,7 +29,7 @@
 
   <body>
 
-    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow" style="margin-bottom: 0px;">
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Eitmad</a>
      <?php 
         $count = 0;

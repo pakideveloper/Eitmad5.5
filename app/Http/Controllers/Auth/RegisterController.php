@@ -98,11 +98,11 @@ class RegisterController extends Controller
 
         Mail::to($user->email)->send(new VerifyMail($user));
 
-        // $user->email=$data['email'];
-        // $user->password=bcrypt($data['password']);
-        // $user->save();
-        // $role = Role::where('name','visitor')->first();
-        // $user->attachRole($role);
+        $user->email=$data['email'];
+        $user->password=bcrypt($data['password']);
+        $user->save();
+        $role = Role::where('name','visitor')->first();
+        $user->attachRole($role);
         return $user;
     }
 
