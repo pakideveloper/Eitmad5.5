@@ -80,7 +80,13 @@
     
     <!--Page Content-->
     <div class="page-content">
-    
+    @if (session('status'))
+                        <div class="alert alert-success" style="margin-bottom: 0px; background-color: #ffb6b7;
+    border-color: #d67474;
+    color: #ffffff;">
+                            {{ session('status') }}
+                        </div>
+                    @endif
       <!--Breadcrumbs-->
       <ol class="breadcrumb">
         <li><a href="index.html">Home</a></li>
@@ -233,17 +239,18 @@
                 <div class="col-lg-4 col-md-6 col-sm-12">
                   <div class="tile">
                     <div class="price-label">Rs. {{$product->product_price}}</div>
-                    <a href="{{url('ecommerce/single-product')}}/{{$product->slug}}"><img src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}" alt="1"/></a>
+                    <a href="{{url('ecommerce/single-product')}}/{{$product->slug}}"><img src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}" alt="1" width="190px" height="190px" /></a>
                     <div class="footer">
                       <a href="{{url('ecommerce/single-product')}}/{{$product->slug}}">{{$product->product_name}}</a>
                       <span>by Admin</span>
                       <div class="tools">
                         <div class="rate">
-                          <span class="active"></span>
+                          <!-- <span class="active"></span>
                           <span class="active"></span>
                           <span class="active"></span>
                           <span></span>
-                          <span></span>
+                          <span></span> -->
+                          <button type="button" class="btn-primary" data-toggle="modal" data-target="#affiliated{{$product->id}}" >AffiliateMarketing</button>
                         </div>
                         <!--Add To Cart Button-->
                         <a class="add-cart-btn" href="#"><span>To cart</span><i class="icon-shopping-cart"></i></a>
@@ -279,6 +286,102 @@
     <!--Brands Carousel Close-->
       
     </div><!--Page Content Close-->
+    @foreach($products as $product)
+    <div class="modal fade" id="affiliated{{$product->id}}" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Affiliate Marketer Form</h4>
+        </div>
+        <div class="modal-body" style="height: 700px;">
+          <?php
+          $check = 0; 
+           ?>
+          <form method="post" action="{{url('ecommerce/marketer/bidForm')}}">
+            {{ csrf_field()}}
+            <div class="form-group">
+                          
+                          <div class="col-xs-12">
+                              <label for="product_name"><h4>Product_Name:</h4></label>
+                              <input type="text" class="form-control" name="product" id="product" value="{{$product->product_name}}" readonly>
+                              
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-12">
+                              <label for="product_price"><h4>Product_Price:</h4></label>
+                              <input type="text" class="form-control" name="price" id="price" value="{{$product->product_price}}" readonly>
+                              
+                          </div>
+                      </div>
+
+                      
+           <div class="form-group">
+                          
+                          <div class="col-xs-12">
+                              <label for="proposal"><h4>Proposal:</h4></label>
+                              <textarea  class="form-control" id="proposal" name="proposal" placeholder="Please Describe Your Proposal" value="" title="Enter Your Proposal"></textarea>
+                          </div>
+                      </div>
+                      <hr>
+                      <div class="form-group" style="">
+                          
+                          <div class="col-xs-12">
+                            <label for="commission_ratio"><h4>Comission_ratio:</h4></label>
+                              <input type="number" class="form-control" name="ratio" id="ratio" placeholder="Enter Your Expected commission ratio" value="" title="Enter Your Expected commission ratio in %">%
+                              
+                          </div>
+                      </div>
+                      <div class="form-group" style="">
+                          
+                          <div class="col-xs-8">
+                            <label for="timeline"><h4>Expected Time:</h4></label>
+                        
+                              <input type="number" class="form-control" name="timeline" id="timeline" placeholder="e.g, 2" value="" title="Enter Your Expected Time in days,hours,minutes, or seconds">
+                              <hr>
+                              <!-- <input type="number" class="form-control" name="timeline" id="timeline" placeholder="Enter Your Expected Time in days,hours,minutes, or seconds" value="" title="Enter Your Expected Time in days,hours,minutes, or seconds"> -->
+                              <select name = "time" id="time" class="form-control">
+                                <option value="months">
+                                  Month
+                                </option>
+                                <option value="days">
+                                  Days
+                                </option>
+                                <option value="minutes">
+                                  Minutes
+                                </option>
+                                <option value="seconds">
+                                  Seconds
+                                </option>
+                              </select>
+                                
+                                                   
+                              
+                                
+                              </div>
+                      </div>
+                      
+        </div>
+        <div class="modal-footer">
+         
+            
+          <button type="submit" class="btn btn-primary">Submit</button>
+         <!--  $check++; -->
+        
+        
+
+        </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+  
+   @endforeach
     
       
   	<!--Footer-->

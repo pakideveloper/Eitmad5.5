@@ -4,7 +4,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
-            <h2>Login or <a href="{{ route('register') }}">Register</a></h2>
+            <h2>Login or <a style="color: #36465d;" href="{{ route('register') }}">Register</a></h2>
             <p class="large">Use social accounts</p>
             <div class="social-login">
             	<a class="facebook" href="{{ url('/auth/facebook') }}"><i class="fa fa-facebook-square"></i></a>
@@ -13,6 +13,16 @@
             </div>
           </div>
           <div class="modal-body">
+            @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+                    @if (session('warning'))
+                        <div class="alert alert-warning">
+                            {{ session('warning') }}
+                        </div>
+                    @endif
           <form class="login-form" method="post" action="{{route('login')}}">
                     {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">

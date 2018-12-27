@@ -9,7 +9,9 @@ use App\Brand;
 use App\Discount;
 use App\Product;
 use App\Product_File;
-
+use DB;
+use App\User;
+use Auth;
 class ProductController extends Controller
 {
     /**
@@ -19,8 +21,20 @@ class ProductController extends Controller
      */
     public function index()
     {
+        $user = User::find(Auth::user()->id);
+
         //
-        $products = product::all();
+         // $products = DB::table('products')
+         //             ->where('products.added_by_user','=',$user->id)
+         //             ->get();
+        
+            # code...
+          $products = product::where('products.added_by_user', '=' , $user->id)
+                      ->get();
+                      // echo $products;
+                      // die();
+        
+
         return view('frontend.ecommerce.dashboards.User.modules.product.index',compact('products'));
         
     }
@@ -379,7 +393,14 @@ class ProductController extends Controller
 
     public function AllProducts()
     {
-        $products = product::all();
+        // $products = product::all();
+         $user = User::find(Auth::user()->id);
+        //
+        // $products = product::all();
+        $products = product::where('products.added_by_user', '=' , $user->id)
+                      ->get();
+                    // echo $products;
+                    // die();
         return view('frontend.ecommerce.dashboards.User.modules.product.all-products',compact('products'));
     }
 

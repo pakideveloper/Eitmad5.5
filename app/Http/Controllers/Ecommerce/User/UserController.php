@@ -138,9 +138,9 @@ public function regions($id)
 
 
 $requests = DB::table('biddings')
-            ->join('users' , 'users.id', '=', 'biddings.user_id')
+            ->join('users' , 'users.id', '=', 'biddings.to_user')
             ->join('products', 'products.id','=','biddings.product_id')
-            ->where('biddings.user_id', '=' , Auth::user()->id)
+            ->where('biddings.to_user', '=' , Auth::user()->id)
              ->select('biddings.id','biddings.proposal','biddings.commission_ratio','biddings.timestamp','biddings.commission_amount','biddings.status','products.product_name','products.product_price')
             ->get();
 

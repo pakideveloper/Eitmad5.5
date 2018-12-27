@@ -23,7 +23,7 @@
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{URL::to('public/css')}}/bootstrap-notifications.min.css">
-    <!-- <style type="text/css">
+    <style type="text/css">
       .is-sub{
         padding-left: 23px;
         display: none;
@@ -41,11 +41,65 @@
       .dropdown-menu{
         position: absolute !important;
       }
-    </style> -->
+      .product{
+    text-align: center;
+    border: 1px solid #c3c3c3;
+        background-color: white;
+            -webkit-box-shadow: inset 0 0 12px #000000 !important;
+                border-radius: 3%;
+    padding-bottom: 16px;
+    /*cursor: pointer;*/
+  }
+  .product > img{
+    width: 112px;
+    margin-top: 14px;
+    height: 120px;
+  }
+  .product > .discount{
+    position: absolute;
+    right: 0;
+    padding: 10px;
+    font-size: 17px;
+    color: #ffa700;
+    font-family: fantasy;
+    border: 1px solid #c3c3c3;
+  }
+  .product > .price{
+    font-size: 17px;
+    padding-left: 9px;
+    color: red;
+  }
+  .product > strike{
+    font-size: 14px;
+  }
+  .product > hr{
+    border-top: 2px solid rgb(195, 195, 195);
+  }
+  .edit_input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    padding-left: 0;
+  }
+  .edit_input:focus{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding-left: 0;
+  }
+  main{
+    background-color: #f7f7f7 !important;
+    height: auto;
+  }
+    </style>
+
   </head>
 
   <body>
-    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow" style="margin-bottom: 0px;">
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Eitmad</a>
       <!-- <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
@@ -68,15 +122,22 @@
         </li>
       </ul> -->
       <?php 
-        $notify = App\notifications::all();
-        $count = count($notify);
+        $count = 0;
+        $user = App\User::find(Auth::user()->id);
+        $biddings = DB::table('biddings')->select('biddings.to_user')->where('biddings.to_user','=',$user->id)->get();
+        $count = count($biddings);
         // echo $count;
         // die();
+        foreach($biddings as $bidding)
+
          ?>
       <input class="form-control form-control-dark w-50" type="text" placeholder="Search" aria-label="Search">
+      
+     
       <ul class="nav navbar-nav">
             <li class="dropdown dropdown-notifications">
               <a href="{{url('ecommerce/user/marketerRequest')}}" class="dropdown-toggle" data-toggle="dropdown">
+                 
                 <i data-count="{{$count}}" class="glyphicon glyphicon-bell notification-icon"></i>
               </a>
 
@@ -92,10 +153,13 @@
                 <div class="dropdown-footer text-center">
                   <a href="{{url('ecommerce/user/marketerRequest')}}">View All</a>
                 </div>
+                
               </div>
             </li>
            
           </ul>
+        
+         
       <ul class="navbar-nav px-3">
         <li class="nav-item dropdown">
           <a onclick="document.getElementById('marketer').style.display='block'" style="cursor: pointer;color: white;text-decoration: underline;">
@@ -210,7 +274,7 @@
         cluster: 'ap1',
         encrypted: true
       });
-
+      
       // Subscribe to the channel we specified in our Laravel Event
       var channel = pusher.subscribe('send-request');
 
@@ -227,7 +291,7 @@
                   </div>
                 </div>
                 <div class="media-body">
-                  <strong class="notification-title">`+data.notify+`</strong>
+                  <strong class="notification-title">`+data.message+`</strong>
                   
                   <div class="notification-meta">
                     <small class="timestamp">about a minute ago</small>
@@ -235,6 +299,7 @@
                 </div>
               </div>
           </li>`;
+
         notifications.html(newNotificationHtml + existingNotifications);
 
         notificationsCount += 1;
@@ -242,5 +307,6 @@
         notificationsWrapper.find('.notif-count').text(notificationsCount);
         notificationsWrapper.show();
       });
+    
     </script>
   </body>

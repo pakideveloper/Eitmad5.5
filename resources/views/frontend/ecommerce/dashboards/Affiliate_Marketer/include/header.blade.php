@@ -29,15 +29,26 @@
 
   <body>
 
-    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow" style="margin-bottom: 0px;">
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Eitmad</a>
-     
+     <?php 
+        $count = 0;
+        $user = App\User::find(Auth::user()->id);
+        $biddings = DB::table('biddings')->select('biddings.user_id')->where('biddings.user_id','=',$user->id)->where('biddings.status','=',1)->get();
+        
+        // echo $count;
+        // die();
+        foreach($biddings as $bidding)
+           $count = count($biddings);
+
+         ?>
       <input class="form-control form-control-dark w-50" type="text" placeholder="Search" aria-label="Search">
       <!-- <div class="collapse navbar-collapse"> -->
           <ul class="nav navbar-nav">
             <li class="dropdown dropdown-notifications">
               <a href="#notifications-panel" class="dropdown-toggle" data-toggle="dropdown">
-                <i data-count="0" class="glyphicon glyphicon-bell notification-icon"></i>
+                 
+                <i data-count="{{$count}}" class="glyphicon glyphicon-bell notification-icon"></i>
               </a>
 
               <div class="dropdown-container">
@@ -45,18 +56,19 @@
                   <div class="dropdown-toolbar-actions">
                     <a href="#">Mark all as read</a>
                   </div>
-                  <h3 class="dropdown-toolbar-title">Notifications (<span class="notif-count">0</span>)</h3>
+                  <h3 class="dropdown-toolbar-title">Notifications (<span class="notif-count">{{$count}}</span>)</h3>
                 </div>
                 <ul class="dropdown-menu">
                 </ul>
                 <div class="dropdown-footer text-center">
-                  <a href="#">View All</a>
+                  <a href="{{url('ecommerce/marketer/bid')}}">View All</a>
                 </div>
+                
               </div>
             </li>
            
           </ul>
-        
+       
       <ul class="navbar-nav">
         
         <li class="nav-item dropdown">
@@ -147,6 +159,7 @@
             </div>
           </li> -->
       </ul>
+      
 <!-- </div> -->
     </nav>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

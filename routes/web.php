@@ -31,6 +31,7 @@ Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallba
 Route::post('test2/{id}', function ($id) {
     // event(new App\Events\StatusLiked('Someone'));
     // return "Event has been sent!";
+    $user = App\User::find(Auth::user()->id);
     $biddings = App\Bidding::find($id);
 $biddings->status = 1;
 $biddings->save();
@@ -40,17 +41,14 @@ $products = DB::table('products')
          foreach ($products as $product) {
             	# code...
             }   
-            event(new App\Events\StatusLiked($product->added_by_user));
+            if($user->id == $biddings->user_id)
+            {
+            event(new App\Events\StatusLiked($biddings->to_user));
+        }
             // echo $products;
             // die();
     return Redirect()->back()->with('status', 'Request Accepted successfully! Now Your Product go to Marketer Bucket');
 });
 
-Route::post('test3/{id}', function ($id) {
-    event(new App\Events\SendRequest('Sender'));
-    // return "Event has been sent!";
-//     $biddings = App\Bidding::find($id);
-// $biddings->status = 1;
-// $biddings->save();
-    return Redirect()->back()->with('status', 'Request Send successfully!');
-});
+
+Route::get('/user/verify/{token}', 'Auth\RegisterController@verifyUser');
