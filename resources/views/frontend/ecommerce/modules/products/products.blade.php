@@ -183,15 +183,29 @@
                 <!--Categories Section-->
                 <section class="filter-section">
                 	<h3>Categories</h3>
-                  <ul class="categories">
-                  	<li class="has-subcategory"><a href="#">iPhone cases (123)</a><!--Class "has-subcategory" for dropdown propper work-->
-                    	<ul class="subcategory">
+                    @foreach($categories as $category)
+                  	<li class="has-subcategory"><a href="#">{{$category->category_name}}</a><!--Class 
+                      "has-subcategory" for dropdown propper work-->
+                    @foreach($sub_categories as $sub_category)
+
+                  <ul class="categories"> 
+                      @if($category->id == $sub_category->product_category_id )
+                        <li><a href="#"> {{$category->product_category_name}} </a></li> 
+                    @endif
+                    </ul>
+                    @endforeach 
+                    
+                      <!-- <ul class="subcategory">
+                        <li><a href="#">iPhone cases (1)</a></li>
+                      </ul> -->
+                      @endforeach
+                    	<!-- <ul class="subcategory">
                       	<li><a href="#">iPhone cases (1)</a></li>
                         <li><a href="#">iPad cases (45)</a></li>
                         <li><a href="#">MacBook cases (34)</a></li>
                         <li><a href="#">Something (12)</a></li>
                         <li><a href="#">Air cases (23)</a></li>
-                      </ul>
+                      </ul> -->
                     </li>
                     <li><a href="#">iPad cases (34)</a></li>
                     <li><a href="#">MacBook cases (78)</a></li>
