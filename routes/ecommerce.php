@@ -136,8 +136,8 @@ Route::post('/banktransfer', function () {
 //vendor   
 /*updateCatrt*/
 Route::post('/cart/update', 'Ecommerce\Cart\CartController@updateCart');    
-/*updateCatrt*/    
-
-
-
-
+/*updateCatrt*/
+Route::get('become-seller', function () {
+return view('frontend/ecommerce/modules/seller/register');
+})->name('become-seller');
+Route::Post('become-seller','Ecommerce\Vendor\RegisterController@store');
