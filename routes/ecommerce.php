@@ -48,7 +48,10 @@ Route::get('/test','Ecommerce\Cart\CartController@test');
 
 Route::get('/products', function () {
 	$products = App\Product::latest()->get();
-    return view('frontend/ecommerce/modules/products/products',compact('products'));
+  $categories= App\Product_Category::all();
+  $sub_categories= App\Product_Sub_Category::all();
+
+    return view('frontend/ecommerce/modules/products/products',compact('products','categories','sub_categories'));
 });
 
 Route::get('/single-product/{slug}', function ($slug) {
