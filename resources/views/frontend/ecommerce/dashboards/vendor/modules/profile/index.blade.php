@@ -504,7 +504,10 @@ padding-top: 10px;
                         form_data.append('file', file_data);
                         form_data.append('id', {{$vendor->id}});
                         $.ajax({
+
                             url: 'http://localhost:8080/Eitmad5.5/ecommerce/vendor/upload/profile', // point to server-side controller method
+                            // url: 'http://localhost/Eitmad5.5/ecommerce/vendor/upload/profile', // point to server-side controller method
+
                             dataType: 'text', // what to expect back from the server
                             cache: false,
                             contentType: false,
