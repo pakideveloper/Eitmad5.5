@@ -57,9 +57,9 @@ class RegisterController extends Controller
             $user->password=bcrypt($request->password);
             $user->save();
             Mail::to($user->email)->send(new VerifyMail($user));
-            $vendor->user_id = $user->id;
+            $vendor->id = $user->id;
         }else{
-            $vendor->user_id = Auth::user()->id;
+            $vendor->id = Auth::user()->id;
         }
         
         
