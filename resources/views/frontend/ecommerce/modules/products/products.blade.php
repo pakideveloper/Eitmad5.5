@@ -190,20 +190,13 @@
                 <section class="filter-section">
                 	<h3>Categories</h3>
                     @foreach($categories as $category)
-                  	<li class="has-subcategory"><a href="#">{{$category->category_name}}</a><!--Class 
-                      "has-subcategory" for dropdown propper work-->
-                    @foreach($sub_categories as $sub_category)
-
-                  <ul class="categories"> 
-                      @if($category->id == $sub_category->product_category_id )
-                        <li><a href="#"> {{$category->product_category_name}} </a></li> 
-                    @endif
-                    </ul>
-                    @endforeach 
+                  	<li class="has-subcategory"><a href="#">{{$category->category_name}}</a><!-- Class 
+                      "has-subcategory" for dropdown propper work -->
                     
-                      <!-- <ul class="subcategory">
+                    
+                      <ul class="subcategory">
                         <li><a href="#">iPhone cases (1)</a></li>
-                      </ul> -->
+                      </ul>
                       @endforeach
                     	<!-- <ul class="subcategory">
                       	<li><a href="#">iPhone cases (1)</a></li>
