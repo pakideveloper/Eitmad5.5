@@ -48,7 +48,10 @@ Route::get('/test','Ecommerce\Cart\CartController@test');
 
 Route::get('/products', function () {
 	$products = App\Product::latest()->get();
-    return view('frontend/ecommerce/modules/products/products',compact('products'));
+  $categories= App\Product_Category::all();
+  $sub_categories= App\Product_Sub_Category::all();
+
+    return view('frontend/ecommerce/modules/products/products',compact('products','categories','sub_categories'));
 });
 
 Route::get('/single-product/{slug}', function ($slug) {
@@ -136,8 +139,8 @@ Route::post('/banktransfer', function () {
 //vendor   
 /*updateCatrt*/
 Route::post('/cart/update', 'Ecommerce\Cart\CartController@updateCart');    
-/*updateCatrt*/    
-
-
-
-
+/*updateCatrt*/
+Route::get('become-seller', function () {
+return view('frontend/ecommerce/modules/seller/register');
+})->name('become-seller');
+Route::Post('become-seller','Ecommerce\Vendor\RegisterController@store');
