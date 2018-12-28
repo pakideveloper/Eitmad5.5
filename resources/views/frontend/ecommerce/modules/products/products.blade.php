@@ -138,8 +138,8 @@
                 </section>
                 
                 <!--Colors Section-->
-                <section class="filter-section">
-                	<h3>Filter by color</h3>
+                <!-- <section class="filter-section"> -->
+              <!--   	<h3>Filter by color</h3>
                   <span class="clear clearChecks">Clear colors</span>
                   <label>
                     <input type="checkbox" name="colors" value="black" id="color_0" checked>
@@ -159,12 +159,12 @@
                   <br>
                   <label>
                     <input type="checkbox" name="colors" value="red" id="color_4">
-                    Red (12)</label>
-                </section>
+                    Red (12)</label> -->
+                <!-- </section> -->
                 
                 <!--Colors Section-->
-                <section class="filter-section">
-                	<h3>Filter by size</h3>
+                <!-- <section class="filter-section"> -->
+                	<!-- <h3>Filter by size</h3>
                   <span class="clear clearChecks">Clear size</span>
                   <label>
                     <input type="checkbox" name="sizes" value="small" id="size_0" checked>
@@ -184,8 +184,8 @@
                   <br>
                   <label>
                     <input type="checkbox" name="sizes" value="red" id="size_4">
-                    Superman (0)</label>
-                </section>
+                    Superman (0)</label> -->
+                <!-- </section> -->
                 
                 <!--Categories Section-->
               <section class="filter-section">
@@ -215,6 +215,8 @@
                     <li><a href="#">Air cases (23)</a></li>
                   </ul> -->
                 </section>
+              <section class="filter-section">
+              </section>
               </div>
             </div>
             
