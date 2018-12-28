@@ -93,20 +93,22 @@ Route::get('/addjob', function () {
     return view('frontend/JobPortal/pages/AddJob');
 });
 
-Route::get('/paperjobs', function()
-{
-  return view('frontend/JobPortal/pages/paperjob/paperjob');
-});
+// Route::get('/paperjobs', function()
+// {
+//   return view('frontend/JobPortal/pages/paperjob/paperjob');
+// });
 
 Route::get('/single-paperjob/{id}', 'Job\PostController@single_post');
-Route::get('/single-paperjob', function()
-{
-  return view('frontend/JobPortal/pages/paperjob/single-paperjob');
-});
+Route::get('/paperjobs/{id}', 'Job\PostController@singlepaper_post');
+// Route::get('/single-paperjob', function()
+// {
+//   return view('frontend/JobPortal/pages/paperjob/single-paperjob');
+// });
 
 Route::get('/paperjobs', 'Job\PostController@post' );
 
-
+Route::get('/paperjobs/Tender', 'Job\PostController@Tenderpost' );
+Route::get('/paperjobs/Admission', 'Job\PostController@Admissionpost' );
 
 /////////// Company Registration /////
 Route::get('/addcompany', function () {
