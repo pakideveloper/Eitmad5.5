@@ -92,7 +92,7 @@
 			</div>
 		</div> -->
 		<div class="item">
-			<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/jobslider.jpg" alt="slider" title="slider" class="img-responsive"/>
+			<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/job_slide.jpg" alt="slider" title="slider" class="img-responsive"/>
 			<div class="slide-detail">
 				<div class="container">
 					<div class="slider-caption">
@@ -651,7 +651,7 @@
 
 
 
-@include('frontend/JobPortal/include/brand-crusal')
+@include('frontend/JobPortal/include1/brand-crusal')
 
 <!-- footer start -->
 @include('frontend/JobPortal/include/jobfooter1')
