@@ -166,7 +166,7 @@
               </ul>
             </li> -->
 
-          	<li><a href="">CV Manager</a></li>
+          	<li><a href="{{'jobs/candidate/user-profile'}}">CV Manager</a></li>
           	
 
           	<li><a href="{{url('/jobs/paperjobs')}}">Paper Job</a></li>

@@ -132,6 +132,10 @@ Route::resource('company/dashboard/post-job', 'Job\dashboard\company\JobControll
 // <<<<<<<<<<<<<<<<<<<<<Candidate Profile Section >>>>>>>>>>>>>>>>>>>>>>>>
 //manage-cvs
 Route::resource('candidate/user-profile', 'Job\CandidateProfileController' );
+// Route::resource('candidate/user-profile/create', 'Job\CandidateProfileController@store' );
+Route::post('/candidate/user-profilee', function(){
+    return('string');
+});
 Route::get("/candidate/user-profile/{id}/del", 'Job\CandidateProfileController@deleteFunction' );
 
 
