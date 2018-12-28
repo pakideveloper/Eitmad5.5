@@ -81,10 +81,10 @@
     <!--Page Content-->
     <div class="page-content">
     @if (session('status'))
-                        <div class="alert alert-success" style="margin-bottom: 0px; background-color: #ffb6b7;
-    border-color: #d67474;
-    color: #ffffff;">
-                            {{ session('status') }}
+        <div class="alert alert-success" style="margin-bottom: 0px;
+    border-color: green;
+    color: red;">
+    {{ session('status') }}
                         </div>
                     @endif
       <!--Breadcrumbs-->
@@ -96,15 +96,15 @@
       <!--Catalog Grid-->
       <section class="catalog-grid">
       	<div class="container">
-          <h2 class="with-sorting">Filters left 3 columns</h2>
-          <div class="sorting">
+          <!-- <h2 class="with-sorting">Filters left 3 columns</h2> -->
+          <!-- <div class="sorting">
             <a href="#">Sort by name</a>
             <a href="#">Sort by price</a>
           </div>
           <div class="subnav">
           	<a href="#">iPhone cases</a>
             <a href="#">iPad cases</a>
-          </div>
+          </div> -->
           <div class="row">
           
             <!--Filters-->
@@ -114,21 +114,22 @@
                 <!--Price Section-->
                 <section class="filter-section">
                 	<h3>Filter by price</h3>
-                  <form method="get" name="price-filters">
-                  	<span class="clear" id="clearPrice" >Clear price</span>
+                  <form method="post" action="{{url('ecommerce/products/filter-by-price')}}" name="price-filters">
+                      {{ csrf_field() }}
+                  	<!-- <span class="clear" id="clearPrice" >Clear price</span>
                     <div class="price-btns">
                       <button class="btn btn-success btn-sm" value="below 50$">below 50$</button><br/>
                       <button class="btn btn-success btn-sm disabled" value="50$-100$">50$-100$</button><br/>
                       <button class="btn btn-success btn-sm" value="100$-300$">100$-300$</button><br/>
                       <button class="btn btn-success btn-sm" value="300$-1000$">300$-1000$</button>
                     </div>
-                    <div class="price-slider">
+ -->                    <div class="price-slider">
                     	<div id="price-range"></div>
                       <div class="values group">
                       	<!--data-min-val represent minimal price and data-max-val maximum price respectively in pricing slider range; value="" - default values-->
                       	<input class="form-control" name="minVal" id="minVal" type="text" data-min-val="10" value="180">
                         <span class="labels">$ - </span>
-                        <input class="form-control" name="maxVal" id="maxVal" type="text" data-max-val="2500" value="1400">
+                        <input class="form-control" name="maxVal" id="maxVal" type="text" data-max-val="200000" value="1400">
                         <span class="labels">$</span>
                       </div>
                       <input class="btn btn-primary btn-sm" type="submit" value="Filter">
@@ -187,36 +188,32 @@
                 </section>
                 
                 <!--Categories Section-->
-                <section class="filter-section">
-                	<h3>Categories</h3>
-                    @foreach($categories as $category)
-                  	<li class="has-subcategory"><a href="#">{{$category->category_name}}</a><!-- Class 
-                      "has-subcategory" for dropdown propper work -->
-                    
-                    
+              <section class="filter-section">
+                  <h3>Categories</h3>
+                  <ul class="categories">
+                    @foreach($categories as $category) 
+                    <li class="has-subcategory"><a href="#">{{$category->category_name}}</a><!--Class "has-subcategory" for dropdown propper work-->
                       <ul class="subcategory">
-                        <li><a href="#">iPhone cases (1)</a></li>
+                        @foreach($sub_categories as $sub_category)
+                        @if($category->id == $sub_category->product_category_id)
+                        <li><a href="{{url('ecommerce/products')}}/{{$sub_category->id}}">{{$sub_category->sub_category_name}}</a></li>
+                        @endif
+                        @endforeach
+
                       </ul>
-                      @endforeach
-                    	<!-- <ul class="subcategory">
-                      	<li><a href="#">iPhone cases (1)</a></li>
-                        <li><a href="#">iPad cases (45)</a></li>
-                        <li><a href="#">MacBook cases (34)</a></li>
-                        <li><a href="#">Something (12)</a></li>
-                        <li><a href="#">Air cases (23)</a></li>
-                      </ul> -->
                     </li>
-                    <li><a href="#">iPad cases (34)</a></li>
+                    @endforeach
+                    <!-- <li><a href="#">iPad cases (34)</a></li>
                     <li><a href="#">MacBook cases (78)</a></li>
                     <li class="has-subcategory"><a href="#">Something (45)</a>
-                    	<ul class="subcategory">
-                      	<li><a href="#">Subcategory (1)</a></li>
+                      <ul class="subcategory">
+                        <li><a href="#">Subcategory (1)</a></li>
                         <li><a href="#">Subcategory (45)</a></li>
                         <li><a href="#">Subcategory (23)</a></li>
                       </ul>
                     </li>
                     <li><a href="#">Air cases (23)</a></li>
-                  </ul>
+                  </ul> -->
                 </section>
               </div>
             </div>
