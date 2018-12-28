@@ -58,7 +58,9 @@ Route::get('/single-product/{slug}', function ($slug) {
 Route::get('/category/{slug}', function ($slug) {
     $sub_category_id = App\Product_Sub_Category::where('sub_category_name',$slug)->first()->id;
     $products = App\Product::where('sub_category_id', $sub_category_id)->get();
-    return view('frontend/ecommerce/modules/products/products',compact('products'));
+    $categories= App\Product_Category::all();
+    $sub_categories= App\Product_Sub_Category::all();
+    return view('frontend/ecommerce/modules/products/products',compact('products','categories','sub_categories'));
 });
 
 Route::get('/cart', function () {
