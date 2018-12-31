@@ -29,7 +29,24 @@
     <!--[if lt IE 9]>
       <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/respond.js"></script>
     <![endif]-->
- 
+ <style>
+   
+   .footer .old-price {
+    display: inline-block;
+    margin: 0 15px 10px 0;
+    font-size: 1em;
+    color: #b2b2b2;
+    font-weight: 900;
+    text-decoration: line-through;
+}
+    .footer .price {
+    display: inline-block;
+    margin: 0 15px 10px 0;
+    font-size: 1em;
+    font-weight: 900;
+    color: #36465d;
+  }
+ </style>
   </head>
 
   <!--Body-->
@@ -136,9 +153,11 @@
               	<div class="badges">
                 	<span class="sale"></span>
                 </div>
-              	<div class="price-label">Rs. {{$product->product_price}}</div>
+              	<!-- <div class="price-label">Rs. {{$product->product_price}}</div> -->
               	<a href="{{url('ecommerce/single-product')}}/{{$product->slug}}"><img src="{{URL::to('public//admin/ecommerce/upload/products')}}/{{$product->title_image->product_file_name}}" width = "190" height="190" alt="1"/></a>
                 <div class="footer">
+                 <div class="old-price" >Rs. {{$product->product_price}}</div>
+              <div class="price" ><b>Rs. {{$product->product_discounted_price}}</b></div>
                 	<a href="{{url('ecommerce/single-product')}}/{{$product->slug}}">{{$product->product_name}}</a>
                   <span>by Admin</span>
                   <div class="tools">

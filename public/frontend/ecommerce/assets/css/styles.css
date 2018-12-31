@@ -11866,7 +11866,7 @@ header .search-form .close-search:hover {
   -webkit-transition: none;
   -moz-transition: none;
   transition: none;
-  background: #36465d;
+  /*background: #36465d;*/
 }
 .menu .catalog li.has-submenu:hover .submenu {
   display: block;
@@ -11884,9 +11884,9 @@ header .search-form .close-search:hover {
 .menu .catalog li .submenu {
   position: absolute;
   top: 56px;
-  width: 645px;
+ /* width: 645px;*/
   z-index: 10;
-  background: #f2992e;
+  /*background: #f2992e;*/
   padding: 12px 6px 12px 6px;
   border: 1px solid #36465d;
   border-top: none;
