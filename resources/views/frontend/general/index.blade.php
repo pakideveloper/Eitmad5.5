@@ -68,7 +68,7 @@
             </nav> 
             <!-- end nav -->
         </header>
-        <section class="position-relative cover-background tz-builder-bg-image border-none hero-style9 bg-img-one" id="home" data-img-size="(W)1920px X (H)961px" style="height: 657px; background:linear-gradient(rgba(35,31,41,0.7), rgba(35,31,41,0.7)), url('{{URL::to('public/frontend/general/assets')}}/images/bg-image/banner1.jpg')">
+        <section class="position-relative cover-background tz-builder-bg-image border-none hero-style9 bg-img-one" id="home" data-img-size="(W)1920px X (H)961px" style="height: 657px; background:linear-gradient(rgba(35,31,41,0.7), rgba(35,31,41,0.7)), url('{{URL::to('public/frontend/general/assets')}}/images/bg-image/front_banner3.jpg')">
             <div class="container one-sixth-screen xs-one-third-screen position-relative">
                 <div class="row">
                     <div class="slider-typography text-center xs-position-absolute">

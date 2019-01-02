@@ -23,7 +23,7 @@
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{{URL::to('public/css')}}/bootstrap-notifications.min.css">
-    <!-- <style type="text/css">
+    <style type="text/css">
       .is-sub{
         padding-left: 23px;
         display: none;
@@ -41,11 +41,65 @@
       .dropdown-menu{
         position: absolute !important;
       }
-    </style> -->
+      .product{
+    text-align: center;
+    border: 1px solid #c3c3c3;
+        background-color: white;
+            -webkit-box-shadow: inset 0 0 12px #000000 !important;
+                border-radius: 3%;
+    padding-bottom: 16px;
+    /*cursor: pointer;*/
+  }
+  .product > img{
+    width: 112px;
+    margin-top: 14px;
+    height: 120px;
+  }
+  .product > .discount{
+    position: absolute;
+    right: 0;
+    padding: 10px;
+    font-size: 17px;
+    color: #ffa700;
+    font-family: fantasy;
+    border: 1px solid #c3c3c3;
+  }
+  .product > .price{
+    font-size: 17px;
+    padding-left: 9px;
+    color: red;
+  }
+  .product > strike{
+    font-size: 14px;
+  }
+  .product > hr{
+    border-top: 2px solid rgb(195, 195, 195);
+  }
+  .edit_input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    padding-left: 0;
+  }
+  .edit_input:focus{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding-left: 0;
+  }
+  main{
+    background-color: #f7f7f7 !important;
+    height: auto;
+  }
+    </style>
+
   </head>
 
   <body>
-    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow" style="margin-bottom: 0px;">
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Eitmad</a>
       <!-- <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">

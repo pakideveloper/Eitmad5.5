@@ -17,16 +17,16 @@
 <div class="container bg-light  col-lg-10" style="top:60px; position: relative;" >
 		
 <form action="{{url('jobs/candidate/user-profile')}}" method="post" enctype="multipart/form-data">
+	     {{ csrf_field() }}
 	
 	<div class="row">
-		<div class="dark-grey bg-warning col-lg-12" style="float:right; text-align: center;">
+		<div class="dark-grey bg-warning col-lg-12" style="float:right; text-align: center; background: #f2992e!important">
 			<h3>Create Your Profile</h3>
 		</div>
-	     {{ csrf_field() }}
        <!-- {{ method_field('PUT')}} -->
-       <div class="bg-dark form-group col-lg-12 col-md-12" style="text-align: center;">
+       <div class="form-group col-lg-12 col-md-12" style="text-align: center;">
 			<div class="col-md-12" style="text-align: center; padding: 20px; ">
-      			 <img style="height: 150px; width: 150px; border-radius: 75px; border: 1px solid black; " src="{{count($candidate_profile)!= 0?URL::to('public/JobPortal_Frontend/assets/images/candidate/'.$candidate_profile->candidate_dp): ''}}">
+      			 <img style="height: 150px; width: 150px; border-radius: 75px; border: 0.5px solid grey; " src="{{count($candidate_profile)!= 0?URL::to('public/JobPortal_Frontend/assets/images/candidate/'.$candidate_profile->candidate_dp):URL::to('public/JobPortal_Frontend/assets/images/candidate/profile-avatar.png')}}">
 
 			</div>
 		</div> 
@@ -96,7 +96,7 @@
 				<option value="afghanistan">Afghanistan</option>
 			</select>			
 		</div>
-		<div class="form-group col-lg-6">
+ 		<div class="form-group col-lg-6">
 			<label>City</label>
 
 			<select class="form-control" name="city_id"  id="myCity" >
@@ -105,7 +105,7 @@
 			@endforeach 				
 			</select>		
 				
-		</div>
+		</div> 
 		<div class="form-group col-lg-6">
 			<label>Caption About Profession</label>
 
@@ -175,7 +175,7 @@
 		</div>
 		<div class="form-group col-lg-6">
 			<label>Skills</label>
-           @if(count($skills)!=0)
+           @if($check_skills == true)
         	<!-- <select class="form-control" name="skills" required="true"  > -->
 			@foreach($skills as $skill)
 			<input type="button" name="skills" class=" btn btn-outline-info" value="
@@ -191,7 +191,7 @@
 		<div class="form-group col-lg-6">
 			<label>Languages</label>
             
-            @if(count($languages)!=0)
+            @if($check_lang == true)
         	<!-- <select class="form-control" name="languages" required="true" > -->
 			@foreach($languages as $lang)
 			<input type="button" name="languages" class=" btn btn-outline-info" value="

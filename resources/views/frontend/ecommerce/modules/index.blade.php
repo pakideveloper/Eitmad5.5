@@ -73,11 +73,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
                     @if (session('warning'))
                         <div class="alert alert-warning">
                             {{ session('warning') }}
@@ -94,7 +89,7 @@
           	<img src="{{url::to('public/admin/upload/sliders')}}/{{$Vslider->image_name}}" data-src="{{url::to('public/admin/upload/sliders')}}/{{$Vslider->image_name}}" alt=""/>
             <h2 style="width: 456px; left: 110px; top: 110px;" class="light-color ms-layer" data-effect="top(50,true)" data-duration="700" data-delay="250" data-ease="easeOutQuad">{{$Vslider->title}}</h2>
             <p style="width: 456px; left: 110px; top: 210px;" class="light-color ms-layer" data-effect="back(500)" data-duration="700" data-delay="500" data-ease="easeOutQuad">{{$Vslider->description}}</p>
-            <div style="left: 110px; top: 300px;" class="ms-layer button" data-effect="bottom(50,true)" data-duration="600" data-delay="950" data-ease="easeOutQuad"><a class="btn btn-primary" href="#"><span>1845$</span>Buy it now</a></div>
+            <!-- <div style="left: 110px; top: 300px;" class="ms-layer button" data-effect="bottom(50,true)" data-duration="600" data-delay="950" data-ease="easeOutQuad"><a class="btn btn-primary" href="#"><span>1845$</span>Buy it now</a></div> -->
           </div>
           @endforeach
           
@@ -132,7 +127,7 @@
       <!--Catalog Grid-->
       <section class="catalog-grid">
         <div class="container">
-          <h2 class="primary-color">Products For Sale</h2>
+          <h2 class="primary-color">Featured Products</h2>
           <div class="row">
           	<!--Tile-->
             @foreach($products as $product)
@@ -183,15 +178,77 @@
         </div>
       </section><!--Catalog Grid Close-->
       
+      
+
+
+
       <!--Tabs Widget-->
       <section class="tabs-widget">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs">
-          <li class="active"><a href="#bestsel" data-toggle="tab" style="color: #36465d;">Bestseller items</a></li>
+          <li class="active"><a href="#newarrived" data-toggle="tab" style="color: #36465d;">New Arrivals</a></li>
+          <li ><a href="#bestsel" data-toggle="tab" style="color: #36465d;">Most Wanted items</a></li>
           <li><a href="#onsale" data-toggle="tab" style="color: #36465d;">Items on sale</a></li>
+           
         </ul>
         <div class="tab-content">
-          <div class="tab-pane fade in active" id="bestsel">
+          <div class="tab-pane fade in active" id="newarrived">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  <a class="media-link" href="#">
+                    <div class="overlay">
+                      <div class="descr"><div>Product Name<span>$14.95</span></div></div>
+                    </div>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/image6.jpeg" alt="6"/>
+                  </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  <a class="media-link" href="#">
+                    <div class="overlay">
+                      <div class="descr"><div>Product Name<span>$19.40</span></div></div>
+                    </div>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/image7.jpeg" alt="7"/>
+                  </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  <a class="media-link" href="#">
+                    <div class="overlay">
+                      <div class="descr"><div>Product Name<span>$19.40</span></div></div>
+                    </div>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/image8.jpeg" alt="8"/>
+                  </a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  <a class="media-link" href="#">
+                    <div class="overlay">
+                      <div class="descr"><div>Product Name<span>$14.95</span></div></div>
+                    </div>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/image9.jpeg" alt="9"/>
+                  </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  <a class="media-link" href="#">
+                    <div class="overlay">
+                      <div class="descr"><div>Product Name<span>$19.40</span></div></div>
+                    </div>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/image10.jpeg" alt="10"/>
+                  </a>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-4">
+                  <a class="media-link" href="#">
+                    <div class="overlay">
+                      <div class="descr"><div>Product Name<span>$19.40</span></div></div>
+                    </div>
+                    <img src="{{URL::to('public/frontend/ecommerce/assets')}}/img/media/11.jpg" alt="11"/>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade " id="bestsel">
           	<div class="container">
             	<div class="row">
               	<div class="col-lg-7 col-md-7 col-sm-7">
@@ -295,6 +352,9 @@
               </div>
             </div>
           </div>
+          
+
+
         </div>
       </section><!--Tabs Widget Close-->
     
@@ -376,13 +436,13 @@
         $sub_categories = App\Product_Sub_Category::all();
       ?>
       <!--Gallery Widget-->
-      <section class="gray-bg gallery-widget">
+      <section class="gray-bg gallery-widget" style="background: white;">
       	<div class="container">
-        	<h2>Product gallery</h2>
+        	<h2 class="primary-color">Product gallery</h2>
           <div class="filters">
-            <a class="active" href="#" data-group="all">All</a>
+            <a class="active" href="#" data-group="all" style="color: #36465d;">All</a>
             @foreach($sub_categories as $sub_category)
-            <a href="#" data-group="{{$sub_category->sub_category_name}}">{{$sub_category->sub_category_name}}</a>
+            <a href="#" data-group="{{$sub_category->sub_category_name}}" style="color: #36465d;">{{$sub_category->sub_category_name}}</a>
             @endforeach
           </div>
           <div class="gallery-grid">

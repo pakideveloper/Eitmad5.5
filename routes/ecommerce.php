@@ -46,10 +46,9 @@ Route::get('/items', function () {
 
 Route::get('/test','Ecommerce\Cart\CartController@test');
 
-Route::get('/products', function () {
-	$products = App\Product::latest()->get();
-    return view('frontend/ecommerce/modules/products/products',compact('products'));
-});
+Route::resource('/products','Ecommerce\ProductsController');
+Route::post('/products/filter-by-price','Ecommerce\ProductsController@filterByPrice');
+
 
 Route::get('/single-product/{slug}', function ($slug) {
 	$product = App\Product::where('slug', $slug)->first();
@@ -59,7 +58,9 @@ Route::get('/single-product/{slug}', function ($slug) {
 Route::get('/category/{slug}', function ($slug) {
     $sub_category_id = App\Product_Sub_Category::where('sub_category_name',$slug)->first()->id;
     $products = App\Product::where('sub_category_id', $sub_category_id)->get();
-    return view('frontend/ecommerce/modules/products/products',compact('products'));
+    $categories= App\Product_Category::all();
+    $sub_categories= App\Product_Sub_Category::all();
+    return view('frontend/ecommerce/modules/products/products',compact('products','categories','sub_categories'));
 });
 
 Route::get('/cart', function () {
@@ -127,7 +128,7 @@ Route::post('/banktransfer', function () {
 //     Route::get('/{vue_capture?}', function () { return redirect()->back(); })->where('vue_capture', '[\/\w\.-]*');
 // =======
    Route::post('/marketer/bidForm', 'Ecommerce\Marketer_FrontController@bidForm');
-     Route::get('/{vue_capture?}', function () { return redirect()->back(); })->where('vue_capture', '[\/\w\.-]*');
+     // Route::get('/{vue_capture?}', function () { return redirect()->back(); })->where('vue_capture', '[\/\w\.-]*');
     //add product
     // Route::get('vendor/add-product','Ecommerce\Vendor\VendorController@addProduct')->name('add-product');
     //add product
@@ -136,8 +137,8 @@ Route::post('/banktransfer', function () {
 //vendor   
 /*updateCatrt*/
 Route::post('/cart/update', 'Ecommerce\Cart\CartController@updateCart');    
-/*updateCatrt*/    
-
-
-
-
+/*updateCatrt*/
+Route::get('become-seller', function () {
+return view('frontend/ecommerce/modules/seller/register');
+})->name('become-seller');
+Route::Post('become-seller','Ecommerce\Vendor\RegisterController@store');

@@ -56,9 +56,10 @@ class RegisterController extends Controller
             $user->email=$request->email;
             $user->password=bcrypt($request->password);
             $user->save();
-            $vendor->user_id = $user->id;
+            Mail::to($user->email)->send(new VerifyMail($user));
+            $vendor->id = $user->id;
         }else{
-            $vendor->user_id = Auth::user()->id;
+            $vendor->id = Auth::user()->id;
         }
         
         
@@ -113,7 +114,7 @@ class RegisterController extends Controller
         $vendor->cnic_back_extension = $file_type;
         $vendor->save();
         $role = Role::where('name','vendor')->first();
-        $user->attachRole($role);
+        Auth::user()->attachRole($role);
         return Redirect('ecommerce/vendor/dashboard');
     }
 

@@ -93,20 +93,22 @@ Route::get('/addjob', function () {
     return view('frontend/JobPortal/pages/AddJob');
 });
 
-Route::get('/paperjobs', function()
-{
-  return view('frontend/JobPortal/pages/paperjob/paperjob');
-});
+// Route::get('/paperjobs', function()
+// {
+//   return view('frontend/JobPortal/pages/paperjob/paperjob');
+// });
 
 Route::get('/single-paperjob/{id}', 'Job\PostController@single_post');
-Route::get('/single-paperjob', function()
-{
-  return view('frontend/JobPortal/pages/paperjob/single-paperjob');
-});
+Route::get('/paperjobs/{id}', 'Job\PostController@singlepaper_post');
+// Route::get('/single-paperjob', function()
+// {
+//   return view('frontend/JobPortal/pages/paperjob/single-paperjob');
+// });
 
 Route::get('/paperjobs', 'Job\PostController@post' );
 
-
+Route::get('/paperjobs/Tender', 'Job\PostController@Tenderpost' );
+Route::get('/paperjobs/Admission', 'Job\PostController@Admissionpost' );
 
 /////////// Company Registration /////
 Route::get('/addcompany', function () {
@@ -132,6 +134,10 @@ Route::resource('company/dashboard/post-job', 'Job\dashboard\company\JobControll
 // <<<<<<<<<<<<<<<<<<<<<Candidate Profile Section >>>>>>>>>>>>>>>>>>>>>>>>
 //manage-cvs
 Route::resource('candidate/user-profile', 'Job\CandidateProfileController' );
+// Route::resource('candidate/user-profile/create', 'Job\CandidateProfileController@store' );
+Route::post('/candidate/user-profilee', function(){
+    return('string');
+});
 Route::get("/candidate/user-profile/{id}/del", 'Job\CandidateProfileController@deleteFunction' );
 
 

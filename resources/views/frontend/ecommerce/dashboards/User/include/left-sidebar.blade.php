@@ -98,7 +98,7 @@
               <li class="nav-item has-sub">
                 <a class="nav-link" href="{{url('ecommerce/user/marketerRequest')}}">
                   <span data-feather="user"></span>
-                  Affiliate Marketer Requests
+                  Marketer Requests
                   
                 </a>
                 
