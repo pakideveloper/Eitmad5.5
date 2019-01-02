@@ -78,7 +78,7 @@ Route::get('/single_job/{id}', function($id)
 Route::get('/apply_for_job/{id}', 'Job\JobController@apply_for_job');
 
 Route::get('/employers', function () {
-    return view('frontend/JobPortal/pages/employers');
+    return view('frontend/JobPortal/modules/employers');
 });
 Route::get('/employerdetail', function () {
     return view('frontend/JobPortal/pages/employerdetail');
@@ -106,7 +106,7 @@ Route::get('/paperjobs/{id}', 'Job\PostController@singlepaper_post');
 // });
 
 Route::get('/paperjobs', 'Job\PostController@post' );
-
+Route::post('/paperjobs/search', 'Job\PostController@search_job_post' );
 Route::get('/paperjobs/Tender', 'Job\PostController@Tenderpost' );
 Route::get('/paperjobs/Admission', 'Job\PostController@Admissionpost' );
 
@@ -114,7 +114,7 @@ Route::get('/paperjobs/Admission', 'Job\PostController@Admissionpost' );
 Route::get('/addcompany', function () {
 	$industries = App\Industry::all();
 	$countries = App\country::all();
-    return view('frontend/JobPortal/pages/company/addcompany', compact('industries', 'countries'));
+    return view('frontend/JobPortal/modules/company/addcompany', compact('industries', 'countries'));
 });
 
 Route::resource('company_registration', 'Job\CompanyController');

@@ -10433,7 +10433,7 @@ header .search-form .close-search:hover {
   position: absolute;
   z-index: 3;
   top: 0;
-  right: -88px;
+  right: -80px;
   height: 144px;
   background: #f2992e;
   padding: 12px 0 12px 3px;
@@ -10542,7 +10542,7 @@ header .search-form .close-search:hover {
 .toolbar .middle-btns button {
   display: block;
   position: relative;
-  padding: 13px 10px 0 13px;
+  padding: 13px 0px 0 13px;
   width: 140px;
   height: 53px;
   text-align: left;

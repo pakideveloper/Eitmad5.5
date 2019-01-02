@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\newspaper;
 use DB;
+use App\Job_Category;
+use App\job_SubCategory;
 class PostController extends Controller
 {
     /**
@@ -30,8 +32,10 @@ class PostController extends Controller
     public function create()
     {
         //
-$news = newspaper::all();
-        return view ('admin/job/modules/newspaper_Post/create',compact('news'));
+        $news = newspaper::all();
+        $jobcategories = job_Category::all();
+        $jobsubcategories = job_SubCategory::all();
+        return view ('admin/job/modules/newspaper_Post/create',compact('news','jobcategories','jobsubcategories'));
     }
 
     /**
@@ -49,6 +53,8 @@ $news = newspaper::all();
         $posts->paper_post_title = $request->post_title;
         $posts->post_description = $request->paper_descrip;
         $posts->paper_ad_type = $request->post_type;
+        $posts->paper_ad_category = $request->post_cat;
+        $posts->paper_ad_sub_category = $request->post_sub_cat;
         $posts->number_of_jobs = $request->no_of_jobs;
         $posts->expired = $request->expires_after;
         // $logo = $request->newspaper_logo[0];
@@ -106,7 +112,8 @@ $news = newspaper::all();
         //
         $posts = Post::find($id);
        $selectnews = $posts->paper_id;
-
+       $selectjobcat = $posts->paper_ad_category;
+       $selectjobsubcat = $posts->paper_ad_sub_category;
        $finalnews = DB::table('newspaper')
        //      ->join('newspaper', 'paper_posts.paper_id', '=', 'newspaper.id')
              ->select( 'newspaper.paper_name','newspaper.id')
@@ -118,7 +125,21 @@ $news = newspaper::all();
             
             
         $news = newspaper::all();
-        return view ('admin/job/modules/newspaper_Post/edit',compact('posts','news','finalnews'));
+        $jobcategories = job_Category::all();
+        $jobsubcategories = job_SubCategory::all();
+        $jobcat = DB::table('job_categories')
+       //      ->join('newspaper', 'paper_posts.paper_id', '=', 'newspaper.id')
+             ->select( 'job_categories.job_category_name','job_categories.id')
+             ->where('job_categories.id','=',$selectjobcat)
+            ->get();
+        
+
+        $jobsubcat = DB::table('job_sub_categories')
+       //      ->join('newspaper', 'paper_posts.paper_id', '=', 'newspaper.id')
+             ->select( 'job_sub_categories.job_sub_category_name','job_sub_categories.id')
+             ->where('job_sub_categories.id','=',$selectjobsubcat)
+            ->get();
+        return view ('admin/job/modules/newspaper_Post/edit',compact('posts','news','finalnews','jobcat','jobsubcat','jobcategories','jobsubcategories'));
     }
 
     /**
@@ -137,6 +158,8 @@ $news = newspaper::all();
         $posts->paper_post_title = $request->post_title;
         $posts->post_description = $request->paper_descrip;
         $posts->paper_ad_type = $request->post_type;
+        $posts->paper_ad_category = $request->post_cat;
+        $posts->paper_ad_sub_category = $request->post_sub_cat;
          $posts->number_of_jobs = $request->no_of_jobs;
         $posts->expired = $request->expires_after;
         // $logo = $request->newspaper_logo[0];
@@ -208,6 +231,8 @@ $news = newspaper::all();
             'post_title.required' => 'please enter post title',
             'paper_descrip.required' => 'please enter post Description',
             'post_type.required' => 'please select post type',
+            'post_cat.required' => 'please select post Category',
+            'post_sub_cat.required' => 'please select post Sub Category',
             'no_of_jobs.required' => 'please select Number of Jobs',
             'expires_after.required' => 'please select expiry date',
             // 'newspaper_logo.required' => 'please select newspaper logo',
@@ -219,6 +244,8 @@ $news = newspaper::all();
             'post_title' => 'required',
             'paper_descrip' => 'required',
             'post_type' => 'required',
+            'post_cat' => 'required',
+            'post_sub_cat' => 'required',
             'expires_after' => 'required',          
              'no_of_jobs' => 'required',            
             'post_ad_images' => 'required',            

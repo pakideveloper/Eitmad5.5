@@ -33,9 +33,14 @@
         <link rel="stylesheet" href="{{URL::to('public/frontend/general/assets')}}/css/responsive.css" />
         <link rel="stylesheet" href="{{URL::to('public/frontend/general/assets')}}/css/button.css"/>
 		<link rel="stylesheet" href="{{URL::to('public/frontend/general/assets')}}/css/hover_effect.css"/>
+        <style >
+            .text-white {
+                color: #36465d !important;
+        </style>
+        </head>
         <!--[if IE 9]>
         <link rel="stylesheet" type="text/css" href="css/ie.css" />
-    </head>
+    -->
     <body>
         <header class="header-black" id="header-section2">
             <!-- nav -->
@@ -56,9 +61,9 @@
                             </button>
                             <div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse pull-right">
                                 <ul class="nav navbar-nav">
-                                    <li class="propClone"><a class="inner-link text-white" style="text-align:center;" href="{{url('/ecommerce')}}">E Commerce Portal</a></li>
-                                    <li class="propClone"><a class="inner-link text-white" href="{{url('/jobs')}}">Job Portal</a></li>
-                                    <li class="propClone"><a class="inner-link text-white" href="#menu">Education Portal</a></li>
+                                    <li class="propClone"><a class="inner-link text-white" style="text-align:center;" href="{{url('/ecommerce')}}"><b>E Commerce Portal</b></a></li>
+                                    <li class="propClone"><a class="inner-link text-white" style="" href="{{url('/jobs')}}"><b>Job Portal</b></a></li>
+                                    <li class="propClone"><a class="inner-link text-white" style="" href="#menu"><b>Education Portal</b></a></li>
                                     <!-- <li class="nav-button propClone sm-no-margin-tb float-left btn-medium sm-no-border"><a href="#reservation" class="inner-link btn btn-small propClone bg-golden text-black border-radius-0 font-weight-500 sm-padding-nav-btn" style="color: white;"><b>Registration</b></a> </li> -->
                                 </ul>
                             </div>
@@ -75,7 +80,7 @@
                         <div class="slider-text-middle-main">
                             <div class="slider">
                                  <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top: 215px;">
-                                  <h2 style="color: #fff; font-size:21px;">EITMAD provides the <span style="color: #52b381">E Commerce, Job and Education </span> Portal Services</h2>
+                                  <h2 style="color: #fff; font-size:21px;">EITMAD provides the <span style="color: #f2992e;">E Commerce, Job and Education </span> Portal Services</h2>
                                  <h3 style="color: #fff; font-size: 16px;"> EItmad </h3>
                                  <div class="col-md-4 col-sm-4 col-xs-4">
                                       <div href="#" class="hovereffect">

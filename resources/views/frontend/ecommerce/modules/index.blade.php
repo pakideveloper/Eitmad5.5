@@ -25,12 +25,19 @@
     <link href="{{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/color-switcher.css" rel="stylesheet" media="screen">
     <!--Modernizr-->
 		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/libs/modernizr.custom.js"></script>
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+
+
     <!--Adding Media Queries Support for IE8-->
     <!--[if lt IE 9]>
       <script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/plugins/respond.js"></script>
     <![endif]-->
  <style>
    
+
+
    .footer .old-price {
     display: inline-block;
     margin: 0 15px 10px 0;
@@ -45,7 +52,11 @@
     font-size: 1em;
     font-weight: 900;
     color: #36465d;
-  }
+
+}
+
+    
+  
  </style>
   </head>
 
@@ -137,6 +148,11 @@
         </div>
       </section> -->
       @include('frontend/ecommerce/include/brand-crusal')
+
+      
+
+
+
       <!--Categories Close-->
       <?php
         $products = App\Product::latest()->take(8)->get();
@@ -158,8 +174,10 @@
                 <div class="footer">
                  <div class="old-price" >Rs. {{$product->product_price}}</div>
               <div class="price" ><b>Rs. {{$product->product_discounted_price}}</b></div>
+              <div>
                 	<a href="{{url('ecommerce/single-product')}}/{{$product->slug}}">{{$product->product_name}}</a>
                   <span>by Admin</span>
+                  </div>
                   <div class="tools">
                   	<div class="rate">
                     	<!-- <span class="active"></span>
@@ -607,20 +625,37 @@
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/mailer/mailer.js"></script>
 		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/scripts.js"></script>
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/color-switcher.js"></script>
-   <!--  <script>
-      $(document).ready(function () {
-    $("#brand-crusal").owlCarousel({
 
-        autoPlay: 3000, //Set AutoPlay to 3 seconds
-        dots: true,
-        items: 2,
-        itemsDesktop: [1199, 3],
-        itemsDesktopSmall: [979, 3]
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+
+    <script>
+      $(document).ready(function(){
+
+    $('.customer-logos').slick({
+
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: false,
+        dots: false,
+        pauseOnHover: true,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 4
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 3
+            }
+        }]
     });
 });
 
  
-    </script> -->
+    </script> 
     
   </body><!--Body Close-->
 

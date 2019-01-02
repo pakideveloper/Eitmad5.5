@@ -169,6 +169,35 @@
                                                             <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('post_type') }}.</li></ul>
                                                         @endif
                                                 </div>
+
+                                                <div class="form-group">
+                                                    <label for="post_cat">Choose Post Category *:</label>
+                                                    <select id="" name="post_cat" class="form-control"  required="">
+                                                        <option > Choose Post Category</option> 
+                                                        @foreach($jobcategories as $jobcategory)                  
+                                                       <option value = "{{$jobcategory->id}}">{{$jobcategory->job_category_name}}</option>
+                                                       @endforeach
+                                                    </select>
+                                                     @if ($errors->has('post_cat'))
+                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('post_cat') }}.</li></ul>
+                                                        @endif
+                                                </div>
+
+
+                                                <div class="form-group">
+                                                    <label for="post_sub_cat">Choose Post Sub Category *:</label>
+                                                    <select id="" name="post_sub_cat" class="form-control"  required="">
+                                                        <option > Choose Post Sub Category</option> 
+                                                        @foreach($jobsubcategories as $jobsubcategory)                  
+                                                       <option value = "{{$jobsubcategory->id}}">{{$jobsubcategory->job_sub_category_name}}</option>
+                                                       @endforeach
+                                                    </select>
+                                                     @if ($errors->has('post_sub_cat'))
+                                                            <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('post_sub_cat') }}.</li></ul>
+                                                        @endif
+                                                </div>
+
+
                                                 <div class="form-group {{$errors->has('no_of_jobs') ? 'has-error' : ''}}" >
                                                         <label for="job">Number Of Job Vacancies<span class="text-danger">*</span></label>
                                                         <input type="number" name="no_of_jobs" parsley-trigger="change" 

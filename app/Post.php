@@ -11,6 +11,9 @@ class Post extends Model
     public function logo(){
         return $this->hasOne('App\newspaper' , 'id', 'paper_id');
     }
+    public function category(){
+        return $this->hasOne('App\job_Category' , 'id', 'paper_ad_category');
+    }
 
     
 

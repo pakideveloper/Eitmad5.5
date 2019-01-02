@@ -400,7 +400,36 @@
 		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/scripts.js"></script>
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/color-switcher.js"></script>
 
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+
+    <script>
+      $(document).ready(function(){
+
+    $('.customer-logos').slick({
+
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: false,
+        dots: false,
+        pauseOnHover: false,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 4
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 3
+            }
+        }]
+    });
+});
+
+ 
+    </script>
   </body><!--Body Close-->
 
 <!-- Mirrored from template.8guild.com/bushido/v1.4/shop-filters-left-3cols.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 Aug 2018 12:46:15 GMT -->
