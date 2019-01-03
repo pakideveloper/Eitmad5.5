@@ -8,7 +8,10 @@
         
           
             <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                <h1>indexxxxx</h1>
+                <div class="text-center">
+  <span class="min-chart" id="chart-sales" data-percent="56"><span class="percent"></span></span>
+  <h5><span class="label green badge">Sales <i class="fas fa-arrow-circle-up"></i></span></h5>
+</div>
             </main>
         
         </div>

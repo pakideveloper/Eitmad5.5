@@ -112,6 +112,13 @@
                                     <li><a href="{{url('/ecommerce/admin/region')}}">View All</a></li>
                                 </ul>
                             </li>
+                            <li class="has_sub">
+                                <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span>Live Chat</span> <span class="menu-arrow"></span></a>
+                                <ul class="list-unstyled">
+                                    
+                                    <li><a href="{{url('/ecommerce/admin/live-chat')}}">Enter</a></li>
+                                </ul>
+                            </li>
 
 
                            <!--  <li>

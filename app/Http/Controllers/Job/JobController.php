@@ -23,9 +23,10 @@ class JobController extends Controller
             $user_id = Auth::User()->id;
             
         $job = Job::find($id);
-        $candidate = Candidate_Profile::where('id','=',$user_id)->first();
+            $candidate = Candidate_Profile::where('id','=',$user_id)->first();
 
         $today = new DateTime();
+            $today = new DateTime();
             $birthdate = new DateTime(Auth::User()->date_of_birth);
             $interval = $today->diff($birthdate);
             $age =  $interval->format('%y');
