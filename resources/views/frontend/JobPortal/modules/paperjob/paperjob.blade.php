@@ -227,62 +227,74 @@
 					<div class="border1"></div>
 				</div>
 				 @include('frontend/JobPortal/include/brand-crusal')
-				<!-- our-partner end here -->
 				
-				<!-- <div id="partners" class="owl-carousel">
-					@foreach($pnews as $new)
-						
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image" style="height: 100px;">
-							<a href="{{url('/jobs/paperjobs')}}/{{$new->id}}">
-							<img src="{{URL::to('public/admin/job/upload')}}/Logo/{{$new->paper_logo}}" class="img-responsive" alt="l1" title="" style="border-radius: 50%;max-width: 100%;max-height: 100%;object-fit: contain;" />
-							</a>
-						</div>
-
-						<span  style="margin-left: 85px"> 10 Jobs </span>
-					
-					</div>
-					@endforeach
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l2.jpg" class="img-responsive" alt="l2" title="l2" />
-						</div>
-						<span  style="margin-left: 85px"> 11 Jobs </span>
-					</div>
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l3.jpg" class="img-responsive" alt="l3" title="l3" />
-						</div>
-						<span  style="margin-left: 85px"> 12 Jobs </span>
-					</div>
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l4.jpg" class="img-responsive" alt="l4" title="l4" />
-						</div>
-						<span  style="margin-left: 85px"> 13 Jobs </span>
-					</div>
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l5.jpg" class="img-responsive" alt="l5" title="l5" />
-						</div>
-						<span  style="margin-left: 85px"> 14 Jobs </span>
-					</div>
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l2.jpg" class="img-responsive" alt="l1" title="l1" />
-						</div>
-						<span  style="margin-left: 85px"> 15 Jobs </span>
-					</div>
-					<div class="item">
-						<div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 image">
-							<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/l2.jpg" class="img-responsive" alt="l2" title="l2" />
-						</div>
-						<span  style="margin-left: 85px"> 16 Jobs </span>
-					</div>
-				</div> -->
 			</div>
 		</div>
 	</div>
+	<hr>
+	<div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <form id="" class="form-horizontal" method="post" action="{{url('jobs/paperjobs')}}" name="myform" enctype="multipart/form-data">
+                	
+             {{ csrf_field()}}
+                <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="col-sm-4 control-label" for="categories">Category:</label>
+                      <div class="col-sm-8">
+                        <!-- <input type="text" class="form-control" name="categories" id="categories" placeholder="e.g, Information Technology"> -->
+
+                        <select class="form-control" id="cat" name = "cat">
+                        	<option value="">Select Job Category</option>
+                        	@foreach($jobcategories as $jobcategory)
+					        <option value="{{$jobcategory->id}}">{{$jobcategory->job_category_name}}</option>
+					        @endforeach
+					       </select>
+                      </div>
+                    </div>
+                </div>
+                    <!-- <div class="form-group">
+                      <label class="col-sm-4 control-label" for="dialogAct">Dialog Act</label>
+                       <div class="col-sm-8">
+                      <input type="text" class="form-control" name="dialogAct" id="dialogAct" placeholder="e.g. INFO">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-4 control-label" for="slot">Slot</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control" name="slot" id="slot" placeholder="e.g. alphaNumeric">
+                      </div>
+                    </div>
+                </div> -->
+                <div class="col-md-6">
+                    <div class="form-group ">
+                      <label class="col-sm-4 control-label" for="Date">Date:</label>
+                      <div class="col-sm-8">
+                        <input type="date" class="form-control" id="Date" name="date" placeholder="e.g. 01/10/2015">
+                      </div>
+                    </div>
+                    <!-- <div class="form-group">ss
+                      <label class="col-sm-4 control-label" for="toDate">To</label>
+                      <div class="col-sm-8">
+                        <input type="date" class="form-control" id="toDate" placeholder="e.g. 02/10/2015">
+                      </div>
+                    </div> -->
+                    
+              </div>
+                  <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary" style="float: right;">Search</button>
+                    </div>
+              </form>
+            </div>
+        </div>
+        
+        
+    </div>
+
+
+<hr>
+
+
 	<div class="container">
 	<div class="table-responsive">
 	<table class="table" style="width: 100%">
@@ -292,6 +304,7 @@
 				<th>Posted</th>
 				<th>Post Title</th>
 				<th>Newspaper</th>
+				<th>Category</th>
 				<th>Last Date</th>
 				<th>Apply</th>
 			
@@ -312,14 +325,17 @@ $new_date = date('d-m-y', $old_date_timestamp);
 				<td>{{$posted}}</td>
 				<td><a href="{{url('/jobs/single-paperjob')}}/{{$post->id}}" style="color:#f2992e"> {{$post->paper_post_title}}</a></td>
 				<td>{{$post->logo->paper_name}}</td>
+				<td>{{$post->category->job_category_name}}</td>
 				<td>{{$new_date}}</td>
 				<td><a href="{{url('/jobs/single-paperjob')}}/{{$post->id}}" style="color:#f2992e">Details</a></td>
 			</tr>
+
 			@endforeach
 		</tbody>
 
 
 	</table>
+	 
 	</div>
 </div>
 <!-- end slider
@@ -363,6 +379,36 @@ $new_date = date('d-m-y', $old_date_timestamp);
 		<script src="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/js/scripts.js"></script>
     <script src="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/color-switcher/color-switcher.js"></script>
 <!-- end additional -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+
+    <script>
+      $(document).ready(function(){
+
+    $('.customer-logos').slick({
+
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: false,
+        dots: false,
+        pauseOnHover: true,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 4
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 3
+            }
+        }]
+    });
+});
+
+ 
+    </script> 
 </body>
 
 <!-- Mirrored from ocsolutions.co.in/html/jobportal/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 31 Aug 2018 10:24:08 GMT -->

@@ -11,7 +11,7 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{URL::to('public/admin/ecommerce')}}/assets/images/favicon.ico">
         <!-- App title -->
-        <title>Zircos - Responsive Admin Dashboard Template</title>
+        <title>Eitmad - Admin Dashboard</title>
 
         <!--Morris Chart CSS -->
         <link rel="stylesheet" href="../plugins/morris/morris.css">
@@ -81,7 +81,7 @@
                                     <h4 class="page-title">Dashboard</h4>
                                     <ol class="breadcrumb p-0 m-0">
                                         <li>
-                                            <a href="#">Zircos</a>
+                                            <a href="#">Eitmad</a>
                                         </li>
                                         <li>
                                             <a href="#">Dashboard</a>

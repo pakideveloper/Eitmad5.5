@@ -110,11 +110,7 @@
             <div class="col-lg-6 col-md-6">
               <h1>{{$product->product_name}}</h1>
               <div class="rate">
-                <span class="active"></span>
-                <span class="active"></span>
-                <span class="active"></span>
-                <span></span>
-                <span></span>
+                <button  class="btn btn-primary btn-sm" data-toggle="modal" data-target="#affiliated{{$product->id}}" >AffiliateMarketing</button>
               </div>
               <div class="old-price">Rs. {{$product->product_price}}</div>
               <div class="price">Rs. {{$product->product_discounted_price}}</div>
@@ -128,9 +124,11 @@
                   </div>
                   <input type="hidden" name="product_id" value="{{\Crypt::encrypt($product->id)}}">
                   <button class="btn btn-primary btn-sm" ><i class="icon-shopping-cart"></i>Add to cart</button>
+
                 </form>
                 <!-- <input type="hidden" id="product_id" value="{{\Crypt::encrypt($product->id)}}" name="product_id"> -->
                 <a class="btn btn-success btn-sm" href="#"><i class="icon-heart"></i>Add to wishlist</a>
+                 
               </div>
               <?php
                                                         if(strlen($product->product_description)>200){
@@ -373,6 +371,101 @@
       
     </div><!--Page Content Close-->
     
+    
+    <div class="modal fade" id="affiliated{{$product->id}}" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Affiliate Marketer Form</h4>
+        </div>
+        <div class="modal-body" style="height: 700px;">
+          <?php
+          $check = 0; 
+           ?>
+          <form method="post" action="{{url('ecommerce/marketer/bidForm')}}">
+            {{ csrf_field()}}
+            <div class="form-group">
+                          
+                          <div class="col-xs-12">
+                              <label for="product_name"><h4>Product_Name:</h4></label>
+                              <input type="text" class="form-control" name="product" id="product" value="{{$product->product_name}}" readonly>
+                              
+                          </div>
+                      </div>
+                      <div class="form-group">
+                          
+                          <div class="col-xs-12">
+                              <label for="product_price"><h4>Product_Price:</h4></label>
+                              <input type="text" class="form-control" name="price" id="price" value="{{$product->product_price}}" readonly>
+                              
+                          </div>
+                      </div>
+
+                      
+           <div class="form-group">
+                          
+                          <div class="col-xs-12">
+                              <label for="proposal"><h4>Proposal:</h4></label>
+                              <textarea  class="form-control" id="proposal" name="proposal" placeholder="Please Describe Your Proposal" value="" title="Enter Your Proposal"></textarea>
+                          </div>
+                      </div>
+                      <hr>
+                      <div class="form-group" style="">
+                          
+                          <div class="col-xs-12">
+                            <label for="commission_ratio"><h4>Comission_ratio:</h4></label>
+                              <input type="number" class="form-control" name="ratio" id="ratio" placeholder="Enter Your Expected commission ratio" value="" title="Enter Your Expected commission ratio in %">%
+                              
+                          </div>
+                      </div>
+                      <div class="form-group" style="">
+                          
+                          <div class="col-xs-8">
+                            <label for="timeline"><h4>Expected Time:</h4></label>
+                        
+                              <input type="number" class="form-control" name="timeline" id="timeline" placeholder="e.g, 2" value="" title="Enter Your Expected Time in days,hours,minutes, or seconds">
+                              <hr>
+                              <!-- <input type="number" class="form-control" name="timeline" id="timeline" placeholder="Enter Your Expected Time in days,hours,minutes, or seconds" value="" title="Enter Your Expected Time in days,hours,minutes, or seconds"> -->
+                              <select name = "time" id="time" class="form-control">
+                                <option value="months">
+                                  Month
+                                </option>
+                                <option value="days">
+                                  Days
+                                </option>
+                                <option value="minutes">
+                                  Minutes
+                                </option>
+                                <option value="seconds">
+                                  Seconds
+                                </option>
+                              </select>
+                                
+                                                   
+                              
+                                
+                              </div>
+                      </div>
+                      
+        </div>
+        <div class="modal-footer">
+         
+            
+          <button type="submit" class="btn btn-primary">Submit</button>
+         <!--  $check++; -->
+        
+        
+
+        </div>
+        </form>
+      </div>
+      
+    </div>
+  </div>
+  
    
     
    
@@ -399,7 +492,36 @@
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/mailer/mailer.js"></script>
 		<script src="{{URL::to('public/frontend/ecommerce/assets')}}/js/scripts.js"></script>
     <script src="{{URL::to('public/frontend/ecommerce/assets')}}/color-switcher/color-switcher.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
 
+    <script>
+      $(document).ready(function(){
+
+    $('.customer-logos').slick({
+
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: false,
+        dots: false,
+        pauseOnHover: false,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 4
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 3
+            }
+        }]
+    });
+});
+
+ 
+    </script>
     
   </body><!--Body Close-->
 

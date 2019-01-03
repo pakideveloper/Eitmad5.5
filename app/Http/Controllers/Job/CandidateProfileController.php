@@ -32,6 +32,8 @@ class CandidateProfileController extends Controller
      */
     public function index()
     {
+
+
         $cities = City::all();
         $degreeType = DegreeType::all();
         $companies  = Company::all();
@@ -108,8 +110,8 @@ class CandidateProfileController extends Controller
     public function store(Request $request)
     {
         $this->requiredValidation($request);
-     // echo "string";
-     // die();
+     echo "stringtos";
+     die();
      $users = User::find(Auth::user()->id);
                 $users->date_of_birth =$request-> Input('data_of_b');
                 $users->cnic =$request-> Input('cnic');
@@ -170,6 +172,72 @@ class CandidateProfileController extends Controller
     return Redirect()->back()->with('status','Profile Updated Successfully');
       
     }
+     public function storeCustome(Request $request)
+    {
+        $this->requiredValidation($request);
+     echo "custome";
+     die();
+     $users = User::find(Auth::user()->id);
+                $users->date_of_birth =$request-> Input('data_of_b');
+                $users->cnic =$request-> Input('cnic');
+                $users->gender =$request-> Input('gender');
+                $users->contact_number =$request-> Input('contact_num');
+                $users->nationality =$request-> Input('nationality');
+                $users->city_id =$request-> Input('city_id');
+                $users->date_of_birth =$request-> Input('data_of_b');
+
+    $users->save();
+    
+     
+                $candidate_profile = new Candidate_profile(); 
+                // $candidate_profile = Candidate_profile::where('candidate_id','=',$users->id )->first();
+                // $candidate_profile = Candidate_Profile::where('candidate_id','=', $userssss->id)->first();
+          // echo  $users->id; die();
+
+                $candidate_profile->id = $users->id;  
+
+                $candidate_profile->caption = $request-> Input('profession_caption');
+                $candidate_profile->blog_link = $request-> Input('blog_link');
+                $candidate_profile->professional_experience = $request-> Input('pro_exp');
+                $candidate_profile->candidate_career_level  =    $request-> Input('career_level');
+                $candidate_profile->candidate_marital_status =  $request->Input('marital_status');
+                $candidate_profile->candidate_functional_area = $request->Input('func_area');
+                $candidate_profile->candidate_current_salary =  $request->Input('current_salary');
+                $candidate_profile->candidate_expected_salary = $request-> Input('expected_salary');
+                $candidate_profile->candidate_postal_address =  $request-> Input('postal_address');
+                $candidate_profile->candidate_profile_summary = $request-> Input('prof_summary');
+                // $candidate_profile->candidate_skills =$request-> Input('skills');
+                $c_skills = $request->  Input('skills');
+                $c_skills_array =   explode(',', $c_skills);
+                $candidate_profile->candidate_skills = json_encode($c_skills_array);
+                
+                $candidate_languages = $request-> Input('languages');
+                $c_lang_array = explode(',', $candidate_languages);
+                $candidate_profile->candidate_languages = json_encode($c_lang_array);
+
+
+
+           $image = $request->profile_img;
+          // die();
+
+    $uniqid = uniqid();
+            $file_name = $image -> getClientOriginalName(); 
+            $file_name = $uniqid.$file_name; 
+            $file_type = $image->getClientOriginalExtension();
+            $file_size = file::size($image);
+            // $file_extension = file::extension($image);
+            $new_path = url('/').'/public/JobPortal_Frontend/assets/images/candidate/'.$file_name;
+            $image -> move(public_path().'/JobPortal_Frontend/assets/images/candidate/', $file_name);
+            
+            $candidate_profile->candidate_dp = $file_name;
+            $candidate_profile->candidate_dp_size = $file_size;
+            $candidate_profile->candidate_dp_extension = $file_type;
+
+    $candidate_profile->save();        
+    return Redirect()->back()->with('status','Profile Updated Successfully');
+      
+    }
+
 
     /**
      * Display the specified resource.

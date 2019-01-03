@@ -76,9 +76,9 @@ $orders = DB::table('order_products')
  //             ->select('products.product_name')
  //            ->get();           
 
-            //echo $orders;
+            // echo $orders;
             // echo $products;
-             //die();
+             // die();
 return view('frontend.ecommerce.dashboards.User.modules.myorders',compact('orders'));
 // echo "welcome to order method";
 // die();

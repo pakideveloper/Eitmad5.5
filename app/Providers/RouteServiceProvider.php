@@ -45,6 +45,8 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapEcommerceAdminWebRoutes();
 
         $this->mapEcommerceWebRoutes();
+
+        $this->mapEcom_chatWebRoutes();
         
         $this->mapJobAdminWebRoutes();
 
@@ -83,6 +85,13 @@ class RouteServiceProvider extends ServiceProvider
             ->namespace($this->namespace)
             ->prefix('ecommerce')
             ->group(base_path('routes/ecommerce.php'));
+    }
+    protected function mapEcom_chatWebRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->prefix('eLliveChat')
+            ->group(base_path('routes/ecom_chat.php'));
     }
     protected function mapJobAdminWebRoutes()
     {

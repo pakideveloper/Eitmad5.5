@@ -59,7 +59,7 @@
 		<script src="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/js/libs/modernizr.custom.js"></script>
 <!-- end header link -->
 
-
+<script src="//platform-api.sharethis.com/js/sharethis.js#property=5c2b35a3c276020011d3873c&product=inline-share-buttons"></script>
 </head>
 <style>
 .mySlides {display:none;}
@@ -323,8 +323,14 @@ $new_date = date('d-m-y', $old_date_timestamp);
                 <hr />
                 <span ><b style="color: #f98a00;">Newspaper Category:</b><p style="font-weight: 600;font-size: 15px;"> {{$posts->logo->paper_name}}</p></span>
                  <hr />
+
+                 <span ><b style="color: #f98a00;">Job Category:</b><p style="font-weight: 600;font-size: 15px;"> {{$posts->category->job_category_name}}</p></span>
+                 <hr />
     <div class="inline-share">
-      <span class="share" style="color: #f98a00;"><b>Share  :</b></span>
+      <span class="share" style="color: #f98a00;"><b>Share  :</b>
+      		<div class="sharethis-inline-share-buttons"></div>
+      </span>
+
     </div>
   <hr/>
    <!--social share buttons end-->
@@ -406,7 +412,36 @@ function showDivs(n) {
   x[slideIndex-1].style.display = "block";  
 }
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
 
+    <script>
+      $(document).ready(function(){
+
+    $('.customer-logos').slick({
+
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: false,
+        dots: false,
+        pauseOnHover: true,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 4
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 3
+            }
+        }]
+    });
+});
+
+ 
+    </script> 
 </body>
 
 <!-- Mirrored from ocsolutions.co.in/html/jobportal/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 31 Aug 2018 10:24:08 GMT -->

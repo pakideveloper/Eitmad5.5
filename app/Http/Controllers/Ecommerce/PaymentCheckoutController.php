@@ -41,7 +41,7 @@ class PaymentCheckoutController extends Controller
               $total_types_of_pro++;
 
             }
-        echo $total_types_of_pro;
+        // echo $total_types_of_pro;
         // dd($request->all());
         // die();
 //      $hashSecretWord = 'hassan'; //2Checkout Secret Word
@@ -150,20 +150,23 @@ $orders = new Order();
 
         for ($i=0; $i < $total_types_of_pro; $i++) {
 
-            $quantity_input_name = 'li_'.$i.'_quantity';
-            $u_price_input_name = 'li_'.$i.'_price';
-            $product_id_input_name = 'li_'.$i.'_product_id';
-            $product_id = $request->product_id_input_name;
-                echo $product_id;
-                die();
+            $quantity_input_name = $_REQUEST['li_'.$i.'_quantity'];
+            // echo $quantity_input_name;
+            //       die();
+            $u_price_input_name = $_REQUEST['li_'.$i.'_price'];
+            $product_id_input_name = $_REQUEST['li_'.$i.'_product_id'];
+            $product_id = $product_id_input_name;
+                  // echo $product_id;
+                  // die();
             $product = Product::find($product_id);
-            
+             // echo $product;
+             //      die();
             $total = $product->product_discounted_price*$request->$quantity_input_name;
 
 
             $orderproducts = new Order_Product();
             $orderproducts->order_product_unit_price = $total;
-            $orderproducts->order_product_quantity = $request->$quantity_input_name;
+            $orderproducts->order_product_quantity = $quantity_input_name;
             $orderproducts->product_id = $product_id;
             $orderproducts->order_product_total_price = $total;
             $orderproducts->order_id = $orders->id;

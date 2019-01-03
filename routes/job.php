@@ -78,7 +78,7 @@ Route::get('/single_job/{id}', function($id)
 Route::get('/apply_for_job/{id}', 'Job\JobController@apply_for_job');
 
 Route::get('/employers', function () {
-    return view('frontend/JobPortal/pages/employers');
+    return view('frontend/JobPortal/modules/employers');
 });
 Route::get('/employerdetail', function () {
     return view('frontend/JobPortal/pages/employerdetail');
@@ -106,7 +106,7 @@ Route::get('/paperjobs/{id}', 'Job\PostController@singlepaper_post');
 // });
 
 Route::get('/paperjobs', 'Job\PostController@post' );
-
+Route::post('/paperjobs', 'Job\PostController@search_job_post' );
 Route::get('/paperjobs/Tender', 'Job\PostController@Tenderpost' );
 Route::get('/paperjobs/Admission', 'Job\PostController@Admissionpost' );
 
@@ -135,9 +135,7 @@ Route::resource('company/dashboard/post-job', 'Job\dashboard\company\JobControll
 //manage-cvs
 Route::resource('candidate/user-profile', 'Job\CandidateProfileController' );
 // Route::resource('candidate/user-profile/create', 'Job\CandidateProfileController@store' );
-Route::post('/candidate/user-profilee', function(){
-    return('string');
-});
+// Route::post('candidate/user-profile/create', 'Job\CandidateProfileController@storeCustom');
 Route::get("/candidate/user-profile/{id}/del", 'Job\CandidateProfileController@deleteFunction' );
 
 
