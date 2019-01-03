@@ -54,3 +54,7 @@ Route::resource('/users','admin\ecommerce\UserController');
 Route::post('RoleUpdate','admin\ecommerce\UserController@update2');
 // fetching cities on selecting country
 Route::get('/area/cities/{id}/cities.json','admin\ecommerce\CityController@cities');
+Route::get('/live-chat',function(){
+	$visitors = EcomVisitor::latest()->get();
+	return view('admin/ecommerce/modules/LiveChat/messages',compact('visitors'));
+});
