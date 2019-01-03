@@ -112,9 +112,9 @@
                           
                           <div class="col-xs-6">
                               <label for="address"><h4>Address</h4></label>
-                              <textarea  class="form-control" id="address" name="address" placeholder="Please Enter Your Address" value="{{$users->address}}" title="Enter Your Address"></textarea>
+                              <textarea  class="form-control" id="address" name="address" placeholder="Please Enter Your Address" value="{{$users->address}}" title="Enter Your Address">{{$users->address}}</textarea>
                           </div>
-                      </div>
+                      </div>
 
                       <div class="form-group">
                           

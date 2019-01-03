@@ -235,7 +235,7 @@
 	<div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form id="" class="form-horizontal" method="post" action="{{url('jobs/paperjobs/search')}}" name="myform" enctype="multipart/form-data">
+                <form id="" class="form-horizontal" method="post" action="{{url('jobs/paperjobs')}}" name="myform" enctype="multipart/form-data">
                 	
              {{ csrf_field()}}
                 <div class="col-md-6">
@@ -245,7 +245,7 @@
                         <!-- <input type="text" class="form-control" name="categories" id="categories" placeholder="e.g, Information Technology"> -->
 
                         <select class="form-control" id="cat" name = "cat">
-                        	<option>Select Job Category</option>
+                        	<option value="">Select Job Category</option>
                         	@foreach($jobcategories as $jobcategory)
 					        <option value="{{$jobcategory->id}}">{{$jobcategory->job_category_name}}</option>
 					        @endforeach
@@ -335,7 +335,7 @@ $new_date = date('d-m-y', $old_date_timestamp);
 
 
 	</table>
-	 {{ $posts->links() }}
+	 
 	</div>
 </div>
 <!-- end slider

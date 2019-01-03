@@ -26,7 +26,7 @@ class JobController extends Controller
         $candidate = Candidate_Profile::where('id','=',$user_id)->first();
 
         $today = new DateTime();
-            $birthdate = new DateTime($candidate->profileId->date_of_birth);
+            $birthdate = new DateTime(Auth::User()->date_of_birth);
             $interval = $today->diff($birthdate);
             $age =  $interval->format('%y');
 

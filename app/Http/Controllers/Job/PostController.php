@@ -109,14 +109,40 @@ class PostController extends Controller
          $jobcategories = job_Category::all();
         $category = $request->cat;
         $date = $request->date;
-         // echo $date;
-         // die();
-         
-        $posts = Post::where('paper_posts.paper_ad_category','=',$category)->orwhere('paper_posts.created_at','=',$date)->latest()->paginate(20);
-                        
-                          // echo $posts;
-                          // die();
+          // echo $date;
+          // die();
+//          $posts = Post::where('paper_posts.paper_ad_category','=',$category)->where('paper_posts.created_at','=',$date)
+//                 ->orWhere(function ($query,$date,$category) {                      
+//     $query->where('paper_posts.created_at','=',$date)
+//           ->orwhere('paper_posts.paper_ad_category','=',$category);
+// })
+// ->get();
+        
+                    // ->orwhere('paper_posts.paper_ad_category','=',$category)
+        //              ->orwhere('paper_posts.created_at','=',$date)
+        
+        // ;
+        if ($category == null) {
+            # code...
+            $posts = Post::where('paper_posts.created_at','like',$date.'%')->get();
+        }elseif ($date == null) {
+            # code...
+            $posts = Post::where('paper_posts.paper_ad_category','=',$category)->get();
+        }elseif ($date == null && $category == null) {
+           return redirect()->back();
+        }else{
+            $posts = Post::where([['paper_posts.paper_ad_category','=',$category],[
+        'paper_posts.created_at','like',$date.'%']])->get();
+        }
+        // echo $date;
+        // echo "<br>";
+        // print_r($posts) ;
+        // die();
+        // echo $posts;
+        // die();
+        
          return view ('frontend/JobPortal/modules/paperjob/paperjob',compact('pnews','posts','jobcategories'));
+
 
     }
 
