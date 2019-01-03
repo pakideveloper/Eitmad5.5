@@ -114,7 +114,7 @@ Route::get('/paperjobs/Admission', 'Job\PostController@Admissionpost' );
 Route::get('/addcompany', function () {
 	$industries = App\Industry::all();
 	$countries = App\country::all();
-    return view('frontend/JobPortal/pages/company/addcompany', compact('industries', 'countries'));
+    return view('frontend/JobPortal/modules/company/addcompany', compact('industries', 'countries'));
 });
 
 Route::resource('company_registration', 'Job\CompanyController');
