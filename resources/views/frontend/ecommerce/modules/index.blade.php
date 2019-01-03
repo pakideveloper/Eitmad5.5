@@ -185,7 +185,12 @@
                       <span class="active"></span>
                       <span></span>
                       <span></span> -->
+                    @if (!Auth::guest()) 
                       <button type="button" class="btn-primary" data-toggle="modal" data-target="#affiliated{{$product->id}}" >AffiliateMarketing</button>
+                      @else
+                      
+                      <a href="{{url('/login')}}"><button type="button" class="btn-primary" >AffiliateMarketing</button></a>
+                      @endif
                     </div>
                     <!--Add To Cart Button-->
                     <a class="add-cart-btn" href="#"><span>To cart</span><i class="icon-shopping-cart"></i></a>
