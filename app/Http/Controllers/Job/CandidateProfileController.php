@@ -38,14 +38,21 @@ class CandidateProfileController extends Controller
         $industries = Industry::all();
         $education  = Candidate_Educational_Profile::all();
         $users = User::find(Auth::user()->id);
-
-      
+     
        $candidate_profile = Candidate_Profile::where('id','=', $users->id )->first() ; 
        if(isset($candidate_profile->candidate_skills)){
        $skills = json_decode($candidate_profile->candidate_skills);
-       $languages = json_decode($candidate_profile->candidate_languages);
+        $check_skills = true ;
+        }else{
+          $check_skills = false ;
         }
-        return view('frontend/JobPortal/dashboards/candidate/modules/manage-cv/create',compact('users','cities','candidate_profile','skills','languages','degreeType','companies','industries')) ;
+        if(isset($candidate_profile->candidate_languages)){
+       $languages = json_decode($candidate_profile->candidate_languages);
+        $check_lang = true ;
+        }else{
+          $check_lang = false ;
+        }
+        return view('frontend/JobPortal/dashboards/candidate/modules/manage-cv/create',compact('users','cities','candidate_profile','skills','check_skills','check_lang','languages','degreeType','companies','industries')) ;
     }
   public function indexToView()
     {
@@ -58,11 +65,25 @@ class CandidateProfileController extends Controller
     $candi_projects = Candidate_Project::where('candidate_profile_id','=', $users->id )->get() ;
     $candi_exp = Candidate_Experience::where('candidate_profile_id','=', $users->id )->get() ;
     $candidate_profile = Candidate_Profile::where('id','=', $users->id )->first() ;
-    if(isset($candidate_profile->candidate_skills)){ 
+    if(isset($candidate_profile)){ 
     $skills = json_decode($candidate_profile->candidate_skills);
-    $languages = json_decode($candidate_profile->candidate_languages);
+    $check_skills = true ;
+
+    }else
+    {
+        $check_skills = false ;
+
     }
-    return view('frontend/JobPortal/dashboards/candidate/modules/manage-cv/view-profile',compact('users','candidate_profile','skills','languages','edu_profile','candi_certificates','candi_projects','candi_exp')) ;
+    if(isset($candidate_profile->candidate_languages)){ 
+    $languages = json_decode($candidate_profile->candidate_languages);
+    $check_lang = true ;
+
+    }else
+    {
+          $check_lang = false ;
+
+    }
+    return view('frontend/JobPortal/dashboards/candidate/modules/manage-cv/view-profile',compact('users','candidate_profile','skills','check_skills','languages','check_lang','edu_profile','candi_certificates','candi_projects','candi_exp')) ;
     
   }else{
     return ("not login");
@@ -87,7 +108,8 @@ class CandidateProfileController extends Controller
     public function store(Request $request)
     {
         $this->requiredValidation($request);
-
+     // echo "string";
+     // die();
      $users = User::find(Auth::user()->id);
                 $users->date_of_birth =$request-> Input('data_of_b');
                 $users->cnic =$request-> Input('cnic');

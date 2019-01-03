@@ -20,13 +20,13 @@
                          {{ csrf_field() }}
        {{ method_field('PUT')}}
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="col-md-3">
                         <div class="profile-img">
-                            <img style="" src="{{count($candidate_profile)!= 0?URL::to('public/JobPortal_Frontend/assets/images/candidate/'.$candidate_profile->candidate_dp): ''}}">
-                            <div class="file btn btn-lg btn-primary">
+                            <img style="" src="{{count($candidate_profile)!= 0?URL::to('public/JobPortal_Frontend/assets/images/candidate/'.$candidate_profile->candidate_dp): URL::to('public/JobPortal_Frontend/assets/images/candidate/profile-avatar.png')}}">
+                          <!--   <div class="file btn btn-lg btn-primary">
                                 Change Photo
                                 <input type="file" name="file"/>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -37,19 +37,21 @@
                                         {{$users->first_name?$users->first_name:''}}  &nbsp; {{$users->last_name}}
                                     </h5>
                                     <h6>
+                                        @if(isset($candidate_profile->caption))
                                         {{$candidate_profile->caption?$candidate_profile->caption:''}}
-                                        
+                                        @endif
                                     </h6>
                                     <p class="proile-rating">Professional Experience : <span> 
-                                    {{$candidate_profile->professional_experience?$candidate_profile->professional_experience:''}}
+
+                                    {{isset($candidate_profile->professional_experience)?$candidate_profile->professional_experience:''}}
                                     	
                                     </span></p>
                                     <p class="proile-rating">Career Level : <span> 
-                                    {{$candidate_profile->candidate_career_level?$candidate_profile->candidate_career_level:''}}
+                                    {{isset($candidate_profile->candidate_career_level)?$candidate_profile->candidate_career_level:''}}
 
                                     </span></p>
                                     <p class="proile-rating">Professional Summary :
-                                         <span>{{$candidate_profile->candidate_profile_summary?$candidate_profile->candidate_profile_summary:''}}
+                                         <span>{{isset($candidate_profile->candidate_profile_summary)?$candidate_profile->candidate_profile_summary:''}}
                                  </span>
                                     </p>
                                </div>
@@ -87,22 +89,24 @@
                             <p>BLOG/ PORTFOLIO LINK</p>
 
                             <a href=""> 
-                            {{$candidate_profile->blog_link?$candidate_profile->blog_link:''}}
+                            {{isset($candidate_profile->blog_link)?$candidate_profile->blog_link:''}}
 
                             </a><br/>
                           
                            
-                        	<p>SKILLS</p>                      
+                        	<p>SKILLS</p> 
+                            @if($check_skills == true)                     
                      	@foreach ($skills as $skill) 
-                             <a href="">{{$skill}}</a><br/>
-                        @endforeach                        
+                             <a href="">{{isset($skill)?$skill:''}}</a><br/>
+                        @endforeach    
+                            @endif
                         <p>LANGUAGES</p>
-
+                            @if($check_lang == true)                                               
                             <a href=""> 
                            @foreach ($languages as $language) 
-			                 <a href="">{{$language}}</a><br/>
+			                 <a href="">{{isset($language)?$language:''}}</a><br/>
                    		    @endforeach
-                        	                         	
+                        	   @endif                      	
                             </a><br/>
                         
                         </div>
@@ -117,7 +121,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <p>
-                                        {{$users->first_name?$users->first_name:''}}
+                                        {{isset($users->first_name)?$users->first_name:''}}
                 			
 
                                                 </p>
@@ -129,7 +133,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <p>
-                                        {{$users->last_name?$users->last_name:''}}
+                                        {{isset($users->last_name)?$users->last_name:''}}
                 			
 
                                                 </p>
@@ -146,7 +150,7 @@
                                             <div class="col-md-6">
                                               
                                                 <p>
-                                        {{$users->email?$users->email:''}}
+                                        {{isset($users->email)?$users->email:''}}
                                                 	
                                                 </p>
                                                 	
@@ -159,7 +163,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <p> 
-                                        {{$users->contact_number?$users->contact_number:''}}
+                                        {{isset($users->contact_number)?$users->contact_number:''}}
 
                                                 </p>
                                             </div>
@@ -170,7 +174,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <p> 
-                                        {{$candidate_profile->caption?$candidate_profile->caption:''}}
+                                        {{isset($candidate_profile->caption)?$candidate_profile->caption:''}}
 
                                                 </p>
                                             </div>
@@ -181,7 +185,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <p> 
-                                        {{$users->date_of_birth?$users->date_of_birth:''}}
+                                        {{isset($users->date_of_birth)?$users->date_of_birth:''}}
 
                                                 </p>
                                             </div>
@@ -192,7 +196,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <p> 
-                                        {{$users->cnic?$users->cnic:''}}
+                                        {{isset($users->cnic)?$users->cnic:''}}
 
                                                 </p>
                                             </div>
@@ -203,7 +207,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <p> 
-                                        {{$users->gender?$users->gender:''}}
+                                        {{isset($users->gender)?$users->gender:''}}
 
                                                 </p>
                                             </div>
@@ -215,7 +219,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <p> 
-                                        {{$candidate_profile->candidate_marital_status?$candidate_profile->candidate_marital_status:''}}
+                                        {{isset($candidate_profile->candidate_marital_status)?$candidate_profile->candidate_marital_status:''}}
 
                                                 </p>
                                             </div>
@@ -227,7 +231,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <p> 
-                                        {{$users->nationality?$users->nationality:''}}
+                                        {{isset($users->nationality)?$users->nationality:''}}
 
                                                 </p>
                                             </div>
@@ -240,7 +244,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <p> 
-                                        {{$candidate_profile->candidate_functional_area?$candidate_profile->candidate_functional_area:''}}
+                                        {{isset($candidate_profile->candidate_functional_area)?$candidate_profile->candidate_functional_area:''}}
 
                                                 </p>
                                             </div>
@@ -251,7 +255,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <p> 
-                                        {{$candidate_profile->candidate_current_salary?$candidate_profile->candidate_current_salary:''}}
+                                        {{isset($candidate_profile->candidate_current_salary)?$candidate_profile->candidate_current_salary:''}}
 
                                                 </p>
                                             </div>
@@ -262,7 +266,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <p> 
-                                        {{$candidate_profile->candidate_expected_salary?$candidate_profile->candidate_expected_salary:''}}
+                                        {{isset($candidate_profile->candidate_expected_salary)?$candidate_profile->candidate_expected_salary:''}}
 
                                                 </p>
                                             </div>
@@ -274,7 +278,7 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <p> 
-                                        {{$candidate_profile->candidate_postal_address?$candidate_profile->candidate_postal_address:''}}
+                                        {{isset($candidate_profile->candidate_postal_address)?$candidate_profile->candidate_postal_address:''}}
 
                                                 </p>
                                             </div>
