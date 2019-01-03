@@ -1,5 +1,6 @@
 <?php
-
+use App\EcomVisitor;
+use App\EcomMessage;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

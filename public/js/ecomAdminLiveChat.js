@@ -20636,7 +20636,7 @@ window.Pusher = __webpack_require__(41);
 window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo__["a" /* default */]({
   broadcaster: 'pusher',
   key: 'd91158c1362e44bf0a16',
-  cluster: 'ap2',
+  cluster: 'ap1',
   authEndpoint: "/eitmad5.5/broadcasting/auth",
   encrypted: true
 });
@@ -61959,7 +61959,7 @@ __WEBPACK_IMPORTED_MODULE_0_Vue__["a" /* default */].use(__WEBPACK_IMPORTED_MODU
 			var _this = this;
 
 			this.activeUser = visitor;
-			var endpoint = 'http://localhost/Eitmad_my/eLliveChat/admin/messages';
+			var endpoint = 'http://localhost/Eitmad5.5/eLliveChat/admin/messages';
 			var data = {
 				id: this.activeUser.id
 			};
@@ -62463,7 +62463,7 @@ __WEBPACK_IMPORTED_MODULE_0_Vue__["a" /* default */].use(__WEBPACK_IMPORTED_MODU
 	methods: {
 		sendMessage: function sendMessage() {
 			// console.log(this.$parent.user_name);
-			var endpoint = 'http://localhost/Eitmad_my/eLliveChat/admin/newMessage';
+			var endpoint = 'http://localhost/Eitmad5.5/eLliveChat/admin/newMessage';
 
 			var data = {
 				message: this.message,

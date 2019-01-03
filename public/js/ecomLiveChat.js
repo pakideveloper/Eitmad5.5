@@ -20636,7 +20636,7 @@ window.Pusher = __webpack_require__(41);
 window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo__["a" /* default */]({
   broadcaster: 'pusher',
   key: 'd91158c1362e44bf0a16',
-  cluster: 'ap2',
+  cluster: 'ap1',
   authEndpoint: "/eitmad5.5/broadcasting/auth",
   encrypted: true
 });
@@ -61960,7 +61960,7 @@ __WEBPACK_IMPORTED_MODULE_0_Vue__["a" /* default */].use(__WEBPACK_IMPORTED_MODU
 			// $('#messages_div').addClass('quick-contact ajax-form');
 			$('#messages_div').show();
 			$('#new_message_div').show();
-			var endpoint = 'http://localhost/Eitmad_my/eLliveChat/register/user';
+			var endpoint = 'http://localhost/Eitmad5.5/eLliveChat/register/user';
 
 			var data = {
 				name: this.user_name,
@@ -61986,7 +61986,7 @@ __WEBPACK_IMPORTED_MODULE_0_Vue__["a" /* default */].use(__WEBPACK_IMPORTED_MODU
 			});
 		}
 		// fetchMessages() {
-		//           let endpoint = `http://localhost/Eitmad_my/eLliveChat/messages`;
+		//           let endpoint = `http://localhost/Eitmad5.5/eLliveChat/messages`;
 		//           let data = {
 		//               message: this.message,
 		//               name: this.$parent.user_name,
@@ -62430,7 +62430,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	methods: {
 		sendMessage: function sendMessage() {
 			// console.log(this.$parent.user_name);
-			var endpoint = 'http://localhost/Eitmad_my/eLliveChat/newMessage';
+			var endpoint = 'http://localhost/Eitmad5.5/eLliveChat/newMessage';
 
 			var data = {
 				message: this.message,
