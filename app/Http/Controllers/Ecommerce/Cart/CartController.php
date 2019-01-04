@@ -23,6 +23,14 @@ class CartController extends Controller
     			$cas = 'old';
     			$rowId = $value->rowId;
     			$quantity = $value->qty + 1;
+
+                $id = \Crypt::decrypt($value->id);
+                $product = Product::find($id);
+
+                $stock_quantity = $product->product_quantity;
+                if ($stock_quantity < $quantity_n+$quantity-1) {
+                   return redirect()->back()->with('status', "Sorry we haven't have this quantity of product.");
+                }
     		}
     	}
     	switch ($cas) {
@@ -153,5 +161,17 @@ class CartController extends Controller
         //     Cart::instance('shopping')->update($rowId, $quantity);
         // }
         return $updatedQntty;
+    }
+
+    public function checkQuantity($item, $requiredQuantity){
+        $id = \Crypt::decrypt($item->id);
+        $product = Product::find($id)->first();
+        $stock_quantity = $product->quantity;
+        if ($stock_quantity < $requiredQuantity) {
+               return false;
+           }
+        else{
+            return true;
+        }   
     }
 }

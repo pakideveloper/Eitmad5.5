@@ -185,10 +185,10 @@
                       <span class="active"></span>
                       <span></span>
                       <span></span> -->
-                      <button type="button" class="btn-primary" data-toggle="modal" data-target="#affiliated{{$product->id}}" >AffiliateMarketing</button>
+                      <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#affiliated{{$product->id}}" >AffiliateMarketing</button>
                     </div>
                     <!--Add To Cart Button-->
-                    <a class="add-cart-btn" href="#"><span>To cart</span><i class="icon-shopping-cart"></i></a>
+                    <a  href="{{url('ecommerce/single-product')}}/{{$product->slug}}" class="add-cart-btn" href="#"><span>To cart</span><i class="icon-shopping-cart"></i></a>
                     <a class="wishlist-btn" href="#">
                       <div class="hover-state">Wishlist</div>
                       <i class="fa fa-plus"></i>
