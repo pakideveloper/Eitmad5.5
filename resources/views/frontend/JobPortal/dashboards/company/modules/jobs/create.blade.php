@@ -117,7 +117,7 @@
                       <div class="row form-group">
                         <div class="col-md-6 col-sm-12">
                           <label for="job_salary_min_range">Min.</label>
-                          <input  class="form-control" id="job_salary_min_range" name="job_salary_min_range">
+                          <input  class="form-control" type="number" min="5000" id="job_salary_min_range" name="job_salary_min_range">
                             <span class="help-block">
                               <strong class="error"></strong>
                           </span>
@@ -126,7 +126,7 @@
                         </div>
                         <div class="col-md-6 col-sm-12">
                           <label for="job_salary_max_range">Max.</label>
-                          <input class="form-control" id="job_salary_max_range" name="job_salary_max_range">
+                          <input class="form-control" type="number" min="5000" id="job_salary_max_range" name="job_salary_max_range">
                             <span class="help-block">
                               <strong class="error"></strong>
                           </span>
@@ -260,7 +260,7 @@
                       <div class="row form-group">
                         <div class="col-md-6 col-sm-12">
                           <label for="job_year_of_experience_min">Min.</label>
-                          <input class="form-control" type="number" min="1" name="job_year_of_experience_min" id="job_year_of_experience_min">
+                          <input class="form-control" type="number" min="0" name="job_year_of_experience_min" id="job_year_of_experience_min">
                           <span class="help-block">
                               <strong class="error"></strong>
                           </span>
@@ -312,12 +312,40 @@
  <!-- form validation -->
     <script src="{{URL::to('public/JobPortal_Frontend/assets')}}/jquery-validation/dist/jquery.validate.js"></script>
     <script type="text/javascript">
-      $.validator.setDefaults({
+           $.validator.setDefaults({
     submitHandler: function() {
       $("#addjobform").submit();
     }
   });
       $().ready(function() {
+
+        jQuery.validator.addMethod("max_exp_check", function (value, element) {
+        if (value> $("#job_year_of_experience_min").val()) {
+            return true;
+        } else {
+            return false;
+        };
+    }, "please enter max experience");
+
+        jQuery.validator.addMethod("max_age_check", function (value, element) {
+        if (value> $("#age_requirement_min").val()) {
+            return true;
+        } else {
+            return false;
+        };
+    }, "please enter max age.");
+
+        jQuery.validator.addMethod("max_salary_check", function (value, element) {
+        if ((value-$("#job_salary_min_range").val())>0) {
+          //alert($("#job_salary_min_range").val());
+            return true;
+        } else {
+          //alert($("#job_salary_min_range").val());
+          //alert(false);
+            return false;
+        };
+    }, "please enter max salary.");
+
         $("#addjobform").validate({
           rules: {
         job_title: "required",
@@ -360,13 +388,13 @@
           required: true,
           number:true,
           min: 5000,
-          max: 100000,
+          max: 900000
         },
         job_salary_max_range: {
           required: true,
           number:true,
-          min: 100000,
-          max: 1000000
+          max: 1000000,
+          max_salary_check: true
         },
         job_gender_preference: {
           required: true
@@ -386,22 +414,26 @@
         job_year_of_experience_min: {
           required: true,
           number:true,
-          min: 1
+          min: 0,
+          max:19
         },
         job_year_of_experience_max: {
           required: true,
           number:true,
-          max: 20
+          max: 20,
+          max_exp_check: true
         },
         age_requirement_min: {
           required: true,
           number:true,
-          min: 18
+          min: 18,
+          max: 50
         },
         age_requirement_max: {
           required: true,
           number:true,
-          max: 60
+          max: 60,
+          max_age_check: true
         }
       },
       messages: {
@@ -425,7 +457,7 @@
           required: "Please enter salary min range.",
           number: "Please enter number.",
           min: "Enter equal or greater than 5000.",
-          max:"Enter equal or lower than 100000."
+          max:"Enter equal or lower than 900000."
         },
         job_salary_max_range: {
           required: "Please enter salary max range.",
@@ -451,7 +483,7 @@
           required: "Please enter years of experience.",
           number: "Please enter number.",
           min: "Enter equal or greater than 1.",
-          max:"Enter equal or lower than 10."
+          max:"Enter equal or lower than 20."
         },
         job_year_of_experience_max: {
           required: "Please enter years of experience.",
@@ -463,7 +495,7 @@
           required: "Please enter min age requirement.",
           number: "Please enter number.",
           min: "Enter equal or greater than 18.",
-          max:"Enter equal or lower than 30."
+          max:"Enter equal or lower than 50."
         },
         age_requirement_max: {
           required: "Please enter max age requirement.",
@@ -476,7 +508,6 @@
 
    
       });
-
 
     </script>
     

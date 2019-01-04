@@ -1,6 +1,7 @@
 <?php
 use App\EcomVisitor;
 use App\EcomMessage;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,9 +13,9 @@ use App\EcomMessage;
 |
 */
 Route::get('/test', function () {
-    echo "string";
+    auth()->logout();
 });
-
+Route::group(['middleware'=> 'role:e_admin'], function(){
 Route::get('/', function () {
     return view('admin/ecommerce/modules/index');
 });
@@ -59,3 +60,26 @@ Route::get('/live-chat',function(){
 	$visitors = EcomVisitor::latest()->get();
 	return view('admin/ecommerce/modules/LiveChat/messages',compact('visitors'));
 });
+});
+Route::post('postSignin', function(Request $request){
+	if(Auth::attempt(['email'=>$request->email,'password'=>$request->password]))
+        {
+        	$id = Auth::user()->id;
+            $admin = DB::table('users')
+	        ->join('role_user','users.id', '=' , 'role_user.user_id')
+	        ->join('roles','roles.id', '=' , 'role_user.role_id')
+	        ->where('users.id', '=' , $id)
+	        ->where('roles.name', '=' , 'e_admin')
+	        ->first(); 
+	        if ( empty($admin))
+        	{
+	            auth()->logout();
+	           	return Redirect()->back()->with('status','Sorry ! Please login as admin');
+           	}
+        }
+        else
+        {
+             return Redirect()->back()->with('status','Sorry ! Wrong password or email');
+        }
+        return Redirect()->back();
+    });

@@ -20,6 +20,15 @@ Auth::routes();
 Route::get('/home', function () {
     return view('frontend/general/index');
 });
+Route::get('/test/Function', function () {
+  $cart  = Cart::instance('shopping')->content();
+  print_r($cart);
+  die();
+    $var = false;
+    if ($var) {
+      echo "string";
+    }
+});
 
 
 Route::get('/items', function () {
