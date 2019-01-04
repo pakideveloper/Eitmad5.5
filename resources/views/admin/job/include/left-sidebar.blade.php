@@ -29,10 +29,10 @@
 
                             <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-view-dashboard"></i><span class="badge badge-success pull-right">2</span> <span> Dashboard </span> </a>
-                                <!-- <ul class="list-unstyled">
+                                <ul class="list-unstyled">
                                     <li><a href="index.html">Dashboard 1</a></li>
                                     <li><a href="dashboard_2.html">Dashboard 2</a></li>
-                                </ul> -->
+                                </ul>
                             </li>
                             <!-- <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-invert-colors"></i> <span>Brand </span> <span class="menu-arrow"></span></a>
@@ -65,10 +65,10 @@
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-layers"></i><span>Categories</span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     
-                                    <li><a href="{{url('/job/admin/categories')}}/create">add parent category</a></li>
-                                    <li><a href="{{url('/job/admin/subcategories')}}/create">add sub category</a></li>
-                                    <li><a href="{{url('/job/admin/categories')}}">View All Categories</a></li>
-                                    <li><a href="{{url('/job/admin/subcategories')}}">View All SubCategories</a></li>
+                            <li><a href="{{url('/jobs/admin/job_categories')}}/create">add parent category</a></li>
+                                <li><a href="{{url('/jobs/admin/job_subcategories')}}/create">add sub category</a></li>
+                                <li><a href="{{url('/jobs/admin/job_categories')}}">View All Categories</a></li>
+                                <li><a href="{{url('/jobs/admin/job_subcategories')}}">View All SubCategories</a></li>
                                 </ul>
                             </li>
                             <li class="has_sub">
@@ -154,7 +154,7 @@
                                 </ul>
                             </li>
 
-                            <!-- <li class="has_sub">
+                            <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-diamond"></i><span class="badge badge-danger pull-right">New</span> <span> Forms </span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="form-elements.html">Form Elements</a></li>
@@ -168,8 +168,8 @@
                                     <li><a href="form-uploads.html">Multiple File Upload</a></li>
                                 </ul>
                             </li>
- -->
-                            <!-- <li class="has_sub">
+
+                            <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-format-list-bulleted"></i> <span> Tables </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="tables-basic.html">Basic Tables</a></li>
@@ -179,11 +179,11 @@
                                     <li><a href="tables-tablesaw.html">Tablesaw Table</a></li>
                                     <li><a href="tables-editable.html">Editable Table</a></li>
                                 </ul>
-                            </li> -->
+                            </li>
 
-                            <!-- <li class="menu-title">Extra</li> -->
+                            <li class="menu-title">Extra</li>
 
-                            <!-- <li class="has_sub">
+                            <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-chart-arc"></i><span> Charts </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="chart-flot.html">Flot Chart</a></li>
@@ -195,9 +195,9 @@
                                     <li><a href="chart-sparkline.html">Sparkline Chart</a></li>
                                     <li><a href="chart-knob.html">Jquery Knob</a></li>
                                 </ul>
-                            </li> -->
+                            </li>
 
-                            <!-- <li class="has_sub">
+                            <li class="has_sub">
                                 <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-map"></i> <span> Maps </span> <span class="menu-arrow"></span></a>
                                 <ul class="list-unstyled">
                                     <li><a href="maps-google.html">Google Maps</a></li>
@@ -266,7 +266,7 @@
                                     <li><a href="real-estate-profile.html">Agent Details</a></li>
                                     <li><a href="real-estate-add.html">Add Property</a></li>
                                 </ul>
-                            </li> -->
+                            </li>
 
                         </ul>
                     </div>

@@ -242,7 +242,11 @@
                           <span class="active"></span>
                           <span></span>
                           <span></span> -->
+                          @if (!Auth::guest()) 
                           <button type="button" class="btn-primary" data-toggle="modal" data-target="#affiliated{{$product->id}}" >AffiliateMarketing</button>
+                          @else
+                          <a href="{{url('/login')}}"><button type="button" class="btn-primary" >AffiliateMarketing</button></a>
+                          @endif
                         </div>
                         <!--Add To Cart Button-->
                         <a class="add-cart-btn" href="#"><span>To cart</span><i class="icon-shopping-cart"></i></a>
@@ -316,7 +320,7 @@
                           
                           <div class="col-xs-12">
                               <label for="proposal"><h4>Proposal:</h4></label>
-                              <textarea  class="form-control" id="proposal" name="proposal" placeholder="Please Describe Your Proposal" value="" title="Enter Your Proposal"></textarea>
+                              <textarea  class="form-control" id="proposal" name="proposal" placeholder="Please Describe Your Proposal" value="" title="Enter Your Proposal" required></textarea>
                           </div>
                       </div>
                       <hr>
@@ -324,7 +328,7 @@
                           
                           <div class="col-xs-12">
                             <label for="commission_ratio"><h4>Comission_ratio:</h4></label>
-                              <input type="number" class="form-control" name="ratio" id="ratio" placeholder="Enter Your Expected commission ratio" value="" title="Enter Your Expected commission ratio in %">%
+                              <input type="number" class="form-control" name="ratio" id="ratio" placeholder="Enter Your Expected commission ratio" value="" title="Enter Your Expected commission ratio in %" min="0" required>%
                               
                           </div>
                       </div>
@@ -333,7 +337,7 @@
                           <div class="col-xs-8">
                             <label for="timeline"><h4>Expected Time:</h4></label>
                         
-                              <input type="number" class="form-control" name="timeline" id="timeline" placeholder="e.g, 2" value="" title="Enter Your Expected Time in days,hours,minutes, or seconds">
+                              <input type="number" class="form-control" name="timeline" id="timeline" placeholder="e.g, 2" value="" title="Enter Your Expected Time in days,hours,minutes, or seconds" min="0" required>
                               <hr>
                               <!-- <input type="number" class="form-control" name="timeline" id="timeline" placeholder="Enter Your Expected Time in days,hours,minutes, or seconds" value="" title="Enter Your Expected Time in days,hours,minutes, or seconds"> -->
                               <select name = "time" id="time" class="form-control">

@@ -11,7 +11,7 @@ use DB;
 use App\Marketer;
 use Illuminate\Http\Request;
 use App\Bidding;
-
+use Illuminate\Support\Facades\Input;
 class AffiliateMarketerController extends Controller
 {
     /**
@@ -56,15 +56,18 @@ class AffiliateMarketerController extends Controller
         $users->email = $request->email;
         $users->address= $request->address;
         $users->cnic = $request->cnic;
-        $users->contact_number = $request->mobile;
+        $users->contact_number = $request->mobile;       
         $users->date_of_birth = $request->date_of_birth;
         $users->gender = $request->gender;
         $users->nationality = $request->nationality;
         // $users->area_id = $request->area;
         $users->city_id = $request->city;
-        $profile_img = $request->profileImage;
+        // $profile_img = $request->profileImage;
+        $profile_img = Input::file('profileImage');
         // echo $profile_img;
         //die();
+        if(Input::hasFile('profileImage'))
+        {
         $file_name = $profile_img->getClientOriginalName();
         $file_name = uniqid().$file_name;
          $file_name = preg_replace('/\s+/', '', $file_name);
@@ -76,6 +79,7 @@ class AffiliateMarketerController extends Controller
             $file_size = $file_size.' '.'kb';
             $users->profile_pic_size = $file_size;
          $users->profile_pic_extension = $file_type;
+     }
         $users->save();
         $marketers = new Marketer();
         $marketers->user_id = $users->id;
@@ -197,12 +201,16 @@ class AffiliateMarketerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy()
     {
         //
         $user = User::find(Auth::user()->id);
-        $user->delete();
-         return Redirect()->back()->with('status', 'Your profile has been successfully deleted');
+        $user->activation = 0;
+        // echo $user->activation;
+        // die();
+        $user->save();
+        // $user->delete();
+         return Redirect()->back()->with('status', 'Your profile has been successfully deactivated');
     }
 
     public function regions($id)

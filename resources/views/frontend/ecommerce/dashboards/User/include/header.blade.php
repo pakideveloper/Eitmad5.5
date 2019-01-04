@@ -168,9 +168,9 @@
 
           <div id="marketer" class="w3-modal">
     <div class="w3-modal-content w3-animate-zoom" style="height:auto; width:30%;">
-    <header class="w3-container w3-black" >
+    <header class="w3-container" style="background-color: #36465d;" >
      
-      <h3 style = "font-family:Segoe UI,Arial,sans-serif;font-weight: 400;margin: 10px 0;">Confirm</h3>
+      <h3 style = "font-family:Segoe UI,Arial,sans-serif;font-weight: 400;margin: 10px 0; color: white;">Confirm</h3>
     </header>
 
       <div class="w3-container">
@@ -188,9 +188,9 @@
         
        
         
-        <button type="button" class="btn btn-primary" onclick="document.getElementById('marketer').style.display='none'" style="float:right;margin:5px;background-color: black;
+        <button type="button" class="btn btn-primary" onclick="document.getElementById('marketer').style.display='none'" style="float:right;margin:5px;background-color: #36465d;
     border: black;">No</button>
-    <button type="button" class="btn btn-primary" onclick="document.getElementById('confirmed_message').style.display='block',document.getElementById('marketer').style.display='none'" style="float:right;margin:5px;background-color: black;
+    <button type="button" class="btn btn-primary" onclick="document.getElementById('confirmed_message').style.display='block',document.getElementById('marketer').style.display='none'" style="float:right;margin:5px;background-color: #36465d;
     border: black;">Yes</button>
        
         <p></p>
@@ -202,9 +202,9 @@
 
   <div id="confirmed_message" class="w3-modal">
     <div class="w3-modal-content w3-animate-zoom" style="height:auto; width:30%;">
-    <header class="w3-container w3-black" >
+    <header class="w3-container" style="background-color: #36465d;" >
      
-      <h3 style = "font-family:Segoe UI,Arial,sans-serif;font-weight: 400;margin: 10px 0;">Confirmation Alert</h3>
+      <h3 style = "font-family:Segoe UI,Arial,sans-serif;font-weight: 400;margin: 10px 0; color: white;">Confirmation Alert</h3>
     </header>
 
       <div class="w3-container">
@@ -226,7 +226,7 @@
         
         <!-- <button type="button" class="btn btn-primary" onclick="document.getElementById('confirmed_message').style.display='none'" style="float:right;margin:5px;background-color: black;
     border: black;">OK</button> -->
-    <a href="{{url('ecommerce/marketer/dashboard')}}"><button type="button" class="btn btn-primary"  style="float:right;margin:5px;background-color: black;
+    <a href="{{url('ecommerce/marketer/dashboard')}}"><button type="button" class="btn btn-primary"  style="float:right;margin:5px;background-color: #36465d;
     border: black;">OK</button></a>
     <!-- <button type="button" class="btn btn-primary" onclick="document.getElementById('confirmed_message').style.display='block'" style="float:right;margin:5px;background-color: black;
     border: black;">Yes</button> -->

@@ -59,7 +59,7 @@ $i = 1;
       @else
       <td>Accept</td>
       @endif
-      <td><a data-toggle="modal" data-target="#myModal" style="cursor: pointer;color: red;text-decoration: underline;">wants to claim?</a></td>
+      <td><a data-toggle="modal" data-target="#myModal{{$order->id}}" style="cursor: pointer;color: red;text-decoration: underline;">wants to claim?</a></td>
     </tr>
     
     @endforeach
@@ -77,7 +77,9 @@ $i = 1;
     </tr> -->
   </tbody>
 </table>
-<div class="modal fade" id="myModal" role="dialog">
+@foreach($orders as $order)
+@foreach($claimOrder as $claim)
+<div class="modal fade" id="myModal{{$order->id}}" role="dialog">
     <div class="modal-dialog">
     
       <!-- Modal content-->
@@ -90,7 +92,7 @@ $i = 1;
           <div class="form-group" style="margin: 0px;">
                           
                           <div class="col-xs-12">
-                              <label for="product_name"><h4>Product name:</h4></label>
+                              <label for="product_name"><h4>Product name: {{$order->product_name}}</h4></label>
                               <!-- <input type="text" class="form-control" name="product_name" id="product_name" placeholder="Enter Your product name" value=""  title="enter your first n if any."> -->
                           </div>
                       </div>
@@ -98,17 +100,17 @@ $i = 1;
                       <div class="form-group" style="margin: 0px;">
                           
                           <div class="col-xs-12">
-                            <label for="product_category"><h4>Product Category:</h4></label>
+                            <label for="product_category"><h4>Product Type: {{$claim->order_products->product->sub_category_id}}</h4></label>
                               <!-- <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Enter Your last name" value="" title="enter your last name if any."> -->
                           </div>
                       </div>
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                           
                           <div class="col-xs-12">
                               <label for="product_type"><h4>Product Type:</h4></label>
-                              <!-- <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" value="" title="enter your email."> -->
+                              
                           </div>
-                      </div>
+                      </div> -->
                       <div class="form-group" style="margin: 0px;">
                           
                           <div class="col-xs-12">
@@ -154,8 +156,8 @@ $i = 1;
       
     </div>
   </div>
-  
-
+  @endforeach
+  @endforeach
     </main>
           
             

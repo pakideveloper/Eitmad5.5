@@ -11,6 +11,8 @@ use App\City;
 use App\Region;
 use DB;
 use App\Bidding;
+use App\Order;
+use Illuminate\Support\Facades\Input;
 class UserController extends Controller
 {
     //
@@ -41,10 +43,12 @@ class UserController extends Controller
     	$users->nationality = $request->nationality;
         // $users->area_id = $request->area;
         $users->city_id = $request->city;
-        $profile_img = $request->profileImage;
+        // $profile_img = $request->profileImage;
+        $profile_img = Input::file('profileImage');
         // echo $profile_img;
         //die();
-        $file_name = $profile_img->getClientOriginalName();
+        if(Input::hasFile('profileImage')){
+        $file_name = $profile_img->getClientOriginalName(0);
         $file_name = uniqid().$file_name;
          $file_name = preg_replace('/\s+/', '', $file_name);
          $file_type = $profile_img->getClientOriginalExtension();
@@ -55,6 +59,8 @@ class UserController extends Controller
             $file_size = $file_size.' '.'kb';
             $users->profile_pic_size = $file_size;
          $users->profile_pic_extension = $file_type;
+     }
+
     	$users->save();
 
 
@@ -67,8 +73,13 @@ $orders = DB::table('order_products')
             ->join('products', 'products.id','=','order_products.product_id')
              ->join('discounts', 'discounts.id', '=', 'products.discount_id')
             ->where('orders.user_id', '=' , Auth::user()->id)
-             ->select('orders.id','order_products.order_product_unit_price','order_products.order_product_quantity','orders.shipping_charges','orders.order_tax','order_products.order_product_total_price','products.product_name','discounts.discount_percent','orders.order_status','orders.payment_method')
+             ->select('orders.id','order_products.order_product_unit_price','order_products.order_product_quantity','orders.shipping_charges','orders.order_tax','order_products.order_product_total_price','products.product_name','discounts.discount_percent','orders.order_status','orders.payment_method','products.sub_category_id')
             ->get();
+
+ $claimOrder = Order::where('orders.user_id','=', Auth::user()->id)
+                ->get();
+                // echo $claimOrder;
+                // die();           
 
  // $products = DB::table('products')
  //            ->join('order_products','order_products.product_id','=','products.id')
@@ -79,7 +90,7 @@ $orders = DB::table('order_products')
             // echo $orders;
             // echo $products;
              // die();
-return view('frontend.ecommerce.dashboards.User.modules.myorders',compact('orders'));
+return view('frontend.ecommerce.dashboards.User.modules.myorders',compact('orders','claimOrder'));
 // echo "welcome to order method";
 // die();
 
@@ -110,7 +121,11 @@ public function changePass(Request $request)
 public function destroy()
     {
         $users = User::find(Auth::user()->id);
-      $users->delete();
+      // $users->delete();
+        $users->activation = 0;
+        // echo $user->activation;
+        // die();
+        $users->save();
 
        return view('frontend.general.index');
     }

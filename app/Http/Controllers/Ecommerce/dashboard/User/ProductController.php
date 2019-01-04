@@ -98,7 +98,9 @@ class ProductController extends Controller
         
         $slug = $this->makeSlug($product->product_name); 
         $product->slug = $slug;
-
+        $product->added_by_user = Auth::user()->id;
+     // echo $product->added_by_user;
+     // die();
         $product->save();
         /*tilte image*/
         $title_image = $request->title_image;
