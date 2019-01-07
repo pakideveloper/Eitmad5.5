@@ -15,6 +15,7 @@ use App\DegreeLevel;
 use App\City;
 use App\Job_SubCategory;
 use App\DegreeType;
+use App\Candidate_Job_Association;
 use Carbon;
 use DateTime;
 class JobController extends Controller
@@ -63,6 +64,7 @@ class JobController extends Controller
                 }
                  $job->creation_date = Carbon\Carbon::parse($job->created_at)->format('d M,Y');
                  $job->applyby_date = Carbon\Carbon::parse($job->apply_by)->format('d M,Y');
+                 $job->applications = Candidate_Job_Association::where('job_id','=', $job->id)->count();
             }
         return request()->json(200, $jobs); 
         }
@@ -310,6 +312,7 @@ class JobController extends Controller
         
                 $job->creation_date = Carbon\Carbon::parse($job->created_at)->format('d M,Y');
                 $job->applyby_date = Carbon\Carbon::parse($job->apply_by)->format('d M,Y');
+                $job->applications = Candidate_Job_Association::where('job_id','=', $job->id)->count();
                 //  echo $job->applyby_date; 
                 // die();// March
     }

@@ -48,6 +48,7 @@
             <th>Age Requirement</th>
             <th>Apply By</th>
             <th>Posted By</th>
+            <th>No. Of Applications</th>
             <th>Approval Status</th>
             <th>Post Status</th>
             <th>Created At</th>
@@ -75,6 +76,7 @@
               <td>{{job.age_requirement_min}}-{{job.age_requirement_max}}(years)</td>
               <td>{{job.applyby_date}}</td>
               <td>{{job.company_id}}</td>
+              <td>{{job.applications}}</td>
               <td>
                 <label v-if="job.approval_status == 0" class="label label-danger">Pending</label>
                 <label v-if="job.approval_status == 1" class="label label-success">Approved</label>
