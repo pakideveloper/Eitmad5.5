@@ -17,6 +17,7 @@ class Job extends Model
     const DegreeType='';
     const creation_date='';
     const applyby_date='';
+    const applications='';
 
      public function city()
     {
