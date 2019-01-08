@@ -97,8 +97,8 @@
       @if (session('status'))
                         <div class="alert alert-success" style="margin-bottom: 0px; background-color: #ffb6b7;
     border-color: #d67474;
-    color: #ffffff;">
-                            {{ session('status') }}
+        color: #36465d;">
+                            {{ session('status') }} &nbsp; <a href="ecommerce/become-seller" style="text-decoration: underline;">Become Seller</a>
                         </div>
                     @endif
                     @if (session('warning'))
