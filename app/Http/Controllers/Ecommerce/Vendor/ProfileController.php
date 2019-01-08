@@ -20,13 +20,13 @@ class ProfileController extends Controller
     public function index()
     {
         $vendor = Auth::user();
-        if ($vendor->city_id) {
-            $vendor->city = $vendor->city;
-            $vendor->country = $vendor->city->country;
-        }
-        if ($vendor->area_id) {
-            $vendor->area = $vendor->area;
-        }
+        // if ($vendor->city_id) {
+        //     $vendor->city = $vendor->city;
+        //     $vendor->country = $vendor->city->country;
+        // }
+        // if ($vendor->area_id) {
+        //     $vendor->area = $vendor->area;
+        // }
 
         $data['vendor'] = $vendor;
         $data['cities'] = City::all();

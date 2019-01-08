@@ -53,4 +53,8 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\VerifyUser');
     }
+    public function city()
+    {
+        return $this->hasOne('App\City','id', 'city_id');
+    }  
 }
