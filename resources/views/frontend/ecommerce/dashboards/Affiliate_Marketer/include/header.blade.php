@@ -44,6 +44,7 @@
          ?>
       <input class="form-control form-control-dark w-50" type="text" placeholder="Search" aria-label="Search">
       <!-- <div class="collapse navbar-collapse"> -->
+       
           <ul class="nav navbar-nav">
             <li class="dropdown dropdown-notifications">
               <a href="#notifications-panel" class="dropdown-toggle" data-toggle="dropdown">
@@ -68,7 +69,7 @@
             </li>
            
           </ul>
-       
+      
       <ul class="navbar-nav">
         
         <li class="nav-item dropdown">

@@ -56,15 +56,26 @@ $i = 1;
       @if($request->status == 0)
       <td>Pending</td>
       @else
-      <td>Accept</td>
-      @endif
       <td>
+      <i><b style="color: green">Accepted</b></i>
+    </td>
+      @endif
+      <!-- <td>
         <a data-toggle="modal" data-target="#bid{{$request->id}}" style="float: left;cursor: pointer;">
           <i class="fa fa-pencil"></i>
        </a>
 
+      </td> -->
+      <td>
+        <form id="delete-form{{$request->id}}" 
+                                                                action="{{url('/ecommerce/marketer/deleterequest')}}/{{$request->id}}" method="post">
+                                                                {{csrf_field() }}
+                                                                
+                                                                 
+                                                                <i  onclick="return deleteRequest({{$request->id}});" class="fa fa-trash-o" style="cursor: pointer;"></i>
+                                                            
+                                                            </form>
       </td>
-      
     </tr>
     
     @endforeach

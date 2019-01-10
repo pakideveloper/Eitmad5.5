@@ -9,15 +9,13 @@ use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
-use App\notifications;
 
-class SendRequest implements ShouldBroadcast
+class ClaimRequest implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
-     public $username;
+    public $username;
 
     public $message;
-    // public $notify;
     /**
      * Create a new event instance.
      *
@@ -27,12 +25,7 @@ class SendRequest implements ShouldBroadcast
     {
         //
         $this->username = $username;
-        $this->message  = "$username Sending bid On Your Product!! Please Visit Marketer Request Form For More Actions";
-        // $this->notify = new notifications();
-        // $this->notify->username = $this->username;
-        // $this->notify->message = $this->message;
-        // $this->notify->save();
-        
+        $this->message  = "{$username} accepted your bid on their product! Please Proceed To Sell It";
     }
 
     /**
@@ -42,12 +35,7 @@ class SendRequest implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        
-
-         return ['send-request'];
-        //return new PrivateChannel('channel-name');
+         return ['claim-request'];
+        // return new PrivateChannel('channel-name');
     }
-//     public function broadcastAs() {
-// return 'status-liked';
-// }
 }

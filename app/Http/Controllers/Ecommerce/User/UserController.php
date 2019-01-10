@@ -12,6 +12,10 @@ use App\Region;
 use DB;
 use App\Bidding;
 use App\Order;
+use App\claim;
+use App\Product;
+use App\wishlist;
+use App\Events\SendRequest;
 use Illuminate\Support\Facades\Input;
 class UserController extends Controller
 {
@@ -23,8 +27,20 @@ class UserController extends Controller
         $countries = country::all();
         $regions = Region::all();
         $cities = City::all(); 
+        
     	return view('frontend.ecommerce.dashboards.User.modules.dashboard',compact('users','countries','regions','cities'));
     }
+    public function Claim(Request $request){
+        $claims = new claim();
+        $claims->product_id = $request->product_id;
+        $claims->claim_request = $request->claim_request;
+        $claims->claim_issue = $request->issue;
+        $claims->save();
+        event(new ClaimRequest('username'));
+         
+        return Redirect()->back()->with('status', ' Your Claim is submitted to respective Vendor. They will Contact You soon!');
+    }
+
     public function profileEdit(Request $request){
 
        // echo "string";
@@ -68,13 +84,17 @@ class UserController extends Controller
     }
 public function Order(){
 
-$orders = DB::table('order_products')
-            ->join('orders' , 'orders.id', '=', 'order_products.order_id')
-            ->join('products', 'products.id','=','order_products.product_id')
-             ->join('discounts', 'discounts.id', '=', 'products.discount_id')
-            ->where('orders.user_id', '=' , Auth::user()->id)
-             ->select('orders.id','order_products.order_product_unit_price','order_products.order_product_quantity','orders.shipping_charges','orders.order_tax','order_products.order_product_total_price','products.product_name','discounts.discount_percent','orders.order_status','orders.payment_method','products.sub_category_id')
-            ->get();
+// $orders = DB::table('order_products')
+//             ->join('orders' , 'orders.id', '=', 'order_products.order_id')
+//             ->join('products', 'products.id','=','order_products.product_id')
+//              ->join('discounts', 'discounts.id', '=', 'products.discount_id')
+//             ->where('orders.user_id', '=' , Auth::user()->id)
+//              ->select('orders.id','order_products.order_product_unit_price','order_products.order_product_quantity','orders.shipping_charges','orders.order_tax','order_products.order_product_total_price','products.product_name','discounts.discount_percent','orders.order_status','orders.payment_method','products.sub_category_id')
+//             ->get();
+    $orders = Order::where('user_id','=',Auth::user()->id)
+                ->get();
+                // print_r($orders);
+                // die();
 
  $claimOrder = Order::where('orders.user_id','=', Auth::user()->id)
                 ->get();
@@ -184,5 +204,53 @@ $biddings->save();
 return Redirect()->back()->with('status', 'Request Accepted successfully!');
 
 }
+
+public function WishList($id)
+{
+    // echo "ok";
+    // die();
+$products = Product::find($id);
+$wishlists = new wishlist();
+// echo $products->id;
+// die();
+$wishlists->product_id = $products->id;
+$wishlists->user_id = Auth::user()->id;
+$wishlists_count = DB::table('users_wishlists_products')->where('users_wishlists_products.user_id','=',Auth::user()->id)->where('users_wishlists_products.product_id','=',$id)->count();
+// echo $wishlists_count;
+// die();
+if($wishlists_count!=0){
+return Redirect()->back()->with('status', 'Product Already in your Wishlist!');
+}
+else
+    {
+$wishlists->save();
+return Redirect()->back()->with('status', 'Product Added To Wishlist successfully!');
+    }
+}
+
+public function UserWishList()
+{
+     // echo "ok";
+     // die();
+// $user = User::find();
+$wishlists = wishlist::where('user_id','=',Auth::user()->id)->get();
+
+ 
+return view('frontend.ecommerce.dashboards.User.modules.wishlist',compact('wishlists'));
+
+}
+public function DeleteUserWishList($id)
+{
+      // echo "ok";
+      // die();
+// $user = User::find();
+$wishlists = wishlist::where('user_id','=',Auth::user()->id)->where('product_id','=',$id);
+$wishlists->delete();
+
+ 
+return Redirect()->back()->with('status', 'Product Removed From Wishlist!');
+
+}
+
 
 }

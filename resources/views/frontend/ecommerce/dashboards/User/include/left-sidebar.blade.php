@@ -106,7 +106,7 @@
 
 
               <li class="nav-item">
-                 <a class="nav-link" href="{{url('ecommerce/changepassword')}}">
+                 <a class="nav-link" href="{{url('ecommerce/user/wishlist')}}">
                   <span data-feather="user"></span>
                  WishList
                   <!-- <span class="positive">+</span> -->

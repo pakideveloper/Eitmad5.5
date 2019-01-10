@@ -123,17 +123,19 @@
       </ul> -->
       <?php 
         $count = 0;
+
         $user = App\User::find(Auth::user()->id);
         $biddings = DB::table('biddings')->select('biddings.to_user')->where('biddings.to_user','=',$user->id)->get();
         $count = count($biddings);
         // echo $count;
-        // die();
-        foreach($biddings as $bidding)
-
+        // die()
+       foreach($biddings as $bidding)
+       // //   $test = $bidding->to_user;
+       //   print_r( $bidding);
+       //    die();
          ?>
       <input class="form-control form-control-dark w-50" type="text" placeholder="Search" aria-label="Search">
       
-     
       <ul class="nav navbar-nav">
             <li class="dropdown dropdown-notifications">
               <a href="{{url('ecommerce/user/marketerRequest')}}" class="dropdown-toggle" data-toggle="dropdown">
@@ -159,13 +161,16 @@
            
           </ul>
         
-         
+
       <ul class="navbar-nav px-3">
         <li class="nav-item dropdown">
           <a onclick="document.getElementById('marketer').style.display='block'" style="cursor: pointer;color: white;text-decoration: underline;">
             Become a Affiliate Marketer?
           </a>
-
+          <br>
+          <a href="{{url('ecommerce/user/dashboard')}}">
+            {{$user->first_name}} &nbsp{{$user->last_name}}
+          </a>
           <div id="marketer" class="w3-modal">
     <div class="w3-modal-content w3-animate-zoom" style="height:auto; width:30%;">
     <header class="w3-container" style="background-color: #36465d;" >
@@ -257,12 +262,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
     <script type="text/javascript">
+      
       var notificationsWrapper   = $('.dropdown-notifications');
       var notificationsToggle    = notificationsWrapper.find('a[data-toggle]');
       var notificationsCountElem = notificationsToggle.find('i[data-count]');
       var notificationsCount     = parseInt(notificationsCountElem.data('count'));
       var notifications          = notificationsWrapper.find('ul.dropdown-menu');
-
+      // var test                   = {{$user->id}};
+     
+      // alert(test2);
       if (notificationsCount <= 0) {
         notificationsWrapper.hide();
       }
@@ -274,12 +282,16 @@
         cluster: 'ap1',
         encrypted: true
       });
-      
+     
+
+        
       // Subscribe to the channel we specified in our Laravel Event
       var channel = pusher.subscribe('send-request');
-
       // Bind a function to a Event (the full Laravel class)
+      
+
       channel.bind('App\\Events\\SendRequest', function(data) {
+      
         var existingNotifications = notifications.html();
         var avatar = Math.floor(Math.random() * (71 - 20 + 1)) + 20;
         var newNotificationHtml =`
@@ -301,12 +313,16 @@
           </li>`;
 
         notifications.html(newNotificationHtml + existingNotifications);
-
+        
         notificationsCount += 1;
         notificationsCountElem.attr('data-count', notificationsCount);
         notificationsWrapper.find('.notif-count').text(notificationsCount);
         notificationsWrapper.show();
+        
       });
-    
+       
+      
+   
     </script>
+
   </body>

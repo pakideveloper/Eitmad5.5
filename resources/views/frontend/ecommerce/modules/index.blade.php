@@ -189,17 +189,19 @@
                       <button type="button" class="btn-primary" data-toggle="modal" data-target="#affiliated{{$product->id}}" >AffiliateMarketing</button>
                       @else
                       
-                      <a href="{{url('/login')}}"><button type="button" class="btn-primary" >AffiliateMarketing</button></a>
+                      <a href="{{url('/login')}}"><button type="button" class="btn btn-primary btn-xs" >AffiliateMarketing</button></a>
                       @endif
 
-                      <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#affiliated{{$product->id}}" >AffiliateMarketing</button>
+                      
                     </div>
                     <!--Add To Cart Button-->
                     <a  href="{{url('ecommerce/single-product')}}/{{$product->slug}}" class="add-cart-btn" href="#"><span>To cart</span><i class="icon-shopping-cart"></i></a>
-                    <a class="wishlist-btn" href="#">
+                    
+                    <a  class="wishlist-btn" href="{{url('ecommerce/wishlist')}}/{{$product->id}}" >
                       <div class="hover-state">Wishlist</div>
                       <i class="fa fa-plus"></i>
                     </a>
+                    
                     <!--Share Button-->
                     <!-- <div class="share-btn">
                     	<div class="hover-state">

@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="profile-img">
-                            <img style="" src="{{count($candidate_profile)!= 0?URL::to('public/JobPortal_Frontend/assets/images/candidate/'.$candidate_profile->candidate_dp): URL::to('public/JobPortal_Frontend/assets/images/candidate/profile-avatar.png')}}">
+                            <img style="" src="{{isset($candidate_profile)?URL::to('public/JobPortal_Frontend/assets/images/candidate/'.$candidate_profile->candidate_dp): URL::to('public/JobPortal_Frontend/assets/images/candidate/profile-avatar.png')}}">
                           <!--   <div class="file btn btn-lg btn-primary">
                                 Change Photo
                                 <input type="file" name="file"/>

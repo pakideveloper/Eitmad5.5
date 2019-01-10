@@ -13,7 +13,7 @@
             </div>
           </div>
           <div class="modal-body">
-            <form class="login-form" method="post" action="{{url('jobs/login')}}">
+            <form class="login-form" method="post" action="{{route('login')}}">
                     {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>

@@ -11,6 +11,8 @@
     <title>Dashboard Template for Bootstrap</title>
     <!-- Font Awesome -->
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+   <!-- D:\xampp\htdocs\Eitmad5.5\public\css -->
+    <link href="{{URL::to('public')}}/css/font-awesome.css" rel="stylesheet">
    
     <!-- Bootstrap core CSS -->
     <link href="{{URL::to('public/bootstrap-4.1')}}/css/bootstrap.min.css" rel="stylesheet">

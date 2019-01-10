@@ -251,7 +251,7 @@
                         <!--Add To Cart Button-->
                         <a class="add-cart-btn" href="#"><span>To cart</span><i class="icon-shopping-cart"></i></a>
                         <!--Add To Wishlist Button-->
-                        <a class="wishlist-btn" href="#">
+                        <a class="wishlist-btn" href="{{url('ecommerce/wishlist')}}/{{$product->id}}">
                           <div class="hover-state">Wishlist</div>
                           <i class="fa fa-plus"></i>
                         </a>

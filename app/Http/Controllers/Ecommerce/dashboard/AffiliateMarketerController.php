@@ -247,6 +247,14 @@ return view('frontend.ecommerce.dashboards.Affiliate_Marketer.modules.requested'
 
 }
 
+public function deleteRequest($id)
+    {
+        //
+        $biddings = Bidding::find($id);
+$biddings->delete();
+return Redirect()->back()->with('status', 'Request Deleted successfully!');
 
+
+    }
 
 }

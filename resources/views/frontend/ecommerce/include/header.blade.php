@@ -255,14 +255,37 @@
               </div>
             </div><!--Cart Dropdown Close-->
           </div>
+           @if (isset(Auth::user()->id))
+           
+          <?php
+          
+            # code...
 
+          
+                $wishlists=App\wishlist::where('user_id','=',Auth::user()->id)->count();                  
+                                 
+                                 // echo $wishlists;
+                                 // die();
+                                 ?>
+
+            
           <div class="cart-btn">
-            <a class="btn btn-outlined-invert" href="{{url('/ecommerce/cart')}}"><i class="icon-heart" style="font-size: 18px;"></i><span id="" style="font-size: 18px;">Wishlist</span></a>
+            <a class="btn btn-outlined-invert" href="{{url('/ecommerce/user/wishlist')}}"><i class="icon-heart" style="font-size: 18px;"></i><span id="head_total_quantity">{{$wishlists}}</span></a>
             
             
             <!--Cart Dropdown-->
            
           </div>
+        
+        @else
+        <div class="cart-btn">
+            <a class="btn btn-outlined-invert" href="{{url('/ecommerce/user/wishlist')}}"><i class="icon-heart" style="font-size: 18px;"></i><span id="head_total_quantity">0</span></a>
+            
+            
+            <!--Cart Dropdown-->
+           
+          </div>
+          @endif
 
 
 
