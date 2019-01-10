@@ -35,7 +35,7 @@
 		<link rel="stylesheet" href="{{URL::to('public/frontend/general/assets')}}/css/hover_effect.css"/>
         <style >
             .text-white {
-                color: #36465d !important;
+                color: white !important;
         </style>
         </head>
         <!--[if IE 9]>

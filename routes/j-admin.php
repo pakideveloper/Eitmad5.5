@@ -23,6 +23,8 @@ Route::resource('/industries','admin\job\IndustryController');
 Route::resource('companies','admin\job\AdminCompanyController');
 Route::post('companies/updateStatus','admin\job\AdminCompanyController@UpdateStatus');
 
+Route::resource('/job_categories','admin\job\JobCategoryController');
+Route::resource('/job_subcategories','admin\job\JobSubCategoryController');
 
 Route::resource('/industries','admin\job\IndustryController');
 Route::resource('companies','admin\job\AdminCompanyController');

@@ -1,20 +1,20 @@
 function loadscroler(){
-	$('body').prepend('<a href="#" class="bottom-top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>');
-	var amountScrolled = 300;
-	$(window).on('scroll',function() {
-		if ( $(window).scrollTop() > amountScrolled ) {
-			$('a.bottom-top').fadeIn('slow');
-		} else {
-			$('a.bottom-top').fadeOut('slow');
-		}
-	});
-	$('a.bottom-top').on('click',function() {
-		$('html, body').animate({
-			scrollTop: 0
-		}, 700);
-		return false;
-	});
-}
+// 	$('body').prepend('<a href="#" class="bottom-top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>');
+// 	var amountScrolled = 300;
+// 	$(window).on('scroll',function() {
+// 		if ( $(window).scrollTop() > amountScrolled ) {
+// 			$('a.bottom-top').fadeIn('slow');
+// 		} else {
+// 			$('a.bottom-top').fadeOut('slow');
+// 		}
+// 	});
+// 	$('a.bottom-top').on('click',function() {
+// 		$('html, body').animate({
+// 			scrollTop: 0
+// 		}, 700);
+// 		return false;
+// 	});
+// }
 $(document).on('ready',function(){ 
 	"use strict";
 	loadscroler();

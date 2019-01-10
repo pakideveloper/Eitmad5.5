@@ -60,14 +60,13 @@ class Marketer_FrontController extends Controller
                 ->select('biddings.user_id')
                 ->where('biddings.product_id','=', $value->id)
                 ->get();
-                // echo $checks;
-                // die();
+                 // echo $checks;
+                 // die();
         if ($checks == '[]') {
             $biddings->save();
-            if($users->id == $biddings->to_user)
-            {
-            event(new SendRequest($biddings->user_id));
-    }
+            
+            event(new SendRequest($biddings->to_user));
+    
             return Redirect()->back()->with('status', 'Thanks for bidding !! Your Request is submitted to respective User Please wait for Confirmation!');
            
             # code...

@@ -111,12 +111,16 @@ Route::post('/banktransfer', function () {
     /*dasboard*/
     Route::get('vendor/dashboard','Ecommerce\Vendor\VendorController@dashboard');
     Route::get('user/dashboard','Ecommerce\User\UserController@dashboard');
+    Route::post('user/dashboard','Ecommerce\User\UserController@Claim');
     Route::post('/profile','Ecommerce\User\UserController@profileEdit');
     Route::get('/myorders','Ecommerce\User\UserController@Order');
     Route::get('/deactivate','Ecommerce\User\UserController@destroy');
     Route::get('/user/marketerRequest','Ecommerce\User\UserController@request');
     Route::get('/user/cancelrequest/{id}','Ecommerce\User\UserController@CancelRequest');
     Route::post('/user/acceptrequest/{id}','Ecommerce\User\UserController@AcceptRequest');
+    Route::get('/wishlist/{id}','Ecommerce\User\UserController@WishList');
+    Route::get('/user/wishlist','Ecommerce\User\UserController@UserWishList');
+    Route::post('/user/deleteWishlist/{id}','Ecommerce\User\UserController@DeleteUserWishList');
     Route::get('/marketer_deactivate','Ecommerce\dashboard\AffiliateMarketerController@destroy');
    Route::get('/changepassword', function () {
     return view('frontend/ecommerce/dashboards/User/modules/changePassword');
@@ -127,6 +131,7 @@ Route::post('/banktransfer', function () {
    Route::Resource('/user/addproduct', 'Ecommerce\dashboard\User\ProductController');
    Route::Resource('/marketer/dashboard', 'Ecommerce\dashboard\AffiliateMarketerController');
    Route::get('/marketer/bid', 'Ecommerce\dashboard\AffiliateMarketerController@request');
+   Route::post('/marketer/deleterequest/{id}', 'Ecommerce\dashboard\AffiliateMarketerController@deleteRequest');
    Route::Post('/city/regions/{id}', 'Ecommerce\dashboard\AffiliateMarketerController@regions');
    Route::Post('/city/cities/{id}', 'Ecommerce\dashboard\AffiliateMarketerController@cities');
    Route::get('/user/allproducts', 'Ecommerce\dashboard\User\ProductController@AllProducts');

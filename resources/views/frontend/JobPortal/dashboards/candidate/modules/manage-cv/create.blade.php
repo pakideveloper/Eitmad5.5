@@ -17,15 +17,12 @@
 <div class="container bg-light  col-lg-10" style="top:60px; position: relative;" >
 		
 <form action="{{url('jobs/candidate/user-profile')}}" method="post" enctype="multipart/form-data">
-	{{ csrf_field() }}
+	     {{ csrf_field() }}
 	
 	<div class="row">
-
 		<div class="dark-grey bg-warning col-lg-12" style="float:right; text-align: center; background: #f2992e!important">
 			<h3>Create Your Profile</h3>
 		</div>
-	     
-
        <!-- {{ method_field('PUT')}} -->
        <div class="form-group col-lg-12 col-md-12" style="text-align: center;">
 			<div class="col-md-12" style="text-align: center; padding: 20px; ">
@@ -83,7 +80,7 @@
 		<div class="form-group col-lg-6">
 			<label>Marital Status</label>
 			<select class="form-control " name="marital_status"  id="myMarital_status">
-				<option value="{{isset($candidate_profile)!= 0?$candidate_profile->candidate_marital_status:''}}">{{isset($candidate_profile)?$candidate_profile->candidate_marital_status:'Maritala Status'}}</option>
+				<option value="{{isset($candidate_profile)?$candidate_profile->candidate_marital_status:''}}">{{isset($candidate_profile)?$candidate_profile->candidate_marital_status:'Maritala Status'}}</option>
 				<option value="divorced">Divorced</option>
 				<option value="married">Married</option>
 				<option value="seperated">Seperated</option>
@@ -101,11 +98,13 @@
 		</div>
  		<div class="form-group col-lg-6">
 			<label>City</label>
-
 			<select class="form-control" name="city_id"  id="myCity" >
+			@if($users->city_id != '')
+			<option value="{{$users->cities->id}}">{{$users->cities->city_name}}</option>				
+			@else
 			@foreach($cities as $city)
-			<option value="{{$city->id?$city->id:''}}" >{{$city->city_name?$city->city_name:''}}</option>	
-			@endforeach 				
+			<option value="{{$city->id?$city->id:''}}" >{{$city->city_name?$city->city_name:''}}</option>@endforeach 
+			@endif		
 			</select>		
 				
 		</div> 
@@ -118,7 +117,7 @@
 	    <div class="form-group col-lg-6">
 			<label>Career Level</label> 
 			<select name="career_level" class="form-control"  id="myCareel_level">
-				<option value="{{isset($candidate_profile)!= 0?$candidate_profile->candidate_career_level:''}}">{{isset($candidate_profile)?$candidate_profile->candidate_career_level:'Select One Level'}}</option>
+				<option value="{{isset($candidate_profile)?$candidate_profile->candidate_career_level:''}}">{{isset($candidate_profile)?$candidate_profile->candidate_career_level:'Select One Level'}}</option>
 				<option value="Intern/Student">Intern / Student</option>
 				<option value="Entry Level">Entry Level</option>
 				<option value="Experienced">Experienced</option>
@@ -129,7 +128,7 @@
 		<div class="form-group col-lg-6">
 		<label>Professional Experience </label>
 			<select class="form-control" name="pro_exp"  id="myProf_exp">
-				<option value="{{isset($candidate_profile)!= 0?$candidate_profile->professional_experience:''}}" selected="true">{{isset($candidate_profile)?$candidate_profile->professional_experience:'Select One'}}</option>
+				<option value="{{isset($candidate_profile)?$candidate_profile->professional_experience:''}}" selected="true">{{isset($candidate_profile)?$candidate_profile->professional_experience:'Select One'}}</option>
 				<option value="0.5">Less than 1 Year</option>
 				<option value="1">1 Year </option>
 				<option value="2">2 Years </option>				
@@ -138,7 +137,7 @@
 		<div class="form-group col-lg-6">
 			<label>Functional Area</label>
 			<select class="form-control" name="func_area"  id="myFunc_area">
-				<option value="{{isset($candidate_profile)!= 0?$candidate_profile->candidate_functional_area:''}}" selected="true">{{isset($candidate_profile)?$candidate_profile->candidate_functional_area:'Select One'}}</option>
+				<option value="{{isset($candidate_profile)?$candidate_profile->candidate_functional_area:''}}" selected="true">{{isset($candidate_profile)?$candidate_profile->candidate_functional_area:'Select One'}}</option>
 				<option value="hardware">hardware</option>
 				<option value="Telecome">software</option>
 				<option value="Telecome">Telecome</option>
@@ -149,7 +148,7 @@
 		<div class="form-group col-lg-6">
 			<label>Current Salary</label>
 			<select class="form-control" name="current_salary"  id="myCurrent_salary">
-				<option value="{{isset($candidate_profile)!= 0?$candidate_profile->candidate_current_salary:''}}" selected="true">{{isset($candidate_profile)?$candidate_profile->candidate_current_salary:'Select One'}}</option>
+				<option value="{{isset($candidate_profile)?$candidate_profile->candidate_current_salary:''}}" selected="true">{{isset($candidate_profile)?$candidate_profile->candidate_current_salary:'Select One'}}</option>
 				<option value="10000">10000</option>
 				<option value="20000">20000</option>
 				<option value="30000">30000 </option>
@@ -159,7 +158,7 @@
 		<div class="form-group col-lg-6">
 			<label>Expected Salary</label>
 			<select class="form-control" name="expected_salary"  id="myExpected_salary">
-				<option value="{{isset($candidate_profile)!= 0?$candidate_profile->candidate_expected_salary:''}}" selected="true" >{{isset($candidate_profile)?$candidate_profile->candidate_expected_salary:'Select One'}}</option>
+				<option value="{{isset($candidate_profile)?$candidate_profile->candidate_expected_salary:''}}" selected="true" >{{isset($candidate_profile)?$candidate_profile->candidate_expected_salary:'Select One'}}</option>
 				<option value="10000">10000 </option>
 				<option value="20000">20000 </option>
 				<option value="30000">30000 </option>
@@ -173,18 +172,20 @@
 			<div class="form-group col-lg-6">
 			<label>Blog / PortfolioLink</label>
 
-			<input type="text" name="blog_link" class="form-control" value="{{isset($candidate_profile)!= 0?$candidate_profile->blog_link:''}}"  id="myBlog">
+			<input type="text" name="blog_link" class="form-control" value="{{isset($candidate_profile)?$candidate_profile->blog_link:''}}"  id="myBlog">
 			 
 		</div>
 		<div class="form-group col-lg-6">
-			<label>Skills</label>
            @if($check_skills == true)
+			<label>Skills</label>
         	<!-- <select class="form-control" name="skills" required="true"  > -->
 			@foreach($skills as $skill)
 			<input type="button" name="skills" class=" btn btn-outline-info" value="
 			{{$skill}}">				
 			@endforeach 	
 			@else
+			<label>Skills(Add "," Seperated Multiple Skills )</label>
+
 			<input type="text" name="skills" class="form-control" value="">           	
              
 			@endif
@@ -192,17 +193,20 @@
 			 
 		</div>
 		<div class="form-group col-lg-6">
-			<label>Languages</label>
             
             @if($check_lang == true)
         	<!-- <select class="form-control" name="languages" required="true" > -->
+			<label>Languages</label>
+
 			@foreach($languages as $lang)
 			<input type="button" name="languages" class=" btn btn-outline-info" value="
 			{{$lang}}">
 			
 			@endforeach 				
-	
+			</select>
 			@else
+			<label>Languages(Add "," Seperated Multiple Languages )</label>
+
 			<input type="text" name="languages" class="form-control" value="">           	
              
 			@endif
@@ -258,6 +262,7 @@
 		<div class="form-group col-lg-6">
 			<label>City</label>
 			<select class="form-control" name="city_id">
+
 				@foreach($cities as $city)
 			<option value="{{$city->id?$city->id:''}}">{{$city->city_name?$city->city_name:''}}</option>	
 				@endforeach 				
@@ -349,8 +354,6 @@
 <div class="container bg-light  col-lg-10" style="top:50px; position: relative;" >
 		
 <form action="{{url('jobs/candidate/user-add-experience')}}" method="post" enctype="multipart/form-data">
-	     {{ csrf_field() }}
-
 	<div class="row" style="margin-bottom: 10px; margin-top: 10px;">
 	<div class="dark-grey col-lg-12 bg-info click-exp" style="float:right; text-align: center;">
 			<h3 class="text-light">Add Professional Experiences</h3>
@@ -358,6 +361,7 @@
 	</div>
 	<div class="row toggle-exp-row" style="display: none;" >
 		
+	     {{ csrf_field() }}
        <!-- {{ method_field('PUT')}} -->
 
 		<div class="form-group col-lg-6">
