@@ -55,6 +55,7 @@ class CompanyController extends Controller
 
 
          $company= new Company();
+         $company->id = Auth::user()->id;
         $company->company_name =$request -> Input('company_name');
         $company->company_description =$request -> Input('company_description');
         $company->company_address =$request -> Input('company_address');
