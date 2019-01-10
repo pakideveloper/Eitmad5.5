@@ -50345,6 +50345,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 Vue.component('pagination', __webpack_require__(83));
 Vue.component('editmodal', __webpack_require__(84));
@@ -52112,6 +52114,8 @@ var render = function() {
                           _vm._v(" "),
                           _c("td", [_vm._v(_vm._s(job.company_id))]),
                           _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(job.applications))]),
+                          _vm._v(" "),
                           _c("td", [
                             job.approval_status == 0
                               ? _c(
@@ -52296,6 +52300,8 @@ var staticRenderFns = [
       _c("th", [_vm._v("Apply By")]),
       _vm._v(" "),
       _c("th", [_vm._v("Posted By")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("No. Of Applications")]),
       _vm._v(" "),
       _c("th", [_vm._v("Approval Status")]),
       _vm._v(" "),

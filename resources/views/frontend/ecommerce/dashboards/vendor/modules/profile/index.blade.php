@@ -212,9 +212,7 @@ padding-top: 10px;
                     @if($vendor->area)
                     <p class="contact">{{$vendor->city->city_name}}</p>
                     @endif
-                    @if($vendor->country)
-                    <p class="contact">{{$vendor->country->country_name   }}</p>
-                    @endif
+                    <p class="contact">{{$vendor->city->country->country_name   }}</p>
                 </div>
             </div>
             <div class="col-md-12 tabs">
