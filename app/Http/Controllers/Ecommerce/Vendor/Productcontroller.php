@@ -10,6 +10,7 @@ use App\Product_Sub_Category;
 use App\Product_File;
 use App\Brand;
 use App\Discount;
+use Auth;
 
 class Productcontroller extends Controller
 {
@@ -82,6 +83,7 @@ class Productcontroller extends Controller
             $features_array[$value] = $request->$input;
         }
         $product->other_features = json_encode($features_array);
+        $product->added_by_user = Auth::user()->id;
         
         $slug = $this->makeSlug($product->product_name); 
         $product->slug = $slug;
@@ -279,7 +281,7 @@ class Productcontroller extends Controller
     public function storeValidation(Request $request){
         $messages = [
             'product_name.required' => 'please enter product name',
-            'product_description.required' => 'please enter product name',
+            'product_description.required' => 'please enter product description',
             'product_size.required' => 'please enter size',
             'product_colour.required' => 'please enter product color',
             'product_price.required' => 'please enter product price',

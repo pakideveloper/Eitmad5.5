@@ -10,6 +10,7 @@ use App\Product_Sub_Category;
 use App\Product_File;
 use App\Brand;
 use App\Discount;
+use Auth;;
 
 class ProductController extends Controller
 {
@@ -64,6 +65,7 @@ class ProductController extends Controller
         $product->product_colour = $request->product_colour ;
         $product->product_price = $request->product_price ;
         $product->product_quantity = $request->product_quantity ;
+        $product->added_by_user = Auth::user()->id;
         $product->sub_category_id = $request->sub_category_id ;
         $discount = Discount::find($request->discount_id);
         $product->product_discounted_price = $request->product_price - (($discount->discount_percent * $request->product_price) / 100);

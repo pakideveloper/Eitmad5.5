@@ -18,6 +18,7 @@ Route::group(['middleware' => 'role:vendor'], function() {
 	Route::Resource('product','Ecommerce\Vendor\ProductController');
 	Route::Resource('profile','Ecommerce\Vendor\ProfileController');
 	Route::Resource('order','Ecommerce\Vendor\OrderController');
+	Route::get('search','Ecommerce\Vendor\OrderController@search');
 	Route::post('upload/profile','Ecommerce\Vendor\ProfileController@uploadImage');
 	Route::get('product/{id}/features','Ecommerce\Vendor\ProductController@getFeatures');
 });

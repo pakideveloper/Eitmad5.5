@@ -15,6 +15,7 @@
 
     <!-- Custom styles for this template -->
     <link href="{{URL::to('public/bootstrap-4.1')}}/css/dashboard.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"> -->
     <style type="text/css">
       .is-sub{
         padding-left: 23px;
@@ -93,6 +94,15 @@
     background-color: #f7f7f7 !important;
     height: auto;
   }
+  @media (max-width: 576px){
+    [role="main"] {
+    padding-top: 80px !important;
+}
+  }
+  .is-sub > li > a{
+    font-weight: 400 !important;
+    font-size: 14px;
+  }
 
     </style>
   </head>
@@ -120,6 +130,7 @@
           <a class="nav-link" href="#">Sign out</a>
         </li>
       </ul> -->
+      <!-- <i class="fa fa-bars" aria-hidden="true"></i> -->
       <input class="form-control form-control-dark w-50" type="text" placeholder="Search" aria-label="Search">
       <ul class="navbar-nav px-3">
         <li class="nav-item dropdown">

@@ -118,7 +118,7 @@ padding-top: 10px;
             $description = $product->product_description;
             }
             ?>
-            <p>{{$description}}</p>
+            <p>{!! $description !!}</p>
             <a href="{{url('ecommerce/vendor/product')}}/{{\Crypt::encrypt($product->id)}}/edit">Edit</a>
             <form id="delete-form{{$product->id}}"
               action="{{url('ecommerce/vendor/product')}}/{{$product->id}}" method="post">
@@ -194,7 +194,7 @@ padding-top: 10px;
               </div>
             </div>
             <div id="menu1" class="container tab-pane fade"><br>
-              {{$product->product_description}}
+              {!! $product->product_description !!}
             </div>
             <div id="menu2" class="container tab-pane fade"><br>
               <h3>Menu 2</h3>

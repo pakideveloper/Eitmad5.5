@@ -39,6 +39,9 @@
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25);
 }
+table{
+      font-size: 13px;
+}
 </style>
 <div class="container-fluid">
   <div class="row">
@@ -95,6 +98,7 @@
       <th scope="col">product Sub_Category</th>
       <th scope="col">Product Brand</th>
       <th scope="col">Product Features</th>
+      <th scope="col">See Detail</th>
       <th scope="col">Actions</th>
     </tr>
   </thead>
@@ -122,7 +126,7 @@ $i = 1;
               <div class="form-group" style="margin: 0px;">
                           
                 <div class="col-xs-12">
-                              {{$product->product_description}}
+                              {!! $product->product_description !!}
                               <!-- <input type="text" class="form-control" name="product_name" id="product_name" placeholder="Enter Your product name" value=""  title="enter your first n if any."> -->
                 </div>
               </div>

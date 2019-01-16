@@ -1,4 +1,10 @@
 @include('frontend.ecommerce.dashboards.vendor.include.header')
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
 <div class="container-fluid">
   <div class="row">
     @include('frontend.ecommerce.dashboards.vendor.include.left-sidebar')
@@ -56,8 +62,23 @@
               
               <div class="form-group col-md-12 col-sm-12 {{$errors->has('product_description') ? 'has-error' : ''}}" >
                                                         <label for="product-name">Product Description<span class="text-danger">*</span></label>
-                                                        <input type="text" name="product_description" parsley-trigger="change" 
-                                                               placeholder="Enter product description" class="form-control" id="userName" value="{{ old('product_description') }}">
+                                                        <textarea id="summernote" name="product_description">{{ old('product_description') }}</textarea> 
+    <script>
+      $('#summernote').summernote({
+        placeholder: 'product description',
+        tabsize: 2,
+        height: 200,
+        fontNames:['Arial','Helvetica','Times New Roman','Times','Courier New','Courier','Verdana','Georgia','Palatino','Garamond','Bookman','Comic Sans MS','Trebuchet MS']
+      });
+      $( document ).ready(function() {
+      $('.card-block').bind("DOMSubtreeModified",function(){
+        // var p = jQuery(this).children("p");
+        var val = jQuery(this).html();
+        $('#product_description').val(val);
+      });
+      });
+    </script>
+                                                        
                                                         @if ($errors->has('product_description'))
                                                             <ul class="parsley-errors-list filled" id="parsley-id-5"><li class="parsley-required">{{ $errors->first('product_description') }}.</li></ul>
                                                         @endif
@@ -128,7 +149,7 @@
                                                     @endif
                                                 </div>
 
-                                                <div id="features_div">
+                                                <div id="features_div" style="padding: 17px;">
                                                     @if(old('sub_category_id'))
                                                     <?php
                                                     $sub_category = App\Product_Sub_Category::find(old('sub_category_id'));
@@ -199,3 +220,18 @@
 </div>
 </div>
 @include('frontend.ecommerce.dashboards.vendor.include.footer')
+<script type="text/javascript">
+  $('#sub_category_id').change(function(){
+                id = this.value;
+                $("#features_div").html('');
+                $.get(this.value + '/features', function(features){
+                     
+                        $.each(features, function(index, feature) { 
+                        feature_s = feature.replace(/\s+/g, '');                             
+                            content = '<div class="form-group ">                                                    <label for="product_'+feature_s+'">Product '+feature+'<span class="text-danger">*</span></label>                                                        <input type="text" name="product_'+feature_s+'" parsley-trigger="change"                                                               placeholder="Enter product '+feature+'" class="form-control" id="product_'+feature_s+'"  }}">                                                   </div>'                        
+                            $("#features_div").append(content);
+                                                    
+                        });
+                });
+            });
+</script>

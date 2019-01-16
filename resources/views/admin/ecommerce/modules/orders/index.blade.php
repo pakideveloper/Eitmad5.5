@@ -238,7 +238,7 @@
                                                         <td>{{$order->discount->discount_name}}&nbsp;<span style="color: #d4ac50;
     font-weight: 800;">{{$order->discount->discount_percent}}%</span></td>
                                                         <td>
-                                                            <div id="status_div">@if($order->order_status == 'pending') <label class="badge badge-danger">Pending</label>
+                                                            <div id="status_div{{$order->id}}">@if($order->order_status == 'pending') <label class="badge badge-danger">Pending</label>
                                                             @elseif($order->order_status == 'on hold')
                                                             <label class="badge badge-info">On hold</label>
                                                             @elseif($order->order_status == 'closed')
@@ -409,13 +409,13 @@
                         if (response == 'ok') {
                             
                             if (value == 'pending') {
-                                $('#status_div').html('<label class="badge badge-danger">Pending</label>');
+                                $('#status_div'+id).html('<label class="badge badge-danger">Pending</label>');
                             }else if(value == 'on hold'){
-                                $('#status_div').html('<label class="badge badge-info">On hold</label>');
+                                $('#status_div'+id).html('<label class="badge badge-info">On hold</label>');
                             }else if(value == 'closed'){
-                                $('#status_div').html('<label class="badge badge-success">Closed</label>');
+                                $('#status_div'+id).html('<label class="badge badge-success">Closed</label>');
                             }else if(value == 'open'){
-                                $('#status_div').html('<label class="badge badge-warning">Open</label>');
+                                $('#status_div'+id).html('<label class="badge badge-warning">Open</label>');
                             }
                             $('#ids_loader').hide();
                         }

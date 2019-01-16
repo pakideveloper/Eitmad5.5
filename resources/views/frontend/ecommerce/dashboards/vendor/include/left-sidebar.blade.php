@@ -2,7 +2,7 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <router-link  to="dashboard" class="nav-link"><span data-feather="shopping-cart"></span>&nbsp;Dasboard</router-link>
+                <a href="{{url('ecommerce/vendor/dashboard')}}"  to="dashboard" class="nav-link"><span data-feather="shopping-cart"></span>&nbsp;Dasboard</a>
               </li>
               <li class="nav-item has-sub">
                 <a class="nav-link" href="JavaScript:void(0)">
@@ -16,24 +16,24 @@
                     
                   </li>
                   <li>
-                      <!-- <router-link  to="add-product" class="nav-link"></router-link> -->
+                      <!-- <a class="nav-link"></a> -->
                       <a href="{{url('ecommerce/vendor/product')}}/create" class="nav-link">Add Product</a>
                     
                   </li>
                   <li>
-                      <router-link  to="add-product" class="nav-link">Add Product</router-link>
+                      <a class="nav-link">Add Product</a>
                     
                   </li>
                   <li>
-                      <router-link  to="add-product" class="nav-link">Media Center</router-link>
+                      <a class="nav-link">Media Center</a>
                     
                   </li>
                   <li>
-                      <router-link  to="add-product" class="nav-link">Manage Image</router-link>
+                      <a class="nav-link">Manage Image</a>
                     
                   </li>
                   <li>
-                      <router-link  to="add-product" class="nav-link">Fulfilment by Eitmad</router-link>
+                      <a class="nav-link">Fulfilment by Eitmad</a>
                     
                   </li>
                 </ul>
@@ -61,13 +61,13 @@
                 </a>
                 <ul class="nav flex-column is-sub">                  
                   <li>
-                      <router-link  to="add-product" class="nav-link">Compaign Managment</router-link>   
+                      <a class="nav-link">Compaign Managment</a>   
                   </li>
                   <li>
-                      <router-link  to="add-product" class="nav-link">Bundles</router-link>   
+                      <a class="nav-link">Bundles</a>   
                   </li>
                   <li>
-                      <router-link  to="add-product" class="nav-link">Seller Voucher</router-link>   
+                      <a class="nav-link">Seller Voucher</a>   
                   </li>
                 </ul>
               </li>
@@ -79,18 +79,18 @@
                 </a>
                 <ul class="nav flex-column is-sub">                  
                   <li>
-                      <router-link  to="add-product" class="nav-link">Compaign Managment</router-link>   
+                      <a class="nav-link">Compaign Managment</a>   
                   </li>
                   <li>
-                      <router-link  to="add-product" class="nav-link">Bundles</router-link>   
+                      <a class="nav-link">Bundles</a>   
                   </li>
                   <li>
-                      <router-link  to="add-product" class="nav-link">Seller Voucher</router-link>   
+                      <a class="nav-link">Seller Voucher</a>   
                   </li>
                 </ul>
               </li>
               <li class="nav-item">
-                <router-link  to="add-product" class="nav-link"><span data-feather="shopping-cart"></span>&nbsp;Store</router-link>
+                <a class="nav-link"><span data-feather="shopping-cart"></span>&nbsp;Store</a>
               </li>
               <li class="nav-item has-sub">
                 <a class="nav-link" href="JavaScript:void(0)">
@@ -100,13 +100,13 @@
                 </a>
                 <ul class="nav flex-column is-sub">                  
                   <li>
-                      <router-link  to="add-product" class="nav-link">Account Statements</router-link>   
+                      <a class="nav-link">Account Statements</a>   
                   </li>
                   <li>
-                      <router-link  to="add-product" class="nav-link">Order Overview</router-link>   
+                      <a class="nav-link">Order Overview</a>   
                   </li>
                   <li>
-                      <router-link  to="add-product" class="nav-link">Transaction Overview</router-link>   
+                      <a class="nav-link">Transaction Overview</a>   
                   </li>
                 </ul>
               </li>
