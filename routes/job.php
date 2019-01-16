@@ -13,7 +13,8 @@
 //usama
 
 // login from job portal
-Route::post('login', 'Auth\LoginController@loginFromJob' ); 
+// Route::post('login', 'Auth\LoginController@loginFromJob' ); 
+Auth::routes();
 // end of login controller
 Route::get('/', function () {
    
@@ -91,7 +92,7 @@ Route::get('/contactus', function () {
 });
 Route::get('/addjob', function () {
     return view('frontend/JobPortal/pages/AddJob');
-});
+});
 
 // Route::get('/paperjobs', function()
 // {

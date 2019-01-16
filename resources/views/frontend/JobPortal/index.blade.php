@@ -49,7 +49,12 @@
 @include('frontend/JobPortal/include/jobheader1')
 @include('frontend/JobPortal/include/login')
 	<!-- header end -->
-
+<div class="page-content">
+	@if(session('status'))
+		<div class="alert alert-danger" style="margin-bottom: 0px; text-align: center;">
+			{{session('status')}}
+		</div>
+	@endif
 <!-- slider start here -->
 	<div class="slideshow owl-carousel">
 		<!-- <div class="item">
@@ -218,10 +223,10 @@
        	<h2 class="primary-color" style="text-align: center;">Feature Jobs</h2>
       
 		
-			<a href="{{'jobs'}}">
+			<!-- <a href="{{'jobs'}}">
 
       		<img src="{{URL::to('public/JobPortal_Frontend/assets')}}/images/p1.jpg" alt="1"/>
-      		</a>
+      		</a> -->
 
        	<div class="border"></div>
           <div class="row">
@@ -689,6 +694,7 @@
 		<script src="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/js/scripts.js"></script>
     <script src="{{URL::to('public/JobPortal_Frontend/header_footer_assets/assets')}}/color-switcher/color-switcher.js"></script>
 <!-- end additional -->
+</div>
 </body>
 
 <!-- Mirrored from ocsolutions.co.in/html/jobportal/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 31 Aug 2018 10:24:08 GMT -->

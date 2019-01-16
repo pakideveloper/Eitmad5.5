@@ -41,10 +41,9 @@ $products = DB::table('products')
          foreach ($products as $product) {
             	# code...
             }   
-            if($user->id == $biddings->user_id)
-            {
+            
             event(new App\Events\StatusLiked($biddings->to_user));
-        }
+        
             // echo $products;
             // die();
     return Redirect()->back()->with('status', 'Request Accepted successfully! Now Your Product go to Marketer Bucket');

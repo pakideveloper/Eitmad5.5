@@ -141,6 +141,13 @@ var deleteProduct = function(id){
         document.getElementById('delete-form'+id).submit(); 
         }           
 }
+
+var deleteWishlist = function(id){
+            if (confirm('Are you sure you want to delete this?')) {
+        event.preventDefault();
+        document.getElementById('delete-form'+id).submit(); 
+        }           
+}
     </script>
    
 

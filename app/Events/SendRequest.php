@@ -27,7 +27,7 @@ class SendRequest implements ShouldBroadcast
     {
         //
         $this->username = $username;
-        $this->message  = "{$username} Sending Bid On Your Product!! Please Visits Request Tab To Confirm It.";
+        $this->message  = "$username Sending bid On Your Product!! Please Visit Marketer Request Form For More Actions";
         // $this->notify = new notifications();
         // $this->notify->username = $this->username;
         // $this->notify->message = $this->message;
@@ -42,6 +42,8 @@ class SendRequest implements ShouldBroadcast
      */
     public function broadcastOn()
     {
+        
+
          return ['send-request'];
         //return new PrivateChannel('channel-name');
     }

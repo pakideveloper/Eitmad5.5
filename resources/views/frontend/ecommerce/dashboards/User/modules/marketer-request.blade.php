@@ -51,12 +51,18 @@ $i = 1;
       
       <td>{{$request->timestamp}}</td>
       <td>{{$request->commission_amount}}</td>
+      @if($request->status == 0)
       <form action="{{url('/test2')}}/{{$request->id}}" method="post" enctype="multipart/form-data">
           {{ csrf_field()}}
       <td><input type="submit" class="btn btn-primary" name="yes" id="yes" value="yes">
         <input type="BUTTON" class="btn btn-primary" name="NO" id="NO" value="NO" onclick="document.getElementById('confirms{{$request->id}}').style.display='block'">
       </td>
       </form>
+      @else
+      <td>
+      <i><b style="color: green">Accepted</b></i>
+    </td>
+      @endif
      <!--  @if($request->status == 0)
       <td>Pending</td>
       @else

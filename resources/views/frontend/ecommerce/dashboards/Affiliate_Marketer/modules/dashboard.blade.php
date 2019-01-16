@@ -383,7 +383,7 @@ $.ajaxSetup({
         $('#country').on('change', function() {
             
             var countryID = $(this).val();
-            alert(countryID);
+           
             if (countryID) {
                 $.ajax({
 
@@ -412,7 +412,7 @@ $.ajaxSetup({
         $('#area').on('change', function() {
             
             var stateID = $(this).val();
-            alert(stateID);
+            
             if (stateID) {
                 $.ajax({
 

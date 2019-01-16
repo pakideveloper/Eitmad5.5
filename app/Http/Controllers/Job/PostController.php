@@ -93,11 +93,11 @@ class PostController extends Controller
         // ->where('paper_posts.paper_id', '=', $id)
         // ->get();
         $posts = post::where('paper_posts.paper_id', '=', $id)->latest()->paginate(20);
-        
+        $jobcategories = job_Category::all();
         // echo $posts;
         // die();
          $pnews = newspaper::all();
-         return view ('frontend/JobPortal/modules/paperjob/paperjob',compact('pnews','posts'));
+         return view ('frontend/JobPortal/modules/paperjob/paperjob',compact('pnews','posts','jobcategories'));
 
     }
 
@@ -109,8 +109,8 @@ class PostController extends Controller
          $jobcategories = job_Category::all();
         $category = $request->cat;
         $date = $request->date;
-          // echo $date;
-          // die();
+           echo $jobcategories;
+           die();
 //          $posts = Post::where('paper_posts.paper_ad_category','=',$category)->where('paper_posts.created_at','=',$date)
 //                 ->orWhere(function ($query,$date,$category) {                      
 //     $query->where('paper_posts.created_at','=',$date)

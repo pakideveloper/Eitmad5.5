@@ -56,7 +56,7 @@
         <div class="file-upload">
   <div class="file-select">
     <div class="file-select-button" id="fileName">Profile Image</div>
-    <div class="file-select-name" id="noFile">Please Select Profile Image...</div> 
+    <div class="file-select-name" id="noFile" >Please Select Profile Image...</div> 
     <input type="file" name="profileImage" id="chooseFile" value="{{$users->profile_pic}}" accept="image/*">
     @if ($errors->has("image"))
                                     <span class="help-block">
@@ -75,7 +75,7 @@
   <div class="file-select">
     <div class="file-select-button" id="fileName">Profile Image</div>
     <div class="file-select-name" id="noFile">Please Select Profile Image...</div> 
-    <input type="file" name="profileImage" id="chooseFile"  accept="image/*">
+    <input type="file" name="profileImage" id="chooseFile"  accept="image/*" value="{{$users->profile_pic}}">
     @if ($errors->has("image"))
                                     <span class="help-block">
                                         <strong class="error">{{ $errors->first("image") }}</strong>

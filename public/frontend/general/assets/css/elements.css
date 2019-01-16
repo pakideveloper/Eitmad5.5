@@ -53,7 +53,7 @@ Table of Contents
 header .container { position: relative;}
 header .row { align-items: center; display: flex; height: auto;}
 .header-margin-top { margin-top: 86px; }
-.navbar.shrink-nav { position: fixed !important; top: 0; background:#f2992e;}
+.navbar.shrink-nav { position: fixed !important; top: 0; background:#36465d;}
 .navbar.shrink-nav.shrink { padding: 11px 0; border-bottom: 1px solid rgba(0,0,0,0.1) }
 .header-margin-top-big { margin-top: 134px; }
 .header-margin-top-medium { margin-top: 138px; }
@@ -199,7 +199,7 @@ header .row { align-items: center; display: flex; height: auto;}
 .outside-image-sub img { height: 100%; width: auto; max-width: none; }
 
 /* transparent header */
-.shrink-transparent-header-dark.shrink { background: #f2992e !important;}
+.shrink-transparent-header-dark.shrink { background: #36465d !important;}
 .shrink-transparent-header-light.shrink { background: #ffffff !important;}
 .shrink-transparent-header-light.shrink.navbar li a { color: #282828; }
 .shrink-transparent-header-light.shrink.navbar .nav-button a { border: 2px solid #000; color: #fff;}
