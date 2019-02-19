@@ -14,6 +14,13 @@ Route::get('/', function () {
 	$slider = App\Slider::latest()->get();
     return view('frontend/general/index',compact('slider'));
 });
+Route::get('command', function () {
+//  echo 'd';
+    /* php artisan migrate */
+    Artisan::call('cache:clear');
+     Artisan::call('config:cache');
+    dd("Done");
+});
 
 Auth::routes();
 
