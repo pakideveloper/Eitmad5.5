@@ -22,7 +22,7 @@ class CreateProductsTable extends Migration
             $table->string('product_quantity');
             $table->string('product_discounted_price'); 
             $table->integer('sub_category_id')->nullable()->unsigned();
-            $table->foreign('sub_category_id')->references('id')->on('sub_categories')->onUpdate('cascade')->onDelete('cascade');;   
+            $table->foreign('sub_category_id')->references('id')->on('product_sub_categories')->onUpdate('cascade')->onDelete('cascade');;   
             $table->integer('brand_id')->nullable()->unsigned();
             $table->foreign('brand_id')->references('id')->on('brands')->onUpdate('cascade')->onDelete('cascade');;
             $table->integer('discount_id')->nullable()->unsigned();
