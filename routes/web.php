@@ -18,16 +18,16 @@ Route::get('migrate', function () {
 //  echo 'd';
     /* php artisan migrate */
     Artisan::call('migrate');
-    dd("Done");
+    dd("migrated succesfully");
 });
 Route::get('command', function () {
     Artisan::call('cache:clear');
      Artisan::call('config:cache');
-    dd("Done");
+    dd("cace cleared");
 });
 Route::get('seed', function () {
     Artisan::call('db:seed');
-    dd("Done");
+    dd("seeding success");
 });
 
 Auth::routes();
