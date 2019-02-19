@@ -14,12 +14,19 @@ Route::get('/', function () {
 	$slider = App\Slider::latest()->get();
     return view('frontend/general/index',compact('slider'));
 });
-Route::get('command', function () {
+Route::get('migrate', function () {
 //  echo 'd';
     /* php artisan migrate */
     Artisan::call('migrate');
+    dd("Done");
+});
+Route::get('command', function () {
     Artisan::call('cache:clear');
      Artisan::call('config:cache');
+    dd("Done");
+});
+Route::get('seed', function () {
+    Artisan::call('db:seed');
     dd("Done");
 });
 
