@@ -17,6 +17,7 @@ Route::get('/', function () {
 Route::get('command', function () {
 //  echo 'd';
     /* php artisan migrate */
+    Artisan::call('migrate');
     Artisan::call('cache:clear');
      Artisan::call('config:cache');
     dd("Done");
