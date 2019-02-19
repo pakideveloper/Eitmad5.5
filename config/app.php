@@ -231,7 +231,7 @@ return [
         'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
         'Cart' => Gloudemans\Shoppingcart\Facades\Cart::class,
         'Socialite' => Laravel\Socialite\Facades\Socialite::class,
-        'Carbon' => Carbon\Carbon,
+        'Carbon' => 'Carbon\Carbon',
     ],
 
 ];

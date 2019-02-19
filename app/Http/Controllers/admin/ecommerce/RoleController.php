@@ -48,7 +48,7 @@ class RoleController extends Controller
         //echo $request -> permission  ;
         
         
-        //die();
+        // die();
          $this->validate($request, [
         
     'name' => 'required',
