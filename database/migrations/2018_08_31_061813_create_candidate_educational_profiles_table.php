@@ -17,7 +17,7 @@ class CreateCandidateDegreeTable extends Migration
            $table->increment('id');
            $table->string('candidate_education_profile_title');
            $table->integer('degree_type_id')->nullable()->unsigned();
-           $table->foreign('degree_type_id')->references('id')->on('degree_types')->onUpdate('SET NULL');->onDelete('set null');
+           $table->foreign('degree_type_id')->references('id')->on('degree_types')->onUpdate('SET NULL')->onDelete('set null');
            $table->string('candidate_education_major_subjects');
            $table->integer('city_id')->nullable()->unsigned();
            $table->foreign('city_id')->references('id')->on('cities')->onUpdate('SET NULL')->onDelete('set null');
