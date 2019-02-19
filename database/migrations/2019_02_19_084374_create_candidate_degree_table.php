@@ -13,8 +13,8 @@ class CreateCandidateDegreeTable extends Migration
      */
     public function up()
     {
-        Schema::create('candidate_educational_profiles', function (Blueprint $table) {
-           $table->increment('id');
+        Schema::create('candidate_degree', function (Blueprint $table) {
+           $table->increments('id');
            $table->string('candidate_education_profile_title');
            $table->integer('degree_type_id')->nullable()->unsigned();
            $table->foreign('degree_type_id')->references('id')->on('degree_types')->onUpdate('SET NULL')->onDelete('set null');
@@ -26,7 +26,7 @@ class CreateCandidateDegreeTable extends Migration
            $table->string('candidate_education_result_type');
            $table->string('candidate_education_result');
            $table->integer('candidate_profile_id')->nullable()->unsigned();
-           $table->foreign('candidate_profile_id')->references('id')->on('candidate_profiles')->onUpdate('SET NULL')->onDelete('set null');
+           $table->foreign('candidate_profile_id')->references('candidate_id')->on('candidate_profiles')->onUpdate('SET NULL')->onDelete('set null');
            $table->timestamps();
         });
         //

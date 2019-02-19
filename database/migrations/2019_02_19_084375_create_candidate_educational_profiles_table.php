@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCandidateJobAssociationsTable extends Migration
+class CreateCandidateEducationalProfilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +14,11 @@ class CreateCandidateJobAssociationsTable extends Migration
     public function up()
     {
         Schema::create('candidate_educational_profiles', function (Blueprint $table) {
-           $table->increment('id');
+           $table->increments('id');
            $table->integer('job_id')->nullable()->unsigned();
            $table->foreign('job_id')->references('id')->on('jobs')->onUpdate('SET NULL')->onDelete('set null');
            $table->integer('candidate_profile_id')->nullable()->unsigned();
-           $table->foreign('candidate_profile_id')->references('id')->on('candidate_profiles')->onUpdate('cascade')->onDelete('cascade');
+           $table->foreign('candidate_profile_id')->references('candidate_id')->on('candidate_profiles')->onUpdate('cascade')->onDelete('cascade');
            $table->boolean('status');
            $table->timestamps();
         });

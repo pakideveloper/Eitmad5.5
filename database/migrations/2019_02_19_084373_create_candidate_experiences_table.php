@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCandidateExperienceTable extends Migration
+class CreateCandidateExperiencesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class CreateCandidateExperienceTable extends Migration
     public function up()
     {
         Schema::create('candidate_experiences', function (Blueprint $table) {
-           $table->increment('id');
+           $table->increments('id');
            $table->string('candidate_experience_job_title');
            $table->integer('company_id')->nullable()->unsigned();
            $table->foreign('company_id')->references('id')->on('companies')->onUpdate('SET NULL')->onDelete('set null');
@@ -27,7 +27,7 @@ class CreateCandidateExperienceTable extends Migration
            $table->string('candidate_experience_years');
            $table->string('candidate_experience_description');
            $table->integer('candidate_profile_id')->nullable()->unsigned();
-           $table->foreign('candidate_profile_id')->references('id')->on('candidate_profiles')->onUpdate('cascade')->onDelete('cascade');
+           $table->foreign('candidate_profile_id')->references('candidate_id')->on('candidate_profiles')->onUpdate('cascade')->onDelete('cascade');
             
                    
 

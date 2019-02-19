@@ -14,12 +14,12 @@ class CreateCandidateCertificatesTable extends Migration
     public function up()
     {
         Schema::create('candidate_certificates', function (Blueprint $table) {
-           $table->increment('id');
+           $table->increments('id');
            $table->string('candidate_certificate_name');
            $table->string('candidate_certificate_institute_name');
            $table->string('candidate_certificate_completion_date');
            $table->integer('candidate_profile_id')->nullable()->unsigned();
-           $table->foreign('candidate_profile_id')->references('id')->on('candidate_profiles')->onUpdate('cascade')->onDelete('cascade');
+           $table->foreign('candidate_profile_id')->references('candidate_id')->on('candidate_profiles')->onUpdate('cascade')->onDelete('cascade');
            $table->timestamps();
         });
         //

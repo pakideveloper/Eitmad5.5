@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateShippingDetailsTable extends Migration
+class CreateBrandSubcategoryAssocTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,9 @@ class CreateShippingDetailsTable extends Migration
      */
     public function up()
     {
-        //
-         Schema::create('shipping_details', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('country_name');         
+        Schema::create('brand_subcategory_assoc', function (Blueprint $table) {
+            $table->integer('brand_id');
+            $table->integer('sub_category_id');
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateShippingDetailsTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('brand_subcategory_assoc');
     }
 }
