@@ -21,7 +21,7 @@ class CreateCompaniesTable extends Migration
             $table->string('company_phone'); 
             $table->string('company_ceo_info'); 
             $table->integer('industry_id')->nullable()->unsigned();
-            $table->foreign('industry_id')->references('id')->on('cascade')->onUpdate('cascade')->onDelete('cascade');            
+            $table->foreign('industry_id')->references('id')->on('industries')->onUpdate('cascade')->onDelete('cascade');            
             $table->timestamps();
         });
         
