@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateEcomVisitorsTable extends Migration
+class CreateCrudsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateEcomVisitorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ecom_visitors', function (Blueprint $table) {
+        Schema::create('cruds', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title');
+            $table->string('post');
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ class CreateEcomVisitorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ecom_visitors');
+        Schema::dropIfExists('cruds');
     }
 }

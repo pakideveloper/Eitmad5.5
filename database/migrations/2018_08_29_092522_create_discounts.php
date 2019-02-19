@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCEOInfosTable extends Migration
+class CreateDiscounts extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,14 @@ class CreateCEOInfosTable extends Migration
      */
     public function up()
     {
-        Schema::create('c_e_o__infos', function (Blueprint $table) {
+        Schema::create('discounts', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('discount_name'); 
+            $table->string('discount_percent'); 
+            $table->string('discount_type'); 
             $table->timestamps();
         });
+        //
     }
 
     /**
@@ -26,6 +30,6 @@ class CreateCEOInfosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('c_e_o__infos');
+        //
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVerifyUsersTable extends Migration
+class CreateIndustriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateVerifyUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('verify_users', function (Blueprint $table) {
-            $table->integer('user_id');
-            $table->string('token');
+        Schema::create('industries', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('industry_name');    
             $table->timestamps();
         });
+        //
     }
 
     /**
@@ -27,6 +28,6 @@ class CreateVerifyUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('verify_users');
+        //
     }
 }
