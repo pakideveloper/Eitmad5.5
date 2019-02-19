@@ -18,22 +18,7 @@ Auth::routes();
 // end of login controller
 Route::get('/', function () {
    
-    if(isset(Auth::user()->id)){
-    $user = App\User::find(Auth::user()->id);
-     $jobs = App\Job::where('featuring_status','=','1')
-            ->take(8)
-            ->get();
-    
-    return view('frontend/JobPortal/index',compact('user','jobs'));
-}else{
-     $jobs = App\Job::where('featuring_status','=','1')
-            ->take(8)
-            ->get();
-    return view('frontend/JobPortal/index',compact('jobs'));
-
-}
-// >>>>>>> b7d465a0adab1f31eac6eb3ae2d03d9987391413  
-
+   
     $jobs = App\Job::where('featuring_status','=','1')
             ->take(8)
             ->get();
