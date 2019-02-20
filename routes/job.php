@@ -77,7 +77,7 @@ Route::get('/contactus', function () {
 });
 Route::get('/addjob', function () {
     return view('frontend/JobPortal/pages/AddJob');
-});
+});
 
 // Route::get('/paperjobs', function()
 // {
